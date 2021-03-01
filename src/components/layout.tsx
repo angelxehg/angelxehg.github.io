@@ -9,18 +9,15 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
+import Footer from "./footer"
 
 const Layout = (props: { children: any }) => {
 
   return (
-    <div className="container-sm mt-3 mb-3 text-white font-monospace">
+    <div className="container-sm mt-5 mb-5 text-white font-monospace">
       <Header/>
-      <div>
-        <main>{props.children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Angel Hurtado
-        </footer>
-      </div>
+      <main className="mt-5">{props.children}</main>
+      <Footer/>
     </div>
   )
 }
