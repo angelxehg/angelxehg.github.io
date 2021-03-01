@@ -1,0 +1,48 @@
+body {
+  background-color: rgb(5, 10, 5);
+}
+
+.bg-dark {
+  background-color: rgb(20, 25, 20) !important;
+}
+
+a:link {
+  color: rgb(35, 200, 35);
+}
+
+a:visited {
+  color: rgb(35, 200, 35);
+}
+
+a:hover {
+  color: rgb(200, 35, 35);
+}
+
+a:active {
+  color: rgb(35, 175, 70);
+}
+
+.card {
+  border-radius: 0rem !important;
+}
+
+.card.no-bg {
+  background-color: rgba(0,0,0,0) !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.full-h {
+  min-height: 100vh;
+  margin: 0 !important;
+}
+
+.fill-sm {
+  width: 100%;
+}
+
+@media (min-width: 400px) {
+  .fill-sm {
+    max-width: 400px;
+  }
+}

@@ -23,7 +23,7 @@ const Layout = (props: { children: any }) => {
   `)
 
   return (
-    <>
+    <div className="container-sm mt-3 mb-3 text-white font-monospace">
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div>
         <main>{props.children}</main>
@@ -31,7 +31,7 @@ const Layout = (props: { children: any }) => {
           © {new Date().getFullYear()}, Angel Hurtado
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 
