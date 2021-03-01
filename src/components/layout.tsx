@@ -48,4 +48,14 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
+export const CentralLayout = (props: { children: any }) => (
+  <div className="row text-center justify-content-center full-h text-white font-monospace">
+    <div className="col align-self-center fill-sm">{props.children}</div>
+  </div>
+)
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
 export default Layout
