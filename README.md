@@ -21,3 +21,11 @@ Utilice estos comandos para comprobar la calidad del código
 - Code linting: `npm run lint`
 
 - Code formating: `npm run format`
+
+## Despliegue en Netlify
+
+Use la siguiente configuración para desplegar en Netlify
+
+- Build command: `gatsby build`
+
+- Publish directory: `public/`
