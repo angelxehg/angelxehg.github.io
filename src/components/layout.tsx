@@ -8,8 +8,30 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Header from "./header"
-import Footer from "./footer"
+import { Link } from "gatsby"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
+
+const Header = () => {
+  const site = useSiteMetadata();
+  return (
+    <div className="card no-bg">
+      <Link to="/">
+        <h1 className="card-title">{site.title}</h1>
+      </Link>
+      <p className="card-text">{site.description}</p>
+    </div>
+  )
+}
+
+const Footer = () => (
+  <footer className="mt-5">
+    <div className="card no-bg">
+      <p className="card-text">
+        © {new Date().getFullYear()}, Angel Hurtado
+      </p>
+    </div>
+  </footer>
+)
 
 const Layout = (props: { children: any }) => {
 
