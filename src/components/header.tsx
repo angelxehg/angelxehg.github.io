@@ -1,25 +1,18 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
 
-const Header = (props: { siteTitle: string }) => (
-  <header>
-    <div>
-      <h1 >
-        <Link to="/">
-          {props.siteTitle}
-        </Link>
-      </h1>
+import { useSiteMetadata } from "../hooks/use-site-metadata"
+
+const Header = () => {
+  const site = useSiteMetadata();
+  return (
+    <div className="card no-bg">
+      <Link to="/">
+        <h1 className="card-title">{site.title}</h1>
+      </Link>
+      <p className="card-text">{site.description}</p>
     </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  )
 }
 
 export default Header
