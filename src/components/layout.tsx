@@ -12,7 +12,7 @@ import { Link } from "gatsby"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const Header = () => {
-  const site = useSiteMetadata();
+  const site = useSiteMetadata()
   return (
     <div className="card no-bg">
       <Link to="/">
@@ -26,20 +26,17 @@ const Header = () => {
 const Footer = () => (
   <footer className="mt-5">
     <div className="card no-bg">
-      <p className="card-text">
-        © {new Date().getFullYear()}, Angel Hurtado
-      </p>
+      <p className="card-text">© {new Date().getFullYear()}, Angel Hurtado</p>
     </div>
   </footer>
 )
 
 const Layout = (props: { children: any }) => {
-
   return (
     <div className="container-sm mt-5 mb-5 text-white font-monospace">
-      <Header/>
+      <Header />
       <main className="mt-5">{props.children}</main>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
