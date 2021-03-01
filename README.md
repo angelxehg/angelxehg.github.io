@@ -18,4 +18,6 @@ Utilice estos comandos para clonar e instalar el sitio:
 
 Utilice estos comandos para comprobar la calidad del código
 
+- Code linting: `npm run lint`
+
 - Code formating: `npm run format`
