@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 const LinkedInIcon = require("../assets/bootstrap-icons/linkedin.svg")
@@ -28,87 +28,83 @@ export const ProfileImage = () => {
   return <Img fluid={data.placeholderImage.childImageSharp.fluid} className="rounded-circle fluid align-self-center" alt="Foto de perfil de Angel" style={{ height: '150px', width: '150px' }} />
 }
 
-const LinkIcon = (props: { to: string, internal: boolean, title: string, showTitle: boolean, children: any }) => {
-  return props.internal ? <Link to={props.to} style={{ margin: '3px' }}>
-    {props.children}
-    {props.showTitle ? props.title : ''}
-  </Link> : <a href={props.to} rel="noreferrer" target="_blank" style={{ margin: '3px' }}>
+const LinkIcon = (props: { to: string, title: string, children: any }) => {
+  return (
+    <a href={props.to} rel="noreferrer" target="_blank" style={{ margin: '3px' }}>
       {props.children}
-      {props.showTitle ? props.title : ''}
     </a>
+  )
 }
 
-LinkIcon.defaultProps = {
-  internal: false,
-  showTitle: false
+interface LinkProps {
+  iconSize: string
 }
 
-export const LinkEmail = (props: {showTitle: boolean}) => (
-  <LinkIcon to="mailto:contact@angelxehg.com" title="contact@angelxehg.com" showTitle={props.showTitle}>
-    <EmailIcon style={{ width: '1.2rem', height: '1.2rem', marginRight: '0.2rem' }} />
+const linkDefaultProps = {
+  iconSize: '1.5rem'
+}
+
+export const LinkEmail = (props: LinkProps) => (
+  <LinkIcon to="mailto:contact@angelxehg.com" title="contact@angelxehg.com">
+    <EmailIcon style={{ width: props.iconSize, height: props.iconSize, marginRight: '0.2rem' }} />
   </LinkIcon>
 )
 
-LinkEmail.defaultProps = {
-  showTitle: false
-}
+LinkEmail.defaultProps = linkDefaultProps
 
-export const LinkLinkedIn = (props: {showTitle: boolean}) => (
-  <LinkIcon to="https://www.linkedin.com/in/angelxehg" title="LinkedIn" showTitle={props.showTitle}>
-    <LinkedInIcon style={{ width: '1.2rem', height: '1.2rem', marginRight: '0.2rem' }} />
+export const LinkEmailLabel = (props: LinkProps) => (
+  <LinkIcon to="mailto:contact@angelxehg.com" title="contact@angelxehg.com">
+    <EmailIcon style={{ width: props.iconSize, height: props.iconSize, marginRight: '0.2rem' }} />
+    contact@angelxehg.com
   </LinkIcon>
 )
 
-LinkLinkedIn.defaultProps = {
-  showTitle: false
-}
+LinkEmailLabel.defaultProps = linkDefaultProps
 
-export const LinkPaypal = (props: {showTitle: boolean}) => (
-  <LinkIcon to="https://www.paypal.me/angelxehg" title="PayPal" showTitle={props.showTitle}>
-    <PayPalIcon style={{ width: '1.2rem', height: '1.2rem', marginRight: '0.2rem' }} />
+export const LinkLinkedIn = (props: LinkProps) => (
+  <LinkIcon to="https://www.linkedin.com/in/angelxehg" title="LinkedIn">
+    <LinkedInIcon style={{ width: props.iconSize, height: props.iconSize, marginRight: '0.2rem' }} />
   </LinkIcon>
 )
 
-LinkPaypal.defaultProps = {
-  showTitle: false
-}
+LinkLinkedIn.defaultProps = linkDefaultProps
 
-export const LinkGitHub = (props: {showTitle: boolean}) => (
-  <LinkIcon to="https://github.com/angelxehg" title="GitHub" showTitle={props.showTitle}>
-    <GitHubIcon style={{ width: '1.2rem', height: '1.2rem', marginRight: '0.2rem' }} />
+export const LinkPaypal = (props: LinkProps) => (
+  <LinkIcon to="https://www.paypal.me/angelxehg" title="PayPal">
+    <PayPalIcon style={{ width: props.iconSize, height: props.iconSize, marginRight: '0.2rem' }} />
   </LinkIcon>
 )
 
-LinkGitHub.defaultProps = {
-  showTitle: false
-}
+LinkPaypal.defaultProps = linkDefaultProps
 
-export const LinkGitLab = (props: {showTitle: boolean}) => (
-  <LinkIcon to="https://gitlab.com/angelxehg" title="GitLab" showTitle={props.showTitle}>
-    <GitlabIcon style={{ width: '1.2rem', height: '1.2rem', marginRight: '0.2rem' }} />
+export const LinkGitHub = (props: LinkProps) => (
+  <LinkIcon to="https://github.com/angelxehg" title="GitHub">
+    <GitHubIcon style={{ width: props.iconSize, height: props.iconSize, marginRight: '0.2rem' }} />
   </LinkIcon>
 )
 
-LinkGitLab.defaultProps = {
-  showTitle: false
-}
+LinkGitHub.defaultProps = linkDefaultProps
 
-export const LinkTwitter = (props: {showTitle: boolean}) => (
-  <LinkIcon to="https://www.twitter.com/angelxehg" title="Twitter" showTitle={props.showTitle}>
-    <Twitter style={{ width: '1.2rem', height: '1.2rem', marginRight: '0.2rem' }} />
+export const LinkGitLab = (props: LinkProps) => (
+  <LinkIcon to="https://gitlab.com/angelxehg" title="GitLab">
+    <GitlabIcon style={{ width: props.iconSize, height: props.iconSize, marginRight: '0.2rem' }} />
   </LinkIcon>
 )
 
-LinkTwitter.defaultProps = {
-  showTitle: false
-}
+LinkGitLab.defaultProps = linkDefaultProps
 
-export const LinkInstagram = (props: {showTitle: boolean}) => (
-  <LinkIcon to="https://www.instagram.com/angelxehg" title="Instagram" showTitle={props.showTitle}>
-    <InstagramIcon style={{ width: '1.2rem', height: '1.2rem', marginRight: '0.2rem' }} />
+export const LinkTwitter = (props: LinkProps) => (
+  <LinkIcon to="https://www.twitter.com/angelxehg" title="Twitter">
+    <Twitter style={{ width: props.iconSize, height: props.iconSize, marginRight: '0.2rem' }} />
   </LinkIcon>
 )
 
-LinkInstagram.defaultProps = {
-  showTitle: false
-}
+LinkTwitter.defaultProps = linkDefaultProps
+
+export const LinkInstagram = (props: LinkProps) => (
+  <LinkIcon to="https://www.instagram.com/angelxehg" title="Instagram">
+    <InstagramIcon style={{ width: props.iconSize, height: props.iconSize, marginRight: '0.2rem' }} />
+  </LinkIcon>
+)
+
+LinkInstagram.defaultProps = linkDefaultProps
