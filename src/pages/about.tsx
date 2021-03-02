@@ -6,8 +6,12 @@ import SEO from "../components/seo"
 const AboutPage = () => (
   <Layout>
     <SEO title="Acerca de" />
-    <h1>Acerca de</h1>
-    <p>Esta es mi descripción</p>
+    <div className="card no-bg">
+      <div className="card-body">
+        <h1 className="card-title">Acerca de</h1>
+        <p className="card-text">Esta es mi descripción</p>
+      </div>
+    </div>
   </Layout>
 )
 

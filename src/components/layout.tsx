@@ -54,7 +54,7 @@ export const CompleteHeader = () => {
 const PageHeader = () => {
   const site = useSiteMetadata()
   return (
-    <div className="card bg-dark">
+    <div className="card no-bg divr">
       <div className="card-body pb-sm-2">
         <div className="row">
           <div className="col-sm-auto">
@@ -75,7 +75,7 @@ const PageHeader = () => {
 
 const PageFooter = () => (
   <footer className="mt-3">
-    <div className="card bg-dark">
+    <div className="card no-bg divr">
       <div className="card-body">
         <div className="row">
           <div className="col text-lg-end text-start order-lg-last">

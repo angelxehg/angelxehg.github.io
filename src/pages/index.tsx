@@ -10,7 +10,7 @@ const IndexPage = () => {
   const site = useSiteMetadata()
   return <CentralLayout>
     <SEO title="Inicio" />
-    <div className="card no-bg pt-3">
+    <div className="card no-bg pt-3 divr">
       <ProfileImage />
       <div className="card-body">
         <h1 className="card-title">{site.title}</h1>
