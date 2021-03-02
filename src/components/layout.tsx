@@ -51,6 +51,29 @@ export const CompleteHeader = () => {
   )
 }
 
+export const Header = (props: { title: string, description: string }) => (
+  <Content divider={true}>
+    <h1 className="card-title">{props.title}</h1>
+    <p className="card-text">{props.description}</p>
+  </Content>
+)
+
+export const Content = (props: { children: any, divider: boolean }) => (
+  <div className={"card no-bg " + (props.divider ? "divr-b" : "")}>
+    <div className="card-body">
+      {props.children}
+    </div>
+  </div>
+)
+
+Content.defaultProps = {
+  divider: false,
+}
+
+Content.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
 const PageHeader = () => {
   const site = useSiteMetadata()
   return (
@@ -74,7 +97,7 @@ const PageHeader = () => {
 }
 
 const PageFooter = () => (
-  <footer className="mt-3">
+  <footer>
     <div className="card no-bg divr">
       <div className="card-body">
         <div className="row">
