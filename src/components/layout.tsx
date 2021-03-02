@@ -11,7 +11,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-import { LinkEmail, LinkWebsite, ProfileImage } from "./social"
+import { LinkEmail, LinkGitHub, LinkGitLab, LinkInstagram, LinkLinkedIn, LinkPaypal, LinkTwitter, LinkWebsite, ProfileImage } from "./social"
 
 
 const Header = () => {
@@ -30,10 +30,18 @@ const Header = () => {
             <p className="card-text">{site.description}</p>
             <div className="row mt-3 text-end">
               <div className="col-md mt-2 mt-md-0">
-                <LinkWebsite />
+                <LinkWebsite showTitle={true}/>
               </div>
               <div className="col-md-auto mt-2 mt-md-0">
-                <LinkEmail />
+                <LinkEmail showTitle={true}/>
+              </div>
+              <div className="col-lg-auto mt-2 mt-md-0">
+                <LinkLinkedIn/>
+                <LinkPaypal/>
+                <LinkGitHub/>
+                <LinkGitLab/>
+                <LinkTwitter/>
+                <LinkInstagram/>
               </div>
             </div>
           </div>
