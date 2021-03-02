@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Angel Hurtado`,
-    description: `Mi sitio web y blog personal`,
+    description: `Desarrollador Web. Estudiante de Ingeniería en Tecnologías de la Información y Comunicación. Trabajo con Javascript, Typescript y Python.`,
     author: `@angelxehg`,
   },
   plugins: [
