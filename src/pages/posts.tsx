@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Grid, Column } from "../components/grid";
+import { Grid, Column } from "../components/grid"
 
 interface PostInterface {
   title: string
@@ -10,12 +10,12 @@ interface PostInterface {
   date: string
 }
 
-const posts: PostInterface[] = [];
+const posts: PostInterface[] = []
 for (let i = 1; i < 10; i++) {
   posts.push({
     title: `Artículo ${i}`,
     extract: `Este es el artículo ${i}, el cual es un ejemplo`,
-    date: `Fecha ${i}/${i}/${i}`
+    date: `Fecha ${i}/${i}/${i}`,
   })
 }
 
@@ -37,7 +37,9 @@ const PostsPage = () => (
   <Layout>
     <SEO title="Blog" />
     <Grid>
-      {posts.map((item, index) => <Post key={index} post={item} />)}
+      {posts.map((item, index) => (
+        <Post key={index} post={item} />
+      ))}
     </Grid>
   </Layout>
 )

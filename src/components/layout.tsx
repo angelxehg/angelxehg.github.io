@@ -4,7 +4,15 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-import { LinkEmailLabel, LinkGitHub, LinkGitLab, LinkInstagram, LinkLinkedIn, LinkPaypal, LinkTwitter } from "./social"
+import {
+  LinkEmailLabel,
+  LinkGitHub,
+  LinkGitLab,
+  LinkInstagram,
+  LinkLinkedIn,
+  LinkPaypal,
+  LinkTwitter,
+} from "./social"
 
 export const PageHeader = () => {
   const site = useSiteMetadata()
@@ -13,14 +21,20 @@ export const PageHeader = () => {
       <div className="card-body pb-sm-2">
         <div className="row">
           <div className="col-sm-auto">
-            <Link to="/" style={{ color: 'white' }}>
+            <Link to="/" style={{ color: "white" }}>
               <p className="card-title h5 mb-sm-2 mb-0">{site.title}</p>
             </Link>
           </div>
           <div className="col-sm mt-sm-0 mt-2">
-            <Link to="/posts" className="me-3">Blog</Link>
-            <Link to="/projects" className="me-3">Proyectos</Link>
-            <Link to="/about" className="me-3">Acerca de</Link>
+            <Link to="/posts" className="me-3">
+              Blog
+            </Link>
+            <Link to="/projects" className="me-3">
+              Proyectos
+            </Link>
+            <Link to="/about" className="me-3">
+              Acerca de
+            </Link>
           </div>
         </div>
       </div>
@@ -47,7 +61,10 @@ export const PageFooter = () => (
             <p className="card-text">
               © {new Date().getFullYear()}, Angel Hurtado
               <br />
-              Iconos de <a href="https://fontawesome.com/license" >FontAwesome</a>, <a href="https://icons.getbootstrap.com/" >Bootstrap Icons</a>, <a href="https://seeklogo.com/" >SeekLogo</a>
+              Iconos de{" "}
+              <a href="https://fontawesome.com/license">FontAwesome</a>,{" "}
+              <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>,{" "}
+              <a href="https://seeklogo.com/">SeekLogo</a>
             </p>
           </div>
         </div>
@@ -56,7 +73,7 @@ export const PageFooter = () => (
   </footer>
 )
 
-const Layout = (props: { children: any, complex: boolean }) => {
+const Layout = (props: { children: any; complex: boolean }) => {
   return (
     <div className="container-sm mt-3 mb-3 text-white font-monospace">
       <PageHeader />
@@ -71,7 +88,7 @@ Layout.propTypes = {
 }
 
 Layout.defaultProps = {
-  complex: false
+  complex: false,
 }
 
 export const CentralLayout = (props: { children: any }) => (

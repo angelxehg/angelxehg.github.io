@@ -2,14 +2,14 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Grid, Column } from "../components/grid";
+import { Grid, Column } from "../components/grid"
 
 interface ProjectInterface {
   title: string
   extract: string
 }
 
-const projects: ProjectInterface[] = [];
+const projects: ProjectInterface[] = []
 for (let i = 1; i < 10; i++) {
   projects.push({
     title: `Proyecto ${i}`,
@@ -34,7 +34,9 @@ const ProjectsPage = () => (
   <Layout>
     <SEO title="Proyectos" />
     <Grid>
-      {projects.map((item, index) => <Project key={index} project={item} />)}
+      {projects.map((item, index) => (
+        <Project key={index} project={item} />
+      ))}
     </Grid>
   </Layout>
 )
