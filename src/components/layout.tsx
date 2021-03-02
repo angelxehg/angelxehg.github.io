@@ -4,52 +4,9 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-import { LinkEmailLabel, LinkGitHub, LinkGitLab, LinkInstagram, LinkLinkedIn, LinkPaypal, LinkTwitter, ProfileImage } from "./social"
+import { LinkEmailLabel, LinkGitHub, LinkGitLab, LinkInstagram, LinkLinkedIn, LinkPaypal, LinkTwitter } from "./social"
 
-
-const ComplexPageHeader = () => {
-  const site = useSiteMetadata()
-  return (
-    <div className="card no-bg divr">
-      <div className="card-body">
-        <div className="row">
-          <div className="col-md-auto">
-            <div className="row">
-              <div className="col d-block d-md-none"></div>
-              <div className="col-auto"><ProfileImage /></div>
-              <div className="col d-block d-md-none"></div>
-            </div>
-          </div>
-          <div className="col text-center text-md-start">
-            <Link to="/">
-              <h1 className="card-title">{site.title}</h1>
-            </Link>
-            <p className="card-text">{site.description}</p>
-            <div className="row mt-3">
-              <div className="col-lg text-lg-start text-center">
-                <Link to="/posts" className="me-3">Blog</Link>
-                <Link to="/projects" className="me-3">Proyectos</Link>
-                <Link to="/about" className="me-3">Acerca de</Link>
-              </div>
-              <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
-                <LinkEmailLabel />
-                <br className="d-block d-sm-none" />
-                <LinkLinkedIn />
-                <LinkPaypal />
-                <LinkGitHub />
-                <LinkGitLab />
-                <LinkTwitter />
-                <LinkInstagram />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const PageHeader = () => {
+export const PageHeader = () => {
   const site = useSiteMetadata()
   return (
     <div className="card no-bg divr">
@@ -61,9 +18,9 @@ const PageHeader = () => {
             </Link>
           </div>
           <div className="col-sm mt-sm-0 mt-2">
-            <Link to="/posts" className="me-3">Blog</Link>
-            <Link to="/projects" className="me-3">Proyectos</Link>
-            <Link to="/about" className="me-3">Acerca de</Link>
+            <Link to="/posts" className="me-4">Blog</Link>
+            <Link to="/projects" className="me-4">Proyectos</Link>
+            <Link to="/about" className="me-4">Acerca de</Link>
           </div>
         </div>
       </div>
@@ -71,7 +28,7 @@ const PageHeader = () => {
   )
 }
 
-const PageFooter = () => (
+export const PageFooter = () => (
   <footer>
     <div className="card no-bg divr">
       <div className="card-body">
@@ -102,7 +59,7 @@ const PageFooter = () => (
 const Layout = (props: { children: any, complex: boolean }) => {
   return (
     <div className="container-sm mt-3 mb-3 text-white font-monospace">
-      {props.complex ? <ComplexPageHeader /> : <PageHeader />}
+      <PageHeader />
       <main>{props.children}</main>
       <PageFooter />
     </div>

@@ -17,20 +17,20 @@ const IndexPage = () => {
         <p className="card-text">{site.description}</p>
         <div className="row">
           <div className="col">
-            <Link to="/posts" className="me-3">Blog</Link>
-            <Link to="/projects" className="me-3">Proyectos</Link>
-            <Link to="/about" className="me-3">Acerca de</Link>
+            <Link to="/about" className="me-4">Acerca de</Link>
+            <Link to="/posts" className="me-4">Blog</Link>
+            <Link to="/projects" className="me-4">Proyectos</Link>
           </div>
         </div>
         <div className="row mt-3">
           <div className="col">
-            <LinkEmail iconSize="1.5rem"/>
-            <LinkLinkedIn iconSize="1.5rem"/>
-            <LinkPaypal iconSize="1.5rem"/>
-            <LinkGitHub iconSize="1.5rem"/>
-            <LinkGitLab iconSize="1.5rem"/>
-            <LinkTwitter iconSize="1.5rem"/>
-            <LinkInstagram iconSize="1.5rem"/>
+            <LinkEmail iconSize="1.5rem" />
+            <LinkLinkedIn iconSize="1.5rem" />
+            <LinkPaypal iconSize="1.5rem" />
+            <LinkGitHub iconSize="1.5rem" />
+            <LinkGitLab iconSize="1.5rem" />
+            <LinkTwitter iconSize="1.5rem" />
+            <LinkInstagram iconSize="1.5rem" />
           </div>
         </div>
       </div>
