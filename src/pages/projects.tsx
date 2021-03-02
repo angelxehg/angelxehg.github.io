@@ -2,7 +2,6 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Breadcrumb } from "../components/breadcrumb";
 import { Grid, Column } from "../components/grid";
 
 interface ProjectInterface {
@@ -34,15 +33,6 @@ const Project = (props: { project: ProjectInterface }) => {
 const ProjectsPage = () => (
   <Layout>
     <SEO title="Proyectos" />
-    <Breadcrumb links={[
-      {
-        title: 'Proyectos',
-        to: '/projects'
-      },
-      {
-        title: 'Todos',
-      },
-    ]}/>
     <Grid>
       {projects.map((item, index) => <Project key={index} project={item} />)}
     </Grid>

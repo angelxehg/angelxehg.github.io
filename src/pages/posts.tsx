@@ -2,7 +2,6 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Breadcrumb } from "../components/breadcrumb";
 import { Grid, Column } from "../components/grid";
 
 interface PostInterface {
@@ -37,15 +36,6 @@ const Post = (props: { post: PostInterface }) => {
 const PostsPage = () => (
   <Layout>
     <SEO title="Blog" />
-    <Breadcrumb links={[
-      {
-        title: 'Blog',
-        to: '/posts'
-      },
-      {
-        title: 'Todos',
-      },
-    ]}/>
     <Grid>
       {posts.map((item, index) => <Post key={index} post={item} />)}
     </Grid>
