@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
 
-import { PageFooter } from "../components/layout"
 import SEO from "../components/seo"
 import { ProfileImage, LinkEmailLabel, LinkLinkedIn, LinkPaypal, LinkGitHub, LinkGitLab, LinkTwitter, LinkInstagram } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
@@ -47,6 +46,18 @@ const ComplexPageHeader = () => {
   )
 }
 
+export const SimplePageFooter = () => (
+  <footer>
+    <div className="card no-bg divr">
+      <div className="card-body">
+        <p className="card-text">
+          © {new Date().getFullYear()}, Angel Hurtado. Iconos de <a href="https://fontawesome.com/license" >FontAwesome</a>, <a href="https://icons.getbootstrap.com/" >Bootstrap Icons</a>, <a href="https://seeklogo.com/" >SeekLogo</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+)
+
 const AboutPage = () => {
   const site = useSiteMetadata()
   return (
@@ -61,7 +72,7 @@ const AboutPage = () => {
           </div>
         </div>
       </main>
-      <PageFooter />
+      <SimplePageFooter />
     </div>
   )
 }
