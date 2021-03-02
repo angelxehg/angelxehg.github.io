@@ -1,8 +1,9 @@
 import React from "react"
-import { Column, Grid } from "../components/grid";
 
-import Layout, { Header } from "../components/layout"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { Breadcrumb } from "../components/breadcrumb";
+import { Grid, Column } from "../components/grid";
 
 interface ProjectInterface {
   title: string
@@ -33,7 +34,15 @@ const Project = (props: { project: ProjectInterface }) => {
 const ProjectsPage = () => (
   <Layout>
     <SEO title="Proyectos" />
-    <Header title="Proyectos" description="Estos son mis proyectos"/>
+    <Breadcrumb links={[
+      {
+        title: 'Proyectos',
+        to: '/projects'
+      },
+      {
+        title: 'Todos',
+      },
+    ]}/>
     <Grid>
       {projects.map((item, index) => <Project key={index} project={item} />)}
     </Grid>

@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 
@@ -22,9 +15,9 @@ const ComplexPageHeader = () => {
         <div className="row">
           <div className="col-md-auto">
             <div className="row">
-            <div className="col d-block d-md-none"></div>
-            <div className="col-auto"><ProfileImage /></div>
-            <div className="col d-block d-md-none"></div>
+              <div className="col d-block d-md-none"></div>
+              <div className="col-auto"><ProfileImage /></div>
+              <div className="col d-block d-md-none"></div>
             </div>
           </div>
           <div className="col text-center text-md-start">
@@ -40,7 +33,7 @@ const ComplexPageHeader = () => {
               </div>
               <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
                 <LinkEmailLabel />
-                <br className="d-block d-sm-none"/>
+                <br className="d-block d-sm-none" />
                 <LinkLinkedIn />
                 <LinkPaypal />
                 <LinkGitHub />
@@ -54,29 +47,6 @@ const ComplexPageHeader = () => {
       </div>
     </div>
   )
-}
-
-export const Header = (props: { title: string, description: string }) => (
-  <Content divider={true}>
-    <h1 className="card-title">{props.title}</h1>
-    <p className="card-text">{props.description}</p>
-  </Content>
-)
-
-export const Content = (props: { children: any, divider: boolean }) => (
-  <div className={"card no-bg " + (props.divider ? "divr-b" : "")}>
-    <div className="card-body">
-      {props.children}
-    </div>
-  </div>
-)
-
-Content.defaultProps = {
-  divider: false,
-}
-
-Content.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 const PageHeader = () => {
@@ -133,7 +103,7 @@ const Layout = (props: { children: any, complex: boolean }) => {
   return (
     <div className="container-sm mt-3 mb-3 text-white font-monospace">
       {props.complex ? <ComplexPageHeader /> : <PageHeader />}
-      <main className="mt-3">{props.children}</main>
+      <main>{props.children}</main>
       <PageFooter />
     </div>
   )
