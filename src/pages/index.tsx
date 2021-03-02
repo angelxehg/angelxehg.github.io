@@ -24,13 +24,13 @@ const IndexPage = () => {
         </div>
         <div className="row mt-3">
           <div className="col">
-            <LinkEmail />
-            <LinkLinkedIn />
-            <LinkPaypal />
-            <LinkGitHub />
-            <LinkGitLab />
-            <LinkTwitter />
-            <LinkInstagram />
+            <LinkEmail iconSize="1.5rem"/>
+            <LinkLinkedIn iconSize="1.5rem"/>
+            <LinkPaypal iconSize="1.5rem"/>
+            <LinkGitHub iconSize="1.5rem"/>
+            <LinkGitLab iconSize="1.5rem"/>
+            <LinkTwitter iconSize="1.5rem"/>
+            <LinkInstagram iconSize="1.5rem"/>
           </div>
         </div>
       </div>

@@ -14,28 +14,33 @@ import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { LinkEmailLabel, LinkGitHub, LinkGitLab, LinkInstagram, LinkLinkedIn, LinkPaypal, LinkTwitter, ProfileImage } from "./social"
 
 
-export const CompleteHeader = () => {
+const ComplexPageHeader = () => {
   const site = useSiteMetadata()
   return (
-    <div className="card no-bg">
+    <div className="card no-bg divr">
       <div className="card-body">
         <div className="row">
-          <div className="col-md-auto text-center">
-            <ProfileImage />
+          <div className="col-md-auto">
+            <div className="row">
+            <div className="col d-block d-md-none"></div>
+            <div className="col-auto"><ProfileImage /></div>
+            <div className="col d-block d-md-none"></div>
+            </div>
           </div>
           <div className="col text-center text-md-start">
             <Link to="/">
               <h1 className="card-title">{site.title}</h1>
             </Link>
             <p className="card-text">{site.description}</p>
-            <div className="row mt-3 text-end">
-              <div className="col-md mt-2 mt-md-0">
+            <div className="row mt-3">
+              <div className="col-lg text-lg-start text-center">
                 <Link to="/posts" className="me-3">Blog</Link>
                 <Link to="/projects" className="me-3">Proyectos</Link>
                 <Link to="/about" className="me-3">Acerca de</Link>
               </div>
-              <div className="col-lg-auto mt-2 mt-md-0">
+              <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
                 <LinkEmailLabel />
+                <br className="d-block d-sm-none"/>
                 <LinkLinkedIn />
                 <LinkPaypal />
                 <LinkGitHub />
@@ -102,14 +107,14 @@ const PageFooter = () => (
       <div className="card-body">
         <div className="row">
           <div className="col text-lg-end text-start order-lg-last">
-            <LinkLinkedIn iconSize="1.2rem" />
-            <LinkPaypal iconSize="1.2rem" />
-            <LinkGitHub iconSize="1.2rem" />
-            <LinkGitLab iconSize="1.2rem" />
-            <LinkTwitter iconSize="1.2rem" />
-            <LinkInstagram iconSize="1.2rem" />
+            <LinkLinkedIn />
+            <LinkPaypal />
+            <LinkGitHub />
+            <LinkGitLab />
+            <LinkTwitter />
+            <LinkInstagram />
             <br />
-            <LinkEmailLabel iconSize="1.2rem" />
+            <LinkEmailLabel />
           </div>
           <div className="col-sm-auto mt-lg-0 mt-3">
             <p className="card-text">
@@ -124,10 +129,10 @@ const PageFooter = () => (
   </footer>
 )
 
-const Layout = (props: { children: any }) => {
+const Layout = (props: { children: any, complex: boolean }) => {
   return (
     <div className="container-sm mt-3 mb-3 text-white font-monospace">
-      <PageHeader />
+      {props.complex ? <ComplexPageHeader /> : <PageHeader />}
       <main className="mt-3">{props.children}</main>
       <PageFooter />
     </div>
@@ -136,6 +141,10 @@ const Layout = (props: { children: any }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+}
+
+Layout.defaultProps = {
+  complex: false
 }
 
 export const CentralLayout = (props: { children: any }) => (

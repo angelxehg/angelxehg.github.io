@@ -41,7 +41,7 @@ interface LinkProps {
 }
 
 const linkDefaultProps = {
-  iconSize: '1.5rem'
+  iconSize: '1.2rem'
 }
 
 export const LinkEmail = (props: LinkProps) => (
