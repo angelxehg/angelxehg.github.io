@@ -9,29 +9,29 @@ const IndexPage = () => {
   const site = useSiteMetadata()
   return <CentralLayout>
     <SEO title="Inicio" />
-    <div className="card no-bg">
-      <ProfileImage/>
+    <div className="card no-bg pt-3">
+      <ProfileImage />
       <div className="card-body">
         <h1 className="card-title">{site.title}</h1>
         <p className="card-text">{site.description}</p>
-      </div>
-      <div className="row">
-        <div className="col">
-          <LinkWebsite />
-          <LinkEmail />
-          <LinkLinkedIn />
-          <LinkPaypal />
-          <LinkGitHub />
-          <LinkGitLab />
-          <LinkTwitter />
-          <LinkInstagram />
+        <div className="row">
+          <div className="col">
+            <LinkWebsite />
+            <LinkEmail />
+            <LinkLinkedIn />
+            <LinkPaypal />
+            <LinkGitHub />
+            <LinkGitLab />
+            <LinkTwitter />
+            <LinkInstagram />
+          </div>
         </div>
-      </div>
-      <div className="row mt-3">
-        <div className="col">
-          <LinkBlog showTitle={true} />
-          <LinkProjects showTitle={true} />
-          <LinkAbout showTitle={true} />
+        <div className="row mt-3">
+          <div className="col">
+            <LinkBlog showTitle={true} />
+            <LinkProjects showTitle={true} />
+            <LinkAbout showTitle={true} />
+          </div>
         </div>
       </div>
     </div>
