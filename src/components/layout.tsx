@@ -18,9 +18,9 @@ export const PageHeader = () => {
             </Link>
           </div>
           <div className="col-sm mt-sm-0 mt-2">
-            <Link to="/posts" className="me-4">Blog</Link>
-            <Link to="/projects" className="me-4">Proyectos</Link>
-            <Link to="/about" className="me-4">Acerca de</Link>
+            <Link to="/posts" className="me-3">Blog</Link>
+            <Link to="/projects" className="me-3">Proyectos</Link>
+            <Link to="/about" className="me-3">Acerca de</Link>
           </div>
         </div>
       </div>

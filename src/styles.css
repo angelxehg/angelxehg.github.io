@@ -6,10 +6,6 @@ body {
   background-color: rgb(20, 25, 20) !important;
 }
 
-a {
-  text-decoration: none;
-}
-
 a:link {
   color: rgb(35, 200, 35);
 }

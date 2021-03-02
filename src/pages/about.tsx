@@ -26,9 +26,8 @@ const ComplexPageHeader = () => {
             <p className="card-text d-none d-md-block">{site.description}</p>
             <div className="row mt-2">
               <div className="col-lg text-lg-start text-center">
-                <Link to="/" className="me-4">Página web</Link>
-                <Link to="/posts" className="me-4">Blog</Link>
-                <Link to="/projects" className="me-4">Proyectos</Link>
+                <Link to="/posts" className="me-3">Blog</Link>
+                <Link to="/projects" className="me-3">Proyectos</Link>
               </div>
               <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
                 <LinkEmailLabel />
