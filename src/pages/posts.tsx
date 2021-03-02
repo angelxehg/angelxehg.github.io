@@ -1,15 +1,45 @@
 import React from "react"
+import { Grid, Column } from "../components/grid";
 
-import Layout, { Content, Header } from "../components/layout"
+import Layout, { Header } from "../components/layout"
 import SEO from "../components/seo"
+
+interface PostInterface {
+  title: string
+  extract: string
+  date: string
+}
+
+const posts: PostInterface[] = [];
+for (let i = 1; i < 10; i++) {
+  posts.push({
+    title: `Artículo ${i}`,
+    extract: `Este es el artículo ${i}, el cual es un ejemplo`,
+    date: `Fecha ${i}/${i}/${i}`
+  })
+}
+
+const Post = (props: { post: PostInterface }) => {
+  return (
+    <Column>
+      <div className="card no-bg">
+        <div className="card-body">
+          <h2 className="card-title">{props.post.title}</h2>
+          <p className="card-text">{props.post.extract}</p>
+          <p className="card-text">{props.post.date}</p>
+        </div>
+      </div>
+    </Column>
+  )
+}
 
 const PostsPage = () => (
   <Layout>
     <SEO title="Blog" />
-    <Header title="Blog" description="Este es mi blog"/>
-    <Content>
-      Hola mundo
-    </Content>
+    <Header title="Blog" description="Este es mi blog" />
+    <Grid>
+      {posts.map((item, index) => <Post key={index} post={item} />)}
+    </Grid>
   </Layout>
 )
 
