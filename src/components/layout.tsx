@@ -14,7 +14,7 @@ import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { LinkAbout, LinkBlog, LinkEmail, LinkGitHub, LinkGitLab, LinkInstagram, LinkLinkedIn, LinkPaypal, LinkProjects, LinkTwitter, LinkWebsite, ProfileImage } from "./social"
 
 
-const Header = () => {
+export const CompleteHeader = () => {
   const site = useSiteMetadata()
   return (
     <div className="card no-bg">
@@ -56,19 +56,35 @@ const Header = () => {
   )
 }
 
+const Header = () => {
+  const site = useSiteMetadata()
+  return (
+    <div className="card bg-dark">
+      <div className="card-body">
+        <Link to="/">
+          <h1 className="card-title">{site.title}</h1>
+        </Link>
+        <p className="card-text">{site.description}</p>
+      </div>
+    </div>
+  )
+}
+
 const Footer = () => (
-  <footer className="mt-5">
-    <div className="card no-bg">
-      <p className="card-text">© {new Date().getFullYear()}, Angel Hurtado. Iconos de <a href="https://fontawesome.com/license" >FontAwesome</a>, <a href="https://icons.getbootstrap.com/" >Bootstrap Icons</a>, <a href="https://seeklogo.com/" >SeekLogo</a></p>
+  <footer className="mt-3">
+    <div className="card bg-dark">
+      <div className="card-body">
+        <p className="card-text">© {new Date().getFullYear()}, Angel Hurtado. Iconos de <a href="https://fontawesome.com/license" >FontAwesome</a>, <a href="https://icons.getbootstrap.com/" >Bootstrap Icons</a>, <a href="https://seeklogo.com/" >SeekLogo</a></p>
+      </div>
     </div>
   </footer>
 )
 
 const Layout = (props: { children: any }) => {
   return (
-    <div className="container-sm mt-5 mb-5 text-white font-monospace">
+    <div className="container-sm mt-3 mb-3 text-white font-monospace">
       <Header />
-      <main className="mt-5">{props.children}</main>
+      <main className="mt-3">{props.children}</main>
       <Footer />
     </div>
   )
