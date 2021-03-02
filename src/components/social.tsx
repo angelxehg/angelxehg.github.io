@@ -26,7 +26,7 @@ export const ProfileImage = () => {
   if (!data?.placeholderImage?.childImageSharp?.fluid) {
     return <div>Picture not found</div>
   }
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} className="rounded-circle fluid" alt="Foto de perfil de Angel" style={{ height: '150px', width: '150px' }} />
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid} className="rounded-circle fluid align-self-center" alt="Foto de perfil de Angel" style={{ height: '150px', width: '150px' }} />
 }
 
 const LinkIcon = (props: { to: string, internal: boolean, title: string, showTitle: boolean, children: any }) => {
