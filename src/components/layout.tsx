@@ -56,15 +56,21 @@ export const CompleteHeader = () => {
   )
 }
 
-const Header = () => {
+const PageHeader = () => {
   const site = useSiteMetadata()
   return (
     <div className="card bg-dark">
-      <div className="card-body">
-        <Link to="/">
-          <h1 className="card-title">{site.title}</h1>
-        </Link>
-        <p className="card-text">{site.description}</p>
+      <div className="card-body pb-sm-2">
+        <div className="row">
+          <div className="col-sm-auto">
+            <Link to="/">
+              <p className="card-title h5">{site.title}</p>
+            </Link>
+          </div>
+          <div className="col">
+            <p className="card-text">{site.subtitle}</p>
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -83,7 +89,7 @@ const Footer = () => (
 const Layout = (props: { children: any }) => {
   return (
     <div className="container-sm mt-3 mb-3 text-white font-monospace">
-      <Header />
+      <PageHeader />
       <main className="mt-3">{props.children}</main>
       <Footer />
     </div>
