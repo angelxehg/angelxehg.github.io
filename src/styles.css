@@ -32,6 +32,27 @@ a:active {
   border: none !important;
 }
 
+.card.divr {
+  border-top-color: rgba(128,255,128,0.25) !important;
+  border-top-style: solid !important;
+  border-top-width: 0.12rem !important;
+  border-bottom-color: rgba(128,255,128,0.25) !important;
+  border-bottom-style: solid !important;
+  border-bottom-width: 0.12rem !important;
+}
+
+.card.divr-t {
+  border-top-color: rgba(128,255,128,0.25) !important;
+  border-top-style: solid !important;
+  border-top-width: 0.12rem !important;
+}
+
+.card.divr-b {
+  border-bottom-color: rgba(128,255,128,0.25) !important;
+  border-bottom-style: solid !important;
+  border-bottom-width: 0.12rem !important;
+}
+
 .full-h {
   min-height: 100vh;
   margin: 0 !important;

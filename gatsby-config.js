@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Angel Hurtado`,
-    description: `Mi sitio web y blog personal`,
+    subtitle: `Desarrollador Web`,
+    description: `Desarrollador Web. Estudiante de Ingeniería en Tecnologías de la Información y Comunicación. Trabajo con Javascript, Typescript y Python.`,
     author: `@angelxehg`,
   },
   plugins: [
@@ -25,6 +26,14 @@ module.exports = {
         theme_color: `#335599`,
         display: `minimal-ui`,
         icon: `src/images/avataaars.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/, // See below to configure properly
+        },
       },
     },
     `gatsby-plugin-gatsby-cloud`,
