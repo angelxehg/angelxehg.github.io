@@ -76,11 +76,29 @@ const PageHeader = () => {
   )
 }
 
-const Footer = () => (
+const PageFooter = () => (
   <footer className="mt-3">
     <div className="card bg-dark">
       <div className="card-body">
-        <p className="card-text">© {new Date().getFullYear()}, Angel Hurtado. Iconos de <a href="https://fontawesome.com/license" >FontAwesome</a>, <a href="https://icons.getbootstrap.com/" >Bootstrap Icons</a>, <a href="https://seeklogo.com/" >SeekLogo</a></p>
+        <div className="row">
+          <div className="col text-lg-end text-start order-lg-last">
+            <LinkLinkedIn />
+            <LinkPaypal />
+            <LinkGitHub />
+            <LinkGitLab />
+            <LinkTwitter />
+            <LinkInstagram />
+            <br />
+            <LinkEmail showTitle={true} />
+          </div>
+          <div className="col-sm-auto mt-lg-0 mt-3">
+            <p className="card-text">
+              © {new Date().getFullYear()}, Angel Hurtado
+              <br />
+              Iconos de <a href="https://fontawesome.com/license" >FontAwesome</a>, <a href="https://icons.getbootstrap.com/" >Bootstrap Icons</a>, <a href="https://seeklogo.com/" >SeekLogo</a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
@@ -91,7 +109,7 @@ const Layout = (props: { children: any }) => {
     <div className="container-sm mt-3 mb-3 text-white font-monospace">
       <PageHeader />
       <main className="mt-3">{props.children}</main>
-      <Footer />
+      <PageFooter />
     </div>
   )
 }
