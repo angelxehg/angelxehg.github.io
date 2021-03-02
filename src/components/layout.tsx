@@ -38,7 +38,7 @@ const Header = () => {
 const Footer = () => (
   <footer className="mt-5">
     <div className="card no-bg">
-      <p className="card-text">© {new Date().getFullYear()}, Angel Hurtado</p>
+      <p className="card-text">© {new Date().getFullYear()}, Angel Hurtado. Iconos de <a href="https://fontawesome.com/license" >FontAwesome</a>, <a href="https://icons.getbootstrap.com/" >Bootstrap Icons</a>, <a href="https://seeklogo.com/" >SeekLogo</a></p>
     </div>
   </footer>
 )
