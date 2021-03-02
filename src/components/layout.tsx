@@ -11,7 +11,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-import { LinkAbout, LinkBlog, LinkEmail, LinkGitHub, LinkGitLab, LinkInstagram, LinkLinkedIn, LinkPaypal, LinkProjects, LinkTwitter, LinkWebsite, ProfileImage } from "./social"
+import { LinkEmail, LinkGitHub, LinkGitLab, LinkInstagram, LinkLinkedIn, LinkPaypal, LinkTwitter, ProfileImage } from "./social"
 
 
 export const CompleteHeader = () => {
@@ -30,16 +30,11 @@ export const CompleteHeader = () => {
             <p className="card-text">{site.description}</p>
             <div className="row mt-3 text-end">
               <div className="col-md mt-2 mt-md-0">
-                <LinkBlog showTitle={true} />
-              </div>
-              <div className="col-md-auto mt-2 mt-md-0">
-                <LinkProjects showTitle={true} />
-              </div>
-              <div className="col-md-auto mt-2 mt-md-0">
-                <LinkAbout showTitle={true} />
+                <Link to="/posts" className="me-3">Blog</Link>
+                <Link to="/projects" className="me-3">Proyectos</Link>
+                <Link to="/about" className="me-3">Acerca de</Link>
               </div>
               <div className="col-lg-auto mt-2 mt-md-0">
-                <LinkWebsite />
                 <LinkEmail />
                 <LinkLinkedIn />
                 <LinkPaypal />
@@ -63,12 +58,14 @@ const PageHeader = () => {
       <div className="card-body pb-sm-2">
         <div className="row">
           <div className="col-sm-auto">
-            <Link to="/">
-              <p className="card-title h5">{site.title}</p>
+            <Link to="/" style={{ color: 'white' }}>
+              <p className="card-title h5 mb-sm-2 mb-0">{site.title}</p>
             </Link>
           </div>
-          <div className="col">
-            <p className="card-text">{site.subtitle}</p>
+          <div className="col-sm mt-sm-0 mt-2">
+            <Link to="/posts" className="me-3">Blog</Link>
+            <Link to="/projects" className="me-3">Proyectos</Link>
+            <Link to="/about" className="me-3">Acerca de</Link>
           </div>
         </div>
       </div>

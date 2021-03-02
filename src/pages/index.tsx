@@ -1,8 +1,9 @@
+import { Link } from "gatsby"
 import React from "react"
 
 import { CentralLayout } from "../components/layout"
 import SEO from "../components/seo"
-import { LinkAbout, LinkBlog, LinkEmail, LinkGitHub, LinkGitLab, LinkInstagram, LinkLinkedIn, LinkPaypal, LinkProjects, LinkTwitter, LinkWebsite, ProfileImage } from "../components/social"
+import { LinkEmail, LinkGitHub, LinkGitLab, LinkInstagram, LinkLinkedIn, LinkPaypal, LinkTwitter, ProfileImage } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const IndexPage = () => {
@@ -16,7 +17,13 @@ const IndexPage = () => {
         <p className="card-text">{site.description}</p>
         <div className="row">
           <div className="col">
-            <LinkWebsite />
+            <Link to="/posts" className="me-3">Blog</Link>
+            <Link to="/projects" className="me-3">Proyectos</Link>
+            <Link to="/about" className="me-3">Acerca de</Link>
+          </div>
+        </div>
+        <div className="row mt-3">
+          <div className="col">
             <LinkEmail />
             <LinkLinkedIn />
             <LinkPaypal />
@@ -24,13 +31,6 @@ const IndexPage = () => {
             <LinkGitLab />
             <LinkTwitter />
             <LinkInstagram />
-          </div>
-        </div>
-        <div className="row mt-3">
-          <div className="col">
-            <LinkBlog showTitle={true} />
-            <LinkProjects showTitle={true} />
-            <LinkAbout showTitle={true} />
           </div>
         </div>
       </div>

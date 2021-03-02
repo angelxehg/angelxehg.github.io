@@ -6,7 +6,6 @@ const LinkedInIcon = require("../assets/bootstrap-icons/linkedin.svg")
 const EmailIcon = require("../assets/bootstrap-icons/envelope-fill.svg")
 const GitHubIcon = require("../assets/bootstrap-icons/github.svg")
 const GitlabIcon = require("../assets/fontawesome/gitlab-brands.svg")
-const Globe2Icon = require("../assets/bootstrap-icons/globe2.svg")
 const InstagramIcon = require("../assets/bootstrap-icons/instagram.svg")
 const Twitter = require("../assets/bootstrap-icons/twitter.svg")
 const PayPalIcon = require("../assets/fontawesome/paypal-brands.svg")
@@ -41,46 +40,6 @@ const LinkIcon = (props: { to: string, internal: boolean, title: string, showTit
 
 LinkIcon.defaultProps = {
   internal: false,
-  showTitle: false
-}
-
-export const LinkWebsite = (props: {showTitle: boolean}) => (
-  <LinkIcon to="/" internal={true} title="angelxehg.com" showTitle={props.showTitle}>
-    <Globe2Icon style={{ width: '1.2rem', height: '1.2rem', marginRight: '0.2rem' }} />
-  </LinkIcon>
-)
-
-LinkWebsite.defaultProps = {
-  showTitle: false
-}
-
-export const LinkBlog = (props: {showTitle: boolean}) => (
-  <LinkIcon to="/posts" internal={true} title="Blog" showTitle={props.showTitle}>
-    <Globe2Icon style={{ width: '1.2rem', height: '1.2rem', marginRight: '0.2rem' }} />
-  </LinkIcon>
-)
-
-LinkBlog.defaultProps = {
-  showTitle: false
-}
-
-export const LinkProjects = (props: {showTitle: boolean}) => (
-  <LinkIcon to="/projects" internal={true} title="Proyectos" showTitle={props.showTitle}>
-    <Globe2Icon style={{ width: '1.2rem', height: '1.2rem', marginRight: '0.2rem' }} />
-  </LinkIcon>
-)
-
-LinkProjects.defaultProps = {
-  showTitle: false
-}
-
-export const LinkAbout = (props: {showTitle: boolean}) => (
-  <LinkIcon to="/about" internal={true} title="Acerca de" showTitle={props.showTitle}>
-    <Globe2Icon style={{ width: '1.2rem', height: '1.2rem', marginRight: '0.2rem' }} />
-  </LinkIcon>
-)
-
-LinkAbout.defaultProps = {
   showTitle: false
 }
 
