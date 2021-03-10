@@ -11,7 +11,7 @@ const Project = (props: { project: IContent }) => {
   const { slug, title, extract, image } = props.project;
   return (
     <Column>
-      <div className="card bg-dark">
+      <div className="card no-bg">
         <GatsbyImage image={image} alt={title} />
         <div className="card-body">
           <Link to={"/" + slug}>
