@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -7,10 +8,11 @@ import { Grid, Column } from "../components/grid"
 import { IContent, useContents } from "../hooks/use-contents"
 
 const Post = (props: { post: IContent }) => {
-  const { slug, title, extract } = props.post;
+  const { slug, title, extract, image } = props.post;
   return (
     <Column>
-      <div className="card no-bg">
+      <div className="card bg-dark">
+        <Img fluid={image} />
         <div className="card-body">
           <Link to={"/" + slug}>
             <h2 className="card-title">{title}</h2>

@@ -2,6 +2,7 @@
 title: "Post Uno"
 date: 2021-01-01
 type: "post"
+featuredImage: ../../../../images/tomatoe-chat.png
 published: true
 ---
 

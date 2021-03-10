@@ -2,6 +2,7 @@
 title: "Xpress Library"
 date: 2021-02-01
 type: "project"
+featuredImage: ../../../../images/xpress-library.png
 published: true
 ---
 

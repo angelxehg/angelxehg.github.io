@@ -7,6 +7,7 @@ interface ContentNode {
   frontmatter: {
     title: string
     type: string
+    featuredImage: any
   }
 }
 
@@ -15,6 +16,7 @@ export interface IContent {
   slug: string
   title: string
   extract: string
+  image: any
 }
 
 export const useContents = (type: string): IContent[] => {
@@ -28,6 +30,13 @@ export const useContents = (type: string): IContent[] => {
           frontmatter {
             title
             type
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
@@ -41,7 +50,8 @@ export const useContents = (type: string): IContent[] => {
         id: node.id,
         slug: node.slug,
         title: node.frontmatter.title,
-        extract: node.excerpt
+        extract: node.excerpt,
+        image: node.frontmatter.featuredImage.childImageSharp.fluid
       }
     });
   return posts

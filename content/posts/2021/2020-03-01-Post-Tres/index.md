@@ -2,6 +2,7 @@
 title: "Post Tres"
 date: 2021-03-01
 type: "post"
+featuredImage: ../../../../images/minted-rooms.png
 published: true
 ---
 

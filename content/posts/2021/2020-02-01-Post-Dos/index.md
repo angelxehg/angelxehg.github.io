@@ -2,6 +2,7 @@
 title: "Post Dos"
 date: 2021-02-01
 type: "post"
+featuredImage: ../../../../images/xpress-library.png
 published: true
 ---
 
