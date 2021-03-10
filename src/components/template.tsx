@@ -25,15 +25,9 @@ export default (props: { data: any }) => {
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <div className="card no-bg">
-        <div className="card-body">
-          <h1 className="card-title">{frontmatter.title}</h1>
-          <p className="card-subtitle">{frontmatter.date}</p>
-        </div>
-        <div className="card-body">
-          <MDXRenderer className="card-text" >{body}</MDXRenderer>
-        </div>
-      </div>
+      <h1 className="mt-3">{frontmatter.title}</h1>
+      <p>{frontmatter.date}</p>
+      <MDXRenderer>{body}</MDXRenderer>
     </Layout>
   )
 }

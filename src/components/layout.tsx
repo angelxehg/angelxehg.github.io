@@ -46,7 +46,7 @@ export const PageHeader = () => {
 export const PageFooter = () => (
   <footer>
     <nav className="navbar navbar-dark pg-bg divr">
-      <div className="row ps-3" style={{width: '100%'}}>
+      <div className="row ps-3" style={{ width: '100%' }}>
         <div className="col text-lg-end text-start order-lg-last">
           <LinkLinkedIn />
           <LinkPaypal />
@@ -74,7 +74,9 @@ const Layout = (props: { children: any; complex: boolean }) => {
   return (
     <div className="container-sm mt-3 mb-3 text-white font-monospace">
       <PageHeader />
-      <main>{props.children}</main>
+      <div className="container-fluid pt-2 pb-3">
+        <main>{props.children}</main>
+      </div>
       <PageFooter />
     </div>
   )
