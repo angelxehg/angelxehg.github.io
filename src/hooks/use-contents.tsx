@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-interface PostNode {
+interface ContentNode {
   id: string
   slug: string
   excerpt: string
@@ -10,16 +10,16 @@ interface PostNode {
   }
 }
 
-export interface IPost {
+export interface IContent {
   id: string
   slug: string
   title: string
   extract: string
 }
 
-export const usePosts = (): IPost[] => {
+export const useContents = (type: string): IContent[] => {
   const { allMdx } = useStaticQuery(graphql`
-    query AllPosts {
+    query AllContents {
       allMdx {
         nodes {
           id
@@ -33,14 +33,16 @@ export const usePosts = (): IPost[] => {
       }
     }
   `);
-  const nodes: PostNode[] = allMdx.nodes;
-  const posts: IPost[] = nodes.map(node => {
-    return {
-      id: node.id,
-      slug: node.slug,
-      title: node.frontmatter.title,
-      extract: node.excerpt
-    }
-  });
+  const nodes: ContentNode[] = allMdx.nodes;
+  const posts: IContent[] = nodes
+    .filter(i => i.frontmatter.type === type)
+    .map(node => {
+      return {
+        id: node.id,
+        slug: node.slug,
+        title: node.frontmatter.title,
+        extract: node.excerpt
+      }
+    });
   return posts
 }

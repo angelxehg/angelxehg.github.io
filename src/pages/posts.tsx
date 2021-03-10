@@ -1,12 +1,12 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Column } from "../components/grid"
-import { usePosts, IPost } from "../hooks/use-posts"
-import { Link } from "gatsby"
+import { IContent, useContents } from "../hooks/use-contents"
 
-const Post = (props: { post: IPost }) => {
+const Post = (props: { post: IContent }) => {
   const { slug, title, extract } = props.post;
   return (
     <Column>
@@ -23,7 +23,7 @@ const Post = (props: { post: IPost }) => {
 }
 
 const PostsPage = () => {
-  const posts = usePosts();
+  const posts = useContents("post");
   return (
     <Layout>
       <SEO title="Blog" />
