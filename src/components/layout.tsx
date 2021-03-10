@@ -27,9 +27,9 @@ export const PageHeader = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className="nav-link" activeClassName="active" to="/posts">Blog</Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link className="nav-link" activeClassName="active" to="/projects">Proyectos</Link>
             </li>
