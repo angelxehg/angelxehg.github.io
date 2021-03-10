@@ -12,7 +12,6 @@ const Post = (props: { post: IPost }) => {
         <div className="card-body">
           <h2 className="card-title">{props.post.title}</h2>
           <p className="card-text">{props.post.extract}</p>
-          <p className="card-text">{props.post.date}</p>
         </div>
       </div>
     </Column>
