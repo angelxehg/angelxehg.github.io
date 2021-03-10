@@ -10,6 +10,16 @@ a:link {
   color: rgb(35, 200, 35);
 }
 
+.navbar-brand {
+  text-decoration: underline;
+}
+
+.navbar-toggler {
+  color: rgba(128,255,128,0.25) !important;
+  border-color: rgba(128,255,128,0.25) !important;
+  border: 2px solid !important;
+}
+
 a:visited {
   color: rgb(35, 200, 35);
 }
@@ -26,13 +36,19 @@ a:active {
   border-radius: 0rem !important;
 }
 
-.card.no-bg {
+.no-bg {
   background-color: rgba(0,0,0,0) !important;
   border-radius: 0 !important;
   border: none !important;
 }
 
-.card.divr {
+.pg-bg {
+  background-color: rgb(5, 10, 5) !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.divr {
   border-top-color: rgba(128,255,128,0.25) !important;
   border-top-style: solid !important;
   border-top-width: 0.12rem !important;
@@ -41,13 +57,13 @@ a:active {
   border-bottom-width: 0.12rem !important;
 }
 
-.card.divr-t {
+.divr-t {
   border-top-color: rgba(128,255,128,0.25) !important;
   border-top-style: solid !important;
   border-top-width: 0.12rem !important;
 }
 
-.card.divr-b {
+.divr-b {
   border-bottom-color: rgba(128,255,128,0.25) !important;
   border-bottom-style: solid !important;
   border-bottom-width: 0.12rem !important;

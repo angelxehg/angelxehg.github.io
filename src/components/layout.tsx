@@ -17,28 +17,29 @@ import {
 export const PageHeader = () => {
   const site = useSiteMetadata()
   return (
-    <div className="card no-bg divr">
-      <div className="card-body pb-sm-2">
-        <div className="row">
-          <div className="col-sm-auto">
-            <Link to="/" style={{ color: "white" }}>
-              <p className="card-title h5 mb-sm-2 mb-0">{site.title}</p>
-            </Link>
-          </div>
-          <div className="col-sm mt-sm-0 mt-2">
-            <Link to="/posts" className="me-3">
-              Blog
-            </Link>
-            <Link to="/projects" className="me-3">
-              Proyectos
-            </Link>
-            <Link to="/about" className="me-3">
-              Acerca de
-            </Link>
-          </div>
+    <nav className="navbar navbar-expand-sm navbar-dark sticky-top pg-bg divr">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/" style={{ color: "white" }}>
+          {site.title}
+        </Link>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link className="nav-link" activeClassName="active" to="/posts">Blog</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" activeClassName="active" to="/projects">Proyectos</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">Acerca de</Link>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
   )
 }
 
