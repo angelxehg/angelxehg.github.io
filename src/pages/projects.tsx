@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,7 +12,7 @@ const Project = (props: { project: IContent }) => {
   return (
     <Column>
       <div className="card bg-dark">
-        <Img fluid={image} />
+        <GatsbyImage image={image} alt={title} />
         <div className="card-body">
           <Link to={"/" + slug}>
             <h2 className="card-title">{title}</h2>

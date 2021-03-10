@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const LinkedInIcon = require("../assets/bootstrap-icons/linkedin.svg")
 const EmailIcon = require("../assets/bootstrap-icons/envelope-fill.svg")
@@ -15,19 +15,17 @@ export const ProfileImage = () => {
     query {
       placeholderImage: file(relativePath: { eq: "profile21sqrsmall.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FIXED)
         }
       }
     }
   `)
-  if (!data?.placeholderImage?.childImageSharp?.fluid) {
+  if (!data?.placeholderImage?.childImageSharp) {
     return <div>Picture not found</div>
   }
   return (
-    <Img
-      fluid={data.placeholderImage.childImageSharp.fluid}
+    <GatsbyImage
+      image={data.placeholderImage.childImageSharp.gatsbyImageData}
       className="rounded-circle fluid align-self-center"
       alt="Foto de perfil de Angel"
       style={{ height: "150px", width: "150px" }}

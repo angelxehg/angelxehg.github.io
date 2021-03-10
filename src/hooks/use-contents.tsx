@@ -32,9 +32,7 @@ export const useContents = (type: string): IContent[] => {
             type
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(layout: FULL_WIDTH)
               }
             }
           }
@@ -51,7 +49,7 @@ export const useContents = (type: string): IContent[] => {
         slug: node.slug,
         title: node.frontmatter.title,
         extract: node.excerpt,
-        image: node.frontmatter.featuredImage.childImageSharp.fluid
+        image: node.frontmatter.featuredImage.childImageSharp.gatsbyImageData
       }
     });
   return posts
