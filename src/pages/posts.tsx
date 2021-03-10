@@ -1,47 +1,40 @@
 import React from "react"
+import { Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Column } from "../components/grid"
+import { IContent, useContents } from "../hooks/use-contents"
 
-interface PostInterface {
-  title: string
-  extract: string
-  date: string
-}
-
-const posts: PostInterface[] = []
-for (let i = 1; i < 10; i++) {
-  posts.push({
-    title: `Artículo ${i}`,
-    extract: `Este es el artículo ${i}, el cual es un ejemplo`,
-    date: `Fecha ${i}/${i}/${i}`,
-  })
-}
-
-const Post = (props: { post: PostInterface }) => {
+const Post = (props: { post: IContent }) => {
+  const { slug, title, extract, image } = props.post;
   return (
     <Column>
       <div className="card no-bg">
+        <GatsbyImage image={image} alt={title} />
         <div className="card-body">
-          <h2 className="card-title">{props.post.title}</h2>
-          <p className="card-text">{props.post.extract}</p>
-          <p className="card-text">{props.post.date}</p>
+          <Link to={"/" + slug}>
+            <h2 className="card-title">{title}</h2>
+          </Link>
+          <p className="card-text">{extract}</p>
         </div>
       </div>
     </Column>
   )
 }
 
-const PostsPage = () => (
-  <Layout>
-    <SEO title="Blog" />
-    <Grid>
-      {posts.map((item, index) => (
-        <Post key={index} post={item} />
-      ))}
-    </Grid>
-  </Layout>
-)
-
+const PostsPage = () => {
+  const posts = useContents("post");
+  return (
+    <Layout>
+      <SEO title="Blog" />
+      <Grid>
+        {posts.map((item, index) => (
+          <Post key={index} post={item} />
+        ))}
+      </Grid>
+    </Layout>
+  )
+}
 export default PostsPage
