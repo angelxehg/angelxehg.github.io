@@ -45,32 +45,28 @@ export const PageHeader = () => {
 
 export const PageFooter = () => (
   <footer>
-    <div className="card no-bg divr">
-      <div className="card-body">
-        <div className="row">
-          <div className="col text-lg-end text-start order-lg-last">
-            <LinkLinkedIn />
-            <LinkPaypal />
-            <LinkGitHub />
-            <LinkGitLab />
-            <LinkTwitter />
-            <LinkInstagram />
-            <br />
-            <LinkEmailLabel />
-          </div>
-          <div className="col-sm-auto mt-lg-0 mt-3">
-            <p className="card-text">
-              © {new Date().getFullYear()}, Angel Hurtado
-              <br />
-              Iconos de{" "}
-              <a href="https://fontawesome.com/license">FontAwesome</a>,{" "}
-              <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>,{" "}
-              <a href="https://seeklogo.com/">SeekLogo</a>
-            </p>
-          </div>
+    <nav className="navbar navbar-dark pg-bg divr">
+      <div className="row ps-3" style={{width: '100%'}}>
+        <div className="col text-lg-end text-start order-lg-last">
+          <LinkLinkedIn />
+          <LinkPaypal />
+          <LinkGitHub />
+          <LinkGitLab />
+          <LinkTwitter />
+          <LinkInstagram />
+          <br />
+          <LinkEmailLabel />
+        </div>
+        <div className="col-sm-auto mt-lg-0 mt-3">
+          © {new Date().getFullYear()}, Angel Hurtado
+          <br />
+          Iconos de{" "}
+          <a href="https://fontawesome.com/license">FontAwesome</a>,{" "}
+          <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>,{" "}
+          <a href="https://seeklogo.com/">SeekLogo</a>
         </div>
       </div>
-    </div>
+    </nav>
   </footer>
 )
 
