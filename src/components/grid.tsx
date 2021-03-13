@@ -10,7 +10,7 @@ Grid.propTypes = {
 }
 
 export const Column = (props: { children: any }) => (
-  <div className="col-xl-4 col-md-6 p-1">{props.children}</div>
+  <div className="col-xl-4 col-md-6 p-md-1 p-0">{props.children}</div>
 )
 
 Column.propTypes = {

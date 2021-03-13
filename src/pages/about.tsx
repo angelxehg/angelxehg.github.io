@@ -3,30 +3,9 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 import SEO from "../components/seo"
-import {
-  ProfileImage,
-  LinkEmailLabel,
-  LinkLinkedIn,
-  LinkPaypal,
-  LinkGitHub,
-  LinkGitLab,
-  LinkTwitter,
-  LinkInstagram,
-} from "../components/social"
+import { ProfileImage, LinkExternal } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-
-const AngularIcon = require("../assets/fontawesome/angular-brands.svg")
-const BootstrapIcon = require("../assets/fontawesome/bootstrap-brands.svg")
-const CSS3Icon = require("../assets/fontawesome/css3-alt-brands.svg")
-const DigitalOceanIcon = require("../assets/fontawesome/digital-ocean-brands.svg")
-const DockerIcon = require("../assets/fontawesome/docker-brands.svg")
-const GitIcon = require("../assets/fontawesome/git-alt-brands.svg")
-const HTML5Icon = require("../assets/fontawesome/html5-brands.svg")
-const JavascriptIcon = require("../assets/fontawesome/js-square-brands.svg")
-const MarkdownIcon = require("../assets/fontawesome/markdown-brands.svg")
-const NodeJSIcon = require("../assets/fontawesome/node-js-brands.svg")
-const PythonIcon = require("../assets/fontawesome/python-brands.svg")
-const UbuntuIcon = require("../assets/fontawesome/ubuntu-brands.svg")
+import { AngularIcon, AWSIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, EmailIcon, FirebaseIcon, GatsbyIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, IconSelector, InstagramIcon, IonicIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NetlifyIcon, NodeJSIcon, NPMIcon, PayPalIcon, PythonIcon, ReactIcon, TwitterIcon, TypescriptIcon, UbuntuIcon } from "../components/icons"
 
 const ComplexPageHeader = () => {
   const site = useSiteMetadata()
@@ -58,14 +37,29 @@ const ComplexPageHeader = () => {
                 </Link>
               </div>
               <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
-                <LinkEmailLabel />
+                <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
+                  <EmailIcon className="me-1" />
+                  contact@angelxehg.com
+                </LinkExternal>
                 <br className="d-block d-sm-none" />
-                <LinkLinkedIn />
-                <LinkPaypal />
-                <LinkGitHub />
-                <LinkGitLab />
-                <LinkTwitter />
-                <LinkInstagram />
+                <LinkExternal to="https://www.linkedin.com/in/angelxehg" title="LinkedIn (/in/angelxehg)">
+                  <LinkedInIcon />
+                </LinkExternal>
+                <LinkExternal to="https://www.paypal.me/angelxehg" title="PayPal (@angelxehg)">
+                  <PayPalIcon />
+                </LinkExternal>
+                <LinkExternal to="https://github.com/angelxehg" title="GitHub (@angelxehg)">
+                  <GitHubIcon />
+                </LinkExternal>
+                <LinkExternal to="https://gitlab.com/angelxehg" title="GitLab (@angelxehg)">
+                  <GitlabIcon />
+                </LinkExternal>
+                <LinkExternal to="https://www.twitter.com/angelxehg" title="Twitter (@angelxehg)">
+                  <TwitterIcon />
+                </LinkExternal>
+                <LinkExternal to="https://www.instagram.com/angelxehg" title="Instagram (@angelxehg)">
+                  <InstagramIcon />
+                </LinkExternal>
               </div>
             </div>
           </div>
@@ -80,10 +74,11 @@ export const SimplePageFooter = () => (
     <nav className="navbar navbar-dark pg-bg divr">
       <div className="container-fluid">
         <p className="m-0">
-          © {new Date().getFullYear()}, Angel Hurtado. Iconos de{" "}
-          <a href="https://fontawesome.com/license">FontAwesome</a>,{" "}
-          <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>,{" "}
-          <a href="https://seeklogo.com/">SeekLogo</a>
+          © {new Date().getFullYear()}, Angel Hurtado. Las marcas y logos pertenecen a sus respectivos dueños. Iconos obtenidos desde{" "}
+          <LinkExternal to="https://fontawesome.com/license">FontAwesome</LinkExternal>{", "}
+          <LinkExternal to="https://icons.getbootstrap.com/">Bootstrap Icons</LinkExternal>{", "}
+          <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>{", "}
+          <LinkExternal to="https://ionicons.com/">Ionicons</LinkExternal>
         </p>
       </div>
     </nav>
@@ -120,52 +115,45 @@ const AboutPage = () => {
           <p>
             <b>Ingeniería en Tecnologías de la Información y Comunicación</b>
             <br />
-            <a href="http://www.utzac.edu.mx" rel="noreferrer" target="_blank">
+            <LinkExternal to="http://www.utzac.edu.mx">
               Universidad Tecnológica del Estado de Zacatecas
-            </a>
+            </LinkExternal>
             <br />
             Guadalupe, Zacatecas | 2017-2021
           </p>
         </FlexibleInfo>
         <FlexibleInfo title="Habilidades">
           <p>
-            <JavascriptIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <HTML5Icon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <CSS3Icon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <AngularIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <NodeJSIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <PythonIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <GitIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <UbuntuIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <DigitalOceanIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <MarkdownIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <BootstrapIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <DockerIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
+            Lenguajes:
+            <HTML5Icon className="ms-1 me-1" />
+            <CSS3Icon className="me-1" />
+            <TypescriptIcon className="me-1" />
+            <JavascriptIcon className="me-1" />
+            <PythonIcon className="me-1" />
             <br />
+            Frameworks:
+            <ReactIcon className="ms-1 me-1" />
+            <IonicIcon className="me-1" />
+            <GatsbyIcon className="me-1" />
+            <AngularIcon className="me-1" />
+            <br />
+            Herramientas:
+            <NodeJSIcon className=" ms-1 me-1" />
+            <NPMIcon className="me-1" />
+            <GitIcon className="me-1" />
+            <MarkdownIcon className="me-1" />
+            <BootstrapIcon className="me-1" />
+            <br />
+            Plataformas:
+            <UbuntuIcon className="ms-1 me-1" />
+            <NetlifyIcon className="me-1" />
+            <AWSIcon className="me-1" />
+            <FirebaseIcon className="me-1" />
+            <DigitalOceanIcon className="me-1" />
+          </p>
+        </FlexibleInfo>
+        <FlexibleInfo title="Aptitudes">
+          <p>
             Aprendizaje autónomo
             <br />
             Orientado a objetivos

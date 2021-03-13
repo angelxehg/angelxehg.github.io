@@ -13,7 +13,7 @@ const Post = (props: { post: IContent }) => {
     <Column>
       <div className="card no-bg">
         <GatsbyImage image={image} alt={title} />
-        <div className="card-body">
+        <div className="card-body pt-2 pb-2 p-1">
           <Link to={"/" + slug}>
             <h2 className="card-title">{title}</h2>
           </Link>
