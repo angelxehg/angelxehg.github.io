@@ -14,11 +14,13 @@ const BootstrapSVG = require("../assets/fontawesome/bootstrap-brands.svg")
 const CSS3SVG = require("../assets/fontawesome/css3-alt-brands.svg")
 const DigitalOceanSVG = require("../assets/fontawesome/digital-ocean-brands.svg")
 const GitSVG = require("../assets/fontawesome/git-alt-brands.svg")
+const GatsbySVG = require("../assets/seek-logo/gatsby.svg")
 const FirebaseSVG = require("../assets/seek-logo/firebase.svg")
 const HTML5SVG = require("../assets/fontawesome/html5-brands.svg")
 const IonicSVG = require("../assets/ionicons/ionic.svg")
 const JavascriptSVG = require("../assets/fontawesome/js-square-brands.svg")
 const MarkdownSVG = require("../assets/fontawesome/markdown-brands.svg")
+const NetlifySVG = require("../assets/seek-logo/netlify.svg")
 const NodeJSSVG = require("../assets/fontawesome/node-js-brands.svg")
 const NPMSVG = require("../assets/fontawesome/npm-brands.svg")
 const PythonSVG = require("../assets/seek-logo/python.svg")
@@ -102,6 +104,10 @@ export const GitIcon = (props: IconProps) => (
   <GitSVG style={useIconStyle(props, "#E94E31")} className={useClasses(props)} />
 )
 
+export const GatsbyIcon = (props: IconProps) => (
+  <GatsbySVG style={useIconStyle(props, "#E94E31")} className={useClasses(props)} />
+)
+
 export const FirebaseIcon = (props: IconProps) => (
   <FirebaseSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
@@ -120,6 +126,10 @@ export const JavascriptIcon = (props: IconProps) => (
 
 export const MarkdownIcon = (props: IconProps) => (
   <MarkdownSVG style={useIconStyle(props, 'white')} className={useClasses(props)} />
+)
+
+export const NetlifyIcon = (props: IconProps) => (
+  <NetlifySVG style={useIconStyle(props, 'white')} className={useClasses(props)} />
 )
 
 export const NodeJSIcon = (props: IconProps) => (
@@ -148,12 +158,14 @@ export enum EIcon {
   Bootstrap = "Bootstrap",
   CSS3 = "CSS3",
   DigitalOcean = "DigitalOcean",
+  Gatsby = "Gatsby",
   Git = "Git",
   Firebase = "Firebase",
   HTML5 = "HTML5",
   Ionic = "Ionic",
   Javascript = "Javascript",
   Markdown = "Markdown",
+  Netlify = "Netlify",
   NodeJS = "NodeJS",
   NPM = "NPM",
   Python = "Python",
@@ -174,6 +186,8 @@ export const IconSelector = (props: IconProps & { icon: EIcon }) => {
       return <CSS3Icon size={props.size} className={props.className} />
     case EIcon.DigitalOcean:
       return <DigitalOceanIcon size={props.size} className={props.className} />
+    case EIcon.Gatsby:
+      return <GatsbyIcon size={props.size} className={props.className} />
     case EIcon.Git:
       return <GitIcon size={props.size} className={props.className} />
     case EIcon.Firebase:
@@ -186,6 +200,8 @@ export const IconSelector = (props: IconProps & { icon: EIcon }) => {
       return <JavascriptIcon size={props.size} className={props.className} />
     case EIcon.Markdown:
       return <MarkdownIcon size={props.size} className={props.className} />
+    case EIcon.Netlify:
+      return <NetlifyIcon size={props.size} className={props.className} />
     case EIcon.NodeJS:
       return <NodeJSIcon size={props.size} className={props.className} />
     case EIcon.NPM:

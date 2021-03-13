@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import { ProfileImage, LinkExternal } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { AngularIcon, AWSIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, EmailIcon, FirebaseIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, IconSelector, InstagramIcon, IonicIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NodeJSIcon, NPMIcon, PayPalIcon, PythonIcon, ReactIcon, TwitterIcon, TypescriptIcon, UbuntuIcon } from "../components/icons"
+import { AngularIcon, AWSIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, EmailIcon, FirebaseIcon, GatsbyIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, IconSelector, InstagramIcon, IonicIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NetlifyIcon, NodeJSIcon, NPMIcon, PayPalIcon, PythonIcon, ReactIcon, TwitterIcon, TypescriptIcon, UbuntuIcon } from "../components/icons"
 
 const ComplexPageHeader = () => {
   const site = useSiteMetadata()
@@ -134,6 +134,7 @@ const AboutPage = () => {
             Frameworks:
             <ReactIcon className="ms-1 me-1" />
             <IonicIcon className="me-1" />
+            <GatsbyIcon className="me-1" />
             <AngularIcon className="me-1" />
             <br />
             Herramientas:
@@ -145,6 +146,7 @@ const AboutPage = () => {
             <br />
             Plataformas:
             <UbuntuIcon className="ms-1 me-1" />
+            <NetlifyIcon className="me-1" />
             <AWSIcon className="me-1" />
             <FirebaseIcon className="me-1" />
             <DigitalOceanIcon className="me-1" />
