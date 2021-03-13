@@ -8,10 +8,10 @@ const InstagramSVG = require("../assets/bootstrap-icons/instagram.svg")
 const TwitterSVG = require("../assets/bootstrap-icons/twitter.svg")
 const PayPalSVG = require("../assets/fontawesome/paypal-brands.svg")
 const AngularSVG = require("../assets/fontawesome/angular-brands.svg")
+const AWSSVG = require("../assets/fontawesome/aws-brands.svg")
 const BootstrapSVG = require("../assets/fontawesome/bootstrap-brands.svg")
 const CSS3SVG = require("../assets/fontawesome/css3-alt-brands.svg")
 const DigitalOceanSVG = require("../assets/fontawesome/digital-ocean-brands.svg")
-const DockerSVG = require("../assets/fontawesome/docker-brands.svg")
 const GitSVG = require("../assets/fontawesome/git-alt-brands.svg")
 const HTML5SVG = require("../assets/fontawesome/html5-brands.svg")
 const JavascriptSVG = require("../assets/fontawesome/js-square-brands.svg")
@@ -65,6 +65,10 @@ export const PayPalIcon = (props: IconProps) => (
   <PayPalSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
 
+export const AWSIcon = (props: IconProps) => (
+  <AWSSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
 export const AngularIcon = (props: IconProps) => (
   <AngularSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
@@ -83,10 +87,6 @@ export const CSS3Icon = (props: IconProps) => (
 
 export const DigitalOceanIcon = (props: IconProps) => (
   <DigitalOceanSVG style={useIconStyle(props)} className={useClasses(props)} />
-)
-
-export const DockerIcon = (props: IconProps) => (
-  <DockerSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
 
 export const GitIcon = (props: IconProps) => (
