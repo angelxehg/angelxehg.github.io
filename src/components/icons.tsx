@@ -15,6 +15,7 @@ const DigitalOceanSVG = require("../assets/fontawesome/digital-ocean-brands.svg"
 const GitSVG = require("../assets/fontawesome/git-alt-brands.svg")
 const FirebaseSVG = require("../assets/seek-logo/firebase.svg")
 const HTML5SVG = require("../assets/fontawesome/html5-brands.svg")
+const IonicSVG = require("../assets/ionicons/ionic.svg")
 const JavascriptSVG = require("../assets/fontawesome/js-square-brands.svg")
 const MarkdownSVG = require("../assets/fontawesome/markdown-brands.svg")
 const NodeJSSVG = require("../assets/fontawesome/node-js-brands.svg")
@@ -104,6 +105,10 @@ export const HTML5Icon = (props: IconProps) => (
   <HTML5SVG style={useIconStyle(props, "#F64A1D")} className={useClasses(props)} />
 )
 
+export const IonicIcon = (props: IconProps) => (
+  <IonicSVG fill="#4886F1" style={useIconStyle(props)} className={useClasses(props)} />
+)
+
 export const JavascriptIcon = (props: IconProps) => (
   <JavascriptSVG style={useIconStyle(props, "#F7DB00")} className={useClasses(props)} />
 )
@@ -141,6 +146,7 @@ export enum EIcon {
   Git = "Git",
   Firebase = "Firebase",
   HTML5 = "HTML5",
+  Ionic = "Ionic",
   Javascript = "Javascript",
   Markdown = "Markdown",
   NodeJS = "NodeJS",
@@ -169,6 +175,8 @@ export const IconSelector = (props: IconProps & { icon: EIcon }) => {
       return <FirebaseIcon size={props.size} className={props.className} />
     case EIcon.HTML5:
       return <HTML5Icon size={props.size} className={props.className} />
+    case EIcon.Ionic:
+      return <IonicIcon size={props.size} className={props.className} />
     case EIcon.Javascript:
       return <JavascriptIcon size={props.size} className={props.className} />
     case EIcon.Markdown:

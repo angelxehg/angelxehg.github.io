@@ -70,7 +70,8 @@ export const PageFooter = () => (
           Iconos de{" "}
           <LinkExternal to="https://fontawesome.com/license">FontAwesome</LinkExternal>{", "}
           <LinkExternal to="https://icons.getbootstrap.com/">Bootstrap Icons</LinkExternal>{", "}
-          <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>
+          <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>{", "}
+          <LinkExternal to="https://ionicons.com/">Ionicons</LinkExternal>
         </div>
       </div>
     </nav>

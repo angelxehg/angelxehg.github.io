@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import { ProfileImage, LinkExternal } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { AngularIcon, AWSIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, EmailIcon, FirebaseIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, IconSelector, InstagramIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NodeJSIcon, NPMIcon, PayPalIcon, PythonIcon, ReactIcon, TwitterIcon, TypescriptIcon, UbuntuIcon } from "../components/icons"
+import { AngularIcon, AWSIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, EmailIcon, FirebaseIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, IconSelector, InstagramIcon, IonicIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NodeJSIcon, NPMIcon, PayPalIcon, PythonIcon, ReactIcon, TwitterIcon, TypescriptIcon, UbuntuIcon } from "../components/icons"
 
 const ComplexPageHeader = () => {
   const site = useSiteMetadata()
@@ -77,7 +77,8 @@ export const SimplePageFooter = () => (
           © {new Date().getFullYear()}, Angel Hurtado. Iconos de{" "}
           <LinkExternal to="https://fontawesome.com/license">FontAwesome</LinkExternal>{", "}
           <LinkExternal to="https://icons.getbootstrap.com/">Bootstrap Icons</LinkExternal>{", "}
-          <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>
+          <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>{", "}
+          <LinkExternal to="https://ionicons.com/">Ionicons</LinkExternal>
         </p>
       </div>
     </nav>
@@ -131,8 +132,9 @@ const AboutPage = () => {
             <PythonIcon className="me-1" />
             <br />
             Frameworks:
-            <AngularIcon className="ms-1 me-1" />
-            <ReactIcon className="me-1" />
+            <ReactIcon className="ms-1 me-1" />
+            <IonicIcon className="me-1" />
+            <AngularIcon className="me-1" />
             <br />
             Herramientas:
             <NodeJSIcon className=" ms-1 me-1" />
