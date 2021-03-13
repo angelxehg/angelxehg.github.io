@@ -2,6 +2,7 @@ import React from 'react';
 
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
 const EmailSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
+const WebSVG = require("../assets/bootstrap-icons/globe2.svg")
 const GitHubSVG = require("../assets/bootstrap-icons/github.svg")
 const GitlabSVG = require("../assets/fontawesome/gitlab-brands.svg")
 const InstagramSVG = require("../assets/bootstrap-icons/instagram.svg")
@@ -43,6 +44,10 @@ const useClasses = (props: IconProps) => props.className || ""
 
 export const LinkedInIcon = (props: IconProps) => (
   <LinkedInSVG style={useIconStyle(props, '#2563AC')} className={useClasses(props)} />
+)
+
+export const WebIcon = (props: IconProps) => (
+  <WebSVG style={useIconStyle(props, 'white')} className={useClasses(props)} />
 )
 
 export const EmailIcon = (props: IconProps) => (

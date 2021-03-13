@@ -11,5 +11,3 @@ published: true
 ![Imagen](../../images/xpress-library.png)
 
 Aplicación de Libros y Autores, Aplicaciones Web. Proyecto escolar
-
-[Código](https://angelxehg.github.io/xpress-library/)

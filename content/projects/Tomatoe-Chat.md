@@ -11,5 +11,3 @@ published: true
 ![Imagen](../../images/tomatoe-chat.png)
 
 Aplicación de chat hecha con Ionic y Firebase. Proyecto escolar
-
-[Código](https://angelxehg.github.io/tomatoe-chat/)

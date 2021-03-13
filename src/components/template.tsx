@@ -4,7 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from './layout'
 import SEO from './seo'
-import { EIcon, GitHubIcon, IconSelector } from './icons'
+import { EIcon, GitHubIcon, IconSelector, WebIcon } from './icons'
 import { LinkExternal } from './social'
 
 export const query = graphql`
@@ -18,6 +18,7 @@ export const query = graphql`
         type
         stack
         github
+        demo
         date(formatString: "YYYY MMMM Do")
       }
     }
@@ -42,6 +43,7 @@ export default (props: { data: any }) => {
         </div>
         <div className="col-auto">
           {frontmatter.github && <LinkExternal to={frontmatter.github} title="Repositorio"><GitHubIcon size="1.5rem" /></LinkExternal>}
+          {frontmatter.demo && <LinkExternal to={frontmatter.demo} title="Demo"><WebIcon size="1.5rem" /></LinkExternal>}
         </div>
       </div>
       {frontmatter.stack && <p>Tecnologias: {icons.map(icon => <IconSelector key={icon} icon={icon} className="me-1" />)}</p>}
