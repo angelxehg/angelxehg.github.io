@@ -60,7 +60,7 @@ export const PageFooter = () => (
           </LinkExternal>
           <br />
           <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
-            <EmailIcon />
+            <EmailIcon className="me-1"/>
             contact@angelxehg.com
           </LinkExternal>
         </div>

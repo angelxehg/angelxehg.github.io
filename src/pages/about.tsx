@@ -51,7 +51,7 @@ const ComplexPageHeader = () => {
               </div>
               <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
                 <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
-                  <EmailIcon />
+                  <EmailIcon className="me-1"/>
                   contact@angelxehg.com
                 </LinkExternal>
                 <br className="d-block d-sm-none" />

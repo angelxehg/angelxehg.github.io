@@ -10,6 +10,7 @@ const PayPalSVG = require("../assets/fontawesome/paypal-brands.svg")
 
 interface IconProps {
   size?: string
+  className?: string
 }
 
 const useIconStyle = (props: IconProps) => {
@@ -20,31 +21,33 @@ const useIconStyle = (props: IconProps) => {
   }
 }
 
+const useClasses = (props: IconProps) => props.className || ""
+
 export const LinkedInIcon = (props: IconProps) => (
-  <LinkedInSVG style={useIconStyle(props)} />
+  <LinkedInSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
 
 export const EmailIcon = (props: IconProps) => (
-  <EmailSVG style={useIconStyle(props)} />
+  <EmailSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
 
 export const GitHubIcon = (props: IconProps) => (
-  <GitHubSVG style={useIconStyle(props)} />
+  <GitHubSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
 
 export const GitlabIcon = (props: IconProps) => (
-  <GitlabSVG style={useIconStyle(props)} />
+  <GitlabSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
 
 export const InstagramIcon = (props: IconProps) => (
-  <InstagramSVG style={useIconStyle(props)} />
+  <InstagramSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
 
 export const TwitterIcon = (props: IconProps) => (
-  <TwitterSVG style={useIconStyle(props)} />
+  <TwitterSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
 
 export const PayPalIcon = (props: IconProps) => (
-  <PayPalSVG style={useIconStyle(props)} />
+  <PayPalSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
 
