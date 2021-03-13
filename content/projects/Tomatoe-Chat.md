@@ -3,6 +3,7 @@ title: "Tomatoe Chat"
 date: 2021-01-01
 type: "project"
 featuredImage: ../../images/tomatoe-chat.png
+stack: "Angular,Javascript,Firebase"
 published: true
 ---
 

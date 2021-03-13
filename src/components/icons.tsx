@@ -128,35 +128,56 @@ export const UbuntuIcon = (props: IconProps) => (
 )
 
 export enum EIcon {
-  LinkedIn,
-  Email,
-  GitHub,
-  Gitlab,
-  Instagram,
-  Twitter,
-  PayPal,
-  Angular,
-  AWS,
-  Bootstrap,
-  CSS3,
-  DigitalOcean,
-  Git,
-  Firebase,
-  HTML5,
-  Javascript,
-  Markdown,
-  NodeJS,
-  NPM,
-  Python,
-  React,
-  Ubuntu,
+  Angular = "Angular",
+  AWS = "AWS",
+  Bootstrap = "Bootstrap",
+  CSS3 = "CSS3",
+  DigitalOcean = "DigitalOcean",
+  Git = "Git",
+  Firebase = "Firebase",
+  HTML5 = "HTML5",
+  Javascript = "Javascript",
+  Markdown = "Markdown",
+  NodeJS = "NodeJS",
+  NPM = "NPM",
+  Python = "Python",
+  React = "React",
+  Ubuntu = "Ubuntu",
 }
 
-export const IconSelector = (props: IconProps & {icon: EIcon}) => {
+export const IconSelector = (props: IconProps & { icon: EIcon }) => {
   switch (props.icon) {
+    case EIcon.Angular:
+      return <AngularIcon size={props.size} className={props.className} />
+    case EIcon.AWS:
+      return <AWSIcon size={props.size} className={props.className} />
+    case EIcon.Bootstrap:
+      return <BootstrapIcon size={props.size} className={props.className} />
+    case EIcon.CSS3:
+      return <CSS3Icon size={props.size} className={props.className} />
+    case EIcon.DigitalOcean:
+      return <DigitalOceanIcon size={props.size} className={props.className} />
+    case EIcon.Git:
+      return <GitIcon size={props.size} className={props.className} />
     case EIcon.Firebase:
-      return <FirebaseIcon size={props.size} className={props.className}/>
+      return <FirebaseIcon size={props.size} className={props.className} />
+    case EIcon.HTML5:
+      return <HTML5Icon size={props.size} className={props.className} />
+    case EIcon.Javascript:
+      return <JavascriptIcon size={props.size} className={props.className} />
+    case EIcon.Markdown:
+      return <MarkdownIcon size={props.size} className={props.className} />
+    case EIcon.NodeJS:
+      return <NodeJSIcon size={props.size} className={props.className} />
+    case EIcon.NPM:
+      return <NPMIcon size={props.size} className={props.className} />
+    case EIcon.Python:
+      return <PythonIcon size={props.size} className={props.className} />
+    case EIcon.React:
+      return <ReactIcon size={props.size} className={props.className} />
+    case EIcon.Ubuntu:
+      return <UbuntuIcon size={props.size} className={props.className} />
     default:
-      return <EmailIcon size={props.size} className={props.className}/>
+      return <EmailIcon size={props.size} className={props.className} />
   }
 }
