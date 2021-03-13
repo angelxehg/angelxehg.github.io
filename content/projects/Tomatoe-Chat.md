@@ -2,7 +2,7 @@
 title: "Tomatoe Chat"
 date: 2021-01-01
 type: "project"
-featuredImage: ../../images/tomatoe-chat.png
+featuredImage: "../../images/tomatoe-chat.png"
 stack: "Ionic,Angular,Javascript,Typescript,Firebase"
 published: true
 ---

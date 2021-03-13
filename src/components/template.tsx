@@ -24,18 +24,19 @@ export const query = graphql`
 
 // eslint-disable-next-line react/display-name
 export default (props: { data: any }) => {
-  const { stack } = props.data.mdx;
   const { frontmatter, body } = props.data.mdx;
   const icons: EIcon[] = [];
-  if (stack) {
-    icons.push(stack.split(',').filter((i: string) => i in EIcon));
+  if (frontmatter.stack) {
+    frontmatter.stack.split(',').filter((i: string) => i in EIcon).map((i: EIcon) => {
+      icons.push(i);
+    })
   }
   return (
     <Layout>
       <SEO title={frontmatter.title} />
       <h1 className="mt-3">{frontmatter.title}</h1>
-      {icons.map(icon => <IconSelector key={icon} icon={icon} className="me-1"/>)}
-      <p>{frontmatter.date}</p>
+      {frontmatter.stack && <p>Tecnologias: {icons.map(icon => <IconSelector key={icon} icon={icon} className="me-1"/>)}</p>}
+      <p>Fecha: {frontmatter.date}</p>
       <MDXRenderer>{body}</MDXRenderer>
     </Layout>
   )

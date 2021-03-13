@@ -2,8 +2,8 @@
 title: "Minted Rooms"
 date: 2021-03-01
 type: "project"
-featuredImage: ../../images/minted-rooms.png
-stack: 'Ionic,React,Javascript,Typescript,NodeJS'
+featuredImage: "../../images/minted-rooms.png"
+stack: "Ionic,React,Javascript,Typescript,NodeJS"
 published: true
 ---
 
