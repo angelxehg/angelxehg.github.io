@@ -1,18 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-
 import { Link } from "gatsby"
-import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-import {
-  LinkEmailLabel,
-  LinkGitHub,
-  LinkGitLab,
-  LinkInstagram,
-  LinkLinkedIn,
-  LinkPaypal,
-  LinkTwitter,
-} from "./social"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { LinkExternal } from "./social"
+import { EmailIcon, GitHubIcon, GitlabIcon, InstagramIcon, LinkedInIcon, PayPalIcon, TwitterIcon } from "./icons"
 
 export const PageHeader = () => {
   const site = useSiteMetadata()
@@ -48,14 +40,29 @@ export const PageFooter = () => (
     <nav className="navbar navbar-dark pg-bg divr">
       <div className="row ps-3" style={{ width: '100%' }}>
         <div className="col text-lg-end text-start order-lg-last">
-          <LinkLinkedIn />
-          <LinkPaypal />
-          <LinkGitHub />
-          <LinkGitLab />
-          <LinkTwitter />
-          <LinkInstagram />
+          <LinkExternal to="https://www.linkedin.com/in/angelxehg" title="LinkedIn (/in/angelxehg)">
+            <LinkedInIcon />
+          </LinkExternal>
+          <LinkExternal to="https://www.paypal.me/angelxehg" title="PayPal (@angelxehg)">
+            <PayPalIcon />
+          </LinkExternal>
+          <LinkExternal to="https://github.com/angelxehg" title="GitHub (@angelxehg)">
+            <GitHubIcon />
+          </LinkExternal>
+          <LinkExternal to="https://gitlab.com/angelxehg" title="GitLab (@angelxehg)">
+            <GitlabIcon />
+          </LinkExternal>
+          <LinkExternal to="https://www.twitter.com/angelxehg" title="Twitter (@angelxehg)">
+            <TwitterIcon />
+          </LinkExternal>
+          <LinkExternal to="https://www.instagram.com/angelxehg" title="Instagram (@angelxehg)">
+            <InstagramIcon />
+          </LinkExternal>
           <br />
-          <LinkEmailLabel />
+          <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
+            <EmailIcon />
+            contact@angelxehg.com
+          </LinkExternal>
         </div>
         <div className="col-sm-auto mt-lg-0 mt-3">
           © {new Date().getFullYear()}, Angel Hurtado

@@ -3,17 +3,9 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 import SEO from "../components/seo"
-import {
-  ProfileImage,
-  LinkEmailLabel,
-  LinkLinkedIn,
-  LinkPaypal,
-  LinkGitHub,
-  LinkGitLab,
-  LinkTwitter,
-  LinkInstagram,
-} from "../components/social"
+import { ProfileImage, LinkExternal } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { EmailIcon, GitHubIcon, GitlabIcon, InstagramIcon, LinkedInIcon, PayPalIcon, TwitterIcon } from "../components/icons"
 
 const AngularIcon = require("../assets/fontawesome/angular-brands.svg")
 const BootstrapIcon = require("../assets/fontawesome/bootstrap-brands.svg")
@@ -58,14 +50,29 @@ const ComplexPageHeader = () => {
                 </Link>
               </div>
               <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
-                <LinkEmailLabel />
+                <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
+                  <EmailIcon />
+                  contact@angelxehg.com
+                </LinkExternal>
                 <br className="d-block d-sm-none" />
-                <LinkLinkedIn />
-                <LinkPaypal />
-                <LinkGitHub />
-                <LinkGitLab />
-                <LinkTwitter />
-                <LinkInstagram />
+                <LinkExternal to="https://www.linkedin.com/in/angelxehg" title="LinkedIn (/in/angelxehg)">
+                  <LinkedInIcon />
+                </LinkExternal>
+                <LinkExternal to="https://www.paypal.me/angelxehg" title="PayPal (@angelxehg)">
+                  <PayPalIcon />
+                </LinkExternal>
+                <LinkExternal to="https://github.com/angelxehg" title="GitHub (@angelxehg)">
+                  <GitHubIcon />
+                </LinkExternal>
+                <LinkExternal to="https://gitlab.com/angelxehg" title="GitLab (@angelxehg)">
+                  <GitlabIcon />
+                </LinkExternal>
+                <LinkExternal to="https://www.twitter.com/angelxehg" title="Twitter (@angelxehg)">
+                  <TwitterIcon />
+                </LinkExternal>
+                <LinkExternal to="https://www.instagram.com/angelxehg" title="Instagram (@angelxehg)">
+                  <InstagramIcon />
+                </LinkExternal>
               </div>
             </div>
           </div>
