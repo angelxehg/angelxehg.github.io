@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import { ProfileImage, LinkExternal } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { AngularIcon, AWSIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, EmailIcon, FirebaseIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, IconSelector, InstagramIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NodeJSIcon, NPMIcon, PayPalIcon, PythonIcon, ReactIcon, TwitterIcon, UbuntuIcon } from "../components/icons"
+import { AngularIcon, AWSIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, EmailIcon, FirebaseIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, IconSelector, InstagramIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NodeJSIcon, NPMIcon, PayPalIcon, PythonIcon, ReactIcon, TwitterIcon, TypescriptIcon, UbuntuIcon } from "../components/icons"
 
 const ComplexPageHeader = () => {
   const site = useSiteMetadata()
@@ -126,6 +126,7 @@ const AboutPage = () => {
             Lenguajes:
             <HTML5Icon className="ms-1 me-1" />
             <CSS3Icon className="me-1" />
+            <TypescriptIcon className="me-1" />
             <JavascriptIcon className="me-1" />
             <PythonIcon className="me-1" />
             <br />

@@ -21,6 +21,7 @@ const NodeJSSVG = require("../assets/fontawesome/node-js-brands.svg")
 const NPMSVG = require("../assets/fontawesome/npm-brands.svg")
 const PythonSVG = require("../assets/seek-logo/python.svg")
 const ReactSVG = require("../assets/fontawesome/react-brands.svg")
+const TypescriptSVG = require("../assets/seek-logo/typescript.svg")
 const UbuntuSVG = require("../assets/fontawesome/ubuntu-brands.svg")
 
 interface IconProps {
@@ -123,6 +124,10 @@ export const PythonIcon = (props: IconProps) => (
   <PythonSVG style={useIconStyle(props, "#356A97")} className={useClasses(props)} />
 )
 
+export const TypescriptIcon = (props: IconProps) => (
+  <TypescriptSVG style={useIconStyle(props, "#356A97")} className={useClasses(props)} />
+)
+
 export const UbuntuIcon = (props: IconProps) => (
   <UbuntuSVG style={useIconStyle(props, "#D74614")} className={useClasses(props)} />
 )
@@ -142,6 +147,7 @@ export enum EIcon {
   NPM = "NPM",
   Python = "Python",
   React = "React",
+  Typescript = "Typescript",
   Ubuntu = "Ubuntu",
 }
 
@@ -175,6 +181,8 @@ export const IconSelector = (props: IconProps & { icon: EIcon }) => {
       return <PythonIcon size={props.size} className={props.className} />
     case EIcon.React:
       return <ReactIcon size={props.size} className={props.className} />
+    case EIcon.Typescript:
+      return <TypescriptIcon size={props.size} className={props.className} />
     case EIcon.Ubuntu:
       return <UbuntuIcon size={props.size} className={props.className} />
     default:
