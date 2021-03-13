@@ -4,7 +4,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from './layout'
 import SEO from './seo'
-import { EIcon, IconSelector } from './icons'
+import { EIcon, GitHubIcon, IconSelector } from './icons'
+import { LinkExternal } from './social'
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -16,6 +17,7 @@ export const query = graphql`
         title
         type
         stack
+        github
         date(formatString: "YYYY MMMM Do")
       }
     }
@@ -34,8 +36,15 @@ export default (props: { data: any }) => {
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <h1 className="mt-3">{frontmatter.title}</h1>
-      {frontmatter.stack && <p>Tecnologias: {icons.map(icon => <IconSelector key={icon} icon={icon} className="me-1"/>)}</p>}
+      <div className="row align-items-center">
+        <div className="col-auto">
+          <h1 className="mt-3">{frontmatter.title}</h1>
+        </div>
+        <div className="col-auto">
+          {frontmatter.github && <LinkExternal to={frontmatter.github} title="Repositorio"><GitHubIcon size="1.5rem" /></LinkExternal>}
+        </div>
+      </div>
+      {frontmatter.stack && <p>Tecnologias: {icons.map(icon => <IconSelector key={icon} icon={icon} className="me-1" />)}</p>}
       <p>Fecha: {frontmatter.date}</p>
       <MDXRenderer>{body}</MDXRenderer>
     </Layout>

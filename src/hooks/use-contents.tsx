@@ -8,6 +8,7 @@ interface ContentNode {
     title: string
     type: string
     stack: string
+    github: string
     featuredImage: any
   }
 }
@@ -18,6 +19,7 @@ export interface IContent {
   title: string
   extract: string
   stack: string 
+  github: string
   image: any
 }
 
@@ -33,6 +35,7 @@ export const useContents = (type: string): IContent[] => {
             title
             type
             stack
+            github
             featuredImage {
               childImageSharp {
                 gatsbyImageData(layout: FULL_WIDTH)
@@ -53,6 +56,7 @@ export const useContents = (type: string): IContent[] => {
         title: node.frontmatter.title,
         extract: node.excerpt,
         stack: node.frontmatter.stack,
+        github: node.frontmatter.github,
         image: node.frontmatter.featuredImage.childImageSharp.gatsbyImageData
       }
     }).sort((a, b) => {
