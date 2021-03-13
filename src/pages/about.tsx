@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import { ProfileImage, LinkExternal } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { AngularIcon, AWSIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, EmailIcon, FirebaseIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, InstagramIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NodeJSIcon, NPMIcon, PayPalIcon, PythonIcon, ReactIcon, TwitterIcon, UbuntuIcon } from "../components/icons"
+import { AngularIcon, AWSIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, EmailIcon, FirebaseIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, IconSelector, InstagramIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NodeJSIcon, NPMIcon, PayPalIcon, PythonIcon, ReactIcon, TwitterIcon, UbuntuIcon } from "../components/icons"
 
 const ComplexPageHeader = () => {
   const site = useSiteMetadata()
@@ -124,27 +124,27 @@ const AboutPage = () => {
         <FlexibleInfo title="Habilidades">
           <p>
             Lenguajes:
-            <HTML5Icon size="1.4rem" className="ms-1 me-1" />
-            <CSS3Icon size="1.4rem" className="me-1" />
-            <JavascriptIcon size="1.4rem" className="me-1" />
-            <PythonIcon size="1.4rem" className="me-1" />
+            <HTML5Icon className="ms-1 me-1" />
+            <CSS3Icon className="me-1" />
+            <JavascriptIcon className="me-1" />
+            <PythonIcon className="me-1" />
             <br />
             Frameworks:
-            <AngularIcon size="1.4rem" className="ms-1 me-1" />
-            <ReactIcon size="1.4rem" className="me-1" />
+            <AngularIcon className="ms-1 me-1" />
+            <ReactIcon className="me-1" />
             <br />
             Herramientas:
-            <NodeJSIcon size="1.4rem" className=" ms-1 me-1" />
-            <NPMIcon size="1.4rem" className="me-1" />
-            <GitIcon size="1.4rem" className="me-1" />
-            <MarkdownIcon size="1.4rem" className="me-1" />
-            <BootstrapIcon size="1.4rem" className="me-1" />
+            <NodeJSIcon className=" ms-1 me-1" />
+            <NPMIcon className="me-1" />
+            <GitIcon className="me-1" />
+            <MarkdownIcon className="me-1" />
+            <BootstrapIcon className="me-1" />
             <br />
             Plataformas:
-            <UbuntuIcon size="1.4rem" className="ms-1 me-1" />
-            <AWSIcon size="1.4rem" className="me-1" />
-            <FirebaseIcon size="1.4rem" className="me-1" />
-            <DigitalOceanIcon size="1.4rem" className="me-1" />
+            <UbuntuIcon className="ms-1 me-1" />
+            <AWSIcon className="me-1" />
+            <FirebaseIcon className="me-1" />
+            <DigitalOceanIcon className="me-1" />
           </p>
         </FlexibleInfo>
         <FlexibleInfo title="Aptitudes">

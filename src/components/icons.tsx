@@ -52,7 +52,7 @@ export const GitHubIcon = (props: IconProps) => (
 )
 
 export const GitlabIcon = (props: IconProps) => (
-  <GitlabSVG style={useIconStyle(props,'#F46A25')} className={useClasses(props)} />
+  <GitlabSVG style={useIconStyle(props, '#F46A25')} className={useClasses(props)} />
 )
 
 export const InstagramIcon = (props: IconProps) => (
@@ -126,3 +126,37 @@ export const PythonIcon = (props: IconProps) => (
 export const UbuntuIcon = (props: IconProps) => (
   <UbuntuSVG style={useIconStyle(props, "#D74614")} className={useClasses(props)} />
 )
+
+export enum EIcon {
+  LinkedIn,
+  Email,
+  GitHub,
+  Gitlab,
+  Instagram,
+  Twitter,
+  PayPal,
+  Angular,
+  AWS,
+  Bootstrap,
+  CSS3,
+  DigitalOcean,
+  Git,
+  Firebase,
+  HTML5,
+  Javascript,
+  Markdown,
+  NodeJS,
+  NPM,
+  Python,
+  React,
+  Ubuntu,
+}
+
+export const IconSelector = (props: IconProps & {icon: EIcon}) => {
+  switch (props.icon) {
+    case EIcon.Firebase:
+      return <FirebaseIcon size={props.size} className={props.className}/>
+    default:
+      return <EmailIcon size={props.size} className={props.className}/>
+  }
+}
