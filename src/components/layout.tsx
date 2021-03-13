@@ -60,18 +60,22 @@ export const PageFooter = () => (
           </LinkExternal>
           <br />
           <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
-            <EmailIcon className="me-1"/>
+            <EmailIcon className="me-1" />
             contact@angelxehg.com
           </LinkExternal>
         </div>
         <div className="col-sm-auto mt-lg-0 mt-3">
           © {new Date().getFullYear()}, Angel Hurtado
           <br />
-          Iconos de{" "}
-          <LinkExternal to="https://fontawesome.com/license">FontAwesome</LinkExternal>{", "}
-          <LinkExternal to="https://icons.getbootstrap.com/">Bootstrap Icons</LinkExternal>{", "}
-          <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>{", "}
-          <LinkExternal to="https://ionicons.com/">Ionicons</LinkExternal>
+          <p className="m-0">
+            Las marcas y logos pertenecen a sus respectivos dueños
+            <br />
+            Iconos obtenidos desde{" "}
+            <LinkExternal to="https://fontawesome.com/license">FontAwesome</LinkExternal>{", "}
+            <LinkExternal to="https://icons.getbootstrap.com/">Bootstrap Icons</LinkExternal>{", "}
+            <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>{", "}
+            <LinkExternal to="https://ionicons.com/">Ionicons</LinkExternal>
+          </p>
         </div>
       </div>
     </nav>

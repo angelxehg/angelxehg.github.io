@@ -17,7 +17,7 @@ const Project = (props: { project: IContent }) => {
       <div className="card no-bg">
         <GatsbyImage image={image} alt={title} />
         <div className="card-body pt-3 pb-3 p-2">
-          <div className="row">
+          <div className="row align-items-center">
             <div className="col-auto">
               <Link to={"/" + slug}>
                 <h2 className="card-title m-0">{title}</h2>

@@ -74,7 +74,7 @@ export const SimplePageFooter = () => (
     <nav className="navbar navbar-dark pg-bg divr">
       <div className="container-fluid">
         <p className="m-0">
-          © {new Date().getFullYear()}, Angel Hurtado. Iconos de{" "}
+          © {new Date().getFullYear()}, Angel Hurtado. Las marcas y logos pertenecen a sus respectivos dueños. Iconos obtenidos desde{" "}
           <LinkExternal to="https://fontawesome.com/license">FontAwesome</LinkExternal>{", "}
           <LinkExternal to="https://icons.getbootstrap.com/">Bootstrap Icons</LinkExternal>{", "}
           <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>{", "}
