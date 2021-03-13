@@ -51,7 +51,7 @@ const ComplexPageHeader = () => {
               </div>
               <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
                 <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
-                  <EmailIcon className="me-1"/>
+                  <EmailIcon className="me-1" />
                   contact@angelxehg.com
                 </LinkExternal>
                 <br className="d-block d-sm-none" />
@@ -88,9 +88,9 @@ export const SimplePageFooter = () => (
       <div className="container-fluid">
         <p className="m-0">
           © {new Date().getFullYear()}, Angel Hurtado. Iconos de{" "}
-          <a href="https://fontawesome.com/license">FontAwesome</a>,{" "}
-          <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>,{" "}
-          <a href="https://seeklogo.com/">SeekLogo</a>
+          <LinkExternal to="https://fontawesome.com/license">FontAwesome</LinkExternal>{", "}
+          <LinkExternal to="https://icons.getbootstrap.com/">Bootstrap Icons</LinkExternal>{", "}
+          <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>
         </p>
       </div>
     </nav>
@@ -127,9 +127,9 @@ const AboutPage = () => {
           <p>
             <b>Ingeniería en Tecnologías de la Información y Comunicación</b>
             <br />
-            <a href="http://www.utzac.edu.mx" rel="noreferrer" target="_blank">
+            <LinkExternal to="http://www.utzac.edu.mx">
               Universidad Tecnológica del Estado de Zacatecas
-            </a>
+            </LinkExternal>
             <br />
             Guadalupe, Zacatecas | 2017-2021
           </p>

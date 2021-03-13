@@ -68,9 +68,9 @@ export const PageFooter = () => (
           © {new Date().getFullYear()}, Angel Hurtado
           <br />
           Iconos de{" "}
-          <a href="https://fontawesome.com/license">FontAwesome</a>,{" "}
-          <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>,{" "}
-          <a href="https://seeklogo.com/">SeekLogo</a>
+          <LinkExternal to="https://fontawesome.com/license">FontAwesome</LinkExternal>{", "}
+          <LinkExternal to="https://icons.getbootstrap.com/">Bootstrap Icons</LinkExternal>{", "}
+          <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>
         </div>
       </div>
     </nav>
