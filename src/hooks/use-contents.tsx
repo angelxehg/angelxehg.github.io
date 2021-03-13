@@ -55,6 +55,14 @@ export const useContents = (type: string): IContent[] => {
         stack: node.frontmatter.stack,
         image: node.frontmatter.featuredImage.childImageSharp.gatsbyImageData
       }
-    });
+    }).sort((a, b) => {
+      if (a.slug < b.slug) {
+        return -1;
+      }
+      if (a.slug > b.slug) {
+        return 1;
+      }
+      return 0;
+    })
   return posts
 }
