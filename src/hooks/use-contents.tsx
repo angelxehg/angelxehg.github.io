@@ -6,6 +6,7 @@ interface ContentNode {
   excerpt: string
   frontmatter: {
     title: string
+    date: string
     type: string
     stack: string
     github: string
@@ -17,6 +18,7 @@ interface ContentNode {
 export interface IContent {
   id: string
   slug: string
+  date: string
   title: string
   extract: string
   stack: string 
@@ -35,6 +37,7 @@ export const useContents = (type: string): IContent[] => {
           excerpt(pruneLength: 100)
           frontmatter {
             title
+            date(formatString: "YYYY-MM-DD")
             type
             stack
             github
@@ -56,6 +59,7 @@ export const useContents = (type: string): IContent[] => {
       return {
         id: node.id,
         slug: node.slug,
+        date: node.frontmatter.date,
         title: node.frontmatter.title,
         extract: node.excerpt,
         stack: node.frontmatter.stack,
@@ -64,11 +68,11 @@ export const useContents = (type: string): IContent[] => {
         image: node.frontmatter.featuredImage.childImageSharp.gatsbyImageData
       }
     }).sort((a, b) => {
-      if (a.slug < b.slug) {
-        return -1;
-      }
-      if (a.slug > b.slug) {
+      if (a.date < b.date) {
         return 1;
+      }
+      if (a.date > b.date) {
+        return -1;
       }
       return 0;
     })
