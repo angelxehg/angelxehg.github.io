@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import { ProfileImage, LinkExternal } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { AngularIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, DockerIcon, EmailIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, InstagramIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NodeJSIcon, PayPalIcon, PythonIcon, TwitterIcon, UbuntuIcon } from "../components/icons"
+import { AngularIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, DockerIcon, EmailIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, InstagramIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NodeJSIcon, NPMIcon, PayPalIcon, PythonIcon, ReactIcon, TwitterIcon, UbuntuIcon } from "../components/icons"
 
 const ComplexPageHeader = () => {
   const site = useSiteMetadata()
@@ -127,7 +127,9 @@ const AboutPage = () => {
             <HTML5Icon size="1.5rem" className="me-1" />
             <CSS3Icon size="1.5rem" className="me-1" />
             <AngularIcon size="1.5rem" className="me-1" />
+            <ReactIcon size="1.5rem" className="me-1" />
             <NodeJSIcon size="1.5rem" className="me-1" />
+            <NPMIcon size="1.5rem" className="me-1" />
             <PythonIcon size="1.5rem" className="me-1" />
             <GitIcon size="1.5rem" className="me-1" />
             <UbuntuIcon size="1.5rem" className="me-1" />

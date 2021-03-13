@@ -17,7 +17,9 @@ const HTML5SVG = require("../assets/fontawesome/html5-brands.svg")
 const JavascriptSVG = require("../assets/fontawesome/js-square-brands.svg")
 const MarkdownSVG = require("../assets/fontawesome/markdown-brands.svg")
 const NodeJSSVG = require("../assets/fontawesome/node-js-brands.svg")
+const NPMSVG = require("../assets/fontawesome/npm-brands.svg")
 const PythonSVG = require("../assets/fontawesome/python-brands.svg")
+const ReactSVG = require("../assets/fontawesome/react-brands.svg")
 const UbuntuSVG = require("../assets/fontawesome/ubuntu-brands.svg")
 
 interface IconProps {
@@ -67,6 +69,10 @@ export const AngularIcon = (props: IconProps) => (
   <AngularSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
 
+export const ReactIcon = (props: IconProps) => (
+  <ReactSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
 export const BootstrapIcon = (props: IconProps) => (
   <BootstrapSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
@@ -101,6 +107,10 @@ export const MarkdownIcon = (props: IconProps) => (
 
 export const NodeJSIcon = (props: IconProps) => (
   <NodeJSSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
+export const NPMIcon = (props: IconProps) => (
+  <NPMSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
 
 export const PythonIcon = (props: IconProps) => (
