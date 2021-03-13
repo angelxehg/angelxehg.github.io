@@ -40,6 +40,9 @@ const LinkIcon = (props: { to: string; title: string; children: any }) => {
       rel="noreferrer"
       target="_blank"
       style={{ margin: "3px" }}
+      data-bs-toggle="tooltip"
+      data-bs-placement="bottom"
+      title={props.title}
     >
       {props.children}
     </a>
