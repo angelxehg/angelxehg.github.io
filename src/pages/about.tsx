@@ -5,20 +5,7 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import { ProfileImage, LinkExternal } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { EmailIcon, GitHubIcon, GitlabIcon, InstagramIcon, LinkedInIcon, PayPalIcon, TwitterIcon } from "../components/icons"
-
-const AngularIcon = require("../assets/fontawesome/angular-brands.svg")
-const BootstrapIcon = require("../assets/fontawesome/bootstrap-brands.svg")
-const CSS3Icon = require("../assets/fontawesome/css3-alt-brands.svg")
-const DigitalOceanIcon = require("../assets/fontawesome/digital-ocean-brands.svg")
-const DockerIcon = require("../assets/fontawesome/docker-brands.svg")
-const GitIcon = require("../assets/fontawesome/git-alt-brands.svg")
-const HTML5Icon = require("../assets/fontawesome/html5-brands.svg")
-const JavascriptIcon = require("../assets/fontawesome/js-square-brands.svg")
-const MarkdownIcon = require("../assets/fontawesome/markdown-brands.svg")
-const NodeJSIcon = require("../assets/fontawesome/node-js-brands.svg")
-const PythonIcon = require("../assets/fontawesome/python-brands.svg")
-const UbuntuIcon = require("../assets/fontawesome/ubuntu-brands.svg")
+import { AngularIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, DockerIcon, EmailIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, InstagramIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NodeJSIcon, PayPalIcon, PythonIcon, TwitterIcon, UbuntuIcon } from "../components/icons"
 
 const ComplexPageHeader = () => {
   const site = useSiteMetadata()
@@ -136,42 +123,18 @@ const AboutPage = () => {
         </FlexibleInfo>
         <FlexibleInfo title="Habilidades">
           <p>
-            <JavascriptIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <HTML5Icon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <CSS3Icon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <AngularIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <NodeJSIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <PythonIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <GitIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <UbuntuIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <DigitalOceanIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <MarkdownIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <BootstrapIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
-            <DockerIcon
-              style={{ width: "1.5rem", height: "1.5rem", margin: "3px" }}
-            />
+            <JavascriptIcon size="1.5rem" className="me-1" />
+            <HTML5Icon size="1.5rem" className="me-1" />
+            <CSS3Icon size="1.5rem" className="me-1" />
+            <AngularIcon size="1.5rem" className="me-1" />
+            <NodeJSIcon size="1.5rem" className="me-1" />
+            <PythonIcon size="1.5rem" className="me-1" />
+            <GitIcon size="1.5rem" className="me-1" />
+            <UbuntuIcon size="1.5rem" className="me-1" />
+            <DigitalOceanIcon size="1.5rem" className="me-1" />
+            <MarkdownIcon size="1.5rem" className="me-1" />
+            <BootstrapIcon size="1.5rem" className="me-1" />
+            <DockerIcon size="1.5rem" className="me-1" />
             <br />
             Aprendizaje autónomo
             <br />

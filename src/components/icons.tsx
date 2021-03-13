@@ -7,6 +7,18 @@ const GitlabSVG = require("../assets/fontawesome/gitlab-brands.svg")
 const InstagramSVG = require("../assets/bootstrap-icons/instagram.svg")
 const TwitterSVG = require("../assets/bootstrap-icons/twitter.svg")
 const PayPalSVG = require("../assets/fontawesome/paypal-brands.svg")
+const AngularSVG = require("../assets/fontawesome/angular-brands.svg")
+const BootstrapSVG = require("../assets/fontawesome/bootstrap-brands.svg")
+const CSS3SVG = require("../assets/fontawesome/css3-alt-brands.svg")
+const DigitalOceanSVG = require("../assets/fontawesome/digital-ocean-brands.svg")
+const DockerSVG = require("../assets/fontawesome/docker-brands.svg")
+const GitSVG = require("../assets/fontawesome/git-alt-brands.svg")
+const HTML5SVG = require("../assets/fontawesome/html5-brands.svg")
+const JavascriptSVG = require("../assets/fontawesome/js-square-brands.svg")
+const MarkdownSVG = require("../assets/fontawesome/markdown-brands.svg")
+const NodeJSSVG = require("../assets/fontawesome/node-js-brands.svg")
+const PythonSVG = require("../assets/fontawesome/python-brands.svg")
+const UbuntuSVG = require("../assets/fontawesome/ubuntu-brands.svg")
 
 interface IconProps {
   size?: string
@@ -51,3 +63,50 @@ export const PayPalIcon = (props: IconProps) => (
   <PayPalSVG style={useIconStyle(props)} className={useClasses(props)} />
 )
 
+export const AngularIcon = (props: IconProps) => (
+  <AngularSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
+export const BootstrapIcon = (props: IconProps) => (
+  <BootstrapSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
+export const CSS3Icon = (props: IconProps) => (
+  <CSS3SVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
+export const DigitalOceanIcon = (props: IconProps) => (
+  <DigitalOceanSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
+export const DockerIcon = (props: IconProps) => (
+  <DockerSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
+export const GitIcon = (props: IconProps) => (
+  <GitSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
+export const HTML5Icon = (props: IconProps) => (
+  <HTML5SVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
+export const JavascriptIcon = (props: IconProps) => (
+  <JavascriptSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
+export const MarkdownIcon = (props: IconProps) => (
+  <MarkdownSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
+export const NodeJSIcon = (props: IconProps) => (
+  <NodeJSSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
+export const PythonIcon = (props: IconProps) => (
+  <PythonSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
+
+export const UbuntuIcon = (props: IconProps) => (
+  <UbuntuSVG style={useIconStyle(props)} className={useClasses(props)} />
+)
