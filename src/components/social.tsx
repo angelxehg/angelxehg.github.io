@@ -2,13 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-const LinkedInIcon = require("../assets/bootstrap-icons/linkedin.svg")
-const EmailIcon = require("../assets/bootstrap-icons/envelope-fill.svg")
-const GitHubIcon = require("../assets/bootstrap-icons/github.svg")
-const GitlabIcon = require("../assets/fontawesome/gitlab-brands.svg")
-const InstagramIcon = require("../assets/bootstrap-icons/instagram.svg")
-const Twitter = require("../assets/bootstrap-icons/twitter.svg")
-const PayPalIcon = require("../assets/fontawesome/paypal-brands.svg")
+import { EmailIcon, GitHubIcon, GitlabIcon, InstagramIcon, LinkedInIcon, PayPalIcon, TwitterIcon } from "./icons"
 
 export const ProfileImage = () => {
   const data = useStaticQuery(graphql`
@@ -59,13 +53,7 @@ const linkDefaultProps = {
 
 export const LinkEmail = (props: LinkProps) => (
   <LinkIcon to="mailto:contact@angelxehg.com" title="contact@angelxehg.com">
-    <EmailIcon
-      style={{
-        width: props.iconSize,
-        height: props.iconSize,
-        marginRight: "0.2rem",
-      }}
-    />
+    <EmailIcon size={props.iconSize}/>
   </LinkIcon>
 )
 
@@ -73,13 +61,7 @@ LinkEmail.defaultProps = linkDefaultProps
 
 export const LinkEmailLabel = (props: LinkProps) => (
   <LinkIcon to="mailto:contact@angelxehg.com" title="contact@angelxehg.com">
-    <EmailIcon
-      style={{
-        width: props.iconSize,
-        height: props.iconSize,
-        marginRight: "0.2rem",
-      }}
-    />
+    <EmailIcon size={props.iconSize}/>
     contact@angelxehg.com
   </LinkIcon>
 )
@@ -88,13 +70,7 @@ LinkEmailLabel.defaultProps = linkDefaultProps
 
 export const LinkLinkedIn = (props: LinkProps) => (
   <LinkIcon to="https://www.linkedin.com/in/angelxehg" title="LinkedIn">
-    <LinkedInIcon
-      style={{
-        width: props.iconSize,
-        height: props.iconSize,
-        marginRight: "0.2rem",
-      }}
-    />
+    <LinkedInIcon size={props.iconSize}/>
   </LinkIcon>
 )
 
@@ -102,13 +78,7 @@ LinkLinkedIn.defaultProps = linkDefaultProps
 
 export const LinkPaypal = (props: LinkProps) => (
   <LinkIcon to="https://www.paypal.me/angelxehg" title="PayPal">
-    <PayPalIcon
-      style={{
-        width: props.iconSize,
-        height: props.iconSize,
-        marginRight: "0.2rem",
-      }}
-    />
+    <PayPalIcon size={props.iconSize}/>
   </LinkIcon>
 )
 
@@ -116,13 +86,7 @@ LinkPaypal.defaultProps = linkDefaultProps
 
 export const LinkGitHub = (props: LinkProps) => (
   <LinkIcon to="https://github.com/angelxehg" title="GitHub">
-    <GitHubIcon
-      style={{
-        width: props.iconSize,
-        height: props.iconSize,
-        marginRight: "0.2rem",
-      }}
-    />
+    <GitHubIcon size={props.iconSize}/>
   </LinkIcon>
 )
 
@@ -130,13 +94,7 @@ LinkGitHub.defaultProps = linkDefaultProps
 
 export const LinkGitLab = (props: LinkProps) => (
   <LinkIcon to="https://gitlab.com/angelxehg" title="GitLab">
-    <GitlabIcon
-      style={{
-        width: props.iconSize,
-        height: props.iconSize,
-        marginRight: "0.2rem",
-      }}
-    />
+    <GitlabIcon size={props.iconSize}/>
   </LinkIcon>
 )
 
@@ -144,13 +102,7 @@ LinkGitLab.defaultProps = linkDefaultProps
 
 export const LinkTwitter = (props: LinkProps) => (
   <LinkIcon to="https://www.twitter.com/angelxehg" title="Twitter">
-    <Twitter
-      style={{
-        width: props.iconSize,
-        height: props.iconSize,
-        marginRight: "0.2rem",
-      }}
-    />
+    <TwitterIcon size={props.iconSize}/>
   </LinkIcon>
 )
 
@@ -158,13 +110,7 @@ LinkTwitter.defaultProps = linkDefaultProps
 
 export const LinkInstagram = (props: LinkProps) => (
   <LinkIcon to="https://www.instagram.com/angelxehg" title="Instagram">
-    <InstagramIcon
-      style={{
-        width: props.iconSize,
-        height: props.iconSize,
-        marginRight: "0.2rem",
-      }}
-    />
+    <InstagramIcon size={props.iconSize}/>
   </LinkIcon>
 )
 
