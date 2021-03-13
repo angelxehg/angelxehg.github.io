@@ -124,26 +124,26 @@ const AboutPage = () => {
         <FlexibleInfo title="Habilidades">
           <p>
             Lenguajes:
-            <HTML5Icon className="ms-1 me-1" />
-            <JavascriptIcon className="me-1" />
-            <CSS3Icon className="me-1" />
-            <PythonIcon className="me-1" />
+            <HTML5Icon size="1.4rem" className="ms-1 me-1" />
+            <CSS3Icon size="1.4rem" className="me-1" />
+            <JavascriptIcon size="1.4rem" className="me-1" />
+            <PythonIcon size="1.4rem" className="me-1" />
             <br />
             Frameworks:
-            <AngularIcon className="ms-1 me-1" />
-            <ReactIcon className="me-1" />
+            <AngularIcon size="1.4rem" className="ms-1 me-1" />
+            <ReactIcon size="1.4rem" className="me-1" />
             <br />
             Herramientas:
-            <NodeJSIcon className=" ms-1 me-1" />
-            <NPMIcon className="me-1" />
-            <GitIcon className="me-1" />
-            <MarkdownIcon className="me-1" />
-            <BootstrapIcon className="me-1" />
+            <NodeJSIcon size="1.4rem" className=" ms-1 me-1" />
+            <NPMIcon size="1.4rem" className="me-1" />
+            <GitIcon size="1.4rem" className="me-1" />
+            <MarkdownIcon size="1.4rem" className="me-1" />
+            <BootstrapIcon size="1.4rem" className="me-1" />
             <br />
             Plataformas:
-            <UbuntuIcon className="ms-1 me-1" />
-            <AWSIcon className="me-1" />
-            <DigitalOceanIcon className="me-1" />
+            <UbuntuIcon size="1.4rem" className="ms-1 me-1" />
+            <AWSIcon size="1.4rem" className="me-1" />
+            <DigitalOceanIcon size="1.4rem" className="me-1" />
           </p>
         </FlexibleInfo>
         <FlexibleInfo title="Aptitudes">
