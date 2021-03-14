@@ -1,4 +1,4 @@
-# angelxehg-website
+# angelxehg.com
 
 Mi sitio web y blog personal
 
