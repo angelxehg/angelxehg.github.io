@@ -10,8 +10,11 @@ import { EIcon, GitHubIcon, IconSelector, WebIcon } from "../components/icons"
 import { LinkExternal } from "../components/social"
 
 const Project = (props: { project: IContent }) => {
-  const { slug, title, extract, image, stack, github, demo } = props.project;
-  const icons = stack.split(',').filter(i => i in EIcon).map(i => i as EIcon)
+  const { slug, title, extract, image, stack, github, demo } = props.project
+  const icons = stack
+    .split(",")
+    .filter(i => i in EIcon)
+    .map(i => i as EIcon)
   return (
     <Column>
       <div className="card no-bg">
@@ -24,11 +27,21 @@ const Project = (props: { project: IContent }) => {
               </Link>
             </div>
             <div className="col-auto p-0">
-              {github && <LinkExternal to={github} title="Repositorio"><GitHubIcon size="1.5rem"/></LinkExternal>}
-              {demo && <LinkExternal to={demo} title="Demo"><WebIcon size="1.5rem"/></LinkExternal>}
+              {github && (
+                <LinkExternal to={github} title="Repositorio">
+                  <GitHubIcon size="1.5rem" />
+                </LinkExternal>
+              )}
+              {demo && (
+                <LinkExternal to={demo} title="Demo">
+                  <WebIcon size="1.5rem" />
+                </LinkExternal>
+              )}
             </div>
           </div>
-          {icons.map(icon => <IconSelector key={icon} icon={icon} className="me-1" />)}
+          {icons.map(icon => (
+            <IconSelector key={icon} icon={icon} className="me-1" />
+          ))}
           <p className="card-text">{extract}</p>
         </div>
       </div>
@@ -37,7 +50,7 @@ const Project = (props: { project: IContent }) => {
 }
 
 const ProjectsPage = () => {
-  const projects = useContents("project");
+  const projects = useContents("project")
   return (
     <Layout>
       <SEO title="Proyectos" />

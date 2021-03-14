@@ -21,7 +21,7 @@ export interface IContent {
   date: string
   title: string
   extract: string
-  stack: string 
+  stack: string
   github: string
   demo: string
   image: any
@@ -51,8 +51,8 @@ export const useContents = (type: string): IContent[] => {
         }
       }
     }
-  `);
-  const nodes: ContentNode[] = allMdx.nodes;
+  `)
+  const nodes: ContentNode[] = allMdx.nodes
   const posts: IContent[] = nodes
     .filter(i => i.frontmatter.type === type)
     .map(node => {
@@ -65,16 +65,17 @@ export const useContents = (type: string): IContent[] => {
         stack: node.frontmatter.stack,
         github: node.frontmatter.github,
         demo: node.frontmatter.demo,
-        image: node.frontmatter.featuredImage.childImageSharp.gatsbyImageData
+        image: node.frontmatter.featuredImage.childImageSharp.gatsbyImageData,
       }
-    }).sort((a, b) => {
+    })
+    .sort((a, b) => {
       if (a.date < b.date) {
-        return 1;
+        return 1
       }
       if (a.date > b.date) {
-        return -1;
+        return -1
       }
-      return 0;
+      return 0
     })
   return posts
 }

@@ -8,7 +8,7 @@ import { Grid, Column } from "../components/grid"
 import { IContent, useContents } from "../hooks/use-contents"
 
 const Post = (props: { post: IContent }) => {
-  const { slug, title, extract, image } = props.post;
+  const { slug, title, extract, image } = props.post
   return (
     <Column>
       <div className="card no-bg">
@@ -25,7 +25,7 @@ const Post = (props: { post: IContent }) => {
 }
 
 const PostsPage = () => {
-  const posts = useContents("post");
+  const posts = useContents("post")
   return (
     <Layout>
       <SEO title="Blog" />

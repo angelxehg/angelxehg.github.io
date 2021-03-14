@@ -4,7 +4,15 @@ import { Link } from "gatsby"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { LinkExternal } from "./social"
-import { EmailIcon, GitHubIcon, GitlabIcon, InstagramIcon, LinkedInIcon, PayPalIcon, TwitterIcon } from "./icons"
+import {
+  EmailIcon,
+  GitHubIcon,
+  GitlabIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  PayPalIcon,
+  TwitterIcon,
+} from "./icons"
 
 export const PageHeader = () => {
   const site = useSiteMetadata()
@@ -14,7 +22,15 @@ export const PageHeader = () => {
         <Link className="navbar-brand" to="/" style={{ color: "white" }}>
           {site.title}
         </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -23,10 +39,18 @@ export const PageHeader = () => {
               <Link className="nav-link" activeClassName="active" to="/posts">Blog</Link>
             </li> */}
             <li className="nav-item">
-              <Link className="nav-link" activeClassName="active" to="/projects">Proyectos</Link>
+              <Link
+                className="nav-link"
+                activeClassName="active"
+                to="/projects"
+              >
+                Proyectos
+              </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">Acerca de</Link>
+              <Link className="nav-link" to="/about">
+                Acerca de
+              </Link>
             </li>
           </ul>
         </div>
@@ -38,24 +62,42 @@ export const PageHeader = () => {
 export const PageFooter = () => (
   <footer>
     <nav className="navbar navbar-dark pg-bg divr">
-      <div className="row ps-3" style={{ width: '100%' }}>
+      <div className="row ps-3" style={{ width: "100%" }}>
         <div className="col text-lg-end text-start order-lg-last">
-          <LinkExternal to="https://www.linkedin.com/in/angelxehg" title="LinkedIn (/in/angelxehg)">
+          <LinkExternal
+            to="https://www.linkedin.com/in/angelxehg"
+            title="LinkedIn (/in/angelxehg)"
+          >
             <LinkedInIcon />
           </LinkExternal>
-          <LinkExternal to="https://www.paypal.me/angelxehg" title="PayPal (@angelxehg)">
+          <LinkExternal
+            to="https://www.paypal.me/angelxehg"
+            title="PayPal (@angelxehg)"
+          >
             <PayPalIcon />
           </LinkExternal>
-          <LinkExternal to="https://github.com/angelxehg" title="GitHub (@angelxehg)">
+          <LinkExternal
+            to="https://github.com/angelxehg"
+            title="GitHub (@angelxehg)"
+          >
             <GitHubIcon />
           </LinkExternal>
-          <LinkExternal to="https://gitlab.com/angelxehg" title="GitLab (@angelxehg)">
+          <LinkExternal
+            to="https://gitlab.com/angelxehg"
+            title="GitLab (@angelxehg)"
+          >
             <GitlabIcon />
           </LinkExternal>
-          <LinkExternal to="https://www.twitter.com/angelxehg" title="Twitter (@angelxehg)">
+          <LinkExternal
+            to="https://www.twitter.com/angelxehg"
+            title="Twitter (@angelxehg)"
+          >
             <TwitterIcon />
           </LinkExternal>
-          <LinkExternal to="https://www.instagram.com/angelxehg" title="Instagram (@angelxehg)">
+          <LinkExternal
+            to="https://www.instagram.com/angelxehg"
+            title="Instagram (@angelxehg)"
+          >
             <InstagramIcon />
           </LinkExternal>
           <br />
@@ -71,9 +113,16 @@ export const PageFooter = () => (
             Las marcas y logos pertenecen a sus respectivos dueños
             <br />
             Iconos obtenidos desde{" "}
-            <LinkExternal to="https://fontawesome.com/license">FontAwesome</LinkExternal>{", "}
-            <LinkExternal to="https://icons.getbootstrap.com/">Bootstrap Icons</LinkExternal>{", "}
-            <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>{", "}
+            <LinkExternal to="https://fontawesome.com/license">
+              FontAwesome
+            </LinkExternal>
+            {", "}
+            <LinkExternal to="https://icons.getbootstrap.com/">
+              Bootstrap Icons
+            </LinkExternal>
+            {", "}
+            <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>
+            {", "}
             <LinkExternal to="https://ionicons.com/">Ionicons</LinkExternal>
           </p>
         </div>

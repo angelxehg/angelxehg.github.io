@@ -39,7 +39,7 @@ export const LinkExternal = (props: LinkExternalProps) => (
     style={{ margin: "3px" }}
     data-bs-toggle="tooltip"
     data-bs-placement="bottom"
-    title={props.title || 'Link'}
+    title={props.title || "Link"}
   >
     {props.children}
   </a>

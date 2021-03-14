@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react"
 
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
 const EmailSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
@@ -34,22 +34,25 @@ interface IconProps {
 }
 
 const useIconStyle = (props: IconProps, defaultColor?: string) => {
-  const { size } = props;
+  const { size } = props
   return {
-    width: size || '1.2rem',
-    height: size || '1.2rem',
-    color: defaultColor || 'white'
+    width: size || "1.2rem",
+    height: size || "1.2rem",
+    color: defaultColor || "white",
   }
 }
 
 const useClasses = (props: IconProps) => props.className || ""
 
 export const LinkedInIcon = (props: IconProps) => (
-  <LinkedInSVG style={useIconStyle(props, '#2563AC')} className={useClasses(props)} />
+  <LinkedInSVG
+    style={useIconStyle(props, "#2563AC")}
+    className={useClasses(props)}
+  />
 )
 
 export const WebIcon = (props: IconProps) => (
-  <WebSVG style={useIconStyle(props, 'white')} className={useClasses(props)} />
+  <WebSVG style={useIconStyle(props, "white")} className={useClasses(props)} />
 )
 
 export const EmailIcon = (props: IconProps) => (
@@ -57,55 +60,94 @@ export const EmailIcon = (props: IconProps) => (
 )
 
 export const GitHubIcon = (props: IconProps) => (
-  <GitHubSVG style={useIconStyle(props, 'white')} className={useClasses(props)} />
+  <GitHubSVG
+    style={useIconStyle(props, "white")}
+    className={useClasses(props)}
+  />
 )
 
 export const GitlabIcon = (props: IconProps) => (
-  <GitlabSVG style={useIconStyle(props, '#F46A25')} className={useClasses(props)} />
+  <GitlabSVG
+    style={useIconStyle(props, "#F46A25")}
+    className={useClasses(props)}
+  />
 )
 
 export const InstagramIcon = (props: IconProps) => (
-  <InstagramSVG style={useIconStyle(props, '#F70038')} className={useClasses(props)} />
+  <InstagramSVG
+    style={useIconStyle(props, "#F70038")}
+    className={useClasses(props)}
+  />
 )
 
 export const TwitterIcon = (props: IconProps) => (
-  <TwitterSVG style={useIconStyle(props, '#1C9CEA')} className={useClasses(props)} />
+  <TwitterSVG
+    style={useIconStyle(props, "#1C9CEA")}
+    className={useClasses(props)}
+  />
 )
 
 export const PayPalIcon = (props: IconProps) => (
-  <PayPalSVG style={useIconStyle(props, '#002E82')} className={useClasses(props)} />
+  <PayPalSVG
+    style={useIconStyle(props, "#002E82")}
+    className={useClasses(props)}
+  />
 )
 
 export const AWSIcon = (props: IconProps) => (
-  <AWSSVG style={useIconStyle(props, "#F79400")} className={useClasses(props)} />
+  <AWSSVG
+    style={useIconStyle(props, "#F79400")}
+    className={useClasses(props)}
+  />
 )
 
 export const AngularIcon = (props: IconProps) => (
-  <AngularSVG style={useIconStyle(props, "#D6002F")} className={useClasses(props)} />
+  <AngularSVG
+    style={useIconStyle(props, "#D6002F")}
+    className={useClasses(props)}
+  />
 )
 
 export const ReactIcon = (props: IconProps) => (
-  <ReactSVG style={useIconStyle(props, "#79D8F7")} className={useClasses(props)} />
+  <ReactSVG
+    style={useIconStyle(props, "#79D8F7")}
+    className={useClasses(props)}
+  />
 )
 
 export const BootstrapIcon = (props: IconProps) => (
-  <BootstrapSVG style={useIconStyle(props, "#533B78")} className={useClasses(props)} />
+  <BootstrapSVG
+    style={useIconStyle(props, "#533B78")}
+    className={useClasses(props)}
+  />
 )
 
 export const CSS3Icon = (props: IconProps) => (
-  <CSS3SVG style={useIconStyle(props, "#254BDD")} className={useClasses(props)} />
+  <CSS3SVG
+    style={useIconStyle(props, "#254BDD")}
+    className={useClasses(props)}
+  />
 )
 
 export const DigitalOceanIcon = (props: IconProps) => (
-  <DigitalOceanSVG style={useIconStyle(props, "#007CF7")} className={useClasses(props)} />
+  <DigitalOceanSVG
+    style={useIconStyle(props, "#007CF7")}
+    className={useClasses(props)}
+  />
 )
 
 export const GitIcon = (props: IconProps) => (
-  <GitSVG style={useIconStyle(props, "#E94E31")} className={useClasses(props)} />
+  <GitSVG
+    style={useIconStyle(props, "#E94E31")}
+    className={useClasses(props)}
+  />
 )
 
 export const GatsbyIcon = (props: IconProps) => (
-  <GatsbySVG style={useIconStyle(props, "#E94E31")} className={useClasses(props)} />
+  <GatsbySVG
+    style={useIconStyle(props, "#E94E31")}
+    className={useClasses(props)}
+  />
 )
 
 export const FirebaseIcon = (props: IconProps) => (
@@ -113,43 +155,74 @@ export const FirebaseIcon = (props: IconProps) => (
 )
 
 export const HTML5Icon = (props: IconProps) => (
-  <HTML5SVG style={useIconStyle(props, "#F64A1D")} className={useClasses(props)} />
+  <HTML5SVG
+    style={useIconStyle(props, "#F64A1D")}
+    className={useClasses(props)}
+  />
 )
 
 export const IonicIcon = (props: IconProps) => (
-  <IonicSVG fill="#4886F1" style={useIconStyle(props)} className={useClasses(props)} />
+  <IonicSVG
+    fill="#4886F1"
+    style={useIconStyle(props)}
+    className={useClasses(props)}
+  />
 )
 
 export const JavascriptIcon = (props: IconProps) => (
-  <JavascriptSVG style={useIconStyle(props, "#F7DB00")} className={useClasses(props)} />
+  <JavascriptSVG
+    style={useIconStyle(props, "#F7DB00")}
+    className={useClasses(props)}
+  />
 )
 
 export const MarkdownIcon = (props: IconProps) => (
-  <MarkdownSVG style={useIconStyle(props, 'white')} className={useClasses(props)} />
+  <MarkdownSVG
+    style={useIconStyle(props, "white")}
+    className={useClasses(props)}
+  />
 )
 
 export const NetlifyIcon = (props: IconProps) => (
-  <NetlifySVG style={useIconStyle(props, 'white')} className={useClasses(props)} />
+  <NetlifySVG
+    style={useIconStyle(props, "white")}
+    className={useClasses(props)}
+  />
 )
 
 export const NodeJSIcon = (props: IconProps) => (
-  <NodeJSSVG style={useIconStyle(props, "#7FC728")} className={useClasses(props)} />
+  <NodeJSSVG
+    style={useIconStyle(props, "#7FC728")}
+    className={useClasses(props)}
+  />
 )
 
 export const NPMIcon = (props: IconProps) => (
-  <NPMSVG style={useIconStyle(props, "#C53635")} className={useClasses(props)} />
+  <NPMSVG
+    style={useIconStyle(props, "#C53635")}
+    className={useClasses(props)}
+  />
 )
 
 export const PythonIcon = (props: IconProps) => (
-  <PythonSVG style={useIconStyle(props, "#356A97")} className={useClasses(props)} />
+  <PythonSVG
+    style={useIconStyle(props, "#356A97")}
+    className={useClasses(props)}
+  />
 )
 
 export const TypescriptIcon = (props: IconProps) => (
-  <TypescriptSVG style={useIconStyle(props, "#356A97")} className={useClasses(props)} />
+  <TypescriptSVG
+    style={useIconStyle(props, "#356A97")}
+    className={useClasses(props)}
+  />
 )
 
 export const UbuntuIcon = (props: IconProps) => (
-  <UbuntuSVG style={useIconStyle(props, "#D74614")} className={useClasses(props)} />
+  <UbuntuSVG
+    style={useIconStyle(props, "#D74614")}
+    className={useClasses(props)}
+  />
 )
 
 export enum EIcon {

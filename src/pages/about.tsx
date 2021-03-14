@@ -5,7 +5,35 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import { ProfileImage, LinkExternal } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { AngularIcon, AWSIcon, BootstrapIcon, CSS3Icon, DigitalOceanIcon, EmailIcon, FirebaseIcon, GatsbyIcon, GitHubIcon, GitIcon, GitlabIcon, HTML5Icon, IconSelector, InstagramIcon, IonicIcon, JavascriptIcon, LinkedInIcon, MarkdownIcon, NetlifyIcon, NodeJSIcon, NPMIcon, PayPalIcon, PythonIcon, ReactIcon, TwitterIcon, TypescriptIcon, UbuntuIcon } from "../components/icons"
+import {
+  AngularIcon,
+  AWSIcon,
+  BootstrapIcon,
+  CSS3Icon,
+  DigitalOceanIcon,
+  EmailIcon,
+  FirebaseIcon,
+  GatsbyIcon,
+  GitHubIcon,
+  GitIcon,
+  GitlabIcon,
+  HTML5Icon,
+  IconSelector,
+  InstagramIcon,
+  IonicIcon,
+  JavascriptIcon,
+  LinkedInIcon,
+  MarkdownIcon,
+  NetlifyIcon,
+  NodeJSIcon,
+  NPMIcon,
+  PayPalIcon,
+  PythonIcon,
+  ReactIcon,
+  TwitterIcon,
+  TypescriptIcon,
+  UbuntuIcon,
+} from "../components/icons"
 
 const ComplexPageHeader = () => {
   const site = useSiteMetadata()
@@ -42,22 +70,40 @@ const ComplexPageHeader = () => {
                   contact@angelxehg.com
                 </LinkExternal>
                 <br className="d-block d-sm-none" />
-                <LinkExternal to="https://www.linkedin.com/in/angelxehg" title="LinkedIn (/in/angelxehg)">
+                <LinkExternal
+                  to="https://www.linkedin.com/in/angelxehg"
+                  title="LinkedIn (/in/angelxehg)"
+                >
                   <LinkedInIcon />
                 </LinkExternal>
-                <LinkExternal to="https://www.paypal.me/angelxehg" title="PayPal (@angelxehg)">
+                <LinkExternal
+                  to="https://www.paypal.me/angelxehg"
+                  title="PayPal (@angelxehg)"
+                >
                   <PayPalIcon />
                 </LinkExternal>
-                <LinkExternal to="https://github.com/angelxehg" title="GitHub (@angelxehg)">
+                <LinkExternal
+                  to="https://github.com/angelxehg"
+                  title="GitHub (@angelxehg)"
+                >
                   <GitHubIcon />
                 </LinkExternal>
-                <LinkExternal to="https://gitlab.com/angelxehg" title="GitLab (@angelxehg)">
+                <LinkExternal
+                  to="https://gitlab.com/angelxehg"
+                  title="GitLab (@angelxehg)"
+                >
                   <GitlabIcon />
                 </LinkExternal>
-                <LinkExternal to="https://www.twitter.com/angelxehg" title="Twitter (@angelxehg)">
+                <LinkExternal
+                  to="https://www.twitter.com/angelxehg"
+                  title="Twitter (@angelxehg)"
+                >
                   <TwitterIcon />
                 </LinkExternal>
-                <LinkExternal to="https://www.instagram.com/angelxehg" title="Instagram (@angelxehg)">
+                <LinkExternal
+                  to="https://www.instagram.com/angelxehg"
+                  title="Instagram (@angelxehg)"
+                >
                   <InstagramIcon />
                 </LinkExternal>
               </div>
@@ -74,10 +120,18 @@ export const SimplePageFooter = () => (
     <nav className="navbar navbar-dark pg-bg divr">
       <div className="container-fluid">
         <p className="m-0">
-          © {new Date().getFullYear()}, Angel Hurtado. Las marcas y logos pertenecen a sus respectivos dueños. Iconos obtenidos desde{" "}
-          <LinkExternal to="https://fontawesome.com/license">FontAwesome</LinkExternal>{", "}
-          <LinkExternal to="https://icons.getbootstrap.com/">Bootstrap Icons</LinkExternal>{", "}
-          <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>{", "}
+          © {new Date().getFullYear()}, Angel Hurtado. Las marcas y logos
+          pertenecen a sus respectivos dueños. Iconos obtenidos desde{" "}
+          <LinkExternal to="https://fontawesome.com/license">
+            FontAwesome
+          </LinkExternal>
+          {", "}
+          <LinkExternal to="https://icons.getbootstrap.com/">
+            Bootstrap Icons
+          </LinkExternal>
+          {", "}
+          <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>
+          {", "}
           <LinkExternal to="https://ionicons.com/">Ionicons</LinkExternal>
         </p>
       </div>
