@@ -35,8 +35,8 @@ const IndexPage = () => {
               <Link to="/projects" className="me-3">
                 Proyectos
               </Link>
-              <Link to="/about" className="me-3">
-                Acerca de
+              <Link to="/about">
+                Trayectoria
               </Link>
             </div>
           </div>

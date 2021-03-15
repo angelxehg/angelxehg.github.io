@@ -58,10 +58,13 @@ const ComplexHeader = () => {
             <p className="d-none d-md-block">{site.description}</p>
             <div className="row mt-2">
               <div className="col-lg text-lg-start text-center">
+                <Link to="/" className="me-3">
+                  Resumen
+                </Link>
                 <Link to="/posts" className="me-3">
                   Blog
                 </Link>
-                <Link to="/projects" className="me-3">
+                <Link to="/projects">
                   Proyectos
                 </Link>
               </div>
@@ -135,7 +138,7 @@ const AboutPage = () => {
   const site = useSiteMetadata()
   return (
     <Layout>
-      <SEO title="Acerca de" />
+      <SEO title="Mi trayectoria" />
       <ComplexHeader />
       <LayoutContent>
         <div className="d-block d-md-none">
@@ -204,7 +207,7 @@ const AboutPage = () => {
           </p>
         </FlexibleInfo>
       </LayoutContent>
-      <Footer/>
+      <Footer />
     </Layout>
   )
 }
