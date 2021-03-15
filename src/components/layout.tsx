@@ -141,9 +141,9 @@ Layout.propTypes = {
 
 export const LayoutContent = (props: { children: any }) => {
   return (
-    <div className="container-fluid pt-2 pb-3">
-      <main>{props.children}</main>
-    </div>
+    <main className="container-fluid pt-3 pb-3">
+      {props.children}
+    </main>
   )
 }
 

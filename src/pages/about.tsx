@@ -34,8 +34,9 @@ import {
   TypescriptIcon,
   UbuntuIcon,
 } from "../components/icons"
+import Layout, { Footer, LayoutContent } from "../components/layout"
 
-const ComplexPageHeader = () => {
+const ComplexHeader = () => {
   const site = useSiteMetadata()
   return (
     <div className="no-bg divr">
@@ -115,30 +116,6 @@ const ComplexPageHeader = () => {
   )
 }
 
-export const SimplePageFooter = () => (
-  <footer>
-    <nav className="navbar navbar-dark pg-bg divr">
-      <div className="container-fluid">
-        <p className="m-0">
-          © {new Date().getFullYear()}, Angel Hurtado. Las marcas y logos
-          pertenecen a sus respectivos dueños. Iconos obtenidos desde{" "}
-          <LinkExternal to="https://fontawesome.com/license">
-            FontAwesome
-          </LinkExternal>
-          {", "}
-          <LinkExternal to="https://icons.getbootstrap.com/">
-            Bootstrap Icons
-          </LinkExternal>
-          {", "}
-          <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>
-          {", "}
-          <LinkExternal to="https://ionicons.com/">Ionicons</LinkExternal>
-        </p>
-      </div>
-    </nav>
-  </footer>
-)
-
 const FlexibleInfo = (props: { title: string; children: any }) => {
   return (
     <div className="row">
@@ -157,10 +134,10 @@ FlexibleInfo.propTypes = {
 const AboutPage = () => {
   const site = useSiteMetadata()
   return (
-    <div className="container-sm mt-3 mb-3 text-white font-monospace">
-      <ComplexPageHeader />
+    <Layout>
       <SEO title="Acerca de" />
-      <main className="container-fluid pt-3 pb-3">
+      <ComplexHeader />
+      <LayoutContent>
         <div className="d-block d-md-none">
           <h3>Acerca de mi</h3>
           <p>{site.description}</p>
@@ -226,9 +203,9 @@ const AboutPage = () => {
             19° Nacional: Concurso Nacional de Prototipos 2016
           </p>
         </FlexibleInfo>
-      </main>
-      <SimplePageFooter />
-    </div>
+      </LayoutContent>
+      <Footer/>
+    </Layout>
   )
 }
 
