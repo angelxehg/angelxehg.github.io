@@ -42,8 +42,8 @@ const PostsPage = () => {
         <NavbarBrand title="Mi Blog" to="/posts" />
         <NavbarToggler />
         <NavbarCollapse>
-          <NavbarItem title="Proyectos" to="/projects" />
           <NavbarItem title="Resumen" to="/" />
+          <NavbarItem title="Proyectos" to="/projects" />
           <NavbarItem title="Trayectoria" to="/about" />
         </NavbarCollapse>
       </Navbar>

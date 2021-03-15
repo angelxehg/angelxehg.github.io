@@ -52,7 +52,7 @@ export const ProfileImage = () => {
   return (
     <GatsbyImage
       image={data.placeholderImage.childImageSharp.gatsbyImageData}
-      className="rounded-circle fluid align-self-center mt-3"
+      className="rounded-circle fluid align-self-center"
       alt="Foto de perfil de Angel"
       style={{ height: "150px", width: "150px" }}
     />

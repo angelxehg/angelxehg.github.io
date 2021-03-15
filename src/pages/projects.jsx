@@ -48,7 +48,7 @@ const Project = (props) => {
   )
 }
 
-Project.propTyoes = { 
+Project.propTyoes = {
   slug: PropTypes.string,
   title: PropTypes.string,
   extract: PropTypes.string,
@@ -67,8 +67,8 @@ const ProjectsPage = () => {
         <NavbarBrand title="Mis Proyectos" to="/projects" />
         <NavbarToggler />
         <NavbarCollapse>
-          <NavbarItem title="Blog" to="/posts" />
           <NavbarItem title="Resumen" to="/" />
+          <NavbarItem title="Blog" to="/posts" />
           <NavbarItem title="Trayectoria" to="/about" />
         </NavbarCollapse>
       </Navbar>
