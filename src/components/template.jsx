@@ -24,14 +24,13 @@ export const query = graphql`
   }
 `
 
-// eslint-disable-next-line react/display-name
-export default (props: { data: any }) => {
+const PageTemplate = (props) => {
   const { frontmatter, body } = props.data.mdx
-  const icons: string[] = []
+  const icons = []
   if (frontmatter.stack) {
     frontmatter.stack
       .split(",")
-      .map((i: string) => icons.push(i))
+      .map((i) => icons.push(i))
   }
   const isProject = frontmatter.type === "project";
   return (
@@ -85,3 +84,5 @@ export default (props: { data: any }) => {
     </Layout>
   )
 }
+
+export default PageTemplate

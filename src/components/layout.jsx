@@ -41,7 +41,7 @@ export const Footer = () => (
   </footer>
 )
 
-const Layout = (props: { children: any }) => {
+const Layout = (props) => {
   return (
     <div className="container-sm mt-3 mb-3 text-white font-monospace">
       {props.children}
@@ -53,7 +53,7 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export const LayoutContent = (props: { children: any }) => {
+export const LayoutContent = (props) => {
   return (
     <main className="container-fluid pt-3 pb-3">
       {props.children}
@@ -65,7 +65,7 @@ LayoutContent.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export const CentralLayout = (props: { children: any }) => (
+export const CentralLayout = (props) => (
   <div className="row text-center justify-content-center full-h text-white font-monospace">
     <div className="col align-self-center fill-sm">{props.children}</div>
   </div>

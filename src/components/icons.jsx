@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types';
 
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
 const EmailSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
@@ -58,25 +59,16 @@ const availableIcons = [
   "PayPal",
 ]
 
-interface IconProps {
-  size?: string
-  className?: string
-  name: string
-}
-
-export const Icon = (props: IconProps) => {
+export const Icon = (props) => {
   const { name, className } = props;
   const classes = className || "";
-  const useStyles = (props: IconProps, defaultColor?: string) => {
+  const useStyles = (props, defaultColor) => {
     const { size } = props
     return {
       width: size || "1.2rem",
       height: size || "1.2rem",
       color: defaultColor || "white",
     }
-  }
-  if (!availableIcons.includes(name)) {
-    throw Error(`Missing icon: ${name}`)
   }
   switch (name) {
     case "Angular":
@@ -137,3 +129,11 @@ export const Icon = (props: IconProps) => {
       return <p>SVG not found</p>
   }
 }
+
+
+Icon.propTypes = {
+  size: PropTypes.string,
+  className: PropTypes.string,
+  name: PropTypes.oneOf(availableIcons).isRequired
+}
+

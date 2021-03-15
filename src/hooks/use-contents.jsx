@@ -1,33 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-interface ContentNode {
-  id: string
-  slug: string
-  excerpt: string
-  frontmatter: {
-    title: string
-    date: string
-    type: string
-    stack: string
-    github: string
-    demo: string
-    featuredImage: any
-  }
-}
-
-export interface IContent {
-  id: string
-  slug: string
-  date: string
-  title: string
-  extract: string
-  stack: string
-  github: string
-  demo: string
-  image: any
-}
-
-export const useContents = (type: string): IContent[] => {
+export const useContents = (type) => {
   const { allMdx } = useStaticQuery(graphql`
     query AllContents {
       allMdx {
@@ -52,8 +25,8 @@ export const useContents = (type: string): IContent[] => {
       }
     }
   `)
-  const nodes: ContentNode[] = allMdx.nodes
-  const posts: IContent[] = nodes
+  const nodes = allMdx.nodes
+  const posts = nodes
     .filter(i => i.frontmatter.type === type)
     .map(node => {
       return {
