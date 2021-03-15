@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 import SEO from "../components/seo"
-import { ProfileImage, LinkExternal } from "../components/social"
+import { ProfileImage, LinkExternal, socialLinks } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { Icons, Icon } from "../components/icons"
 import Layout, { Footer, LayoutContent } from "../components/layout"
@@ -46,42 +46,9 @@ const ComplexHeader = () => {
                   contact@angelxehg.com
                 </LinkExternal>
                 <br className="d-block d-sm-none" />
-                <LinkExternal
-                  to="https://www.linkedin.com/in/angelxehg"
-                  title="LinkedIn (/in/angelxehg)"
-                >
-                  <Icon name={Icons.LinkedIn} />
-                </LinkExternal>
-                <LinkExternal
-                  to="https://www.paypal.me/angelxehg"
-                  title="PayPal (@angelxehg)"
-                >
-                  <Icon name={Icons.PayPal} />
-                </LinkExternal>
-                <LinkExternal
-                  to="https://github.com/angelxehg"
-                  title="GitHub (@angelxehg)"
-                >
-                  <Icon name={Icons.GitHub} />
-                </LinkExternal>
-                <LinkExternal
-                  to="https://gitlab.com/angelxehg"
-                  title="GitLab (@angelxehg)"
-                >
-                  <Icon name={Icons.GitLab} />
-                </LinkExternal>
-                <LinkExternal
-                  to="https://www.twitter.com/angelxehg"
-                  title="Twitter (@angelxehg)"
-                >
-                  <Icon name={Icons.Twitter} />
-                </LinkExternal>
-                <LinkExternal
-                  to="https://www.instagram.com/angelxehg"
-                  title="Instagram (@angelxehg)"
-                >
-                  <Icon name={Icons.Instagram} />
-                </LinkExternal>
+                {socialLinks.map(({ title, to, icon }) => <LinkExternal key={to} to={to} title={title}>
+                  <Icon name={icon} />
+                </LinkExternal>)}
               </div>
             </div>
           </div>
@@ -108,9 +75,50 @@ FlexibleInfo.propTypes = {
 
 const AboutPage = () => {
   const site = useSiteMetadata()
+  const stacks = [
+    {
+      title: "Lenguajes",
+      icons: [
+        Icons.HTML5,
+        Icons.CSS3,
+        Icons.Typescript,
+        Icons.Javascript,
+        Icons.Python,
+      ]
+    },
+    {
+      title: "Frameworks",
+      icons: [
+        Icons.React,
+        Icons.Ionic,
+        Icons.Gatsby,
+        Icons.Angular,
+      ]
+    },
+    {
+      title: "Herramientas",
+      icons: [
+        Icons.NodeJS,
+        Icons.NPM,
+        Icons.Git,
+        Icons.Markdown,
+        Icons.Bootstrap,
+      ]
+    },
+    {
+      title: "Plataformas",
+      icons: [
+        Icons.Ubuntu,
+        Icons.Netlify,
+        Icons.AWS,
+        Icons.Firebase,
+        Icons.DigitalOcean,
+      ]
+    },
+  ]
   return (
     <Layout>
-      <SEO title="Mi trayectoria" lang="es"/>
+      <SEO title="Mi trayectoria" lang="es" />
       <ComplexHeader />
       <LayoutContent>
         <div className="d-block d-md-none">
@@ -129,34 +137,11 @@ const AboutPage = () => {
           </p>
         </FlexibleInfo>
         <FlexibleInfo title="Habilidades">
-          <p>
-            Lenguajes:
-            <Icon name={Icons.HTML5} className="ms-1 me-1" />
-            <Icon name={Icons.CSS3} className="me-1" />
-            <Icon name={Icons.Typescript} className="me-1" />
-            <Icon name={Icons.Javascript} className="me-1" />
-            <Icon name={Icons.Python} className="me-1" />
-            <br />
-            Frameworks:
-            <Icon name={Icons.React} className="ms-1 me-1" />
-            <Icon name={Icons.Ionic} className="me-1" />
-            <Icon name={Icons.Gatsby} className="me-1" />
-            <Icon name={Icons.Angular} className="me-1" />
-            <br />
-            Herramientas:
-            <Icon name={Icons.NodeJS} className=" ms-1 me-1" />
-            <Icon name={Icons.NPM} className="me-1" />
-            <Icon name={Icons.Git} className="me-1" />
-            <Icon name={Icons.Markdown} className="me-1" />
-            <Icon name={Icons.Bootstrap} className="me-1" />
-            <br />
-            Plataformas:
-            <Icon name={Icons.Ubuntu} className="ms-1 me-1" />
-            <Icon name={Icons.Netlify} className="me-1" />
-            <Icon name={Icons.AWS} className="me-1" />
-            <Icon name={Icons.Firebase} className="me-1" />
-            <Icon name={Icons.DigitalOcean} className="me-1" />
-          </p>
+          {stacks.map(({ title, icons }) => <p key={title} className="m-0">
+            {title + ": "}
+            {icons.map(icon => <Icon key={icon} name={icon} className="me-1" />)}
+          </p>)}
+          <br/>
         </FlexibleInfo>
         <FlexibleInfo title="Aptitudes">
           <p>

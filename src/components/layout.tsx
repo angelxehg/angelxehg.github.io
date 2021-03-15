@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { LinkExternal } from "./social"
+import { LinkExternal, socialLinks } from "./social"
 import { Icons, Icon } from "./icons"
 
 export const Footer = () => (
@@ -9,42 +9,9 @@ export const Footer = () => (
     <nav className="navbar navbar-dark pg-bg divr">
       <div className="row ps-3" style={{ width: "100%" }}>
         <div className="col-lg-auto text-lg-end text-start order-lg-last">
-          <LinkExternal
-            to="https://www.linkedin.com/in/angelxehg"
-            title="LinkedIn (/in/angelxehg)"
-          >
-            <Icon name={Icons.LinkedIn} />
-          </LinkExternal>
-          <LinkExternal
-            to="https://www.paypal.me/angelxehg"
-            title="PayPal (@angelxehg)"
-          >
-            <Icon name={Icons.PayPal} />
-          </LinkExternal>
-          <LinkExternal
-            to="https://github.com/angelxehg"
-            title="GitHub (@angelxehg)"
-          >
-            <Icon name={Icons.GitHub} />
-          </LinkExternal>
-          <LinkExternal
-            to="https://gitlab.com/angelxehg"
-            title="GitLab (@angelxehg)"
-          >
-            <Icon name={Icons.GitLab} />
-          </LinkExternal>
-          <LinkExternal
-            to="https://www.twitter.com/angelxehg"
-            title="Twitter (@angelxehg)"
-          >
-            <Icon name={Icons.Twitter} />
-          </LinkExternal>
-          <LinkExternal
-            to="https://www.instagram.com/angelxehg"
-            title="Instagram (@angelxehg)"
-          >
-            <Icon name={Icons.Instagram} />
-          </LinkExternal>
+          {socialLinks.map(({ title, to, icon }) => <LinkExternal key={to} to={to} title={title}>
+            <Icon name={icon} />
+          </LinkExternal>)}
           <br />
           <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
             <Icon name={Icons.Email} className="me-1" />
