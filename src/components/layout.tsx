@@ -2,16 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import { LinkExternal } from "./social"
-import {
-  EmailIcon,
-  GitHubIcon,
-  GitlabIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  PayPalIcon,
-  TwitterIcon,
-} from "./icons"
-import { Navbar, NavbarBrand, NavbarCollapse, NavbarItem, NavbarToggler } from "./navbar"
+import { Icons, Icon } from "./icons"
 
 export const Footer = () => (
   <footer>
@@ -22,41 +13,41 @@ export const Footer = () => (
             to="https://www.linkedin.com/in/angelxehg"
             title="LinkedIn (/in/angelxehg)"
           >
-            <LinkedInIcon />
+            <Icon name={Icons.LinkedIn} />
           </LinkExternal>
           <LinkExternal
             to="https://www.paypal.me/angelxehg"
             title="PayPal (@angelxehg)"
           >
-            <PayPalIcon />
+            <Icon name={Icons.PayPal} />
           </LinkExternal>
           <LinkExternal
             to="https://github.com/angelxehg"
             title="GitHub (@angelxehg)"
           >
-            <GitHubIcon />
+            <Icon name={Icons.GitHub} />
           </LinkExternal>
           <LinkExternal
             to="https://gitlab.com/angelxehg"
             title="GitLab (@angelxehg)"
           >
-            <GitlabIcon />
+            <Icon name={Icons.GitLab} />
           </LinkExternal>
           <LinkExternal
             to="https://www.twitter.com/angelxehg"
             title="Twitter (@angelxehg)"
           >
-            <TwitterIcon />
+            <Icon name={Icons.Twitter} />
           </LinkExternal>
           <LinkExternal
             to="https://www.instagram.com/angelxehg"
             title="Instagram (@angelxehg)"
           >
-            <InstagramIcon />
+            <Icon name={Icons.Instagram} />
           </LinkExternal>
           <br />
           <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
-            <EmailIcon className="me-1" />
+            <Icon name={Icons.Email} className="me-1" />
             contact@angelxehg.com
           </LinkExternal>
         </div>

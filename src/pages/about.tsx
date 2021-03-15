@@ -5,35 +5,7 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import { ProfileImage, LinkExternal } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import {
-  AngularIcon,
-  AWSIcon,
-  BootstrapIcon,
-  CSS3Icon,
-  DigitalOceanIcon,
-  EmailIcon,
-  FirebaseIcon,
-  GatsbyIcon,
-  GitHubIcon,
-  GitIcon,
-  GitlabIcon,
-  HTML5Icon,
-  IconSelector,
-  InstagramIcon,
-  IonicIcon,
-  JavascriptIcon,
-  LinkedInIcon,
-  MarkdownIcon,
-  NetlifyIcon,
-  NodeJSIcon,
-  NPMIcon,
-  PayPalIcon,
-  PythonIcon,
-  ReactIcon,
-  TwitterIcon,
-  TypescriptIcon,
-  UbuntuIcon,
-} from "../components/icons"
+import { Icons, Icon } from "../components/icons"
 import Layout, { Footer, LayoutContent } from "../components/layout"
 
 const ComplexHeader = () => {
@@ -70,7 +42,7 @@ const ComplexHeader = () => {
               </div>
               <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
                 <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
-                  <EmailIcon className="me-1" />
+                  <Icon name={Icons.Email} className="me-1" />
                   contact@angelxehg.com
                 </LinkExternal>
                 <br className="d-block d-sm-none" />
@@ -78,37 +50,37 @@ const ComplexHeader = () => {
                   to="https://www.linkedin.com/in/angelxehg"
                   title="LinkedIn (/in/angelxehg)"
                 >
-                  <LinkedInIcon />
+                  <Icon name={Icons.LinkedIn} />
                 </LinkExternal>
                 <LinkExternal
                   to="https://www.paypal.me/angelxehg"
                   title="PayPal (@angelxehg)"
                 >
-                  <PayPalIcon />
+                  <Icon name={Icons.PayPal} />
                 </LinkExternal>
                 <LinkExternal
                   to="https://github.com/angelxehg"
                   title="GitHub (@angelxehg)"
                 >
-                  <GitHubIcon />
+                  <Icon name={Icons.GitHub} />
                 </LinkExternal>
                 <LinkExternal
                   to="https://gitlab.com/angelxehg"
                   title="GitLab (@angelxehg)"
                 >
-                  <GitlabIcon />
+                  <Icon name={Icons.GitLab} />
                 </LinkExternal>
                 <LinkExternal
                   to="https://www.twitter.com/angelxehg"
                   title="Twitter (@angelxehg)"
                 >
-                  <TwitterIcon />
+                  <Icon name={Icons.Twitter} />
                 </LinkExternal>
                 <LinkExternal
                   to="https://www.instagram.com/angelxehg"
                   title="Instagram (@angelxehg)"
                 >
-                  <InstagramIcon />
+                  <Icon name={Icons.Instagram} />
                 </LinkExternal>
               </div>
             </div>
@@ -159,31 +131,31 @@ const AboutPage = () => {
         <FlexibleInfo title="Habilidades">
           <p>
             Lenguajes:
-            <HTML5Icon className="ms-1 me-1" />
-            <CSS3Icon className="me-1" />
-            <TypescriptIcon className="me-1" />
-            <JavascriptIcon className="me-1" />
-            <PythonIcon className="me-1" />
+            <Icon name={Icons.HTML5} className="ms-1 me-1" />
+            <Icon name={Icons.CSS3} className="me-1" />
+            <Icon name={Icons.Typescript} className="me-1" />
+            <Icon name={Icons.Javascript} className="me-1" />
+            <Icon name={Icons.Python} className="me-1" />
             <br />
             Frameworks:
-            <ReactIcon className="ms-1 me-1" />
-            <IonicIcon className="me-1" />
-            <GatsbyIcon className="me-1" />
-            <AngularIcon className="me-1" />
+            <Icon name={Icons.React} className="ms-1 me-1" />
+            <Icon name={Icons.Ionic} className="me-1" />
+            <Icon name={Icons.Gatsby} className="me-1" />
+            <Icon name={Icons.Angular} className="me-1" />
             <br />
             Herramientas:
-            <NodeJSIcon className=" ms-1 me-1" />
-            <NPMIcon className="me-1" />
-            <GitIcon className="me-1" />
-            <MarkdownIcon className="me-1" />
-            <BootstrapIcon className="me-1" />
+            <Icon name={Icons.NodeJS} className=" ms-1 me-1" />
+            <Icon name={Icons.NPM} className="me-1" />
+            <Icon name={Icons.Git} className="me-1" />
+            <Icon name={Icons.Markdown} className="me-1" />
+            <Icon name={Icons.Bootstrap} className="me-1" />
             <br />
             Plataformas:
-            <UbuntuIcon className="ms-1 me-1" />
-            <NetlifyIcon className="me-1" />
-            <AWSIcon className="me-1" />
-            <FirebaseIcon className="me-1" />
-            <DigitalOceanIcon className="me-1" />
+            <Icon name={Icons.Ubuntu} className="ms-1 me-1" />
+            <Icon name={Icons.Netlify} className="me-1" />
+            <Icon name={Icons.AWS} className="me-1" />
+            <Icon name={Icons.Firebase} className="me-1" />
+            <Icon name={Icons.DigitalOcean} className="me-1" />
           </p>
         </FlexibleInfo>
         <FlexibleInfo title="Aptitudes">

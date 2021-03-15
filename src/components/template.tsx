@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout, { Footer, LayoutContent } from "./layout"
 import SEO from "./seo"
-import { EIcon, GitHubIcon, IconSelector, WebIcon } from "./icons"
+import { Icons, Icon } from "./icons"
 import { LinkExternal } from "./social"
 import { Navbar, NavbarBrand, NavbarToggler, NavbarCollapse, NavbarItem } from "./navbar"
 
@@ -27,12 +27,12 @@ export const query = graphql`
 // eslint-disable-next-line react/display-name
 export default (props: { data: any }) => {
   const { frontmatter, body } = props.data.mdx
-  const icons: EIcon[] = []
+  const icons: Icons[] = []
   if (frontmatter.stack) {
     frontmatter.stack
       .split(",")
-      .filter((i: string) => i in EIcon)
-      .map((i: EIcon) => {
+      .filter((i: string) => i in Icons)
+      .map((i: Icons) => {
         icons.push(i)
       })
   }
@@ -63,12 +63,12 @@ export default (props: { data: any }) => {
           <div className="col-auto">
             {frontmatter.github && (
               <LinkExternal to={frontmatter.github} title="Repositorio">
-                <GitHubIcon size="1.5rem" />
+                <Icon name={Icons.GitHub} size="1.5rem" />
               </LinkExternal>
             )}
             {frontmatter.demo && (
               <LinkExternal to={frontmatter.demo} title="Demo">
-                <WebIcon size="1.5rem" />
+                <Icon name={Icons.Web} size="1.5rem" />
               </LinkExternal>
             )}
           </div>
@@ -77,7 +77,7 @@ export default (props: { data: any }) => {
           <p>
             Tecnologias:{" "}
             {icons.map(icon => (
-              <IconSelector key={icon} icon={icon} className="me-1" />
+              <Icon key={icon} name={icon} className="me-1" />
             ))}
           </p>
         )}

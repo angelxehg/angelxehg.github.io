@@ -6,7 +6,7 @@ import Layout, { Footer, LayoutContent } from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Column } from "../components/grid"
 import { IContent, useContents } from "../hooks/use-contents"
-import { EIcon, GitHubIcon, IconSelector, WebIcon } from "../components/icons"
+import { Icons, Icon } from "../components/icons"
 import { LinkExternal } from "../components/social"
 import { Navbar, NavbarBrand, NavbarToggler, NavbarCollapse, NavbarItem } from "../components/navbar"
 
@@ -14,8 +14,8 @@ const Project = (props: { project: IContent }) => {
   const { slug, title, extract, image, stack, github, demo } = props.project
   const icons = stack
     .split(",")
-    .filter(i => i in EIcon)
-    .map(i => i as EIcon)
+    .filter(i => i in Icons)
+    .map(i => i as Icons)
   return (
     <Column>
       <div className="card no-bg">
@@ -30,18 +30,18 @@ const Project = (props: { project: IContent }) => {
             <div className="col-auto p-0">
               {github && (
                 <LinkExternal to={github} title="Repositorio">
-                  <GitHubIcon size="1.5rem" />
+                  <Icon name={Icons.GitHub} size="1.5rem" />
                 </LinkExternal>
               )}
               {demo && (
                 <LinkExternal to={demo} title="Demo">
-                  <WebIcon size="1.5rem" />
+                  <Icon name={Icons.Web} size="1.5rem" />
                 </LinkExternal>
               )}
             </div>
           </div>
           {icons.map(icon => (
-            <IconSelector key={icon} icon={icon} className="me-1" />
+            <Icon key={icon} name={icon} className="me-1" />
           ))}
           <p className="card-text">{extract}</p>
         </div>

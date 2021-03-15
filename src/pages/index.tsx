@@ -4,15 +4,7 @@ import { Link } from "gatsby"
 import { CentralLayout } from "../components/layout"
 import SEO, { Version } from "../components/seo"
 import { LinkExternal, ProfileImage } from "../components/social"
-import {
-  EmailIcon,
-  GitHubIcon,
-  GitlabIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  PayPalIcon,
-  TwitterIcon,
-} from "../components/icons"
+import { Icons, Icon } from "../components/icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const IndexPage = () => {
@@ -46,43 +38,43 @@ const IndexPage = () => {
                 to="mailto:contact@angelxehg.com"
                 title="Email (contact@angelxehg.com)"
               >
-                <EmailIcon size="1.5rem" />
+                <Icon name={Icons.Email}  size="1.5rem" />
               </LinkExternal>
               <LinkExternal
                 to="https://www.linkedin.com/in/angelxehg"
                 title="LinkedIn (/in/angelxehg)"
               >
-                <LinkedInIcon size="1.5rem" />
+                <Icon name={Icons.LinkedIn}  size="1.5rem" />
               </LinkExternal>
               <LinkExternal
                 to="https://www.paypal.me/angelxehg"
                 title="PayPal (@angelxehg)"
               >
-                <PayPalIcon size="1.5rem" />
+                <Icon name={Icons.PayPal}  size="1.5rem" />
               </LinkExternal>
               <LinkExternal
                 to="https://github.com/angelxehg"
                 title="GitHub (@angelxehg)"
               >
-                <GitHubIcon size="1.5rem" />
+                <Icon name={Icons.GitHub}  size="1.5rem" />
               </LinkExternal>
               <LinkExternal
                 to="https://gitlab.com/angelxehg"
                 title="GitLab (@angelxehg)"
               >
-                <GitlabIcon size="1.5rem" />
+                <Icon name={Icons.GitLab}  size="1.5rem" />
               </LinkExternal>
               <LinkExternal
                 to="https://www.twitter.com/angelxehg"
                 title="Twitter (@angelxehg)"
               >
-                <TwitterIcon size="1.5rem" />
+                <Icon name={Icons.Twitter}  size="1.5rem" />
               </LinkExternal>
               <LinkExternal
                 to="https://www.instagram.com/angelxehg"
                 title="Instagram (@angelxehg)"
               >
-                <InstagramIcon size="1.5rem" />
+                <Icon name={Icons.Instagram}  size="1.5rem" />
               </LinkExternal>
             </div>
           </div>
