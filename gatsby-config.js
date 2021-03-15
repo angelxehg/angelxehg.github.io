@@ -5,6 +5,10 @@ module.exports = {
     description: `Desarrollador Web. Estudiante de Ingeniería en Tecnologías de la Información y Comunicación.`,
     author: `@angelxehg`,
   },
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: true
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
