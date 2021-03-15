@@ -7,9 +7,15 @@ import Layout, { Footer, LayoutContent } from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Column } from "../components/grid"
 import { useContents } from "../hooks/use-contents"
-import { Navbar, NavbarBrand, NavbarCollapse, NavbarItem, NavbarToggler } from "../components/navbar"
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarCollapse,
+  NavbarItem,
+  NavbarToggler,
+} from "../components/navbar"
 
-const Post = (props) => {
+const Post = props => {
   const { slug, title, extract, image } = props
   return (
     <Column>
@@ -30,7 +36,7 @@ Post.propTypes = {
   slug: PropTypes.string,
   title: PropTypes.string,
   extract: PropTypes.string,
-  image: PropTypes.object
+  image: PropTypes.object,
 }
 
 const PostsPage = () => {

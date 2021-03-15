@@ -22,7 +22,9 @@ const IndexPage = () => {
           <div className="row">
             <div className="col">
               {/* <Link to="/posts" className="me-3">Blog</Link> */}
-              <Link to="/projects" className="me-3">Proyectos</Link>
+              <Link to="/projects" className="me-3">
+                Proyectos
+              </Link>
               <Link to="/about">Trayectoria</Link>
             </div>
           </div>
@@ -34,9 +36,11 @@ const IndexPage = () => {
               >
                 <Icon name="Email" size="1.5rem" />
               </LinkExternal>
-              {socialLinks.map(({ title, to, icon }) => <LinkExternal key={to} to={to} title={title}>
-                <Icon name={icon} size="1.5rem" />
-              </LinkExternal>)}
+              {socialLinks.map(({ title, to, icon }) => (
+                <LinkExternal key={to} to={to} title={title}>
+                  <Icon name={icon} size="1.5rem" />
+                </LinkExternal>
+              ))}
             </div>
           </div>
         </div>

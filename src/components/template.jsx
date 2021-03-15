@@ -7,7 +7,13 @@ import Layout, { Footer, LayoutContent } from "./layout"
 import SEO from "./seo"
 import { Icon } from "./icons"
 import { LinkExternal } from "./social"
-import { Navbar, NavbarBrand, NavbarToggler, NavbarCollapse, NavbarItem } from "./navbar"
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  NavbarCollapse,
+  NavbarItem,
+} from "./navbar"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -25,15 +31,13 @@ export const query = graphql`
   }
 `
 
-const PageTemplate = (props) => {
+const PageTemplate = props => {
   const { frontmatter, body } = props.data.mdx
   const icons = []
   if (frontmatter.stack) {
-    frontmatter.stack
-      .split(",")
-      .map((i) => icons.push(i))
+    frontmatter.stack.split(",").map(i => icons.push(i))
   }
-  const isProject = frontmatter.type === "project";
+  const isProject = frontmatter.type === "project"
   return (
     <Layout>
       <SEO title={frontmatter.title} lang="es" />
@@ -87,7 +91,7 @@ const PageTemplate = (props) => {
 }
 
 PageTemplate.propTypes = {
-  data: PropTypes.any
+  data: PropTypes.any,
 }
 
 export default PageTemplate

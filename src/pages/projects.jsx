@@ -9,9 +9,15 @@ import { Grid, Column } from "../components/grid"
 import { useContents } from "../hooks/use-contents"
 import { Icon } from "../components/icons"
 import { LinkExternal } from "../components/social"
-import { Navbar, NavbarBrand, NavbarToggler, NavbarCollapse, NavbarItem } from "../components/navbar"
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  NavbarCollapse,
+  NavbarItem,
+} from "../components/navbar"
 
-const Project = (props) => {
+const Project = props => {
   const { slug, title, extract, image, stack, github, demo } = props
   const stackIcons = stack.split(",")
   return (
@@ -55,7 +61,7 @@ Project.propTypes = {
   image: PropTypes.object,
   stack: PropTypes.string,
   github: PropTypes.string,
-  demo: PropTypes.string
+  demo: PropTypes.string,
 }
 
 const ProjectsPage = () => {
@@ -74,9 +80,19 @@ const ProjectsPage = () => {
       </Navbar>
       <LayoutContent>
         <Grid>
-          {projects.map(({ slug, title, extract, image, stack, github, demo }) => (
-            <Project key={slug} title={title} extract={extract} image={image} stack={stack} github={github} demo={demo} />
-          ))}
+          {projects.map(
+            ({ slug, title, extract, image, stack, github, demo }) => (
+              <Project
+                key={slug}
+                title={title}
+                extract={extract}
+                image={image}
+                stack={stack}
+                github={github}
+                demo={demo}
+              />
+            )
+          )}
         </Grid>
       </LayoutContent>
       <Footer />

@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-export const useContents = (type) => {
+export const useContents = type => {
   const { allMdx } = useStaticQuery(graphql`
     query AllContents {
       allMdx {

@@ -10,7 +10,7 @@ export const Version = () => (
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-const SEO = (props) => {
+const SEO = props => {
   const { description, lang, meta, title } = props
   const site = useSiteMetadata()
 

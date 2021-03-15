@@ -7,32 +7,32 @@ export const socialLinks = [
   {
     to: "https://www.linkedin.com/in/angelxehg",
     title: "LinkedIn (/in/angelxehg)",
-    icon: "LinkedIn"
+    icon: "LinkedIn",
   },
   {
     to: "https://www.paypal.me/angelxehg",
     title: "PayPal (@angelxehg)",
-    icon: "PayPal"
+    icon: "PayPal",
   },
   {
     to: "https://github.com/angelxehg",
     title: "GitHub (@angelxehg)",
-    icon: "GitHub"
+    icon: "GitHub",
   },
   {
     to: "https://gitlab.com/angelxehg",
     title: "GitLab (@angelxehg)",
-    icon: "GitLab"
+    icon: "GitLab",
   },
   {
     to: "https://www.twitter.com/angelxehg",
     title: "Twitter (@angelxehg)",
-    icon: "Twitter"
+    icon: "Twitter",
   },
   {
     to: "https://www.instagram.com/angelxehg",
     title: "Instagram (@angelxehg)",
-    icon: "Instagram"
+    icon: "Instagram",
   },
 ]
 
@@ -59,7 +59,7 @@ export const ProfileImage = () => {
   )
 }
 
-export const LinkExternal = (props) => (
+export const LinkExternal = props => (
   <a
     href={props.to}
     rel="noreferrer"
@@ -76,5 +76,5 @@ export const LinkExternal = (props) => (
 LinkExternal.propTypes = {
   to: PropTypes.string.isRequired,
   title: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 }

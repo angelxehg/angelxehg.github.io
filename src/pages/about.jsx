@@ -30,7 +30,9 @@ const ComplexHeader = () => {
             <p className="d-none d-md-block">{site.description}</p>
             <div className="row mt-2">
               <div className="col-lg text-lg-start text-center">
-                <Link to="/" className="me-3">Resumen</Link>
+                <Link to="/" className="me-3">
+                  Resumen
+                </Link>
                 {/* <Link to="/posts" className="me-3">Blog</Link> */}
                 <Link to="/projects">Proyectos</Link>
               </div>
@@ -54,7 +56,7 @@ const ComplexHeader = () => {
   )
 }
 
-const FlexibleInfo = (props) => {
+const FlexibleInfo = props => {
   return (
     <div className="row">
       <div className="col-xl-2 col-lg-3 col-md-4">
