@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
@@ -25,13 +26,7 @@ export const ProfileImage = () => {
   )
 }
 
-interface LinkExternalProps {
-  to: string
-  title?: string
-  children: any
-}
-
-export const LinkExternal = (props: LinkExternalProps) => (
+export const LinkExternal = (props) => (
   <a
     href={props.to}
     rel="noreferrer"
@@ -44,3 +39,9 @@ export const LinkExternal = (props: LinkExternalProps) => (
     {props.children}
   </a>
 )
+
+LinkExternal.propTypes = {
+  to: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  children: PropTypes.node
+}
