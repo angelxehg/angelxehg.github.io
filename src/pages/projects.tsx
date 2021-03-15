@@ -2,12 +2,13 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import Layout, { Footer, Header, LayoutContent } from "../components/layout"
+import Layout, { Footer, LayoutContent } from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Column } from "../components/grid"
 import { IContent, useContents } from "../hooks/use-contents"
 import { EIcon, GitHubIcon, IconSelector, WebIcon } from "../components/icons"
 import { LinkExternal } from "../components/social"
+import { Navbar, NavbarBrand, NavbarToggler, NavbarCollapse, NavbarItem } from "../components/navbar"
 
 const Project = (props: { project: IContent }) => {
   const { slug, title, extract, image, stack, github, demo } = props.project
@@ -54,7 +55,15 @@ const ProjectsPage = () => {
   return (
     <Layout>
       <SEO title="Proyectos" />
-      <Header/>
+      <Navbar>
+        <NavbarBrand title="Mis Proyectos" to="/projects" />
+        <NavbarToggler />
+        <NavbarCollapse>
+          <NavbarItem title="Blog" to="/posts" />
+          <NavbarItem title="Resumen" to="/" />
+          <NavbarItem title="Trayectoria" to="/about" />
+        </NavbarCollapse>
+      </Navbar>
       <LayoutContent>
         <Grid>
           {projects.map((item, index) => (
@@ -62,7 +71,7 @@ const ProjectsPage = () => {
           ))}
         </Grid>
       </LayoutContent>
-      <Footer/>
+      <Footer />
     </Layout>
   )
 }

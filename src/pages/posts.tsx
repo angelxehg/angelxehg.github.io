@@ -2,11 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import Layout, { Footer, Header, LayoutContent } from "../components/layout"
+import Layout, { Footer, LayoutContent } from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Column } from "../components/grid"
 import { IContent, useContents } from "../hooks/use-contents"
 import projects from "./projects"
+import { Navbar, NavbarBrand, NavbarCollapse, NavbarItem, NavbarToggler } from "../components/navbar"
 
 const Post = (props: { post: IContent }) => {
   const { slug, title, extract, image } = props.post
@@ -30,7 +31,15 @@ const PostsPage = () => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <Header />
+      <Navbar>
+        <NavbarBrand title="Mi Blog" to="/posts" />
+        <NavbarToggler />
+        <NavbarCollapse>
+          <NavbarItem title="Proyectos" to="/projects" />
+          <NavbarItem title="Resumen" to="/" />
+          <NavbarItem title="Trayectoria" to="/about" />
+        </NavbarCollapse>
+      </Navbar>
       <LayoutContent>
         <Grid>
           {posts.map((item, index) => (

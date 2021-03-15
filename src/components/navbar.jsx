@@ -54,7 +54,7 @@ NavbarCollapse.propTypes = {
 
 export const NavbarItem = (props) => (
   <li className="nav-item">
-    <Link className="nav-link" activeClassName="active" to={props.to}>
+    <Link className="nav-link" to={props.to}>
       {props.title}
     </Link>
   </li>

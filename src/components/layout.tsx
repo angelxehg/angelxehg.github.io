@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { LinkExternal } from "./social"
 import {
   EmailIcon,
@@ -13,21 +12,6 @@ import {
   TwitterIcon,
 } from "./icons"
 import { Navbar, NavbarBrand, NavbarCollapse, NavbarItem, NavbarToggler } from "./navbar"
-
-export const Header = () => {
-  const site = useSiteMetadata()
-  return (
-    <Navbar>
-      <NavbarBrand title={site.title} to="/" />
-      <NavbarToggler />
-      <NavbarCollapse>
-        <NavbarItem title="Blog" to="/posts" />
-        <NavbarItem title="Proyectos" to="/projects" />
-        <NavbarItem title="Acerca de" to="/about" />
-      </NavbarCollapse>
-    </Navbar>
-  )
-}
 
 export const Footer = () => (
   <footer>
