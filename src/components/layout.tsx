@@ -14,7 +14,7 @@ import {
   TwitterIcon,
 } from "./icons"
 
-export const PageHeader = () => {
+export const Header = () => {
   const site = useSiteMetadata()
   return (
     <nav className="navbar navbar-expand-sm navbar-dark sticky-top pg-bg divr">
@@ -59,11 +59,11 @@ export const PageHeader = () => {
   )
 }
 
-export const PageFooter = () => (
+export const Footer = () => (
   <footer>
     <nav className="navbar navbar-dark pg-bg divr">
       <div className="row ps-3" style={{ width: "100%" }}>
-        <div className="col text-lg-end text-start order-lg-last">
+        <div className="col-md-auto text-lg-end text-start order-lg-last">
           <LinkExternal
             to="https://www.linkedin.com/in/angelxehg"
             title="LinkedIn (/in/angelxehg)"
@@ -106,13 +106,9 @@ export const PageFooter = () => (
             contact@angelxehg.com
           </LinkExternal>
         </div>
-        <div className="col-sm-auto mt-lg-0 mt-3">
-          © {new Date().getFullYear()}, Angel Hurtado
-          <br />
+        <div className="col-md mt-md-0 mt-3">
           <p className="m-0">
-            Las marcas y logos pertenecen a sus respectivos dueños
-            <br />
-            Iconos obtenidos desde{" "}
+            © {new Date().getFullYear()}, Angel Hurtado. Las marcas y logos pertenecen a sus respectivos dueños. Iconos obtenidos desde{" "}
             <LinkExternal to="https://fontawesome.com/license">
               FontAwesome
             </LinkExternal>
@@ -131,14 +127,10 @@ export const PageFooter = () => (
   </footer>
 )
 
-const Layout = (props: { children: any; complex: boolean }) => {
+const Layout = (props: { children: any }) => {
   return (
     <div className="container-sm mt-3 mb-3 text-white font-monospace">
-      <PageHeader />
-      <div className="container-fluid pt-2 pb-3">
-        <main>{props.children}</main>
-      </div>
-      <PageFooter />
+      {props.children}
     </div>
   )
 }
@@ -147,8 +139,16 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-Layout.defaultProps = {
-  complex: false,
+export const LayoutContent = (props: { children: any }) => {
+  return (
+    <div className="container-fluid pt-2 pb-3">
+      <main>{props.children}</main>
+    </div>
+  )
+}
+
+LayoutContent.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export const CentralLayout = (props: { children: any }) => (

@@ -2,10 +2,11 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
+import Layout, { Footer, Header, LayoutContent } from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Column } from "../components/grid"
 import { IContent, useContents } from "../hooks/use-contents"
+import projects from "./projects"
 
 const Post = (props: { post: IContent }) => {
   const { slug, title, extract, image } = props.post
@@ -29,11 +30,15 @@ const PostsPage = () => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <Grid>
-        {posts.map((item, index) => (
-          <Post key={index} post={item} />
-        ))}
-      </Grid>
+      <Header />
+      <LayoutContent>
+        <Grid>
+          {posts.map((item, index) => (
+            <Post key={index} post={item} />
+          ))}
+        </Grid>
+      </LayoutContent>
+      <Footer />
     </Layout>
   )
 }

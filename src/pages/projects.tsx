@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
+import Layout, { Footer, Header, LayoutContent } from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Column } from "../components/grid"
 import { IContent, useContents } from "../hooks/use-contents"
@@ -54,11 +54,15 @@ const ProjectsPage = () => {
   return (
     <Layout>
       <SEO title="Proyectos" />
-      <Grid>
-        {projects.map((item, index) => (
-          <Project key={index} project={item} />
-        ))}
-      </Grid>
+      <Header/>
+      <LayoutContent>
+        <Grid>
+          {projects.map((item, index) => (
+            <Project key={index} project={item} />
+          ))}
+        </Grid>
+      </LayoutContent>
+      <Footer/>
     </Layout>
   )
 }
