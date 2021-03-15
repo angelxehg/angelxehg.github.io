@@ -1,7 +1,7 @@
 {
   "name": "angelxehg.com",
   "description": "Mi sitio web y blog personal",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "homepage": "https://angelxehg.com/",
   "author": {
     "name": "Angel Hurtado",
@@ -25,7 +25,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint": "eslint src/**/*.tsx"
+    "lint": "eslint src/**/*.jsx"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -47,16 +47,9 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "typescript": "^4.2.3"
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "@types/node": "^14.14.33",
-    "@types/react": "^17.0.3",
-    "@types/react-dom": "^17.0.2",
-    "@types/react-helmet": "^6.1.0",
-    "@typescript-eslint/eslint-plugin": "^4.17.0",
-    "@typescript-eslint/parser": "^4.17.0",
     "eslint": "^7.21.0",
     "eslint-plugin-react": "^7.22.0",
     "prettier": "2.2.1"

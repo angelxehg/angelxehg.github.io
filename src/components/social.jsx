@@ -1,6 +1,40 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+
+export const socialLinks = [
+  {
+    to: "https://www.linkedin.com/in/angelxehg",
+    title: "LinkedIn (/in/angelxehg)",
+    icon: "LinkedIn",
+  },
+  {
+    to: "https://www.paypal.me/angelxehg",
+    title: "PayPal (@angelxehg)",
+    icon: "PayPal",
+  },
+  {
+    to: "https://github.com/angelxehg",
+    title: "GitHub (@angelxehg)",
+    icon: "GitHub",
+  },
+  {
+    to: "https://gitlab.com/angelxehg",
+    title: "GitLab (@angelxehg)",
+    icon: "GitLab",
+  },
+  {
+    to: "https://www.twitter.com/angelxehg",
+    title: "Twitter (@angelxehg)",
+    icon: "Twitter",
+  },
+  {
+    to: "https://www.instagram.com/angelxehg",
+    title: "Instagram (@angelxehg)",
+    icon: "Instagram",
+  },
+]
 
 export const ProfileImage = () => {
   const data = useStaticQuery(graphql`
@@ -25,13 +59,7 @@ export const ProfileImage = () => {
   )
 }
 
-interface LinkExternalProps {
-  to: string
-  title?: string
-  children: any
-}
-
-export const LinkExternal = (props: LinkExternalProps) => (
+export const LinkExternal = props => (
   <a
     href={props.to}
     rel="noreferrer"
@@ -44,3 +72,9 @@ export const LinkExternal = (props: LinkExternalProps) => (
     {props.children}
   </a>
 )
+
+LinkExternal.propTypes = {
+  to: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  children: PropTypes.node,
+}

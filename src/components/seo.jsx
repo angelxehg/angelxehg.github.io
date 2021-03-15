@@ -1,22 +1,16 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
+export const Version = () => (
+  <p className="mt-2" style={{ color: "rgba(128,255,128,0.25)" }}>
+    angelxehg.com v1.1.0
+  </p>
+)
+
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-const SEO = (props: {
-  description: string
-  lang: string
-  meta: any
-  title: string
-}) => {
+const SEO = props => {
   const { description, lang, meta, title } = props
   const site = useSiteMetadata()
 

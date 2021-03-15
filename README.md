@@ -14,6 +14,8 @@ Utilice estos comandos para clonar e instalar el sitio:
 
 - Iniciar servidor de desarrollo: `gatsby develop`
 
+- Limpiar cache del entorno de desarrollo: `gatsby clean`
+
 ## Calidad
 
 Utilice estos comandos para comprobar la calidad del código
