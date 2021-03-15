@@ -1,17 +1,18 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout, { Footer, LayoutContent } from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Column } from "../components/grid"
-import { IContent, useContents } from "../hooks/use-contents"
+import { useContents } from "../hooks/use-contents"
 import { Icon } from "../components/icons"
 import { LinkExternal } from "../components/social"
 import { Navbar, NavbarBrand, NavbarToggler, NavbarCollapse, NavbarItem } from "../components/navbar"
 
-const Project = (props: { project: IContent }) => {
-  const { slug, title, extract, image, stack, github, demo } = props.project
+const Project = (props) => {
+  const { slug, title, extract, image, stack, github, demo } = props
   const stackIcons = stack.split(",")
   return (
     <Column>
@@ -47,6 +48,16 @@ const Project = (props: { project: IContent }) => {
   )
 }
 
+Project.propTyoes = { 
+  slug: PropTypes.string,
+  title: PropTypes.string,
+  extract: PropTypes.string,
+  image: PropTypes.object,
+  stack: PropTypes.string,
+  github: PropTypes.string,
+  demo: PropTypes.string
+}
+
 const ProjectsPage = () => {
   const projects = useContents("project")
   return (
@@ -63,8 +74,8 @@ const ProjectsPage = () => {
       </Navbar>
       <LayoutContent>
         <Grid>
-          {projects.map((item, index) => (
-            <Project key={index} project={item} />
+          {projects.map(({ slug, title, extract, image, stack, github, demo }) => (
+            <Project key={slug} title={title} extract={extract} image={image} stack={stack} github={github} demo={demo} />
           ))}
         </Grid>
       </LayoutContent>

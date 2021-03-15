@@ -1,16 +1,16 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout, { Footer, LayoutContent } from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Column } from "../components/grid"
-import { IContent, useContents } from "../hooks/use-contents"
-import projects from "./projects"
+import { useContents } from "../hooks/use-contents"
 import { Navbar, NavbarBrand, NavbarCollapse, NavbarItem, NavbarToggler } from "../components/navbar"
 
-const Post = (props: { post: IContent }) => {
-  const { slug, title, extract, image } = props.post
+const Post = (props) => {
+  const { slug, title, extract, image } = props
   return (
     <Column>
       <div className="card no-bg">
@@ -24,6 +24,13 @@ const Post = (props: { post: IContent }) => {
       </div>
     </Column>
   )
+}
+
+Post.propTypes = {
+  slug: PropTypes.string,
+  title: PropTypes.string,
+  extract: PropTypes.string,
+  image: PropTypes.object
 }
 
 const PostsPage = () => {
@@ -42,8 +49,8 @@ const PostsPage = () => {
       </Navbar>
       <LayoutContent>
         <Grid>
-          {posts.map((item, index) => (
-            <Post key={index} post={item} />
+          {posts.map(({ slug, title, extract, image }) => (
+            <Post key={slug} title={title} extract={extract} image={image} />
           ))}
         </Grid>
       </LayoutContent>

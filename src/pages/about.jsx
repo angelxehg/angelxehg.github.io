@@ -58,7 +58,7 @@ const ComplexHeader = () => {
   )
 }
 
-const FlexibleInfo = (props: { title: string; children: any }) => {
+const FlexibleInfo = (props) => {
   return (
     <div className="row">
       <div className="col-xl-2 col-lg-3 col-md-4">
@@ -70,6 +70,7 @@ const FlexibleInfo = (props: { title: string; children: any }) => {
 }
 
 FlexibleInfo.propTypes = {
+  title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 }
 
