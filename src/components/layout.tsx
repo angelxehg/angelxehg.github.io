@@ -17,7 +17,7 @@ export const Footer = () => (
   <footer>
     <nav className="navbar navbar-dark pg-bg divr">
       <div className="row ps-3" style={{ width: "100%" }}>
-        <div className="col-md-auto text-lg-end text-start order-lg-last">
+        <div className="col-lg-auto text-lg-end text-start order-lg-last">
           <LinkExternal
             to="https://www.linkedin.com/in/angelxehg"
             title="LinkedIn (/in/angelxehg)"
@@ -60,9 +60,11 @@ export const Footer = () => (
             contact@angelxehg.com
           </LinkExternal>
         </div>
-        <div className="col-md mt-md-0 mt-3">
+        <div className="col-lg mt-lg-0 mt-2">
           <p className="m-0">
-            © {new Date().getFullYear()}, Angel Hurtado. Las marcas y logos pertenecen a sus respectivos dueños. Iconos obtenidos desde{" "}
+            <b>© {new Date().getFullYear()}, Angel Hurtado. Versión del sitio: v1.0.0</b>
+            <br />
+            Las marcas y logos pertenecen a sus respectivos dueños. Iconos obtenidos desde{" "}
             <LinkExternal to="https://fontawesome.com/license">
               FontAwesome
             </LinkExternal>

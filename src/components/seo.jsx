@@ -2,6 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
+export const Version = () => (
+  <p className="mt-2" style={{ color: "rgba(128,255,128,0.25)" }}>
+    angelxehg.com v1.0.0
+  </p>
+)
+
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const SEO = (props) => {

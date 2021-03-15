@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { CentralLayout } from "../components/layout"
-import SEO from "../components/seo"
+import SEO, { Version } from "../components/seo"
 import { LinkExternal, ProfileImage } from "../components/social"
 import {
   EmailIcon,
@@ -20,7 +20,7 @@ const IndexPage = () => {
   return (
     <CentralLayout>
       <SEO title="Inicio" lang="es"/>
-      <div className="card no-bg pt-3 divr">
+      <div className="card no-bg divr">
         <ProfileImage />
         <div className="card-body">
           <Link to="/" style={{ color: "white" }}>
@@ -88,6 +88,7 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
+      <Version />
     </CentralLayout>
   )
 }
