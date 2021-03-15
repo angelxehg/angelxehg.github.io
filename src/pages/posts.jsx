@@ -56,7 +56,7 @@ const PostsPage = () => {
       <LayoutContent>
         <Grid>
           {posts.map(({ slug, title, extract, image }) => (
-            <Post key={slug} title={title} extract={extract} image={image} />
+            <Post key={slug} title={title} extract={extract} image={image} slug={slug} />
           ))}
         </Grid>
       </LayoutContent>

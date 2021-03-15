@@ -84,6 +84,7 @@ const ProjectsPage = () => {
             ({ slug, title, extract, image, stack, github, demo }) => (
               <Project
                 key={slug}
+                slug={slug}
                 title={title}
                 extract={extract}
                 image={image}
