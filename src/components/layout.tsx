@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { LinkExternal } from "./social"
@@ -13,49 +12,20 @@ import {
   PayPalIcon,
   TwitterIcon,
 } from "./icons"
+import { Navbar, NavbarBrand, NavbarCollapse, NavbarItem, NavbarToggler } from "./navbar"
 
 export const Header = () => {
   const site = useSiteMetadata()
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark sticky-top pg-bg divr">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/" style={{ color: "white" }}>
-          {site.title}
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link" activeClassName="active" to="/posts">Blog</Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link"
-                activeClassName="active"
-                to="/projects"
-              >
-                Proyectos
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">
-                Acerca de
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <Navbar>
+      <NavbarBrand title={site.title} to="/" />
+      <NavbarToggler />
+      <NavbarCollapse>
+        <NavbarItem title="Blog" to="/posts" />
+        <NavbarItem title="Proyectos" to="/projects" />
+        <NavbarItem title="Acerca de" to="/about" />
+      </NavbarCollapse>
+    </Navbar>
   )
 }
 
