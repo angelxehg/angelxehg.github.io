@@ -71,7 +71,7 @@ export const CentralLayout = (props) => (
   </div>
 )
 
-Layout.propTypes = {
+CentralLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 

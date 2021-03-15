@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
@@ -83,6 +84,10 @@ const PageTemplate = (props) => {
       <Footer />
     </Layout>
   )
+}
+
+PageTemplate.propTypes = {
+  data: PropTypes.any
 }
 
 export default PageTemplate

@@ -48,7 +48,7 @@ const Project = (props) => {
   )
 }
 
-Project.propTyoes = {
+Project.propTypes = {
   slug: PropTypes.string,
   title: PropTypes.string,
   extract: PropTypes.string,
