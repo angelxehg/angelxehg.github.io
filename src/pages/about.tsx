@@ -138,7 +138,7 @@ const AboutPage = () => {
   const site = useSiteMetadata()
   return (
     <Layout>
-      <SEO title="Mi trayectoria" />
+      <SEO title="Mi trayectoria" lang="es"/>
       <ComplexHeader />
       <LayoutContent>
         <div className="d-block d-md-none">

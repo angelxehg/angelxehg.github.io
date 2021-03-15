@@ -30,7 +30,7 @@ const PostsPage = () => {
   const posts = useContents("post")
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title="Blog" lang="es" />
       <Navbar>
         <NavbarBrand title="Mi Blog" to="/posts" />
         <NavbarToggler />

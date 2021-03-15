@@ -54,7 +54,7 @@ const ProjectsPage = () => {
   const projects = useContents("project")
   return (
     <Layout>
-      <SEO title="Proyectos" />
+      <SEO title="Proyectos" lang="es"/>
       <Navbar>
         <NavbarBrand title="Mis Proyectos" to="/projects" />
         <NavbarToggler />

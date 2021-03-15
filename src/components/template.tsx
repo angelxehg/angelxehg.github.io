@@ -39,7 +39,7 @@ export default (props: { data: any }) => {
   const isProject = frontmatter.type === "project";
   return (
     <Layout>
-      <SEO title={frontmatter.title} />
+      <SEO title={frontmatter.title} lang="es" />
       <Navbar>
         <NavbarBrand
           title={isProject ? "Mis Proyectos" : "Mi Blog"}
