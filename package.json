@@ -25,7 +25,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint": "eslint src/**/*.tsx"
+    "lint": "eslint src/**/*.jsx"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
