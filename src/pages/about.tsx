@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import { ProfileImage, LinkExternal, socialLinks } from "../components/social"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { Icons, Icon } from "../components/icons"
+import { Icon } from "../components/icons"
 import Layout, { Footer, LayoutContent } from "../components/layout"
 
 const ComplexHeader = () => {
@@ -36,19 +36,19 @@ const ComplexHeader = () => {
                 <Link to="/posts" className="me-3">
                   Blog
                 </Link>
-                <Link to="/projects">
-                  Proyectos
-                </Link>
+                <Link to="/projects">Proyectos</Link>
               </div>
               <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
                 <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
-                  <Icon name={Icons.Email} className="me-1" />
+                  <Icon name="Email" className="me-1" />
                   contact@angelxehg.com
                 </LinkExternal>
                 <br className="d-block d-sm-none" />
-                {socialLinks.map(({ title, to, icon }) => <LinkExternal key={to} to={to} title={title}>
-                  <Icon name={icon} />
-                </LinkExternal>)}
+                {socialLinks.map(({ title, to, icon }) => (
+                  <LinkExternal key={to} to={to} title={title}>
+                    <Icon name={icon} />
+                  </LinkExternal>
+                ))}
               </div>
             </div>
           </div>
@@ -78,42 +78,19 @@ const AboutPage = () => {
   const stacks = [
     {
       title: "Lenguajes",
-      icons: [
-        Icons.HTML5,
-        Icons.CSS3,
-        Icons.Typescript,
-        Icons.Javascript,
-        Icons.Python,
-      ]
+      icons: ["HTML5", "CSS3", "Typescript", "Javascript", "Python"],
     },
     {
       title: "Frameworks",
-      icons: [
-        Icons.React,
-        Icons.Ionic,
-        Icons.Gatsby,
-        Icons.Angular,
-      ]
+      icons: ["React", "Ionic", "Gatsby", "Angular"],
     },
     {
       title: "Herramientas",
-      icons: [
-        Icons.NodeJS,
-        Icons.NPM,
-        Icons.Git,
-        Icons.Markdown,
-        Icons.Bootstrap,
-      ]
+      icons: ["NodeJS", "NPM", "Git", "Markdown", "Bootstrap"],
     },
     {
       title: "Plataformas",
-      icons: [
-        Icons.Ubuntu,
-        Icons.Netlify,
-        Icons.AWS,
-        Icons.Firebase,
-        Icons.DigitalOcean,
-      ]
+      icons: ["Ubuntu", "Netlify", "AWS", "Firebase", "DigitalOcean"],
     },
   ]
   return (
@@ -137,11 +114,15 @@ const AboutPage = () => {
           </p>
         </FlexibleInfo>
         <FlexibleInfo title="Habilidades">
-          {stacks.map(({ title, icons }) => <p key={title} className="m-0">
-            {title + ": "}
-            {icons.map(icon => <Icon key={icon} name={icon} className="me-1" />)}
-          </p>)}
-          <br/>
+          {stacks.map(({ title, icons }) => (
+            <p key={title} className="m-0">
+              {title + ": "}
+              {icons.map(icon => (
+                <Icon key={icon} name={icon} className="me-1" />
+              ))}
+            </p>
+          ))}
+          <br />
         </FlexibleInfo>
         <FlexibleInfo title="Aptitudes">
           <p>

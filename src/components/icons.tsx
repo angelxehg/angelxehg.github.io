@@ -28,40 +28,40 @@ const ReactSVG = require("../assets/fontawesome/react-brands.svg")
 const TypescriptSVG = require("../assets/seek-logo/typescript.svg")
 const UbuntuSVG = require("../assets/fontawesome/ubuntu-brands.svg")
 
-export enum Icons {
-  Angular = "Angular",
-  AWS = "AWS",
-  Bootstrap = "Bootstrap",
-  CSS3 = "CSS3",
-  DigitalOcean = "DigitalOcean",
-  Gatsby = "Gatsby",
-  Git = "Git",
-  Firebase = "Firebase",
-  HTML5 = "HTML5",
-  Ionic = "Ionic",
-  Javascript = "Javascript",
-  Markdown = "Markdown",
-  Netlify = "Netlify",
-  NodeJS = "NodeJS",
-  NPM = "NPM",
-  Python = "Python",
-  React = "React",
-  Typescript = "Typescript",
-  Ubuntu = "Ubuntu",
-  LinkedIn = "LinkedIn",
-  Web = "Web",
-  Email = "Email",
-  GitHub = "GitHub",
-  GitLab = "GitLab",
-  Instagram = "Instagram",
-  Twitter = "Twitter",
-  PayPal = "PayPal",
-}
+const availableIcons = [
+  "Angular",
+  "AWS",
+  "Bootstrap",
+  "CSS3",
+  "DigitalOcean",
+  "Gatsby",
+  "Git",
+  "Firebase",
+  "HTML5",
+  "Ionic",
+  "Javascript",
+  "Markdown",
+  "Netlify",
+  "NodeJS",
+  "NPM",
+  "Python",
+  "React",
+  "Typescript",
+  "Ubuntu",
+  "LinkedIn",
+  "Web",
+  "Email",
+  "GitHub",
+  "GitLab",
+  "Instagram",
+  "Twitter",
+  "PayPal",
+]
 
 interface IconProps {
   size?: string
   className?: string
-  name: Icons
+  name: string
 }
 
 export const Icon = (props: IconProps) => {
@@ -75,60 +75,63 @@ export const Icon = (props: IconProps) => {
       color: defaultColor || "white",
     }
   }
+  if (!availableIcons.includes(name)) {
+    throw Error(`Missing icon: ${name}`)
+  }
   switch (name) {
-    case Icons.Angular:
+    case "Angular":
       return <AngularSVG style={useStyles(props, "#D6002F")} className={classes} />
-    case Icons.AWS:
+    case "AWS":
       return <AWSSVG style={useStyles(props, "#F79400")} className={classes} />
-    case Icons.Bootstrap:
+    case "Bootstrap":
       return <BootstrapSVG style={useStyles(props, "#533B78")} className={classes} />
-    case Icons.CSS3:
+    case "CSS3":
       return <CSS3SVG style={useStyles(props, "#254BDD")} className={classes} />
-    case Icons.DigitalOcean:
+    case "DigitalOcean":
       return <DigitalOceanSVG style={useStyles(props, "#007CF7")} className={classes} />
-    case Icons.Gatsby:
+    case "Gatsby":
       return <GatsbySVG style={useStyles(props, "#E94E31")} className={classes} />
-    case Icons.Git:
+    case "Git":
       return <GitSVG style={useStyles(props, "#E94E31")} className={classes} />
-    case Icons.Firebase:
+    case "Firebase":
       return <FirebaseSVG style={useStyles(props, "white")} className={classes} />
-    case Icons.HTML5:
+    case "HTML5":
       return <HTML5SVG style={useStyles(props, "#F64A1D")} className={classes} />
-    case Icons.Ionic:
+    case "Ionic":
       return <IonicSVG fill="#4886F1" style={useStyles(props, "white")} className={classes} />
-    case Icons.Javascript:
+    case "Javascript":
       return <JavascriptSVG style={useStyles(props, "#F7DB00")} className={classes} />
-    case Icons.Markdown:
+    case "Markdown":
       return <MarkdownSVG style={useStyles(props, "white")} className={classes} />
-    case Icons.Netlify:
+    case "Netlify":
       return <NetlifySVG style={useStyles(props, "white")} className={classes} />
-    case Icons.NodeJS:
+    case "NodeJS":
       return <NodeJSSVG style={useStyles(props, "#7FC728")} className={classes} />
-    case Icons.NPM:
+    case "NPM":
       return <NPMSVG style={useStyles(props, "#C53635")} className={classes} />
-    case Icons.Python:
+    case "Python":
       return <PythonSVG style={useStyles(props, "white")} className={classes} />
-    case Icons.React:
+    case "React":
       return <ReactSVG style={useStyles(props, "#79D8F7")} className={classes} />
-    case Icons.Typescript:
+    case "Typescript":
       return <TypescriptSVG style={useStyles(props, "#356A97")} className={classes} />
-    case Icons.Ubuntu:
+    case "Ubuntu":
       return <UbuntuSVG style={useStyles(props, "#D74614")} className={classes} />
-    case Icons.LinkedIn:
+    case "LinkedIn":
       return <LinkedInSVG style={useStyles(props, "#2563AC")} className={classes} />
-    case Icons.Web:
+    case "Web":
       return <WebSVG style={useStyles(props, "white")} className={classes} />
-    case Icons.Email:
+    case "Email":
       return <EmailSVG style={useStyles(props, "white")} className={classes} />
-    case Icons.GitHub:
+    case "GitHub":
       return <GitHubSVG style={useStyles(props, "white")} className={classes} />
-    case Icons.GitLab:
+    case "GitLab":
       return <GitLabSVG style={useStyles(props, "#F46A25")} className={classes} />
-    case Icons.Instagram:
+    case "Instagram":
       return <InstagramSVG style={useStyles(props, "#F70038")} className={classes} />
-    case Icons.Twitter:
+    case "Twitter":
       return <TwitterSVG style={useStyles(props, "#1C9CEA")} className={classes} />
-    case Icons.PayPal:
+    case "PayPal":
       return <PayPalSVG style={useStyles(props, "#002E82")} className={classes} />
     default:
       return <p>SVG not found</p>

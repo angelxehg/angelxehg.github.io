@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import { LinkExternal, socialLinks } from "./social"
-import { Icons, Icon } from "./icons"
+import { Icon } from "./icons"
 
 export const Footer = () => (
   <footer>
@@ -14,7 +14,7 @@ export const Footer = () => (
           </LinkExternal>)}
           <br />
           <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
-            <Icon name={Icons.Email} className="me-1" />
+            <Icon name="Email" className="me-1" />
             contact@angelxehg.com
           </LinkExternal>
         </div>

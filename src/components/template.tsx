@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout, { Footer, LayoutContent } from "./layout"
 import SEO from "./seo"
-import { Icons, Icon } from "./icons"
+import { Icon } from "./icons"
 import { LinkExternal } from "./social"
 import { Navbar, NavbarBrand, NavbarToggler, NavbarCollapse, NavbarItem } from "./navbar"
 
@@ -27,14 +27,11 @@ export const query = graphql`
 // eslint-disable-next-line react/display-name
 export default (props: { data: any }) => {
   const { frontmatter, body } = props.data.mdx
-  const icons: Icons[] = []
+  const icons: string[] = []
   if (frontmatter.stack) {
     frontmatter.stack
       .split(",")
-      .filter((i: string) => i in Icons)
-      .map((i: Icons) => {
-        icons.push(i)
-      })
+      .map((i: string) => icons.push(i))
   }
   const isProject = frontmatter.type === "project";
   return (
@@ -63,12 +60,12 @@ export default (props: { data: any }) => {
           <div className="col-auto">
             {frontmatter.github && (
               <LinkExternal to={frontmatter.github} title="Repositorio">
-                <Icon name={Icons.GitHub} size="1.5rem" />
+                <Icon name="GitHub" size="1.5rem" />
               </LinkExternal>
             )}
             {frontmatter.demo && (
               <LinkExternal to={frontmatter.demo} title="Demo">
-                <Icon name={Icons.Web} size="1.5rem" />
+                <Icon name="Web" size="1.5rem" />
               </LinkExternal>
             )}
           </div>

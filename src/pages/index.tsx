@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { CentralLayout } from "../components/layout"
 import SEO, { Version } from "../components/seo"
 import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
-import { Icons, Icon } from "../components/icons"
+import { Icon } from "../components/icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const IndexPage = () => {
@@ -38,7 +38,7 @@ const IndexPage = () => {
                 to="mailto:contact@angelxehg.com"
                 title="Email (contact@angelxehg.com)"
               >
-                <Icon name={Icons.Email} size="1.5rem" />
+                <Icon name="Email" size="1.5rem" />
               </LinkExternal>
               {socialLinks.map(({ title, to, icon }) => <LinkExternal key={to} to={to} title={title}>
                 <Icon name={icon} size="1.5rem" />

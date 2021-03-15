@@ -6,16 +6,13 @@ import Layout, { Footer, LayoutContent } from "../components/layout"
 import SEO from "../components/seo"
 import { Grid, Column } from "../components/grid"
 import { IContent, useContents } from "../hooks/use-contents"
-import { Icons, Icon } from "../components/icons"
+import { Icon } from "../components/icons"
 import { LinkExternal } from "../components/social"
 import { Navbar, NavbarBrand, NavbarToggler, NavbarCollapse, NavbarItem } from "../components/navbar"
 
 const Project = (props: { project: IContent }) => {
   const { slug, title, extract, image, stack, github, demo } = props.project
-  const icons = stack
-    .split(",")
-    .filter(i => i in Icons)
-    .map(i => i as Icons)
+  const stackIcons = stack.split(",")
   return (
     <Column>
       <div className="card no-bg">
@@ -30,17 +27,17 @@ const Project = (props: { project: IContent }) => {
             <div className="col-auto p-0">
               {github && (
                 <LinkExternal to={github} title="Repositorio">
-                  <Icon name={Icons.GitHub} size="1.5rem" />
+                  <Icon name="GitHub" size="1.5rem" />
                 </LinkExternal>
               )}
               {demo && (
                 <LinkExternal to={demo} title="Demo">
-                  <Icon name={Icons.Web} size="1.5rem" />
+                  <Icon name="Web" size="1.5rem" />
                 </LinkExternal>
               )}
             </div>
           </div>
-          {icons.map(icon => (
+          {stackIcons.map(icon => (
             <Icon key={icon} name={icon} className="me-1" />
           ))}
           <p className="card-text">{extract}</p>
@@ -54,7 +51,7 @@ const ProjectsPage = () => {
   const projects = useContents("project")
   return (
     <Layout>
-      <SEO title="Proyectos" lang="es"/>
+      <SEO title="Proyectos" lang="es" />
       <Navbar>
         <NavbarBrand title="Mis Proyectos" to="/projects" />
         <NavbarToggler />

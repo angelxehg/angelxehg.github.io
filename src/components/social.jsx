@@ -2,38 +2,37 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { Icons } from "./icons";
 
 export const socialLinks = [
   {
     to: "https://www.linkedin.com/in/angelxehg",
     title: "LinkedIn (/in/angelxehg)",
-    icon: Icons.LinkedIn
+    icon: "LinkedIn"
   },
   {
     to: "https://www.paypal.me/angelxehg",
     title: "PayPal (@angelxehg)",
-    icon: Icons.PayPal
+    icon: "PayPal"
   },
   {
     to: "https://github.com/angelxehg",
     title: "GitHub (@angelxehg)",
-    icon: Icons.GitHub
+    icon: "GitHub"
   },
   {
     to: "https://gitlab.com/angelxehg",
     title: "GitLab (@angelxehg)",
-    icon: Icons.GitLab
+    icon: "GitLab"
   },
   {
     to: "https://www.twitter.com/angelxehg",
     title: "Twitter (@angelxehg)",
-    icon: Icons.Twitter
+    icon: "Twitter"
   },
   {
     to: "https://www.instagram.com/angelxehg",
     title: "Instagram (@angelxehg)",
-    icon: Icons.Instagram
+    icon: "Instagram"
   },
 ]
 
