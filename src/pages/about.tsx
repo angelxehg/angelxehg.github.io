@@ -57,9 +57,9 @@ const ComplexPageHeader = () => {
             <p className="d-none d-md-block">{site.description}</p>
             <div className="row mt-2">
               <div className="col-lg text-lg-start text-center">
-                {/* <Link to="/posts" className="me-3">
+                <Link to="/posts" className="me-3">
                   Blog
-                </Link> */}
+                </Link>
                 <Link to="/projects" className="me-3">
                   Proyectos
                 </Link>
