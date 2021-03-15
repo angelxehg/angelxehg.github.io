@@ -21,15 +21,9 @@ const IndexPage = () => {
           <p className="card-text">{site.description}</p>
           <div className="row">
             <div className="col">
-              <Link to="/posts" className="me-3">
-                Blog
-              </Link>
-              <Link to="/projects" className="me-3">
-                Proyectos
-              </Link>
-              <Link to="/about">
-                Trayectoria
-              </Link>
+              {/* <Link to="/posts" className="me-3">Blog</Link> */}
+              <Link to="/projects" className="me-3">Proyectos</Link>
+              <Link to="/about">Trayectoria</Link>
             </div>
           </div>
           <div className="row mt-3">

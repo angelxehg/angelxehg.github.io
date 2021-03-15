@@ -30,12 +30,8 @@ const ComplexHeader = () => {
             <p className="d-none d-md-block">{site.description}</p>
             <div className="row mt-2">
               <div className="col-lg text-lg-start text-center">
-                <Link to="/" className="me-3">
-                  Resumen
-                </Link>
-                <Link to="/posts" className="me-3">
-                  Blog
-                </Link>
+                <Link to="/" className="me-3">Resumen</Link>
+                {/* <Link to="/posts" className="me-3">Blog</Link> */}
                 <Link to="/projects">Proyectos</Link>
               </div>
               <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">

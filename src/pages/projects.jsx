@@ -68,7 +68,7 @@ const ProjectsPage = () => {
         <NavbarToggler />
         <NavbarCollapse>
           <NavbarItem title="Resumen" to="/" />
-          <NavbarItem title="Blog" to="/posts" />
+          {/* <NavbarItem title="Blog" to="/posts" /> */}
           <NavbarItem title="Trayectoria" to="/about" />
         </NavbarCollapse>
       </Navbar>
