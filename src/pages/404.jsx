@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { CentralLayout } from "../components/layout"
-import SEO, { Version } from "../components/seo"
+import { CentralLayout } from "@components/layout"
+import SEO, { Version } from "@components/seo"
 
 const NotFoundPage = () => (
   <CentralLayout>

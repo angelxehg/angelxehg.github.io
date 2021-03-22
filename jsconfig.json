@@ -18,11 +18,21 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"],
+      "@pages/*": ["src/pages/*"],
+      "@hooks/*": ["src/hooks/*"],
+    }
   },
   "exclude": [
     "public",
-    "node_modules"
+    "node_modules",
+    ".cache",
+    "content",
+    "images"
   ],
   "include": [
     "src"

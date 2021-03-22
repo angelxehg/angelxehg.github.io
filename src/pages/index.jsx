@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { CentralLayout } from "../components/layout"
-import SEO, { Version } from "../components/seo"
-import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
-import { Icon } from "../components/icons"
-import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { CentralLayout } from "@components/layout"
+import SEO, { Version } from "@components/seo"
+import { LinkExternal, ProfileImage, socialLinks } from "@components/social"
+import { Icon } from "@components/icons"
+import { useSiteMetadata } from "@hooks/use-site-metadata"
 
 const IndexPage = () => {
   const site = useSiteMetadata()

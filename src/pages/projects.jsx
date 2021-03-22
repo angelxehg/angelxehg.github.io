@@ -3,19 +3,19 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import Layout, { Footer, LayoutContent } from "../components/layout"
-import SEO from "../components/seo"
-import { Grid, Column } from "../components/grid"
-import { useContents } from "../hooks/use-contents"
-import { Icon } from "../components/icons"
-import { LinkExternal } from "../components/social"
+import Layout, { Footer, LayoutContent } from "@components/layout"
+import SEO from "@components/seo"
+import { Grid, Column } from "@components/grid"
+import { useContents } from "@hooks/use-contents"
+import { Icon } from "@components/icons"
+import { LinkExternal } from "@components/social"
 import {
   Navbar,
   NavbarBrand,
   NavbarToggler,
   NavbarCollapse,
   NavbarItem,
-} from "../components/navbar"
+} from "@components/navbar"
 
 const Project = props => {
   const { slug, title, extract, image, stack, github, demo } = props

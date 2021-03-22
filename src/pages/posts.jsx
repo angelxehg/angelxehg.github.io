@@ -3,17 +3,17 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import Layout, { Footer, LayoutContent } from "../components/layout"
-import SEO from "../components/seo"
-import { Grid, Column } from "../components/grid"
-import { useContents } from "../hooks/use-contents"
+import Layout, { Footer, LayoutContent } from "@components/layout"
+import SEO from "@components/seo"
+import { Grid, Column } from "@components/grid"
+import { useContents } from "@hooks/use-contents"
 import {
   Navbar,
   NavbarBrand,
   NavbarCollapse,
   NavbarItem,
   NavbarToggler,
-} from "../components/navbar"
+} from "@components/navbar"
 
 const Post = props => {
   const { slug, title, extract, image } = props

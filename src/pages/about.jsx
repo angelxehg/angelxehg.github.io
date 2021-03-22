@@ -2,11 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-import SEO from "../components/seo"
-import { ProfileImage, LinkExternal, socialLinks } from "../components/social"
-import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { Icon } from "../components/icons"
-import Layout, { Footer, LayoutContent } from "../components/layout"
+import SEO from "@components/seo"
+import { ProfileImage, LinkExternal, socialLinks } from "@components/social"
+import { useSiteMetadata } from "@hooks/use-site-metadata"
+import { Icon } from "@components/icons"
+import Layout, { Footer, LayoutContent } from "@components/layout"
 
 const ComplexHeader = () => {
   const site = useSiteMetadata()
