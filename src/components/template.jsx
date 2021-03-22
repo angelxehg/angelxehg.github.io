@@ -3,7 +3,8 @@ import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import Layout, { Footer, LayoutContent } from "./layout"
+import FluidLayout, { BaseLayout } from "@layouts/fluid"
+import Footer from "@components/footer"
 import SEO from "./seo"
 import { Icon } from "./icons"
 import { LinkExternal } from "./social"
@@ -39,7 +40,7 @@ const PageTemplate = props => {
   }
   const isProject = frontmatter.type === "project"
   return (
-    <Layout>
+    <BaseLayout>
       <SEO title={frontmatter.title} lang="es" />
       <Navbar>
         <NavbarBrand
@@ -56,7 +57,7 @@ const PageTemplate = props => {
           <NavbarItem title="Trayectoria" to="/about" />
         </NavbarCollapse>
       </Navbar>
-      <LayoutContent>
+      <FluidLayout>
         <div className="row align-items-center">
           <div className="col-auto">
             <h1 className="mt-3">{frontmatter.title}</h1>
@@ -84,9 +85,9 @@ const PageTemplate = props => {
         )}
         <p>Fecha: {frontmatter.date}</p>
         <MDXRenderer>{body}</MDXRenderer>
-      </LayoutContent>
+      </FluidLayout>
       <Footer />
-    </Layout>
+    </BaseLayout>
   )
 }
 

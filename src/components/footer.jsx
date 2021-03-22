@@ -1,10 +1,9 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 import { LinkExternal, socialLinks } from "./social"
 import { Icon } from "./icons"
 
-export const Footer = () => (
+const Footer = () => (
   <footer>
     <nav className="navbar navbar-dark pg-bg divr">
       <div className="row ps-3" style={{ width: "100%" }}>
@@ -47,34 +46,4 @@ export const Footer = () => (
   </footer>
 )
 
-const Layout = props => {
-  return (
-    <div className="container-sm mt-3 mb-3 text-white font-monospace">
-      {props.children}
-    </div>
-  )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export const LayoutContent = props => {
-  return <main className="container-fluid pt-3 pb-3">{props.children}</main>
-}
-
-LayoutContent.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export const CentralLayout = props => (
-  <div className="row text-center justify-content-center full-h text-white font-monospace">
-    <div className="col align-self-center fill-sm">{props.children}</div>
-  </div>
-)
-
-CentralLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+export default Footer

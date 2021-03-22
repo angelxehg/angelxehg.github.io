@@ -2,11 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
+import FluidLayout, { BaseLayout } from "@layouts/fluid"
 import SEO from "@components/seo"
 import { ProfileImage, LinkExternal, socialLinks } from "@components/social"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
 import { Icon } from "@components/icons"
-import Layout, { Footer, LayoutContent } from "@components/layout"
+import Footer from "@components/footer"
 
 const ComplexHeader = () => {
   const site = useSiteMetadata()
@@ -93,10 +94,10 @@ const AboutPage = () => {
     },
   ]
   return (
-    <Layout>
+    <BaseLayout>
       <SEO title="Mi trayectoria" lang="es" />
       <ComplexHeader />
-      <LayoutContent>
+      <FluidLayout>
         <div className="d-block d-md-none">
           <h3>Acerca de mi</h3>
           <p>{site.description}</p>
@@ -143,9 +144,9 @@ const AboutPage = () => {
             19° Nacional: Concurso Nacional de Prototipos 2016
           </p>
         </FlexibleInfo>
-      </LayoutContent>
+      </FluidLayout>
       <Footer />
-    </Layout>
+    </BaseLayout>
   )
 }
 

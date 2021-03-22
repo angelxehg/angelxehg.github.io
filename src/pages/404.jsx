@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { CentralLayout } from "@components/layout"
+import CenterLayout from "@layouts/center"
 import SEO, { Version } from "@components/seo"
 
 const NotFoundPage = () => (
-  <CentralLayout>
+  <CenterLayout>
     <SEO title="404: Not found" lang="es" />
     <div className="card no-bg divr">
       <div className="card-body">
@@ -15,7 +15,7 @@ const NotFoundPage = () => (
       </div>
     </div>
     <Version />
-  </CentralLayout>
+  </CenterLayout>
 )
 
 export default NotFoundPage
