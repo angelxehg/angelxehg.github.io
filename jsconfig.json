@@ -27,6 +27,7 @@
       "@templates/*": ["src/templates/*"],
       "@pages/*": ["src/pages/*"],
       "@hooks/*": ["src/hooks/*"],
+      "@css/*": ["src/css/*"],
     }
   },
   "exclude": [
