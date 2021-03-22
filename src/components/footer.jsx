@@ -1,7 +1,7 @@
 import React from "react"
 
-import { LinkExternal, socialLinks } from "./social"
-import { Icon } from "./icons"
+import { LinkExternal, socialLinks } from "@components/social"
+import { Icon } from "@components/icons"
 
 const Footer = () => (
   <footer>

@@ -5,16 +5,16 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import FluidLayout, { BaseLayout } from "@layouts/fluid"
 import Footer from "@components/footer"
-import SEO from "./seo"
-import { Icon } from "./icons"
-import { LinkExternal } from "./social"
+import SEO from "@components/seo"
+import { Icon } from "@components/icons"
+import { LinkExternal } from "@components/social"
 import {
   Navbar,
   NavbarBrand,
   NavbarToggler,
   NavbarCollapse,
   NavbarItem,
-} from "./navbar"
+} from "@components/navbar"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -49,10 +49,10 @@ const PageTemplate = props => {
         />
         <NavbarToggler />
         <NavbarCollapse>
-          <NavbarItem
+          {/* <NavbarItem
             title={isProject ? "Blog" : "Proyectos"}
             to={isProject ? "/posts" : "/projects"}
-          />
+          /> */}
           <NavbarItem title="Resumen" to="/" />
           <NavbarItem title="Trayectoria" to="/about" />
         </NavbarCollapse>

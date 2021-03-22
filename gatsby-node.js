@@ -15,6 +15,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@components': path.resolve(__dirname, 'src/components'),
         '@layouts': path.resolve(__dirname, 'src/layouts'),
         '@assets': path.resolve(__dirname, 'src/assets'),
+        '@templates': path.resolve(__dirname, 'src/templates'),
         '@pages': path.resolve(__dirname, 'src/pages'),
         '@hooks': path.resolve(__dirname, 'src/hooks'),
       },
@@ -64,7 +65,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   nodes.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/components/template.jsx`),
+      component: path.resolve(`./src/templates/article.jsx`),
       context: { id: node.id },
     })
   })
