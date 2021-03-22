@@ -1,16 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { CentralLayout } from "../components/layout"
-import SEO, { Version } from "../components/seo"
-import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
-import { Icon } from "../components/icons"
-import { useSiteMetadata } from "../hooks/use-site-metadata"
+import CenterLayout from "@layouts/center"
+import SEO, { Version } from "@components/seo"
+import { LinkExternal, ProfileImage, socialLinks } from "@components/social"
+import { Icon } from "@components/icons"
+import { useSiteMetadata } from "@hooks/use-site-metadata"
 
 const IndexPage = () => {
   const site = useSiteMetadata()
   return (
-    <CentralLayout>
+    <CenterLayout>
       <SEO title="Inicio" lang="es" />
       <div className="card no-bg divr pt-3">
         <ProfileImage />
@@ -46,7 +46,7 @@ const IndexPage = () => {
         </div>
       </div>
       <Version />
-    </CentralLayout>
+    </CenterLayout>
   )
 }
 

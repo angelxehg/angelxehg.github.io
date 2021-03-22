@@ -3,17 +3,18 @@ import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import Layout, { Footer, LayoutContent } from "./layout"
-import SEO from "./seo"
-import { Icon } from "./icons"
-import { LinkExternal } from "./social"
+import FluidLayout, { BaseLayout } from "@layouts/fluid"
+import Footer from "@components/footer"
+import SEO from "@components/seo"
+import { Icon } from "@components/icons"
+import { LinkExternal } from "@components/social"
 import {
   Navbar,
   NavbarBrand,
   NavbarToggler,
   NavbarCollapse,
   NavbarItem,
-} from "./navbar"
+} from "@components/navbar"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -39,7 +40,7 @@ const PageTemplate = props => {
   }
   const isProject = frontmatter.type === "project"
   return (
-    <Layout>
+    <BaseLayout>
       <SEO title={frontmatter.title} lang="es" />
       <Navbar>
         <NavbarBrand
@@ -48,15 +49,15 @@ const PageTemplate = props => {
         />
         <NavbarToggler />
         <NavbarCollapse>
-          <NavbarItem
+          {/* <NavbarItem
             title={isProject ? "Blog" : "Proyectos"}
             to={isProject ? "/posts" : "/projects"}
-          />
+          /> */}
           <NavbarItem title="Resumen" to="/" />
           <NavbarItem title="Trayectoria" to="/about" />
         </NavbarCollapse>
       </Navbar>
-      <LayoutContent>
+      <FluidLayout>
         <div className="row align-items-center">
           <div className="col-auto">
             <h1 className="mt-3">{frontmatter.title}</h1>
@@ -84,9 +85,9 @@ const PageTemplate = props => {
         )}
         <p>Fecha: {frontmatter.date}</p>
         <MDXRenderer>{body}</MDXRenderer>
-      </LayoutContent>
+      </FluidLayout>
       <Footer />
-    </Layout>
+    </BaseLayout>
   )
 }
 

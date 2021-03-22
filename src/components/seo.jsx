@@ -4,11 +4,11 @@ import { Helmet } from "react-helmet"
 
 export const Version = () => (
   <p className="mt-2" style={{ color: "rgba(128,255,128,0.25)" }}>
-    angelxehg.com v1.1.0
+    angelxehg.com v1.1.1
   </p>
 )
 
-import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { useSiteMetadata } from "@hooks/use-site-metadata"
 
 const SEO = props => {
   const { description, lang, meta, title } = props
