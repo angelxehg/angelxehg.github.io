@@ -23,7 +23,7 @@ const Footer = () => (
           <p className="m-0">
             <b>
               © {new Date().getFullYear()}, Angel Hurtado. Versión del sitio:
-              v1.1.0
+              v1.1.1
             </b>
             <br />
             Las marcas y logos pertenecen a sus respectivos dueños. Iconos
