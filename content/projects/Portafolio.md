@@ -5,6 +5,7 @@ type: "project"
 featuredImage: ../../images/portafolio.png
 stack: "Gatsby,React,Javascript,Netlify"
 demo: "https://angelxehg.com/"
+github: "https://github.com/angelxehg/angelxehg.com"
 published: true
 ---
 
