@@ -25,7 +25,7 @@ const Footer = () => (
               © {new Date().getFullYear()}, Angel Hurtado.
             </b>
             {" "}
-            Versión del sitio: <LinkExternal to="https://github.com/angelxehg/angelxehg.com/tree/v1.1.1">v1.1.1</LinkExternal>
+            Versión del sitio: <LinkExternal to="https://github.com/angelxehg/angelxehg.com/tree/v1.1.2">v1.1.2</LinkExternal>
             <br />
             Reporta problemas o envia tus sugerencias a la <LinkExternal to="https://github.com/angelxehg/angelxehg.com/issues">página de Issues</LinkExternal>
             <br />
