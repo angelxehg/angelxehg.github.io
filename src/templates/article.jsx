@@ -26,7 +26,7 @@ export const query = graphql`
         stack
         github
         demo
-        date(formatString: "YYYY MMMM Do")
+        date(formatString: "YYYY-MM-DD")
       }
     }
   }
@@ -58,32 +58,32 @@ const PageTemplate = props => {
         </NavbarCollapse>
       </Navbar>
       <FluidLayout>
-        <div className="row align-items-center">
-          <div className="col-auto">
-            <h1 className="mt-3">{frontmatter.title}</h1>
-          </div>
-          <div className="col-auto">
-            {frontmatter.github && (
-              <LinkExternal to={frontmatter.github} title="Repositorio">
-                <Icon name="GitHub" size="1.5rem" />
+        <h1 className="mt-2">{frontmatter.title}</h1>
+        <ul>
+          {frontmatter.stack && (
+            <li>
+              Tecnologias:{" "}
+              {icons.map(icon => (
+                <Icon key={icon} name={icon} className="me-1" />
+              ))}
+            </li>
+          )}
+          {frontmatter.demo && (
+            <li>
+              Página web: <LinkExternal to={frontmatter.demo} title="Demo">
+                {frontmatter.demo}
               </LinkExternal>
-            )}
-            {frontmatter.demo && (
-              <LinkExternal to={frontmatter.demo} title="Demo">
-                <Icon name="Web" size="1.5rem" />
+            </li>
+          )}
+          {frontmatter.github && (
+            <li>
+              Repositorio: <LinkExternal to={frontmatter.github} title="Repositorio">
+                {frontmatter.github}
               </LinkExternal>
-            )}
-          </div>
-        </div>
-        {frontmatter.stack && (
-          <p>
-            Tecnologias:{" "}
-            {icons.map(icon => (
-              <Icon key={icon} name={icon} className="me-1" />
-            ))}
-          </p>
-        )}
-        <p>Fecha: {frontmatter.date}</p>
+            </li>
+          )}
+          <li>Fecha: {frontmatter.date}</li>
+        </ul>
         <MDXRenderer>{body}</MDXRenderer>
       </FluidLayout>
       <Footer />
