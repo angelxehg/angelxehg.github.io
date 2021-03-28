@@ -95,7 +95,7 @@ const AboutPage = () => {
   ]
   return (
     <BaseLayout>
-      <SEO title="Mi trayectoria" lang="es" />
+      <SEO title="Acerca de mi" lang="es" />
       <ComplexHeader />
       <FluidLayout>
         <div className="d-block d-md-none">

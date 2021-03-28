@@ -54,7 +54,7 @@ const PageTemplate = props => {
             to={isProject ? "/posts" : "/projects"}
           /> */}
           <NavbarItem title="Resumen" to="/" />
-          <NavbarItem title="Trayectoria" to="/about" />
+          <NavbarItem title="Acerca de" to="/about" />
         </NavbarCollapse>
       </Navbar>
       <FluidLayout>

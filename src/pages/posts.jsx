@@ -51,7 +51,7 @@ const PostsPage = () => {
         <NavbarCollapse>
           <NavbarItem title="Resumen" to="/" />
           <NavbarItem title="Proyectos" to="/projects" />
-          <NavbarItem title="Trayectoria" to="/about" />
+          <NavbarItem title="Acerca de" to="/about" />
         </NavbarCollapse>
       </Navbar>
       <FluidLayout>

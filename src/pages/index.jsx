@@ -25,7 +25,7 @@ const IndexPage = () => {
               <Link to="/projects" className="me-3">
                 Proyectos
               </Link>
-              <Link to="/about">Trayectoria</Link>
+              <Link to="/about">Acerca de</Link>
             </div>
           </div>
           <div className="row mt-3">
