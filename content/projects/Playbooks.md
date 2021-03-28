@@ -3,7 +3,7 @@ title: "Ansible Playbooks"
 date: 2021-01-01
 type: "project"
 featuredImage: ../../images/playbooks.png
-stack: "Ubuntu"
+stack: "Ubuntu,Python"
 github: "https://github.com/angelxehg/playbooks"
 published: true
 ---
