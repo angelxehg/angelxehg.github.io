@@ -21,13 +21,16 @@ const Footer = () => (
         </div>
         <div className="col-lg mt-lg-0 mt-2">
           <p className="m-0">
-            <b>
-              © {new Date().getFullYear()}, Angel Hurtado.
-            </b>
-            {" "}
-            Versión del sitio: <LinkExternal to="https://github.com/angelxehg/angelxehg.com/tree/v1.1.2">v1.1.2</LinkExternal>
+            <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión del
+            sitio:{" "}
+            <LinkExternal to="https://github.com/angelxehg/angelxehg.com/tree/v1.1.2">
+              v1.1.2
+            </LinkExternal>
             <br />
-            Reporta problemas o envia tus sugerencias a la <LinkExternal to="https://github.com/angelxehg/angelxehg.com/issues">página de Issues</LinkExternal>
+            Reporta problemas o envia tus sugerencias a la{" "}
+            <LinkExternal to="https://github.com/angelxehg/angelxehg.com/issues">
+              página de Issues
+            </LinkExternal>
             <br />
             Las marcas y logos pertenecen a sus respectivos dueños. Iconos
             obtenidos desde{" "}

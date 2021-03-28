@@ -57,7 +57,13 @@ const PostsPage = () => {
       <FluidLayout>
         <Grid>
           {posts.map(({ slug, title, extract, image }) => (
-            <Post key={slug} title={title} extract={extract} image={image} slug={slug} />
+            <Post
+              key={slug}
+              title={title}
+              extract={extract}
+              image={image}
+              slug={slug}
+            />
           ))}
         </Grid>
       </FluidLayout>

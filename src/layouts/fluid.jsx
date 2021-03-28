@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
 export const BaseLayout = props => (
   <div className="container-sm mt-3 mb-3 text-white font-monospace">

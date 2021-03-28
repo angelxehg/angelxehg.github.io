@@ -70,14 +70,16 @@ const PageTemplate = props => {
           )}
           {frontmatter.demo && (
             <li>
-              Página web: <LinkExternal to={frontmatter.demo} title="Demo">
+              Página web:{" "}
+              <LinkExternal to={frontmatter.demo} title="Demo">
                 {frontmatter.demo}
               </LinkExternal>
             </li>
           )}
           {frontmatter.github && (
             <li>
-              Repositorio: <LinkExternal to={frontmatter.github} title="Repositorio">
+              Repositorio:{" "}
+              <LinkExternal to={frontmatter.github} title="Repositorio">
                 {frontmatter.github}
               </LinkExternal>
             </li>
