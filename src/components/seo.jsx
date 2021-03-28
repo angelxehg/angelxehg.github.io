@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 
 export const Version = () => (
   <p className="mt-2" style={{ color: "rgba(128,255,128,0.25)" }}>
-    angelxehg.com v1.1.1
+    angelxehg.com v1.1.2
   </p>
 )
 

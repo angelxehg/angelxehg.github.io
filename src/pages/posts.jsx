@@ -51,13 +51,19 @@ const PostsPage = () => {
         <NavbarCollapse>
           <NavbarItem title="Resumen" to="/" />
           <NavbarItem title="Proyectos" to="/projects" />
-          <NavbarItem title="Trayectoria" to="/about" />
+          <NavbarItem title="Acerca de" to="/about" />
         </NavbarCollapse>
       </Navbar>
       <FluidLayout>
         <Grid>
           {posts.map(({ slug, title, extract, image }) => (
-            <Post key={slug} title={title} extract={extract} image={image} slug={slug} />
+            <Post
+              key={slug}
+              title={title}
+              extract={extract}
+              image={image}
+              slug={slug}
+            />
           ))}
         </Grid>
       </FluidLayout>

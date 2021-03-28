@@ -26,7 +26,7 @@ export const query = graphql`
         stack
         github
         demo
-        date(formatString: "YYYY MMMM Do")
+        date(formatString: "YYYY-MM-DD")
       }
     }
   }
@@ -54,36 +54,38 @@ const PageTemplate = props => {
             to={isProject ? "/posts" : "/projects"}
           /> */}
           <NavbarItem title="Resumen" to="/" />
-          <NavbarItem title="Trayectoria" to="/about" />
+          <NavbarItem title="Acerca de" to="/about" />
         </NavbarCollapse>
       </Navbar>
       <FluidLayout>
-        <div className="row align-items-center">
-          <div className="col-auto">
-            <h1 className="mt-3">{frontmatter.title}</h1>
-          </div>
-          <div className="col-auto">
-            {frontmatter.github && (
-              <LinkExternal to={frontmatter.github} title="Repositorio">
-                <Icon name="GitHub" size="1.5rem" />
-              </LinkExternal>
-            )}
-            {frontmatter.demo && (
+        <h1 className="mt-2">{frontmatter.title}</h1>
+        <ul>
+          {frontmatter.stack && (
+            <li>
+              Tecnologias:{" "}
+              {icons.map(icon => (
+                <Icon key={icon} name={icon} className="me-1" />
+              ))}
+            </li>
+          )}
+          {frontmatter.demo && (
+            <li>
+              Página web:{" "}
               <LinkExternal to={frontmatter.demo} title="Demo">
-                <Icon name="Web" size="1.5rem" />
+                {frontmatter.demo}
               </LinkExternal>
-            )}
-          </div>
-        </div>
-        {frontmatter.stack && (
-          <p>
-            Tecnologias:{" "}
-            {icons.map(icon => (
-              <Icon key={icon} name={icon} className="me-1" />
-            ))}
-          </p>
-        )}
-        <p>Fecha: {frontmatter.date}</p>
+            </li>
+          )}
+          {frontmatter.github && (
+            <li>
+              Repositorio:{" "}
+              <LinkExternal to={frontmatter.github} title="Repositorio">
+                {frontmatter.github}
+              </LinkExternal>
+            </li>
+          )}
+          <li>Fecha: {frontmatter.date}</li>
+        </ul>
         <MDXRenderer>{body}</MDXRenderer>
       </FluidLayout>
       <Footer />
