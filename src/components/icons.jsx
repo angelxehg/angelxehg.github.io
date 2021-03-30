@@ -9,6 +9,7 @@ const GitLabSVG = require("@assets/fontawesome/gitlab-brands.svg")
 const InstagramSVG = require("@assets/bootstrap-icons/instagram.svg")
 const TwitterSVG = require("@assets/bootstrap-icons/twitter.svg")
 const PayPalSVG = require("@assets/seek-logo/paypal.svg")
+const AndroidSVG = require("@assets/fontawesome/android-brands.svg")
 const AngularSVG = require("@assets/fontawesome/angular-brands.svg")
 const AWSSVG = require("@assets/fontawesome/aws-brands.svg")
 const BootstrapSVG = require("@assets/fontawesome/bootstrap-brands.svg")
@@ -30,6 +31,7 @@ const TypescriptSVG = require("@assets/seek-logo/typescript.svg")
 const UbuntuSVG = require("@assets/fontawesome/ubuntu-brands.svg")
 
 const availableIcons = [
+  "Android",
   "Angular",
   "AWS",
   "Bootstrap",
@@ -71,6 +73,10 @@ export const Icon = props => {
     }
   }
   switch (name) {
+    case "Android":
+      return (
+        <AndroidSVG style={useStyles(props, "#3DD985")} className={classes} />
+      )
     case "Angular":
       return (
         <AngularSVG style={useStyles(props, "#D6002F")} className={classes} />

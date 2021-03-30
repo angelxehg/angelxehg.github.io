@@ -3,7 +3,7 @@ title: "Tomatoe Chat"
 date: 2020-08-01
 type: "project"
 featuredImage: ../../images/tomatoe-chat.png
-stack: "Ionic,Angular,Javascript,Typescript,Firebase"
+stack: "Ionic,Android,Angular,Javascript,Typescript,Firebase"
 github: "https://github.com/angelxehg/tomatoe-chat"
 published: true
 ---
