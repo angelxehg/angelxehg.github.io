@@ -46,7 +46,7 @@ const Project = props => {
             </div>
           </div>
           {stackIcons.map(icon => (
-            <LinkIcon key={icon} name={icon}/>
+            <LinkIcon key={icon} name={icon} />
           ))}
           <p className="card-text">{extract}</p>
         </div>

@@ -118,7 +118,7 @@ const AboutPage = () => {
             <p key={title} className="m-0">
               {title + ": "}
               {icons.map(icon => (
-                <LinkIcon key={icon} name={icon}/>
+                <LinkIcon key={icon} name={icon} />
               ))}
             </p>
           ))}

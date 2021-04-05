@@ -64,7 +64,7 @@ const PageTemplate = props => {
             <li>
               Tecnologias:{" "}
               {icons.map(icon => (
-                <LinkIcon key={icon} name={icon}/>
+                <LinkIcon key={icon} name={icon} />
               ))}
             </li>
           )}

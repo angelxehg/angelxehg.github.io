@@ -4,7 +4,14 @@ import { Helmet } from "react-helmet"
 
 export const Version = () => (
   <p className="mt-2">
-    angelxehg.com <a href="https://github.com/angelxehg/angelxehg.com" rel="noreferrer" target="_blank">v1.1.2</a>
+    angelxehg.com{" "}
+    <a
+      href="https://github.com/angelxehg/angelxehg.com"
+      rel="noreferrer"
+      target="_blank"
+    >
+      v1.1.2
+    </a>
   </p>
 )
 
