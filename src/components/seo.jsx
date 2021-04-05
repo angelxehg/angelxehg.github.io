@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
 export const Version = () => (
-  <p className="mt-2" style={{ color: "rgba(128,255,128,0.25)" }}>
-    angelxehg.com v1.1.2
+  <p className="mt-2">
+    angelxehg.com <a href="https://github.com/angelxehg/angelxehg.com" rel="noreferrer" target="_blank">v1.1.2</a>
   </p>
 )
 
