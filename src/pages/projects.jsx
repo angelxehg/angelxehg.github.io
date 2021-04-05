@@ -8,7 +8,7 @@ import { Grid, Column } from "@layouts/grid"
 import Footer from "@components/footer"
 import SEO from "@components/seo"
 import { useContents } from "@hooks/use-contents"
-import { Icon } from "@components/icons"
+import { Icon, LinkIcon } from "@components/icons"
 import { LinkExternal } from "@components/social"
 import {
   Navbar,
@@ -46,7 +46,7 @@ const Project = props => {
             </div>
           </div>
           {stackIcons.map(icon => (
-            <Icon key={icon} name={icon} className="me-1" />
+            <LinkIcon key={icon} name={icon}/>
           ))}
           <p className="card-text">{extract}</p>
         </div>

@@ -6,7 +6,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import FluidLayout, { BaseLayout } from "@layouts/fluid"
 import Footer from "@components/footer"
 import SEO from "@components/seo"
-import { Icon } from "@components/icons"
+import { LinkIcon } from "@components/icons"
 import { LinkExternal } from "@components/social"
 import {
   Navbar,
@@ -64,7 +64,7 @@ const PageTemplate = props => {
             <li>
               Tecnologias:{" "}
               {icons.map(icon => (
-                <Icon key={icon} name={icon} className="me-1" />
+                <LinkIcon key={icon} name={icon}/>
               ))}
             </li>
           )}

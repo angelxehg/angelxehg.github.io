@@ -6,7 +6,7 @@ import FluidLayout, { BaseLayout } from "@layouts/fluid"
 import SEO from "@components/seo"
 import { ProfileImage, LinkExternal, socialLinks } from "@components/social"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
-import { Icon } from "@components/icons"
+import { LinkIcon, Icon } from "@components/icons"
 import Footer from "@components/footer"
 
 const ComplexHeader = () => {
@@ -118,7 +118,7 @@ const AboutPage = () => {
             <p key={title} className="m-0">
               {title + ": "}
               {icons.map(icon => (
-                <Icon key={icon} name={icon} className="me-1" />
+                <LinkIcon key={icon} name={icon}/>
               ))}
             </p>
           ))}
