@@ -10,7 +10,7 @@ export const Version = () => (
       rel="noreferrer"
       target="_blank"
     >
-      v1.1.2
+      v1.1.3
     </a>
   </p>
 )
