@@ -11,13 +11,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -31,7 +24,7 @@ module.exports = {
         background_color: `#335599`,
         theme_color: `#335599`,
         display: `minimal-ui`,
-        icon: `src/images/avataaars.png`, // This path is relative to the root of the site.
+        icon: `static/images/avataaars.png`, // This path is relative to the root of the site.
       },
     },
     {
