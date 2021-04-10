@@ -21,7 +21,9 @@ const IndexPage = () => {
           <p className="card-text">{site.description}</p>
           <div className="row">
             <div className="col">
-              {/* <Link to="/posts" className="me-3">Blog</Link> */}
+              {/* <LinkExternal to="https://blog.angelxehg.com/" className="me-3">
+                Blog
+              </LinkExternal> */}
               <Link to="/projects" className="me-3">
                 Proyectos
               </Link>

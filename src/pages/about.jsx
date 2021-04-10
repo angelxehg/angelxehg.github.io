@@ -34,7 +34,9 @@ const ComplexHeader = () => {
                 <Link to="/" className="me-3">
                   Resumen
                 </Link>
-                {/* <Link to="/posts" className="me-3">Blog</Link> */}
+                {/* <LinkExternal to="https://blog.angelxehg.com/" className="me-3">
+                  Blog
+                </LinkExternal> */}
                 <Link to="/projects">Proyectos</Link>
               </div>
               <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">

@@ -75,7 +75,7 @@ const ProjectsPage = () => {
         <NavbarToggler />
         <NavbarCollapse>
           <NavbarItem title="Resumen" to="/" />
-          {/* <NavbarItem title="Blog" to="/posts" /> */}
+          {/* <NavbarItem title="Blog" to="https://blog.angelxehg.com/" /> */}
           <NavbarItem title="Acerca de" to="/about" />
         </NavbarCollapse>
       </Navbar>
