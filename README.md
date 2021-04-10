@@ -8,7 +8,7 @@ Utilice estos comandos para clonar e instalar el sitio:
 
 - Instalar Gatsby CLI: `npm install -g gatsby-cli`
 
-- Clonar el repositorio: `git clone https://github.com/angelxehg/website`
+- Clonar el repositorio: `git clone https://github.com/angelxehg/angelxehg.github.io`
 
 - Instalar dependencias: `cd website` & `npm install`
 

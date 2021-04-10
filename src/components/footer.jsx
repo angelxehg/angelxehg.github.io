@@ -23,12 +23,12 @@ const Footer = () => (
           <p className="m-0">
             <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión del
             sitio:{" "}
-            <LinkExternal to="https://github.com/angelxehg/angelxehg.com/tree/v1.1.3">
+            <LinkExternal to="https://github.com/angelxehg/angelxehg.github.io/tree/v1.1.3">
               v1.1.3
             </LinkExternal>
             <br />
             Reporta problemas o envia tus sugerencias a la{" "}
-            <LinkExternal to="https://github.com/angelxehg/angelxehg.com/issues">
+            <LinkExternal to="https://github.com/angelxehg/angelxehg.github.io/issues">
               página de Issues
             </LinkExternal>
             <br />
