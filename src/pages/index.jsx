@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import CenterLayout from "@layouts/center"
-import SEO, { Version } from "@components/seo"
+import SEO from "@components/seo"
 import { LinkExternal, ProfileImage, socialLinks } from "@components/social"
 import { Icon } from "@components/icons"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
@@ -45,7 +45,6 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
-      <Version />
     </CenterLayout>
   )
 }

@@ -21,13 +21,7 @@ const Footer = () => (
         </div>
         <div className="col-lg mt-lg-0 mt-2">
           <p className="m-0">
-            <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión del
-            sitio:{" "}
-            <LinkExternal to="https://github.com/angelxehg/angelxehg.github.io/tree/v1.1.3">
-              v1.1.3
-            </LinkExternal>
-            <br />
-            Reporta problemas o envia tus sugerencias a la{" "}
+            <b>© {new Date().getFullYear()}, Angel Hurtado.</b>            Reporta problemas o envia tus sugerencias en la{" "}
             <LinkExternal to="https://github.com/angelxehg/angelxehg.github.io/issues">
               página de Issues
             </LinkExternal>
