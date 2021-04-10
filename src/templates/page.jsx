@@ -8,13 +8,7 @@ import Footer from "@components/footer"
 import SEO from "@components/seo"
 import { LinkIcon } from "@components/icons"
 import { LinkExternal } from "@components/social"
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-  NavbarCollapse,
-  NavbarItem,
-} from "@components/navbar"
+import DefaultNavbar from "@components/navbar"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -38,25 +32,10 @@ const PageTemplate = props => {
   if (frontmatter.stack) {
     frontmatter.stack.split(",").map(i => icons.push(i))
   }
-  const isProject = frontmatter.type === "project"
   return (
     <BaseLayout>
       <SEO title={frontmatter.title} lang="es" />
-      <Navbar>
-        <NavbarBrand
-          title={isProject ? "Mis Proyectos" : "Mi Blog"}
-          to={isProject ? "/projects" : "/posts"}
-        />
-        <NavbarToggler />
-        <NavbarCollapse>
-          {/* <NavbarItem
-            title={isProject ? "Blog" : "Proyectos"}
-            to={isProject ? "/posts" : "/projects"}
-          /> */}
-          <NavbarItem title="Resumen" to="/" />
-          <NavbarItem title="Acerca de" to="/about" />
-        </NavbarCollapse>
-      </Navbar>
+      <DefaultNavbar />
       <FluidLayout>
         <h1 className="mt-2">{frontmatter.title}</h1>
         <ul>

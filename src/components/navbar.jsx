@@ -12,7 +12,7 @@ Navbar.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export const NavbarBrand = props => (
+const NavbarBrand = props => (
   <Link className="navbar-brand" to={props.to} style={{ color: "white" }}>
     {props.title}
   </Link>
@@ -23,7 +23,7 @@ NavbarBrand.propTypes = {
   to: PropTypes.string.isRequired,
 }
 
-export const NavbarToggler = () => (
+const NavbarToggler = () => (
   <button
     className="navbar-toggler"
     type="button"
@@ -37,7 +37,7 @@ export const NavbarToggler = () => (
   </button>
 )
 
-export const NavbarCollapse = props => (
+const NavbarCollapse = props => (
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav">{props.children}</ul>
   </div>
@@ -47,7 +47,7 @@ NavbarCollapse.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export const NavbarItem = props => (
+const NavbarItem = props => (
   <li className="nav-item">
     <Link className="nav-link" to={props.to}>
       {props.title}
@@ -59,3 +59,16 @@ NavbarItem.propTypes = {
   title: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
 }
+
+const DefaultNavbar = () => (
+  <Navbar>
+    <NavbarBrand title="Portafolio de Angel" to="/projects" />
+    <NavbarCollapse>
+      {/* <NavbarItem title="Blog" to="https://blog.angelxehg.com/" /> */}
+      <NavbarItem title="Resumen" to="/" />
+      <NavbarItem title="Acerca de" to="/about" />
+    </NavbarCollapse>
+  </Navbar>
+)
+
+export default DefaultNavbar

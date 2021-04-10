@@ -10,13 +10,7 @@ import SEO from "@components/seo"
 import { useContents } from "@hooks/use-contents"
 import { Icon, LinkIcon } from "@components/icons"
 import { LinkExternal } from "@components/social"
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-  NavbarCollapse,
-  NavbarItem,
-} from "@components/navbar"
+import DefaultNavbar from "@components/navbar"
 
 const Project = props => {
   const { slug, title, extract, image, stack, github, demo } = props
@@ -70,15 +64,7 @@ const ProjectsPage = () => {
   return (
     <BaseLayout>
       <SEO title="Proyectos" lang="es" />
-      <Navbar>
-        <NavbarBrand title="Mis Proyectos" to="/projects" />
-        <NavbarToggler />
-        <NavbarCollapse>
-          <NavbarItem title="Resumen" to="/" />
-          {/* <NavbarItem title="Blog" to="https://blog.angelxehg.com/" /> */}
-          <NavbarItem title="Acerca de" to="/about" />
-        </NavbarCollapse>
-      </Navbar>
+      <DefaultNavbar/>
       <FluidLayout>
         <Grid>
           {projects.map(
