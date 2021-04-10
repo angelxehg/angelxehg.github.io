@@ -24,10 +24,8 @@ Utilice estos comandos para comprobar la calidad del código
 
 - Code formating: `npm run format`
 
-## Despliegue en Netlify
+## Despliegue
 
-Use la siguiente configuración para desplegar en Netlify
+Use este comando para desplegar en producción:
 
-- Build command: `gatsby build`
-
-- Publish directory: `public/`
+- GitHub Pages: `npm run deploy`
