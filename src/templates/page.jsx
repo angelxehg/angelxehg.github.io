@@ -51,17 +51,13 @@ const PageTemplate = props => {
             {frontmatter.demo && (
               <li>
                 Página web:{" "}
-                <LinkExternal to={frontmatter.demo} title="Demo">
-                  {frontmatter.demo}
-                </LinkExternal>
+                <LinkIcon name="Web" to={frontmatter.demo} />
               </li>
             )}
             {frontmatter.github && (
               <li>
                 Repositorio:{" "}
-                <LinkExternal to={frontmatter.github} title="Repositorio">
-                  {frontmatter.github}
-                </LinkExternal>
+                <LinkIcon name="GitHub" to={frontmatter.github} />
               </li>
             )}
             <li>Fecha: {frontmatter.date}</li>
