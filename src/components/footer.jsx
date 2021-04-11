@@ -21,7 +21,7 @@ const Footer = () => (
         </div>
         <div className="col-lg mt-lg-0 mt-2">
           <p className="m-0">
-            <b>© {new Date().getFullYear()}, Angel Hurtado.</b>            Reporta problemas o envia tus sugerencias en la{" "}
+            <b>© {new Date().getFullYear()}, Angel Hurtado.</b>            Versión v1.2.0. Reporta problemas o envia tus sugerencias en la{" "}
             <LinkExternal to="https://github.com/angelxehg/angelxehg.github.io/issues">
               página de Issues
             </LinkExternal>
