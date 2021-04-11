@@ -1,6 +1,6 @@
-# angelxehg.com
+# angelxehg.github.io
 
-Mi sitio web y blog personal
+Mi portafolio profesional
 
 ## Instalación
 
