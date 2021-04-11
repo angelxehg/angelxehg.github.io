@@ -1,7 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
 
 export const socialLinks = [
   {
@@ -37,21 +35,9 @@ export const socialLinks = [
 ]
 
 export const ProfileImage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "profile21sqrsmall.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(layout: FIXED)
-        }
-      }
-    }
-  `)
-  if (!data?.placeholderImage?.childImageSharp) {
-    return <div>Picture not found</div>
-  }
   return (
-    <GatsbyImage
-      image={data.placeholderImage.childImageSharp.gatsbyImageData}
+    <img
+      src="/images/profile21sqrsmall.jpg"
       className="rounded-circle fluid align-self-center"
       alt="Foto de perfil de Angel"
       style={{ height: "150px", width: "150px" }}

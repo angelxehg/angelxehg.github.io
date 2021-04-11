@@ -1,28 +1,22 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import FluidLayout, { BaseLayout } from "@layouts/fluid"
-import { Grid, Column } from "@layouts/grid"
 import Footer from "@components/footer"
 import SEO from "@components/seo"
 import { useContents } from "@hooks/use-contents"
 import { Icon, LinkIcon } from "@components/icons"
 import { LinkExternal } from "@components/social"
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-  NavbarCollapse,
-  NavbarItem,
-} from "@components/navbar"
+import DefaultNavbar from "@components/navbar"
+import { Col, Row } from "react-bootstrap"
 
 const Project = props => {
   const { slug, title, extract, image, stack, github, demo } = props
   const stackIcons = stack.split(",")
   return (
-    <Column>
+    <Col xl="4" md="6" className="p-md-1 p-0">
       <div className="card no-bg">
         <GatsbyImage image={image} alt={title} />
         <div className="card-body pt-3 pb-3 p-2">
@@ -51,7 +45,7 @@ const Project = props => {
           <p className="card-text">{extract}</p>
         </div>
       </div>
-    </Column>
+    </Col>
   )
 }
 
@@ -68,37 +62,31 @@ Project.propTypes = {
 const ProjectsPage = () => {
   const projects = useContents("project")
   return (
-    <BaseLayout>
+    <Container fluid="sm" className="mt-3 mb-3 text-white font-monospace">
       <SEO title="Proyectos" lang="es" />
-      <Navbar>
-        <NavbarBrand title="Mis Proyectos" to="/projects" />
-        <NavbarToggler />
-        <NavbarCollapse>
-          <NavbarItem title="Resumen" to="/" />
-          {/* <NavbarItem title="Blog" to="/posts" /> */}
-          <NavbarItem title="Acerca de" to="/about" />
-        </NavbarCollapse>
-      </Navbar>
-      <FluidLayout>
-        <Grid>
-          {projects.map(
-            ({ slug, title, extract, image, stack, github, demo }) => (
-              <Project
-                key={slug}
-                slug={slug}
-                title={title}
-                extract={extract}
-                image={image}
-                stack={stack}
-                github={github}
-                demo={demo}
-              />
-            )
-          )}
-        </Grid>
-      </FluidLayout>
+      <DefaultNavbar />
+      <Container fluid={true} className="pt-3 pb-3">
+        <main>
+          <Row className="ps-2 pe-2 mt-1">
+            {projects.map(
+              ({ slug, title, extract, image, stack, github, demo }) => (
+                <Project
+                  key={slug}
+                  slug={slug}
+                  title={title}
+                  extract={extract}
+                  image={image}
+                  stack={stack}
+                  github={github}
+                  demo={demo}
+                />
+              )
+            )}
+          </Row>
+        </main>
+      </Container>
       <Footer />
-    </BaseLayout>
+    </Container>
   )
 }
 

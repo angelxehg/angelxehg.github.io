@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import CenterLayout from "@layouts/center"
-import SEO, { Version } from "@components/seo"
+import SEO from "@components/seo"
 
 const NotFoundPage = () => (
   <CenterLayout>
@@ -14,7 +14,6 @@ const NotFoundPage = () => (
         <Link to="/projects">Ir al Portafolio</Link>
       </div>
     </div>
-    <Version />
   </CenterLayout>
 )
 

@@ -1,8 +1,8 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-import FluidLayout, { BaseLayout } from "@layouts/fluid"
 import SEO from "@components/seo"
 import { ProfileImage, LinkExternal, socialLinks } from "@components/social"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
@@ -34,7 +34,9 @@ const ComplexHeader = () => {
                 <Link to="/" className="me-3">
                   Resumen
                 </Link>
-                {/* <Link to="/posts" className="me-3">Blog</Link> */}
+                {/* <LinkExternal to="https://blog.angelxehg.com/" className="me-3">
+                  Blog
+                </LinkExternal> */}
                 <Link to="/projects">Proyectos</Link>
               </div>
               <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
@@ -94,39 +96,40 @@ const AboutPage = () => {
     },
   ]
   return (
-    <BaseLayout>
+    <Container fluid="sm" className="mt-3 mb-3 text-white font-monospace">
       <SEO title="Acerca de mi" lang="es" />
       <ComplexHeader />
-      <FluidLayout>
-        <div className="d-block d-md-none">
+      <Container fluid={true} className="pt-3 pb-3">
+        <header className="d-block d-md-none">
           <h3>Acerca de mi</h3>
           <p>{site.description}</p>
-        </div>
-        <FlexibleInfo title="Educación">
-          <p>
-            <b>Ingeniería en Tecnologías de la Información y Comunicación</b>
-            <br />
-            <LinkExternal to="http://www.utzac.edu.mx">
-              Universidad Tecnológica del Estado de Zacatecas
+        </header>
+        <main>
+          <FlexibleInfo title="Educación">
+            <p>
+              <b>Ingeniería en Tecnologías de la Información y Comunicación</b>
+              <br />
+              <LinkExternal to="http://www.utzac.edu.mx">
+                Universidad Tecnológica del Estado de Zacatecas
             </LinkExternal>
-            <br />
+              <br />
             Guadalupe, Zacatecas | 2017-2021
           </p>
-        </FlexibleInfo>
-        <FlexibleInfo title="Habilidades">
-          {stacks.map(({ title, icons }) => (
-            <p key={title} className="m-0">
-              {title + ": "}
-              {icons.map(icon => (
-                <LinkIcon key={icon} name={icon} />
-              ))}
-            </p>
-          ))}
-          <br />
-        </FlexibleInfo>
-        <FlexibleInfo title="Aptitudes">
-          <p>
-            Aprendizaje autónomo
+          </FlexibleInfo>
+          <FlexibleInfo title="Habilidades">
+            {stacks.map(({ title, icons }) => (
+              <p key={title} className="m-0">
+                {title + ": "}
+                {icons.map(icon => (
+                  <LinkIcon key={icon} name={icon} />
+                ))}
+              </p>
+            ))}
+            <br />
+          </FlexibleInfo>
+          <FlexibleInfo title="Aptitudes">
+            <p>
+              Aprendizaje autónomo
             <br />
             Orientado a objetivos
             <br />
@@ -136,17 +139,18 @@ const AboutPage = () => {
             <br />
             SCRUM y Kanban
           </p>
-        </FlexibleInfo>
-        <FlexibleInfo title="Premios">
-          <p>
-            1° Zacatecas: Concurso Nacional de Prototipos 2016
+          </FlexibleInfo>
+          <FlexibleInfo title="Premios">
+            <p>
+              1° Zacatecas: Concurso Nacional de Prototipos 2016
             <br />
             19° Nacional: Concurso Nacional de Prototipos 2016
           </p>
-        </FlexibleInfo>
-      </FluidLayout>
+          </FlexibleInfo>
+        </main>
+      </Container>
       <Footer />
-    </BaseLayout>
+    </Container>
   )
 }
 

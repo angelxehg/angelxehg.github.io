@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import CenterLayout from "@layouts/center"
-import SEO, { Version } from "@components/seo"
+import SEO from "@components/seo"
 import { LinkExternal, ProfileImage, socialLinks } from "@components/social"
 import { Icon } from "@components/icons"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
@@ -21,7 +21,9 @@ const IndexPage = () => {
           <p className="card-text">{site.description}</p>
           <div className="row">
             <div className="col">
-              {/* <Link to="/posts" className="me-3">Blog</Link> */}
+              {/* <LinkExternal to="https://blog.angelxehg.com/" className="me-3">
+                Blog
+              </LinkExternal> */}
               <Link to="/projects" className="me-3">
                 Proyectos
               </Link>
@@ -45,7 +47,6 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
-      <Version />
     </CenterLayout>
   )
 }

@@ -1,6 +1,6 @@
-# angelxehg.com
+# angelxehg.github.io
 
-Mi sitio web y blog personal
+Mi portafolio profesional
 
 ## Instalación
 
@@ -8,7 +8,7 @@ Utilice estos comandos para clonar e instalar el sitio:
 
 - Instalar Gatsby CLI: `npm install -g gatsby-cli`
 
-- Clonar el repositorio: `git clone https://github.com/angelxehg/website`
+- Clonar el repositorio: `git clone https://github.com/angelxehg/angelxehg.github.io`
 
 - Instalar dependencias: `cd website` & `npm install`
 
@@ -24,10 +24,8 @@ Utilice estos comandos para comprobar la calidad del código
 
 - Code formating: `npm run format`
 
-## Despliegue en Netlify
+## Despliegue
 
-Use la siguiente configuración para desplegar en Netlify
+Use este comando para desplegar en producción:
 
-- Build command: `gatsby build`
-
-- Publish directory: `public/`
+- GitHub Pages: `npm run deploy`

@@ -1,8 +1,8 @@
 {
   "name": "angelxehg.com",
   "description": "Mi sitio web y blog personal",
-  "version": "1.1.3",
-  "homepage": "https://angelxehg.com/",
+  "version": "1.2.0",
+  "homepage": "https://angelxehg.github.io/",
   "author": {
     "name": "Angel Hurtado",
     "email": "contact@angelxehg.com",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angelxehg/website"
+    "url": "https://github.com/angelxehg/angelxehg.github.io"
   },
   "license": "MIT",
   "private": true,
@@ -25,32 +25,37 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "lint": "eslint src/**/*.jsx"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "bootstrap": "^5.0.0-beta3",
-    "gatsby": "^3.1.1",
-    "gatsby-plugin-gatsby-cloud": "^2.1.0",
-    "gatsby-plugin-image": "^1.1.1",
-    "gatsby-plugin-manifest": "^3.1.0",
-    "gatsby-plugin-mdx": "^2.1.0",
-    "gatsby-plugin-offline": "^4.1.0",
-    "gatsby-plugin-react-helmet": "^4.1.0",
-    "gatsby-plugin-react-svg": "^3.0.0",
-    "gatsby-plugin-sharp": "^3.1.1",
-    "gatsby-remark-images": "^4.1.0",
-    "gatsby-source-filesystem": "^3.1.0",
-    "gatsby-transformer-sharp": "^3.1.0",
+    "gatsby": "^3.2.1",
+    "gatsby-plugin-gatsby-cloud": "^2.2.0",
+    "gatsby-plugin-image": "^1.2.1",
+    "gatsby-plugin-manifest": "^3.2.0",
+    "gatsby-plugin-mdx": "^2.2.0",
+    "gatsby-plugin-offline": "^4.2.0",
+    "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-plugin-react-svg": "^3.0.1",
+    "gatsby-plugin-sass": "^4.2.0",
+    "gatsby-plugin-sharp": "^3.2.1",
+    "gatsby-remark-images": "^4.2.0",
+    "gatsby-source-filesystem": "^3.2.0",
+    "gatsby-transformer-sharp": "^3.2.0",
     "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.0-alpha.0",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.32.8"
   },
   "devDependencies": {
-    "eslint": "^7.22.0",
-    "eslint-plugin-react": "^7.22.0",
+    "eslint": "^7.24.0",
+    "eslint-plugin-react": "^7.23.2",
+    "gh-pages": "^3.1.0",
     "prettier": "2.2.1"
   }
 }
