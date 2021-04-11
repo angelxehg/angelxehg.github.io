@@ -4,19 +4,19 @@ import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import FluidLayout, { BaseLayout } from "@layouts/fluid"
-import { Grid, Column } from "@layouts/grid"
 import Footer from "@components/footer"
 import SEO from "@components/seo"
 import { useContents } from "@hooks/use-contents"
 import { Icon, LinkIcon } from "@components/icons"
 import { LinkExternal } from "@components/social"
 import DefaultNavbar from "@components/navbar"
+import { Col, Row } from "react-bootstrap"
 
 const Project = props => {
   const { slug, title, extract, image, stack, github, demo } = props
   const stackIcons = stack.split(",")
   return (
-    <Column>
+    <Col xl="4" md="6" className="p-md-1 p-0">
       <div className="card no-bg">
         <GatsbyImage image={image} alt={title} />
         <div className="card-body pt-3 pb-3 p-2">
@@ -45,7 +45,7 @@ const Project = props => {
           <p className="card-text">{extract}</p>
         </div>
       </div>
-    </Column>
+    </Col>
   )
 }
 
@@ -64,9 +64,9 @@ const ProjectsPage = () => {
   return (
     <BaseLayout>
       <SEO title="Proyectos" lang="es" />
-      <DefaultNavbar/>
+      <DefaultNavbar />
       <FluidLayout>
-        <Grid>
+        <Row className="ps-2 pe-2 mt-1">
           {projects.map(
             ({ slug, title, extract, image, stack, github, demo }) => (
               <Project
@@ -81,7 +81,7 @@ const ProjectsPage = () => {
               />
             )
           )}
-        </Grid>
+        </Row>
       </FluidLayout>
       <Footer />
     </BaseLayout>
