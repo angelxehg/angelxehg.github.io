@@ -1,9 +1,9 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import FluidLayout, { BaseLayout } from "@layouts/fluid"
 import Footer from "@components/footer"
 import SEO from "@components/seo"
 import { LinkIcon } from "@components/icons"
@@ -33,42 +33,46 @@ const PageTemplate = props => {
     frontmatter.stack.split(",").map(i => icons.push(i))
   }
   return (
-    <BaseLayout>
+    <Container fluid="sm" className="mt-3 mb-3 text-white font-monospace">
       <SEO title={frontmatter.title} lang="es" />
       <DefaultNavbar />
-      <FluidLayout>
-        <h1 className="mt-2">{frontmatter.title}</h1>
-        <ul>
-          {frontmatter.stack && (
-            <li>
-              Tecnologias:{" "}
-              {icons.map(icon => (
-                <LinkIcon key={icon} name={icon} />
-              ))}
-            </li>
-          )}
-          {frontmatter.demo && (
-            <li>
-              Página web:{" "}
-              <LinkExternal to={frontmatter.demo} title="Demo">
-                {frontmatter.demo}
-              </LinkExternal>
-            </li>
-          )}
-          {frontmatter.github && (
-            <li>
-              Repositorio:{" "}
-              <LinkExternal to={frontmatter.github} title="Repositorio">
-                {frontmatter.github}
-              </LinkExternal>
-            </li>
-          )}
-          <li>Fecha: {frontmatter.date}</li>
-        </ul>
-        <MDXRenderer>{body}</MDXRenderer>
-      </FluidLayout>
+      <Container fluid={true} className="pt-3 pb-3">
+        <header>
+          <h1 className="mt-2">{frontmatter.title}</h1>
+          <ul>
+            {frontmatter.stack && (
+              <li>
+                Tecnologias:{" "}
+                {icons.map(icon => (
+                  <LinkIcon key={icon} name={icon} />
+                ))}
+              </li>
+            )}
+            {frontmatter.demo && (
+              <li>
+                Página web:{" "}
+                <LinkExternal to={frontmatter.demo} title="Demo">
+                  {frontmatter.demo}
+                </LinkExternal>
+              </li>
+            )}
+            {frontmatter.github && (
+              <li>
+                Repositorio:{" "}
+                <LinkExternal to={frontmatter.github} title="Repositorio">
+                  {frontmatter.github}
+                </LinkExternal>
+              </li>
+            )}
+            <li>Fecha: {frontmatter.date}</li>
+          </ul>
+        </header>
+        <main>
+          <MDXRenderer>{body}</MDXRenderer>
+        </main>
+      </Container>
       <Footer />
-    </BaseLayout>
+    </Container>
   )
 }
 

@@ -1,9 +1,9 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import FluidLayout, { BaseLayout } from "@layouts/fluid"
 import Footer from "@components/footer"
 import SEO from "@components/seo"
 import { useContents } from "@hooks/use-contents"
@@ -62,29 +62,31 @@ Project.propTypes = {
 const ProjectsPage = () => {
   const projects = useContents("project")
   return (
-    <BaseLayout>
+    <Container fluid="sm" className="mt-3 mb-3 text-white font-monospace">
       <SEO title="Proyectos" lang="es" />
       <DefaultNavbar />
-      <FluidLayout>
-        <Row className="ps-2 pe-2 mt-1">
-          {projects.map(
-            ({ slug, title, extract, image, stack, github, demo }) => (
-              <Project
-                key={slug}
-                slug={slug}
-                title={title}
-                extract={extract}
-                image={image}
-                stack={stack}
-                github={github}
-                demo={demo}
-              />
-            )
-          )}
-        </Row>
-      </FluidLayout>
+      <Container fluid={true} className="pt-3 pb-3">
+        <main>
+          <Row className="ps-2 pe-2 mt-1">
+            {projects.map(
+              ({ slug, title, extract, image, stack, github, demo }) => (
+                <Project
+                  key={slug}
+                  slug={slug}
+                  title={title}
+                  extract={extract}
+                  image={image}
+                  stack={stack}
+                  github={github}
+                  demo={demo}
+                />
+              )
+            )}
+          </Row>
+        </main>
+      </Container>
       <Footer />
-    </BaseLayout>
+    </Container>
   )
 }
 
