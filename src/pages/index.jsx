@@ -33,8 +33,8 @@ const IndexPage = () => {
           <div className="row mt-3">
             <div className="col">
               <LinkExternal
-                to="mailto:contact@angelxehg.com"
-                title="Email (contact@angelxehg.com)"
+                to="mailto:sudo@angelxehg.com"
+                title="Email (sudo@angelxehg.com)"
               >
                 <Icon name="Email" size="1.5rem" />
               </LinkExternal>

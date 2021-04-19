@@ -14,9 +14,9 @@ const Footer = () => (
             </LinkExternal>
           ))}
           <br />
-          <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
+          <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
             <Icon name="Email" className="me-1" />
-            contact@angelxehg.com
+            sudo@angelxehg.com
           </LinkExternal>
         </div>
         <div className="col-lg mt-lg-0 mt-2">

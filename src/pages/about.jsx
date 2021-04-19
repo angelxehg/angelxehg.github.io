@@ -40,9 +40,9 @@ const ComplexHeader = () => {
                 <Link to="/projects">Proyectos</Link>
               </div>
               <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
-                <LinkExternal to="mailto:contact@angelxehg.com" title="Email">
+                <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
                   <Icon name="Email" className="me-1" />
-                  contact@angelxehg.com
+                  sudo@angelxehg.com
                 </LinkExternal>
                 <br className="d-block d-sm-none" />
                 {socialLinks.map(({ title, to, icon }) => (
