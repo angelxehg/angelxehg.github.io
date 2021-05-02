@@ -23,7 +23,7 @@ const ComplexHeader = () => {
         </div>
       </div>
       <div className="col text-center text-md-start mt-3 mt-md-0">
-        <Link to="/" style={{ color: "white" }}>
+        <Link to="/" style={{ color: "black" }}>
           <h1>{site.title}</h1>
         </Link>
         <p className="d-none d-md-block">{site.description}</p>
@@ -92,7 +92,7 @@ const AboutPage = () => {
     },
   ]
   return (
-    <Container fluid="sm" className="mt-3 mb-3 text-white font-monospace">
+    <Container fluid="sm" className="mt-3 mb-3">
       <SEO title="Acerca de mi" lang="es" />
       <ComplexHeader />
       <Container fluid={true} className="pt-3 pb-3">

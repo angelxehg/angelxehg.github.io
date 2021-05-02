@@ -71,13 +71,13 @@ const iconsSource = [
   },
   {
     name: "Email",
-    color: "white",
+    color: "black",
     svg: EmailSVG,
     docs: "https://angelxehg.com/",
   },
   {
     name: "Firebase",
-    color: "white",
+    color: "black",
     svg: FirebaseSVG,
     docs: "https://firebase.google.com/",
   },
@@ -95,7 +95,7 @@ const iconsSource = [
   },
   {
     name: "GitHub",
-    color: "white",
+    color: "black",
     svg: GitHubSVG,
     docs: "https://github.com/",
   },
@@ -138,13 +138,13 @@ const iconsSource = [
   },
   {
     name: "Markdown",
-    color: "white",
+    color: "black",
     svg: MarkdownSVG,
     docs: "https://www.markdownguide.org/",
   },
   {
     name: "Netlify",
-    color: "white",
+    color: "black",
     svg: NetlifySVG,
     docs: "https://www.netlify.com/",
   },
@@ -168,7 +168,7 @@ const iconsSource = [
   },
   {
     name: "Python",
-    color: "white",
+    color: "black",
     svg: PythonSVG,
     docs: "https://www.python.org/",
   },
@@ -198,7 +198,7 @@ const iconsSource = [
   },
   {
     name: "Web",
-    color: "white",
+    color: "black",
     svg: WebSVG,
     docs: "https://angelxehg.com/",
   },
@@ -211,7 +211,7 @@ const useStyles = (props, defaultColor) => {
   return {
     width: size || "1.2rem",
     height: size || "1.2rem",
-    color: defaultColor || "white",
+    color: defaultColor || "black",
   }
 }
 
@@ -222,7 +222,7 @@ export const Icon = props => {
   if (!icon) {
     throw new Error(`No se encontró el icono '${name}'`)
   }
-  const color = icon.fill ? "white" : icon.color
+  const color = icon.fill ? "black" : icon.color
   const fill = icon.fill ? icon.color : undefined
   const IconSVG = icon.svg
   return (

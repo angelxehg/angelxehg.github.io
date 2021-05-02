@@ -15,7 +15,7 @@ const IndexPage = () => {
       <div className="card pt-3">
         <ProfileImage />
         <div className="card-body">
-          <Link to="/" style={{ color: "white" }}>
+          <Link to="/">
             <h1 className="card-title">{site.title}</h1>
           </Link>
           <p className="card-text">{site.description}</p>

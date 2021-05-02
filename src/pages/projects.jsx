@@ -62,7 +62,7 @@ Project.propTypes = {
 const ProjectsPage = () => {
   const projects = useContents("project")
   return (
-    <Container fluid="sm" className="mt-3 mb-3 text-white font-monospace">
+    <Container fluid="sm" className="mt-3 mb-3">
       <SEO title="Proyectos" lang="es" />
       <DefaultNavbar />
       <Container fluid={true} className="pt-3 pb-3">
