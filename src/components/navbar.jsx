@@ -13,7 +13,6 @@ const DefaultNavbar = () => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#about">Acerca de</Nav.Link>
           <Nav.Link href="#education">Educación</Nav.Link>
           <Nav.Link href="#skills">Habilidades</Nav.Link>
           <Nav.Link href="#projects">Proyectos</Nav.Link>

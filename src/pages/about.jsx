@@ -107,7 +107,7 @@ export const AboutPageOld = () => {
 }
 
 const AboutPage = () => {
-  navigate('/#about')
+  navigate('/')
   return (
     <CenterLayout>
       <SEO title="Redireccionando" lang="es" />
