@@ -1,7 +1,7 @@
 import React from "react";
 
 const SkillsSection = () => (
-  <section>
+  <section id="skills">
     <h2>Habilidades</h2>
     <p>
       Tenetur accusamus facere corporis. Explicabo corrupti illum minus id sequi at neque qui. Magnam ut molestias sequi quidem.

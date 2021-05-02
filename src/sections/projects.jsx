@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProjectsSection = () => (
-  <section>
+  <section id="projects">
     <h2>Proyectos</h2>
     <p>
       Perspiciatis laudantium qui non unde rem aut aliquam. Ducimus eveniet atque provident magni. Rerum omnis voluptate alias dolorem dignissimos sit sunt. Illo totam ullam consectetur voluptatum quia qui reprehenderit.

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const AboutSection = () => (
-  <section>
+  <section id="about">
     <h2>Acerca de</h2>
     <p>
       Minus commodi dolorum voluptates. Quo necessitatibus blanditiis mollitia et non rem est ducimus. Et eveniet maiores ea illo magni incidunt facilis. Dolor rerum cumque omnis vel delectus ut.

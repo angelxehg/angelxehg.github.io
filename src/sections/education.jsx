@@ -1,7 +1,7 @@
 import React from 'react';
 
 const EducationSection = () => (
-  <section>
+  <section id="education">
     <h2>Educación</h2>
     <p>
       Et dolorem culpa nisi sunt dolorem voluptates maiores. Ut omnis id deleniti. Odit molestiae at facilis aliquid explicabo inventore. Nesciunt ex necessitatibus tempore minima earum hic recusandae minima. Velit quod voluptatem facilis et at maxime. Atque sapiente ad facilis fugiat reprehenderit harum magnam.

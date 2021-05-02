@@ -17,6 +17,20 @@ const IndexPage = () => {
         <header>
           <h1>{site.title}</h1>
           <p>{site.description}</p>
+          <ul>
+            <li>
+              <a href="#about">Acerca de</a>
+            </li>
+            <li>
+              <a href="#education">Educación</a>
+            </li>
+            <li>
+              <a href="#skills">Habilidades</a>
+            </li>
+            <li>
+              <a href="#projects">Proyectos</a>
+            </li>
+          </ul>
         </header>
         <AboutSection />
         <EducationSection />
