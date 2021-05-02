@@ -1,9 +1,10 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
+import CenterLayout from "@layouts/center"
 import Footer from "@components/footer"
 import SEO from "@components/seo"
 import { useContents } from "@hooks/use-contents"
@@ -59,7 +60,7 @@ Project.propTypes = {
   demo: PropTypes.string,
 }
 
-const ProjectsPage = () => {
+export const ProjectsPageOld = () => {
   const projects = useContents("project")
   return (
     <Container fluid="sm" className="mt-3 mb-3">
@@ -87,6 +88,21 @@ const ProjectsPage = () => {
       </Container>
       <Footer />
     </Container>
+  )
+}
+
+const ProjectsPage = () => {
+  navigate('/#projects')
+  return (
+    <CenterLayout>
+      <SEO title="Redireccionando" lang="es" />
+      <div className="card">
+        <div className="card-body">
+          <h1 className="card-title">Redireccionando...</h1>
+          <p className="card-text m-0">Espere un momento</p>
+        </div>
+      </div>
+    </CenterLayout>
   )
 }
 

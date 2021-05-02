@@ -1,8 +1,9 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 
+import CenterLayout from "@layouts/center"
 import SEO from "@components/seo"
 import { ProfileImage, LinkExternal, socialLinks } from "@components/social"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
@@ -71,7 +72,7 @@ FlexibleInfo.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-const AboutPage = () => {
+export const AboutPageOld = () => {
   const site = useSiteMetadata()
   const stacks = [
     {
@@ -147,6 +148,21 @@ const AboutPage = () => {
       </Container>
       <Footer />
     </Container>
+  )
+}
+
+const AboutPage = () => {
+  navigate('/#about')
+  return (
+    <CenterLayout>
+      <SEO title="Redireccionando" lang="es" />
+      <div className="card">
+        <div className="card-body">
+          <h1 className="card-title">Redireccionando...</h1>
+          <p className="card-text m-0">Espere un momento</p>
+        </div>
+      </div>
+    </CenterLayout>
   )
 }
 
