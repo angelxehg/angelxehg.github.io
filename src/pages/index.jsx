@@ -12,7 +12,7 @@ const IndexPage = () => {
   return (
     <CenterLayout>
       <SEO title="Inicio" lang="es" />
-      <div className="card no-bg divr pt-3">
+      <div className="card pt-3">
         <ProfileImage />
         <div className="card-body">
           <Link to="/" style={{ color: "white" }}>

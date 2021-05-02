@@ -5,7 +5,7 @@ import { Icon } from "@components/icons"
 
 const Footer = () => (
   <footer>
-    <nav className="navbar navbar-dark pg-bg divr">
+    <nav className="navbar navbar-dark">
       <div className="row ps-3" style={{ width: "100%" }}>
         <div className="col-lg-auto text-lg-end text-start order-lg-last">
           {socialLinks.map(({ title, to, icon }) => (

@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Container from "react-bootstrap/Container";
 
 const DefaultNavbar = () => (
-  <Navbar bg="dark" variant="dark" expand="sm" sticky="top" className="pg-bg divr">
+  <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
     <Container fluid="sm">
       <Link className="navbar-brand" to="/projects">
         Proyectos de Angel
