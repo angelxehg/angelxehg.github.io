@@ -6,24 +6,17 @@ import Container from "react-bootstrap/Container";
 
 const DefaultNavbar = () => (
   <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
-    <Container fluid="sm">
-      <Link className="navbar-brand" to="/projects">
-        Proyectos de Angel
+    <Container fluid="md">
+      <Link className="navbar-brand" to="/">
+        Angel Hurtado
       </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Item>
-            <Link className="nav-link" to="/">
-              Resumen
-            </Link>
-          </Nav.Item>
-          {/* <Nav.Link href="https://blog.angelxehg.com/">Blog</Nav.Link> */}
-          <Nav.Item>
-            <Link className="nav-link" to="/about">
-              Acerca de
-            </Link>
-          </Nav.Item>
+          <Nav.Link href="#about">Acerca de</Nav.Link>
+          <Nav.Link href="#education">Educación</Nav.Link>
+          <Nav.Link href="#skills">Habilidades</Nav.Link>
+          <Nav.Link href="#projects">Proyectos</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Container>

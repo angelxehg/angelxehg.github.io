@@ -2,7 +2,9 @@ import React from "react"
 import Container from "react-bootstrap/Container"
 
 import SEO from "@components/seo"
+import DefaultNavbar from "@components/navbar"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
+
 import AboutSection from "../sections/about"
 import EducationSection from "../sections/education"
 import SkillsSection from "../sections/skills"
@@ -13,24 +15,11 @@ const IndexPage = () => {
   return (
     <div>
       <SEO title="Inicio" lang="es" />
+      <DefaultNavbar />
       <Container fluid="md" className="pt-3 pb-3">
         <header>
           <h1>{site.title}</h1>
           <p>{site.description}</p>
-          <ul>
-            <li>
-              <a href="#about">Acerca de</a>
-            </li>
-            <li>
-              <a href="#education">Educación</a>
-            </li>
-            <li>
-              <a href="#skills">Habilidades</a>
-            </li>
-            <li>
-              <a href="#projects">Proyectos</a>
-            </li>
-          </ul>
         </header>
         <AboutSection />
         <EducationSection />
