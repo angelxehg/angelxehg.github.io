@@ -1,12 +1,12 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
 
-import SEO from "@components/seo"
-import DefaultNavbar from "@components/navbar"
-import DefaultFooter from "@components/footer"
-import { useSiteMetadata } from "@hooks/use-site-metadata"
-import { Icon } from "@components/icons"
-import { LinkExternal, socialLinks } from "@components/social"
+import SEO from "../components/seo"
+import DefaultNavbar from "../components/navbar"
+import DefaultFooter from "../components/footer"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { Icon } from "../components/icons"
+import { LinkExternal, socialLinks } from "../components/social"
 
 import EducationSection from "../sections/education"
 import SkillsSection from "../sections/skills"

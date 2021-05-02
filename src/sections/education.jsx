@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkExternal } from "@components/social"
+import { LinkExternal } from "../components/social"
 
 const EducationSection = () => (
   <section id="education">

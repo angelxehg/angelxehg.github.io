@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import CenterLayout from "@layouts/center"
-import SEO from "@components/seo"
+import CenterLayout from "../layouts/center"
+import SEO from "../components/seo"
 
 const NotFoundPage = () => (
   <CenterLayout>

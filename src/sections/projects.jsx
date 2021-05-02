@@ -3,8 +3,8 @@ import Card from "react-bootstrap/Card"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 
-import { Icon, LinkIcon } from "@components/icons"
-import { LinkExternal } from "@components/social"
+import { Icon, LinkIcon } from "../components/icons"
+import { LinkExternal } from "../components/social"
 
 const projects = [
   {

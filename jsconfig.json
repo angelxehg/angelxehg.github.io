@@ -22,26 +22,6 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "./",
-    "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@hooks/*": [
-        "src/hooks/*"
-      ],
-      "@css/*": [
-        "src/css/*"
-      ]
-    }
   },
   "exclude": [
     "public",

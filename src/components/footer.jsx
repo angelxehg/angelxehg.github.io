@@ -2,8 +2,8 @@ import React from "react"
 import Navbar from 'react-bootstrap/Navbar';
 import Container from "react-bootstrap/Container";
 
-import { LinkExternal, socialLinks } from "@components/social"
-import { Icon } from "@components/icons"
+import { LinkExternal, socialLinks } from "../components/social"
+import { Icon } from "../components/icons"
 
 export const FooterOld = () => (
   <footer>

@@ -1,8 +1,8 @@
 import React from "react"
 import { navigate } from "gatsby"
 
-import CenterLayout from "@layouts/center"
-import SEO from "@components/seo"
+import CenterLayout from "../layouts/center"
+import SEO from "../components/seo"
 
 const ProjectsPage = () => {
   navigate('/#projects')

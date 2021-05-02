@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkIcon } from "@components/icons"
+import { LinkIcon } from "../components/icons"
 
 const stacks = [
   {
