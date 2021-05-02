@@ -5,7 +5,7 @@ import { Link, navigate } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import CenterLayout from "@layouts/center"
-import Footer from "@components/footer"
+import DefaultFooter from "@components/footer"
 import SEO from "@components/seo"
 import { useContents } from "@hooks/use-contents"
 import { Icon, LinkIcon } from "@components/icons"
@@ -86,7 +86,7 @@ export const ProjectsPageOld = () => {
           </Row>
         </main>
       </Container>
-      <Footer />
+      <DefaultFooter />
     </Container>
   )
 }

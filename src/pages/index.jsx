@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container"
 
 import SEO from "@components/seo"
 import DefaultNavbar from "@components/navbar"
+import DefaultFooter from "@components/footer"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
 
 import AboutSection from "../sections/about"
@@ -26,6 +27,7 @@ const IndexPage = () => {
         <SkillsSection />
         <ProjectsSection />
       </Container>
+      <DefaultFooter />
     </div>
   )
 }

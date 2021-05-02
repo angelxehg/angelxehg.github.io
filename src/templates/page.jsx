@@ -4,10 +4,9 @@ import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import Footer from "@components/footer"
+import DefaultFooter from "@components/footer"
 import SEO from "@components/seo"
 import { LinkIcon } from "@components/icons"
-import { LinkExternal } from "@components/social"
 import DefaultNavbar from "@components/navbar"
 
 export const query = graphql`
@@ -67,7 +66,7 @@ const PageTemplate = props => {
           <MDXRenderer>{body}</MDXRenderer>
         </main>
       </Container>
-      <Footer />
+      <DefaultFooter />
     </Container>
   )
 }

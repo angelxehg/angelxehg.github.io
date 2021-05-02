@@ -8,7 +8,7 @@ import SEO from "@components/seo"
 import { ProfileImage, LinkExternal, socialLinks } from "@components/social"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
 import { LinkIcon, Icon } from "@components/icons"
-import Footer from "@components/footer"
+import DefaultFooter from "@components/footer"
 
 const ComplexHeader = () => {
   const site = useSiteMetadata()
@@ -146,7 +146,7 @@ export const AboutPageOld = () => {
           </FlexibleInfo>
         </main>
       </Container>
-      <Footer />
+      <DefaultFooter />
     </Container>
   )
 }

@@ -1,9 +1,11 @@
 import React from "react"
+import Navbar from 'react-bootstrap/Navbar';
+import Container from "react-bootstrap/Container";
 
 import { LinkExternal, socialLinks } from "@components/social"
 import { Icon } from "@components/icons"
 
-const Footer = () => (
+export const FooterOld = () => (
   <footer>
     <nav className="navbar navbar-dark">
       <div className="row ps-3" style={{ width: "100%" }}>
@@ -46,4 +48,12 @@ const Footer = () => (
   </footer>
 )
 
-export default Footer
+const DefaultFooter = () => (
+  <Navbar bg="dark" variant="dark" expand="sm" >
+    <Container fluid="md">
+      © {new Date().getFullYear()}, Angel Hurtado.
+    </Container>
+  </Navbar>
+)
+
+export default DefaultFooter
