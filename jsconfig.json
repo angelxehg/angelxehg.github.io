@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
-    "types": ["node"],
+    "types": [
+      "node"
+    ],
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -17,15 +23,34 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@assets/*": ["src/assets/*"],
-      "@templates/*": ["src/templates/*"],
-      "@pages/*": ["src/pages/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@css/*": ["src/css/*"]
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@css/*": [
+        "src/css/*"
+      ]
     }
   },
-  "exclude": ["public", "node_modules", ".cache", "content", "images"],
-  "include": ["src"]
+  "exclude": [
+    "public",
+    "node_modules",
+    ".cache",
+    "content",
+    "images"
+  ],
+  "include": [
+    "src"
+  ]
 }
