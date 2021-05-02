@@ -7,7 +7,7 @@ import CenterLayout from "@layouts/center"
 import SEO from "@components/seo"
 import { ProfileImage, LinkExternal, socialLinks } from "@components/social"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
-import { LinkIcon, Icon } from "@components/icons"
+import { Icon } from "@components/icons"
 import DefaultFooter from "@components/footer"
 
 const ComplexHeader = () => {
@@ -73,57 +73,12 @@ FlexibleInfo.propTypes = {
 }
 
 export const AboutPageOld = () => {
-  const site = useSiteMetadata()
-  const stacks = [
-    {
-      title: "Lenguajes",
-      icons: ["HTML5", "CSS3", "Typescript", "Javascript", "Python"],
-    },
-    {
-      title: "Frameworks",
-      icons: ["React", "Ionic", "Gatsby", "Angular"],
-    },
-    {
-      title: "Herramientas",
-      icons: ["NodeJS", "NPM", "Git", "Markdown", "Bootstrap"],
-    },
-    {
-      title: "Plataformas",
-      icons: ["Ubuntu", "Netlify", "AWS", "Firebase", "DigitalOcean"],
-    },
-  ]
   return (
     <Container fluid="sm" className="mt-3 mb-3">
       <SEO title="Acerca de mi" lang="es" />
       <ComplexHeader />
       <Container fluid={true} className="pt-3 pb-3">
-        <header className="d-block d-md-none">
-          <h3>Acerca de mi</h3>
-          <p>{site.description}</p>
-        </header>
         <main>
-          <FlexibleInfo title="Educación">
-            <p>
-              <b>Ingeniería en Tecnologías de la Información y Comunicación</b>
-              <br />
-              <LinkExternal to="http://www.utzac.edu.mx">
-                Universidad Tecnológica del Estado de Zacatecas
-            </LinkExternal>
-              <br />
-            Guadalupe, Zacatecas | 2017-2021
-          </p>
-          </FlexibleInfo>
-          <FlexibleInfo title="Habilidades">
-            {stacks.map(({ title, icons }) => (
-              <p key={title} className="m-0">
-                {title + ": "}
-                {icons.map(icon => (
-                  <LinkIcon key={icon} name={icon} />
-                ))}
-              </p>
-            ))}
-            <br />
-          </FlexibleInfo>
           <FlexibleInfo title="Aptitudes">
             <p>
               Aprendizaje autónomo
