@@ -5,6 +5,8 @@ import SEO from "@components/seo"
 import DefaultNavbar from "@components/navbar"
 import DefaultFooter from "@components/footer"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
+import { Icon } from "@components/icons"
+import { LinkExternal, socialLinks } from "@components/social"
 
 import EducationSection from "../sections/education"
 import SkillsSection from "../sections/skills"
@@ -20,6 +22,18 @@ const IndexPage = () => {
         <header>
           <h1>{site.title}</h1>
           <p>{site.description}</p>
+          <p>
+            <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
+              <Icon name="Email" className="me-1" />
+              sudo@angelxehg.com
+            </LinkExternal>
+            <br className="d-block d-sm-none" />
+            {socialLinks.map(({ title, to, icon }) => (
+              <LinkExternal key={to} to={to} title={title}>
+                <Icon name={icon} />
+              </LinkExternal>
+            ))}
+          </p>
         </header>
         <EducationSection />
         <SkillsSection />
