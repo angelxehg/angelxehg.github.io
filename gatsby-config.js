@@ -11,10 +11,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    `gatsby-remark-images`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-manifest`,
