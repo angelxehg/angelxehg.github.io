@@ -31,7 +31,7 @@ const ComplexHeader = () => {
           <div className="col-lg text-lg-start text-center">
             <Link to="/" className="me-3">
               Resumen
-                </Link>
+            </Link>
             {/* <LinkExternal to="https://blog.angelxehg.com/" className="me-3">
                   Blog
                 </LinkExternal> */}
@@ -40,8 +40,8 @@ const ComplexHeader = () => {
           <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
             <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
               <Icon name="Email" className="me-1" />
-                  sudo@angelxehg.com
-                </LinkExternal>
+              sudo@angelxehg.com
+            </LinkExternal>
             <br className="d-block d-sm-none" />
             {socialLinks.map(({ title, to, icon }) => (
               <LinkExternal key={to} to={to} title={title}>
@@ -107,10 +107,10 @@ const AboutPage = () => {
               <br />
               <LinkExternal to="http://www.utzac.edu.mx">
                 Universidad Tecnológica del Estado de Zacatecas
-            </LinkExternal>
+              </LinkExternal>
               <br />
-            Guadalupe, Zacatecas | 2017-2021
-          </p>
+              Guadalupe, Zacatecas | 2017-2021
+            </p>
           </FlexibleInfo>
           <FlexibleInfo title="Habilidades">
             {stacks.map(({ title, icons }) => (
@@ -126,22 +126,22 @@ const AboutPage = () => {
           <FlexibleInfo title="Aptitudes">
             <p>
               Aprendizaje autónomo
-            <br />
-            Orientado a objetivos
-            <br />
-            Resolución de problemas
-            <br />
-            DevOps, CI y CD
-            <br />
-            SCRUM y Kanban
-          </p>
+              <br />
+              Orientado a objetivos
+              <br />
+              Resolución de problemas
+              <br />
+              DevOps, CI y CD
+              <br />
+              SCRUM y Kanban
+            </p>
           </FlexibleInfo>
           <FlexibleInfo title="Premios">
             <p>
               1° Zacatecas: Concurso Nacional de Prototipos 2016
-            <br />
-            19° Nacional: Concurso Nacional de Prototipos 2016
-          </p>
+              <br />
+              19° Nacional: Concurso Nacional de Prototipos 2016
+            </p>
           </FlexibleInfo>
         </main>
       </Container>

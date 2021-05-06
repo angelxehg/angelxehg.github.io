@@ -10,9 +10,9 @@ import { Card, Col, Row } from "react-bootstrap"
 
 const projects = [
   {
-    slug: 'portafolio',
-    title: 'Portafolio profesional',
-    extract: 'Mi sitio web y portafolio profesional',
+    slug: "portafolio",
+    title: "Portafolio profesional",
+    extract: "Mi sitio web y portafolio profesional",
     stack: "Gatsby,React,Javascript,GitHub",
     github: "https://github.com/angelxehg/angelxehg.github.io",
     demo: "https://angelxehg.github.io/",
@@ -59,9 +59,10 @@ const ProjectsPage = () => {
                       <Card.Title>{title}</Card.Title>
                       <Card.Text className="m-0">{extract}</Card.Text>
                       <Card.Text className="text-muted">
-                        Hecho con: {stackIcons.map(icon => (
-                        <LinkIcon key={icon} name={icon} />
-                      ))}
+                        Hecho con:{" "}
+                        {stackIcons.map(icon => (
+                          <LinkIcon key={icon} name={icon} />
+                        ))}
                       </Card.Text>
                       {github && (
                         <LinkExternal to={github} title="Repositorio">
@@ -69,7 +70,7 @@ const ProjectsPage = () => {
                         </LinkExternal>
                       )}
                       {demo && (
-                        <LinkExternal to={demo} title="Demo" >
+                        <LinkExternal to={demo} title="Demo">
                           <Icon name="Web" /> Demo
                         </LinkExternal>
                       )}

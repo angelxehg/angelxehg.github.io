@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar"
+import Nav from "react-bootstrap/Nav"
+import Container from "react-bootstrap/Container"
 
 const DefaultNavbar = () => (
   <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
