@@ -12,46 +12,42 @@ import Footer from "@components/footer"
 const ComplexHeader = () => {
   const site = useSiteMetadata()
   return (
-    <div className="no-bg divr">
-      <div>
-        <div className="row pt-3 pb-3 pe-1 ps-1">
-          <div className="col-md-auto">
-            <div className="row">
-              <div className="col d-block d-md-none"></div>
-              <div className="col-auto">
-                <ProfileImage />
-              </div>
-              <div className="col d-block d-md-none"></div>
-            </div>
+    <div className="row pt-3 pb-3 pe-1 ps-1">
+      <div className="col-md-auto">
+        <div className="row">
+          <div className="col d-block d-md-none"></div>
+          <div className="col-auto">
+            <ProfileImage />
           </div>
-          <div className="col text-center text-md-start mt-3 mt-md-0">
-            <Link to="/" style={{ color: "white" }}>
-              <h1>{site.title}</h1>
-            </Link>
-            <p className="d-none d-md-block">{site.description}</p>
-            <div className="row mt-2">
-              <div className="col-lg text-lg-start text-center">
-                <Link to="/" className="me-3">
-                  Resumen
+          <div className="col d-block d-md-none"></div>
+        </div>
+      </div>
+      <div className="col text-center text-md-start mt-3 mt-md-0">
+        <Link to="/" style={{ color: "black" }}>
+          <h1>{site.title}</h1>
+        </Link>
+        <p className="d-none d-md-block">{site.description}</p>
+        <div className="row mt-2">
+          <div className="col-lg text-lg-start text-center">
+            <Link to="/" className="me-3">
+              Resumen
                 </Link>
-                {/* <LinkExternal to="https://blog.angelxehg.com/" className="me-3">
+            {/* <LinkExternal to="https://blog.angelxehg.com/" className="me-3">
                   Blog
                 </LinkExternal> */}
-                <Link to="/projects">Proyectos</Link>
-              </div>
-              <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
-                <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
-                  <Icon name="Email" className="me-1" />
+            <Link to="/projects">Proyectos</Link>
+          </div>
+          <div className="col-lg-auto mt-2 mt-lg-0 text-lg-end text-center">
+            <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
+              <Icon name="Email" className="me-1" />
                   sudo@angelxehg.com
                 </LinkExternal>
-                <br className="d-block d-sm-none" />
-                {socialLinks.map(({ title, to, icon }) => (
-                  <LinkExternal key={to} to={to} title={title}>
-                    <Icon name={icon} />
-                  </LinkExternal>
-                ))}
-              </div>
-            </div>
+            <br className="d-block d-sm-none" />
+            {socialLinks.map(({ title, to, icon }) => (
+              <LinkExternal key={to} to={to} title={title}>
+                <Icon name={icon} />
+              </LinkExternal>
+            ))}
           </div>
         </div>
       </div>
@@ -96,7 +92,7 @@ const AboutPage = () => {
     },
   ]
   return (
-    <Container fluid="sm" className="mt-3 mb-3 text-white font-monospace">
+    <Container fluid="sm" className="mt-3 mb-3">
       <SEO title="Acerca de mi" lang="es" />
       <ComplexHeader />
       <Container fluid={true} className="pt-3 pb-3">
