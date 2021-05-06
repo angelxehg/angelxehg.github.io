@@ -1,35 +1,16 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
 
 import SEO from "@components/seo"
-import { ProfileImage, LinkExternal, socialLinks } from "@components/social"
+import { LinkExternal } from "@components/social"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
-import { LinkIcon, Icon } from "@components/icons"
+import { Icon } from "@components/icons"
 import DefaultFooter from "@components/footer"
 import DefaultNavbar from "@components/navbar"
+import { Card } from "react-bootstrap"
 
 const AboutPage = () => {
   const site = useSiteMetadata()
-  const stacks = [
-    {
-      title: "Lenguajes",
-      icons: ["HTML5", "CSS3", "Typescript", "Javascript", "Python"],
-    },
-    {
-      title: "Frameworks",
-      icons: ["React", "Ionic", "Gatsby", "Angular"],
-    },
-    {
-      title: "Herramientas",
-      icons: ["NodeJS", "NPM", "Git", "Markdown", "Bootstrap"],
-    },
-    {
-      title: "Plataformas",
-      icons: ["Ubuntu", "Netlify", "AWS", "Firebase", "DigitalOcean"],
-    },
-  ]
   return (
     <div>
       <SEO title="Acerca de mi" lang="es" />
@@ -39,6 +20,25 @@ const AboutPage = () => {
           <h1>Acerca de mi</h1>
           <p>{site.description}</p>
         </header>
+        <section id="education">
+          <h2>Educación</h2>
+          <Card>
+            <Card.Body>
+              <Card.Title>
+                Ingeniería en Tecnologías de la Información y Comunicación
+              </Card.Title>
+              <Card.Text className="m-0 mb-1">
+                <LinkExternal to="http://www.utzac.edu.mx" title="UTZAC">
+                  <Icon name="Web" /> Universidad Tecnológica del Estado de
+                  Zacatecas
+                </LinkExternal>
+              </Card.Text>
+              <Card.Text className="text-muted">
+                Guadalupe, Zacatecas | 2017-2021
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </section>
       </Container>
       <DefaultFooter />
     </div>

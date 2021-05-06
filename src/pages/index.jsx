@@ -19,17 +19,13 @@ const IndexPage = () => {
           <Link to="/">
             <h1 className="card-title">{site.title}</h1>
           </Link>
-          <Card.Text className="m-0">
-            {site.description}
-          </Card.Text>
+          <Card.Text className="m-0">{site.description}</Card.Text>
           <Row className="mt-2">
             <Col>
               <Link to="/projects" className="me-3">
                 Proyectos
               </Link>
-              <Link to="/about">
-                Acerca de
-              </Link>
+              <Link to="/about">Acerca de</Link>
             </Col>
           </Row>
           <Row className="mt-2">

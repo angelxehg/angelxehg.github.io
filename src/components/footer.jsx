@@ -18,26 +18,26 @@ const DefaultFooter = () => (
             <br />
             <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
               <Icon name="Email" className="me-1" />
-            sudo@angelxehg.com
-          </LinkExternal>
+              sudo@angelxehg.com
+            </LinkExternal>
           </div>
           <div className="col-lg mt-lg-0 mt-2">
             <p className="m-0">
-              <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión v1.2.0.
-            Reporta problemas o envia tus sugerencias en la{" "}
+              <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión
+              v1.2.0. Reporta problemas o envia tus sugerencias en la{" "}
               <LinkExternal to="https://github.com/angelxehg/angelxehg.github.io/issues">
                 página de Issues
-            </LinkExternal>
+              </LinkExternal>
               <br />
-            Las marcas y logos pertenecen a sus respectivos dueños. Iconos
-            obtenidos desde{" "}
+              Las marcas y logos pertenecen a sus respectivos dueños. Iconos
+              obtenidos desde{" "}
               <LinkExternal to="https://fontawesome.com/license">
                 FontAwesome
-            </LinkExternal>
+              </LinkExternal>
               {", "}
               <LinkExternal to="https://icons.getbootstrap.com/">
                 Bootstrap Icons
-            </LinkExternal>
+              </LinkExternal>
               {", "}
               <LinkExternal to="https://seeklogo.com/">SeekLogo</LinkExternal>
               {", "}
@@ -46,7 +46,6 @@ const DefaultFooter = () => (
           </div>
         </div>
       </Container>
-
     </nav>
   </footer>
 )

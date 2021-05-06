@@ -50,10 +50,11 @@ const ProjectsPage = () => {
         <header>
           <h1>Proyectos</h1>
           <p>
-            Estos son mis proyectos que he realizado por mi cuenta, y como proyectos escolares.
+            Estos son mis proyectos que he realizado por mi cuenta, y como
+            proyectos escolares.
           </p>
         </header>
-        <Row >
+        <Row>
           {projects.map(item => {
             const { slug, title, extract, stack, github, demo } = item
             const stackIcons = stack.split(",")
