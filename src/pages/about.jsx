@@ -7,7 +7,8 @@ import SEO from "@components/seo"
 import { ProfileImage, LinkExternal, socialLinks } from "@components/social"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
 import { LinkIcon, Icon } from "@components/icons"
-import Footer from "@components/footer"
+import DefaultFooter from "@components/footer"
+import DefaultNavbar from "@components/navbar"
 
 const ComplexHeader = () => {
   const site = useSiteMetadata()
@@ -92,10 +93,10 @@ const AboutPage = () => {
     },
   ]
   return (
-    <Container fluid="sm" className="mt-3 mb-3">
+    <div>
       <SEO title="Acerca de mi" lang="es" />
-      <ComplexHeader />
-      <Container fluid={true} className="pt-3 pb-3">
+      <DefaultNavbar />
+      <Container fluid="sm" className="pt-3 pb-3">
         <header className="d-block d-md-none">
           <h3>Acerca de mi</h3>
           <p>{site.description}</p>
@@ -145,8 +146,8 @@ const AboutPage = () => {
           </FlexibleInfo>
         </main>
       </Container>
-      <Footer />
-    </Container>
+      <DefaultFooter />
+    </div>
   )
 }
 

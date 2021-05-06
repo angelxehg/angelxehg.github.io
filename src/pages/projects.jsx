@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
 
-import Footer from "@components/footer"
+import DefaultFooter from "@components/footer"
 import SEO from "@components/seo"
 import { Icon, LinkIcon } from "@components/icons"
 import { LinkExternal } from "@components/social"
@@ -43,47 +43,45 @@ const projects = [
 
 const ProjectsPage = () => {
   return (
-    <Container fluid="sm" className="mt-3 mb-3">
+    <div>
       <SEO title="Proyectos" lang="es" />
       <DefaultNavbar />
-      <Container fluid={true} className="pt-3 pb-3">
-        <main>
-          <Row className="ps-2 pe-2 mt-1">
-            {projects.map(item => {
-              const { slug, title, extract, stack, github, demo } = item
-              const stackIcons = stack.split(",")
-              return (
-                <Col key={slug} xl="4" md="6" className="p-1">
-                  <Card>
-                    <Card.Body>
-                      <Card.Title>{title}</Card.Title>
-                      <Card.Text className="m-0">{extract}</Card.Text>
-                      <Card.Text className="text-muted">
-                        Hecho con:{" "}
-                        {stackIcons.map(icon => (
-                          <LinkIcon key={icon} name={icon} />
-                        ))}
-                      </Card.Text>
-                      {github && (
-                        <LinkExternal to={github} title="Repositorio">
-                          <Icon name="GitHub" /> Repositorio
-                        </LinkExternal>
-                      )}
-                      {demo && (
-                        <LinkExternal to={demo} title="Demo">
-                          <Icon name="Web" /> Demo
-                        </LinkExternal>
-                      )}
-                    </Card.Body>
-                  </Card>
-                </Col>
-              )
-            })}
-          </Row>
-        </main>
+      <Container fluid="md" className="pt-3 pb-3">
+        <Row >
+          {projects.map(item => {
+            const { slug, title, extract, stack, github, demo } = item
+            const stackIcons = stack.split(",")
+            return (
+              <Col key={slug} xl="4" md="6" className="p-1">
+                <Card>
+                  <Card.Body>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Text className="m-0">{extract}</Card.Text>
+                    <Card.Text className="text-muted">
+                      Hecho con:{" "}
+                      {stackIcons.map(icon => (
+                        <LinkIcon key={icon} name={icon} />
+                      ))}
+                    </Card.Text>
+                    {github && (
+                      <LinkExternal to={github} title="Repositorio">
+                        <Icon name="GitHub" /> Repositorio
+                      </LinkExternal>
+                    )}
+                    {demo && (
+                      <LinkExternal to={demo} title="Demo">
+                        <Icon name="Web" /> Demo
+                      </LinkExternal>
+                    )}
+                  </Card.Body>
+                </Card>
+              </Col>
+            )
+          })}
+        </Row>
       </Container>
-      <Footer />
-    </Container>
+      <DefaultFooter />
+    </div>
   )
 }
 
