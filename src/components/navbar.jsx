@@ -15,14 +15,14 @@ const DefaultNavbar = () => (
         <Nav className="me-auto">
           <Nav.Item>
             <Link className="nav-link" to="/projects" activeClassName="active">
-              Mis proyectos
+              Proyectos
             </Link>
           </Nav.Item>
         </Nav>
         <Nav>
           <Nav.Item>
             <Link className="nav-link" to="/about" activeClassName="active">
-              Acerca de mi
+              Acerca de
             </Link>
           </Nav.Item>
         </Nav>

@@ -25,10 +25,10 @@ const IndexPage = () => {
           <Row className="mt-2">
             <Col>
               <Link to="/projects" className="me-3">
-                Mis proyectos
+                Proyectos
               </Link>
               <Link to="/about">
-                Acerca de mi
+                Acerca de
               </Link>
             </Col>
           </Row>

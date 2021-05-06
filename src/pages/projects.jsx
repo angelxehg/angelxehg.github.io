@@ -47,6 +47,12 @@ const ProjectsPage = () => {
       <SEO title="Proyectos" lang="es" />
       <DefaultNavbar />
       <Container fluid="md" className="pt-3 pb-3">
+        <header>
+          <h1>Proyectos</h1>
+          <p>
+            Estos son mis proyectos que he realizado por mi cuenta, y como proyectos escolares.
+          </p>
+        </header>
         <Row >
           {projects.map(item => {
             const { slug, title, extract, stack, github, demo } = item
