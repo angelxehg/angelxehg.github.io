@@ -50,7 +50,7 @@ export const LinkExternal = props => (
     href={props.to}
     rel="noreferrer"
     target="_blank"
-    style={{ margin: "3px" }}
+    style={{ margin: "3px", color: 'black' }}
     data-bs-toggle="tooltip"
     data-bs-placement="bottom"
     title={props.title || "Link"}
