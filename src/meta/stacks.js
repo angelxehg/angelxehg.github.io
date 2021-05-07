@@ -17,4 +17,4 @@ const stacks = [
   },
 ]
 
-export default stacks;
+export default stacks

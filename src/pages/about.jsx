@@ -4,7 +4,7 @@ import { Link, navigate } from "gatsby"
 import CenterLayout from "../layouts/center"
 import SEO from "../components/seo"
 
-setTimeout(() => navigate('/'), 2000)
+setTimeout(() => navigate("/"), 2000)
 
 const AboutPage = () => (
   <CenterLayout>

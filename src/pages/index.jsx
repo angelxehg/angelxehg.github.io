@@ -83,12 +83,11 @@ const EducationSection = () => (
       <div className="col p-md-1 pb-2">
         <div className="card bg-dark">
           <div className="card-body">
-            <h4>
-              Ingeniería en Tecnologías de la Información y Comunicación
-            </h4>
+            <h4>Ingeniería en Tecnologías de la Información y Comunicación</h4>
             <p className="card-text m-0 mb-1">
               <LinkExternal to="http://www.utzac.edu.mx" title="UTZAC">
-                <Icon name="Web" /> Universidad Tecnológica del Estado de Zacatecas
+                <Icon name="Web" /> Universidad Tecnológica del Estado de
+                Zacatecas
               </LinkExternal>
             </p>
             <p className="card-text text-muted">
@@ -109,15 +108,11 @@ const SkillsSection = () => (
         <div key={n} className="col-md-6 p-md-1 pb-2">
           <div className="card bg-dark">
             <div className="card-body">
-              <h4>
-                {title}
-              </h4>
+              <h4>{title}</h4>
               <p className="card-text">
                 {icons.map(icon => {
                   if (availableIcons.find(i => i === icon)) {
-                    return (
-                      <LinkIcon key={icon} name={icon} size="1.5rem" />
-                    )
+                    return <LinkIcon key={icon} name={icon} size="1.5rem" />
                   } else {
                     console.log(icon)
                   }
