@@ -53,7 +53,7 @@ const SEO = props => {
         },
       ].concat(meta)}
     >
-      <body className="text-light font-monospaced"></body>
+      <body className="text-light"></body>
     </Helmet>
   )
 }
