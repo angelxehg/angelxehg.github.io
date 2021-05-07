@@ -69,7 +69,7 @@ const projects = [
 ]
 
 const ProjectsSection = () => (
-  <section id="projects" className="mt-3">
+  <section id="projects">
     <h2>Proyectos</h2>
     <Row>
       {projects.map(item => {
@@ -107,7 +107,7 @@ const ProjectsSection = () => (
 )
 
 const EducationSection = () => (
-  <section id="education" className="mt-3">
+  <section id="education">
     <h2>Educación</h2>
     <Row>
       <Col xl="7" lg="8" className="p-md-1 pb-2">
@@ -151,7 +151,7 @@ const stacks = [
 ]
 
 const SkillsSection = () => (
-  <section id="skills" className="mt-3">
+  <section id="skills">
     <h2>Habilidades</h2>
     <Row>
       {stacks.map(({ title, icons }, n) => (
