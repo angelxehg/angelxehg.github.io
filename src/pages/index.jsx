@@ -1,7 +1,6 @@
 import React from "react"
 
 import DefaultFooter from "@components/footer"
-import DefaultNavbar from "@components/navbar"
 import SEO from "@components/seo"
 import { LinkExternal, ProfileImage, socialLinks } from "@components/social"
 import { availableIcons, Icon, LinkIcon } from "@components/icons"
@@ -183,8 +182,7 @@ const SkillsSection = () => (
 const IndexPage = () => (
   <div>
     <SEO title="Portafolio" lang="es" />
-    <DefaultNavbar />
-    <Container fluid="md" className="pt-3 pb-3">
+    <Container fluid="md" className="pt-4 pb-3">
       <PageHeader />
       <EducationSection />
       <SkillsSection />
