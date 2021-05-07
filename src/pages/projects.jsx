@@ -1,26 +1,23 @@
 import React from "react"
-import { navigate } from "gatsby"
+import { Link, navigate } from "gatsby"
 
 import CenterLayout from "../layouts/center"
 import SEO from "@components/seo"
-import { Card } from "react-bootstrap"
 
 setTimeout(() => navigate('/#projects'), 2000)
 
-const ProjectsPage = () => {
-  return (
-    <CenterLayout>
-      <SEO title="404: Not found" lang="es" />
-      <Card className="bg-dark">
-        <Card.Body>
-          <h1 className="card-title">301: Moved Permanently</h1>
-          <Card.Text className="m-0">
-            Redireccionando a Proyectos...
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    </CenterLayout>
-  )
-}
+const ProjectsPage = () => (
+  <CenterLayout>
+    <SEO title="301: Moved Permanently" lang="es" />
+    <div className="card bg-dark">
+      <div className="card-body">
+        <h1 className="card-title">301: Moved Permanently</h1>
+        <p className="card-text m-0">
+          Redireccionando a <Link to="/#projects">proyectos</Link>...
+        </p>
+      </div>
+    </div>
+  </CenterLayout>
+)
 
 export default ProjectsPage

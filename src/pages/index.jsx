@@ -5,16 +5,15 @@ import SEO from "@components/seo"
 import { LinkExternal, ProfileImage, socialLinks } from "@components/social"
 import { availableIcons, Icon, LinkIcon } from "@components/icons"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
-import { Col, Card, Container, Row } from "react-bootstrap"
 
 const PageHeader = () => {
   const site = useSiteMetadata()
   return (
-    <Row className="text-center text-sm-start">
-      <Col sm="auto">
+    <div className="row text-center text-sm-start">
+      <div className="col-sm-auto">
         <ProfileImage />
-      </Col>
-      <Col>
+      </div>
+      <div className="col">
         <header className="m-sm-0 mt-2">
           <h1>{site.title}</h1>
           <p>{site.description}</p>
@@ -29,8 +28,8 @@ const PageHeader = () => {
             <Icon name={icon} size="1.5rem" />
           </LinkExternal>
         ))}
-      </Col>
-    </Row>
+      </div>
+    </div>
   )
 }
 
@@ -70,22 +69,22 @@ const projects = [
 const ProjectsSection = () => (
   <section id="projects">
     <h2>Proyectos</h2>
-    <Row>
+    <div className="row">
       {projects.map(item => {
         const { slug, title, extract, stack, github, demo } = item
         const stackIcons = stack.split(",")
         return (
-          <Col key={slug} xl="4" md="6" className="p-md-1 pb-2">
-            <Card className="bg-dark">
-              <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text className="m-0">{extract}</Card.Text>
-                <Card.Text className="text-muted">
+          <div key={slug} className="col-xl-4 col-md-6 p-md-1 pb-2">
+            <div className="card bg-dark">
+              <div className="card-body">
+                <h4 className="card-title">{title}</h4>
+                <p className="card-text m-0">{extract}</p>
+                <p className="card-text text-muted">
                   Hecho con:{" "}
                   {stackIcons.map(icon => (
                     <LinkIcon key={icon} name={icon} />
                   ))}
-                </Card.Text>
+                </p>
                 {github && (
                   <LinkExternal to={github} title="Repositorio">
                     <Icon name="GitHub" /> Repositorio
@@ -96,37 +95,37 @@ const ProjectsSection = () => (
                     <Icon name="Web" /> Demo
                   </LinkExternal>
                 )}
-              </Card.Body>
-            </Card>
-          </Col>
+              </div>
+            </div>
+          </div>
         )
       })}
-    </Row>
+    </div>
   </section>
 )
 
 const EducationSection = () => (
   <section id="education">
     <h2>Educación</h2>
-    <Row>
-      <Col xl="7" lg="8" className="p-md-1 pb-2">
-        <Card className="bg-dark">
-          <Card.Body>
-            <Card.Title>
+    <div className="row">
+      <div className="col-xl-7 col-lg-8 p-md-1 pb-2">
+        <div className="card bg-dark">
+          <div className="card-body">
+            <h4>
               Ingeniería en Tecnologías de la Información y Comunicación
-            </Card.Title>
-            <Card.Text className="m-0 mb-1">
+            </h4>
+            <p className="card-text m-0 mb-1">
               <LinkExternal to="http://www.utzac.edu.mx" title="UTZAC">
                 <Icon name="Web" /> Universidad Tecnológica del Estado de Zacatecas
               </LinkExternal>
-            </Card.Text>
-            <Card.Text className="text-muted">
+            </p>
+            <p className="card-text text-muted">
               Guadalupe, Zacatecas | 2017-2021
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 )
 
@@ -152,15 +151,15 @@ const stacks = [
 const SkillsSection = () => (
   <section id="skills">
     <h2>Habilidades</h2>
-    <Row>
+    <div className="row">
       {stacks.map(({ title, icons }, n) => (
-        <Col key={n} xl="4" md="6" className="p-md-1 pb-2">
-          <Card className="bg-dark">
-            <Card.Body>
-              <Card.Title>
+        <div key={n} className="col-xl-4 col-md-6 p-md-1 pb-2">
+          <div className="card bg-dark">
+            <div className="card-body">
+              <h4>
                 {title}
-              </Card.Title>
-              <Card.Text>
+              </h4>
+              <p className="card-text">
                 {icons.map(icon => {
                   if (availableIcons.find(i => i === icon)) {
                     return (
@@ -170,24 +169,24 @@ const SkillsSection = () => (
                     console.log(icon)
                   }
                 })}
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
+              </p>
+            </div>
+          </div>
+        </div>
       ))}
-    </Row>
+    </div>
   </section>
 )
 
 const IndexPage = () => (
   <div>
     <SEO title="Portafolio" lang="es" />
-    <Container fluid="md" className="pt-4 pb-3">
+    <div className="container-md pt-4 pb-3">
       <PageHeader />
       <EducationSection />
       <SkillsSection />
       <ProjectsSection />
-    </Container>
+    </div>
     <DefaultFooter />
   </div>
 )

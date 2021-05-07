@@ -1,11 +1,10 @@
 import React from "react"
 
 import { LinkExternal } from "@components/social"
-import { Container } from "react-bootstrap"
 
 const DefaultFooter = () => (
   <footer className="navbar navbar-dark">
-    <Container fluid="md">
+    <div className="container-md">
       <p>
         <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión v1.2.0.
           Las marcas y logos pertenecen a sus respectivos dueños. Iconos
@@ -22,7 +21,7 @@ const DefaultFooter = () => (
         {", "}
         <LinkExternal to="https://ionicons.com/">Ionicons</LinkExternal>
       </p>
-    </Container>
+    </div>
   </footer>
 )
 
