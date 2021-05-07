@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap"
 const DefaultFooter = () => (
   <footer>
     <nav className="navbar navbar-dark">
-      <Container fluid="sm">
+      <Container fluid="md">
         <div className="row ps-3" style={{ width: "100%" }}>
           <div className="col-lg-auto text-lg-end text-start order-lg-last">
             {socialLinks.map(({ title, to, icon }) => (

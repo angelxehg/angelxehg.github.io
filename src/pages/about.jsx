@@ -15,7 +15,7 @@ const AboutPage = () => {
     <div>
       <SEO title="Acerca de mi" lang="es" />
       <DefaultNavbar />
-      <Container fluid="sm" className="pt-3 pb-3">
+      <Container fluid="md" className="pt-3 pb-3">
         <header>
           <h1>Acerca de mi</h1>
           <p>{site.description}</p>
