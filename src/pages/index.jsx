@@ -74,7 +74,7 @@ const ProjectsSection = () => (
         const { slug, title, extract, stack, github, demo } = item
         const stackIcons = stack.split(",")
         return (
-          <div key={slug} className="col-xl-4 col-md-6 p-md-1 pb-2">
+          <div key={slug} className="col-xl-6 col-lg-12 col-md-6 p-md-1 pb-2">
             <div className="card bg-dark">
               <div className="card-body">
                 <h4 className="card-title">{title}</h4>
@@ -108,7 +108,7 @@ const EducationSection = () => (
   <section id="education">
     <h2>Educación</h2>
     <div className="row">
-      <div className="col-xl-7 col-lg-8 p-md-1 pb-2">
+      <div className="col p-md-1 pb-2">
         <div className="card bg-dark">
           <div className="card-body">
             <h4>
@@ -153,7 +153,7 @@ const SkillsSection = () => (
     <h2>Habilidades</h2>
     <div className="row">
       {stacks.map(({ title, icons }, n) => (
-        <div key={n} className="col-xl-4 col-md-6 p-md-1 pb-2">
+        <div key={n} className="col-md-6 p-md-1 pb-2">
           <div className="card bg-dark">
             <div className="card-body">
               <h4>
@@ -183,9 +183,15 @@ const IndexPage = () => (
     <SEO title="Portafolio" lang="es" />
     <div className="container-md pt-4 pb-3">
       <PageHeader />
-      <EducationSection />
-      <SkillsSection />
-      <ProjectsSection />
+      <div className="row">
+        <div className="col-lg-4 order-lg-last">
+          <EducationSection />
+        </div>
+        <div className="col-lg">
+          <SkillsSection />
+          <ProjectsSection />
+        </div>
+      </div>
     </div>
     <DefaultFooter />
   </div>
