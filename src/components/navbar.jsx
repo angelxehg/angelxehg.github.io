@@ -1,34 +1,28 @@
 import React from "react"
 import { Link } from "gatsby"
-import Navbar from "react-bootstrap/Navbar"
-import Nav from "react-bootstrap/Nav"
-import Container from "react-bootstrap/Container"
 
 const DefaultNavbar = () => (
-  <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
-    <Container fluid="sm">
+  <nav className="navbar navbar-expand-sm navbar-light bg-light sticky-top" bg="dark">
+    <div className="container-sm">
       <Link className="navbar-brand" to="/">
         Angel Hurtado
       </Link>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-          <Nav.Item>
-            <Link className="nav-link" to="/projects" activeClassName="active">
-              Proyectos
-            </Link>
-          </Nav.Item>
-        </Nav>
-        <Nav>
-          <Nav.Item>
-            <Link className="nav-link" to="/about" activeClassName="active">
-              Acerca de
-            </Link>
-          </Nav.Item>
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
+      <ul className="navbar-nav me-auto">
+        <li className="nav-item">
+          <Link className="nav-link" to="/projects" activeClassName="active">
+            Proyectos
+          </Link>
+        </li>
+      </ul>
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link className="nav-link" to="/about" activeClassName="active">
+            Acerca de
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </nav>
 )
 
 export default DefaultNavbar
