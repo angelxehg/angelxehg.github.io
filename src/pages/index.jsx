@@ -23,16 +23,21 @@ const PageHeader = () => {
           </Link>
           <p>{site.description}</p>
         </header>
-        <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
-          <Icon name="Email" className="me-1" size="1.5rem" />
-          sudo@angelxehg.com
-        </LinkExternal>
-        <br className="d-block d-sm-none" />
-        {socialLinks.map(({ title, to, icon }) => (
-          <LinkExternal key={to} to={to} title={title}>
-            <Icon name={icon} size="1.5rem" />
-          </LinkExternal>
-        ))}
+        <div className="row">
+          <div className="col-sm-auto">
+            <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
+              <Icon name="Email" className="me-1" size="1.5rem" />
+              sudo@angelxehg.com
+            </LinkExternal>
+          </div>
+          <div className="col-sm-auto mt-sm-0 mt-2">
+            {socialLinks.map(({ title, to, icon }) => (
+              <LinkExternal key={to} to={to} title={title}>
+                <Icon name={icon} size="1.5rem" />
+              </LinkExternal>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )
