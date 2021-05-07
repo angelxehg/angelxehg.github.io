@@ -17,6 +17,7 @@ const AWSSVG = require("@assets/fontawesome/aws-brands.svg")
 const BootstrapSVG = require("@assets/fontawesome/bootstrap-brands.svg")
 const CSS3SVG = require("@assets/fontawesome/css3-alt-brands.svg")
 const DigitalOceanSVG = require("@assets/fontawesome/digital-ocean-brands.svg")
+const DjangoSVG = require("@assets/seek-logo/django.svg")
 const GitSVG = require("@assets/fontawesome/git-alt-brands.svg")
 const GatsbySVG = require("@assets/seek-logo/gatsby.svg")
 const FirebaseSVG = require("@assets/seek-logo/firebase.svg")
@@ -31,6 +32,7 @@ const PythonSVG = require("@assets/seek-logo/python.svg")
 const ReactSVG = require("@assets/fontawesome/react-brands.svg")
 const TypescriptSVG = require("@assets/seek-logo/typescript.svg")
 const UbuntuSVG = require("@assets/fontawesome/ubuntu-brands.svg")
+const VSCodeSVG = require("@assets/seek-logo/vscode.svg")
 
 const iconsSource = [
   {
@@ -68,6 +70,12 @@ const iconsSource = [
     color: "#007CF7",
     svg: DigitalOceanSVG,
     docs: "https://www.digitalocean.com/",
+  },
+  {
+    name: "Django",
+    color: "white",
+    svg: DjangoSVG,
+    docs: "https://www.djangoproject.com/",
   },
   {
     name: "Email",
@@ -197,6 +205,12 @@ const iconsSource = [
     docs: "https://ubuntu.com/",
   },
   {
+    name: "VSCode",
+    color: "white",
+    svg: VSCodeSVG,
+    docs: "https://code.visualstudio.com/",
+  },
+  {
     name: "Web",
     color: "white",
     svg: WebSVG,
@@ -204,7 +218,7 @@ const iconsSource = [
   },
 ]
 
-const availableIcons = iconsSource.map(i => i.name)
+export const availableIcons = iconsSource.map(i => i.name)
 
 const useStyles = (props, defaultColor) => {
   const { size } = props
