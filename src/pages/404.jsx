@@ -10,15 +10,9 @@ const NotFoundPage = () => (
     <SEO title="404: Not found" lang="es" />
     <Card className="bg-dark">
       <Card.Body>
-        <h1 className="card-title">
-          404 Not Found
-        </h1>
-        <Card.Text className="m-0">
-          La página que buscas no existe
-        </Card.Text>
-        <Link to="/projects">
-          Ir al Portafolio
-        </Link>
+        <h1 className="card-title">404 Not Found</h1>
+        <Card.Text className="m-0">La página que buscas no existe</Card.Text>
+        <Link to="/projects">Ir al Portafolio</Link>
       </Card.Body>
     </Card>
   </CenterLayout>
