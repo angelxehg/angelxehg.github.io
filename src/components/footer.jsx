@@ -1,6 +1,6 @@
 import React from "react"
 
-import { LinkExternal } from "@components/social"
+import { LinkExternal } from "./social"
 
 const DefaultFooter = () => (
   <footer className="navbar navbar-dark">

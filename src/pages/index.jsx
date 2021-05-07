@@ -1,10 +1,10 @@
 import React from "react"
 
-import DefaultFooter from "@components/footer"
-import SEO from "@components/seo"
-import { LinkExternal, ProfileImage, socialLinks } from "@components/social"
-import { availableIcons, Icon, LinkIcon } from "@components/icons"
-import { useSiteMetadata } from "@hooks/use-site-metadata"
+import DefaultFooter from "../components/footer"
+import SEO from "../components/seo"
+import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
+import { availableIcons, Icon, LinkIcon } from "../components/icons"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 import projects from "../meta/projects"
 import stacks from "../meta/stacks"
 

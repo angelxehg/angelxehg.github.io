@@ -2,7 +2,7 @@ import React from "react"
 import { Link, navigate } from "gatsby"
 
 import CenterLayout from "../layouts/center"
-import SEO from "@components/seo"
+import SEO from "../components/seo"
 
 setTimeout(() => navigate('/#projects'), 2000)
 
