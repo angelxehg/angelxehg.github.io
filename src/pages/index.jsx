@@ -6,29 +6,30 @@ import SEO from "@components/seo"
 import { LinkExternal, ProfileImage, socialLinks } from "@components/social"
 import { Icon } from "@components/icons"
 import { useSiteMetadata } from "@hooks/use-site-metadata"
+import { Card, Col, Row } from "react-bootstrap"
 
 const IndexPage = () => {
   const site = useSiteMetadata()
   return (
     <CenterLayout>
       <SEO title="Inicio" lang="es" />
-      <div className="card pt-3">
+      <Card className="pt-3">
         <ProfileImage />
-        <div className="card-body">
+        <Card.Body>
           <Link to="/">
-            <h4 className="card-title">{site.title}</h4>
+            <h1 className="card-title">{site.title}</h1>
           </Link>
-          <p className="card-text m-0">{site.description}</p>
-          <div className="row mt-2">
-            <div className="col">
+          <Card.Text className="m-0">{site.description}</Card.Text>
+          <Row className="mt-2">
+            <Col>
               <Link to="/projects" className="me-3">
                 Proyectos
               </Link>
               <Link to="/about">Acerca de</Link>
-            </div>
-          </div>
-          <div className="row mt-2">
-            <div className="col">
+            </Col>
+          </Row>
+          <Row className="mt-2">
+            <Col>
               <LinkExternal
                 to="mailto:sudo@angelxehg.com"
                 title="Email (sudo@angelxehg.com)"
@@ -40,10 +41,10 @@ const IndexPage = () => {
                   <Icon name={icon} size="1.5rem" />
                 </LinkExternal>
               ))}
-            </div>
-          </div>
-        </div>
-      </div>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
     </CenterLayout>
   )
 }

@@ -1,10 +1,12 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
 
 import DefaultFooter from "@components/footer"
 import SEO from "@components/seo"
 import { Icon, LinkIcon } from "@components/icons"
 import { LinkExternal } from "@components/social"
 import DefaultNavbar from "@components/navbar"
+import { Card, Col, Row } from "react-bootstrap"
 
 const projects = [
   {
@@ -44,7 +46,7 @@ const ProjectsPage = () => {
     <div>
       <SEO title="Proyectos" lang="es" />
       <DefaultNavbar />
-      <div className="container-md pt-3 pb-3">
+      <Container fluid="md" className="pt-3 pb-3">
         <header>
           <h1>Proyectos</h1>
           <p>
@@ -52,22 +54,22 @@ const ProjectsPage = () => {
             proyectos escolares.
           </p>
         </header>
-        <div className="row">
+        <Row>
           {projects.map(item => {
             const { slug, title, extract, stack, github, demo } = item
             const stackIcons = stack.split(",")
             return (
-              <div key={slug} className="col-xl-4 col-md-6 p-1">
-                <div className="card">
-                  <div className="card-body">
-                    <h4 className="card-title">{title}</h4>
-                    <p className="card-text m-0">{extract}</p>
-                    <p className="card-text text-muted">
+              <Col key={slug} xl="4" md="6" className="p-1">
+                <Card>
+                  <Card.Body>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Text className="m-0">{extract}</Card.Text>
+                    <Card.Text className="text-muted">
                       Hecho con:{" "}
                       {stackIcons.map(icon => (
                         <LinkIcon key={icon} name={icon} />
                       ))}
-                    </p>
+                    </Card.Text>
                     {github && (
                       <LinkExternal to={github} title="Repositorio">
                         <Icon name="GitHub" /> Repositorio
@@ -78,13 +80,13 @@ const ProjectsPage = () => {
                         <Icon name="Web" /> Demo
                       </LinkExternal>
                     )}
-                  </div>
-                </div>
-              </div>
+                  </Card.Body>
+                </Card>
+              </Col>
             )
           })}
-        </div>
-      </div>
+        </Row>
+      </Container>
       <DefaultFooter />
     </div>
   )
