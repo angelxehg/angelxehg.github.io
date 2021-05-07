@@ -39,7 +39,7 @@ const PageHeader = () => {
 }
 
 const ProjectsSection = () => (
-  <section id="projects">
+  <section id="projects" className="mt-3">
     <h2>Proyectos</h2>
     <div className="row">
       {projects.map(item => {
@@ -77,7 +77,7 @@ const ProjectsSection = () => (
 )
 
 const EducationSection = () => (
-  <section id="education">
+  <section id="education" className="mt-3">
     <h2>Educación</h2>
     <div className="row">
       <div className="col p-md-1 pb-2">
@@ -102,7 +102,7 @@ const EducationSection = () => (
 )
 
 const SkillsSection = () => (
-  <section id="skills">
+  <section id="skills" className="mt-3">
     <h2>Habilidades</h2>
     <div className="row">
       {stacks.map(({ title, icons }, n) => (
