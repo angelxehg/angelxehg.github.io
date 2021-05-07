@@ -1,36 +1,38 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { LinkExternal } from "@components/social"
+import { LinkExternal } from "./social"
 
-const LinkedInSVG = require("@assets/bootstrap-icons/linkedin.svg")
-const EmailSVG = require("@assets/bootstrap-icons/envelope-fill.svg")
-const WebSVG = require("@assets/bootstrap-icons/globe2.svg")
-const GitHubSVG = require("@assets/bootstrap-icons/github.svg")
-const GitLabSVG = require("@assets/fontawesome/gitlab-brands.svg")
-const InstagramSVG = require("@assets/bootstrap-icons/instagram.svg")
-const TwitterSVG = require("@assets/bootstrap-icons/twitter.svg")
-const PayPalSVG = require("@assets/seek-logo/paypal.svg")
-const AndroidSVG = require("@assets/fontawesome/android-brands.svg")
-const AngularSVG = require("@assets/fontawesome/angular-brands.svg")
-const AWSSVG = require("@assets/fontawesome/aws-brands.svg")
-const BootstrapSVG = require("@assets/fontawesome/bootstrap-brands.svg")
-const CSS3SVG = require("@assets/fontawesome/css3-alt-brands.svg")
-const DigitalOceanSVG = require("@assets/fontawesome/digital-ocean-brands.svg")
-const GitSVG = require("@assets/fontawesome/git-alt-brands.svg")
-const GatsbySVG = require("@assets/seek-logo/gatsby.svg")
-const FirebaseSVG = require("@assets/seek-logo/firebase.svg")
-const HTML5SVG = require("@assets/fontawesome/html5-brands.svg")
-const IonicSVG = require("@assets/ionicons/ionic.svg")
-const JavascriptSVG = require("@assets/fontawesome/js-square-brands.svg")
-const MarkdownSVG = require("@assets/fontawesome/markdown-brands.svg")
-const NetlifySVG = require("@assets/seek-logo/netlify.svg")
-const NodeJSSVG = require("@assets/fontawesome/node-js-brands.svg")
-const NPMSVG = require("@assets/fontawesome/npm-brands.svg")
-const PythonSVG = require("@assets/seek-logo/python.svg")
-const ReactSVG = require("@assets/fontawesome/react-brands.svg")
-const TypescriptSVG = require("@assets/seek-logo/typescript.svg")
-const UbuntuSVG = require("@assets/fontawesome/ubuntu-brands.svg")
+const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
+const EmailSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
+const WebSVG = require("../assets/bootstrap-icons/globe2.svg")
+const GitHubSVG = require("../assets/bootstrap-icons/github.svg")
+const GitLabSVG = require("../assets/fontawesome/gitlab-brands.svg")
+const InstagramSVG = require("../assets/bootstrap-icons/instagram.svg")
+const TwitterSVG = require("../assets/bootstrap-icons/twitter.svg")
+const PayPalSVG = require("../assets/seek-logo/paypal.svg")
+const AndroidSVG = require("../assets/fontawesome/android-brands.svg")
+const AngularSVG = require("../assets/fontawesome/angular-brands.svg")
+const AWSSVG = require("../assets/fontawesome/aws-brands.svg")
+const BootstrapSVG = require("../assets/fontawesome/bootstrap-brands.svg")
+const CSS3SVG = require("../assets/fontawesome/css3-alt-brands.svg")
+const DigitalOceanSVG = require("../assets/fontawesome/digital-ocean-brands.svg")
+const DjangoSVG = require("../assets/seek-logo/django.svg")
+const GitSVG = require("../assets/fontawesome/git-alt-brands.svg")
+const GatsbySVG = require("../assets/seek-logo/gatsby.svg")
+const FirebaseSVG = require("../assets/seek-logo/firebase.svg")
+const HTML5SVG = require("../assets/fontawesome/html5-brands.svg")
+const IonicSVG = require("../assets/ionicons/ionic.svg")
+const JavascriptSVG = require("../assets/fontawesome/js-square-brands.svg")
+const MarkdownSVG = require("../assets/fontawesome/markdown-brands.svg")
+const NetlifySVG = require("../assets/seek-logo/netlify.svg")
+const NodeJSSVG = require("../assets/fontawesome/node-js-brands.svg")
+const NPMSVG = require("../assets/fontawesome/npm-brands.svg")
+const PythonSVG = require("../assets/seek-logo/python.svg")
+const ReactSVG = require("../assets/fontawesome/react-brands.svg")
+const TypescriptSVG = require("../assets/seek-logo/typescript.svg")
+const UbuntuSVG = require("../assets/fontawesome/ubuntu-brands.svg")
+const VSCodeSVG = require("../assets/seek-logo/vscode.svg")
 
 const iconsSource = [
   {
@@ -68,6 +70,12 @@ const iconsSource = [
     color: "#007CF7",
     svg: DigitalOceanSVG,
     docs: "https://www.digitalocean.com/",
+  },
+  {
+    name: "Django",
+    color: "white",
+    svg: DjangoSVG,
+    docs: "https://www.djangoproject.com/",
   },
   {
     name: "Email",
@@ -197,6 +205,12 @@ const iconsSource = [
     docs: "https://ubuntu.com/",
   },
   {
+    name: "VSCode",
+    color: "white",
+    svg: VSCodeSVG,
+    docs: "https://code.visualstudio.com/",
+  },
+  {
     name: "Web",
     color: "white",
     svg: WebSVG,
@@ -204,7 +218,7 @@ const iconsSource = [
   },
 ]
 
-const availableIcons = iconsSource.map(i => i.name)
+export const availableIcons = iconsSource.map(i => i.name)
 
 const useStyles = (props, defaultColor) => {
   const { size } = props

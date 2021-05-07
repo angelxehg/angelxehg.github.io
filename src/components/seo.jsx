@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
-import { useSiteMetadata } from "@hooks/use-site-metadata"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const SEO = props => {
   const { description, lang, meta, title } = props
@@ -52,7 +52,9 @@ const SEO = props => {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <body className="text-light"></body>
+    </Helmet>
   )
 }
 
