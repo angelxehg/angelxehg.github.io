@@ -11,7 +11,7 @@ const ProjectsPage = () => (
     <SEO title="301: Moved Permanently" lang="es" />
     <div className="card bg-dark">
       <div className="card-body">
-        <h1 className="card-title">301: Moved Permanently</h1>
+        <h1 className="h3 card-title">301: Moved Permanently</h1>
         <p className="card-text m-0">
           Redireccionando a <Link to="/#projects">proyectos</Link>...
         </p>

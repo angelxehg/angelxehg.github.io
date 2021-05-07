@@ -19,7 +19,7 @@ const PageHeader = () => {
       <div className="col">
         <header className="m-sm-0 mt-2">
           <Link to="/">
-            <h1>{site.title}</h1>
+            <h1 className="h3">{site.title}</h1>
           </Link>
           <p>{site.description}</p>
         </header>
@@ -40,7 +40,7 @@ const PageHeader = () => {
 
 const ProjectsSection = () => (
   <section id="projects" className="mt-3">
-    <h2>Proyectos</h2>
+    <h2 className="h4">Proyectos</h2>
     <div className="row">
       {projects.map(item => {
         const { slug, title, extract, stack, github, demo } = item
@@ -49,9 +49,9 @@ const ProjectsSection = () => (
           <div key={slug} className="col-xl-6 col-lg-12 col-md-6 p-md-1 pb-2">
             <div className="card bg-dark">
               <div className="card-body">
-                <h4 className="card-title">{title}</h4>
+                <h3 className="h5 card-title">{title}</h3>
                 <p className="card-text m-0">{extract}</p>
-                <p className="card-text text-muted">
+                <p className="card-text">
                   Hecho con:{" "}
                   {stackIcons.map(icon => (
                     <LinkIcon key={icon} name={icon} />
@@ -78,21 +78,21 @@ const ProjectsSection = () => (
 
 const EducationSection = () => (
   <section id="education" className="mt-3">
-    <h2>Educación</h2>
+    <h2 className="h4">Educación</h2>
     <div className="row">
       <div className="col p-md-1 pb-2">
         <div className="card bg-dark">
           <div className="card-body">
-            <h4>Ingeniería en Tecnologías de la Información y Comunicación</h4>
+            <h3 className="h5 card-title">
+              Ingeniería en Tecnologías de la Información y Comunicación
+            </h3>
             <p className="card-text m-0 mb-1">
               <LinkExternal to="http://www.utzac.edu.mx" title="UTZAC">
                 <Icon name="Web" /> Universidad Tecnológica del Estado de
                 Zacatecas
               </LinkExternal>
             </p>
-            <p className="card-text text-muted">
-              Guadalupe, Zacatecas | 2017-2021
-            </p>
+            <p className="card-text">Guadalupe, Zacatecas | 2017-2021</p>
           </div>
         </div>
       </div>
@@ -102,13 +102,13 @@ const EducationSection = () => (
 
 const SkillsSection = () => (
   <section id="skills" className="mt-3">
-    <h2>Habilidades</h2>
+    <h2 className="h4">Habilidades</h2>
     <div className="row">
       {stacks.map(({ title, icons }, n) => (
         <div key={n} className="col-md-6 p-md-1 pb-2">
           <div className="card bg-dark">
             <div className="card-body">
-              <h4>{title}</h4>
+              <h3 className="h5 card-title">{title}</h3>
               <p className="card-text">
                 {icons.map(icon => {
                   if (availableIcons.find(i => i === icon)) {
