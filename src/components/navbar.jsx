@@ -18,8 +18,6 @@ const DefaultNavbar = () => (
               Proyectos
             </Link>
           </Nav.Item>
-        </Nav>
-        <Nav>
           <Nav.Item>
             <Link className="nav-link" to="/about" activeClassName="active">
               Acerca de

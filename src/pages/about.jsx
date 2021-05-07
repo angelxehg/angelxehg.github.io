@@ -22,7 +22,7 @@ const AboutPage = () => {
         </header>
         <section id="education">
           <h2>Educación</h2>
-          <Card>
+          <Card className="bg-dark">
             <Card.Body>
               <Card.Title>
                 Ingeniería en Tecnologías de la Información y Comunicación

@@ -60,7 +60,7 @@ const ProjectsPage = () => {
             const stackIcons = stack.split(",")
             return (
               <Col key={slug} xl="4" md="6" className="p-1">
-                <Card>
+                <Card className="bg-dark">
                   <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text className="m-0">{extract}</Card.Text>

@@ -13,7 +13,7 @@ const IndexPage = () => {
   return (
     <CenterLayout>
       <SEO title="Inicio" lang="es" />
-      <Card className="pt-3">
+      <Card className="bg-dark pt-3">
         <ProfileImage />
         <Card.Body>
           <Link to="/">
