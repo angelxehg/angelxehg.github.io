@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import DefaultFooter from "../components/footer"
 import SEO from "../components/seo"
@@ -17,7 +18,9 @@ const PageHeader = () => {
       </div>
       <div className="col">
         <header className="m-sm-0 mt-2">
-          <h1>{site.title}</h1>
+          <Link to="/">
+            <h1>{site.title}</h1>
+          </Link>
           <p>{site.description}</p>
         </header>
         <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
