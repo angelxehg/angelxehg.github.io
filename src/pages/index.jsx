@@ -57,10 +57,13 @@ const ProjectsSection = () => (
                 <h3 className="h5 card-title">{title}</h3>
                 <p className="card-text m-0">{extract}</p>
                 <p className="card-text">
-                  Hecho con:{" "}
-                  {stackIcons.map(icon => (
-                    <LinkIcon key={icon} name={icon} />
-                  ))}
+                  {stackIcons.map(icon => {
+                    return (
+                      <span key={icon} className="badge rounded-pill bg-dark mt-1 me-1">
+                        <Icon name={icon} /> { icon}
+                      </span >
+                    )
+                  })}
                 </p>
                 {github && (
                   <LinkExternal to={github} title="Repositorio">
@@ -78,7 +81,7 @@ const ProjectsSection = () => (
         )
       })}
     </div>
-  </section>
+  </section >
 )
 
 const EducationSection = () => (
