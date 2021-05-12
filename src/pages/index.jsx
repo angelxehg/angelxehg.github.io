@@ -25,15 +25,31 @@ const PageHeader = () => {
   )
 }
 
-const ContactSection = () => (
-  <section id="contact" className="mt-3">
+const AboutSection = () => (
+  <section id="about" className="mt-3">
     <h2 className="h4">Acerca de</h2>
     <div className="row">
       <div className="col p-md-1 pb-2">
         <div className="card bg-dark">
           <div className="card-body">
+            <h3 className="h5 card-title">
+              Educación
+            </h3>
+            <ul className="p-0 m-0" style={{ listStyleType: 'none' }}>
+              <li>
+                Ingeniería en Tecnologías de la Información y Comunicación <br />@<LinkExternal to="http://www.utzac.edu.mx" title="UTZAC">
+                  UTZAC
+                </LinkExternal> 2017-2021
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="col p-md-1 pb-2">
+        <div className="card bg-dark">
+          <div className="card-body">
             <h3 className="h5 card-title">Contacto</h3>
-            <ul className="p-0" style={{ listStyleType: 'none' }}>
+            <ul className="p-0 m-0" style={{ listStyleType: 'none' }}>
               <li>
                 <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
                   <Icon name="Email" className="me-2" size="1.5rem" />
@@ -42,7 +58,7 @@ const ContactSection = () => (
               </li>
               {socialLinks.map(({ title, to, icon }) => {
                 return (
-                  <li key={to} className="mt-1" style={{ listStyle: 'none' }}>
+                  <li key={to} className="mt-1">
                     <LinkExternal to={to} title={title}>
                       <Icon name={icon} className="me-2" size="1.5rem" />
                       {title}
@@ -99,30 +115,6 @@ const ProjectsSection = () => (
   </section >
 )
 
-const EducationSection = () => (
-  <section id="education" className="mt-3">
-    <h2 className="h4">Educación</h2>
-    <div className="row">
-      <div className="col p-md-1 pb-2">
-        <div className="card bg-dark">
-          <div className="card-body">
-            <h3 className="h5 card-title">
-              Ingeniería en Tecnologías de la Información y Comunicación
-            </h3>
-            <p className="card-text m-0 mb-1">
-              <LinkExternal to="http://www.utzac.edu.mx" title="UTZAC">
-                <Icon name="Web" /> Universidad Tecnológica del Estado de
-                Zacatecas
-              </LinkExternal>
-            </p>
-            <p className="card-text">Guadalupe, Zacatecas | 2017-2021</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-)
-
 const SkillsSection = () => (
   <section id="skills" className="mt-3">
     <h2 className="h4">Habilidades</h2>
@@ -160,8 +152,7 @@ const IndexPage = () => (
       <PageHeader />
       <div className="row">
         <div className="col-lg-4">
-          <ContactSection />
-          <EducationSection />
+          <AboutSection />
         </div>
         <div className="col-lg">
           <ProjectsSection />
