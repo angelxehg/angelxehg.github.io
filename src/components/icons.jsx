@@ -5,21 +5,20 @@ const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
 const EmailSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
 const WebSVG = require("../assets/bootstrap-icons/globe2.svg")
 const GitHubSVG = require("../assets/bootstrap-icons/github.svg")
-const GitLabSVG = require("../assets/fontawesome/gitlab-brands.svg")
+const GitLabSVG = require("../assets/seek-logo/gitlab.svg")
 const InstagramSVG = require("../assets/bootstrap-icons/instagram.svg")
 const TwitterSVG = require("../assets/bootstrap-icons/twitter.svg")
 const PayPalSVG = require("../assets/seek-logo/paypal.svg")
 const AndroidSVG = require("../assets/fontawesome/android-brands.svg")
-const AngularSVG = require("../assets/fontawesome/angular-brands.svg")
+const AngularSVG = require("../assets/seek-logo/angular.svg")
 const AWSSVG = require("../assets/fontawesome/aws-brands.svg")
-const BootstrapSVG = require("../assets/fontawesome/bootstrap-brands.svg")
-const CSS3SVG = require("../assets/fontawesome/css3-alt-brands.svg")
+const BootstrapSVG = require("../assets/seek-logo/bootstrap.svg")
 const DigitalOceanSVG = require("../assets/fontawesome/digital-ocean-brands.svg")
 const DjangoSVG = require("../assets/seek-logo/django.svg")
-const GitSVG = require("../assets/fontawesome/git-alt-brands.svg")
+const GitSVG = require("../assets/seek-logo/git.svg")
 const GatsbySVG = require("../assets/seek-logo/gatsby.svg")
 const FirebaseSVG = require("../assets/seek-logo/firebase.svg")
-const HTML5SVG = require("../assets/fontawesome/html5-brands.svg")
+const HTML5SVG = require("../assets/seek-logo/html5.svg")
 const IonicSVG = require("../assets/ionicons/ionic.svg")
 const JavascriptSVG = require("../assets/fontawesome/js-square-brands.svg")
 const MarkdownSVG = require("../assets/fontawesome/markdown-brands.svg")
@@ -56,12 +55,6 @@ const iconsSource = [
     color: "#533B78",
     svg: BootstrapSVG,
     docs: "https://getbootstrap.com/docs/",
-  },
-  {
-    name: "CSS3",
-    color: "#254BDD",
-    svg: CSS3SVG,
-    docs: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
   {
     name: "DigitalOcean",
