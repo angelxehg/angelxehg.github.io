@@ -99,6 +99,12 @@ const iconsSource = [
     docs: "https://github.com/",
   },
   {
+    name: "GitHub Pages",
+    color: "white",
+    svg: GitHubSVG,
+    docs: "https://pages.github.com/",
+  },
+  {
     name: "GitLab",
     color: "#F46A25",
     svg: GitLabSVG,

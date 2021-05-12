@@ -3,7 +3,7 @@ const projects = [
     slug: "portafolio",
     title: "Portafolio profesional",
     extract: "Mi sitio web y portafolio profesional",
-    stack: "Gatsby,React,JavaScript,Bootstrap,GitHub",
+    stack: "Gatsby,React,JavaScript,Bootstrap,GitHub Pages",
     github: "https://github.com/angelxehg/angelxehg.github.io",
     demo: "https://angelxehg.github.io/",
   },
