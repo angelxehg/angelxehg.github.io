@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import DefaultFooter from "../components/footer"
 import SEO from "../components/seo"
 import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
-import { availableIcons, Icon, LinkIcon } from "../components/icons"
+import { availableIcons, Icon } from "../components/icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import projects from "../meta/projects"
 import stacks from "../meta/stacks"
@@ -120,7 +120,11 @@ const SkillsSection = () => (
               <p className="card-text">
                 {icons.map(icon => {
                   if (availableIcons.find(i => i === icon)) {
-                    return <LinkIcon key={icon} name={icon} size="1.5rem" />
+                    return (
+                      <span key={icon} className="badge rounded-pill bg-dark mt-1 me-1">
+                        <Icon key={icon} name={icon} /> { icon}
+                      </span >
+                    )
                   } else {
                     console.log(icon)
                   }

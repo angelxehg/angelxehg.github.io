@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { LinkExternal } from "./social"
-
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
 const EmailSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
 const WebSVG = require("../assets/bootstrap-icons/globe2.svg")
@@ -248,28 +246,4 @@ Icon.propTypes = {
   name: PropTypes.oneOf(availableIcons).isRequired,
   size: PropTypes.string,
   className: PropTypes.string,
-}
-
-export const LinkIcon = props => {
-  const { name, size, className } = props
-  const icon = iconsSource.find(i => i.name === name)
-  if (!icon) {
-    throw new Error(`No se encontró el icono '${name}'`)
-  }
-  const to = props.to || icon.docs
-  const title = props.title || icon.name
-
-  return (
-    <LinkExternal to={to} title={title}>
-      <Icon name={name} size={size} className={className} />
-    </LinkExternal>
-  )
-}
-
-LinkIcon.propTypes = {
-  name: PropTypes.oneOf(availableIcons).isRequired,
-  size: PropTypes.string,
-  className: PropTypes.string,
-  to: PropTypes.string,
-  title: PropTypes.string,
 }
