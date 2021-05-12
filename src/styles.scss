@@ -50,26 +50,26 @@ body {
   background-color: rgb(20, 25, 20) !important;
 }
 
-a:link {
-  color: rgb(35, 200, 35);
-}
-
 .navbar-toggler {
   color: rgba(128,255,128,0.25) !important;
   border-color: rgba(128,255,128,0.25) !important;
   border: 2px solid !important;
 }
 
+a:link {
+  color: white;
+}
+
 a:visited {
-  color: rgb(35, 200, 35);
+  color: gray;
 }
 
 a:hover {
-  color: rgb(200, 35, 35);
+  color: rgb(35, 200, 35);
 }
 
 a:active {
-  color: rgb(35, 175, 70);
+  color: white;
 }
 
 .card {
