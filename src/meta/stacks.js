@@ -1,7 +1,7 @@
 const stacks = [
   {
     title: "Lenguajes",
-    icons: ["HTML5", "Javascript", "Typescript", "Python", "Markdown"],
+    icons: ["HTML5", "JavaScript", "TypeScript", "Python", "Markdown"],
   },
   {
     title: "Frameworks y librerias",
