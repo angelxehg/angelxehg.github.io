@@ -148,8 +148,8 @@ const IndexPage = () => (
           <EducationSection />
         </div>
         <div className="col-lg">
-          <SkillsSection />
           <ProjectsSection />
+          <SkillsSection />
         </div>
       </div>
     </div>
