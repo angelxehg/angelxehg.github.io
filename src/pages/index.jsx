@@ -18,7 +18,8 @@ const PageHeader = () => {
         <p>{site.description}</p>
       </header>
       <nav className="d-md-none">
-        <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>, <a href="#projects">Proyectos</a>
+        <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>,{" "}
+        <a href="#projects">Proyectos</a>
       </nav>
     </div>
   )
@@ -30,14 +31,15 @@ const AboutSection = () => (
       <div className="col-12 p-md-1 pb-2">
         <div className="card bg-dark">
           <div className="card-body">
-            <h2 className="h5 card-title">
-              Educación
-            </h2>
-            <ul className="p-0 m-0" style={{ listStyleType: 'none' }}>
+            <h2 className="h5 card-title">Educación</h2>
+            <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
-                Ingeniería en Tecnologías de la Información y Comunicación <br />@<LinkExternal to="http://www.utzac.edu.mx" title="UTZAC">
+                Ingeniería en Tecnologías de la Información y Comunicación{" "}
+                <br />@
+                <LinkExternal to="http://www.utzac.edu.mx" title="UTZAC">
                   UTZAC
-                </LinkExternal> 2017-2021
+                </LinkExternal>{" "}
+                2017-2021
               </li>
             </ul>
           </div>
@@ -47,7 +49,7 @@ const AboutSection = () => (
         <div className="card bg-dark">
           <div className="card-body">
             <h2 className="h5 card-title">Enlaces</h2>
-            <ul className="p-0 m-0" style={{ listStyleType: 'none' }}>
+            <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
                   <Icon name="Email" className="me-2" />
@@ -88,9 +90,12 @@ const ProjectsSection = () => (
                 <p className="card-text">
                   {stackIcons.map(icon => {
                     return (
-                      <span key={icon} className="badge rounded-pill bg-dark mt-1 me-1">
-                        <Icon name={icon} /> { icon}
-                      </span >
+                      <span
+                        key={icon}
+                        className="badge rounded-pill bg-dark mt-1 me-1"
+                      >
+                        <Icon name={icon} /> {icon}
+                      </span>
                     )
                   })}
                 </p>
@@ -110,7 +115,7 @@ const ProjectsSection = () => (
         )
       })}
     </div>
-  </section >
+  </section>
 )
 
 const SkillsSection = () => (
@@ -126,9 +131,12 @@ const SkillsSection = () => (
                 {icons.map(icon => {
                   if (availableIcons.find(i => i === icon)) {
                     return (
-                      <span key={icon} className="badge rounded-pill bg-dark mt-1 me-1">
-                        <Icon key={icon} name={icon} /> { icon}
-                      </span >
+                      <span
+                        key={icon}
+                        className="badge rounded-pill bg-dark mt-1 me-1"
+                      >
+                        <Icon key={icon} name={icon} /> {icon}
+                      </span>
                     )
                   } else {
                     console.log(icon)
