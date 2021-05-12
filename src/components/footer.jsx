@@ -6,7 +6,7 @@ const DefaultFooter = () => (
   <footer className="navbar navbar-dark">
     <div className="container-md">
       <p>
-        <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión v1.2.0. Las
+        <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión v1.4.0. Las
         marcas y logos pertenecen a sus respectivos dueños. Iconos obtenidos
         desde{" "}
         <LinkExternal to="https://fontawesome.com/license">
