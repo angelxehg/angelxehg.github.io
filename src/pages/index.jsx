@@ -11,30 +11,25 @@ import stacks from "../meta/stacks"
 const PageHeader = () => {
   const site = useSiteMetadata()
   return (
-    <div className="row text-center text-sm-start">
-      <div className="col-sm-auto">
-        <ProfileImage />
-      </div>
-      <div className="col">
-        <header className="m-sm-0 mt-2">
-          <h1 className="h3">{site.title}</h1>
-          <p>{site.description}</p>
-        </header>
-      </div>
+    <div className="text-center mt-1">
+      <ProfileImage />
+      <header className="mt-2">
+        <h1 className="h3">{site.title}</h1>
+        <p>{site.description}</p>
+      </header>
     </div>
   )
 }
 
 const AboutSection = () => (
   <section id="about" className="mt-3">
-    <h2 className="h4">Acerca de</h2>
     <div className="row">
-      <div className="col p-md-1 pb-2">
+      <div className="col-12 p-md-1 pb-2">
         <div className="card bg-dark">
           <div className="card-body">
-            <h3 className="h5 card-title">
+            <h2 className="h5 card-title">
               Educación
-            </h3>
+            </h2>
             <ul className="p-0 m-0" style={{ listStyleType: 'none' }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación <br />@<LinkExternal to="http://www.utzac.edu.mx" title="UTZAC">
@@ -45,14 +40,14 @@ const AboutSection = () => (
           </div>
         </div>
       </div>
-      <div className="col p-md-1 pb-2">
+      <div className="col-12 p-md-1 pb-2">
         <div className="card bg-dark">
           <div className="card-body">
-            <h3 className="h5 card-title">Contacto</h3>
+            <h2 className="h5 card-title">Enlaces</h2>
             <ul className="p-0 m-0" style={{ listStyleType: 'none' }}>
               <li>
                 <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
-                  <Icon name="Email" className="me-2" size="1.5rem" />
+                  <Icon name="Email" className="me-2" />
                   sudo@angelxehg.com
                 </LinkExternal>
               </li>
@@ -60,7 +55,7 @@ const AboutSection = () => (
                 return (
                   <li key={to} className="mt-1">
                     <LinkExternal to={to} title={title}>
-                      <Icon name={icon} className="me-2" size="1.5rem" />
+                      <Icon name={icon} className="me-2" />
                       {title}
                     </LinkExternal>
                   </li>
@@ -75,14 +70,14 @@ const AboutSection = () => (
 )
 
 const ProjectsSection = () => (
-  <section id="projects" className="mt-3">
-    <h2 className="h4">Proyectos</h2>
+  <section id="projects" className="mt-md-0 mt-3">
+    <h2 className="h4">Proyectos:</h2>
     <div className="row">
       {projects.map(item => {
         const { slug, title, extract, stack, github, demo } = item
         const stackIcons = stack.split(",")
         return (
-          <div key={slug} className="col-xl-6 col-lg-12 col-md-6 p-md-1 pb-2">
+          <div key={slug} className="col-12 p-md-1 pb-2">
             <div className="card bg-dark">
               <div className="card-body">
                 <h3 className="h5 card-title">{title}</h3>
@@ -148,13 +143,13 @@ const SkillsSection = () => (
 const IndexPage = () => (
   <div>
     <SEO title="Portafolio" lang="es" />
-    <div className="container-md pt-4 pb-3">
-      <PageHeader />
+    <div className="container-xl p-md-4 pt-4 pb-3">
       <div className="row">
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-5">
+          <PageHeader />
           <AboutSection />
         </div>
-        <div className="col-lg">
+        <div className="col-lg-8 col-md-7">
           <ProjectsSection />
           <SkillsSection />
         </div>
