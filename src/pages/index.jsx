@@ -17,12 +17,15 @@ const PageHeader = () => {
         <h1 className="h3">{site.title}</h1>
         <p>{site.description}</p>
       </header>
+      <nav className="d-md-none">
+        <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>, <a href="#projects">Proyectos</a>
+      </nav>
     </div>
   )
 }
 
 const AboutSection = () => (
-  <section id="about" className="mt-3">
+  <section id="about">
     <div className="row">
       <div className="col-12 p-md-1 pb-2">
         <div className="card bg-dark">
@@ -70,7 +73,7 @@ const AboutSection = () => (
 )
 
 const ProjectsSection = () => (
-  <section id="projects" className="mt-md-0 mt-3">
+  <section id="projects">
     <h2 className="h4">Proyectos:</h2>
     <div className="row">
       {projects.map(item => {
@@ -111,7 +114,7 @@ const ProjectsSection = () => (
 )
 
 const SkillsSection = () => (
-  <section id="skills" className="mt-3">
+  <section id="skills">
     <h2 className="h4">Habilidades</h2>
     <div className="row">
       {stacks.map(({ title, icons }, n) => (
