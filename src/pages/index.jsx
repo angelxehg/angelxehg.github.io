@@ -138,8 +138,6 @@ const SkillsSection = () => (
                         <Icon key={icon} name={icon} /> {icon}
                       </span>
                     )
-                  } else {
-                    console.log(icon)
                   }
                 })}
               </p>
