@@ -1,36 +1,33 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { LinkExternal } from "./social"
-
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
 const EmailSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
 const WebSVG = require("../assets/bootstrap-icons/globe2.svg")
 const GitHubSVG = require("../assets/bootstrap-icons/github.svg")
-const GitLabSVG = require("../assets/fontawesome/gitlab-brands.svg")
+const GitLabSVG = require("../assets/seek-logo/gitlab.svg")
 const InstagramSVG = require("../assets/bootstrap-icons/instagram.svg")
 const TwitterSVG = require("../assets/bootstrap-icons/twitter.svg")
 const PayPalSVG = require("../assets/seek-logo/paypal.svg")
 const AndroidSVG = require("../assets/fontawesome/android-brands.svg")
-const AngularSVG = require("../assets/fontawesome/angular-brands.svg")
+const AngularSVG = require("../assets/seek-logo/angular.svg")
 const AWSSVG = require("../assets/fontawesome/aws-brands.svg")
-const BootstrapSVG = require("../assets/fontawesome/bootstrap-brands.svg")
-const CSS3SVG = require("../assets/fontawesome/css3-alt-brands.svg")
+const BootstrapSVG = require("../assets/seek-logo/bootstrap.svg")
 const DigitalOceanSVG = require("../assets/fontawesome/digital-ocean-brands.svg")
 const DjangoSVG = require("../assets/seek-logo/django.svg")
-const GitSVG = require("../assets/fontawesome/git-alt-brands.svg")
+const GitSVG = require("../assets/seek-logo/git.svg")
 const GatsbySVG = require("../assets/seek-logo/gatsby.svg")
 const FirebaseSVG = require("../assets/seek-logo/firebase.svg")
-const HTML5SVG = require("../assets/fontawesome/html5-brands.svg")
+const HTML5SVG = require("../assets/seek-logo/html5.svg")
 const IonicSVG = require("../assets/ionicons/ionic.svg")
-const JavascriptSVG = require("../assets/fontawesome/js-square-brands.svg")
+const JavaScriptSVG = require("../assets/fontawesome/js-square-brands.svg")
 const MarkdownSVG = require("../assets/fontawesome/markdown-brands.svg")
 const NetlifySVG = require("../assets/seek-logo/netlify.svg")
 const NodeJSSVG = require("../assets/fontawesome/node-js-brands.svg")
 const NPMSVG = require("../assets/fontawesome/npm-brands.svg")
 const PythonSVG = require("../assets/seek-logo/python.svg")
 const ReactSVG = require("../assets/fontawesome/react-brands.svg")
-const TypescriptSVG = require("../assets/seek-logo/typescript.svg")
+const TypeScriptSVG = require("../assets/seek-logo/typescript.svg")
 const UbuntuSVG = require("../assets/fontawesome/ubuntu-brands.svg")
 const VSCodeSVG = require("../assets/seek-logo/vscode.svg")
 
@@ -58,12 +55,6 @@ const iconsSource = [
     color: "#533B78",
     svg: BootstrapSVG,
     docs: "https://getbootstrap.com/docs/",
-  },
-  {
-    name: "CSS3",
-    color: "#254BDD",
-    svg: CSS3SVG,
-    docs: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
   {
     name: "DigitalOcean",
@@ -108,6 +99,12 @@ const iconsSource = [
     docs: "https://github.com/",
   },
   {
+    name: "GitHub Pages",
+    color: "white",
+    svg: GitHubSVG,
+    docs: "https://pages.github.com/",
+  },
+  {
     name: "GitLab",
     color: "#F46A25",
     svg: GitLabSVG,
@@ -133,9 +130,9 @@ const iconsSource = [
     docs: "https://ionicframework.com/",
   },
   {
-    name: "Javascript",
+    name: "JavaScript",
     color: "#F7DB00",
-    svg: JavascriptSVG,
+    svg: JavaScriptSVG,
     docs: "https://developer.mozilla.org/es/docs/Web/JavaScript",
   },
   {
@@ -193,10 +190,10 @@ const iconsSource = [
     docs: "https://www.twitter.com/",
   },
   {
-    name: "Typescript",
+    name: "TypeScript",
     color: "#356A97",
-    svg: TypescriptSVG,
-    docs: "https://www.typescriptlang.org/",
+    svg: TypeScriptSVG,
+    docs: "https://www.TypeScriptlang.org/",
   },
   {
     name: "Ubuntu",
@@ -248,28 +245,4 @@ Icon.propTypes = {
   name: PropTypes.oneOf(availableIcons).isRequired,
   size: PropTypes.string,
   className: PropTypes.string,
-}
-
-export const LinkIcon = props => {
-  const { name, size, className } = props
-  const icon = iconsSource.find(i => i.name === name)
-  if (!icon) {
-    throw new Error(`No se encontró el icono '${name}'`)
-  }
-  const to = props.to || icon.docs
-  const title = props.title || icon.name
-
-  return (
-    <LinkExternal to={to} title={title}>
-      <Icon name={name} size={size} className={className} />
-    </LinkExternal>
-  )
-}
-
-LinkIcon.propTypes = {
-  name: PropTypes.oneOf(availableIcons).isRequired,
-  size: PropTypes.string,
-  className: PropTypes.string,
-  to: PropTypes.string,
-  title: PropTypes.string,
 }

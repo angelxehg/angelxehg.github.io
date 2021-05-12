@@ -40,7 +40,7 @@ export const ProfileImage = () => {
       src="/images/profile21sqrsmall.jpg"
       className="rounded-circle fluid align-self-center"
       alt="Foto de perfil de Angel"
-      style={{ height: "150px", width: "150px" }}
+      style={{ height: "120px", width: "120px" }}
     />
   )
 }
