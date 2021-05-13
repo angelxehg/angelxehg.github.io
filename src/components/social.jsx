@@ -37,7 +37,7 @@ export const socialLinks = [
 export const ProfileImage = () => {
   return (
     <img
-      src="/images/profile21sqrsmall.jpg"
+      src="/images/Profile.500.Sqr.jpg"
       className="rounded-circle fluid align-self-center"
       alt="Foto de perfil de Angel"
       style={{ height: "120px", width: "120px" }}

@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#335599`,
         theme_color: `#335599`,
         display: `minimal-ui`,
-        icon: `static/images/avataaars.png`, // This path is relative to the root of the site.
+        icon: `static/images/Avataaars.Opt.Sqr.png`, // This path is relative to the root of the site.
       },
     },
     {
