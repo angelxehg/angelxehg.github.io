@@ -126,7 +126,7 @@ const PostsSection = () => {
   return (
     <section id="posts">
       <h2 className="h4">
-        Últimas entradas del <Link to="/posts">Blog</Link>:
+        <Link to="/posts">Blog</Link>:
       </h2>
       <div className="row">
         {posts.map(item => {
@@ -154,7 +154,7 @@ const PostsSection = () => {
 
 const SkillsSection = () => (
   <section id="skills">
-    <h2 className="h4">Habilidades</h2>
+    <h2 className="h4">Habilidades:</h2>
     <div className="row">
       {stacks.map(({ title, icons }, n) => (
         <div key={n} className="col-lg-6 p-md-1 pb-2">
@@ -186,7 +186,7 @@ const SkillsSection = () => (
 const IndexPage = () => (
   <div>
     <SEO title="Portafolio" lang="es" />
-    <div className="container-lg ps-md-4 pe-md-4 pt-3 pb-3">
+    <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
       <div className="row">
         <div className="col-lg-4">
           <PageHeader />
