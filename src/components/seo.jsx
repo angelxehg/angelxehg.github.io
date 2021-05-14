@@ -11,6 +11,7 @@ const SEO = props => {
   const metaDescription = description || site.description
   const defaultTitle = site.title
   const seoImage = image | site.image
+  const seoTitle = `${title} | ${defaultTitle}`
 
   return (
     <Helmet
@@ -26,7 +27,7 @@ const SEO = props => {
         },
         {
           property: `og:title`,
-          content: title,
+          content: seoTitle,
         },
         {
           property: `og:description`,
