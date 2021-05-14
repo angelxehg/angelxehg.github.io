@@ -31,7 +31,7 @@ const PostTemplate = props => {
   const { title, date, image, caption } = frontmatter;
   return (
     <div>
-      <SEO title={title} lang="es" />
+      <SEO title={title} lang="es" image={image.childImageSharp.gatsbyImageData.images.fallback.src} />
       <PostsNavbar />
       <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
         <GatsbyImage
