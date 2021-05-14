@@ -7,6 +7,8 @@ import { availableIcons, Icon } from "../components/icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import projects from "../meta/projects"
 import stacks from "../meta/stacks"
+import { usePosts } from "../hooks/use-posts"
+import { Link } from "gatsby"
 
 const PageHeader = () => {
   const site = useSiteMetadata()
@@ -118,6 +120,32 @@ const ProjectsSection = () => (
   </section>
 )
 
+const PostsSection = () => {
+  const posts = usePosts();
+  return (
+    <section id="posts">
+      <h2 className="h4">Blog:</h2>
+      <div className="row">
+        {posts.map(item => {
+          const { slug, title, excerpt } = item
+          return (
+            <div key={slug} className="col-xl-6 p-md-1 pb-2">
+              <div className="card bg-dark">
+                <div className="card-body">
+                  <Link to={slug}>
+                    <h3 className="h5 card-title">{title}</h3>
+                  </Link>
+                  <p className="card-text m-0">{excerpt}</p>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+
 const SkillsSection = () => (
   <section id="skills">
     <h2 className="h4">Habilidades</h2>
@@ -152,13 +180,14 @@ const SkillsSection = () => (
 const IndexPage = () => (
   <div>
     <SEO title="Portafolio" lang="es" />
-    <div className="container-lg pt-4 pb-3">
+    <div className="container-lg p-md-4 pt-4 pb-3">
       <div className="row">
         <div className="col-lg-4">
           <PageHeader />
           <AboutSection />
         </div>
         <div className="col-lg-8">
+          <PostsSection />
           <ProjectsSection />
           <SkillsSection />
         </div>

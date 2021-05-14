@@ -23,7 +23,7 @@ const PostTemplate = props => {
   return (
     <div>
       <SEO title={frontmatter.title} lang="es" />
-      <div className="container-xl p-md-4 pt-4 pb-3">
+      <div className="container-lg p-md-4 pt-4 pb-3">
         <h1 className="mt-2">{frontmatter.title}</h1>
         <ul>
           <li>Fecha: {frontmatter.date}</li>
