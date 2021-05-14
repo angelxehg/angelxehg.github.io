@@ -28,10 +28,14 @@ export const query = graphql`
 
 const PostTemplate = props => {
   const { frontmatter, body } = props.data.mdx
-  const { title, date, image, caption } = frontmatter;
+  const { title, date, image, caption } = frontmatter
   return (
     <div>
-      <SEO title={title} lang="es" image={image.childImageSharp.gatsbyImageData.images.fallback.src} />
+      <SEO
+        title={title}
+        lang="es"
+        image={image.childImageSharp.gatsbyImageData.images.fallback.src}
+      />
       <PostsNavbar />
       <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
         <GatsbyImage

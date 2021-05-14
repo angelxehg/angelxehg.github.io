@@ -20,7 +20,7 @@ const PageHeader = () => {
         <p>{site.description}</p>
       </header>
       <nav className="d-lg-none">
-        <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>, {" "}
+        <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>,{" "}
         <br className="d-sm-none d-block" />
         <a href="#projects">Proyectos</a>, <Link to="/posts">Blog</Link>
       </nav>
@@ -122,7 +122,7 @@ const ProjectsSection = () => (
 )
 
 const PostsSection = () => {
-  const posts = usePosts().slice(0, 3);
+  const posts = usePosts().slice(0, 3)
   return (
     <section id="posts">
       <h2 className="h4">
@@ -138,9 +138,7 @@ const PostsSection = () => {
                   <Link to={`/${slug}`}>
                     <h3 className="h5 card-title">{title}</h3>
                   </Link>
-                  <h4 className="h6 card-subtitle mb-2">
-                    {date}
-                  </h4>
+                  <h4 className="h6 card-subtitle mb-2">{date}</h4>
                   <p className="card-text m-0">{excerpt}</p>
                 </div>
               </article>
