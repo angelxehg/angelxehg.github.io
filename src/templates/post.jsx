@@ -5,6 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Footer from "../components/footer"
 import SEO from "../components/seo"
+import { PostsNavbar } from "../components/navbar"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -23,6 +24,7 @@ const PostTemplate = props => {
   return (
     <div>
       <SEO title={frontmatter.title} lang="es" />
+      <PostsNavbar />
       <div className="container-lg p-md-4 pt-4 pb-3">
         <h1 className="mt-2">{frontmatter.title}</h1>
         <ul>

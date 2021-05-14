@@ -85,7 +85,7 @@ const ProjectsSection = () => (
         const stackIcons = stack.split(",")
         return (
           <div key={slug} className="col-xl-6 p-md-1 pb-2">
-            <div className="card bg-dark">
+            <article className="card bg-dark">
               <div className="card-body">
                 <h3 className="h5 card-title">{title}</h3>
                 <p className="card-text m-0">{extract}</p>
@@ -112,7 +112,7 @@ const ProjectsSection = () => (
                   </LinkExternal>
                 )}
               </div>
-            </div>
+            </article>
           </div>
         )
       })}
@@ -121,23 +121,25 @@ const ProjectsSection = () => (
 )
 
 const PostsSection = () => {
-  const posts = usePosts();
+  const posts = usePosts().slice(0, 3);
   return (
     <section id="posts">
-      <h2 className="h4">Blog:</h2>
+      <h2 className="h4">
+        Últimas entradas del <Link to="/posts">Blog</Link>:
+      </h2>
       <div className="row">
         {posts.map(item => {
           const { slug, title, excerpt } = item
           return (
             <div key={slug} className="col-xl-6 p-md-1 pb-2">
-              <div className="card bg-dark">
+              <article className="card bg-dark">
                 <div className="card-body">
-                  <Link to={slug}>
+                  <Link to={`/${slug}`}>
                     <h3 className="h5 card-title">{title}</h3>
                   </Link>
                   <p className="card-text m-0">{excerpt}</p>
                 </div>
-              </div>
+              </article>
             </div>
           )
         })}
