@@ -11,7 +11,7 @@ export const usePosts = type => {
           frontmatter {
             title
             date(formatString: "YYYY-MM-DD")
-            seopic {
+            image {
               childImageSharp {
                 gatsbyImageData(layout: FULL_WIDTH)
               }
@@ -31,7 +31,7 @@ export const usePosts = type => {
         date: node.frontmatter.date,
         title: node.frontmatter.title,
         extract: node.excerpt,
-        image: node.frontmatter.seopic.childImageSharp.gatsbyImageData,
+        image: node.frontmatter.image.childImageSharp.gatsbyImageData,
       }
     })
     .sort((a, b) => {
