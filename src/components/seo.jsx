@@ -5,11 +5,13 @@ import { Helmet } from "react-helmet"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const SEO = props => {
-  const { description, lang, meta, title } = props
+  const { description, lang, meta, title, image } = props
   const site = useSiteMetadata()
 
   const metaDescription = description || site.description
   const defaultTitle = site.title
+  const seoImage = image | site.image
+  const seoTitle = `${title} | ${defaultTitle}`
 
   return (
     <Helmet
@@ -25,7 +27,7 @@ const SEO = props => {
         },
         {
           property: `og:title`,
-          content: title,
+          content: seoTitle,
         },
         {
           property: `og:description`,
@@ -34,6 +36,10 @@ const SEO = props => {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: seoImage,
         },
         {
           name: `twitter:card`,
@@ -46,6 +52,10 @@ const SEO = props => {
         {
           name: `twitter:title`,
           content: title,
+        },
+        {
+          name: `twitter:image`,
+          content: seoImage,
         },
         {
           name: `twitter:description`,
@@ -62,6 +72,7 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  image: "",
 }
 
 SEO.propTypes = {
@@ -69,6 +80,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  image: PropTypes.string,
 }
 
 export default SEO

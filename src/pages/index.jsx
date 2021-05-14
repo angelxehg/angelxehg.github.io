@@ -7,6 +7,8 @@ import { availableIcons, Icon } from "../components/icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import projects from "../meta/projects"
 import stacks from "../meta/stacks"
+import { usePosts } from "../hooks/use-posts"
+import { Link } from "gatsby"
 
 const PageHeader = () => {
   const site = useSiteMetadata()
@@ -17,9 +19,10 @@ const PageHeader = () => {
         <h1 className="h3">{site.title}</h1>
         <p>{site.description}</p>
       </header>
-      <nav className="d-md-none">
+      <nav className="d-lg-none">
         <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>,{" "}
-        <a href="#projects">Proyectos</a>
+        <br className="d-sm-none d-block" />
+        <a href="#projects">Proyectos</a>, <Link to="/posts">Blog</Link>
       </nav>
     </div>
   )
@@ -82,8 +85,8 @@ const ProjectsSection = () => (
         const { slug, title, extract, stack, github, demo } = item
         const stackIcons = stack.split(",")
         return (
-          <div key={slug} className="col-12 p-md-1 pb-2">
-            <div className="card bg-dark">
+          <div key={slug} className="col-xl-6 p-md-1 pb-2">
+            <article className="card bg-dark">
               <div className="card-body">
                 <h3 className="h5 card-title">{title}</h3>
                 <p className="card-text m-0">{extract}</p>
@@ -110,7 +113,7 @@ const ProjectsSection = () => (
                   </LinkExternal>
                 )}
               </div>
-            </div>
+            </article>
           </div>
         )
       })}
@@ -118,12 +121,41 @@ const ProjectsSection = () => (
   </section>
 )
 
+const PostsSection = () => {
+  const posts = usePosts().slice(0, 3)
+  return (
+    <section id="posts">
+      <h2 className="h4">
+        <Link to="/posts">Blog</Link>:
+      </h2>
+      <div className="row">
+        {posts.map(item => {
+          const { slug, title, excerpt, date } = item
+          return (
+            <div key={slug} className="col-12 p-md-1 pb-2">
+              <article className="card bg-dark">
+                <div className="card-body">
+                  <Link to={`/${slug}`}>
+                    <h3 className="h5 card-title">{title}</h3>
+                  </Link>
+                  <h4 className="h6 card-subtitle mb-2">{date}</h4>
+                  <p className="card-text m-0">{excerpt}</p>
+                </div>
+              </article>
+            </div>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+
 const SkillsSection = () => (
   <section id="skills">
-    <h2 className="h4">Habilidades</h2>
+    <h2 className="h4">Habilidades:</h2>
     <div className="row">
       {stacks.map(({ title, icons }, n) => (
-        <div key={n} className="col-md-6 p-md-1 pb-2">
+        <div key={n} className="col-lg-6 p-md-1 pb-2">
           <div className="card bg-dark">
             <div className="card-body">
               <h3 className="h5 card-title">{title}</h3>
@@ -152,13 +184,14 @@ const SkillsSection = () => (
 const IndexPage = () => (
   <div>
     <SEO title="Portafolio" lang="es" />
-    <div className="container-xl p-md-4 pt-4 pb-3">
+    <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
       <div className="row">
-        <div className="col-lg-4 col-md-5">
+        <div className="col-lg-4">
           <PageHeader />
           <AboutSection />
         </div>
-        <div className="col-lg-8 col-md-7">
+        <div className="col-lg-8">
+          <PostsSection />
           <ProjectsSection />
           <SkillsSection />
         </div>

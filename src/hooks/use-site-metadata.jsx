@@ -9,6 +9,8 @@ export const useSiteMetadata = () => {
           subtitle
           description
           author
+          keywords
+          image
         }
       }
     }
