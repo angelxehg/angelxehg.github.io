@@ -82,7 +82,7 @@ const ProjectsSection = () => (
         const { slug, title, extract, stack, github, demo } = item
         const stackIcons = stack.split(",")
         return (
-          <div key={slug} className="col-12 p-md-1 pb-2">
+          <div key={slug} className="col-xl-6 p-md-1 pb-2">
             <div className="card bg-dark">
               <div className="card-body">
                 <h3 className="h5 card-title">{title}</h3>
@@ -123,7 +123,7 @@ const SkillsSection = () => (
     <h2 className="h4">Habilidades</h2>
     <div className="row">
       {stacks.map(({ title, icons }, n) => (
-        <div key={n} className="col-md-6 p-md-1 pb-2">
+        <div key={n} className="col-lg-6 p-md-1 pb-2">
           <div className="card bg-dark">
             <div className="card-body">
               <h3 className="h5 card-title">{title}</h3>
@@ -152,13 +152,13 @@ const SkillsSection = () => (
 const IndexPage = () => (
   <div>
     <SEO title="Portafolio" lang="es" />
-    <div className="container-xl p-md-4 pt-4 pb-3">
+    <div className="container-lg pt-4 pb-3">
       <div className="row">
-        <div className="col-lg-4 col-md-5">
+        <div className="col-lg-4">
           <PageHeader />
           <AboutSection />
         </div>
-        <div className="col-lg-8 col-md-7">
+        <div className="col-lg-8">
           <ProjectsSection />
           <SkillsSection />
         </div>
