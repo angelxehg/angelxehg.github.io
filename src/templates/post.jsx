@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Footer from "../components/footer"
 import SEO from "../components/seo"
@@ -14,6 +15,12 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "YYYY-MM-DD")
+        image {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+        caption
       }
     }
   }
@@ -21,14 +28,21 @@ export const query = graphql`
 
 const PostTemplate = props => {
   const { frontmatter, body } = props.data.mdx
+  const { title, date, image, caption } = frontmatter;
+  console.log(image);
   return (
     <div>
-      <SEO title={frontmatter.title} lang="es" />
+      <SEO title={title} lang="es" />
       <PostsNavbar />
-      <div className="container-lg p-md-4 pt-4 pb-3">
-        <h1 className="mt-2">{frontmatter.title}</h1>
-        <ul>
-          <li>Fecha: {frontmatter.date}</li>
+      <div className="container-lg ps-md-4 pe-md-4 pt-3 pb-3">
+        <GatsbyImage
+          className="mb-2 img-fluid rounded"
+          image={image.childImageSharp.gatsbyImageData}
+          alt={caption}
+        />
+        <h1 className="h2">{title}</h1>
+        <ul className="p-0 m-0 mb-2" style={{ listStyleType: "none" }}>
+          <li>Fecha: {date}</li>
         </ul>
         <MDXRenderer>{body}</MDXRenderer>
       </div>

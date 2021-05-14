@@ -30,7 +30,7 @@ export const usePosts = type => {
         slug: node.slug,
         date: node.frontmatter.date,
         title: node.frontmatter.title,
-        extract: node.excerpt,
+        excerpt: node.excerpt,
         image: node.frontmatter.image.childImageSharp.gatsbyImageData,
       }
     })

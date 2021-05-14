@@ -19,9 +19,10 @@ const PageHeader = () => {
         <h1 className="h3">{site.title}</h1>
         <p>{site.description}</p>
       </header>
-      <nav className="d-md-none">
-        <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>,{" "}
-        <a href="#projects">Proyectos</a>
+      <nav className="d-lg-none">
+        <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>, {" "}
+        <br className="d-sm-none d-block" />
+        <a href="#projects">Proyectos</a>, <Link to="/posts">Blog</Link>
       </nav>
     </div>
   )
@@ -129,14 +130,17 @@ const PostsSection = () => {
       </h2>
       <div className="row">
         {posts.map(item => {
-          const { slug, title, excerpt } = item
+          const { slug, title, excerpt, date } = item
           return (
-            <div key={slug} className="col-xl-6 p-md-1 pb-2">
+            <div key={slug} className="col-12 p-md-1 pb-2">
               <article className="card bg-dark">
                 <div className="card-body">
                   <Link to={`/${slug}`}>
                     <h3 className="h5 card-title">{title}</h3>
                   </Link>
+                  <h4 className="h6 card-subtitle mb-2">
+                    {date}
+                  </h4>
                   <p className="card-text m-0">{excerpt}</p>
                 </div>
               </article>
@@ -182,7 +186,7 @@ const SkillsSection = () => (
 const IndexPage = () => (
   <div>
     <SEO title="Portafolio" lang="es" />
-    <div className="container-lg p-md-4 pt-4 pb-3">
+    <div className="container-lg ps-md-4 pe-md-4 pt-3 pb-3">
       <div className="row">
         <div className="col-lg-4">
           <PageHeader />
