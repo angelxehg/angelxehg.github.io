@@ -5,7 +5,6 @@ module.exports = {
     description: `Desarrollador Web. Estudiante de Ingeniería en Tecnologías de la Información y Comunicación.`,
     author: `@angelxehg`,
     keywords: `developer, portfolio, blog`,
-    image: "static/images/Avataaars.Opt.Sqr.png",
   },
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,

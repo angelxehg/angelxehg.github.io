@@ -10,7 +10,7 @@ const SEO = props => {
 
   const metaDescription = description || site.description
   const defaultTitle = site.title
-  const seoImage = `${process.env.GATSBY_DOMAIN}${image | site.image}`
+  const seoImage = `${process.env.GATSBY_DOMAIN}${image !== '' ? image : "images/Index.Opt.png"}`
   const seoTitle = `${title} | ${defaultTitle}`
 
   return (
