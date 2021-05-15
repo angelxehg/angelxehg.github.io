@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 const NotFoundPage = () => (
   <CenterLayout>
-    <SEO title="404: Not found" lang="es" image="images/404.Opt.png" />
+    <SEO title="404: Not found" lang="es" />
     <div className="card bg-dark">
       <div className="card-body">
         <h1 className="h3 card-title">404 Not Found</h1>

@@ -5,12 +5,12 @@ import { Helmet } from "react-helmet"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const SEO = props => {
-  const { description, lang, meta, title, image } = props
+  const { description, lang, meta, title } = props
   const site = useSiteMetadata()
 
   const metaDescription = description || site.description
   const defaultTitle = site.title
-  const seoImage = `${process.env.GATSBY_DOMAIN}${image !== '' ? image : "images/Index.Opt.png"}`
+  const seoImage = `${process.env.GATSBY_DOMAIN}images/OpenGraph.Opt.png`
   const seoTitle = `${title} | ${defaultTitle}`
 
   return (
@@ -72,7 +72,6 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-  image: "",
 }
 
 SEO.propTypes = {
@@ -80,7 +79,6 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  image: PropTypes.string,
 }
 
 export default SEO
