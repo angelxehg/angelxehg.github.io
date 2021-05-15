@@ -16,6 +16,12 @@ Utilice estos comandos para clonar e instalar el sitio:
 
 - Limpiar cache del entorno de desarrollo: `gatsby clean`
 
+Nota: se requiere establecer la variable de entorno `GATSBY_DOMAIN`, y para esto se deben crear los archivos `.env.development` y `.env.production`:
+
+```env
+GATSBY_DOMAIN=https://angelxehg.com/
+```
+
 ## Calidad
 
 Utilice estos comandos para comprobar la calidad del código
