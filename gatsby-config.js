@@ -4,6 +4,7 @@ module.exports = {
     description: `Desarrollador Web. Estudiante de Ingeniería en Tecnologías de la Información y Comunicación.`,
     author: `@angelxehg`,
     keywords: `developer, portfolio, blog`,
+    siteUrl: `https://angelxehg.com`,
   },
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
@@ -11,6 +12,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
