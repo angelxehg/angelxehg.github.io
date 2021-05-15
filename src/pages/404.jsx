@@ -10,7 +10,10 @@ const NotFoundPage = () => (
   <CenterLayout>
     <SEO title="404: Not found" lang="es" />
     <div className="card bg-dark">
-      <ConcernedSVG style={{ width: '5rem', height: '5rem' }} className="align-self-center mt-2" />
+      <ConcernedSVG
+        style={{ width: "5rem", height: "5rem" }}
+        className="align-self-center mt-2"
+      />
       <div className="card-body">
         <h1 className="h3 card-title">404 Not Found</h1>
         <p className="card-text m-0">La página que buscas no existe</p>

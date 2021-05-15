@@ -12,7 +12,10 @@ const ProjectsPage = () => (
   <CenterLayout>
     <SEO title="301: Moved Permanently" lang="es" />
     <div className="card bg-dark">
-      <ConcernedSVG style={{ width: '5rem', height: '5rem' }} className="align-self-center mt-2" />
+      <ConcernedSVG
+        style={{ width: "5rem", height: "5rem" }}
+        className="align-self-center mt-2"
+      />
       <div className="card-body">
         <h1 className="h3 card-title">301: Moved Permanently</h1>
         <p className="card-text m-0">
