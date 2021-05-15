@@ -1,7 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Angel Hurtado`,
-    subtitle: `Desarrollador Web`,
+    title: `Angel Hurtado: Desarrollador Web`,
     description: `Desarrollador Web. Estudiante de Ingeniería en Tecnologías de la Información y Comunicación.`,
     author: `@angelxehg`,
     keywords: `developer, portfolio, blog`,

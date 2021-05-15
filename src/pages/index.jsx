@@ -16,7 +16,7 @@ const PageHeader = () => {
     <div className="text-center mt-1">
       <ProfileImage />
       <header className="mt-2">
-        <h1 className="h3">{site.title}</h1>
+        <h1 className="h3">Angel Hurtado</h1>
         <p>{site.description}</p>
       </header>
       <nav className="d-lg-none">
