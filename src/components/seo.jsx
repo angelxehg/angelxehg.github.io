@@ -43,7 +43,7 @@ const SEO = props => {
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
@@ -51,7 +51,7 @@ const SEO = props => {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: seoTitle,
         },
         {
           name: `twitter:image`,
