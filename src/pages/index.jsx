@@ -5,9 +5,9 @@ import SEO from "../components/seo"
 import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
 import { availableIcons, Icon } from "../components/icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import projects from "../meta/projects"
 import stacks from "../meta/stacks"
 import { usePosts } from "../hooks/use-posts"
+import { useProjects } from "../hooks/use-projects"
 import { Link } from "gatsby"
 
 const PageHeader = () => {
@@ -77,49 +77,70 @@ const AboutSection = () => (
   </section>
 )
 
-const ProjectsSection = () => (
-  <section id="projects">
-    <h2 className="h4">Proyectos:</h2>
-    <div className="row">
-      {projects.map(item => {
-        const { slug, title, extract, stack, github, demo } = item
-        const stackIcons = stack.split(",")
-        return (
-          <div key={slug} className="col-xl-6 p-md-1 pb-2">
-            <article className="card bg-dark">
-              <div className="card-body">
-                <h3 className="h5 card-title">{title}</h3>
-                <p className="card-text m-0">{extract}</p>
-                <p className="card-text">
-                  {stackIcons.map(icon => {
-                    return (
-                      <span
-                        key={icon}
-                        className="badge rounded-pill bg-dark mt-1 me-1"
-                      >
-                        <Icon name={icon} /> {icon}
-                      </span>
-                    )
-                  })}
-                </p>
-                {github && (
-                  <LinkExternal to={github} title="Repositorio">
-                    <Icon name="GitHub" /> Repositorio
-                  </LinkExternal>
-                )}
-                {demo && (
-                  <LinkExternal to={demo} title="Demo">
-                    <Icon name="Web" /> Demo
-                  </LinkExternal>
-                )}
-              </div>
-            </article>
-          </div>
-        )
-      })}
-    </div>
-  </section>
-)
+const ProjectsSection = () => {
+  const projects = useProjects().slice(0, 4)
+  return (
+    <section id="projects">
+      <h2 className="h4">
+        <Link to="/projects">Proyectos</Link>:
+        </h2>
+      <div className="row">
+        {projects.map(item => {
+          const { slug, title, excerpt, date } = item
+          return (
+            <div key={slug} className="col-xl-6 p-md-1 pb-2">
+              <article className="card bg-dark">
+                <div className="card-body">
+                  <Link to={`/${slug}`}>
+                    <h3 className="h5 card-title">{title}</h3>
+                  </Link>
+                  <h4 className="h6 card-subtitle mb-2">{date}</h4>
+                  <p className="card-text m-0">{excerpt}</p>
+                </div>
+              </article>
+            </div>
+          )
+        })}
+        {/* {projects.map(item => {
+          const { slug, title, extract, stack, github, demo } = item
+          const stackIcons = stack.split(",")
+          return (
+            <div key={slug} className="col-xl-6 p-md-1 pb-2">
+              <article className="card bg-dark">
+                <div className="card-body">
+                  <h3 className="h5 card-title">{title}</h3>
+                  <p className="card-text m-0">{extract}</p>
+                  <p className="card-text">
+                    {stackIcons.map(icon => {
+                      return (
+                        <span
+                          key={icon}
+                          className="badge rounded-pill bg-dark mt-1 me-1"
+                        >
+                          <Icon name={icon} /> {icon}
+                        </span>
+                      )
+                    })}
+                  </p>
+                  {github && (
+                    <LinkExternal to={github} title="Repositorio">
+                      <Icon name="GitHub" /> Repositorio
+                    </LinkExternal>
+                  )}
+                  {demo && (
+                    <LinkExternal to={demo} title="Demo">
+                      <Icon name="Web" /> Demo
+                    </LinkExternal>
+                  )}
+                </div>
+              </article>
+            </div>
+          )
+        })} */}
+      </div>
+    </section>
+  )
+}
 
 const PostsSection = () => {
   const posts = usePosts().slice(0, 3)
