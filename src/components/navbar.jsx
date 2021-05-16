@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
 
 const DefaultNavbar = () => (
-  <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+  <Navbar bg="dark" variant="dark" expand="sm">
     <div className="container-xl ps-md-4 pe-md-4">
       <Link
         to="/"
@@ -11,18 +13,23 @@ const DefaultNavbar = () => (
       >
         Angel Hurtado
       </Link>
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <Link to="/posts" className="nav-link" activeClassName="active">
-            Blog
-          </Link>
-          <Link to="/projects" className="nav-link" activeClassName="active">
-            Proyectos
-          </Link>
-        </li>
-      </ul>
+      <Navbar.Toggle aria-controls="default-navbar" />
+      <Navbar.Collapse id="default-navbar">
+        <Nav className="me-auto">
+          <li className="nav-item">
+            <Link to="/posts" className="nav-link" activeClassName="active" style={{ textDecoration: "underline" }}>
+              Blog
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/projects" className="nav-link" activeClassName="active" style={{ textDecoration: "underline" }}>
+              Proyectos
+            </Link>
+          </li>
+        </Nav>
+      </Navbar.Collapse>
     </div>
-  </nav>
+  </Navbar >
 )
 
 export default DefaultNavbar
