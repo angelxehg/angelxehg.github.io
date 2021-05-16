@@ -1,16 +1,28 @@
-import { Link } from "gatsby"
 import React from "react"
+import { Link } from "gatsby"
 
-export const PostsNavbar = () => (
+const DefaultNavbar = () => (
   <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
     <div className="container-xl ps-md-4 pe-md-4">
       <Link
-        to="/posts"
+        to="/"
         className="navbar-brand"
         style={{ textDecoration: "underline" }}
       >
-        Blog de Angel
+        Angel Hurtado
       </Link>
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link to="/posts" className="nav-link" activeClassName="active">
+            Blog
+          </Link>
+          <Link to="/projects" className="nav-link" activeClassName="active">
+            Proyectos
+          </Link>
+        </li>
+      </ul>
     </div>
   </nav>
 )
+
+export default DefaultNavbar

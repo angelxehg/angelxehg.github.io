@@ -4,14 +4,14 @@ import DefaultFooter from "../components/footer"
 import SEO from "../components/seo"
 import { usePosts } from "../hooks/use-posts"
 import { Link } from "gatsby"
-import { PostsNavbar } from "../components/navbar"
+import DefaultNavbar from "../components/navbar"
 
 const PostsPage = () => {
   const posts = usePosts()
   return (
     <div>
       <SEO title="Blog" lang="es" />
-      <PostsNavbar />
+      <DefaultNavbar />
       <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
         <h1 className="h3">Mi blog</h1>
         <p>

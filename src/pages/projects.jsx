@@ -4,14 +4,14 @@ import { Link } from "gatsby"
 import DefaultFooter from "../components/footer"
 import SEO from "../components/seo"
 import { useProjects } from "../hooks/use-projects"
-import { PostsNavbar } from "../components/navbar"
+import DefaultNavbar from "../components/navbar"
 
 const ProjectsPage = () => {
   const projects = useProjects()
   return (
     <div>
       <SEO title="Blog" lang="es" />
-      <PostsNavbar />
+      <DefaultNavbar />
       <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
         <h1 className="h3">Mis proyectos</h1>
         <p>

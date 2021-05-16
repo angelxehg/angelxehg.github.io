@@ -6,7 +6,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import Footer from "../components/footer"
 import SEO from "../components/seo"
-import { PostsNavbar } from "../components/navbar"
+import DefaultNavbar from "../components/navbar"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -36,7 +36,7 @@ const PostTemplate = props => {
         lang="es"
         image={image.childImageSharp.gatsbyImageData.images.fallback.src}
       />
-      <PostsNavbar />
+      <DefaultNavbar />
       <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
         <GatsbyImage
           className="mb-2 img-fluid rounded"
