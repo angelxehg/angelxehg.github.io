@@ -78,15 +78,16 @@ const AboutSection = () => (
 )
 
 const ProjectsSection = () => {
-  const projects = useProjects().slice(0, 4)
+  const projects = useProjects().slice(0, 2)
   return (
     <section id="projects">
       <h2 className="h4">
-        <Link to="/projects">Proyectos</Link>:
+        Últimos <Link to="/projects">proyectos</Link>:
         </h2>
       <div className="row">
         {projects.map(item => {
-          const { slug, title, excerpt, date } = item
+          const { slug, title, excerpt, stack, github, demo } = item
+          const stackIcons = stack.split(",")
           return (
             <div key={slug} className="col-xl-6 p-md-1 pb-2">
               <article className="card bg-dark">
@@ -94,22 +95,7 @@ const ProjectsSection = () => {
                   <Link to={`/${slug}`}>
                     <h3 className="h5 card-title">{title}</h3>
                   </Link>
-                  <h4 className="h6 card-subtitle mb-2">{date}</h4>
                   <p className="card-text m-0">{excerpt}</p>
-                </div>
-              </article>
-            </div>
-          )
-        })}
-        {/* {projects.map(item => {
-          const { slug, title, extract, stack, github, demo } = item
-          const stackIcons = stack.split(",")
-          return (
-            <div key={slug} className="col-xl-6 p-md-1 pb-2">
-              <article className="card bg-dark">
-                <div className="card-body">
-                  <h3 className="h5 card-title">{title}</h3>
-                  <p className="card-text m-0">{extract}</p>
                   <p className="card-text">
                     {stackIcons.map(icon => {
                       return (
@@ -136,7 +122,7 @@ const ProjectsSection = () => {
               </article>
             </div>
           )
-        })} */}
+        })}
       </div>
     </section>
   )
@@ -147,7 +133,7 @@ const PostsSection = () => {
   return (
     <section id="posts">
       <h2 className="h4">
-        <Link to="/posts">Blog</Link>:
+        Últimas <Link to="/posts">entradas</Link>:
       </h2>
       <div className="row">
         {posts.map(item => {

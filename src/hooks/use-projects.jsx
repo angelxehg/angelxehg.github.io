@@ -16,6 +16,9 @@ export const useProjects = type => {
                 gatsbyImageData(layout: FULL_WIDTH)
               }
             }
+            stack
+            github
+            demo
           }
         }
       }
@@ -31,6 +34,9 @@ export const useProjects = type => {
         date: node.frontmatter.date,
         title: node.frontmatter.title,
         excerpt: node.excerpt,
+        stack: node.frontmatter.stack,
+        github: node.frontmatter.github,
+        demo: node.frontmatter.demo,
         image: node.frontmatter.image.childImageSharp.gatsbyImageData,
       }
     })
