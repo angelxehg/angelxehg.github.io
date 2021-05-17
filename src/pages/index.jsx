@@ -86,7 +86,7 @@ const ProjectsSection = () => {
         </h2>
       <div className="row">
         {projects.map(item => {
-          const { slug, title, excerpt, stack, github, demo } = item
+          const { slug, title, excerpt, stack } = item
           const stackIcons = stack.split(",")
           return (
             <div key={slug} className="col-xl-6 p-md-1 pb-2">
@@ -108,16 +108,6 @@ const ProjectsSection = () => {
                       )
                     })}
                   </p>
-                  {github && (
-                    <LinkExternal to={github} title="Repositorio">
-                      <Icon name="GitHub" /> Repositorio
-                    </LinkExternal>
-                  )}
-                  {demo && (
-                    <LinkExternal to={demo} title="Demo">
-                      <Icon name="Web" /> Demo
-                    </LinkExternal>
-                  )}
                 </div>
               </article>
             </div>

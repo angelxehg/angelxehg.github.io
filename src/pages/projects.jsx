@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import DefaultFooter from "../components/footer"
-import { LinkExternal } from "../components/social"
 import { Icon } from "../components/icons"
 import SEO from "../components/seo"
 import { useProjects } from "../hooks/use-projects"
@@ -23,7 +22,7 @@ const ProjectsPage = () => {
         <h2 className="h4">Últimos proyectos</h2>
         <div className="row">
           {projects.map(item => {
-            const { slug, title, excerpt, date, image, caption, stack, github, demo } = item
+            const { slug, title, excerpt, date, image, caption, stack } = item
             const stackIcons = stack.split(",")
             return (
               <div key={slug} className="col-xl-4 col-md-6 p-md-1 pb-2">
@@ -51,16 +50,6 @@ const ProjectsPage = () => {
                         )
                       })}
                     </p>
-                    {github && (
-                      <LinkExternal to={github} title="Repositorio">
-                        <Icon name="GitHub" /> Repositorio
-                      </LinkExternal>
-                    )}
-                    {demo && (
-                      <LinkExternal to={demo} title="Demo">
-                        <Icon name="Web" /> Demo
-                      </LinkExternal>
-                    )}
                   </div>
                 </article>
               </div>
