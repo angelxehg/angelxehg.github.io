@@ -218,8 +218,8 @@ export const availableIcons = iconsSource.map(i => i.name)
 
 interface IconProps {
   name: string
-  size: string
-  className: string
+  size?: string
+  className?: string
 }
 
 const useStyles = (props: IconProps, defaultColor: string) => {

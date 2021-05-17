@@ -9,7 +9,7 @@ export const useProjects = (): Project[] => {
         nodes {
           id
           slug
-          excerpt(pruneLength: 100)
+          excerpt(pruneLength: 35)
           frontmatter {
             title
             date(formatString: "YYYY-MM-DD")
