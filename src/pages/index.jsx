@@ -113,6 +113,7 @@ const ProjectsSection = () => {
             </div>
           )
         })}
+        <Link to="/projects">Ver todos los proyectos {">"}</Link>
       </div>
     </section>
   )
@@ -142,6 +143,7 @@ const PostsSection = () => {
             </div>
           )
         })}
+        <Link to="/posts">Ver todas las entradas {">"}</Link>
       </div>
     </section>
   )
