@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import { usePosts } from "../hooks/use-posts"
 import DefaultNavbar from "../components/navbar"
 
-const PostsPage = () => {
+const PostsPage = (): JSX.Element => {
   const posts = usePosts()
   return (
     <div>

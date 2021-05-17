@@ -1,9 +1,34 @@
 import { graphql, useStaticQuery } from "gatsby"
+import { IGatsbyImageData } from "gatsby-plugin-image"
 
-export const usePosts = type => {
+interface RawNode {
+  id: string
+  slug: string
+  excerpt: string
+  frontmatter: {
+    title: string
+    date: string
+    image: { childImageSharp: { gatsbyImageData: IGatsbyImageData } }
+    caption: string
+    stack: string
+  }
+}
+
+interface PostNode {
+  id: string
+  slug: string
+  date: string
+  title: string
+  excerpt: string
+  stack: string
+  image: IGatsbyImageData
+  caption: string
+}
+
+export const useProjects = (): PostNode[] => {
   const { allMdx } = useStaticQuery(graphql`
-    query AllPosts {
-      allMdx(filter: { frontmatter: { type: { eq: "post" } } }) {
+    query AllProjects {
+      allMdx(filter: { frontmatter: { type: { eq: "project" } } }) {
         nodes {
           id
           slug
@@ -17,24 +42,26 @@ export const usePosts = type => {
               }
             }
             caption
+            stack
           }
         }
       }
     }
   `)
-  const nodes = allMdx.nodes
-  const posts = nodes
-    .filter(i => i.frontmatter.type === type)
+  const nodes: RawNode[] = allMdx.nodes
+  const projects = nodes
     .map(node => {
-      return {
+      const formated: PostNode = {
         id: node.id,
         slug: node.slug,
         date: node.frontmatter.date,
         title: node.frontmatter.title,
         excerpt: node.excerpt,
+        stack: node.frontmatter.stack,
         image: node.frontmatter.image.childImageSharp.gatsbyImageData,
         caption: node.frontmatter.caption,
       }
+      return formated
     })
     .sort((a, b) => {
       if (a.date < b.date) {
@@ -45,5 +72,5 @@ export const usePosts = type => {
       }
       return 0
     })
-  return posts
+  return projects
 }

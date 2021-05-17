@@ -2,7 +2,7 @@ import React from "react"
 
 import { LinkExternal } from "./social"
 
-const DefaultFooter = () => (
+const DefaultFooter = (): JSX.Element => (
   <footer className="navbar navbar-dark">
     <div className="container-xl ps-md-4 pe-md-4">
       <p>

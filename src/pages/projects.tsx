@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import { useProjects } from "../hooks/use-projects"
 import DefaultNavbar from "../components/navbar"
 
-const ProjectsPage = () => {
+const ProjectsPage = (): JSX.Element => {
   const projects = useProjects()
   return (
     <div>

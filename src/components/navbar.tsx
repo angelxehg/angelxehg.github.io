@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 
-const DefaultNavbar = () => (
+const DefaultNavbar = (): JSX.Element => (
   <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
     <div className="container-xl ps-md-4 pe-md-4">
       <Link

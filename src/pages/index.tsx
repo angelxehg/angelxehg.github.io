@@ -180,7 +180,7 @@ const SkillsSection = () => (
   </section>
 )
 
-const IndexPage = () => (
+const IndexPage = (): JSX.Element => (
   <div>
     <SEO title="Portafolio" lang="es" />
     <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">

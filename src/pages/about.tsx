@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 const ConcernedSVG = require("../assets/concerned.svg")
 
-const AboutPage = () => {
+const AboutPage = (): JSX.Element => {
   useEffect(() => {
     setTimeout(() => navigate("/"), 2000)
   }, [])

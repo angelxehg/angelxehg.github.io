@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 const ConcernedSVG = require("../assets/concerned.svg")
 
-const NotFoundPage = () => (
+const NotFoundPage = (): JSX.Element => (
   <CenterLayout>
     <SEO title="404: Not found" lang="es" />
     <div className="card bg-dark">
