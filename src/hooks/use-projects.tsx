@@ -1,31 +1,8 @@
 import { graphql, useStaticQuery } from "gatsby"
-import { IGatsbyImageData } from "gatsby-plugin-image"
 
-interface RawNode {
-  id: string
-  slug: string
-  excerpt: string
-  frontmatter: {
-    title: string
-    date: string
-    image: { childImageSharp: { gatsbyImageData: IGatsbyImageData } }
-    caption: string
-    stack: string
-  }
-}
+import { Project, RAWPost, sortByDate, toProject } from "../meta/models"
 
-interface PostNode {
-  id: string
-  slug: string
-  date: string
-  title: string
-  excerpt: string
-  stack: string
-  image: IGatsbyImageData
-  caption: string
-}
-
-export const useProjects = (): PostNode[] => {
+export const useProjects = (): Project[] => {
   const { allMdx } = useStaticQuery(graphql`
     query AllProjects {
       allMdx(filter: { frontmatter: { type: { eq: "project" } } }) {
@@ -48,29 +25,8 @@ export const useProjects = (): PostNode[] => {
       }
     }
   `)
-  const nodes: RawNode[] = allMdx.nodes
-  const projects = nodes
-    .map(node => {
-      const formated: PostNode = {
-        id: node.id,
-        slug: node.slug,
-        date: node.frontmatter.date,
-        title: node.frontmatter.title,
-        excerpt: node.excerpt,
-        stack: node.frontmatter.stack,
-        image: node.frontmatter.image.childImageSharp.gatsbyImageData,
-        caption: node.frontmatter.caption,
-      }
-      return formated
-    })
-    .sort((a, b) => {
-      if (a.date < b.date) {
-        return 1
-      }
-      if (a.date > b.date) {
-        return -1
-      }
-      return 0
-    })
-  return projects
+  const nodes: RAWPost[] = allMdx.nodes
+  return nodes
+    .map(toProject)
+    .sort(sortByDate)
 }
