@@ -38,15 +38,15 @@ const PostTemplate = props => {
       />
       <DefaultNavbar />
       <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
+        <h1 className="h2">{title}</h1>
+        <ul className="p-0 m-0 mb-2" style={{ listStyleType: "none" }}>
+          <li>Fecha: {date}</li>
+        </ul>
         <GatsbyImage
           className="mb-2 img-fluid rounded"
           image={image.childImageSharp.gatsbyImageData}
           alt={caption}
         />
-        <h1 className="h2">{title}</h1>
-        <ul className="p-0 m-0 mb-2" style={{ listStyleType: "none" }}>
-          <li>Fecha: {date}</li>
-        </ul>
         <MDXRenderer>{body}</MDXRenderer>
       </div>
       <Footer />

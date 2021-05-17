@@ -26,7 +26,7 @@ const PostsPage = () => {
               <div key={slug} className="col-xl-4 col-md-6 p-md-1 pb-2">
                 <article className="card bg-dark">
                   <GatsbyImage
-                    className="card-img-top"
+                    className="card-img-top img-200"
                     image={image}
                     alt={caption}
                   />
