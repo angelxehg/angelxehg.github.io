@@ -32,7 +32,7 @@ export const query = graphql`
 const PostTemplate = props => {
   const { frontmatter, body } = props.data.mdx
   const { title, date, image, caption, stack } = frontmatter
-  const stackIcons = stack.split(",") || []
+  const stackIcons = stack ? stack.split(",") : []
   return (
     <div>
       <SEO
