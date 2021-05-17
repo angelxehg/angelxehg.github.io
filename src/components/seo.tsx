@@ -4,7 +4,15 @@ import { Helmet } from "react-helmet"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-const SEO = props => {
+interface SEOProps {
+  description: any
+  lang: any
+  meta: any
+  title: any
+  image: any
+}
+
+const SEO = (props: SEOProps) => {
   const { description, lang, meta, title, image } = props
   const site = useSiteMetadata()
 

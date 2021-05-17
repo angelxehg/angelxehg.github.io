@@ -60,7 +60,7 @@ export const LinkExternal = (props: LinkExternalProps): JSX.Element => (
     data-bs-toggle="tooltip"
     data-bs-placement="bottom"
     title={props.title || "Link"}
-    className={props.className || ''}
+    className={props.className || ""}
   >
     {props.children}
   </a>
