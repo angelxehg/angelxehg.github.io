@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import DefaultFooter from "../components/footer"
 import { LinkExternal } from "../components/social"
@@ -22,15 +23,21 @@ const ProjectsPage = () => {
         <h2 className="h4">Últimos proyectos</h2>
         <div className="row">
           {projects.map(item => {
-            const { slug, title, excerpt, stack, github, demo } = item
+            const { slug, title, excerpt, date, image, caption, stack, github, demo } = item
             const stackIcons = stack.split(",")
             return (
-              <div key={slug} className="col-xl-6 p-md-1 pb-2">
+              <div key={slug} className="col-xl-4 col-md-6 p-md-1 pb-2">
                 <article className="card bg-dark">
+                  <GatsbyImage
+                    className="card-img-top"
+                    image={image}
+                    alt={caption}
+                  />
                   <div className="card-body">
                     <Link to={`/${slug}`}>
                       <h3 className="h5 card-title">{title}</h3>
                     </Link>
+                    <h4 className="h6 card-subtitle mb-2">{date}</h4>
                     <p className="card-text m-0">{excerpt}</p>
                     <p className="card-text">
                       {stackIcons.map(icon => {

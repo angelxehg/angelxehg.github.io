@@ -16,6 +16,7 @@ export const useProjects = type => {
                 gatsbyImageData(layout: FULL_WIDTH)
               }
             }
+            caption
             stack
             github
             demo
@@ -38,6 +39,7 @@ export const useProjects = type => {
         github: node.frontmatter.github,
         demo: node.frontmatter.demo,
         image: node.frontmatter.image.childImageSharp.gatsbyImageData,
+        caption: node.frontmatter.caption,
       }
     })
     .sort((a, b) => {

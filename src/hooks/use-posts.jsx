@@ -16,6 +16,7 @@ export const usePosts = type => {
                 gatsbyImageData(layout: FULL_WIDTH)
               }
             }
+            caption
           }
         }
       }
@@ -32,6 +33,7 @@ export const usePosts = type => {
         title: node.frontmatter.title,
         excerpt: node.excerpt,
         image: node.frontmatter.image.childImageSharp.gatsbyImageData,
+        caption: node.frontmatter.caption,
       }
     })
     .sort((a, b) => {
