@@ -48,6 +48,7 @@ interface LinkExternalProps {
   to: string
   title?: string
   children: React.ReactNode | React.ReactNode[]
+  className?: string
 }
 
 export const LinkExternal = (props: LinkExternalProps): JSX.Element => (
@@ -59,6 +60,7 @@ export const LinkExternal = (props: LinkExternalProps): JSX.Element => (
     data-bs-toggle="tooltip"
     data-bs-placement="bottom"
     title={props.title || "Link"}
+    className={props.className || ''}
   >
     {props.children}
   </a>
