@@ -1,4 +1,4 @@
-import { IGatsbyImageData } from "gatsby-plugin-image";
+import { IGatsbyImageData } from "gatsby-plugin-image"
 
 export interface SiteMetadata {
   title: string
@@ -47,10 +47,16 @@ export interface Project extends Post {
 }
 
 export const toProject = (item: RAWPost): Project => {
-  const { id, slug, date, title, excerpt, image, caption } = toPost(item);
+  const { id, slug, date, title, excerpt, image, caption } = toPost(item)
   return {
-    id, slug, date, title, excerpt, image, caption,
-    stack: item.frontmatter.stack
+    id,
+    slug,
+    date,
+    title,
+    excerpt,
+    image,
+    caption,
+    stack: item.frontmatter.stack,
   }
 }
 

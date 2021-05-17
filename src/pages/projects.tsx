@@ -9,16 +9,21 @@ import { useProjects } from "../hooks/use-projects"
 import DefaultNavbar from "../components/navbar"
 import { Project } from "../meta/models"
 
-export const ProjectCard = (props: { item: Project, noImage?: boolean }): JSX.Element => {
+export const ProjectCard = (props: {
+  item: Project
+  noImage?: boolean
+}): JSX.Element => {
   const { slug, title, excerpt, date, image, caption, stack } = props.item
   const stackIcons = stack.split(",")
   return (
     <article className="card bg-dark">
-      {!props.noImage && <GatsbyImage
-        className="card-img-top img-200"
-        image={image}
-        alt={caption}
-      />}
+      {!props.noImage && (
+        <GatsbyImage
+          className="card-img-top img-200"
+          image={image}
+          alt={caption}
+        />
+      )}
       <div className="card-body">
         <Link to={`/${slug}`}>
           <h3 className="h5 card-title">{title}</h3>
@@ -28,10 +33,7 @@ export const ProjectCard = (props: { item: Project, noImage?: boolean }): JSX.El
         <p className="card-text">
           {stackIcons.map(icon => {
             return (
-              <span
-                key={icon}
-                className="badge rounded-pill bg-dark mt-1 me-1"
-              >
+              <span key={icon} className="badge rounded-pill bg-dark mt-1 me-1">
                 <Icon name={icon} /> {icon}
               </span>
             )

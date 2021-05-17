@@ -8,15 +8,20 @@ import { usePosts } from "../hooks/use-posts"
 import DefaultNavbar from "../components/navbar"
 import { Post } from "../meta/models"
 
-export const PostCard = (props: { item: Post, noImage?: boolean }): JSX.Element => {
-  const { slug, title, excerpt, date, image, caption } = props.item;
+export const PostCard = (props: {
+  item: Post
+  noImage?: boolean
+}): JSX.Element => {
+  const { slug, title, excerpt, date, image, caption } = props.item
   return (
     <article className="card bg-dark">
-      {!props.noImage && <GatsbyImage
-        className="card-img-top img-200"
-        image={image}
-        alt={caption}
-      />}
+      {!props.noImage && (
+        <GatsbyImage
+          className="card-img-top img-200"
+          image={image}
+          alt={caption}
+        />
+      )}
       <div className="card-body">
         <Link to={`/${slug}`}>
           <h3 className="h5 card-title">{title}</h3>

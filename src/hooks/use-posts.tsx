@@ -25,7 +25,5 @@ export const usePosts = (): Post[] => {
     }
   `)
   const nodes: RAWPost[] = allMdx.nodes
-  return nodes
-    .map(toPost)
-    .sort(sortByDate)
+  return nodes.map(toPost).sort(sortByDate)
 }
