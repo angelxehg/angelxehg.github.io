@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
 const EmailSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
@@ -217,7 +216,13 @@ const iconsSource = [
 
 export const availableIcons = iconsSource.map(i => i.name)
 
-const useStyles = (props, defaultColor) => {
+interface IconProps {
+  name: string
+  size?: string
+  className?: string
+}
+
+const useStyles = (props: IconProps, defaultColor: string) => {
   const { size } = props
   return {
     width: size || "1.2rem",
@@ -226,7 +231,7 @@ const useStyles = (props, defaultColor) => {
   }
 }
 
-export const Icon = props => {
+export const Icon = (props: IconProps) => {
   const { name, className } = props
   const classes = className || ""
   const icon = iconsSource.find(i => i.name === name)
@@ -239,10 +244,4 @@ export const Icon = props => {
   return (
     <IconSVG fill={fill} style={useStyles(props, color)} className={classes} />
   )
-}
-
-Icon.propTypes = {
-  name: PropTypes.oneOf(availableIcons).isRequired,
-  size: PropTypes.string,
-  className: PropTypes.string,
 }

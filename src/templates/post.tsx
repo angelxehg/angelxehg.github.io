@@ -1,8 +1,7 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 
 import Footer from "../components/footer"
 import SEO from "../components/seo"
@@ -29,7 +28,26 @@ export const query = graphql`
   }
 `
 
-const PostTemplate = props => {
+interface PostTemplateProps {
+  data: {
+    mdx: {
+      body: string
+      frontmatter: {
+        title: string
+        date: string
+        image: {
+          childImageSharp: {
+            gatsbyImageData: IGatsbyImageData
+          }
+        }
+        caption: string
+        stack: string
+      }
+    }
+  }
+}
+
+const PostTemplate = (props: PostTemplateProps): JSX.Element => {
   const { frontmatter, body } = props.data.mdx
   const { title, date, image, caption, stack } = frontmatter
   const stackIcons = stack ? stack.split(",") : []
@@ -38,7 +56,7 @@ const PostTemplate = props => {
       <SEO
         title={title}
         lang="es"
-        image={image.childImageSharp.gatsbyImageData.images.fallback.src}
+        image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
       />
       <DefaultNavbar />
       <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
@@ -70,10 +88,6 @@ const PostTemplate = props => {
       <Footer />
     </div>
   )
-}
-
-PostTemplate.propTypes = {
-  data: PropTypes.any,
 }
 
 export default PostTemplate

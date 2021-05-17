@@ -9,6 +9,8 @@ import stacks from "../meta/stacks"
 import { usePosts } from "../hooks/use-posts"
 import { useProjects } from "../hooks/use-projects"
 import { Link } from "gatsby"
+import { PostCard } from "./posts"
+import { ProjectCard } from "./projects"
 
 const PageHeader = () => {
   const site = useSiteMetadata()
@@ -85,34 +87,11 @@ const ProjectsSection = () => {
         Últimos <Link to="/projects">proyectos</Link>:
       </h2>
       <div className="row">
-        {projects.map(item => {
-          const { slug, title, excerpt, stack } = item
-          const stackIcons = stack.split(",")
-          return (
-            <div key={slug} className="col-xl-6 p-md-1 pb-2">
-              <article className="card bg-dark">
-                <div className="card-body">
-                  <Link to={`/${slug}`}>
-                    <h3 className="h5 card-title">{title}</h3>
-                  </Link>
-                  <p className="card-text m-0">{excerpt}</p>
-                  <p className="card-text">
-                    {stackIcons.map(icon => {
-                      return (
-                        <span
-                          key={icon}
-                          className="badge rounded-pill bg-dark mt-1 me-1"
-                        >
-                          <Icon name={icon} /> {icon}
-                        </span>
-                      )
-                    })}
-                  </p>
-                </div>
-              </article>
-            </div>
-          )
-        })}
+        {projects.map(item => (
+          <div key={item.id} className="col-xl-6 p-md-1 pb-2">
+            <ProjectCard item={item} noImage />
+          </div>
+        ))}
         <Link to="/projects">Ver todos los proyectos {">"}</Link>
       </div>
     </section>
@@ -127,22 +106,11 @@ const PostsSection = () => {
         Últimas <Link to="/posts">entradas</Link>:
       </h2>
       <div className="row">
-        {posts.map(item => {
-          const { slug, title, excerpt, date } = item
-          return (
-            <div key={slug} className="col-12 p-md-1 pb-2">
-              <article className="card bg-dark">
-                <div className="card-body">
-                  <Link to={`/${slug}`}>
-                    <h3 className="h5 card-title">{title}</h3>
-                  </Link>
-                  <h4 className="h6 card-subtitle mb-2">{date}</h4>
-                  <p className="card-text m-0">{excerpt}</p>
-                </div>
-              </article>
-            </div>
-          )
-        })}
+        {posts.map(item => (
+          <div key={item.id} className="col-12 p-md-1 pb-2">
+            <PostCard item={item} noImage />
+          </div>
+        ))}
         <Link to="/posts">Ver todas las entradas {">"}</Link>
       </div>
     </section>
@@ -180,7 +148,7 @@ const SkillsSection = () => (
   </section>
 )
 
-const IndexPage = () => (
+const IndexPage = (): JSX.Element => (
   <div>
     <SEO title="Portafolio" lang="es" />
     <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">

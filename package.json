@@ -1,7 +1,7 @@
 {
   "name": "angelxehg.com",
   "description": "Mi sitio web y blog personal",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "homepage": "https://angelxehg.github.io/",
   "author": {
     "name": "Angel Hurtado",
@@ -26,7 +26,7 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "lint": "eslint src/**/*.jsx src/**/*.js"
+    "lint": "eslint src/**/*.tsx src/**/*.ts"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -51,9 +51,16 @@
     "react-bootstrap": "^1.6.0",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "sass": "^1.32.13"
+    "sass": "^1.32.13",
+    "typescript": "^4.2.4"
   },
   "devDependencies": {
+    "@types/node": "^15.3.0",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.5",
+    "@types/react-helmet": "^6.1.1",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
     "eslint": "^7.26.0",
     "eslint-plugin-react": "^7.23.2",
     "gh-pages": "^3.1.0",

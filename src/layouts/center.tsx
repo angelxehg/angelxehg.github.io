@@ -1,14 +1,12 @@
 import React from "react"
-import PropTypes from "prop-types"
+interface CenterLayoutProps {
+  children: React.ReactNode | React.ReactNode[]
+}
 
-const CenterLayout = props => (
+const CenterLayout = (props: CenterLayoutProps): JSX.Element => (
   <div className="row text-center justify-content-center full-h">
     <main className="col align-self-center fill-sm">{props.children}</main>
   </div>
 )
-
-CenterLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default CenterLayout

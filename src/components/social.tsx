@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 export const socialLinks = [
   {
@@ -34,7 +33,7 @@ export const socialLinks = [
   },
 ]
 
-export const ProfileImage = () => {
+export const ProfileImage = (): JSX.Element => {
   return (
     <img
       src="/images/Profile.500.Sqr.jpg"
@@ -45,7 +44,14 @@ export const ProfileImage = () => {
   )
 }
 
-export const LinkExternal = props => (
+interface LinkExternalProps {
+  to: string
+  title?: string
+  children: React.ReactNode | React.ReactNode[]
+  className?: string
+}
+
+export const LinkExternal = (props: LinkExternalProps): JSX.Element => (
   <a
     href={props.to}
     rel="noreferrer"
@@ -54,13 +60,8 @@ export const LinkExternal = props => (
     data-bs-toggle="tooltip"
     data-bs-placement="bottom"
     title={props.title || "Link"}
+    className={props.className || ""}
   >
     {props.children}
   </a>
 )
-
-LinkExternal.propTypes = {
-  to: PropTypes.string.isRequired,
-  title: PropTypes.string,
-  children: PropTypes.node,
-}
