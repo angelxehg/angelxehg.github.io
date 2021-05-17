@@ -17,7 +17,7 @@
 @import "../node_modules/bootstrap/scss/transitions";
 // @import "../node_modules/bootstrap/scss/dropdown";
 // @import "../node_modules/bootstrap/scss/button-group";
-// @import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/nav";
 @import "../node_modules/bootstrap/scss/navbar";
 @import "../node_modules/bootstrap/scss/card";
 // @import "../node_modules/bootstrap/scss/accordion";
@@ -73,8 +73,8 @@ a:active {
 }
 
 section {
-  padding-top: 20px;
-  margin-top: -10px;
+  padding-top: 50px;
+  margin-top: -30px;
 }
 
 .card {
@@ -98,4 +98,8 @@ section {
   .fill-sm {
     max-width: 400px;
   }
+}
+
+.img-200 {
+  height: 200px;
 }

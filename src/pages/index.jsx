@@ -5,9 +5,9 @@ import SEO from "../components/seo"
 import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
 import { availableIcons, Icon } from "../components/icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import projects from "../meta/projects"
 import stacks from "../meta/stacks"
 import { usePosts } from "../hooks/use-posts"
+import { useProjects } from "../hooks/use-projects"
 import { Link } from "gatsby"
 
 const PageHeader = () => {
@@ -22,7 +22,7 @@ const PageHeader = () => {
       <nav className="d-lg-none">
         <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>,{" "}
         <br className="d-sm-none d-block" />
-        <a href="#projects">Proyectos</a>, <Link to="/posts">Blog</Link>
+        <Link to="/projects">Proyectos</Link>, <Link to="/posts">Blog</Link>
       </nav>
     </div>
   )
@@ -77,56 +77,54 @@ const AboutSection = () => (
   </section>
 )
 
-const ProjectsSection = () => (
-  <section id="projects">
-    <h2 className="h4">Proyectos:</h2>
-    <div className="row">
-      {projects.map(item => {
-        const { slug, title, extract, stack, github, demo } = item
-        const stackIcons = stack.split(",")
-        return (
-          <div key={slug} className="col-xl-6 p-md-1 pb-2">
-            <article className="card bg-dark">
-              <div className="card-body">
-                <h3 className="h5 card-title">{title}</h3>
-                <p className="card-text m-0">{extract}</p>
-                <p className="card-text">
-                  {stackIcons.map(icon => {
-                    return (
-                      <span
-                        key={icon}
-                        className="badge rounded-pill bg-dark mt-1 me-1"
-                      >
-                        <Icon name={icon} /> {icon}
-                      </span>
-                    )
-                  })}
-                </p>
-                {github && (
-                  <LinkExternal to={github} title="Repositorio">
-                    <Icon name="GitHub" /> Repositorio
-                  </LinkExternal>
-                )}
-                {demo && (
-                  <LinkExternal to={demo} title="Demo">
-                    <Icon name="Web" /> Demo
-                  </LinkExternal>
-                )}
-              </div>
-            </article>
-          </div>
-        )
-      })}
-    </div>
-  </section>
-)
+const ProjectsSection = () => {
+  const projects = useProjects().slice(0, 2)
+  return (
+    <section id="projects">
+      <h2 className="h4">
+        Últimos <Link to="/projects">proyectos</Link>:
+      </h2>
+      <div className="row">
+        {projects.map(item => {
+          const { slug, title, excerpt, stack } = item
+          const stackIcons = stack.split(",")
+          return (
+            <div key={slug} className="col-xl-6 p-md-1 pb-2">
+              <article className="card bg-dark">
+                <div className="card-body">
+                  <Link to={`/${slug}`}>
+                    <h3 className="h5 card-title">{title}</h3>
+                  </Link>
+                  <p className="card-text m-0">{excerpt}</p>
+                  <p className="card-text">
+                    {stackIcons.map(icon => {
+                      return (
+                        <span
+                          key={icon}
+                          className="badge rounded-pill bg-dark mt-1 me-1"
+                        >
+                          <Icon name={icon} /> {icon}
+                        </span>
+                      )
+                    })}
+                  </p>
+                </div>
+              </article>
+            </div>
+          )
+        })}
+        <Link to="/projects">Ver todos los proyectos {">"}</Link>
+      </div>
+    </section>
+  )
+}
 
 const PostsSection = () => {
   const posts = usePosts().slice(0, 3)
   return (
     <section id="posts">
       <h2 className="h4">
-        <Link to="/posts">Blog</Link>:
+        Últimas <Link to="/posts">entradas</Link>:
       </h2>
       <div className="row">
         {posts.map(item => {
@@ -145,6 +143,7 @@ const PostsSection = () => {
             </div>
           )
         })}
+        <Link to="/posts">Ver todas las entradas {">"}</Link>
       </div>
     </section>
   )
