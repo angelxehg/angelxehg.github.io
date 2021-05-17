@@ -16,9 +16,7 @@ const ProjectsPage = () => {
       <DefaultNavbar />
       <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
         <h1 className="h3">Mis proyectos</h1>
-        <p>
-          Estos son todos mis proyectos públicos
-        </p>
+        <p>Estos son todos mis proyectos públicos</p>
         <h2 className="h4">Últimos proyectos</h2>
         <div className="row">
           {projects.map(item => {

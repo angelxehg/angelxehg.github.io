@@ -83,7 +83,7 @@ const ProjectsSection = () => {
     <section id="projects">
       <h2 className="h4">
         Últimos <Link to="/projects">proyectos</Link>:
-        </h2>
+      </h2>
       <div className="row">
         {projects.map(item => {
           const { slug, title, excerpt, stack } = item
