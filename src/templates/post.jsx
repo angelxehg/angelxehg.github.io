@@ -6,6 +6,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import Footer from "../components/footer"
 import SEO from "../components/seo"
+import { Icon } from "../components/icons"
 import DefaultNavbar from "../components/navbar"
 
 export const query = graphql`
@@ -21,6 +22,8 @@ export const query = graphql`
           }
         }
         caption
+        type
+        stack
       }
     }
   }
@@ -28,7 +31,8 @@ export const query = graphql`
 
 const PostTemplate = props => {
   const { frontmatter, body } = props.data.mdx
-  const { title, date, image, caption } = frontmatter
+  const { title, date, image, caption, stack } = frontmatter
+  const stackIcons = stack.split(",") || []
   return (
     <div>
       <SEO
@@ -41,6 +45,18 @@ const PostTemplate = props => {
         <h1 className="h2">{title}</h1>
         <ul className="p-0 m-0 mb-2" style={{ listStyleType: "none" }}>
           <li>Fecha: {date}</li>
+          {stackIcons.length > 0 && <li>
+            {stackIcons.map(icon => {
+              return (
+                <span
+                  key={icon}
+                  className="badge rounded-pill bg-dark mt-1 me-1"
+                >
+                  <Icon name={icon} /> {icon}
+                </span>
+              )
+            })}
+          </li>}
         </ul>
         <GatsbyImage
           className="mb-2 img-fluid rounded"

@@ -1,5 +1,5 @@
 ---
-title: Mi sitio angelxehg.com
+title: Mi sitio/blog profesional
 date: 2021-05-17
 image: ../../images/portafolio.png
 caption: Mi blog y portafolio profesional
