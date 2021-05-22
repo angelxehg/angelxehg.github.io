@@ -16,13 +16,15 @@ export const PostCard = (props: {
   return (
     <article className="card bg-dark">
       <div className="row">
-        {!props.noImage && <div className="col-xl-3 col-md-4">
-          <GatsbyImage
-            className="card-img-top img-200"
-            image={image}
-            alt={caption}
-          />
-        </div>}
+        {!props.noImage && (
+          <div className="col-xl-3 col-md-4">
+            <GatsbyImage
+              className="card-img-top img-200"
+              image={image}
+              alt={caption}
+            />
+          </div>
+        )}
         <div className="col-md">
           <div className="card-body">
             <Link to={`/${slug}`}>

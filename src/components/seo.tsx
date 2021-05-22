@@ -18,8 +18,9 @@ const SEO = (props: SEOProps) => {
 
   const metaDescription = description || site.description
   const defaultTitle = site.title
-  const seoImage = `${process.env.GATSBY_DOMAIN}${image !== "" ? image.slice(1) : "images/OpenGraph.Opt.png"
-    }`
+  const seoImage = `${process.env.GATSBY_DOMAIN}${
+    image !== "" ? image.slice(1) : "images/OpenGraph.Opt.png"
+  }`
   const seoTitle = `${title} | ${defaultTitle}`
 
   return (

@@ -26,4 +26,4 @@ PWA de ejemplo de integración de Firebase con Django REST Framework
 - [Documentación React](https://es.reactjs.org/)
 - [Documentación Django](https://www.djangoproject.com/)
 - [Documentación Django REST Framework](https://www.django-rest-framework.org/)
-- [Documentación  drf-firebase-auth](https://pypi.org/project/drf-firebase-auth/)
+- [Documentación drf-firebase-auth](https://pypi.org/project/drf-firebase-auth/)

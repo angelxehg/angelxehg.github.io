@@ -50,7 +50,8 @@ export interface Project extends Post {
 }
 
 export const toProject = (item: RAWPost): Project => {
-  const { id, slug, date, title, resume, excerpt, image, caption } = toPost(item)
+  const { id, slug, date, title, resume, excerpt, image, caption } =
+    toPost(item)
   return {
     id,
     slug,

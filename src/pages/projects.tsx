@@ -18,13 +18,15 @@ export const ProjectCard = (props: {
   return (
     <article className="card bg-dark">
       <div className="row">
-        {!props.noImage && <div className="col-xl-3 col-md-4">
-          <GatsbyImage
-            className="card-img-top img-200"
-            image={image}
-            alt={caption}
-          />
-        </div>}
+        {!props.noImage && (
+          <div className="col-xl-3 col-md-4">
+            <GatsbyImage
+              className="card-img-top img-200"
+              image={image}
+              alt={caption}
+            />
+          </div>
+        )}
         <div className="col-md">
           <div className="card-body">
             <Link to={`/${slug}`}>
@@ -35,7 +37,10 @@ export const ProjectCard = (props: {
             <p className="card-text mt-1">
               {stackIcons.map(icon => {
                 return (
-                  <span key={icon} className="badge rounded-pill bg-dark mt-1 me-1">
+                  <span
+                    key={icon}
+                    className="badge rounded-pill bg-dark mt-1 me-1"
+                  >
                     <Icon name={icon} /> {icon}
                   </span>
                 )

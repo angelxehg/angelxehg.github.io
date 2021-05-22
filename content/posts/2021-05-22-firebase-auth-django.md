@@ -9,9 +9,9 @@ type: post
 
 [Firebase](https://firebase.google.com/docs) nos ofrece una gran variedad de servicios y funcionalidades para implementar en nuestras aplicaciones, las cuales abarcan desde el desarrollo hasta la implementación y el crecimiento de nuestras aplicaciones.
 
-Uno de los servicios más populares es [Firestore](https://firebase.google.com/docs/firestore), el cual nos ofrece una base de datos NoSQL rápida, confiable y asequible. Sin embargo, existen ocasiones en las que necesitaremos de utilizar una base de datos relacional, y esto puede ser por las características de la aplicación, o para integrar un *backend* o una *API* *legacy*. Para este propósito Firebase nos permite generar un *token* [JWT](https://jwt.io/), con el cual podemos autenticar a nuestros usuarios en una *API REST*.
+Uno de los servicios más populares es [Firestore](https://firebase.google.com/docs/firestore), el cual nos ofrece una base de datos NoSQL rápida, confiable y asequible. Sin embargo, existen ocasiones en las que necesitaremos de utilizar una base de datos relacional, y esto puede ser por las características de la aplicación, o para integrar un _backend_ o una _API_ _legacy_. Para este propósito Firebase nos permite generar un _token_ [JWT](https://jwt.io/), con el cual podemos autenticar a nuestros usuarios en una _API REST_.
 
-A continuación explicaré como utilizar *Firebase Auth* para autenticar en una *API* creada con *Django REST Framework*, y así utilizar esta *API* en una Aplicación Web Progresiva.
+A continuación explicaré como utilizar _Firebase Auth_ para autenticar en una _API_ creada con _Django REST Framework_, y así utilizar esta _API_ en una Aplicación Web Progresiva.
 
 - [Demostración PWA](https://djangofire.netlify.app)
 - [Código fuente PWA](https://github.com/angelxehg/djangofire-pwa)
@@ -19,15 +19,15 @@ A continuación explicaré como utilizar *Firebase Auth* para autenticar en una 
 
 ## Crear PWA y configurar Firebase
 
-El primer paso es crear una Aplicación Web Progresiva con *React*:
+El primer paso es crear una Aplicación Web Progresiva con _React_:
 
 - `npx create-react-app [NOMBRE_PROYECTO] --template cra-template-pwa-typescript`
 
-Para dar un mejor diseño a la aplicación podemos utilizar una gran variedad de librerías de UI. En mi caso yo utilicé las librerías *Bootstrap* y *React Bootstrap*:
+Para dar un mejor diseño a la aplicación podemos utilizar una gran variedad de librerías de UI. En mi caso yo utilicé las librerías _Bootstrap_ y _React Bootstrap_:
 
 - `npm i bootstrap react-bootstrap@next`
 
-Para importar los estilos de *Bootstrap* debemos modificar el archivo `index.tsx`, y añadir la siguiente linea:
+Para importar los estilos de _Bootstrap_ debemos modificar el archivo `index.tsx`, y añadir la siguiente linea:
 
 - `import '../node_modules/bootstrap/dist/css/bootstrap.min.css';`
 
@@ -59,10 +59,10 @@ const firebaseConfig = {
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGE_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
-};
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+}
 
-export default firebaseConfig;
+export default firebaseConfig
 ```
 
 Para configurar Firebase utilicé la librería [Reactfire](https://github.com/FirebaseExtended/reactfire), la cual instalé con el comando `npm install --save reactfire firebase`. Es necesario pasar la configuración al componente `FirebaseAppProvider`, en el archivo `index.tsx`:
@@ -74,26 +74,24 @@ ReactDOM.render(
       <App />
     </React.StrictMode>
   </FirebaseAppProvider>,
-  document.getElementById('root')
-);
+  document.getElementById("root")
+)
 ```
 
 Para habilitar el Inicio de sesión con Google es necesario utilizar la función `signInWithPopup`, y pasar `GoogleAuthProvider` como argumento:
 
 ```tsx
-import firebase from "firebase/app";
+import firebase from "firebase/app"
 
-const googleProvider = new firebase.auth.GoogleAuthProvider();
+const googleProvider = new firebase.auth.GoogleAuthProvider()
 
 export const loginWithGoogle = async () => {
-  return await firebase.auth().signInWithPopup(googleProvider);
+  return await firebase.auth().signInWithPopup(googleProvider)
 }
 
 const LoginPage = () => (
   <main className="mt-3">
-    <Button onClick={loginWithGoogle}>
-      Iniciar sesión con Google
-    </Button>
+    <Button onClick={loginWithGoogle}>Iniciar sesión con Google</Button>
   </main>
 )
 ```
@@ -266,7 +264,7 @@ djangorestframework==3.12.4
 gunicorn==20.1.0
 ```
 
-Para desplegar este proyecto en Heroku es necesario inicializar un repositorio con [Git](https://git-scm.com/) y haber hecho *Commit* a todos los cambios anteriores. Despues podremos ejecutar los siguientes comandos:
+Para desplegar este proyecto en Heroku es necesario inicializar un repositorio con [Git](https://git-scm.com/) y haber hecho _Commit_ a todos los cambios anteriores. Despues podremos ejecutar los siguientes comandos:
 
 ```bash
 heroku create [NOMBRE PROYECTO]
@@ -346,7 +344,7 @@ gunicorn==20.1.0
 
 Es necesario obtener el archivo .json de cuenta de servicio en Configuración > Cuentas de servicio de la consola de Firebase. Se debe resguardar este archivo, ya que no se puede recuperar. **No** se debe incluir en el repositorio de Git. Estos valores se obtendrán por medio de variables de entorno.
 
-Para desplegar estos cambios en Heroku es necesario hacer *Commit* a todos los cambios anteriores. Despues podremos ejecutar los siguientes comandos:
+Para desplegar estos cambios en Heroku es necesario hacer _Commit_ a todos los cambios anteriores. Despues podremos ejecutar los siguientes comandos:
 
 ```bash
 heroku config:set FIREBASE_PROJECT_ID="[VALOR]"
@@ -361,20 +359,20 @@ git push heroku main # O master, dependiendo del nombre que utilices para tu ram
 Finalmente para obtener el token JWT de Firebase, este se puede obtener con la función `getIdToken()`, la cual viene en cualquier instancia de `firebase.auth.User`. Este token debe ser incluido en los encabezados de cada solicitud HTTP. Utilicé una funcion para poder generar este header:
 
 ```tsx
-import firebase from "firebase/app";
+import firebase from "firebase/app"
 
 export const getHeaders = async (): Promise<Headers> => {
-  const currentUser = firebase.auth().currentUser;
+  const currentUser = firebase.auth().currentUser
   if (!currentUser) {
-    throw new Error('No ha iniciado sesión');
+    throw new Error("No ha iniciado sesión")
   }
-  const token = await currentUser.getIdToken();
+  const token = await currentUser.getIdToken()
   const autorization = `Bearer ${token}`
   const headers = new Headers({
-    'Authorization': autorization,
-    'Content-Type': "application/json",
-  });
-  return headers;
+    Authorization: autorization,
+    "Content-Type": "application/json",
+  })
+  return headers
 }
 ```
 
@@ -382,26 +380,26 @@ Para listar todos los proyectos, podemos utilizar `fetch()`, como se muestra a c
 
 ```tsx
 export interface Project {
-  id: number;
-  title: string;
-  color: string;
+  id: number
+  title: string
+  color: string
 }
 
 export const getProjects = async (): Promise<Project[]> => {
-  const headers = await getHeaders();
-  const url = `${apiURL}projects`;
+  const headers = await getHeaders()
+  const url = `${apiURL}projects`
   const res = await fetch(url, {
-    method: 'GET',
+    method: "GET",
     headers: headers,
-    redirect: 'follow'
-  });
+    redirect: "follow",
+  })
   if (res.status !== 200) {
-    console.error(res);
-    throw new Error('Error al cargar Proyectos');
+    console.error(res)
+    throw new Error("Error al cargar Proyectos")
   }
-  const body: Project[] = await res.json();
-  localStorage.setItem('ALL_PROJECTS', JSON.stringify(body));
-  return body;
+  const body: Project[] = await res.json()
+  localStorage.setItem("ALL_PROJECTS", JSON.stringify(body))
+  return body
 }
 ```
 
@@ -421,4 +419,4 @@ Esta solución no esta restringida a un solo framework o lenguaje de programaci�
 - [Documentación React](https://es.reactjs.org/)
 - [Documentación Django](https://www.djangoproject.com/)
 - [Documentación Django REST Framework](https://www.django-rest-framework.org/)
-- [Documentación  drf-firebase-auth](https://pypi.org/project/drf-firebase-auth/)
+- [Documentación drf-firebase-auth](https://pypi.org/project/drf-firebase-auth/)
