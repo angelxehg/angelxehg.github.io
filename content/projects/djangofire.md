@@ -1,6 +1,6 @@
 ---
 title: Djangofire PWA
-date: 2021-05-21
+date: 2021-05-22
 image: ../../images/djangofire.png
 caption: PWA de ejemplo de integración de Firebase con Django REST Framework
 stack: React,TypeScript,Bootstrap,Firebase,Django,Netlify

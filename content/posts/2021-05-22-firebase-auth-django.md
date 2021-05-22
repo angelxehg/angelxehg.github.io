@@ -1,6 +1,6 @@
 ---
 title: Usando Firebase para autenticar en Django REST Framework
-date: 2021-05-21
+date: 2021-05-22
 image: ../../images/djangofire.png
 caption: Usando Firebase para autenticar en Django REST Framework
 type: post
