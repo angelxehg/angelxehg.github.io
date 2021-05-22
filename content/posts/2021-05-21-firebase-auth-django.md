@@ -16,7 +16,7 @@ A continuación explicaré como utilicé Firebase Auth para autenticar en una AP
 - [Código fuente PWA](https://github.com/angelxehg/djangofire-pwa)
 - [Código fuente API](https://github.com/angelxehg/djangofire-api)
 
-## Configurar Firebase en una PWA
+## Crear PWA y configurar Firebase
 
 El primer paso fue crear una Aplicación Web Progresiva con React:
 
@@ -97,29 +97,7 @@ const LoginPage = () => (
 )
 ```
 
-Cuando requiera un token JWT de Firebase, este se puede obtener con la función `getIdToken()`, la cual viene en cualquier instancia de `firebase.auth.User`. Este token debe ser incluido en los encabezados de cada solicitud HTTP. Utilicé una funcion para poder generar este header:
-
-```tsx
-import firebase from "firebase/app";
-
-export const getHeaders = async (): Promise<Headers> => {
-  const currentUser = firebase.auth().currentUser;
-  if (!currentUser) {
-    throw new Error('No ha iniciado sesión');
-  }
-  const token = await currentUser.getIdToken();
-  const autorization = `Bearer ${token}`
-  const headers = new Headers({
-    'Authorization': autorization,
-    'Content-Type': "application/json",
-  });
-  return headers;
-}
-```
-
-Puedes ver los pasos que seguí de manera más detallada en [GitHub](https://github.com/angelxehg/djangofire-pwa/commits/main).
-
-## Validar tokens en Django REST Framework
+## Crear una API REST con Django REST Framework
 
 Para crear el API REST con Django ejecuté el comando `python3 -m django startproject djangofire`. Además generé un proyecto con el comando `./manage.py startapp projectmin`. Los modelos que generé son los siguientes:
 
@@ -322,12 +300,14 @@ djangorestframework==3.12.4
 gunicorn==20.1.0
 ```
 
-- `projectmin/urls.py`
+Para desplegar este proyecto en Heroku es necesario inicializar un repositorio con [Git](https://git-scm.com/) y haber hecho *Commit* a todos los cambios anteriores. Despues podremos ejecutar los siguientes comandos:
 
-```python
+```bash
+heroku create [NOMBRE PROYECTO]
+heroku config:set SECRET_KEY="[SECRET_KEY]"
+heroku config:set HOST="[Heroku URL]" # La url que resultó en heroku create
+git push heroku main # O master, dependiendo del nombre que utilices para tu rama principal
 ```
-
-Puedes ver los pasos que seguí de manera más detallada en [GitHub](https://github.com/angelxehg/djangofire-api/commits/main).
 
 ## Validar JWT de Firebase
 
@@ -389,6 +369,67 @@ drf-firebase-auth==1.0.0
 django-cors-headers==3.6.0
 djangorestframework==3.12.4
 gunicorn==20.1.0
+```
+
+Es necesario obtener el archivo .json de cuenta de servicio en Configuración > Cuentas de servicio de la consola de Firebase. Se debe resguardar este archivo, ya que no se puede recuperar. **No** se debe incluir en el repositorio de Git. Estos valores se obtendrán por medio de variables de entorno.
+
+Para desplegar estos cambios en Heroku es necesario hacer *Commit* a todos los cambios anteriores. Despues podremos ejecutar los siguientes comandos:
+
+```bash
+heroku config:set FIREBASE_PROJECT_ID="[VALOR]"
+heroku config:set FIREBASE_PRIVATE_KEY_ID="[VALOR]"
+heroku config:set FIREBASE_PRIVATE_KEY="[VALOR]"
+heroku config:set FIREBASE_CLIENT_EMAIL="[VALOR]"
+heroku config:set FIREBASE_CLIENT_ID="[VALOR]"
+heroku config:set FIREBASE_CLIENT_X509_URL="[VALOR]"
+git push heroku main # O master, dependiendo del nombre que utilices para tu rama principal
+```
+
+Finalmente para obtener el token JWT de Firebase, este se puede obtener con la función `getIdToken()`, la cual viene en cualquier instancia de `firebase.auth.User`. Este token debe ser incluido en los encabezados de cada solicitud HTTP. Utilicé una funcion para poder generar este header:
+
+```tsx
+import firebase from "firebase/app";
+
+export const getHeaders = async (): Promise<Headers> => {
+  const currentUser = firebase.auth().currentUser;
+  if (!currentUser) {
+    throw new Error('No ha iniciado sesión');
+  }
+  const token = await currentUser.getIdToken();
+  const autorization = `Bearer ${token}`
+  const headers = new Headers({
+    'Authorization': autorization,
+    'Content-Type': "application/json",
+  });
+  return headers;
+}
+```
+
+Para listar todos los proyectos, podemos utilizar `fetch()`, como se muestra a continuación:
+
+```tsx
+export interface Project {
+  id: number;
+  title: string;
+  color: string;
+}
+
+export const getProjects = async (): Promise<Project[]> => {
+  const headers = await getHeaders();
+  const url = `${apiURL}projects`;
+  const res = await fetch(url, {
+    method: 'GET',
+    headers: headers,
+    redirect: 'follow'
+  });
+  if (res.status !== 200) {
+    console.error(res);
+    throw new Error('Error al cargar Proyectos');
+  }
+  const body: Project[] = await res.json();
+  localStorage.setItem('ALL_PROJECTS', JSON.stringify(body));
+  return body;
+}
 ```
 
 ## Conclusión
