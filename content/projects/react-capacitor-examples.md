@@ -1,5 +1,6 @@
 ---
 title: React Capacitor
+resume: Ejemplo de aplicación hibrida sin Ionic
 date: 2021-03-30
 image: ../../images/react-capacitor-examples.png
 caption: Ejemplo de aplicación hibrida sin Ionic

@@ -12,6 +12,7 @@ export const useProjects = (): Project[] => {
           excerpt(pruneLength: 35)
           frontmatter {
             title
+            resume
             date(formatString: "YYYY-MM-DD")
             image {
               childImageSharp {

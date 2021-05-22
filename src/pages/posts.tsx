@@ -12,7 +12,7 @@ export const PostCard = (props: {
   item: Post
   noImage?: boolean
 }): JSX.Element => {
-  const { slug, title, excerpt, date, image, caption } = props.item
+  const { slug, title, resume, date, image, caption } = props.item
   return (
     <article className="card bg-dark">
       {!props.noImage && (
@@ -27,7 +27,7 @@ export const PostCard = (props: {
           <h3 className="h5 card-title">{title}</h3>
         </Link>
         <h4 className="h6 card-subtitle mb-2">{date}</h4>
-        <p className="card-text m-0">{excerpt}</p>
+        <p className="card-text m-0">{resume}</p>
       </div>
     </article>
   )

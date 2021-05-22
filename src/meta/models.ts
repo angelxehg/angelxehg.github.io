@@ -13,6 +13,7 @@ export interface RAWPost {
   excerpt: string
   frontmatter: {
     title: string
+    resume: string
     date: string
     image: { childImageSharp: { gatsbyImageData: IGatsbyImageData } }
     caption: string
@@ -25,6 +26,7 @@ export interface Post {
   slug: string
   date: string
   title: string
+  resume: string
   excerpt: string
   image: IGatsbyImageData
   caption: string
@@ -36,6 +38,7 @@ export const toPost = (item: RAWPost): Post => {
     slug: item.slug,
     date: item.frontmatter.date,
     title: item.frontmatter.title,
+    resume: item.frontmatter.resume,
     excerpt: item.excerpt,
     image: item.frontmatter.image.childImageSharp.gatsbyImageData,
     caption: item.frontmatter.caption,
@@ -47,12 +50,13 @@ export interface Project extends Post {
 }
 
 export const toProject = (item: RAWPost): Project => {
-  const { id, slug, date, title, excerpt, image, caption } = toPost(item)
+  const { id, slug, date, title, resume, excerpt, image, caption } = toPost(item)
   return {
     id,
     slug,
     date,
     title,
+    resume,
     excerpt,
     image,
     caption,

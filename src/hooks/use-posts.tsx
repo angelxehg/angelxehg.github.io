@@ -12,6 +12,7 @@ export const usePosts = (): Post[] => {
           excerpt(pruneLength: 100)
           frontmatter {
             title
+            resume
             date(formatString: "YYYY-MM-DD")
             image {
               childImageSharp {

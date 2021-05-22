@@ -13,7 +13,7 @@ export const ProjectCard = (props: {
   item: Project
   noImage?: boolean
 }): JSX.Element => {
-  const { slug, title, excerpt, image, caption, stack } = props.item
+  const { slug, title, resume, date, image, caption, stack } = props.item
   const stackIcons = stack.split(",")
   return (
     <article className="card bg-dark">
@@ -28,7 +28,8 @@ export const ProjectCard = (props: {
         <Link to={`/${slug}`}>
           <h3 className="h5 card-title">{title}</h3>
         </Link>
-        <p className="card-text m-0">{excerpt}</p>
+        <h4 className="h6 card-subtitle mb-2">{date}</h4>
+        <p className="card-text m-0">{resume}</p>
         <p className="card-text">
           {stackIcons.map(icon => {
             return (
