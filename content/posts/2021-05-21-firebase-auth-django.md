@@ -8,9 +8,9 @@ type: post
 
 [Firebase](https://firebase.google.com/docs) nos ofrece una gran variedad de servicios y funcionalidades para implementar en nuestras aplicaciones, las cuales abarcan desde el desarrollo hasta la implementación y el crecimiento de nuestras aplicaciones.
 
-Uno de los servicios más populares es [Firestore](https://firebase.google.com/docs/firestore), el cual nos ofrece una base de datos NoSQL rápida, confiable y absequible. Sin embargo, existen ocasiones en las que necesitaremos de utilizar una base de datos relacional, y esto puede ser por las caracteristicas de la aplicación, o para integrar un backend o una API legacy. Para este propósito Firebase nos permite generar un token [JWT](https://jwt.io/), con el cual podemos autenticar a nuestros usuarios en una API REST.
+Uno de los servicios más populares es [Firestore](https://firebase.google.com/docs/firestore), el cual nos ofrece una base de datos NoSQL rápida, confiable y asequible. Sin embargo, existen ocasiones en las que necesitaremos de utilizar una base de datos relacional, y esto puede ser por las características de la aplicación, o para integrar un *backend* o una *API* *legacy*. Para este propósito Firebase nos permite generar un *token* [JWT](https://jwt.io/), con el cual podemos autenticar a nuestros usuarios en una *API REST*.
 
-A continuación explicaré como utilicé Firebase Auth para autenticar en una API creada con Django REST Framework, y así alimentar de datos una PWA creada con React.
+A continuación explicaré como utilizar *Firebase Auth* para autenticar en una *API* creada con *Django REST Framework*, y así utilizar esta *API* en una Aplicación Web Progresiva.
 
 - [Demostración PWA](https://djangofire.netlify.app)
 - [Código fuente PWA](https://github.com/angelxehg/djangofire-pwa)
@@ -18,19 +18,19 @@ A continuación explicaré como utilicé Firebase Auth para autenticar en una AP
 
 ## Crear PWA y configurar Firebase
 
-El primer paso fue crear una Aplicación Web Progresiva con React:
+El primer paso es crear una Aplicación Web Progresiva con *React*:
 
 - `npx create-react-app [NOMBRE_PROYECTO] --template cra-template-pwa-typescript`
 
-Para dar un mejor diseño a la aplicación podemos utilizar una gran variedad de librerías de UI. En mi caso yo utilicé las librerías Bootstrap y React Bootstrap:
+Para dar un mejor diseño a la aplicación podemos utilizar una gran variedad de librerías de UI. En mi caso yo utilicé las librerías *Bootstrap* y *React Bootstrap*:
 
 - `npm i bootstrap react-bootstrap@next`
 
-Para importar los estilos de Bootstrap debemos modificar el archivo `index.tsx`, y añadir la siguiente linea:
+Para importar los estilos de *Bootstrap* debemos modificar el archivo `index.tsx`, y añadir la siguiente linea:
 
 - `import '../node_modules/bootstrap/dist/css/bootstrap.min.css';`
 
-Posteriormente registré un nuevo proyecto en la [Consola de Firebase](https://console.firebase.google.com/):
+Posteriormente debemos registrar un nuevo proyecto en la [Consola de Firebase](https://console.firebase.google.com/):
 
 - Crear una [Aplicación Web](https://firebase.google.com/docs/web/setup#register-app)
 
@@ -38,7 +38,7 @@ Posteriormente registré un nuevo proyecto en la [Consola de Firebase](https://c
 
 - Configurar [dominios autorizados](https://support.google.com/firebase/answer/6400741)
 
-Tras obtener la configuración de la Aplicación Web, almacené estas variables en el archivo `.env.local`, para evitar publicar estos valores en el repositorio de Git. Consultar más sobre la carga de [variables de entorno en React](https://create-react-app.dev/docs/adding-custom-environment-variables/). Estas son las variables:
+Tras obtener la configuración de la Aplicación Web, almacenar estas variables en el archivo `.env.local`, para evitar publicar estos valores en el repositorio de Git. Consultar más sobre la carga de [variables de entorno en React](https://create-react-app.dev/docs/adding-custom-environment-variables/). Estas son las variables:
 
 ```env
 REACT_APP_FIREBASE_API_KEY=
@@ -49,7 +49,7 @@ REACT_APP_FIREBASE_MESSAGE_SENDER_ID=
 REACT_APP_FIREBASE_APP_ID=
 ```
 
-Para cargar estas variables creé el archivo `firebaseConfig.ts` con el siguiente contenido:
+Para cargar estas variables creamos el archivo `firebaseConfig.ts` con el siguiente contenido:
 
 ```typescript
 const firebaseConfig = {
@@ -103,7 +103,7 @@ Al final resultará una PWA como [esta](https://djangofire.netlify.app/):
 
 ## Crear una API REST con Django REST Framework
 
-Para crear el API REST con Django ejecuté el comando `python3 -m django startproject djangofire`. Además generé un proyecto con el comando `./manage.py startapp projectmin`. Los modelos que generé son los siguientes:
+Para crear el API REST con Django es necesario ejecutar los comandos `python3 -m django startproject djangofire` y `./manage.py startapp projectmin`. Para crear modelos y tablas hay que realizar estos cambios:
 
 - `projectmin/models.py`
 
@@ -130,44 +130,18 @@ class Project(models.Model):
         on_delete=models.CASCADE,
         related_name='projects'
     )
-
-
-class Task(models.Model):
-
-    STATUSES = (
-        ("BACKLOG", "Backlog"),
-        ("TODO", "To Do"),
-        ("INPROGRESS", "In Progress"),
-        ("REVIEW", "Review"),
-        ("CLOSED", "Closed"),
-    )
-
-    content = models.CharField(max_length=200)
-    status = models.CharField(
-        max_length=10, choices=STATUSES, default="BACKLOG")
-
-    project = models.ForeignKey(
-        Project,
-        on_delete=models.CASCADE,
-        related_name='tasks'
-    )
 ```
 
 - `projectmin/admin.py`
 
 ```python
 from django.contrib import admin
-from projectmin.models import Project, Task
+from projectmin.models import Project
 
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'color', 'owner')
-
-
-@admin.register(Task)
-class TaskAdmin(admin.ModelAdmin):
-    list_display = ('id', 'project', 'content', 'status')
 ```
 
 Para implementar las funcionalidades de una API REST instalé Django REST Framework con el comando `pip install djangorestframework`, y realicé los siguientes cambios:
@@ -177,7 +151,7 @@ Para implementar las funcionalidades de una API REST instalé Django REST Framew
 ```python
 from django.shortcuts import render
 from rest_framework import serializers
-from projectmin.models import Project, Task
+from projectmin.models import Project
 
 
 class ProjectSerializer(serializers.ModelSerializer):
@@ -189,13 +163,6 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = ('id', 'title', 'color', 'owner')
-
-
-class TaskSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Task
-        fields = ('id', 'project', 'content', 'status')
 ```
 
 - `projectmin/views.py`
@@ -203,8 +170,8 @@ class TaskSerializer(serializers.ModelSerializer):
 ```python
 from django.shortcuts import render
 from rest_framework import viewsets
-from projectmin.models import Project, Task
-from projectmin.serializers import ProjectSerializer, TaskSerializer
+from projectmin.models import Project
+from projectmin.serializers import ProjectSerializer
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
@@ -214,15 +181,16 @@ class ProjectViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         user = self.request.user
         return Project.objects.filter(owner=user)
+```
 
+- `projectmin/urls.py`
 
-class TaskViewSet(viewsets.ModelViewSet):
-    queryset = Task.objects.all()
-    serializer_class = TaskSerializer
+```python
+from rest_framework import routers
+from projectmin.views import ProjectViewSet
 
-    def get_queryset(self):
-        user = self.request.user
-        return Task.objects.filter(project__owner=user)
+projectmin_router = routers.DefaultRouter()
+projectmin_router.register(r'projects', ProjectViewSet)
 ```
 
 - `djangofire/urls.py`
@@ -239,18 +207,7 @@ urlpatterns = [
 ]
 ```
 
-- `projectmin/urls.py`
-
-```python
-from rest_framework import routers
-from projectmin.views import ProjectViewSet, TaskViewSet
-
-projectmin_router = routers.DefaultRouter()
-projectmin_router.register(r'projects', ProjectViewSet)
-projectmin_router.register(r'tasks', TaskViewSet)
-```
-
-Para asegurar que usuarios no autorizados hagan cambios realicé los siguientes cambios:
+Para asegurar que usuarios no autorizados hagan cambios hay que realizar los siguientes cambios:
 
 - `djangofire/settings.py`
 
@@ -266,7 +223,11 @@ REST_FRAMEWORK = {
 }
 ```
 
-Para que Django funcione en Heroku realicé los siguientes cambios:
+Finalmente generamos las tablas con el comando `./manage.py makemigrations`
+
+## Desplegar API REST en Heroku
+
+Para que Django funcione en Heroku hay que realizar los siguientes cambios:
 
 - `Procfile`
 
@@ -447,4 +408,8 @@ Implementé las operaciones GET, POST, PATCH y DELETE en el [demo](https://djang
 
 ## Conclusión
 
-Esta API REST incluso podría acceder a Firestore, administrar usuarios, entre otras funcionalidades ofrecidas por [Firebase Admin](https://firebase.google.com/docs/admin/setup). Esta solución no esta restringida a un solo framework o lenguaje de programación, ya que esta librería esta disponible para Node.js, Java, Python, Go y C#. Así, las posibilidades se vuelven infinitas.
+La flexibilidad que nos ofrece una herramienta como Firebase hace posible implementar múltiples funcionalidades a nuestra aplicación, utilizar varios patrones de diseño, y adaptarnos lo mejor posible a los requerimientos del software.
+
+En este Post se explora una de estas posibilidades, la de usar Firebase para autenticar en una API REST, la cual incluso podría acceder a Firestore, administrar usuarios, entre otras funcionalidades ofrecidas por [Firebase Admin](https://firebase.google.com/docs/admin/setup).
+
+Esta solución no esta restringida a un solo framework o lenguaje de programación, ya que esta librería esta disponible para Node.js, Java, Python, Go y C#. Así, las posibilidades se vuelven infinitas.
