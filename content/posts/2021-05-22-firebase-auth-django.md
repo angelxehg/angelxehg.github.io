@@ -413,3 +413,11 @@ La flexibilidad que nos ofrece una herramienta como Firebase hace posible implem
 En este Post se explora una de estas posibilidades, la de usar Firebase para autenticar en una API REST, la cual incluso podría acceder a Firestore, administrar usuarios, entre otras funcionalidades ofrecidas por [Firebase Admin](https://firebase.google.com/docs/admin/setup).
 
 Esta solución no esta restringida a un solo framework o lenguaje de programación, ya que esta librería esta disponible para Node.js, Java, Python, Go y C#. Así, las posibilidades se vuelven infinitas.
+
+## Recursos y referencias
+
+- [Documentación Firebase](https://firebase.google.com/docs)
+- [Documentación React](https://es.reactjs.org/)
+- [Documentación Django](https://www.djangoproject.com/)
+- [Documentación Django REST Framework](https://www.django-rest-framework.org/)
+- [Documentación  drf-firebase-auth](https://pypi.org/project/drf-firebase-auth/)

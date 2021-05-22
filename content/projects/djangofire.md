@@ -18,3 +18,11 @@ PWA de ejemplo de integración de Firebase con Django REST Framework
 - PWA hecha con React y soporte Offline
 - Inicio de sesión con Google
 - Validación de token JWT de Firebase
+
+## Recursos y referencias
+
+- [Documentación Firebase](https://firebase.google.com/docs)
+- [Documentación React](https://es.reactjs.org/)
+- [Documentación Django](https://www.djangoproject.com/)
+- [Documentación Django REST Framework](https://www.django-rest-framework.org/)
+- [Documentación  drf-firebase-auth](https://pypi.org/project/drf-firebase-auth/)
