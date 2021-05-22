@@ -6,7 +6,7 @@ const DefaultFooter = (): JSX.Element => (
   <footer className="navbar navbar-dark bg-dark">
     <div className="container-xl ps-md-4 pe-md-4">
       <span className="navbar-text">
-        <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión v1.7.0. Las
+        <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión v1.7.1. Las
         marcas y logos pertenecen a sus respectivos dueños. Iconos obtenidos
         desde{" "}
         <LinkExternal
