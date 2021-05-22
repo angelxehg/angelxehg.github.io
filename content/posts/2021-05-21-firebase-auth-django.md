@@ -97,7 +97,299 @@ const LoginPage = () => (
 )
 ```
 
+Cuando requiera un token JWT de Firebase, este se puede obtener con la función `getIdToken()`, la cual viene en cualquier instancia de `firebase.auth.User`. Este token debe ser incluido en los encabezados de cada solicitud HTTP. Utilicé una funcion para poder generar este header:
+
+```tsx
+import firebase from "firebase/app";
+
+export const getHeaders = async (): Promise<Headers> => {
+  const currentUser = firebase.auth().currentUser;
+  if (!currentUser) {
+    throw new Error('No ha iniciado sesión');
+  }
+  const token = await currentUser.getIdToken();
+  const autorization = `Bearer ${token}`
+  const headers = new Headers({
+    'Authorization': autorization,
+    'Content-Type': "application/json",
+  });
+  return headers;
+}
+```
+
 Puedes ver los pasos que seguí de manera más detallada en [GitHub](https://github.com/angelxehg/djangofire-pwa/commits/main).
+
+## Validar tokens en Django REST Framework
+
+Para crear el API REST con Django ejecuté el comando `python3 -m django startproject djangofire`. Además generé un proyecto con el comando `./manage.py startapp projectmin`. Los modelos que generé son los siguientes:
+
+- `projectmin/models.py`
+
+```python
+from django.db import models
+from django.conf import settings
+
+
+class Project(models.Model):
+
+    COLORS = (
+        ("primary", "primary"),
+        ("secondary", "secondary"),
+        ("success", "success"),
+        ("danger", "danger"),
+        ("warning", "warning"),
+        ("info", "info"),
+    )
+
+    title = models.CharField(max_length=100)
+    color = models.CharField(max_length=10, choices=COLORS, default="primary")
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='projects'
+    )
+
+
+class Task(models.Model):
+
+    STATUSES = (
+        ("BACKLOG", "Backlog"),
+        ("TODO", "To Do"),
+        ("INPROGRESS", "In Progress"),
+        ("REVIEW", "Review"),
+        ("CLOSED", "Closed"),
+    )
+
+    content = models.CharField(max_length=200)
+    status = models.CharField(
+        max_length=10, choices=STATUSES, default="BACKLOG")
+
+    project = models.ForeignKey(
+        Project,
+        on_delete=models.CASCADE,
+        related_name='tasks'
+    )
+```
+
+- `projectmin/admin.py`
+
+```python
+from django.contrib import admin
+from projectmin.models import Project, Task
+
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'color', 'owner')
+
+
+@admin.register(Task)
+class TaskAdmin(admin.ModelAdmin):
+    list_display = ('id', 'project', 'content', 'status')
+```
+
+Para implementar las funcionalidades de una API REST instalé Django REST Framework con el comando `pip install djangorestframework`, y realicé los siguientes cambios:
+
+- `projectmin/serializers.py`
+
+```python
+from django.shortcuts import render
+from rest_framework import serializers
+from projectmin.models import Project, Task
+
+
+class ProjectSerializer(serializers.ModelSerializer):
+
+    owner = serializers.HiddenField(
+        default=serializers.CurrentUserDefault()
+    )
+
+    class Meta:
+        model = Project
+        fields = ('id', 'title', 'color', 'owner')
+
+
+class TaskSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Task
+        fields = ('id', 'project', 'content', 'status')
+```
+
+- `projectmin/views.py`
+
+```python
+from django.shortcuts import render
+from rest_framework import viewsets
+from projectmin.models import Project, Task
+from projectmin.serializers import ProjectSerializer, TaskSerializer
+
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+
+    def get_queryset(self):
+        user = self.request.user
+        return Project.objects.filter(owner=user)
+
+
+class TaskViewSet(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+
+    def get_queryset(self):
+        user = self.request.user
+        return Task.objects.filter(project__owner=user)
+```
+
+- `djangofire/urls.py`
+
+```python
+from django.contrib import admin
+from django.urls import path
+from django.urls.conf import include
+from projectmin.urls import projectmin_router
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/v1/', include(projectmin_router.urls)),
+]
+```
+
+- `projectmin/urls.py`
+
+```python
+from rest_framework import routers
+from projectmin.views import ProjectViewSet, TaskViewSet
+
+projectmin_router = routers.DefaultRouter()
+projectmin_router.register(r'projects', ProjectViewSet)
+projectmin_router.register(r'tasks', TaskViewSet)
+```
+
+Para asegurar que usuarios no autorizados hagan cambios realicé los siguientes cambios:
+
+- `djangofire/settings.py`
+
+```python
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
+```
+
+Para que Django funcione en Heroku realicé los siguientes cambios:
+
+- `Procfile`
+
+```Procfile
+release: python manage.py migrate
+web: gunicorn djangofire.wsgi
+```
+
+- `djangofire/production.py`
+
+```python
+from .settings import *
+
+import os
+import django_heroku
+
+# Usar SECRET_KEY desde Heroku enviroment values
+SECRET_KEY = os.environ['SECRET_KEY']
+# Desactivar modo debug
+DEBUG = os.getenv('DJANGO_DEBUG', 'FALSE') == 'TRUE'
+# Permitir Host de Heroku enviroment values
+ALLOWED_HOSTS = [os.environ['HOST']]
+
+# Activar paquete Django-Heroku.
+django_heroku.settings(locals())
+```
+
+- `requirements.txt`
+
+```txt
+Django==3.2.0
+django-heroku==0.3.1
+django-cors-headers==3.6.0
+djangorestframework==3.12.4
+gunicorn==20.1.0
+```
+
+- `projectmin/urls.py`
+
+```python
+```
+
+Puedes ver los pasos que seguí de manera más detallada en [GitHub](https://github.com/angelxehg/djangofire-api/commits/main).
+
+## Validar JWT de Firebase
+
+Para validar los tokens JWT de Firebase podemos usar la libreria `drf_firebase_auth`, con la siguiente configuración
+
+- `djangofire/production.py`
+
+```python
+INSTALLED_APPS = INSTALLED_APPS + [
+    'drf_firebase_auth'
+]
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'drf_firebase_auth.authentication.FirebaseAuthentication',
+    ),
+}
+# Configurar Firebase JWT
+DRF_FIREBASE_AUTH = {
+    # allow anonymous requests without Authorization header set
+    'ALLOW_ANONYMOUS_REQUESTS': os.getenv('ALLOW_ANONYMOUS_REQUESTS', False),
+    # allow creation of new local user in db
+    'FIREBASE_CREATE_LOCAL_USER': os.getenv('FIREBASE_CREATE_LOCAL_USER', True),
+    # attempt to split firebase user.display_name and set local user
+    # first_name and last_name
+    'FIREBASE_ATTEMPT_CREATE_WITH_DISPLAY_NAME': os.getenv('FIREBASE_ATTEMPT_CREATE_WITH_DISPLAY_NAME', True),
+    # commonly JWT or Bearer (e.g. JWT <token>)
+    'FIREBASE_AUTH_HEADER_PREFIX': os.getenv('FIREBASE_AUTH_HEADER_PREFIX', 'Bearer'),
+    # verify that JWT has not been revoked
+    'FIREBASE_CHECK_JWT_REVOKED': os.getenv('FIREBASE_CHECK_JWT_REVOKED', True),
+    # require that firebase user.email_verified is True
+    'FIREBASE_AUTH_EMAIL_VERIFICATION': os.getenv('FIREBASE_AUTH_EMAIL_VERIFICATION', False),
+    # secrets of firebase
+    'FIREBASE_SERVICE_ACCOUNT_KEY': {
+        "type": "service_account",
+        "project_id": os.getenv('FIREBASE_PROJECT_ID', ''),
+        "private_key_id": os.getenv('FIREBASE_PRIVATE_KEY_ID', ''),
+        "private_key": os.getenv('FIREBASE_PRIVATE_KEY', '').replace('\\n', '\n'),
+        "client_email": os.getenv('FIREBASE_CLIENT_EMAIL', ''),
+        "client_id": os.getenv('FIREBASE_CLIENT_ID', ''),
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": os.getenv('FIREBASE_CLIENT_X509_URL', ''),
+    }
+}
+```
+
+Tambien es necesario incluir esta librería en el archivo de requerimientos:
+
+```txt
+Django==3.2.0
+django-heroku==0.3.1
+drf-firebase-auth==1.0.0
+django-cors-headers==3.6.0
+djangorestframework==3.12.4
+gunicorn==20.1.0
+```
 
 ## Conclusión
 
