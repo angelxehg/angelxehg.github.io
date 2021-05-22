@@ -88,7 +88,7 @@ const ProjectsSection = () => {
       </h2>
       <div className="row">
         {projects.map(item => (
-          <div key={item.id} className="col-xl-6 p-md-1 pb-2">
+          <div key={item.id} className="col-12 p-md-1 pb-2">
             <ProjectCard item={item} noImage />
           </div>
         ))}

@@ -15,19 +15,23 @@ export const PostCard = (props: {
   const { slug, title, resume, date, image, caption } = props.item
   return (
     <article className="card bg-dark">
-      {!props.noImage && (
-        <GatsbyImage
-          className="card-img-top img-200"
-          image={image}
-          alt={caption}
-        />
-      )}
-      <div className="card-body">
-        <Link to={`/${slug}`}>
-          <h3 className="h5 card-title">{title}</h3>
-        </Link>
-        <h4 className="h6 card-subtitle mb-2">{date}</h4>
-        <p className="card-text m-0">{resume}</p>
+      <div className="row">
+        {!props.noImage && <div className="col-xl-3 col-md-4">
+          <GatsbyImage
+            className="card-img-top img-200"
+            image={image}
+            alt={caption}
+          />
+        </div>}
+        <div className="col-md">
+          <div className="card-body">
+            <Link to={`/${slug}`}>
+              <h3 className="h5 card-title">{title}</h3>
+            </Link>
+            <h4 className="h6 card-subtitle mb-2">{date}</h4>
+            <p className="card-text m-0">{resume}</p>
+          </div>
+        </div>
       </div>
     </article>
   )
@@ -39,7 +43,7 @@ const PostsPage = (): JSX.Element => {
     <div>
       <SEO title="Blog" lang="es" />
       <DefaultNavbar />
-      <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
+      <div className="container-xl pt-3 pb-3">
         <h1 className="h3">Mi blog</h1>
         <p>
           Aqui escribo de vez en cuando, acerca de desarrollo web y otros temas.
@@ -47,7 +51,7 @@ const PostsPage = (): JSX.Element => {
         <h2 className="h4">Últimas entradas</h2>
         <div className="row">
           {posts.map(item => (
-            <div key={item.id} className="col-xl-4 col-md-6 p-md-1 pb-2">
+            <div key={item.id} className="col-12 p-md-1 pb-2">
               <PostCard item={item} />
             </div>
           ))}
