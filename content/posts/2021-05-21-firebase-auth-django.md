@@ -97,6 +97,10 @@ const LoginPage = () => (
 )
 ```
 
+Al final resultará una PWA como [esta](https://djangofire.netlify.app/):
+
+![Vista previa de DjangofirePWA](../../images/djangofire-1.png)
+
 ## Crear una API REST con Django REST Framework
 
 Para crear el API REST con Django ejecuté el comando `python3 -m django startproject djangofire`. Además generé un proyecto con el comando `./manage.py startapp projectmin`. Los modelos que generé son los siguientes:
@@ -307,7 +311,14 @@ heroku create [NOMBRE PROYECTO]
 heroku config:set SECRET_KEY="[SECRET_KEY]"
 heroku config:set HOST="[Heroku URL]" # La url que resultó en heroku create
 git push heroku main # O master, dependiendo del nombre que utilices para tu rama principal
+heroku run python manage.py createsuperuser # Crear usuario administrador
 ```
+
+Al final podremos visitar la url de nuestro proyecto en Heroku, pero obtendremos un error ya que la ruta `/` no fue implementada, pero podemos navegar a la ruta `/admin` e iniciar sesión en Django Admin. Ya iniciada la sesión podremos ir a la ruta `/api/v1/projects`:
+
+![Interfaz gráfica de Django REST Framework](../../images/djangofire-2.png)
+
+Esta interfaz viene incluida con Django REST Framework y para desactivarla debemos incluir el encabezado `'Content-Type': "application/json",` en las solicitudes HTTP
 
 ## Validar JWT de Firebase
 
@@ -431,6 +442,8 @@ export const getProjects = async (): Promise<Project[]> => {
   return body;
 }
 ```
+
+Implementé las operaciones GET, POST, PATCH y DELETE en el [demo](https://djangofire.netlify.app/), y puedes consultar el código fuente de la aplicación en [GitHub](https://github.com/angelxehg/djangofire-pwa).
 
 ## Conclusión
 
