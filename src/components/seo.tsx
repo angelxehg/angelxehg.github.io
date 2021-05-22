@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
@@ -17,8 +18,9 @@ const SEO = (props: SEOProps) => {
 
   const metaDescription = description || site.description
   const defaultTitle = site.title
-  const seoImage = `${process.env.GATSBY_DOMAIN}${image !== "" ? image.slice(1) : "images/OpenGraph.Opt.png"
-    }`
+  const seoImage = `${process.env.GATSBY_DOMAIN}${
+    image !== "" ? image.slice(1) : "images/OpenGraph.Opt.png"
+  }`
   const seoTitle = `${title} | ${defaultTitle}`
 
   return (
@@ -74,6 +76,21 @@ const SEO = (props: SEOProps) => {
       <body className="text-light"></body>
     </Helmet>
   )
+}
+
+SEO.defaultProps = {
+  lang: `en`,
+  meta: [],
+  description: ``,
+  image: "",
+}
+
+SEO.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string,
 }
 
 export default SEO
