@@ -23,7 +23,7 @@ En el caso de [StudyLater](../projects/studylater) lo hice sin Ionic, y usando u
 - Instalar Bootstrap (opcional): `npm i bootstrap react-bootstrap@next` e importar en el archivo `index.tsx`:
 
 ```ts
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 ```
 
 - Instalar Capacitor: `npm install @capacitor/core @capacitor/cli`
@@ -74,24 +74,25 @@ Para implementar la descarga de archivos utilizaremos los plugins [File](https:/
 Ahora puedes implementar las descargas de la siguiente manera:
 
 ```ts
-import { Capacitor } from '@capacitor/core';
-import { HTTP } from '@ionic-native/http';
-import { File } from '@ionic-native/file';
+import { Capacitor } from "@capacitor/core"
+import { HTTP } from "@ionic-native/http"
+import { File } from "@ionic-native/file"
 
 export const descargar = async () => {
   // URL de ejemplo
-  const dummyPDF = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+  const dummyPDF =
+    "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
   // Determinar que plataforma se esta usando
-  const platform = Capacitor.getPlatform();
-  if (platform === 'web') {
-    throw new Error('Operación no permitida en versión Web');
+  const platform = Capacitor.getPlatform()
+  if (platform === "web") {
+    throw new Error("Operación no permitida en versión Web")
   }
   // Determinar ruta donde se guardará el archivo
-  const filePath = `${File.dataDirectory}archivo.pdf`;
+  const filePath = `${File.dataDirectory}archivo.pdf`
   // Descargar archivo desde URL
-  await HTTP.downloadFile(dummyPDF, {}, {}, filePath);
+  await HTTP.downloadFile(dummyPDF, {}, {}, filePath)
   // Guardar ruta donde se guardó el archivo en LocalStorage
-  localStorage.setItem('DUMMY', filePath);
+  localStorage.setItem("DUMMY", filePath)
 }
 ```
 
@@ -118,28 +119,28 @@ Para abrir los archivos utlizaremos el plugin [File Opener 2](https://github.com
 Ahora puedes implementar la apertura de archivos de la siguiente manera:
 
 ```ts
-import { Capacitor } from '@capacitor/core';
-import { FileOpener } from '@ionic-native/file-opener';
+import { Capacitor } from "@capacitor/core"
+import { FileOpener } from "@ionic-native/file-opener"
 
 export const abrir = async () => {
   // Cargar ruta del archivo que descargamos antes
-  const filePath = localStorage.getItem('DUMMY');
+  const filePath = localStorage.getItem("DUMMY")
   if (!filePath) {
-    throw new Error('No se ha descargado el archivo');
+    throw new Error("No se ha descargado el archivo")
   }
   // Determinar que plataforma se esta usando
-  const platform = Capacitor.getPlatform();
-  if (platform === 'web') {
-    throw new Error('Operación no permitida en versión Web');
+  const platform = Capacitor.getPlatform()
+  if (platform === "web") {
+    throw new Error("Operación no permitida en versión Web")
   }
   // Se debe especificar que tipo de archivo es
-  const mimeType = 'application/pdf';
+  const mimeType = "application/pdf"
   // Abrir archivo
-  await FileOpener.open(filePath, mimeType);
+  await FileOpener.open(filePath, mimeType)
 }
 ```
 
-Actualmente el plugin presenta un issue que [impide la compilación](https://github.com/pwlin/cordova-plugin-file-opener2/issues/256#issuecomment-657574795). Para solucionarlo podemos usar *Jetifier*:
+Actualmente el plugin presenta un issue que [impide la compilación](https://github.com/pwlin/cordova-plugin-file-opener2/issues/256#issuecomment-657574795). Para solucionarlo podemos usar _Jetifier_:
 
 - Instalar Jetifier: `npm i jetifier`
 
