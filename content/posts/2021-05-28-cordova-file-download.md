@@ -34,7 +34,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 - Configurar Capacitor: `npx cap init`
 
-- Añadir plataformas: `npx cap add [android/ios]`
+- Añadir plataformas: `npx cap add [android/ios]`. Se crearán los directorios `android` y `ios` respectivamente
 
 - Copiar assets y actualizar plugins: `npx cap sync android`
 
@@ -49,3 +49,58 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
   - Para ver los dispositivos dispobibles usa el comando: `npx cap run [android/ios] --list`
 
 NOTA: Cada vez que actualices tu aplicación deberás ejecutar los pasos `npm run build` y `npx cap sync`. Consulta más sobre la [instalación de Capacitor](https://capacitorjs.com/docs/getting-started) y el [comando cap run](https://capacitorjs.com/docs/cli/run#capacitor-cli-cap-run)
+
+## Implementando descarga de archivos
+
+Para implementar la descarga de archivos utilizaremos los plugins [File](https://cordova.apache.org/docs/en/10.x/reference/cordova-plugin-file/) y [HTTP Nativo](https://github.com/silkimen/cordova-plugin-advanced-http). Si bien estos plugins se pueden utilizar sin Capacitor, en una aplicación Cordova, Capacitor facilita la instalación de estos, ya que los **trata como dependencias NPM** y no es necesario utilizar comandos como `cordova plugin ...` y otros.
+
+- Instalar Ionic Native Core: `npm install @ionic-native/core`
+
+- Instalar plugin File: `npm install cordova-plugin-file ; npm install @ionic-native/file`. Con este plugin podremos determinar la ruta donde guardar los archivos, así como realizar otras operaciones como crear directorios, eliminar archivos, etc.
+
+- Instalar plugin HTTP: `npm install cordova-plugin-advanced-http ; npm install @ionic-native/http`. Con este plugin podremos descargar archivos, y realizar cualquier tipo de solicitud HTTP de manera nativa, y evitando errores que surgirían al solo usar `fetch()`, tales como errores de CORS.
+
+- Actualizar plugins: `npx cap sync android`. Tras ejecutar este comando observarás cambios en archivos como `android/app/src/main/res/xml/config.xml`:
+
+```xml
+  <feature name="CordovaHttpPlugin">
+    <param name="android-package" value="com.silkimen.cordovahttp.CordovaHttpPlugin"/>
+  </feature>
+
+  <feature name="File">
+    <param name="android-package" value="org.apache.cordova.file.FileUtils"/>
+    <param name="onload" value="true"/>
+  </feature>
+
+  <feature name="FileOpener2">
+    <param name="android-package" value="io.github.pwlin.cordova.plugins.fileopener2.FileOpener2"/>
+  </feature>
+```
+
+Ahora puedes implementar las descargas de la siguiente manera:
+
+```ts
+import { Capacitor } from '@capacitor/core';
+import { HTTP } from '@ionic-native/http';
+import { File } from '@ionic-native/file';
+
+export const descargar = async () => {
+  // URL de ejemplo
+  const dummyPDF = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+  // Determinar que plataforma se esta usando
+  const platform = Capacitor.getPlatform();
+  if (platform === 'web') {
+    throw new Error('Operación no permitida en versión Web');
+  }
+  // Determinar ruta donde se guardará el archivo
+  const filePath = `${File.dataDirectory}archivo.pdf`;
+  // Descargar archivo desde URL
+  await HTTP.downloadFile(dummyPDF, {}, {}, filePath);
+  // Guardar ruta donde se guardó el archivo en LocalStorage
+  localStorage.setItem('DUMMY', filePath);
+}
+```
+
+La implementación en una aplicación Angular sería diferente, ya que se puede importar estos plugins como módulos de Angular, e inyectarlos como dependencias. [Ver un ejemplo para Angular](https://ionicframework.com/docs/native/http#usage)
+
+Es muy importante conservar la ruta donde se guardó el archivo. Si bien en este ejemplo guardo esta ruta en `localStorage`, no es conventiente utilizarlo en una aplicación en producción, ya que `localStorage` suele ser borrado periodicamente por el sistema operativo. Es mejor utilizar un plugin como [Ionic Storage](https://github.com/ionic-team/ionic-storage).
