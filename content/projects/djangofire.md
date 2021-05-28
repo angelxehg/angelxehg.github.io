@@ -10,6 +10,7 @@ type: project
 
 PWA de ejemplo de integración de Firebase con Django REST Framework
 
+- [Guía rápida para autenticar en Django REST Framework usando Firebase Auth](../posts/2021-05-22-firebase-auth-django)
 - [Demostración PWA](https://djangofire.netlify.app)
 - [Código fuente PWA](https://github.com/angelxehg/djangofire-pwa)
 - [Código fuente API](https://github.com/angelxehg/djangofire-api)

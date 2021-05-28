@@ -150,3 +150,11 @@ Deberemos ejecutar este comando despues de `npm run build`
 ## Conclusión
 
 Uno de los métodos más sencillos para crear aplicaciones móviles es el uso de [Capacitor](https://capacitorjs.com/), el cual nos permite convertir cualquier aplicación web en una aplicación hibrida. Cuando se usa en conjunto con los [plugins de Capacitor](https://capacitorjs.com/docs/plugins), [plugins de Cordova](https://ionicframework.com/docs/native/community) y el framework [Ionic](https://ionicframework.com/) podemos construir aplicaciones con un buen diseño y funcionalidades nativas.
+
+## Recursos y referencias
+
+- [Documentación Firebase](https://firebase.google.com/docs)
+- [Documentación React](https://es.reactjs.org/)
+- [Documentación Capacitor](https://capacitorjs.com/)
+- [Plugin HTTP Nativo](https://github.com/silkimen/cordova-plugin-advanced-http)
+- [Plugin para abrir archivos](https://github.com/pwlin/cordova-plugin-file-opener2)
