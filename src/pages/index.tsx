@@ -99,7 +99,7 @@ const ProjectsSection = () => {
 }
 
 const PostsSection = () => {
-  const posts = usePosts().slice(0, 3)
+  const posts = usePosts().slice(0, 2)
   return (
     <section id="posts">
       <h2 className="h4">
