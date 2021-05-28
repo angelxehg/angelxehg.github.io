@@ -122,7 +122,7 @@ const SkillsSection = () => (
     <h2 className="h4">Habilidades:</h2>
     <div className="row">
       {stacks.map(({ title, icons }, n) => (
-        <div key={n} className="col-lg-6 p-md-1 pb-2">
+        <div key={n} className="col-12 p-md-1 pb-2">
           <div className="card bg-dark">
             <div className="card-body">
               <h3 className="h5 card-title">{title}</h3>
