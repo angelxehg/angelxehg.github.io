@@ -1,6 +1,7 @@
 import React from "react"
 
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
+const DocumentSVG = require("../assets/bootstrap-icons/file-earmark-text-fill.svg")
 const EmailSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
 const WebSVG = require("../assets/bootstrap-icons/globe2.svg")
 const GitHubSVG = require("../assets/bootstrap-icons/github.svg")
@@ -73,6 +74,12 @@ const iconsSource = [
     color: "white",
     svg: DjangoSVG,
     docs: "https://www.djangoproject.com/",
+  },
+  {
+    name: "Document",
+    color: "white",
+    svg: DocumentSVG,
+    docs: "https://angelxehg.com/",
   },
   {
     name: "Email",

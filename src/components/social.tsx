@@ -2,6 +2,11 @@ import React from "react"
 
 export const socialLinks = [
   {
+    to: "https://drive.google.com/drive/folders/18DEv-IdP2veHzUINHafEk4Gz9i2zakzG?usp=sharing",
+    title: "Descarga mi Curriculum",
+    icon: "Document",
+  },
+  {
     to: "https://www.linkedin.com/in/angelxehg",
     title: "LinkedIn (/in/angelxehg)",
     icon: "LinkedIn",
