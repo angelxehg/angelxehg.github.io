@@ -45,7 +45,7 @@ const PostsPage = (): JSX.Element => {
     <div>
       <SEO title="Blog" lang="es" />
       <DefaultNavbar />
-      <div className="container-xl pt-3 pb-3">
+      <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
         <h1 className="h3">Mi blog</h1>
         <p>
           Aqui escribo de vez en cuando, acerca de desarrollo web y otros temas.
