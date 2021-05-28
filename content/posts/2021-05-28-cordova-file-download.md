@@ -7,9 +7,7 @@ caption: Implementando descargas de archivos con Capacitor/Cordova
 type: post
 ---
 
-Uno de los métodos más sencillos para crear aplicaciones móviles es el uso de [Capacitor](https://capacitorjs.com/), el cual nos permite convertir cualquier aplicación web en una aplicación hibrida. Cuando se usa en conjunto con los [plugins de Capacitor](https://capacitorjs.com/docs/plugins), [plugins de Cordova](https://ionicframework.com/docs/native/community) y el framework [Ionic](https://ionicframework.com/) podemos construir aplicaciones con un buen diseño y funcionalidades nativas.
-
-En esta guía explicaré como implementar la función de descargas, tal como lo hice en la aplicación [StudyLater](../projects/studylater)
+En esta guía explicaré como implementar la función de descargas en una aplicación con [Capacitor](https://capacitorjs.com/) y React, tal como lo hice en la aplicación [StudyLater](../projects/studylater)
 
 - [Descargar APK](https://github.com/angelxehg/studylater-app/releases)
 - [Código fuente](https://github.com/angelxehg/studylater-app)
@@ -71,10 +69,6 @@ Para implementar la descarga de archivos utilizaremos los plugins [File](https:/
     <param name="android-package" value="org.apache.cordova.file.FileUtils"/>
     <param name="onload" value="true"/>
   </feature>
-
-  <feature name="FileOpener2">
-    <param name="android-package" value="io.github.pwlin.cordova.plugins.fileopener2.FileOpener2"/>
-  </feature>
 ```
 
 Ahora puedes implementar las descargas de la siguiente manera:
@@ -101,6 +95,58 @@ export const descargar = async () => {
 }
 ```
 
+Recuerda ejecutar los comandos `npm run build && npx cap sync [android/ios]` antes de probar tu aplicación.
+
 La implementación en una aplicación Angular sería diferente, ya que se puede importar estos plugins como módulos de Angular, e inyectarlos como dependencias. [Ver un ejemplo para Angular](https://ionicframework.com/docs/native/http#usage)
 
 Es muy importante conservar la ruta donde se guardó el archivo. Si bien en este ejemplo guardo esta ruta en `localStorage`, no es conventiente utilizarlo en una aplicación en producción, ya que `localStorage` suele ser borrado periodicamente por el sistema operativo. Es mejor utilizar un plugin como [Ionic Storage](https://github.com/ionic-team/ionic-storage).
+
+## Abriendo archivos descargados
+
+Para abrir los archivos utlizaremos el plugin [File Opener 2](https://github.com/pwlin/cordova-plugin-file-opener2). Este plugin permite abrir los archivos descargados con la aplicación por defecto registrada para el tipo de archivo; Si se abre una imagen, la abrirá en la Galería, en cambio un archivo PDF lo podría abrir en el visor PDF de Google Drive, o cualquier otro visor PDF. Para otro tipo de archivos se debe pedir al usuario instalar una aplicacion de terceros, o utilizar otra solución como el plugin [Document Viewer](https://github.com/sitewaerts/cordova-plugin-document-viewer) que ya incluye un visor de documentos.
+
+- Instalar plugin File Opener 2: `npm install cordova-plugin-file-opener2 ; npm install @ionic-native/file-opener`
+
+- Actualizar plugins: `npx cap sync android`. Tras ejecutar este comando observarás cambios en archivos como `android/app/src/main/res/xml/config.xml`:
+
+```xml
+  <feature name="FileOpener2">
+    <param name="android-package" value="io.github.pwlin.cordova.plugins.fileopener2.FileOpener2"/>
+  </feature>
+```
+
+Ahora puedes implementar la apertura de archivos de la siguiente manera:
+
+```ts
+import { Capacitor } from '@capacitor/core';
+import { FileOpener } from '@ionic-native/file-opener';
+
+export const abrir = async () => {
+  // Cargar ruta del archivo que descargamos antes
+  const filePath = localStorage.getItem('DUMMY');
+  if (!filePath) {
+    throw new Error('No se ha descargado el archivo');
+  }
+  // Determinar que plataforma se esta usando
+  const platform = Capacitor.getPlatform();
+  if (platform === 'web') {
+    throw new Error('Operación no permitida en versión Web');
+  }
+  // Se debe especificar que tipo de archivo es
+  const mimeType = 'application/pdf';
+  // Abrir archivo
+  await FileOpener.open(filePath, mimeType);
+}
+```
+
+Actualmente el plugin presenta un issue que [impide la compilación](https://github.com/pwlin/cordova-plugin-file-opener2/issues/256#issuecomment-657574795). Para solucionarlo podemos usar *Jetifier*:
+
+- Instalar Jetifier: `npm i jetifier`
+
+- Ejecutar Jetifier: `npx jetify`
+
+Deberemos ejecutar este comando despues de `npm run build`
+
+## Conclusión
+
+Uno de los métodos más sencillos para crear aplicaciones móviles es el uso de [Capacitor](https://capacitorjs.com/), el cual nos permite convertir cualquier aplicación web en una aplicación hibrida. Cuando se usa en conjunto con los [plugins de Capacitor](https://capacitorjs.com/docs/plugins), [plugins de Cordova](https://ionicframework.com/docs/native/community) y el framework [Ionic](https://ionicframework.com/) podemos construir aplicaciones con un buen diseño y funcionalidades nativas.
