@@ -5,7 +5,7 @@ const stacks = [
   },
   {
     title: "Frameworks y librerias",
-    icons: ["React", "Ionic", "Gatsby", "Django", "Bootstrap", "Angular"],
+    icons: ["Angular", "React", "Ionic", "Capacitor", "Gatsby", "Django", "Bootstrap"],
   },
   {
     title: "Herramientas",

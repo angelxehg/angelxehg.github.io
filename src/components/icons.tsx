@@ -12,6 +12,7 @@ const AndroidSVG = require("../assets/fontawesome/android-brands.svg")
 const AngularSVG = require("../assets/seek-logo/angular.svg")
 const AWSSVG = require("../assets/fontawesome/aws-brands.svg")
 const BootstrapSVG = require("../assets/seek-logo/bootstrap.svg")
+const CapacitorSVG = require("../assets/iconify/capacitorjs.svg")
 const DigitalOceanSVG = require("../assets/fontawesome/digital-ocean-brands.svg")
 const DjangoSVG = require("../assets/seek-logo/django.svg")
 const GitSVG = require("../assets/seek-logo/git.svg")
@@ -54,6 +55,12 @@ const iconsSource = [
     color: "#533B78",
     svg: BootstrapSVG,
     docs: "https://getbootstrap.com/docs/",
+  },
+  {
+    name: "Capacitor",
+    color: "white",
+    svg: CapacitorSVG,
+    docs: "https://capacitorjs.com/",
   },
   {
     name: "DigitalOcean",

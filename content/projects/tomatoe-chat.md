@@ -4,7 +4,7 @@ resume: Aplicación móvil de mensajería instantanea
 date: 2020-08-01
 image: ../../images/tomatoe-chat.png
 caption: Aplicación móvil de mensajería instantanea
-stack: Ionic,Android,Angular,TypeScript,Firebase
+stack: Ionic,Android,Angular,Capacitor,TypeScript,Firebase
 type: project
 ---
 

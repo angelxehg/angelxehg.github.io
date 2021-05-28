@@ -7,7 +7,7 @@ const DefaultFooter = (): JSX.Element => (
     <div className="container-xl ps-md-4 pe-md-4">
       <span className="navbar-text">
         <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión v1.7.1. Las
-        marcas y logos pertenecen a sus respectivos dueños. Iconos obtenidos
+        marcas y logotipos pertenecen a sus respectivos dueños. Iconos obtenidos
         desde{" "}
         <LinkExternal
           to="https://fontawesome.com/license"
@@ -30,7 +30,11 @@ const DefaultFooter = (): JSX.Element => (
         <LinkExternal to="https://ionicons.com/" className="text-reset">
           Ionicons
         </LinkExternal>
-        {". "}
+        {", y "}
+        <LinkExternal to="https://iconify.design/" className="text-reset">
+          Iconify
+        </LinkExternal>
+        {", "}
         Reporta problemas o envia tus sugerencias a la{" "}
         <LinkExternal
           to="https://github.com/angelxehg/angelxehg.github.io/issues"
