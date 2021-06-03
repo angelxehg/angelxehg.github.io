@@ -13,7 +13,6 @@ export const RedirectToDevTo = (props: { url: string }): JSX.Element => {
   }, [])
   return (
     <CenterLayout>
-      <SEO title="301: Moved Permanently" lang="es" />
       <div className="card bg-dark">
         <ConcernedSVG
           style={{ width: "5rem", height: "5rem" }}
@@ -32,7 +31,10 @@ export const RedirectToDevTo = (props: { url: string }): JSX.Element => {
 }
 
 const PostsPage = (): JSX.Element => (
-  <RedirectToDevTo url="https://dev.to/angelxehg" />
+  <div>
+    <SEO title="301: Moved Permanently" lang="es" />
+    <RedirectToDevTo url="https://dev.to/angelxehg" />
+  </div>
 )
 
 export default PostsPage
