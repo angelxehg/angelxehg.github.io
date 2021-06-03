@@ -60,7 +60,9 @@ const PostTemplate = (props: PostTemplateProps): JSX.Element => {
         <SEO
           title={title}
           lang="es"
-          image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
+          image={
+            image.childImageSharp.gatsbyImageData.images.fallback?.src || ""
+          }
         />
         <RedirectToDevTo url={devToRedirect} />
       </div>

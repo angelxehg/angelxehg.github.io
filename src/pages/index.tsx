@@ -22,7 +22,8 @@ const PageHeader = () => {
       <nav>
         <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>,{" "}
         <br className="d-sm-none d-block" />
-        <Link to="/projects">Proyectos</Link>, <LinkExternal to="https://dev.to/angelxehg.com">Blog</LinkExternal>
+        <Link to="/projects">Proyectos</Link>,{" "}
+        <LinkExternal to="https://dev.to/angelxehg.com">Blog</LinkExternal>
       </nav>
     </div>
   )

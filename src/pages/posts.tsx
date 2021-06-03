@@ -7,7 +7,7 @@ import { LinkExternal } from "../components/social"
 
 const ConcernedSVG = require("../assets/concerned.svg")
 
-export const RedirectToDevTo = (props: {url: string}): JSX.Element => {
+export const RedirectToDevTo = (props: { url: string }): JSX.Element => {
   useEffect(() => {
     setTimeout(() => navigate(props.url), 2000)
   }, [])
@@ -22,7 +22,8 @@ export const RedirectToDevTo = (props: {url: string}): JSX.Element => {
         <div className="card-body">
           <h1 className="h3 card-title">301: Moved Permanently</h1>
           <p className="card-text m-0">
-            Moví mi blog a <LinkExternal to={props.url}>dev.to</LinkExternal>. En un momento te redirecciono...
+            Moví mi blog a <LinkExternal to={props.url}>dev.to</LinkExternal>.
+            En un momento te redirecciono...
           </p>
         </div>
       </div>
@@ -31,7 +32,7 @@ export const RedirectToDevTo = (props: {url: string}): JSX.Element => {
 }
 
 const PostsPage = (): JSX.Element => (
-  <RedirectToDevTo url="https://dev.to/angelxehg"/>
+  <RedirectToDevTo url="https://dev.to/angelxehg" />
 )
 
 export default PostsPage
