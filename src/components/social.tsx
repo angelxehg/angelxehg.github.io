@@ -7,6 +7,11 @@ export const socialLinks = [
     icon: "Document",
   },
   {
+    to: "https://dev.to/angelxehg",
+    title: "Visita mi blog en dev.to",
+    icon: "Dev.to",
+  },
+  {
     to: "https://www.linkedin.com/in/angelxehg",
     title: "LinkedIn (/in/angelxehg)",
     icon: "LinkedIn",

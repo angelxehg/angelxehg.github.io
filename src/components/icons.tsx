@@ -4,6 +4,7 @@ const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
 const DocumentSVG = require("../assets/bootstrap-icons/file-earmark-text-fill.svg")
 const EmailSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
 const WebSVG = require("../assets/bootstrap-icons/globe2.svg")
+const DevToSVG = require("../assets/iconify/devto.svg")
 const GitHubSVG = require("../assets/bootstrap-icons/github.svg")
 const GitLabSVG = require("../assets/seek-logo/gitlab.svg")
 const InstagramSVG = require("../assets/bootstrap-icons/instagram.svg")
@@ -62,6 +63,13 @@ const iconsSource = [
     color: "white",
     svg: CapacitorSVG,
     docs: "https://capacitorjs.com/",
+  },
+  {
+    name: "Dev.to",
+    color: "white",
+    fill: true,
+    svg: DevToSVG,
+    docs: "https://dev.to/",
   },
   {
     name: "DigitalOcean",
