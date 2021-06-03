@@ -8,4 +8,4 @@ devToRedirect: https://dev.to/angelxehg/
 type: post
 ---
 
-Hola mundo!. Esta es la primera entrada de mi blog personal.
+[dev.to](https://dev.to/angelxehg)
