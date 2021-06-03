@@ -1,66 +1,32 @@
-import React from "react"
-import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import React, { useEffect } from "react"
+import { navigate } from "gatsby"
 
-import DefaultFooter from "../components/footer"
+import CenterLayout from "../layouts/center"
 import SEO from "../components/seo"
-import { usePosts } from "../hooks/use-posts"
-import DefaultNavbar from "../components/navbar"
-import { Post } from "../meta/models"
+import { LinkExternal } from "../components/social"
 
-export const PostCard = (props: {
-  item: Post
-  noImage?: boolean
-}): JSX.Element => {
-  const { slug, title, resume, date, image, caption } = props.item
-  return (
-    <article className="card bg-dark">
-      <div className="row">
-        {!props.noImage && (
-          <div className="col-xl-3 col-md-4">
-            <GatsbyImage
-              className="card-img-top img-200"
-              image={image}
-              alt={caption}
-            />
-          </div>
-        )}
-        <div className="col-md">
-          <div className="card-body">
-            <Link to={`/${slug}`}>
-              <h3 className="h5 card-title">{title}</h3>
-            </Link>
-            <h4 className="h6 card-subtitle mb-2">{date}</h4>
-            <p className="card-text m-0">{resume}</p>
-          </div>
-        </div>
-      </div>
-    </article>
-  )
-}
+const ConcernedSVG = require("../assets/concerned.svg")
 
 const PostsPage = (): JSX.Element => {
-  const posts = usePosts()
+  useEffect(() => {
+    setTimeout(() => navigate("https://dev.to/angelxehg.com"), 2000)
+  }, [])
   return (
-    <div>
-      <SEO title="Blog" lang="es" />
-      <DefaultNavbar />
-      <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
-        <h1 className="h3">Mi blog</h1>
-        <p>
-          Aqui escribo de vez en cuando, acerca de desarrollo web y otros temas.
-        </p>
-        <h2 className="h4">Últimas entradas</h2>
-        <div className="row">
-          {posts.map(item => (
-            <div key={item.id} className="col-12 p-md-1 pb-2">
-              <PostCard item={item} />
-            </div>
-          ))}
+    <CenterLayout>
+      <SEO title="301: Moved Permanently" lang="es" />
+      <div className="card bg-dark">
+        <ConcernedSVG
+          style={{ width: "5rem", height: "5rem" }}
+          className="align-self-center mt-2"
+        />
+        <div className="card-body">
+          <h1 className="h3 card-title">301: Moved Permanently</h1>
+          <p className="card-text m-0">
+            Moví mi blog a <LinkExternal to="https://dev.to/angelxehg.com">dev.to</LinkExternal>
+          </p>
         </div>
       </div>
-      <DefaultFooter />
-    </div>
+    </CenterLayout>
   )
 }
 
