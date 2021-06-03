@@ -5,4 +5,3 @@
  */
 
 import "./src/styles.scss"
-require("prismjs/themes/prism-okaidia.css")
