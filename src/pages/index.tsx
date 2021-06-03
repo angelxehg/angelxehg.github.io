@@ -6,10 +6,8 @@ import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
 import { availableIcons, Icon } from "../components/icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import stacks from "../meta/stacks"
-import { usePosts } from "../hooks/use-posts"
 import { useProjects } from "../hooks/use-projects"
 import { Link } from "gatsby"
-import { PostCard } from "./posts"
 import { ProjectCard } from "./projects"
 
 const PageHeader = () => {
@@ -98,25 +96,6 @@ const ProjectsSection = () => {
   )
 }
 
-const PostsSection = () => {
-  const posts = usePosts().slice(0, 2)
-  return (
-    <section id="posts">
-      <h2 className="h4">
-        Últimas <Link to="/posts">entradas</Link>:
-      </h2>
-      <div className="row">
-        {posts.map(item => (
-          <div key={item.id} className="col-12 p-md-1 pb-2">
-            <PostCard item={item} noImage />
-          </div>
-        ))}
-        <Link to="/posts">Ver todas las entradas {">"}</Link>
-      </div>
-    </section>
-  )
-}
-
 const SkillsSection = () => (
   <section id="skills">
     <h2 className="h4">Habilidades:</h2>
@@ -158,7 +137,6 @@ const IndexPage = (): JSX.Element => (
           <AboutSection />
         </div>
         <div className="col-lg-8">
-          <PostsSection />
           <ProjectsSection />
           <SkillsSection />
         </div>
