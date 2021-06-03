@@ -7,6 +7,7 @@ import Footer from "../components/footer"
 import SEO from "../components/seo"
 import { Icon } from "../components/icons"
 import DefaultNavbar from "../components/navbar"
+import { RedirectToDevTo } from "../pages/posts"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -22,6 +23,7 @@ export const query = graphql`
         }
         caption
         type
+        devToRedirect
         stack
       }
     }
@@ -42,6 +44,7 @@ interface PostTemplateProps {
         }
         caption: string
         stack: string
+        devToRedirect: string | undefined
       }
     }
   }
@@ -49,8 +52,20 @@ interface PostTemplateProps {
 
 const PostTemplate = (props: PostTemplateProps): JSX.Element => {
   const { frontmatter, body } = props.data.mdx
-  const { title, date, image, caption, stack } = frontmatter
+  const { title, date, image, caption, stack, devToRedirect } = frontmatter
   const stackIcons = stack ? stack.split(",") : []
+  if (devToRedirect) {
+    return (
+      <div>
+        <SEO
+          title={title}
+          lang="es"
+          image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
+        />
+        <RedirectToDevTo url={devToRedirect} />
+      </div>
+    )
+  }
   return (
     <div>
       <SEO

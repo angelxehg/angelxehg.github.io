@@ -4,6 +4,7 @@ resume: Guía rápida para implementar descarga y apertura de archivos en una ap
 date: 2021-05-28
 image: ../../images/studylater.png
 caption: Implementando descargas de archivos con Capacitor/Cordova
+devToRedirect: https://dev.to/angelxehg/implementando-descargas-de-archivos-con-capacitor-cordova-4844
 type: post
 ---
 

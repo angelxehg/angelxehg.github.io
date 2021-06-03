@@ -10,7 +10,7 @@ type: project
 
 Demostración de descargas en una Aplicación Capacitor/Cordova
 
-- [Guía rápida para implementar descarga y apertura de archivos en una aplicación hibrida](../posts/2021-05-28-cordova-file-download)
+- [Guía rápida para implementar descarga y apertura de archivos en una aplicación hibrida](https://dev.to/angelxehg/implementando-descargas-de-archivos-con-capacitor-cordova-4844)
 - [Descargar APK](https://github.com/angelxehg/studylater-app/releases)
 - [Código fuente](https://github.com/angelxehg/studylater-app)
 

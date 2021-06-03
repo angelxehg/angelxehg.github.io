@@ -19,10 +19,10 @@ const PageHeader = () => {
         <h1 className="h3">Angel Hurtado</h1>
         <p>{site.description}</p>
       </header>
-      <nav className="d-lg-none">
+      <nav>
         <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>,{" "}
         <br className="d-sm-none d-block" />
-        <Link to="/projects">Proyectos</Link>, <Link to="/posts">Blog</Link>
+        <Link to="/projects">Proyectos</Link>, <LinkExternal to="https://dev.to/angelxehg.com">Blog</LinkExternal>
       </nav>
     </div>
   )

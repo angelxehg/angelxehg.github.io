@@ -18,16 +18,6 @@ const DefaultNavbar = (): JSX.Element => (
         <Nav className="me-auto">
           <li className="nav-item">
             <Link
-              to="/posts"
-              className="nav-link"
-              activeClassName="active"
-              style={{ textDecoration: "underline" }}
-            >
-              Blog
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link
               to="/projects"
               className="nav-link"
               activeClassName="active"
