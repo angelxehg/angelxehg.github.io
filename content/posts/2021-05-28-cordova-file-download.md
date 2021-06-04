@@ -6,6 +6,7 @@ image: ../../images/studylater.png
 caption: Implementando descargas de archivos con Capacitor/Cordova
 devToRedirect: https://dev.to/angelxehg/implementando-descargas-de-archivos-con-capacitor-cordova-4844
 type: post
+published: false
 ---
 
 [dev.to](https://dev.to/angelxehg/implementando-descargas-de-archivos-con-capacitor-cordova-4844)

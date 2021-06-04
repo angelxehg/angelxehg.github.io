@@ -6,6 +6,7 @@ image: ../../images/studylater.png
 caption: Demostración de descargas en una Aplicación Capacitor/Cordova
 stack: React,TypeScript,Capacitor,Bootstrap,Firebase,Android
 type: project
+published: true
 ---
 
 Demostración de descargas en una Aplicación Capacitor/Cordova

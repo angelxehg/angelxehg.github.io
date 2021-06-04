@@ -57,7 +57,7 @@ const ProjectsPage = (): JSX.Element => {
   const projects = useProjects()
   return (
     <div>
-      <SEO title="Blog" lang="es" />
+      <SEO title="Proyectos" lang="es" />
       <DefaultNavbar />
       <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
         <h1 className="h3">Mis proyectos</h1>

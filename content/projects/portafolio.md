@@ -6,6 +6,7 @@ image: ../../images/portafolio.png
 caption: Mi blog y portafolio profesional
 stack: Gatsby,React,TypeScript,Bootstrap,GitHub Pages
 type: project
+published: false
 ---
 
 Mi blog y portafolio profesional

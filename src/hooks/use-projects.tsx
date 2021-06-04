@@ -21,11 +21,12 @@ export const useProjects = (): Project[] => {
             }
             caption
             stack
+            published
           }
         }
       }
     }
   `)
   const nodes: RAWPost[] = allMdx.nodes
-  return nodes.map(toProject).sort(sortByDate)
+  return nodes.map(toProject).sort(sortByDate).filter(i => i.published === true);
 }

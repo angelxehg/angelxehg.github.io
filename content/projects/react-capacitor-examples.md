@@ -6,6 +6,7 @@ image: ../../images/react-capacitor-examples.png
 caption: Ejemplo de aplicación hibrida sin Ionic
 stack: React,JavaScript,Capacitor,Bootstrap,Android,Netlify
 type: project
+published: true
 ---
 
 Ejemplo de aplicación hibrida sin Ionic

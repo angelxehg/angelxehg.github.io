@@ -6,6 +6,7 @@ image: ../../images/djangofire.png
 caption: PWA de ejemplo de integración de Firebase con Django REST Framework
 stack: React,TypeScript,Bootstrap,Firebase,Django,Netlify
 type: project
+published: true
 ---
 
 PWA de ejemplo de integración de Firebase con Django REST Framework

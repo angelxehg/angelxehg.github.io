@@ -6,6 +6,7 @@ image: ../../images/tomatoe-chat.png
 caption: Aplicación móvil de mensajería instantanea
 stack: Ionic,Android,Angular,Capacitor,TypeScript,Firebase
 type: project
+published: true
 ---
 
 Aplicación móvil de mensajería instantanea

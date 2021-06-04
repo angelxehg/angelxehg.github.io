@@ -20,11 +20,12 @@ export const usePosts = (): Post[] => {
               }
             }
             caption
+            published
           }
         }
       }
     }
   `)
   const nodes: RAWPost[] = allMdx.nodes
-  return nodes.map(toPost).sort(sortByDate)
+  return nodes.map(toPost).sort(sortByDate).filter(i => i.published === true)
 }
