@@ -27,6 +27,24 @@ const DefaultNavbar = (): JSX.Element => (
               Proyectos
             </Link>
           </li>
+          <li className="nav-item">
+            <Link
+              to="/#skills"
+              className="nav-link"
+              style={{ textDecoration: "underline" }}
+            >
+              Habilidades
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/#about"
+              className="nav-link"
+              style={{ textDecoration: "underline" }}
+            >
+              Acerca de
+            </Link>
+          </li>
         </Nav>
       </Navbar.Collapse>
     </Container>

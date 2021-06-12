@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 
+import DefaultNavbar from "../components/navbar"
 import DefaultFooter from "../components/footer"
 import SEO from "../components/seo"
 import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
@@ -24,18 +25,13 @@ const PageHeader = () => {
         <h1 className="h3">Angel Hurtado</h1>
         <p>{site.description}</p>
       </header>
-      <nav>
-        <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>,{" "}
-        <br className="d-sm-none d-block" />
-        <Link to="/projects">Proyectos</Link>,{" "}
-        <LinkExternal to="https://dev.to/angelxehg.com">Blog</LinkExternal>
-      </nav>
     </div>
   )
 }
 
 const AboutSection = () => (
   <section id="about">
+    <h2 className="h4">Acerca de mi:</h2>
     <Row>
       <Col xs="12" className="p-md-1 pb-2">
         <Card bg="dark" text="light">
@@ -119,7 +115,7 @@ const SkillsSection = () => (
                         key={icon}
                         pill
                         bg="dark"
-                  text="light"
+                        text="light"
                         className="mt-1 me-1"
                       >
                         <Icon name={icon} /> {icon}
@@ -139,17 +135,12 @@ const SkillsSection = () => (
 const IndexPage = (): JSX.Element => (
   <div>
     <SEO title="Portafolio" lang="es" />
+    <DefaultNavbar />
     <Container fluid="xl" className="ps-md-4 pe-md-4 pt-3 pb-3">
-      <Row>
-        <Col lg="4">
-          <PageHeader />
-          <AboutSection />
-        </Col>
-        <Col lg="8">
-          <ProjectsSection />
-          <SkillsSection />
-        </Col>
-      </Row>
+      <PageHeader />
+      <ProjectsSection />
+      <SkillsSection />
+      <AboutSection />
     </Container>
     <DefaultFooter />
   </div>
