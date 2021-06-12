@@ -68,7 +68,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
           {stackIcons.length > 0 && (
             <li>
               {stackIcons.map(icon => (
-                  <Badge
+                <Badge
                   key={icon}
                   pill
                   bg="dark"
@@ -77,7 +77,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
                 >
                   <Icon name={icon} /> {icon}
                 </Badge>
-                ))}
+              ))}
             </li>
           )}
         </ul>
