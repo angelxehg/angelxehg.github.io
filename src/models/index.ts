@@ -30,7 +30,7 @@ export interface Page {
   resume: string
   excerpt: string
   image: IGatsbyImageData
-  caption: string,
+  caption: string
   published: boolean
   stack: string
 }

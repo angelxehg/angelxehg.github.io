@@ -28,5 +28,8 @@ export const usePages = (): Page[] => {
     }
   `)
   const nodes: RAWPage[] = allMdx.nodes
-  return nodes.map(toPage).sort(sortByDate).filter(i => i.published === true);
+  return nodes
+    .map(toPage)
+    .sort(sortByDate)
+    .filter(i => i.published === true)
 }
