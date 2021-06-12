@@ -2,12 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
+import Badge from "react-bootstrap/Badge"
+import Container from "react-bootstrap/Container"
 
 import Footer from "../components/footer"
 import SEO from "../components/seo"
 import { Icon } from "../components/icons"
 import DefaultNavbar from "../components/navbar"
-import { RedirectToDevTo } from "../pages/posts"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -23,14 +24,13 @@ export const query = graphql`
         }
         caption
         type
-        devToRedirect
         stack
       }
     }
   }
 `
 
-interface PostTemplateProps {
+interface PageTemplateProps {
   data: {
     mdx: {
       body: string
@@ -44,30 +44,15 @@ interface PostTemplateProps {
         }
         caption: string
         stack: string
-        devToRedirect: string | undefined
       }
     }
   }
 }
 
-const PostTemplate = (props: PostTemplateProps): JSX.Element => {
+const PageTemplate = (props: PageTemplateProps): JSX.Element => {
   const { frontmatter, body } = props.data.mdx
-  const { title, date, image, caption, stack, devToRedirect } = frontmatter
+  const { title, date, image, caption, stack } = frontmatter
   const stackIcons = stack ? stack.split(",") : []
-  if (devToRedirect) {
-    return (
-      <div>
-        <SEO
-          title={title}
-          lang="es"
-          image={
-            image.childImageSharp.gatsbyImageData.images.fallback?.src || ""
-          }
-        />
-        <RedirectToDevTo url={devToRedirect} />
-      </div>
-    )
-  }
   return (
     <div>
       <SEO
@@ -76,22 +61,23 @@ const PostTemplate = (props: PostTemplateProps): JSX.Element => {
         image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
       />
       <DefaultNavbar />
-      <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
+      <Container fluid="xl" className="ps-md-4 pe-md-4 pt-3 pb-3">
         <h1 className="h2">{title}</h1>
         <ul className="p-0 m-0 mb-2" style={{ listStyleType: "none" }}>
           <li>Fecha: {date}</li>
           {stackIcons.length > 0 && (
             <li>
-              {stackIcons.map(icon => {
-                return (
-                  <span
-                    key={icon}
-                    className="badge rounded-pill bg-dark mt-1 me-1"
-                  >
-                    <Icon name={icon} /> {icon}
-                  </span>
-                )
-              })}
+              {stackIcons.map(icon => (
+                <Badge
+                  key={icon}
+                  pill
+                  bg="dark"
+                  text="light"
+                  className="mt-1 me-1"
+                >
+                  <Icon name={icon} /> {icon}
+                </Badge>
+              ))}
             </li>
           )}
         </ul>
@@ -101,10 +87,10 @@ const PostTemplate = (props: PostTemplateProps): JSX.Element => {
           alt={caption}
         />
         <MDXRenderer>{body}</MDXRenderer>
-      </div>
+      </Container>
       <Footer />
     </div>
   )
 }
 
-export default PostTemplate
+export default PageTemplate

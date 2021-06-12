@@ -2,7 +2,7 @@
 title: StudyLater App
 resume: Demostración de descargas en una Aplicación Capacitor/Cordova
 date: 2021-05-28
-image: ../../images/studylater.png
+image: ../images/studylater.png
 caption: Demostración de descargas en una Aplicación Capacitor/Cordova
 stack: React,TypeScript,Capacitor,Bootstrap,Firebase,Android
 type: project

@@ -1,12 +1,17 @@
 import React from "react"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
+
 interface CenterLayoutProps {
   children: React.ReactNode | React.ReactNode[]
 }
 
 const CenterLayout = (props: CenterLayoutProps): JSX.Element => (
-  <div className="row text-center justify-content-center full-h">
-    <main className="col align-self-center fill-sm">{props.children}</main>
-  </div>
+  <Row className="text-center justify-content-center full-h">
+    <Col as="main" className="align-self-center fill-sm">
+      {props.children}
+    </Col>
+  </Row>
 )
 
 export default CenterLayout

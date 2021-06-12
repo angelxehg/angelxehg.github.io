@@ -7,7 +7,7 @@ export interface SiteMetadata {
   keywords: string
 }
 
-export interface RAWPost {
+export interface RAWPage {
   id: string
   slug: string
   excerpt: string
@@ -22,7 +22,7 @@ export interface RAWPost {
   }
 }
 
-export interface Post {
+export interface Page {
   id: string
   slug: string
   date: string
@@ -30,11 +30,12 @@ export interface Post {
   resume: string
   excerpt: string
   image: IGatsbyImageData
-  caption: string,
+  caption: string
   published: boolean
+  stack: string
 }
 
-export const toPost = (item: RAWPost): Post => {
+export const toPage = (item: RAWPage): Page => {
   return {
     id: item.id,
     slug: item.slug,
@@ -45,31 +46,11 @@ export const toPost = (item: RAWPost): Post => {
     image: item.frontmatter.image.childImageSharp.gatsbyImageData,
     caption: item.frontmatter.caption,
     published: item.frontmatter.published,
-  }
-}
-
-export interface Project extends Post {
-  stack: string
-}
-
-export const toProject = (item: RAWPost): Project => {
-  const { id, slug, date, title, resume, excerpt, image, caption, published } =
-    toPost(item)
-  return {
-    id,
-    slug,
-    date,
-    title,
-    resume,
-    excerpt,
-    image,
-    caption,
-    published,
     stack: item.frontmatter.stack,
   }
 }
 
-export const sortByDate = (a: Post, b: Post) => {
+export const sortByDate = (a: Page, b: Page) => {
   if (a.date < b.date) {
     return 1
   }

@@ -1,14 +1,22 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
+import Navbar from "react-bootstrap/Navbar"
 
 import { LinkExternal } from "./social"
 
 const DefaultFooter = (): JSX.Element => (
-  <footer className="navbar navbar-dark bg-dark">
-    <div className="container-xl ps-md-4 pe-md-4">
+  <Navbar as="footer" variant="dark" bg="dark">
+    <Container fluid="xl" className="ps-md-4 pe-md-4">
       <span className="navbar-text">
-        <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión v1.7.3. Las
-        marcas y logotipos pertenecen a sus respectivos dueños. Iconos obtenidos
-        desde{" "}
+        <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión{" "}
+        <LinkExternal
+          to="https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0-beta.1"
+          className="text-reset"
+        >
+          v2.0.0-beta.1
+        </LinkExternal>
+        . Las marcas y logotipos pertenecen a sus respectivos dueños. Iconos
+        obtenidos desde{" "}
         <LinkExternal
           to="https://fontawesome.com/license"
           className="text-reset"
@@ -43,8 +51,8 @@ const DefaultFooter = (): JSX.Element => (
           página de Issues
         </LinkExternal>
       </span>
-    </div>
-  </footer>
+    </Container>
+  </Navbar>
 )
 
 export default DefaultFooter

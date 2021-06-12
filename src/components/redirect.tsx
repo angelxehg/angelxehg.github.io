@@ -1,15 +1,21 @@
 import React, { useEffect } from "react"
-import { Link, navigate } from "gatsby"
+import { navigate } from "gatsby"
 import Card from "react-bootstrap/Card"
 
 import CenterLayout from "../layouts/center"
-import SEO from "../components/seo"
+import { LinkExternal } from "./social"
+import SEO from "./seo"
+
+interface RedirectProps {
+  title: string
+  url: string
+}
 
 const ConcernedSVG = require("../assets/concerned.svg")
 
-const AboutPage = (): JSX.Element => {
+const Redirect = (props: RedirectProps): JSX.Element => {
   useEffect(() => {
-    setTimeout(() => navigate("/"), 2000)
+    setTimeout(() => navigate(props.url), 2000)
   }, [])
   return (
     <CenterLayout>
@@ -22,7 +28,8 @@ const AboutPage = (): JSX.Element => {
         <Card.Body>
           <Card.Title>301: Moved Permanently</Card.Title>
           <Card.Text className="m-0">
-            Redireccionando a <Link to="/">portafolio</Link>...
+            Redireccionando a{" "}
+            <LinkExternal to={props.url}>{props.title}</LinkExternal>...
           </Card.Text>
         </Card.Body>
       </Card>
@@ -30,4 +37,4 @@ const AboutPage = (): JSX.Element => {
   )
 }
 
-export default AboutPage
+export default Redirect

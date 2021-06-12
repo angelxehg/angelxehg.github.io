@@ -1,14 +1,20 @@
 import React from "react"
+import { Link } from "gatsby"
+import Badge from "react-bootstrap/Badge"
+import Card from "react-bootstrap/Card"
+import Container from "react-bootstrap/Container"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 
+import DefaultNavbar from "../components/navbar"
 import DefaultFooter from "../components/footer"
 import SEO from "../components/seo"
 import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
 import { availableIcons, Icon } from "../components/icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import stacks from "../meta/stacks"
-import { useProjects } from "../hooks/use-projects"
-import { Link } from "gatsby"
-import { ProjectCard } from "./projects"
+import { usePages } from "../hooks/use-pages"
+import ProjectCard from "../components/project"
 
 const PageHeader = () => {
   const site = useSiteMetadata()
@@ -19,23 +25,18 @@ const PageHeader = () => {
         <h1 className="h3">Angel Hurtado</h1>
         <p>{site.description}</p>
       </header>
-      <nav>
-        <a href="#about">Acerca de</a>, <a href="#skills">Habilidades</a>,{" "}
-        <br className="d-sm-none d-block" />
-        <Link to="/projects">Proyectos</Link>,{" "}
-        <LinkExternal to="https://dev.to/angelxehg.com">Blog</LinkExternal>
-      </nav>
     </div>
   )
 }
 
 const AboutSection = () => (
   <section id="about">
-    <div className="row">
-      <div className="col-12 p-md-1 pb-2">
-        <div className="card bg-dark">
-          <div className="card-body">
-            <h2 className="h5 card-title">Educación</h2>
+    <h2 className="h4">Acerca de mi:</h2>
+    <Row>
+      <Col xs="12" className="p-md-1 pb-2">
+        <Card bg="dark" text="light">
+          <Card.Body>
+            <Card.Title>Educación</Card.Title>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
@@ -46,13 +47,13 @@ const AboutSection = () => (
                 2017-2021
               </li>
             </ul>
-          </div>
-        </div>
-      </div>
-      <div className="col-12 p-md-1 pb-2">
-        <div className="card bg-dark">
-          <div className="card-body">
-            <h2 className="h5 card-title">Enlaces</h2>
+          </Card.Body>
+        </Card>
+      </Col>
+      <Col xs="12" className="p-md-1 pb-2">
+        <Card bg="dark" text="light">
+          <Card.Body>
+            <Card.Title>Enlaces</Card.Title>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
@@ -71,28 +72,28 @@ const AboutSection = () => (
                 )
               })}
             </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
   </section>
 )
 
 const ProjectsSection = () => {
-  const projects = useProjects().slice(0, 2)
+  const projects = usePages().slice(0, 2)
   return (
     <section id="projects">
       <h2 className="h4">
         Últimos <Link to="/projects">proyectos</Link>:
       </h2>
-      <div className="row">
+      <Row>
         {projects.map(item => (
-          <div key={item.id} className="col-12 p-md-1 pb-2">
+          <Col key={item.id} xs="12" className="p-md-1 pb-2">
             <ProjectCard item={item} noImage />
-          </div>
+          </Col>
         ))}
-        <Link to="/projects">Ver todos los proyectos {">"}</Link>
-      </div>
+      </Row>
+      <Link to="/projects">Ver todos los proyectos {">"}</Link>
     </section>
   )
 }
@@ -100,49 +101,47 @@ const ProjectsSection = () => {
 const SkillsSection = () => (
   <section id="skills">
     <h2 className="h4">Habilidades:</h2>
-    <div className="row">
+    <Row>
       {stacks.map(({ title, icons }, n) => (
-        <div key={n} className="col-12 p-md-1 pb-2">
-          <div className="card bg-dark">
-            <div className="card-body">
-              <h3 className="h5 card-title">{title}</h3>
-              <p className="card-text">
+        <Col key={n} xs="12" className="p-md-1 pb-2">
+          <Card bg="dark" text="light">
+            <Card.Body>
+              <Card.Title>{title}</Card.Title>
+              <Card.Text>
                 {icons.map(icon => {
                   if (availableIcons.find(i => i === icon)) {
                     return (
-                      <span
+                      <Badge
                         key={icon}
-                        className="badge rounded-pill bg-dark mt-1 me-1"
+                        pill
+                        bg="dark"
+                        text="light"
+                        className="mt-1 me-1"
                       >
-                        <Icon key={icon} name={icon} /> {icon}
-                      </span>
+                        <Icon name={icon} /> {icon}
+                      </Badge>
                     )
                   }
                 })}
-              </p>
-            </div>
-          </div>
-        </div>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
       ))}
-    </div>
+    </Row>
   </section>
 )
 
 const IndexPage = (): JSX.Element => (
   <div>
     <SEO title="Portafolio" lang="es" />
-    <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
-      <div className="row">
-        <div className="col-lg-4">
-          <PageHeader />
-          <AboutSection />
-        </div>
-        <div className="col-lg-8">
-          <ProjectsSection />
-          <SkillsSection />
-        </div>
-      </div>
-    </div>
+    <DefaultNavbar />
+    <Container fluid="xl" className="ps-md-4 pe-md-4 pt-3 pb-3">
+      <PageHeader />
+      <ProjectsSection />
+      <SkillsSection />
+      <AboutSection />
+    </Container>
     <DefaultFooter />
   </div>
 )
