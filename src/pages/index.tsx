@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import Container from "react-bootstrap/Container"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 
 import DefaultFooter from "../components/footer"
 import SEO from "../components/seo"
@@ -32,8 +34,8 @@ const PageHeader = () => {
 
 const AboutSection = () => (
   <section id="about">
-    <div className="row">
-      <div className="col-12 p-md-1 pb-2">
+    <Row>
+      <Col xs="12" className="p-md-1 pb-2">
         <div className="card">
           <div className="card-body">
             <h2 className="h5 card-title">Educación</h2>
@@ -49,8 +51,8 @@ const AboutSection = () => (
             </ul>
           </div>
         </div>
-      </div>
-      <div className="col-12 p-md-1 pb-2">
+      </Col>
+      <Col xs="12" className="p-md-1 pb-2">
         <div className="card">
           <div className="card-body">
             <h2 className="h5 card-title">Enlaces</h2>
@@ -74,8 +76,8 @@ const AboutSection = () => (
             </ul>
           </div>
         </div>
-      </div>
-    </div>
+      </Col>
+    </Row>
   </section>
 )
 
@@ -86,14 +88,14 @@ const ProjectsSection = () => {
       <h2 className="h4">
         Últimos <Link to="/projects">proyectos</Link>:
       </h2>
-      <div className="row">
+      <Row>
         {projects.map(item => (
-          <div key={item.id} className="col-12 p-md-1 pb-2">
+          <Col key={item.id} xs="12" className="p-md-1 pb-2">
             <ProjectCard item={item} noImage />
-          </div>
+          </Col>
         ))}
-        <Link to="/projects">Ver todos los proyectos {">"}</Link>
-      </div>
+      </Row>
+      <Link to="/projects">Ver todos los proyectos {">"}</Link>
     </section>
   )
 }
@@ -101,9 +103,9 @@ const ProjectsSection = () => {
 const SkillsSection = () => (
   <section id="skills">
     <h2 className="h4">Habilidades:</h2>
-    <div className="row">
+    <Row>
       {stacks.map(({ title, icons }, n) => (
-        <div key={n} className="col-12 p-md-1 pb-2">
+        <Col key={n} xs="12" className="p-md-1 pb-2">
           <div className="card">
             <div className="card-body">
               <h3 className="h5 card-title">{title}</h3>
@@ -123,9 +125,9 @@ const SkillsSection = () => (
               </p>
             </div>
           </div>
-        </div>
+        </Col>
       ))}
-    </div>
+    </Row>
   </section>
 )
 
@@ -133,16 +135,16 @@ const IndexPage = (): JSX.Element => (
   <div>
     <SEO title="Portafolio" lang="es" />
     <Container fluid="xl" className="ps-md-4 pe-md-4 pt-3 pb-3">
-      <div className="row">
-        <div className="col-lg-4">
+      <Row>
+        <Col lg="4">
           <PageHeader />
           <AboutSection />
-        </div>
-        <div className="col-lg-8">
+        </Col>
+        <Col lg="8">
           <ProjectsSection />
           <SkillsSection />
-        </div>
-      </div>
+        </Col>
+      </Row>
     </Container>
     <DefaultFooter />
   </div>

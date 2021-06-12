@@ -1,5 +1,7 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 
 import DefaultFooter from "../components/footer"
 import SEO from "../components/seo"
@@ -17,13 +19,13 @@ const ProjectsPage = (): JSX.Element => {
         <h1 className="h3">Mis proyectos</h1>
         <p>Estos son todos mis proyectos públicos</p>
         <h2 className="h4">Últimos proyectos</h2>
-        <div className="row">
+        <Row>
           {projects.map(item => (
-            <div key={item.id} className="col-12 p-md-1 pb-2">
+            <Col key={item.id} xs="12" className="p-md-1 pb-2">
               <ProjectCard item={item} />
-            </div>
+            </Col>
           ))}
-        </div>
+        </Row>
       </Container>
       <DefaultFooter />
     </div>
