@@ -8,7 +8,7 @@ import { useSiteMetadata } from "../hooks/use-site-metadata"
 import stacks from "../meta/stacks"
 import { usePages } from "../hooks/use-pages"
 import { Link } from "gatsby"
-import { ProjectCard } from "./projects"
+import ProjectCard from "../components/project"
 
 const PageHeader = () => {
   const site = useSiteMetadata()
