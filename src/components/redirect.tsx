@@ -20,7 +20,7 @@ const Redirect = (props: RedirectProps): JSX.Element => {
   return (
     <CenterLayout>
       <SEO title="301: Moved Permanently" lang="es" />
-      <Card>
+      <Card bg="dark" text="light">
         <ConcernedSVG
           style={{ width: "5rem", height: "5rem" }}
           className="align-self-center mt-2"

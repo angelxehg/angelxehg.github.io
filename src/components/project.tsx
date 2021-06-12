@@ -18,7 +18,7 @@ const ProjectCard = (props: ProjectCardProps): JSX.Element => {
   const { slug, title, resume, image, caption, stack } = props.item
   const stackIcons = stack.split(",")
   return (
-    <Card as="article">
+    <Card bg="dark" text="light" as="article">
       <Row>
         {!props.noImage && (
           <Col xl="3" md="4">
@@ -40,8 +40,8 @@ const ProjectCard = (props: ProjectCardProps): JSX.Element => {
                 <Badge
                   key={icon}
                   pill
-                  bg="light"
-                  text="dark"
+                  bg="dark"
+                  text="light"
                   className="mt-1 me-1"
                 >
                   <Icon name={icon} /> {icon}

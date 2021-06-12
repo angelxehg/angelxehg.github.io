@@ -42,6 +42,29 @@
 // Utilities
 @import "../node_modules/bootstrap/scss/utilities/api";
 
+body {
+  background-color: #131416;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: rgb(35, 101, 200);
+}
+
+a:active {
+  color: white;
+}
+
+.badge {
+  border: 1px solid rgba(255, 255, 255,0.5);
+}
 
 section {
   padding-top: 50px;

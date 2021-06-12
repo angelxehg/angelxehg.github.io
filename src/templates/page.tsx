@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
+import Badge from "react-bootstrap/Badge"
 import Container from "react-bootstrap/Container"
 
 import Footer from "../components/footer"
@@ -66,16 +67,17 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
           <li>Fecha: {date}</li>
           {stackIcons.length > 0 && (
             <li>
-              {stackIcons.map(icon => {
-                return (
-                  <span
-                    key={icon}
-                    className="badge bg-light text-dark rounded-pill mt-1 me-1"
-                  >
-                    <Icon name={icon} /> {icon}
-                  </span>
-                )
-              })}
+              {stackIcons.map(icon => (
+                  <Badge
+                  key={icon}
+                  pill
+                  bg="dark"
+                  text="light"
+                  className="mt-1 me-1"
+                >
+                  <Icon name={icon} /> {icon}
+                </Badge>
+                ))}
             </li>
           )}
         </ul>

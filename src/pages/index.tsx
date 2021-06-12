@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Badge from "react-bootstrap/Badge"
 import Card from "react-bootstrap/Card"
 import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
@@ -37,7 +38,7 @@ const AboutSection = () => (
   <section id="about">
     <Row>
       <Col xs="12" className="p-md-1 pb-2">
-        <Card>
+        <Card bg="dark" text="light">
           <Card.Body>
             <Card.Title>Educación</Card.Title>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
@@ -54,7 +55,7 @@ const AboutSection = () => (
         </Card>
       </Col>
       <Col xs="12" className="p-md-1 pb-2">
-        <Card>
+        <Card bg="dark" text="light">
           <Card.Body>
             <Card.Title>Enlaces</Card.Title>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
@@ -107,19 +108,22 @@ const SkillsSection = () => (
     <Row>
       {stacks.map(({ title, icons }, n) => (
         <Col key={n} xs="12" className="p-md-1 pb-2">
-          <Card>
+          <Card bg="dark" text="light">
             <Card.Body>
               <Card.Title>{title}</Card.Title>
               <Card.Text>
                 {icons.map(icon => {
                   if (availableIcons.find(i => i === icon)) {
                     return (
-                      <span
+                      <Badge
                         key={icon}
-                        className="badge rounded-pill bg-light text-dark mt-1 me-1"
+                        pill
+                        bg="dark"
+                  text="light"
+                        className="mt-1 me-1"
                       >
-                        <Icon key={icon} name={icon} /> {icon}
-                      </span>
+                        <Icon name={icon} /> {icon}
+                      </Badge>
                     )
                   }
                 })}

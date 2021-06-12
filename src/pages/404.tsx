@@ -10,7 +10,7 @@ const ConcernedSVG = require("../assets/concerned.svg")
 const NotFoundPage = (): JSX.Element => (
   <CenterLayout>
     <SEO title="404: Not found" lang="es" />
-    <Card>
+    <Card bg="dark" text="light">
       <ConcernedSVG
         style={{ width: "5rem", height: "5rem" }}
         className="align-self-center mt-2"
