@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-import { Project, RAWPost, sortByDate, toProject } from "../meta/models"
+import { Project, RAWPost, sortByDate, toProject } from "../models"
 
 export const useProjects = (): Project[] => {
   const { allMdx } = useStaticQuery(graphql`

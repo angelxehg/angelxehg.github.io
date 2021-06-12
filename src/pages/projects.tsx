@@ -7,7 +7,7 @@ import { Icon } from "../components/icons"
 import SEO from "../components/seo"
 import { useProjects } from "../hooks/use-projects"
 import DefaultNavbar from "../components/navbar"
-import { Project } from "../meta/models"
+import { Project } from "../models"
 
 export const ProjectCard = (props: {
   item: Project
