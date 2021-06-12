@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Card from "react-bootstrap/Card"
 import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
@@ -36,9 +37,9 @@ const AboutSection = () => (
   <section id="about">
     <Row>
       <Col xs="12" className="p-md-1 pb-2">
-        <div className="card">
-          <div className="card-body">
-            <h2 className="h5 card-title">Educación</h2>
+        <Card>
+          <Card.Body>
+            <Card.Title>Educación</Card.Title>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
@@ -49,13 +50,13 @@ const AboutSection = () => (
                 2017-2021
               </li>
             </ul>
-          </div>
-        </div>
+          </Card.Body>
+        </Card>
       </Col>
       <Col xs="12" className="p-md-1 pb-2">
-        <div className="card">
-          <div className="card-body">
-            <h2 className="h5 card-title">Enlaces</h2>
+        <Card>
+          <Card.Body>
+            <Card.Title>Enlaces</Card.Title>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
@@ -74,8 +75,8 @@ const AboutSection = () => (
                 )
               })}
             </ul>
-          </div>
-        </div>
+          </Card.Body>
+        </Card>
       </Col>
     </Row>
   </section>
@@ -106,10 +107,10 @@ const SkillsSection = () => (
     <Row>
       {stacks.map(({ title, icons }, n) => (
         <Col key={n} xs="12" className="p-md-1 pb-2">
-          <div className="card">
-            <div className="card-body">
-              <h3 className="h5 card-title">{title}</h3>
-              <p className="card-text">
+          <Card>
+            <Card.Body>
+              <Card.Title>{title}</Card.Title>
+              <Card.Text>
                 {icons.map(icon => {
                   if (availableIcons.find(i => i === icon)) {
                     return (
@@ -122,9 +123,9 @@ const SkillsSection = () => (
                     )
                   }
                 })}
-              </p>
-            </div>
-          </div>
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </Col>
       ))}
     </Row>
