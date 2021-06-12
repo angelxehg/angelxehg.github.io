@@ -77,7 +77,7 @@ const SEO = (props: SEOProps) => {
         },
       ].concat(meta)}
     >
-      <body className="text-light"></body>
+      <body></body>
     </Helmet>
   )
 }

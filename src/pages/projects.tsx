@@ -16,7 +16,7 @@ export const ProjectCard = (props: {
   const { slug, title, resume, date, image, caption, stack } = props.item
   const stackIcons = stack.split(",")
   return (
-    <article className="card bg-dark">
+    <article className="card">
       <div className="row">
         {!props.noImage && (
           <div className="col-xl-3 col-md-4">
@@ -39,7 +39,7 @@ export const ProjectCard = (props: {
                 return (
                   <span
                     key={icon}
-                    className="badge rounded-pill bg-dark mt-1 me-1"
+                    className="badge bg-light text-dark rounded-pill mt-1 me-1"
                   >
                     <Icon name={icon} /> {icon}
                   </span>

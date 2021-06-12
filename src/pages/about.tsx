@@ -13,7 +13,7 @@ const AboutPage = (): JSX.Element => {
   return (
     <CenterLayout>
       <SEO title="301: Moved Permanently" lang="es" />
-      <div className="card bg-dark">
+      <div className="card">
         <ConcernedSVG
           style={{ width: "5rem", height: "5rem" }}
           className="align-self-center mt-2"

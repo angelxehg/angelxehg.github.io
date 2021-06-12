@@ -33,7 +33,7 @@ const AboutSection = () => (
   <section id="about">
     <div className="row">
       <div className="col-12 p-md-1 pb-2">
-        <div className="card bg-dark">
+        <div className="card">
           <div className="card-body">
             <h2 className="h5 card-title">Educación</h2>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
@@ -50,7 +50,7 @@ const AboutSection = () => (
         </div>
       </div>
       <div className="col-12 p-md-1 pb-2">
-        <div className="card bg-dark">
+        <div className="card">
           <div className="card-body">
             <h2 className="h5 card-title">Enlaces</h2>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
@@ -103,7 +103,7 @@ const SkillsSection = () => (
     <div className="row">
       {stacks.map(({ title, icons }, n) => (
         <div key={n} className="col-12 p-md-1 pb-2">
-          <div className="card bg-dark">
+          <div className="card">
             <div className="card-body">
               <h3 className="h5 card-title">{title}</h3>
               <p className="card-text">
@@ -112,7 +112,7 @@ const SkillsSection = () => (
                     return (
                       <span
                         key={icon}
-                        className="badge rounded-pill bg-dark mt-1 me-1"
+                        className="badge rounded-pill bg-light text-dark mt-1 me-1"
                       >
                         <Icon key={icon} name={icon} /> {icon}
                       </span>

@@ -86,7 +86,7 @@ const PostTemplate = (props: PostTemplateProps): JSX.Element => {
                 return (
                   <span
                     key={icon}
-                    className="badge rounded-pill bg-dark mt-1 me-1"
+                    className="badge bg-light text-dark rounded-pill mt-1 me-1"
                   >
                     <Icon name={icon} /> {icon}
                   </span>

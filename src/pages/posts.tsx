@@ -13,7 +13,7 @@ export const RedirectToDevTo = (props: { url: string }): JSX.Element => {
   }, [])
   return (
     <CenterLayout>
-      <div className="card bg-dark">
+      <div className="card">
         <ConcernedSVG
           style={{ width: "5rem", height: "5rem" }}
           className="align-self-center mt-2"

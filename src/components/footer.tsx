@@ -3,7 +3,7 @@ import React from "react"
 import { LinkExternal } from "./social"
 
 const DefaultFooter = (): JSX.Element => (
-  <footer className="navbar navbar-dark bg-dark">
+  <footer className="navbar navbar-dark">
     <div className="container-xl ps-md-4 pe-md-4">
       <span className="navbar-text">
         <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión v1.7.3. Las
