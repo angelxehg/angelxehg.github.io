@@ -1,4 +1,6 @@
 import React from "react"
+import { Link } from "gatsby"
+import Container from "react-bootstrap/Container"
 
 import DefaultFooter from "../components/footer"
 import SEO from "../components/seo"
@@ -7,7 +9,6 @@ import { availableIcons, Icon } from "../components/icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import stacks from "../meta/stacks"
 import { usePages } from "../hooks/use-pages"
-import { Link } from "gatsby"
 import ProjectCard from "../components/project"
 
 const PageHeader = () => {
@@ -131,7 +132,7 @@ const SkillsSection = () => (
 const IndexPage = (): JSX.Element => (
   <div>
     <SEO title="Portafolio" lang="es" />
-    <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
+    <Container fluid="xl" className="ps-md-4 pe-md-4 pt-3 pb-3">
       <div className="row">
         <div className="col-lg-4">
           <PageHeader />
@@ -142,7 +143,7 @@ const IndexPage = (): JSX.Element => (
           <SkillsSection />
         </div>
       </div>
-    </div>
+    </Container>
     <DefaultFooter />
   </div>
 )

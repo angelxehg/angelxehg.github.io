@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
+import Container from "react-bootstrap/Container"
 
 import Footer from "../components/footer"
 import SEO from "../components/seo"
@@ -59,7 +60,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
         image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
       />
       <DefaultNavbar />
-      <div className="container-xl ps-md-4 pe-md-4 pt-3 pb-3">
+      <Container fluid="xl" className="ps-md-4 pe-md-4 pt-3 pb-3">
         <h1 className="h2">{title}</h1>
         <ul className="p-0 m-0 mb-2" style={{ listStyleType: "none" }}>
           <li>Fecha: {date}</li>
@@ -84,7 +85,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
           alt={caption}
         />
         <MDXRenderer>{body}</MDXRenderer>
-      </div>
+      </Container>
       <Footer />
     </div>
   )

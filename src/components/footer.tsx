@@ -1,10 +1,11 @@
 import React from "react"
+import Container from "react-bootstrap/Container"
 
 import { LinkExternal } from "./social"
 
 const DefaultFooter = (): JSX.Element => (
   <footer className="navbar navbar-dark">
-    <div className="container-xl ps-md-4 pe-md-4">
+    <Container fluid="xl" className="ps-md-4 pe-md-4">
       <span className="navbar-text">
         <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión v1.7.3. Las
         marcas y logotipos pertenecen a sus respectivos dueños. Iconos obtenidos
@@ -43,7 +44,7 @@ const DefaultFooter = (): JSX.Element => (
           página de Issues
         </LinkExternal>
       </span>
-    </div>
+    </Container>
   </footer>
 )
 
