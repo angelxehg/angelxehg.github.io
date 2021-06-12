@@ -1,10 +1,11 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
+import Navbar from "react-bootstrap/Navbar"
 
 import { LinkExternal } from "./social"
 
 const DefaultFooter = (): JSX.Element => (
-  <footer className="navbar navbar-dark">
+  <Navbar as="footer" variant="dark" bg="dark">
     <Container fluid="xl" className="ps-md-4 pe-md-4">
       <span className="navbar-text">
         <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión v1.7.3. Las
@@ -45,7 +46,7 @@ const DefaultFooter = (): JSX.Element => (
         </LinkExternal>
       </span>
     </Container>
-  </footer>
+  </Navbar>
 )
 
 export default DefaultFooter
