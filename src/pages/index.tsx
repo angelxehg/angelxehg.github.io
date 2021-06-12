@@ -6,7 +6,7 @@ import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
 import { availableIcons, Icon } from "../components/icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import stacks from "../meta/stacks"
-import { useProjects } from "../hooks/use-projects"
+import { usePages } from "../hooks/use-pages"
 import { Link } from "gatsby"
 import { ProjectCard } from "./projects"
 
@@ -79,7 +79,7 @@ const AboutSection = () => (
 )
 
 const ProjectsSection = () => {
-  const projects = useProjects().slice(0, 2)
+  const projects = usePages().slice(0, 2)
   return (
     <section id="projects">
       <h2 className="h4">

@@ -1,15 +1,15 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-import { RAWPost, Post, sortByDate, toPost } from "../models"
+import { Page, RAWPage, sortByDate, toPage } from "../models"
 
-export const usePosts = (): Post[] => {
+export const usePages = (): Page[] => {
   const { allMdx } = useStaticQuery(graphql`
-    query AllPosts {
-      allMdx(filter: { frontmatter: { type: { eq: "post" } } }) {
+    query AllProjects {
+      allMdx(filter: { frontmatter: { type: { eq: "project" } } }) {
         nodes {
           id
           slug
-          excerpt(pruneLength: 100)
+          excerpt(pruneLength: 35)
           frontmatter {
             title
             resume
@@ -20,12 +20,13 @@ export const usePosts = (): Post[] => {
               }
             }
             caption
+            stack
             published
           }
         }
       }
     }
   `)
-  const nodes: RAWPost[] = allMdx.nodes
-  return nodes.map(toPost).sort(sortByDate).filter(i => i.published === true)
+  const nodes: RAWPage[] = allMdx.nodes
+  return nodes.map(toPage).sort(sortByDate).filter(i => i.published === true);
 }

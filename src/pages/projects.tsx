@@ -5,12 +5,12 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import DefaultFooter from "../components/footer"
 import { Icon } from "../components/icons"
 import SEO from "../components/seo"
-import { useProjects } from "../hooks/use-projects"
+import { usePages } from "../hooks/use-pages"
 import DefaultNavbar from "../components/navbar"
-import { Project } from "../models"
+import { Page } from "../models"
 
 export const ProjectCard = (props: {
-  item: Project
+  item: Page
   noImage?: boolean
 }): JSX.Element => {
   const { slug, title, resume, date, image, caption, stack } = props.item
@@ -54,7 +54,7 @@ export const ProjectCard = (props: {
 }
 
 const ProjectsPage = (): JSX.Element => {
-  const projects = useProjects()
+  const projects = usePages()
   return (
     <div>
       <SEO title="Proyectos" lang="es" />
