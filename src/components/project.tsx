@@ -1,6 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import Badge from "react-bootstrap/Badge"
+import Card from "react-bootstrap/Card"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 
 import { Icon } from "./icons"
 import { Page } from "../models"
@@ -11,43 +15,43 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = (props: ProjectCardProps): JSX.Element => {
-  const { slug, title, resume, date, image, caption, stack } = props.item
+  const { slug, title, resume, image, caption, stack } = props.item
   const stackIcons = stack.split(",")
   return (
-    <article className="card">
-      <div className="row">
+    <Card as="article">
+      <Row>
         {!props.noImage && (
-          <div className="col-xl-3 col-md-4">
+          <Col xl="3" md="4">
             <GatsbyImage
               className="card-img-top img-200"
               image={image}
               alt={caption}
             />
-          </div>
+          </Col>
         )}
-        <div className="col-md">
-          <div className="card-body">
-            <Link to={`/${slug}`}>
-              <h3 className="h5 card-title">{title}</h3>
-            </Link>
-            <h4 className="h6 card-subtitle mb-2">{date}</h4>
-            <p className="card-text m-0">{resume}</p>
-            <p className="card-text mt-1">
-              {stackIcons.map(icon => {
-                return (
-                  <span
-                    key={icon}
-                    className="badge bg-light text-dark rounded-pill mt-1 me-1"
-                  >
-                    <Icon name={icon} /> {icon}
-                  </span>
-                )
-              })}
-            </p>
-          </div>
-        </div>
-      </div>
-    </article>
+        <Col md>
+          <Card.Body>
+            <Card.Title>
+              <Link to={`/${slug}`}>{title}</Link>
+            </Card.Title>
+            <Card.Text className="m-0">{resume}</Card.Text>
+            <Card.Text className="mt-1">
+              {stackIcons.map(icon => (
+                <Badge
+                  key={icon}
+                  pill
+                  bg="light"
+                  text="dark"
+                  className="mt-1 me-1"
+                >
+                  <Icon name={icon} /> {icon}
+                </Badge>
+              ))}
+            </Card.Text>
+          </Card.Body>
+        </Col>
+      </Row>
+    </Card>
   )
 }
 
