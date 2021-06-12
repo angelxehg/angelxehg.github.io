@@ -28,7 +28,7 @@ export const query = graphql`
   }
 `
 
-interface PostTemplateProps {
+interface PageTemplateProps {
   data: {
     mdx: {
       body: string
@@ -47,7 +47,7 @@ interface PostTemplateProps {
   }
 }
 
-const PostTemplate = (props: PostTemplateProps): JSX.Element => {
+const PageTemplate = (props: PageTemplateProps): JSX.Element => {
   const { frontmatter, body } = props.data.mdx
   const { title, date, image, caption, stack } = frontmatter
   const stackIcons = stack ? stack.split(",") : []
@@ -90,4 +90,4 @@ const PostTemplate = (props: PostTemplateProps): JSX.Element => {
   )
 }
 
-export default PostTemplate
+export default PageTemplate
