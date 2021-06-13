@@ -6,31 +6,17 @@ import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 
-import DefaultNavbar from "../components/navbar"
 import DefaultFooter from "../components/footer"
 import SEO from "../components/seo"
-import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
+import { LinkExternal, socialLinks } from "../components/social"
 import { availableIcons, Icon } from "../components/icons"
-import { useSiteMetadata } from "../hooks/use-site-metadata"
 import stacks from "../meta/stacks"
 import { usePages } from "../hooks/use-pages"
 import ProjectCard from "../components/project"
-
-const PageHeader = () => {
-  const site = useSiteMetadata()
-  return (
-    <div className="text-center mt-1">
-      <ProfileImage />
-      <header className="mt-2">
-        <h1 className="h3">Angel Hurtado</h1>
-        <p>{site.description}</p>
-      </header>
-    </div>
-  )
-}
+import DefaultHeader from "../components/header"
 
 const AboutSection = () => (
-  <section id="about">
+  <section id="about" className="mt-2">
     <h2 className="h4">Acerca de mi:</h2>
     <Row>
       <Col xs="12" className="p-md-1 pb-2">
@@ -82,7 +68,7 @@ const AboutSection = () => (
 const ProjectsSection = () => {
   const projects = usePages().slice(0, 2)
   return (
-    <section id="projects">
+    <section id="projects" className="mt-2">
       <h2 className="h4">
         Últimos <Link to="/projects">proyectos</Link>:
       </h2>
@@ -99,7 +85,7 @@ const ProjectsSection = () => {
 }
 
 const SkillsSection = () => (
-  <section id="skills">
+  <section id="skills" className="mt-2">
     <h2 className="h4">Habilidades:</h2>
     <Row>
       {stacks.map(({ title, icons }, n) => (
@@ -135,9 +121,8 @@ const SkillsSection = () => (
 const IndexPage = (): JSX.Element => (
   <div>
     <SEO title="Portafolio" lang="es" />
-    <DefaultNavbar />
     <Container fluid="xl" className="ps-md-4 pe-md-4 pt-3 pb-3">
-      <PageHeader />
+      <DefaultHeader/>
       <ProjectsSection />
       <SkillsSection />
       <AboutSection />

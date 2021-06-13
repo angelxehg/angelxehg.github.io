@@ -8,7 +8,7 @@ import Container from "react-bootstrap/Container"
 import Footer from "../components/footer"
 import SEO from "../components/seo"
 import { Icon } from "../components/icons"
-import DefaultNavbar from "../components/navbar"
+import DefaultHeader from "../components/header"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -60,8 +60,8 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
         lang="es"
         image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
       />
-      <DefaultNavbar />
       <Container fluid="xl" className="ps-md-4 pe-md-4 pt-3 pb-3">
+        <DefaultHeader />
         <h1 className="h2">{title}</h1>
         <ul className="p-0 m-0 mb-2" style={{ listStyleType: "none" }}>
           <li>Fecha: {date}</li>
