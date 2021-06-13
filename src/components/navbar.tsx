@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 
 const DefaultNavbar = (): JSX.Element => (
-  <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
+  <Navbar variant="dark" expand="sm">
     <Container fluid="xl" className="ps-md-4 pe-md-4">
       <Link
         to="/"

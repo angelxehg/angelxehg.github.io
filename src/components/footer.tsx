@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar"
 import { LinkExternal } from "./social"
 
 const DefaultFooter = (): JSX.Element => (
-  <Navbar as="footer" variant="dark" bg="dark">
+  <Navbar as="footer" variant="dark">
     <Container fluid="xl" className="ps-md-4 pe-md-4">
       <span className="navbar-text">
         <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión{" "}
