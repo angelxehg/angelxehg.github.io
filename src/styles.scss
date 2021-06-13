@@ -71,21 +71,6 @@ section {
   margin-top: -50px;
 }
 
-.full-h {
-  min-height: 100vh;
-  margin: 0 !important;
-}
-
-.fill-sm {
-  width: 100%;
-}
-
-@media (min-width: 400px) {
-  .fill-sm {
-    max-width: 400px;
-  }
-}
-
 .img-200 {
   height: 200px;
 }
