@@ -5,7 +5,7 @@ import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import Badge from "react-bootstrap/Badge"
 import Container from "react-bootstrap/Container"
 
-import Footer from "../components/footer"
+import Footer from "../components/Footer"
 import SEO from "../components/SEO"
 import { Icon } from "../components/icons"
 

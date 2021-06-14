@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container"
 import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 
-import DefaultFooter from "../components/footer"
+import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
 import { usePages } from "../hooks/use-pages"
 import ProjectCard from "../components/project"
