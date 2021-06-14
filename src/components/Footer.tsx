@@ -1,5 +1,5 @@
 import React from "react"
-import Box from "@material-ui/core/Box"
+import Container from "@material-ui/core/Container"
 import Link from "@material-ui/core/Link"
 import Typography from '@material-ui/core/Typography'
 
@@ -58,7 +58,7 @@ const VersionLink = () => (
 )
 
 const DefaultFooter = (): JSX.Element => (
-  <Box component="footer">
+  <Container component="footer">
     <Typography variant="body1" color="textSecondary">
       © {new Date().getFullYear()}, Angel Hurtado. Portafolio profesional creado con <GatsbyLink /> y <MaterialUILink />.
     </Typography>
@@ -68,7 +68,7 @@ const DefaultFooter = (): JSX.Element => (
     <Typography variant="body2" color="textSecondary">
       Reporta problemas o envia tus sugerencias a la <IssuesPageLink />. Versión del sitio web: <VersionLink />
     </Typography>
-  </Box>
+  </Container>
 )
 
 export default DefaultFooter

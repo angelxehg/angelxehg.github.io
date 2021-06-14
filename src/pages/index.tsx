@@ -9,10 +9,11 @@ import DefaultFooter from "../components/Footer";
 const IndexPage = (): JSX.Element => (
   <Layout>
     <SEO title="Portafolio" lang="es" />
-    <Container>
-      <HugeHeader />
-      <DefaultFooter/>
+    <HugeHeader />
+    <Container component="main">
+      Hola mundo
     </Container>
+    <DefaultFooter />
   </Layout>
 )
 
