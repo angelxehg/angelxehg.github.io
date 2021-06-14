@@ -53,25 +53,3 @@ export const instagramLink: SocialLink = {
   title: "Instagram (@angelxehg)",
   icon: "Instagram",
 }
-
-interface LinkExternalProps {
-  to: string
-  title?: string
-  children: React.ReactNode | React.ReactNode[]
-  className?: string
-}
-
-export const LinkExternal = (props: LinkExternalProps): JSX.Element => (
-  <a
-    href={props.to}
-    rel="noopener"
-    target="_blank"
-    style={{ margin: "3px" }}
-    data-bs-toggle="tooltip"
-    data-bs-placement="bottom"
-    title={props.title || "Link"}
-    className={props.className || ""}
-  >
-    {props.children}
-  </a>
-)

@@ -8,7 +8,6 @@ import Row from "react-bootstrap/Row"
 
 import DefaultFooter from "../components/footer"
 import SEO from "../components/SEO"
-import { LinkExternal } from "../components/social"
 import { availableIcons, Icon } from "../components/icons"
 import stacks from "../meta/stacks"
 import { usePages } from "../hooks/use-pages"
@@ -26,9 +25,9 @@ const AboutSection = () => (
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
                 <br />@
-                <LinkExternal to="http://www.utzac.edu.mx" title="UTZAC">
+                <a href="http://www.utzac.edu.mx" rel="noopener" target="_blank" title="UTZAC">
                   UTZAC
-                </LinkExternal>{" "}
+                </a>{" "}
                 2017-2021
               </li>
             </ul>
@@ -41,10 +40,10 @@ const AboutSection = () => (
             <Card.Title>Enlaces</Card.Title>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
-                <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
+                <a href="mailto:sudo@angelxehg.com" title="Email" rel="noopener" target="_blank">
                   <Icon name="Email" className="me-2" />
                   sudo@angelxehg.com
-                </LinkExternal>
+                </a>
               </li>
             </ul>
           </Card.Body>

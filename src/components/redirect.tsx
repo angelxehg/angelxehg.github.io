@@ -3,7 +3,6 @@ import { navigate } from "gatsby"
 import Card from "react-bootstrap/Card"
 
 import CenterLayout from "../layouts/center"
-import { LinkExternal } from "./social"
 import SEO from "./SEO"
 
 interface RedirectProps {
@@ -29,7 +28,9 @@ const Redirect = (props: RedirectProps): JSX.Element => {
           <Card.Title>301: Moved Permanently</Card.Title>
           <Card.Text className="m-0">
             Redireccionando a{" "}
-            <LinkExternal to={props.url}>{props.title}</LinkExternal>...
+            <a href={props.url} rel="noopener" target="_blank">
+              {props.title}
+            </a>...
           </Card.Text>
         </Card.Body>
       </Card>

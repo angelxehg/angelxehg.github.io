@@ -2,54 +2,40 @@ import React from "react"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
 
-import { LinkExternal } from "./social"
-
 const DefaultFooter = (): JSX.Element => (
   <Navbar as="footer" variant="dark">
     <Container fluid="xl" className="ps-md-4 pe-md-4">
       <span className="navbar-text">
         <b>© {new Date().getFullYear()}, Angel Hurtado.</b> Versión{" "}
-        <LinkExternal
-          to="https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0-beta.1"
-          className="text-reset"
-        >
+        <a href="https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0-beta.1" rel="noopener" target="_blank" title="GitHub repository">
           v2.0.0-beta.1
-        </LinkExternal>
+        </a>
         . Las marcas y logotipos pertenecen a sus respectivos dueños. Iconos
         obtenidos desde{" "}
-        <LinkExternal
-          to="https://fontawesome.com/license"
-          className="text-reset"
-        >
+        <a href="https://fontawesome.com/license" rel="noopener" target="_blank" title="FontAwesome">
           FontAwesome
-        </LinkExternal>
+        </a>
         {", "}
-        <LinkExternal
-          to="https://icons.getbootstrap.com/"
-          className="text-reset"
-        >
+        <a href="https://icons.getbootstrap.com/" rel="noopener" target="_blank" title="Bootstrap Icons">
           Bootstrap Icons
-        </LinkExternal>
+        </a>
         {", "}
-        <LinkExternal to="https://seeklogo.com/" className="text-reset">
+        <a href="https://seeklogo.com/" rel="noopener" target="_blank" title="SeekLogo">
           SeekLogo
-        </LinkExternal>
+        </a>
         {", "}
-        <LinkExternal to="https://ionicons.com/" className="text-reset">
+        <a href="https://ionicons.com/" rel="noopener" target="_blank" title="Ionicons">
           Ionicons
-        </LinkExternal>
+        </a>
         {", y "}
-        <LinkExternal to="https://iconify.design/" className="text-reset">
+        <a href="https://iconify.design/" rel="noopener" target="_blank" title="Iconify">
           Iconify
-        </LinkExternal>
+        </a>
         {", "}
         Reporta problemas o envia tus sugerencias a la{" "}
-        <LinkExternal
-          to="https://github.com/angelxehg/angelxehg.github.io/issues"
-          className="text-reset"
-        >
+        <a href="https://github.com/angelxehg/angelxehg.github.io/issues" rel="noopener" target="_blank" title="Issues en GitHub">
           página de Issues
-        </LinkExternal>
+        </a>
       </span>
     </Container>
   </Navbar>
