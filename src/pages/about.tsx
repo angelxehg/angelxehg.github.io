@@ -3,7 +3,7 @@ import { Link, navigate } from "gatsby"
 import Card from "react-bootstrap/Card"
 
 import CenterLayout from "../layouts/center"
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 
 const ConcernedSVG = require("../assets/concerned.svg")
 

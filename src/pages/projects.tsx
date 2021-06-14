@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 
 import DefaultFooter from "../components/footer"
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 import { usePages } from "../hooks/use-pages"
 import ProjectCard from "../components/project"
 

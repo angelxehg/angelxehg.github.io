@@ -6,7 +6,7 @@ import Badge from "react-bootstrap/Badge"
 import Container from "react-bootstrap/Container"
 
 import Footer from "../components/footer"
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 import { Icon } from "../components/icons"
 
 export const query = graphql`

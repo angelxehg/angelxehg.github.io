@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "@material-ui/core/Container"
 
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 import Layout from "../layouts/layout";
 import HugeHeader from "../components/HugeHeader";
 

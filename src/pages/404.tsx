@@ -5,7 +5,7 @@ import Link from "@material-ui/core/Link"
 import Typography from '@material-ui/core/Typography';
 
 import CenterLayout from "../layouts/center"
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 
 const ConcernedSVG = require("../assets/concerned.svg")
 

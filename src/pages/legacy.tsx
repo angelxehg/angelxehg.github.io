@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col"
 import Row from "react-bootstrap/Row"
 
 import DefaultFooter from "../components/footer"
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 import { LinkExternal, socialLinks } from "../components/social"
 import { availableIcons, Icon } from "../components/icons"
 import stacks from "../meta/stacks"

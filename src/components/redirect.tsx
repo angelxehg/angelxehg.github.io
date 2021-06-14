@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card"
 
 import CenterLayout from "../layouts/center"
 import { LinkExternal } from "./social"
-import SEO from "./seo"
+import SEO from "./SEO"
 
 interface RedirectProps {
   title: string
