@@ -2,7 +2,7 @@ import React from "react"
 import Container from "@material-ui/core/Container"
 
 import SEO from "../components/SEO"
-import Layout from "../layouts/layout";
+import Layout from "../layouts/Layout";
 import HugeHeader from "../components/HugeHeader";
 
 const IndexPage = (): JSX.Element => (

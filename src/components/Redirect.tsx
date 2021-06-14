@@ -5,7 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Link from "@material-ui/core/Link"
 import Typography from '@material-ui/core/Typography';
 
-import CenterLayout from "../layouts/center"
+import CenterLayout from "../layouts/Center"
 import SEO from "./SEO"
 
 interface RedirectProps {

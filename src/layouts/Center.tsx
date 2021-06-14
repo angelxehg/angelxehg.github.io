@@ -1,8 +1,8 @@
 import React from "react"
 
-import "./center.scss"
+import "./Center.scss"
 
-import Layout from "./layout"
+import Layout from "./Layout"
 
 interface CenterLayoutProps {
   children: React.ReactNode | React.ReactNode[]
