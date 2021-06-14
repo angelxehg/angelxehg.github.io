@@ -8,7 +8,7 @@ import "./HugeHeader.scss"
 
 import { Icon } from "./icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { resumeLink, devToLink, linkedInLink, payPalLink, gitHubLink, gitLabLink, twitterLink, instagramLink } from "./social"
+import { resumeLink, devToLink, linkedInLink, payPalLink, gitHubLink, gitLabLink, twitterLink, instagramLink } from "../meta/links"
 
 const socialLinks = [
   resumeLink,
