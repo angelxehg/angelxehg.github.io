@@ -14,10 +14,7 @@ const NotFoundPage = (): JSX.Element => (
     <SEO title="404: Not found" lang="es" />
     <Card>
       <CardContent>
-        <ConcernedSVG
-          style={{ width: "5rem", height: "5rem" }}
-          className="align-self-center mt-2"
-        />
+      <ConcernedSVG style={{ width: "5rem", height: "5rem" }}/>
         <Typography component="h1" variant="h5">
           404 Not Found
         </Typography>
