@@ -54,17 +54,6 @@ export const instagramLink: SocialLink = {
   icon: "Instagram",
 }
 
-export const socialLinks: SocialLink[] = [
-  resumeLink,
-  devToLink,
-  linkedInLink,
-  payPalLink,
-  gitHubLink,
-  gitLabLink,
-  twitterLink,
-  instagramLink,
-]
-
 interface LinkExternalProps {
   to: string
   title?: string

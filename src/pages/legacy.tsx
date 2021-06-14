@@ -8,7 +8,7 @@ import Row from "react-bootstrap/Row"
 
 import DefaultFooter from "../components/footer"
 import SEO from "../components/SEO"
-import { LinkExternal, socialLinks } from "../components/social"
+import { LinkExternal } from "../components/social"
 import { availableIcons, Icon } from "../components/icons"
 import stacks from "../meta/stacks"
 import { usePages } from "../hooks/use-pages"
@@ -46,16 +46,6 @@ const AboutSection = () => (
                   sudo@angelxehg.com
                 </LinkExternal>
               </li>
-              {socialLinks.map(({ title, to, icon }) => {
-                return (
-                  <li key={to} className="mt-1">
-                    <LinkExternal to={to} title={title}>
-                      <Icon name={icon} className="me-2" />
-                      {title}
-                    </LinkExternal>
-                  </li>
-                )
-              })}
             </ul>
           </Card.Body>
         </Card>
