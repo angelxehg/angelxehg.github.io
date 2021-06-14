@@ -1,6 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
-import Card from "react-bootstrap/Card"
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Link from "@material-ui/core/Link"
+import Typography from '@material-ui/core/Typography';
 
 import CenterLayout from "../layouts/center"
 import SEO from "../components/seo"
@@ -10,16 +12,24 @@ const ConcernedSVG = require("../assets/concerned.svg")
 const NotFoundPage = (): JSX.Element => (
   <CenterLayout>
     <SEO title="404: Not found" lang="es" />
-    <Card bg="dark" text="light">
+    <Card>
       <ConcernedSVG
         style={{ width: "5rem", height: "5rem" }}
         className="align-self-center mt-2"
       />
-      <Card.Body>
-        <Card.Title>404 Not Found</Card.Title>
-        <Card.Text className="m-0">La página que buscas no existe</Card.Text>
-        <Link to="/projects">Ir al Portafolio</Link>
-      </Card.Body>
+      <CardContent>
+        <Typography component="h1" variant="h5">
+          404 Not Found
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          La página que buscas no existe
+        </Typography>
+        <Typography>
+          <Link href="/" color="inherit">
+            Ir a página principal
+          </Link>
+        </Typography>
+      </CardContent>
     </Card>
   </CenterLayout>
 )
