@@ -1,9 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Angel Hurtado`,
-    description: `Web developer con Angular y React. Estudiante de ITIC.`,
+    description: `Hola mundo! Soy un front-end web developer, trabajo con Angular, React y JavaScript. Ingeriero en TIC`,
     author: `@angelxehg`,
-    keywords: `developer, portfolio, blog`,
     siteUrl: `https://angelxehg.com`,
   },
   flags: {

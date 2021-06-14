@@ -10,7 +10,6 @@ export const useSiteMetadata = (): SiteMetadata => {
           title
           description
           author
-          keywords
         }
       }
     }

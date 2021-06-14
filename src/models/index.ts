@@ -4,7 +4,6 @@ export interface SiteMetadata {
   title: string
   description: string
   author: string
-  keywords: string
 }
 
 export interface RAWPage {

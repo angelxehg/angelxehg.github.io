@@ -1,11 +1,25 @@
 import React from "react"
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box"
+import Link from "@material-ui/core/Link"
 import Typography from '@material-ui/core/Typography';
 
 import "./HugeHeader.scss"
 
+import { Icon } from "./icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { resumeLink, devToLink, linkedInLink, payPalLink, gitHubLink, gitLabLink, twitterLink, instagramLink } from "./social"
+
+const socialLinks = [
+  resumeLink,
+  devToLink,
+  linkedInLink,
+  payPalLink,
+  gitHubLink,
+  gitLabLink,
+  twitterLink,
+  instagramLink,
+]
 
 const HugeHeader = (): JSX.Element => {
   const site = useSiteMetadata()
@@ -16,9 +30,16 @@ const HugeHeader = (): JSX.Element => {
         <Typography component="h1" variant="h4">
           {site.title}
         </Typography>
-        <p>
+        <Typography variant="body1" gutterBottom>
           {site.description}
-        </p>
+        </Typography>
+      </Box>
+      <Box component="nav" mt={1}>
+        {socialLinks.map(link => (
+          <Link key={link.to} href={link.to} title={link.title} rel="noopener" target="_blank">
+            <Icon name={link.icon} size="1.5rem" />
+          </Link>
+        ))}
       </Box>
     </Box>
   )
