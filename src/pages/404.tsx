@@ -13,11 +13,11 @@ const NotFoundPage = (): JSX.Element => (
   <CenterLayout>
     <SEO title="404: Not found" lang="es" />
     <Card>
-      <ConcernedSVG
-        style={{ width: "5rem", height: "5rem" }}
-        className="align-self-center mt-2"
-      />
       <CardContent>
+        <ConcernedSVG
+          style={{ width: "5rem", height: "5rem" }}
+          className="align-self-center mt-2"
+        />
         <Typography component="h1" variant="h5">
           404 Not Found
         </Typography>
@@ -25,7 +25,7 @@ const NotFoundPage = (): JSX.Element => (
           La página que buscas no existe
         </Typography>
         <Typography>
-          <Link href="/" color="inherit">
+          <Link href="/">
             Ir a página principal
           </Link>
         </Typography>

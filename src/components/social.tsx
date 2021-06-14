@@ -65,17 +65,6 @@ export const socialLinks: SocialLink[] = [
   instagramLink,
 ]
 
-export const ProfileImage = (): JSX.Element => {
-  return (
-    <img
-      src="/images/Profile.500.Sqr.jpg"
-      className="rounded-circle fluid align-self-center"
-      alt="Foto de perfil de Angel"
-      style={{ height: "120px", width: "120px" }}
-    />
-  )
-}
-
 interface LinkExternalProps {
   to: string
   title?: string

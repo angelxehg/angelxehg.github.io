@@ -6,7 +6,6 @@ import Row from "react-bootstrap/Row"
 import DefaultFooter from "../components/footer"
 import SEO from "../components/seo"
 import { usePages } from "../hooks/use-pages"
-import DefaultHeader from "../components/header"
 import ProjectCard from "../components/project"
 
 const ProjectsPage = (): JSX.Element => {
@@ -15,7 +14,6 @@ const ProjectsPage = (): JSX.Element => {
     <div>
       <SEO title="Proyectos" lang="es" />
       <Container fluid="xl" className="ps-md-4 pe-md-4 pt-3 pb-3">
-        <DefaultHeader />
         <h2 className="h3">Todos mis proyectos</h2>
         <p>Estos son todos mis proyectos públicos</p>
         <Row>

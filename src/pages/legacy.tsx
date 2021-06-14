@@ -13,7 +13,6 @@ import { availableIcons, Icon } from "../components/icons"
 import stacks from "../meta/stacks"
 import { usePages } from "../hooks/use-pages"
 import ProjectCard from "../components/project"
-import DefaultHeader from "../components/header"
 
 const AboutSection = () => (
   <section id="about" className="mt-2">
@@ -122,7 +121,6 @@ const IndexPage = (): JSX.Element => (
   <div>
     <SEO title="Portafolio" lang="es" />
     <Container fluid="xl" className="ps-md-4 pe-md-4 pt-3 pb-3">
-      <DefaultHeader/>
       <ProjectsSection />
       <SkillsSection />
       <AboutSection />
