@@ -93,12 +93,12 @@ const IssuesPageLink = () => (
 
 const VersionLink = () => (
   <Link
-    href="https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0-beta.1"
+    href="https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0-beta.2"
     rel="noopener"
     target="_blank"
     title="GitHub repository"
   >
-    v2.0.0-beta.1
+    v2.0.0-beta.2
   </Link>
 )
 
