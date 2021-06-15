@@ -1,0 +1,17 @@
+.huge-header {
+  text-align: center;
+}
+
+@media (min-width: 400px) {
+  header.huge-header {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+  }
+}
+
+.huge-header-avatar {
+  height: 100px !important;
+  width: 100px !important;
+  margin: auto;
+}

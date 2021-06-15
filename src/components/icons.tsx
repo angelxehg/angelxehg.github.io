@@ -1,3 +1,4 @@
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 import React from "react"
 
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
@@ -60,13 +61,11 @@ const iconsSource = [
   },
   {
     name: "Capacitor",
-    color: "white",
     svg: CapacitorSVG,
     docs: "https://capacitorjs.com/",
   },
   {
     name: "Dev.to",
-    color: "white",
     fill: true,
     svg: DevToSVG,
     docs: "https://dev.to/",
@@ -79,25 +78,21 @@ const iconsSource = [
   },
   {
     name: "Django",
-    color: "white",
     svg: DjangoSVG,
     docs: "https://www.djangoproject.com/",
   },
   {
     name: "Document",
-    color: "white",
     svg: DocumentSVG,
     docs: "https://angelxehg.com/",
   },
   {
     name: "Email",
-    color: "white",
     svg: EmailSVG,
     docs: "https://angelxehg.com/",
   },
   {
     name: "Firebase",
-    color: "white",
     svg: FirebaseSVG,
     docs: "https://firebase.google.com/",
   },
@@ -115,13 +110,11 @@ const iconsSource = [
   },
   {
     name: "GitHub",
-    color: "white",
     svg: GitHubSVG,
     docs: "https://github.com/",
   },
   {
     name: "GitHub Pages",
-    color: "white",
     svg: GitHubSVG,
     docs: "https://pages.github.com/",
   },
@@ -164,13 +157,11 @@ const iconsSource = [
   },
   {
     name: "Markdown",
-    color: "white",
     svg: MarkdownSVG,
     docs: "https://www.markdownguide.org/",
   },
   {
     name: "Netlify",
-    color: "white",
     svg: NetlifySVG,
     docs: "https://www.netlify.com/",
   },
@@ -194,7 +185,6 @@ const iconsSource = [
   },
   {
     name: "Python",
-    color: "white",
     svg: PythonSVG,
     docs: "https://www.python.org/",
   },
@@ -224,13 +214,11 @@ const iconsSource = [
   },
   {
     name: "VSCode",
-    color: "white",
     svg: VSCodeSVG,
     docs: "https://code.visualstudio.com/",
   },
   {
     name: "Web",
-    color: "white",
     svg: WebSVG,
     docs: "https://angelxehg.com/",
   },
@@ -247,21 +235,38 @@ interface IconProps {
 const useStyles = (props: IconProps, defaultColor: string) => {
   const { size } = props
   return {
-    width: size || "1.2rem",
-    height: size || "1.2rem",
+    width: size || "1rem",
+    height: size || "1rem",
     color: defaultColor || "white",
+  }
+}
+
+const fillNColor = (
+  defaultColor: string,
+  colorProp: string | undefined,
+  fillProp: boolean | undefined
+) => {
+  const finalColor = colorProp ? colorProp : defaultColor
+  const finalFill = fillProp ? finalColor : undefined
+  return {
+    fill: finalFill,
+    color: finalColor,
   }
 }
 
 export const Icon = (props: IconProps) => {
   const { name, className } = props
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)")
   const classes = className || ""
   const icon = iconsSource.find(i => i.name === name)
   if (!icon) {
     throw new Error(`No se encontró el icono '${name}'`)
   }
-  const color = icon.fill ? "white" : icon.color
-  const fill = icon.fill ? icon.color : undefined
+  const { fill, color } = fillNColor(
+    prefersDarkMode ? "white" : "black",
+    icon.color,
+    icon.fill
+  )
   const IconSVG = icon.svg
   return (
     <IconSVG fill={fill} style={useStyles(props, color)} className={classes} />

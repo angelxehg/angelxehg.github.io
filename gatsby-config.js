@@ -1,18 +1,55 @@
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = "https://angelxehg.com",
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
+
 module.exports = {
   siteMetadata: {
     title: `Angel Hurtado`,
-    description: `Web developer con Angular y React. Estudiante de ITIC.`,
+    description: `Hola mundo! Soy un front-end web developer, trabajo con Angular, React y JavaScript. Ingeriero en TIC`,
     author: `@angelxehg`,
-    keywords: `developer, portfolio, blog`,
-    siteUrl: `https://angelxehg.com`,
+    siteUrl: NETLIFY_DEPLOY_URL,
   },
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
     PRESERVE_WEBPACK_CACHE: true,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-material-ui",
+      options: {
+        // stylesProvider: {
+        //   injectFirst: true,
+        // },
+      },
+    },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-advanced-sitemap`,
+    // {
+    //   resolve: 'gatsby-plugin-robots-txt',
+    //   options: {
+    //     host: 'https://angelxehg.com',
+    //     resolveEnv: () => NETLIFY_ENV,
+    //     env: {
+    //       production: {
+    //         policy: [{ userAgent: '*', allow: '/', disallow: ['/posts', '/404', '/about'] }],
+    //         sitemap: 'https://angelxehg.com/sitemap.xml',
+    //       },
+    //       'branch-deploy': {
+    //         policy: [{ userAgent: '*', disallow: ['/'] }],
+    //         sitemap: null,
+    //         host: null
+    //       },
+    //       'deploy-preview': {
+    //         policy: [{ userAgent: '*', disallow: ['/'] }],
+    //         sitemap: null,
+    //         host: null
+    //       }
+    //     },
+    //   }
+    // },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -37,7 +74,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-sass`,
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

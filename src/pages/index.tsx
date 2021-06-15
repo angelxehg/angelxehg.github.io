@@ -1,81 +1,67 @@
 import React from "react"
-import { Link } from "gatsby"
-import Badge from "react-bootstrap/Badge"
-import Card from "react-bootstrap/Card"
-import Container from "react-bootstrap/Container"
-import Col from "react-bootstrap/Col"
-import Row from "react-bootstrap/Row"
+import Link from "@material-ui/core/Link"
+import Card from "@material-ui/core/Card"
+import CardContent from "@material-ui/core/CardContent"
+import Container from "@material-ui/core/Container"
+import Grid from "@material-ui/core/Grid"
+import Typography from "@material-ui/core/Typography"
 
-import DefaultNavbar from "../components/navbar"
-import DefaultFooter from "../components/footer"
-import SEO from "../components/seo"
-import { LinkExternal, ProfileImage, socialLinks } from "../components/social"
-import { availableIcons, Icon } from "../components/icons"
-import { useSiteMetadata } from "../hooks/use-site-metadata"
-import stacks from "../meta/stacks"
+import SEO from "../components/SEO"
+import Layout from "../layouts/Layout"
+import HugeHeader from "../components/HugeHeader"
+import DefaultFooter from "../components/Footer"
 import { usePages } from "../hooks/use-pages"
-import ProjectCard from "../components/project"
-
-const PageHeader = () => {
-  const site = useSiteMetadata()
-  return (
-    <div className="text-center mt-1">
-      <ProfileImage />
-      <header className="mt-2">
-        <h1 className="h3">Angel Hurtado</h1>
-        <p>{site.description}</p>
-      </header>
-    </div>
-  )
-}
+import { availableIcons, Icon } from "../components/icons"
+import stacks from "../meta/stacks"
+import { ProjectCard } from "./projects"
 
 const AboutSection = () => (
   <section id="about">
-    <h2 className="h4">Acerca de mi:</h2>
-    <Row>
-      <Col xs="12" className="p-md-1 pb-2">
-        <Card bg="dark" text="light">
-          <Card.Body>
-            <Card.Title>Educación</Card.Title>
-            <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
+    <Typography component="h2" variant="h5">
+      Acerca de mi:
+    </Typography>
+    <Grid container spacing={1}>
+      <Grid item xl={12}>
+        <Card>
+          <CardContent>
+            <Typography component="h3" variant="h5">
+              Educación
+            </Typography>
+            <ul style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
                 <br />@
-                <LinkExternal to="http://www.utzac.edu.mx" title="UTZAC">
+                <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
                   UTZAC
-                </LinkExternal>{" "}
+                </a>{" "}
                 2017-2021
               </li>
             </ul>
-          </Card.Body>
+          </CardContent>
         </Card>
-      </Col>
-      <Col xs="12" className="p-md-1 pb-2">
-        <Card bg="dark" text="light">
-          <Card.Body>
-            <Card.Title>Enlaces</Card.Title>
-            <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
+      </Grid>
+      <Grid item xl={12}>
+        <Card>
+          <CardContent>
+            <Typography component="h3" variant="h5">
+              Enlaces
+            </Typography>
+            <ul style={{ listStyleType: "none" }}>
               <li>
-                <LinkExternal to="mailto:sudo@angelxehg.com" title="Email">
-                  <Icon name="Email" className="me-2" />
+                <a
+                  href="mailto:sudo@angelxehg.com"
+                  title="Email"
+                  rel="external"
+                >
+                  <Icon name="Email" />
                   sudo@angelxehg.com
-                </LinkExternal>
+                </a>
               </li>
-              {socialLinks.map(({ title, to, icon }) => {
-                return (
-                  <li key={to} className="mt-1">
-                    <LinkExternal to={to} title={title}>
-                      <Icon name={icon} className="me-2" />
-                      {title}
-                    </LinkExternal>
-                  </li>
-                )
-              })}
             </ul>
-          </Card.Body>
+          </CardContent>
         </Card>
-      </Col>
-    </Row>
+      </Grid>
+    </Grid>
   </section>
 )
 
@@ -83,67 +69,68 @@ const ProjectsSection = () => {
   const projects = usePages().slice(0, 2)
   return (
     <section id="projects">
-      <h2 className="h4">
-        Últimos <Link to="/projects">proyectos</Link>:
-      </h2>
-      <Row>
+      <Typography component="h2" variant="h5">
+        Últimos <Link href="/projects">proyectos</Link>:
+      </Typography>
+      <Grid container spacing={1}>
         {projects.map(item => (
-          <Col key={item.id} xs="12" className="p-md-1 pb-2">
-            <ProjectCard item={item} noImage />
-          </Col>
+          <Grid key={item.id} item lg={4} md={6} xs={12}>
+            <ProjectCard item={item} />
+          </Grid>
         ))}
-      </Row>
-      <Link to="/projects">Ver todos los proyectos {">"}</Link>
+      </Grid>
+      <Link href="/projects">Ver todos los proyectos {">"}</Link>
     </section>
   )
 }
 
+const SkillCard = (props: { title: string; icons: string[] }) => (
+  <Card>
+    <CardContent>
+      <Typography component="h3" variant="h5">
+        {props.title}
+      </Typography>
+      <Typography>
+        {props.icons.map(icon => {
+          if (availableIcons.find(i => i === icon)) {
+            return (
+              <span key={icon}>
+                <Icon name={icon} /> {icon}
+              </span>
+            )
+          }
+        })}
+      </Typography>
+    </CardContent>
+  </Card>
+)
+
 const SkillsSection = () => (
   <section id="skills">
-    <h2 className="h4">Habilidades:</h2>
-    <Row>
+    <Typography component="h2" variant="h5">
+      Habilidades
+    </Typography>
+    <Grid container spacing={1}>
       {stacks.map(({ title, icons }, n) => (
-        <Col key={n} xs="12" className="p-md-1 pb-2">
-          <Card bg="dark" text="light">
-            <Card.Body>
-              <Card.Title>{title}</Card.Title>
-              <Card.Text>
-                {icons.map(icon => {
-                  if (availableIcons.find(i => i === icon)) {
-                    return (
-                      <Badge
-                        key={icon}
-                        pill
-                        bg="dark"
-                        text="light"
-                        className="mt-1 me-1"
-                      >
-                        <Icon name={icon} /> {icon}
-                      </Badge>
-                    )
-                  }
-                })}
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
+        <Grid key={n} item lg={4} md={6} xs={12}>
+          <SkillCard title={title} icons={icons} />
+        </Grid>
       ))}
-    </Row>
+    </Grid>
   </section>
 )
 
 const IndexPage = (): JSX.Element => (
-  <div>
+  <Layout>
     <SEO title="Portafolio" lang="es" />
-    <DefaultNavbar />
-    <Container fluid="xl" className="ps-md-4 pe-md-4 pt-3 pb-3">
-      <PageHeader />
+    <HugeHeader />
+    <Container component="main">
+      <AboutSection />
       <ProjectsSection />
       <SkillsSection />
-      <AboutSection />
     </Container>
     <DefaultFooter />
-  </div>
+  </Layout>
 )
 
 export default IndexPage
