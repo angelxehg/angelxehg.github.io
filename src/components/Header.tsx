@@ -2,6 +2,7 @@ import React from "react"
 
 import "./Header.css"
 
+import IconLink from "./Link"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import socialLinks from "../meta/links"
 
@@ -15,9 +16,7 @@ const Header = (props: { title: string; description: string }): JSX.Element => (
       <ul>
         {socialLinks.map(link => (
           <li key={link.href}>
-            <a href={link.href} title={link.name} rel="external">
-              {link.name}
-            </a>
+            <IconLink meta={link}/>
           </li>
         ))}
       </ul>
@@ -42,9 +41,7 @@ export const HugeHeader = (): JSX.Element => {
         <ul>
           {socialLinks.map(link => (
             <li key={link.href}>
-              <a href={link.href} title={link.name} rel="external">
-                {link.name}
-              </a>
+              <IconLink meta={link}/>
             </li>
           ))}
         </ul>
