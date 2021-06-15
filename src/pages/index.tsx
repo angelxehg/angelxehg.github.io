@@ -8,6 +8,8 @@ import DefaultFooter from "../components/Footer"
 import { usePages } from "../hooks/use-pages"
 import stacks from "../meta/stacks"
 import { ProjectCard } from "./projects"
+import { LinkMeta } from "../meta/links"
+import IconLink from "../components/Link"
 
 const EmailLink = () => (
   <a href="mailto:sudo@angelxehg.com" title="Email" rel="external">
@@ -73,15 +75,17 @@ const ProjectsSection = () => {
   )
 }
 
-const SkillCard = (props: { title: string; icons: string[] }) => (
+const SkillCard = (props: { title: string; tools: LinkMeta[] }) => (
   <div>
     <div>
       <h3>{props.title}</h3>
-      <p>
-        {props.icons.map(icon => (
-          <span key={icon}>{icon}</span>
+      <ul>
+        {props.tools.map(icon => (
+          <li key={icon.name}>
+            <IconLink meta={icon} />
+          </li>
         ))}
-      </p>
+      </ul>
     </div>
   </div>
 )
@@ -90,9 +94,9 @@ const SkillsSection = () => (
   <section id="skills">
     <h2>Habilidades</h2>
     <div>
-      {stacks.map(({ title, icons }, n) => (
+      {stacks.map(({ title, tools }, n) => (
         <div key={n}>
-          <SkillCard title={title} icons={icons} />
+          <SkillCard title={title} tools={tools} />
         </div>
       ))}
     </div>

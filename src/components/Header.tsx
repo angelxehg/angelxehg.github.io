@@ -16,7 +16,7 @@ const Header = (props: { title: string; description: string }): JSX.Element => (
       <ul>
         {socialLinks.map(link => (
           <li key={link.href}>
-            <IconLink meta={link}/>
+            <IconLink meta={link} />
           </li>
         ))}
       </ul>
@@ -41,7 +41,7 @@ export const HugeHeader = (): JSX.Element => {
         <ul>
           {socialLinks.map(link => (
             <li key={link.href}>
-              <IconLink meta={link}/>
+              <IconLink meta={link} />
             </li>
           ))}
         </ul>
