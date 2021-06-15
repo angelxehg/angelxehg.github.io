@@ -17,7 +17,6 @@ import { Page } from "../models"
 
 interface ProjectCardProps {
   item: Page
-  noImage?: boolean
 }
 
 export const ProjectCard = (props: ProjectCardProps): JSX.Element => {
@@ -31,7 +30,7 @@ export const ProjectCard = (props: ProjectCardProps): JSX.Element => {
           image={image}
           alt={caption}
         />
-        <Typography component="h2" variant="h5">
+        <Typography component="h3" variant="h5">
           <Link href={`/${slug}`}>{title}</Link>
         </Typography>
         <Typography variant="body1" gutterBottom>
