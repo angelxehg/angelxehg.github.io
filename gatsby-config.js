@@ -26,12 +26,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-advanced-sitemap`,
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://angelxehg.com',
-        sitemap: 'https://angelxehg.com/sitemap/sitemap-index.xml',
+        sitemap: 'https://angelxehg.com/sitemap.xml',
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
