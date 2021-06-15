@@ -3,11 +3,11 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import Container from "@material-ui/core/Container"
-import Typography from '@material-ui/core/Typography';
+import Typography from "@material-ui/core/Typography"
 
 import Footer from "../components/Footer"
 import SEO from "../components/SEO"
-import Layout from "../layouts/Layout";
+import Layout from "../layouts/Layout"
 import { Icon } from "../components/icons"
 
 export const query = graphql`

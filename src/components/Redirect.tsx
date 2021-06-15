@@ -1,9 +1,9 @@
 import React, { useEffect } from "react"
-import { navigate } from "gatsby";
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import { navigate } from "gatsby"
+import Card from "@material-ui/core/Card"
+import CardContent from "@material-ui/core/CardContent"
 import Link from "@material-ui/core/Link"
-import Typography from '@material-ui/core/Typography';
+import Typography from "@material-ui/core/Typography"
 
 import CenterLayout from "../layouts/Center"
 import SEO from "./SEO"
@@ -29,9 +29,8 @@ const Redirect = (props: RedirectProps): JSX.Element => {
             301: Moved Permanently
           </Typography>
           <Typography variant="body1" gutterBottom>
-            Este contenido fue movido a <Link href={props.url}>
-              {props.title}
-            </Link>. Redireccionando...
+            Este contenido fue movido a{" "}
+            <Link href={props.url}>{props.title}</Link>. Redireccionando...
           </Typography>
         </CardContent>
       </Card>

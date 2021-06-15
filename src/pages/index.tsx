@@ -1,15 +1,15 @@
 import React from "react"
 import Link from "@material-ui/core/Link"
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import Card from "@material-ui/core/Card"
+import CardContent from "@material-ui/core/CardContent"
 import Container from "@material-ui/core/Container"
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import Grid from "@material-ui/core/Grid"
+import Typography from "@material-ui/core/Typography"
 
 import SEO from "../components/SEO"
-import Layout from "../layouts/Layout";
-import HugeHeader from "../components/HugeHeader";
-import DefaultFooter from "../components/Footer";
+import Layout from "../layouts/Layout"
+import HugeHeader from "../components/HugeHeader"
+import DefaultFooter from "../components/Footer"
 import { usePages } from "../hooks/use-pages"
 import { availableIcons, Icon } from "../components/icons"
 import stacks from "../meta/stacks"
@@ -31,7 +31,12 @@ const AboutSection = () => (
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
                 <br />@
-                <a href="http://www.utzac.edu.mx" rel="noopener" target="_blank" title="UTZAC">
+                <a
+                  href="http://www.utzac.edu.mx"
+                  rel="noopener"
+                  target="_blank"
+                  title="UTZAC"
+                >
                   UTZAC
                 </a>{" "}
                 2017-2021
@@ -48,7 +53,12 @@ const AboutSection = () => (
             </Typography>
             <ul style={{ listStyleType: "none" }}>
               <li>
-                <a href="mailto:sudo@angelxehg.com" title="Email" rel="noopener" target="_blank">
+                <a
+                  href="mailto:sudo@angelxehg.com"
+                  title="Email"
+                  rel="noopener"
+                  target="_blank"
+                >
                   <Icon name="Email" />
                   sudo@angelxehg.com
                 </a>
@@ -80,7 +90,7 @@ const ProjectsSection = () => {
   )
 }
 
-const SkillCard = (props: { title: string, icons: string[] }) => (
+const SkillCard = (props: { title: string; icons: string[] }) => (
   <Card>
     <CardContent>
       <Typography component="h3" variant="h5">

@@ -1,15 +1,24 @@
 import React from "react"
-import Avatar from "@material-ui/core/Avatar";
+import Avatar from "@material-ui/core/Avatar"
 import Box from "@material-ui/core/Box"
 import Container from "@material-ui/core/Container"
 import Link from "@material-ui/core/Link"
-import Typography from '@material-ui/core/Typography';
+import Typography from "@material-ui/core/Typography"
 
 import "./HugeHeader.css"
 
 import { Icon } from "./icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { resumeLink, devToLink, linkedInLink, payPalLink, gitHubLink, gitLabLink, twitterLink, instagramLink } from "../meta/links"
+import {
+  resumeLink,
+  devToLink,
+  linkedInLink,
+  payPalLink,
+  gitHubLink,
+  gitLabLink,
+  twitterLink,
+  instagramLink,
+} from "../meta/links"
 
 const socialLinks = [
   resumeLink,
@@ -26,7 +35,11 @@ const HugeHeader = (): JSX.Element => {
   const site = useSiteMetadata()
   return (
     <Container className="huge-header">
-      <Avatar alt="Foto de perfil de Angel" src="/images/Profile.500.Sqr.jpg" className="huge-header-avatar" />
+      <Avatar
+        alt="Foto de perfil de Angel"
+        src="/images/Profile.500.Sqr.jpg"
+        className="huge-header-avatar"
+      />
       <Box component="header" mt={1}>
         <Typography component="h1" variant="h4">
           {site.title}
@@ -37,7 +50,13 @@ const HugeHeader = (): JSX.Element => {
       </Box>
       <Box component="nav" mt={1}>
         {socialLinks.map(link => (
-          <Link key={link.to} href={link.to} title={link.title} rel="noopener" target="_blank">
+          <Link
+            key={link.to}
+            href={link.to}
+            title={link.title}
+            rel="noopener"
+            target="_blank"
+          >
             <Icon name={link.icon} size="1.5rem" />
           </Link>
         ))}
@@ -46,4 +65,4 @@ const HugeHeader = (): JSX.Element => {
   )
 }
 
-export default HugeHeader;
+export default HugeHeader

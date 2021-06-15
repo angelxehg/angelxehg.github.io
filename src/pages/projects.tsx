@@ -1,14 +1,14 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import Card from "@material-ui/core/Card"
+import CardContent from "@material-ui/core/CardContent"
+import CardMedia from "@material-ui/core/CardMedia"
 import Container from "@material-ui/core/Container"
 import Link from "@material-ui/core/Link"
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import Grid from "@material-ui/core/Grid"
+import Typography from "@material-ui/core/Typography"
 
-import Layout from "../layouts/Layout";
+import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
 import { usePages } from "../hooks/use-pages"
@@ -25,11 +25,7 @@ export const ProjectCard = (props: ProjectCardProps): JSX.Element => {
   return (
     <Card component="article">
       <CardContent>
-        <GatsbyImage
-          as={CardMedia}
-          image={image}
-          alt={caption}
-        />
+        <GatsbyImage as={CardMedia} image={image} alt={caption} />
         <Typography component="h3" variant="h5">
           <Link href={`/${slug}`}>{title}</Link>
         </Typography>
@@ -57,9 +53,7 @@ const ProjectsPage = (): JSX.Element => {
         <Typography component="h1" variant="h4">
           Todos mis proyectos
         </Typography>
-        <Typography>
-          Estos son todos mis proyectos públicos
-        </Typography>
+        <Typography>Estos son todos mis proyectos públicos</Typography>
         <Grid container spacing={1}>
           {projects.map(item => (
             <Grid key={item.id} item lg={4} md={6} xs={12}>

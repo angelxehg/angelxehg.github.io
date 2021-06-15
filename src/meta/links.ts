@@ -7,7 +7,7 @@ interface SocialLink {
 export const resumeLink: SocialLink = {
   to: "https://drive.google.com/drive/folders/18DEv-IdP2veHzUINHafEk4Gz9i2zakzG?usp=sharing",
   title: "Descarga mi Curriculum",
-  icon: "Document"
+  icon: "Document",
 }
 
 export const devToLink: SocialLink = {

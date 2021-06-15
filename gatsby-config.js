@@ -1,9 +1,9 @@
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://angelxehg.com',
+  URL: NETLIFY_SITE_URL = "https://angelxehg.com",
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV
-} = process.env;
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
 
 module.exports = {
   siteMetadata: {
@@ -18,7 +18,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-material-ui',
+      resolve: "gatsby-plugin-material-ui",
       options: {
         // stylesProvider: {
         //   injectFirst: true,
