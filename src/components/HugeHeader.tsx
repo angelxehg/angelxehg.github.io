@@ -2,7 +2,6 @@ import React from "react"
 
 import "./HugeHeader.css"
 
-import { Icon } from "./icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import {
   resumeLink,
@@ -40,11 +39,15 @@ const HugeHeader = (): JSX.Element => {
         <p>{site.description}</p>
       </header>
       <nav>
-        {socialLinks.map(link => (
-          <a key={link.to} href={link.to} title={link.title} rel="external">
-            <Icon name={link.icon} size="1.5rem" />
-          </a>
-        ))}
+        <ul>
+          {socialLinks.map(link => (
+            <li key={link.to}>
+              <a href={link.to} title={link.title} rel="external">
+                {link.title}
+              </a>
+            </li>
+          ))}
+        </ul>
       </nav>
     </div>
   )

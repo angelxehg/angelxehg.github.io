@@ -6,7 +6,6 @@ import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
 import { usePages } from "../hooks/use-pages"
-import { Icon } from "../components/icons"
 import { Page } from "../models"
 
 interface ProjectCardProps {
@@ -26,9 +25,7 @@ export const ProjectCard = (props: ProjectCardProps): JSX.Element => {
         <p>{resume}</p>
         <p>
           {stackIcons.map(icon => (
-            <span key={icon}>
-              <Icon name={icon} /> {icon}
-            </span>
+            <span key={icon}>{icon}</span>
           ))}
         </p>
       </div>

@@ -6,7 +6,6 @@ import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import Footer from "../components/Footer"
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
-import { Icon } from "../components/icons"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -66,9 +65,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
             {stackIcons.length > 0 && (
               <li>
                 {stackIcons.map(icon => (
-                  <span key={icon}>
-                    <Icon name={icon} /> {icon}
-                  </span>
+                  <span key={icon}>{icon}</span>
                 ))}
               </li>
             )}

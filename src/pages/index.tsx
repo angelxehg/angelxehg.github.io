@@ -6,13 +6,12 @@ import Layout from "../layouts/Layout"
 import HugeHeader from "../components/HugeHeader"
 import DefaultFooter from "../components/Footer"
 import { usePages } from "../hooks/use-pages"
-import { availableIcons, Icon } from "../components/icons"
 import stacks from "../meta/stacks"
 import { ProjectCard } from "./projects"
 
 const EmailLink = () => (
   <a href="mailto:sudo@angelxehg.com" title="Email" rel="external">
-    <Icon name="Email" /> sudo@angelxehg.com
+    sudo@angelxehg.com
   </a>
 )
 
@@ -79,15 +78,9 @@ const SkillCard = (props: { title: string; icons: string[] }) => (
     <div>
       <h3>{props.title}</h3>
       <p>
-        {props.icons.map(icon => {
-          if (availableIcons.find(i => i === icon)) {
-            return (
-              <span key={icon}>
-                <Icon name={icon} /> {icon}
-              </span>
-            )
-          }
-        })}
+        {props.icons.map(icon => (
+          <span key={icon}>{icon}</span>
+        ))}
       </p>
     </div>
   </div>

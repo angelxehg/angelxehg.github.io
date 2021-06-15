@@ -1,5 +1,3 @@
-import React from "react"
-
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
 const DocumentSVG = require("../assets/bootstrap-icons/file-earmark-text-fill.svg")
 const EmailSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
@@ -33,7 +31,7 @@ const TypeScriptSVG = require("../assets/seek-logo/typescript.svg")
 const UbuntuSVG = require("../assets/fontawesome/ubuntu-brands.svg")
 const VSCodeSVG = require("../assets/seek-logo/vscode.svg")
 
-const iconsSource = [
+export const allIconsMeta = [
   {
     name: "Android",
     color: "#3DD985",
@@ -222,46 +220,3 @@ const iconsSource = [
     docs: "https://angelxehg.com/",
   },
 ]
-
-export const availableIcons = iconsSource.map(i => i.name)
-
-interface IconProps {
-  name: string
-  size?: string
-  className?: string
-}
-
-const useStyles = (props: IconProps, defaultColor: string) => {
-  const { size } = props
-  return {
-    width: size || "1rem",
-    height: size || "1rem",
-    color: defaultColor || "white",
-  }
-}
-
-const fillNColor = (
-  colorProp: string | undefined,
-  fillProp: boolean | undefined
-) => {
-  const finalColor = colorProp ? colorProp : "black"
-  const finalFill = fillProp ? finalColor : undefined
-  return {
-    fill: finalFill,
-    color: finalColor,
-  }
-}
-
-export const Icon = (props: IconProps) => {
-  const { name, className } = props
-  const classes = className || ""
-  const icon = iconsSource.find(i => i.name === name)
-  if (!icon) {
-    throw new Error(`No se encontró el icono '${name}'`)
-  }
-  const { fill, color } = fillNColor(icon.color, icon.fill)
-  const IconSVG = icon.svg
-  return (
-    <IconSVG fill={fill} style={useStyles(props, color)} className={classes} />
-  )
-}
