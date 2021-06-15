@@ -31,12 +31,7 @@ const AboutSection = () => (
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
                 <br />@
-                <a
-                  href="http://www.utzac.edu.mx"
-                  rel="noopener"
-                  target="_blank"
-                  title="UTZAC"
-                >
+                <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
                   UTZAC
                 </a>{" "}
                 2017-2021
@@ -56,8 +51,7 @@ const AboutSection = () => (
                 <a
                   href="mailto:sudo@angelxehg.com"
                   title="Email"
-                  rel="noopener"
-                  target="_blank"
+                  rel="external"
                 >
                   <Icon name="Email" />
                   sudo@angelxehg.com

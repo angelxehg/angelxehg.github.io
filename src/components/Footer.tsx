@@ -4,23 +4,13 @@ import Link from "@material-ui/core/Link"
 import Typography from "@material-ui/core/Typography"
 
 const GatsbyLink = () => (
-  <Link
-    href="https://www.gatsbyjs.com/"
-    rel="noopener"
-    target="_blank"
-    title="Gatsby"
-  >
+  <Link href="https://www.gatsbyjs.com/" rel="external" title="Gatsby">
     Gatsby
   </Link>
 )
 
 const MaterialUILink = () => (
-  <Link
-    href="https://material-ui.com/"
-    rel="noopener"
-    target="_blank"
-    title="Material UI"
-  >
+  <Link href="https://material-ui.com/" rel="external" title="Material UI">
     Material UI
   </Link>
 )
@@ -28,8 +18,7 @@ const MaterialUILink = () => (
 const FontAwesomeLink = () => (
   <Link
     href="https://fontawesome.com/license"
-    rel="noopener"
-    target="_blank"
+    rel="external"
     title="FontAwesome"
   >
     FontAwesome
@@ -39,8 +28,7 @@ const FontAwesomeLink = () => (
 const BootstrapIconsLink = () => (
   <Link
     href="https://icons.getbootstrap.com/"
-    rel="noopener"
-    target="_blank"
+    rel="external"
     title="Bootstrap Icons"
   >
     Bootstrap Icons
@@ -48,34 +36,19 @@ const BootstrapIconsLink = () => (
 )
 
 const SeekLogoLink = () => (
-  <Link
-    href="https://seeklogo.com/"
-    rel="noopener"
-    target="_blank"
-    title="SeekLogo"
-  >
+  <Link href="https://seeklogo.com/" rel="external" title="SeekLogo">
     SeekLogo
   </Link>
 )
 
 const IoniconsLink = () => (
-  <Link
-    href="https://ionicons.com/"
-    rel="noopener"
-    target="_blank"
-    title="Ionicons"
-  >
+  <Link href="https://ionicons.com/" rel="external" title="Ionicons">
     Ionicons
   </Link>
 )
 
 const IconifyLink = () => (
-  <Link
-    href="https://iconify.design/"
-    rel="noopener"
-    target="_blank"
-    title="Iconify"
-  >
+  <Link href="https://iconify.design/" rel="external" title="Iconify">
     Iconify
   </Link>
 )
@@ -83,8 +56,7 @@ const IconifyLink = () => (
 const IssuesPageLink = () => (
   <Link
     href="https://github.com/angelxehg/angelxehg.github.io/issues"
-    rel="noopener"
-    target="_blank"
+    rel="external"
     title="Issues en GitHub"
   >
     página de Issues
@@ -94,8 +66,7 @@ const IssuesPageLink = () => (
 const VersionLink = () => (
   <Link
     href="https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0-beta.2"
-    rel="noopener"
-    target="_blank"
+    rel="external"
     title="GitHub repository"
   >
     v2.0.0-beta.2

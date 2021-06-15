@@ -50,13 +50,7 @@ const HugeHeader = (): JSX.Element => {
       </Box>
       <Box component="nav" mt={1}>
         {socialLinks.map(link => (
-          <Link
-            key={link.to}
-            href={link.to}
-            title={link.title}
-            rel="noopener"
-            target="_blank"
-          >
+          <Link key={link.to} href={link.to} title={link.title} rel="external">
             <Icon name={link.icon} size="1.5rem" />
           </Link>
         ))}
