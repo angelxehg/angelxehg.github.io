@@ -9,6 +9,7 @@ import SEO from "../components/SEO"
 import { usePages, Page } from "../hooks/use-pages"
 import { getLinkMeta } from "../meta/links"
 import IconLink from "../components/Link"
+import DefaultNavbar from "../components/Navbar"
 
 interface ProjectCardProps {
   item: Page
@@ -42,6 +43,7 @@ const ProjectsPage = (): JSX.Element => {
   return (
     <Layout>
       <SEO title="Portafolio" lang="es" />
+      <DefaultNavbar/>
       <Container as="header">
         <h1>Todos mis proyectos</h1>
         <p>Estos son todos mis proyectos públicos</p>

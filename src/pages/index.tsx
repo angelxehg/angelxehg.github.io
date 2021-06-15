@@ -11,6 +11,7 @@ import stacks from "../meta/stacks"
 import { ProjectCard } from "./projects"
 import { LinkMeta } from "../meta/links"
 import IconLink from "../components/Link"
+import DefaultNavbar from "../components/Navbar"
 
 const UTZACLink = () => (
   <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
@@ -89,6 +90,7 @@ const SkillsSection = () => (
 const IndexPage = (): JSX.Element => (
   <Layout>
     <SEO title="Portafolio" lang="es" />
+    <DefaultNavbar/>
     <HugeHeader />
     <Container as="main">
       <AboutSection />

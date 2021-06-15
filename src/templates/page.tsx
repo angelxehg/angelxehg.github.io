@@ -9,6 +9,7 @@ import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
 import { getLinkMeta } from "../meta/links"
 import IconLink from "../components/Link"
+import DefaultNavbar from "../components/Navbar"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -60,6 +61,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
         lang="es"
         image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
       />
+      <DefaultNavbar/>
       <Container as="main">
         <h1>{title}</h1>
         <ul>
