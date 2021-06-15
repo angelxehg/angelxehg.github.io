@@ -5,8 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
-import { usePages } from "../hooks/use-pages"
-import { Page } from "../models"
+import { usePages, Page } from "../hooks/use-pages"
 
 interface ProjectCardProps {
   item: Page
