@@ -1,6 +1,6 @@
 import React from "react"
 
-import "./HugeHeader.css"
+import "./Header.css"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import {
@@ -25,7 +25,27 @@ const socialLinks = [
   instagramLink,
 ]
 
-const HugeHeader = (): JSX.Element => {
+const Header = (props: { title: string; description: string }): JSX.Element => (
+  <div className="huge-header">
+    <header>
+      <h1>{props.title}</h1>
+      <p>{props.description}</p>
+    </header>
+    <nav>
+      <ul>
+        {socialLinks.map(link => (
+          <li key={link.to}>
+            <a href={link.to} title={link.title} rel="external">
+              {link.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+)
+
+export const HugeHeader = (): JSX.Element => {
   const site = useSiteMetadata()
   return (
     <div className="huge-header">
@@ -53,4 +73,4 @@ const HugeHeader = (): JSX.Element => {
   )
 }
 
-export default HugeHeader
+export default Header

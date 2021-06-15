@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
-import HugeHeader from "../components/HugeHeader"
+import { HugeHeader } from "../components/Header"
 import DefaultFooter from "../components/Footer"
 import { usePages } from "../hooks/use-pages"
 import stacks from "../meta/stacks"
