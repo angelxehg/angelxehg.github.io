@@ -1,6 +1,6 @@
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://www.example.com',
+  URL: NETLIFY_SITE_URL = 'https://angelxehg.com',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV
 } = process.env;
@@ -10,7 +10,7 @@ module.exports = {
     title: `Angel Hurtado`,
     description: `Hola mundo! Soy un front-end web developer, trabajo con Angular, React y JavaScript. Ingeriero en TIC`,
     author: `@angelxehg`,
-    siteUrl: `https://angelxehg.com`,
+    siteUrl: NETLIFY_DEPLOY_URL,
   },
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
