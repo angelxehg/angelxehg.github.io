@@ -1,39 +1,45 @@
+import { IconMeta } from "../icons"
 import {
-  IconMeta,
-  androidIconMeta,
-  angularIconMeta,
-  awsIconMeta,
-  bootstrapIconMeta,
-  capacitorIconMeta,
-  devtoIconMeta,
-  digitalOceanIconMeta,
-  djangoIconMeta,
   genericDocumentIconMeta,
   genericEmailIconMeta,
+  gitHubIconMeta,
+  gitHubPagesIconMeta,
+  instagramIconMeta,
+  linkedInIconMeta,
+  twitterIconMeta,
+  genericWebIconMeta,
+} from "../icons/bootstrap"
+import {
+  androidIconMeta,
+  awsIconMeta,
+  digitalOceanIconMeta,
+  javaScriptIconMeta,
+  markdownIconMeta,
+  nodeJsIconMeta,
+  npmIconMeta,
+  reactIconMeta,
+  ubuntuIconMeta,
+} from "../icons/fontawesome"
+import {
+  capacitorIconMeta,
+  devtoIconMeta,
+  ionicIconMeta,
+} from "../icons/iconify"
+import {
+  angularIconMeta,
+  bootstrapIconMeta,
+  djangoIconMeta,
   firebaseIconMeta,
   gatsbyIconMeta,
   gitIconMeta,
-  gitHubIconMeta,
-  gitHubPagesIconMeta,
   gitLabIconMeta,
   html5IconMeta,
-  instagramIconMeta,
-  ionicIconMeta,
-  javaScriptIconMeta,
-  linkedInIconMeta,
-  markdownIconMeta,
   netlifyIconMeta,
-  nodeJsIconMeta,
-  npmIconMeta,
   payPalIconMeta,
   pythonIconMeta,
-  reactIconMeta,
-  twitterIconMeta,
   typeScriptIconMeta,
-  ubuntuIconMeta,
   vsCodeIconMeta,
-  genericWebIconMeta,
-} from "./icons"
+} from "../icons/seek-logo"
 
 export interface LinkMeta {
   name: string
