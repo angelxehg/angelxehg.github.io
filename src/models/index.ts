@@ -1,12 +1,5 @@
 import { IGatsbyImageData } from "gatsby-plugin-image"
 
-export interface SiteMetadata {
-  title: string
-  description: string
-  author: string
-  siteUrl: string
-}
-
 export interface RAWPage {
   id: string
   slug: string
