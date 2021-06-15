@@ -11,12 +11,6 @@ import { ProjectCard } from "./projects"
 import { LinkMeta } from "../meta/links"
 import IconLink from "../components/Link"
 
-const EmailLink = () => (
-  <a href="mailto:sudo@angelxehg.com" title="Email" rel="external">
-    sudo@angelxehg.com
-  </a>
-)
-
 const UTZACLink = () => (
   <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
     UTZAC
@@ -35,18 +29,6 @@ const AboutSection = () => (
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
                 <br />@ <UTZACLink /> 2017-2021
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div>
-          <div>
-            <h3>Enlaces</h3>
-            <ul style={{ listStyleType: "none" }}>
-              <li>
-                <EmailLink />
               </li>
             </ul>
           </div>
