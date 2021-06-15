@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import Container from 'react-bootstrap/Container'
 
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
@@ -37,11 +38,11 @@ const ProjectsPage = (): JSX.Element => {
   return (
     <Layout>
       <SEO title="Portafolio" lang="es" />
-      <header>
+      <Container as="header">
         <h1>Todos mis proyectos</h1>
         <p>Estos son todos mis proyectos públicos</p>
-      </header>
-      <main>
+      </Container>
+      <Container as="main">
         <div>
           {projects.map(item => (
             <div key={item.id}>
@@ -49,7 +50,7 @@ const ProjectsPage = (): JSX.Element => {
             </div>
           ))}
         </div>
-      </main>
+      </Container>
       <DefaultFooter />
     </Layout>
   )

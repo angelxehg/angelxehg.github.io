@@ -1,4 +1,5 @@
 import React from "react"
+import Container from 'react-bootstrap/Container'
 
 const GatsbyLink = () => (
   <a href="https://www.gatsbyjs.com/" rel="external" title="Gatsby">
@@ -61,7 +62,7 @@ const VersionLink = () => (
 )
 
 const DefaultFooter = (): JSX.Element => (
-  <footer>
+  <Container as="footer">
     <p>
       © {new Date().getFullYear()}, Angel Hurtado. Portafolio profesional creado
       con <GatsbyLink />.
@@ -76,7 +77,7 @@ const DefaultFooter = (): JSX.Element => (
       Reporta problemas o envia tus sugerencias a la <IssuesPageLink />. Versión
       del sitio web: <VersionLink />
     </p>
-  </footer>
+  </Container>
 )
 
 export default DefaultFooter

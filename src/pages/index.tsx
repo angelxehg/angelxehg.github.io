@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Container from 'react-bootstrap/Container'
 
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
@@ -89,11 +90,11 @@ const IndexPage = (): JSX.Element => (
   <Layout>
     <SEO title="Portafolio" lang="es" />
     <HugeHeader />
-    <main>
+    <Container as="main">
       <AboutSection />
       <ProjectsSection />
       <SkillsSection />
-    </main>
+    </Container>
     <DefaultFooter />
   </Layout>
 )

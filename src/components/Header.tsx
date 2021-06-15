@@ -1,4 +1,5 @@
 import React from "react"
+import Container from 'react-bootstrap/Container'
 
 import "./Header.css"
 
@@ -27,7 +28,7 @@ const Header = (props: { title: string; description: string }): JSX.Element => (
 export const HugeHeader = (): JSX.Element => {
   const site = useSiteMetadata()
   return (
-    <div className="huge-header">
+    <Container className="huge-header">
       <img
         alt="Foto de perfil de Angel"
         src="/images/Profile.500.Sqr.jpg"
@@ -46,7 +47,7 @@ export const HugeHeader = (): JSX.Element => {
           ))}
         </ul>
       </nav>
-    </div>
+    </Container>
   )
 }
 
