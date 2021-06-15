@@ -4,7 +4,7 @@ import "./Header.css"
 
 import IconLink from "./Link"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import socialLinks from "../meta/links"
+import socialLinks from "../meta/links/social"
 
 const Header = (props: { title: string; description: string }): JSX.Element => (
   <div className="huge-header">
