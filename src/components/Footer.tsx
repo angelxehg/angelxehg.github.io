@@ -62,7 +62,7 @@ const VersionLink = () => (
 )
 
 const DefaultFooter = (): JSX.Element => (
-  <Container as="footer">
+  <Container as="footer" className="mt-3">
     <p>
       © {new Date().getFullYear()}, Angel Hurtado. Portafolio profesional creado
       con <GatsbyLink />.

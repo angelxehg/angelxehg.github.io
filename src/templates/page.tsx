@@ -61,8 +61,8 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
         lang="es"
         image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
       />
-      <DefaultNavbar/>
-      <Container as="main">
+      <DefaultNavbar />
+      <Container as="header" className="mt-3">
         <h1>{title}</h1>
         <ul>
           <li>Fecha: {date}</li>
@@ -80,6 +80,8 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
           image={image.childImageSharp.gatsbyImageData}
           alt={caption}
         />
+      </Container>
+      <Container as="main" className="mt-3">
         <MDXRenderer>{body}</MDXRenderer>
       </Container>
       <Footer />

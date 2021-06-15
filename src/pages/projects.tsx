@@ -44,11 +44,11 @@ const ProjectsPage = (): JSX.Element => {
     <Layout>
       <SEO title="Portafolio" lang="es" />
       <DefaultNavbar/>
-      <Container as="header">
+      <Container as="header" className="mt-3">
         <h1>Todos mis proyectos</h1>
         <p>Estos son todos mis proyectos públicos</p>
       </Container>
-      <Container as="main">
+      <Container as="main" className="mt-3">
         <div>
           {projects.map(item => (
             <div key={item.id}>

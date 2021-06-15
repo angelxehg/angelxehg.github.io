@@ -92,7 +92,7 @@ const IndexPage = (): JSX.Element => (
     <SEO title="Portafolio" lang="es" />
     <DefaultNavbar/>
     <HugeHeader />
-    <Container as="main">
+    <Container as="main" className="mt-3">
       <AboutSection />
       <ProjectsSection />
       <SkillsSection />

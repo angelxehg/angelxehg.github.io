@@ -28,7 +28,7 @@ const Header = (props: { title: string; description: string }): JSX.Element => (
 export const HugeHeader = (): JSX.Element => {
   const site = useSiteMetadata()
   return (
-    <Container className="huge-header">
+    <Container className="huge-header mt-3">
       <img
         alt="Foto de perfil de Angel"
         src="/images/Profile.500.Sqr.jpg"
