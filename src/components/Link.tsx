@@ -7,7 +7,7 @@ const Link = (props: { meta: LinkMeta }) => {
   const { href, name, icon } = props.meta
   return (
     <a href={href} title={name} rel="external">
-      <Icon meta={icon} /> {name}
+      {name} <Icon meta={icon} />
     </a>
   )
 }

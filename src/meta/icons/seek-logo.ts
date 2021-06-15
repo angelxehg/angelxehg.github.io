@@ -1,5 +1,6 @@
 import { IconMeta } from "."
 
+const FontAwesomeSVG = require("../../assets/seek-logo/font-awesome.svg")
 const GitLabSVG = require("../../assets/seek-logo/gitlab.svg")
 const PayPalSVG = require("../../assets/seek-logo/paypal.svg")
 const AngularSVG = require("../../assets/seek-logo/angular.svg")
@@ -30,6 +31,10 @@ export const djangoIconMeta: IconMeta = {
 
 export const firebaseIconMeta: IconMeta = {
   svg: FirebaseSVG,
+}
+
+export const fasIconMeta: IconMeta = {
+  svg: FontAwesomeSVG,
 }
 
 export const gatsbyIconMeta: IconMeta = {

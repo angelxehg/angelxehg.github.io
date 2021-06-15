@@ -29,6 +29,7 @@ import {
   angularIconMeta,
   bootstrapIconMeta,
   djangoIconMeta,
+  fasIconMeta,
   firebaseIconMeta,
   gatsbyIconMeta,
   gitIconMeta,
@@ -111,6 +112,12 @@ export const firebaseLinkMeta: LinkMeta = {
   name: "Firebase",
   icon: firebaseIconMeta,
   href: "https://firebase.google.com/",
+}
+
+export const fasLinkMeta: LinkMeta = {
+  name: "Font Awesome",
+  icon: fasIconMeta,
+  href: "https://fontawesome.com/license",
 }
 
 export const gatsbyLinkMeta: LinkMeta = {
@@ -245,6 +252,18 @@ export const genericWebLinkMeta: LinkMeta = {
   href: "https://angelxehg.com/",
 }
 
+export const gitHubIssues: LinkMeta = {
+  ...gitHubLinkMeta,
+  name: "Issues",
+  href: "https://github.com/angelxehg/angelxehg.github.io/issues",
+}
+
+export const gitHubRepoVer: LinkMeta = {
+  ...gitHubLinkMeta,
+  name: "v2.0.0-beta.2",
+  href: "https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0-beta.2",
+}
+
 const allLinks = [
   androidLinkMeta,
   angularLinkMeta,
@@ -257,6 +276,7 @@ const allLinks = [
   genericDocumentLinkMeta,
   genericEmailLinkMeta,
   firebaseLinkMeta,
+  fasLinkMeta,
   gatsbyLinkMeta,
   gitLinkMeta,
   gitHubLinkMeta,
