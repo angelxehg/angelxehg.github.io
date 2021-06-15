@@ -20,6 +20,14 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://angelxehg.com',
+        sitemap: 'https://angelxehg.com/sitemap/sitemap-index.xml',
+        policy: [{ userAgent: '*', allow: '/', disallow: ['/posts', '/404', '/about'] }]
+      }
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
