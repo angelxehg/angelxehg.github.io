@@ -3,27 +3,7 @@ import React from "react"
 import "./Header.css"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import {
-  resumeLink,
-  devToLink,
-  linkedInLink,
-  payPalLink,
-  gitHubLink,
-  gitLabLink,
-  twitterLink,
-  instagramLink,
-} from "../meta/links"
-
-const socialLinks = [
-  resumeLink,
-  devToLink,
-  linkedInLink,
-  payPalLink,
-  gitHubLink,
-  gitLabLink,
-  twitterLink,
-  instagramLink,
-]
+import socialLinks from "../meta/links"
 
 const Header = (props: { title: string; description: string }): JSX.Element => (
   <div className="huge-header">
@@ -34,9 +14,9 @@ const Header = (props: { title: string; description: string }): JSX.Element => (
     <nav>
       <ul>
         {socialLinks.map(link => (
-          <li key={link.to}>
-            <a href={link.to} title={link.title} rel="external">
-              {link.title}
+          <li key={link.href}>
+            <a href={link.href} title={link.name} rel="external">
+              {link.name}
             </a>
           </li>
         ))}
@@ -61,9 +41,9 @@ export const HugeHeader = (): JSX.Element => {
       <nav>
         <ul>
           {socialLinks.map(link => (
-            <li key={link.to}>
-              <a href={link.to} title={link.title} rel="external">
-                {link.title}
+            <li key={link.href}>
+              <a href={link.href} title={link.name} rel="external">
+                {link.name}
               </a>
             </li>
           ))}
