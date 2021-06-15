@@ -22,3 +22,7 @@ section {
   padding-top: 70px;
   margin-top: -50px;
 }
+
+.badge {
+  border: 1px solid rgba(255, 255, 255,0.5);
+}

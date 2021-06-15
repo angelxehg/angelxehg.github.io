@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import Badge from "react-bootstrap/Badge"
 import Container from "react-bootstrap/Container"
 
 import Layout from "../layouts/Layout"
@@ -30,7 +31,17 @@ export const ProjectCard = (props: ProjectCardProps): JSX.Element => {
           Hecho con{" "}
           {stackIcons.map(toolName => {
             const link = getLinkMeta(toolName)
-            return <IconLink key={toolName} meta={link} />
+            return (
+              <Badge
+                key={toolName}
+                pill
+                bg="dark"
+                text="light"
+                className="mt-1 me-1"
+              >
+                <IconLink meta={link} />
+              </Badge>
+            )
           })}
         </p>
       </div>
@@ -43,7 +54,7 @@ const ProjectsPage = (): JSX.Element => {
   return (
     <Layout>
       <SEO title="Portafolio" lang="es" />
-      <DefaultNavbar/>
+      <DefaultNavbar />
       <Container as="header" className="mt-3">
         <h1>Todos mis proyectos</h1>
         <p>Estos son todos mis proyectos públicos</p>
