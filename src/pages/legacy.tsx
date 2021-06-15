@@ -11,7 +11,7 @@ import SEO from "../components/SEO"
 import { availableIcons, Icon } from "../components/icons"
 import stacks from "../meta/stacks"
 import { usePages } from "../hooks/use-pages"
-import ProjectCard from "../components/project"
+import {ProjectCard} from "./projects"
 
 const AboutSection = () => (
   <section id="about" className="mt-2">
