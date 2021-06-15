@@ -5,7 +5,7 @@ import Container from "@material-ui/core/Container"
 import Link from "@material-ui/core/Link"
 import Typography from '@material-ui/core/Typography';
 
-import "./HugeHeader.scss"
+import "./HugeHeader.css"
 
 import { Icon } from "./icons"
 import { useSiteMetadata } from "../hooks/use-site-metadata"

@@ -1,6 +1,6 @@
 import React from "react"
 
-import "./Center.scss"
+import "./Center.css"
 
 import Layout from "./Layout"
 
