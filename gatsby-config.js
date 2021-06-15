@@ -27,29 +27,29 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-advanced-sitemap`,
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://angelxehg.com',
-        sitemap: 'https://angelxehg.com/sitemap.xml',
-        resolveEnv: () => NETLIFY_ENV,
-        env: {
-          production: {
-            policy: [{ userAgent: '*', allow: '/', disallow: ['/posts', '/404', '/about'] }]
-          },
-          'branch-deploy': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-            sitemap: null,
-            host: null
-          },
-          'deploy-preview': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-            sitemap: null,
-            host: null
-          }
-        },
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-robots-txt',
+    //   options: {
+    //     host: 'https://angelxehg.com',
+    //     resolveEnv: () => NETLIFY_ENV,
+    //     env: {
+    //       production: {
+    //         policy: [{ userAgent: '*', allow: '/', disallow: ['/posts', '/404', '/about'] }],
+    //         sitemap: 'https://angelxehg.com/sitemap.xml',
+    //       },
+    //       'branch-deploy': {
+    //         policy: [{ userAgent: '*', disallow: ['/'] }],
+    //         sitemap: null,
+    //         host: null
+    //       },
+    //       'deploy-preview': {
+    //         policy: [{ userAgent: '*', disallow: ['/'] }],
+    //         sitemap: null,
+    //         host: null
+    //       }
+    //     },
+    //   }
+    // },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
