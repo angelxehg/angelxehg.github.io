@@ -27,7 +27,7 @@ const AboutSection = () => (
             <Typography component="h3" variant="h5">
               Educación
             </Typography>
-            <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
+            <ul style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
                 <br />@
@@ -46,10 +46,10 @@ const AboutSection = () => (
             <Typography component="h3" variant="h5">
               Enlaces
             </Typography>
-            <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
+            <ul style={{ listStyleType: "none" }}>
               <li>
                 <a href="mailto:sudo@angelxehg.com" title="Email" rel="noopener" target="_blank">
-                  <Icon name="Email" className="me-2" />
+                  <Icon name="Email" />
                   sudo@angelxehg.com
                 </a>
               </li>
@@ -102,7 +102,7 @@ const SkillCard = (props: { title: string, icons: string[] }) => (
 )
 
 const SkillsSection = () => (
-  <section id="skills" className="mt-2">
+  <section id="skills">
     <Typography component="h2" variant="h5">
       Habilidades
     </Typography>
