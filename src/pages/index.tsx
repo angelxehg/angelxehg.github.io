@@ -90,7 +90,7 @@ const SkillsSection = () => (
 const IndexPage = (): JSX.Element => (
   <Layout>
     <SEO title="Portafolio" lang="es" />
-    <DefaultNavbar/>
+    <DefaultNavbar />
     <HugeHeader />
     <Container as="main" className="mt-3">
       <AboutSection />

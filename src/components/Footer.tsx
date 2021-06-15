@@ -1,5 +1,6 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
+import Navbar from "react-bootstrap/Navbar"
 
 const GatsbyLink = () => (
   <a href="https://www.gatsbyjs.com/" rel="external" title="Gatsby">
@@ -62,22 +63,24 @@ const VersionLink = () => (
 )
 
 const DefaultFooter = (): JSX.Element => (
-  <Container as="footer" className="mt-3">
-    <p>
-      © {new Date().getFullYear()}, Angel Hurtado. Portafolio profesional creado
-      con <GatsbyLink />.
-    </p>
-    <p>
-      Las marcas y logotipos presentados en este sitio web pertenecen a sus
-      respectivos dueños. Los iconos fueron obtenidos desde <FontAwesomeLink />,{" "}
-      <BootstrapIconsLink />, <SeekLogoLink />, <IoniconsLink />, y{" "}
-      <IconifyLink />.
-    </p>
-    <p>
-      Reporta problemas o envia tus sugerencias a la <IssuesPageLink />. Versión
-      del sitio web: <VersionLink />
-    </p>
-  </Container>
+  <Navbar as="footer" variant="dark" bg="dark" className="mt-3">
+    <Container style={{ display: "block" }}>
+      <p className="navbar-text m-0">
+        © {new Date().getFullYear()}, Angel Hurtado. Portafolio profesional
+        creado con <GatsbyLink />.
+      </p>
+      <p className="navbar-text m-0">
+        Las marcas y logotipos presentados en este sitio web pertenecen a sus
+        respectivos dueños. Los iconos fueron obtenidos desde{" "}
+        <FontAwesomeLink />, <BootstrapIconsLink />, <SeekLogoLink />,{" "}
+        <IoniconsLink />, y <IconifyLink />.
+      </p>
+      <p className="navbar-text m-0">
+        Reporta problemas o envia tus sugerencias a la <IssuesPageLink />.
+        Versión del sitio web: <VersionLink />
+      </p>
+    </Container>
+  </Navbar>
 )
 
 export default DefaultFooter
