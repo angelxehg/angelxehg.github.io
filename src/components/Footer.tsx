@@ -1,5 +1,5 @@
 import React from "react"
-import Container from 'react-bootstrap/Container'
+import Container from "react-bootstrap/Container"
 
 const GatsbyLink = () => (
   <a href="https://www.gatsbyjs.com/" rel="external" title="Gatsby">

@@ -244,3 +244,49 @@ export const genericWebLinkMeta: LinkMeta = {
   icon: genericWebIconMeta,
   href: "https://angelxehg.com/",
 }
+
+const allLinks = [
+  androidLinkMeta,
+  angularLinkMeta,
+  awsLinkMeta,
+  bootstrapLinkMeta,
+  capacitorLinkMeta,
+  devtoLinkMeta,
+  digitalOceanLinkMeta,
+  djangoLinkMeta,
+  genericDocumentLinkMeta,
+  genericEmailLinkMeta,
+  firebaseLinkMeta,
+  gatsbyLinkMeta,
+  gitLinkMeta,
+  gitHubLinkMeta,
+  gitHubPagesLinkMeta,
+  gitLabLinkMeta,
+  html5LinkMeta,
+  instagramLinkMeta,
+  ionicLinkMeta,
+  javaScriptLinkMeta,
+  linkedInLinkMeta,
+  markdownLinkMeta,
+  netlifyLinkMeta,
+  nodeJsLinkMeta,
+  npmLinkMeta,
+  payPalLinkMeta,
+  pythonLinkMeta,
+  reactLinkMeta,
+  twitterLinkMeta,
+  typeScriptLinkMeta,
+  ubuntuLinkMeta,
+  vsCodeLinkMeta,
+  genericWebLinkMeta,
+]
+
+export const getLinkMeta = (linkName: string) => {
+  const link = allLinks.find(i => i.name === linkName)
+  if (!link) {
+    throw new Error(`No se encontró link ${linkName}`)
+  }
+  return link
+}
+
+export default allLinks

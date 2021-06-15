@@ -2,11 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
-import Container from 'react-bootstrap/Container'
+import Container from "react-bootstrap/Container"
 
 import Footer from "../components/Footer"
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
+import { getLinkMeta } from "../meta/links"
+import IconLink from "../components/Link"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -59,23 +61,23 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
         image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
       />
       <Container as="main">
-        {/* <h1>{title}</h1>
-        <p>
-          <ul>
-            <li>Fecha: {date}</li>
-            {stackIcons.length > 0 && (
-              <li>
-                {stackIcons.map(icon => (
-                  <span key={icon}>{icon}</span>
-                ))}
-              </li>
-            )}
-          </ul>
-        </p>
+        <h1>{title}</h1>
+        <ul>
+          <li>Fecha: {date}</li>
+          {stackIcons.length > 0 && (
+            <li>
+              Hecho con{" "}
+              {stackIcons.map(toolName => {
+                const link = getLinkMeta(toolName)
+                return <IconLink key={toolName} meta={link} />
+              })}
+            </li>
+          )}
+        </ul>
         <GatsbyImage
           image={image.childImageSharp.gatsbyImageData}
           alt={caption}
-        /> */}
+        />
         <MDXRenderer>{body}</MDXRenderer>
       </Container>
       <Footer />

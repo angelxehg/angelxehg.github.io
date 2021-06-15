@@ -1,12 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import Container from 'react-bootstrap/Container'
+import Container from "react-bootstrap/Container"
 
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
 import { usePages, Page } from "../hooks/use-pages"
+import { getLinkMeta } from "../meta/links"
+import IconLink from "../components/Link"
 
 interface ProjectCardProps {
   item: Page
@@ -24,9 +26,11 @@ export const ProjectCard = (props: ProjectCardProps): JSX.Element => {
         </h3>
         <p>{resume}</p>
         <p>
-          {stackIcons.map(icon => (
-            <span key={icon}>{icon}</span>
-          ))}
+          Hecho con{" "}
+          {stackIcons.map(toolName => {
+            const link = getLinkMeta(toolName)
+            return <IconLink key={toolName} meta={link} />
+          })}
         </p>
       </div>
     </article>
