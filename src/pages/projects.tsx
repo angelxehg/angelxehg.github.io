@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../layouts/Layout"
@@ -20,7 +21,7 @@ export const ProjectCard = (props: ProjectCardProps): JSX.Element => {
       <div>
         <GatsbyImage image={image} alt={caption} />
         <h3>
-          <a href={`/${slug}`}>{title}</a>
+          <Link to={`/${slug}`}>{title}</Link>
         </h3>
         <p>{resume}</p>
         <p>

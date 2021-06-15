@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import CenterLayout from "../layouts/Center"
 import SEO from "../components/SEO"
@@ -13,7 +14,8 @@ const NotFoundPage = (): JSX.Element => (
         <ConcernedSVG style={{ width: "5rem", height: "5rem" }} />
         <h1>404 Not Found</h1>
         <p>
-          La página que buscas no existe. <a href="/">Ir a página principal</a>
+          La página que buscas no existe.{" "}
+          <Link to="/">Ir a página principal</Link>
         </p>
       </div>
     </main>

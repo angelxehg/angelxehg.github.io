@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
@@ -8,6 +9,18 @@ import { usePages } from "../hooks/use-pages"
 import { availableIcons, Icon } from "../components/icons"
 import stacks from "../meta/stacks"
 import { ProjectCard } from "./projects"
+
+const EmailLink = () => (
+  <a href="mailto:sudo@angelxehg.com" title="Email" rel="external">
+    <Icon name="Email" /> sudo@angelxehg.com
+  </a>
+)
+
+const UTZACLink = () => (
+  <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
+    UTZAC
+  </a>
+)
 
 const AboutSection = () => (
   <section id="about">
@@ -20,11 +33,7 @@ const AboutSection = () => (
             <ul style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
-                <br />@
-                <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
-                  UTZAC
-                </a>{" "}
-                2017-2021
+                <br />@ <UTZACLink /> 2017-2021
               </li>
             </ul>
           </div>
@@ -36,14 +45,7 @@ const AboutSection = () => (
             <h3>Enlaces</h3>
             <ul style={{ listStyleType: "none" }}>
               <li>
-                <a
-                  href="mailto:sudo@angelxehg.com"
-                  title="Email"
-                  rel="external"
-                >
-                  <Icon name="Email" />
-                  sudo@angelxehg.com
-                </a>
+                <EmailLink />
               </li>
             </ul>
           </div>
@@ -58,7 +60,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects">
       <h2>
-        Últimos <a href="/projects">proyectos</a>:
+        Últimos <Link to="/projects">proyectos</Link>:
       </h2>
       <div>
         {projects.map(item => (
@@ -67,7 +69,7 @@ const ProjectsSection = () => {
           </div>
         ))}
       </div>
-      <a href="/projects">Ver todos los proyectos {">"}</a>
+      <Link to="/projects">Ver todos los proyectos {">"}</Link>
     </section>
   )
 }
