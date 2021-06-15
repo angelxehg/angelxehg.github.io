@@ -1,9 +1,4 @@
 import React from "react"
-import Avatar from "@material-ui/core/Avatar"
-import Box from "@material-ui/core/Box"
-import Container from "@material-ui/core/Container"
-import Link from "@material-ui/core/Link"
-import Typography from "@material-ui/core/Typography"
 
 import "./HugeHeader.css"
 
@@ -34,28 +29,24 @@ const socialLinks = [
 const HugeHeader = (): JSX.Element => {
   const site = useSiteMetadata()
   return (
-    <Container className="huge-header">
-      <Avatar
+    <div className="huge-header">
+      <img
         alt="Foto de perfil de Angel"
         src="/images/Profile.500.Sqr.jpg"
         className="huge-header-avatar"
       />
-      <Box component="header" mt={1}>
-        <Typography component="h1" variant="h4">
-          {site.title}
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          {site.description}
-        </Typography>
-      </Box>
-      <Box component="nav" mt={1}>
+      <header>
+        <h1>{site.title}</h1>
+        <p>{site.description}</p>
+      </header>
+      <nav>
         {socialLinks.map(link => (
-          <Link key={link.to} href={link.to} title={link.title} rel="external">
+          <a key={link.to} href={link.to} title={link.title} rel="external">
             <Icon name={link.icon} size="1.5rem" />
-          </Link>
+          </a>
         ))}
-      </Box>
-    </Container>
+      </nav>
+    </div>
   )
 }
 

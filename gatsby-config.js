@@ -17,14 +17,6 @@ module.exports = {
     PRESERVE_WEBPACK_CACHE: true,
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-material-ui",
-      options: {
-        // stylesProvider: {
-        //   injectFirst: true,
-        // },
-      },
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-advanced-sitemap`,
     // {

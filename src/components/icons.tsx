@@ -1,4 +1,3 @@
-import useMediaQuery from "@material-ui/core/useMediaQuery"
 import React from "react"
 
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
@@ -242,11 +241,10 @@ const useStyles = (props: IconProps, defaultColor: string) => {
 }
 
 const fillNColor = (
-  defaultColor: string,
   colorProp: string | undefined,
   fillProp: boolean | undefined
 ) => {
-  const finalColor = colorProp ? colorProp : defaultColor
+  const finalColor = colorProp ? colorProp : "black"
   const finalFill = fillProp ? finalColor : undefined
   return {
     fill: finalFill,
@@ -256,17 +254,12 @@ const fillNColor = (
 
 export const Icon = (props: IconProps) => {
   const { name, className } = props
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)")
   const classes = className || ""
   const icon = iconsSource.find(i => i.name === name)
   if (!icon) {
     throw new Error(`No se encontró el icono '${name}'`)
   }
-  const { fill, color } = fillNColor(
-    prefersDarkMode ? "white" : "black",
-    icon.color,
-    icon.fill
-  )
+  const { fill, color } = fillNColor(icon.color, icon.fill)
   const IconSVG = icon.svg
   return (
     <IconSVG fill={fill} style={useStyles(props, color)} className={classes} />

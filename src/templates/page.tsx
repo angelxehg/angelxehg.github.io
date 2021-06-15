@@ -2,8 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
-import Container from "@material-ui/core/Container"
-import Typography from "@material-ui/core/Typography"
 
 import Footer from "../components/Footer"
 import SEO from "../components/SEO"
@@ -60,11 +58,9 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
         lang="es"
         image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
       />
-      <Container>
-        <Typography component="h1" variant="h4">
-          {title}
-        </Typography>
-        <Typography>
+      <main>
+        <h1>{title}</h1>
+        <p>
           <ul>
             <li>Fecha: {date}</li>
             {stackIcons.length > 0 && (
@@ -77,15 +73,13 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
               </li>
             )}
           </ul>
-        </Typography>
+        </p>
         <GatsbyImage
           image={image.childImageSharp.gatsbyImageData}
           alt={caption}
         />
-        <Typography>
-          <MDXRenderer>{body}</MDXRenderer>
-        </Typography>
-      </Container>
+        <MDXRenderer>{body}</MDXRenderer>
+      </main>
       <Footer />
     </Layout>
   )

@@ -1,10 +1,4 @@
 import React from "react"
-import Link from "@material-ui/core/Link"
-import Card from "@material-ui/core/Card"
-import CardContent from "@material-ui/core/CardContent"
-import Container from "@material-ui/core/Container"
-import Grid from "@material-ui/core/Grid"
-import Typography from "@material-ui/core/Typography"
 
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
@@ -17,16 +11,12 @@ import { ProjectCard } from "./projects"
 
 const AboutSection = () => (
   <section id="about">
-    <Typography component="h2" variant="h5">
-      Acerca de mi:
-    </Typography>
-    <Grid container spacing={1}>
-      <Grid item xl={12}>
-        <Card>
-          <CardContent>
-            <Typography component="h3" variant="h5">
-              Educación
-            </Typography>
+    <h2>Acerca de mi:</h2>
+    <div>
+      <div>
+        <div>
+          <div>
+            <h3>Educación</h3>
             <ul style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
@@ -37,15 +27,13 @@ const AboutSection = () => (
                 2017-2021
               </li>
             </ul>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid item xl={12}>
-        <Card>
-          <CardContent>
-            <Typography component="h3" variant="h5">
-              Enlaces
-            </Typography>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div>
+            <h3>Enlaces</h3>
             <ul style={{ listStyleType: "none" }}>
               <li>
                 <a
@@ -58,10 +46,10 @@ const AboutSection = () => (
                 </a>
               </li>
             </ul>
-          </CardContent>
-        </Card>
-      </Grid>
-    </Grid>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 )
 
@@ -69,28 +57,26 @@ const ProjectsSection = () => {
   const projects = usePages().slice(0, 2)
   return (
     <section id="projects">
-      <Typography component="h2" variant="h5">
-        Últimos <Link href="/projects">proyectos</Link>:
-      </Typography>
-      <Grid container spacing={1}>
+      <h2>
+        Últimos <a href="/projects">proyectos</a>:
+      </h2>
+      <div>
         {projects.map(item => (
-          <Grid key={item.id} item lg={4} md={6} xs={12}>
+          <div key={item.id}>
             <ProjectCard item={item} />
-          </Grid>
+          </div>
         ))}
-      </Grid>
-      <Link href="/projects">Ver todos los proyectos {">"}</Link>
+      </div>
+      <a href="/projects">Ver todos los proyectos {">"}</a>
     </section>
   )
 }
 
 const SkillCard = (props: { title: string; icons: string[] }) => (
-  <Card>
-    <CardContent>
-      <Typography component="h3" variant="h5">
-        {props.title}
-      </Typography>
-      <Typography>
+  <div>
+    <div>
+      <h3>{props.title}</h3>
+      <p>
         {props.icons.map(icon => {
           if (availableIcons.find(i => i === icon)) {
             return (
@@ -100,23 +86,21 @@ const SkillCard = (props: { title: string; icons: string[] }) => (
             )
           }
         })}
-      </Typography>
-    </CardContent>
-  </Card>
+      </p>
+    </div>
+  </div>
 )
 
 const SkillsSection = () => (
   <section id="skills">
-    <Typography component="h2" variant="h5">
-      Habilidades
-    </Typography>
-    <Grid container spacing={1}>
+    <h2>Habilidades</h2>
+    <div>
       {stacks.map(({ title, icons }, n) => (
-        <Grid key={n} item lg={4} md={6} xs={12}>
+        <div key={n}>
           <SkillCard title={title} icons={icons} />
-        </Grid>
+        </div>
       ))}
-    </Grid>
+    </div>
   </section>
 )
 
@@ -124,11 +108,11 @@ const IndexPage = (): JSX.Element => (
   <Layout>
     <SEO title="Portafolio" lang="es" />
     <HugeHeader />
-    <Container component="main">
+    <main>
       <AboutSection />
       <ProjectsSection />
       <SkillsSection />
-    </Container>
+    </main>
     <DefaultFooter />
   </Layout>
 )
