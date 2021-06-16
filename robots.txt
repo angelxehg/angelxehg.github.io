@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /posts
+Disallow: /404
+Disallow: /about
+Sitemap: https://angelxehg.com/sitemap.xml
+Host: https://angelxehg.com
