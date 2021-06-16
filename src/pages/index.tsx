@@ -55,7 +55,7 @@ const ProjectsSection = () => {
       <Row>
         {projects.map(item => (
           <Col key={item.id} md="6" xl="4" className="p-md-1 pb-2">
-            <ProjectCard item={item} />
+            <ProjectCard item={item} titleAs="h3" />
           </Col>
         ))}
       </Row>
@@ -67,7 +67,7 @@ const ProjectsSection = () => {
 const SkillCard = (props: { title: string; tools: LinkMeta[] }) => (
   <Card bg="dark" text="light">
     <Card.Body>
-      <Card.Title>{props.title}</Card.Title>
+      <Card.Title as="h3" className="h5">{props.title}</Card.Title>
       <Card.Text>
         {props.tools.map(tool => (
           <Badge

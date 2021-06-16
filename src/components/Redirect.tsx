@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { navigate } from "gatsby"
+import Card from "react-bootstrap/Card"
 
 import CenterLayout from "../layouts/Center"
 import SEO from "./SEO"
@@ -18,16 +19,16 @@ const Redirect = (props: RedirectProps): JSX.Element => {
   return (
     <CenterLayout>
       <SEO title="301: Moved Permanently" lang="es" />
-      <main>
-        <div>
-          <ConcernedSVG style={{ width: "5rem", height: "5rem" }} />
-          <h1>301: Moved Permanently</h1>
-          <p>
+      <Card bg="dark" text="light" as="main">
+        <ConcernedSVG style={{ width: "5rem", height: "5rem" }} className="align-self-center mt-2" />
+        <Card.Body>
+          <Card.Title as="h1" className="h5">301: Moved Permanently</Card.Title>
+          <Card.Text className="m-0">
             Este contenido fue movido a <a href={props.url}>{props.title}</a>.
             Redireccionando...
-          </p>
-        </div>
-      </main>
+          </Card.Text>
+        </Card.Body>
+      </Card>
     </CenterLayout>
   )
 }

@@ -19,14 +19,14 @@ interface ProjectCardProps {
   item: Page
 }
 
-export const ProjectCard = (props: ProjectCardProps): JSX.Element => {
+export const ProjectCard = (props: ProjectCardProps & {titleAs?: 'h2'| 'h3'}): JSX.Element => {
   const { slug, title, resume, image, caption, stack } = props.item
   const stackIcons = stack.split(",")
   return (
     <Card bg="dark" text="light" as="article">
       <GatsbyImage image={image} alt={caption} className="card-img-top"/>
       <Card.Body>
-        <Card.Title>
+        <Card.Title as={props.titleAs || 'h2'} className="h5">
           <Link to={`/${slug}`}>{title}</Link>
         </Card.Title>
         <Card.Text className="m-0">{resume}</Card.Text>
