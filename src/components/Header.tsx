@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
 
-import "./Header.css"
+import "./Header.scss"
 
 import IconLink from "./Link"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
