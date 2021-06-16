@@ -31,7 +31,9 @@ const AboutSection = () => (
       <Col xs="12" className="p-md-1 pb-2">
         <Card bg="dark" text="light">
           <Card.Body>
-            <Card.Title as="h3" className="h5">Educación</Card.Title>
+            <Card.Title as="h3" className="h5">
+              Educación
+            </Card.Title>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}

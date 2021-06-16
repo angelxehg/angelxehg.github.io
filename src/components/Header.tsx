@@ -11,7 +11,11 @@ const SocialLinks = () => (
   <nav>
     <p className="d-none d-sm-block">
       {socialLinks.map(link => (
-        <ClickableIcon key={link.href} meta={link} iconProps={{ size: '1.5rem' }} />
+        <ClickableIcon
+          key={link.href}
+          meta={link}
+          iconProps={{ size: "1.5rem" }}
+        />
       ))}
     </p>
     <ul className="p-0 m-0 d-sm-none" style={{ listStyleType: "none" }}>

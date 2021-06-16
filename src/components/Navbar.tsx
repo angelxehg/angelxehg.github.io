@@ -12,7 +12,7 @@ const DefaultNavbar = (): JSX.Element => (
       </Link>
       <Navbar.Toggle aria-controls="default-navbar" />
       <Navbar.Collapse id="default-navbar">
-        <Nav className="me-auto" ></Nav>
+        <Nav className="me-auto"></Nav>
         <Nav as="ul">
           <li className="nav-item">
             <Link to="/projects" className="nav-link" activeClassName="active">
