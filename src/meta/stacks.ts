@@ -1,27 +1,76 @@
-const stacks = [
+import {
+  angularLinkMeta,
+  bootstrapLinkMeta,
+  capacitorLinkMeta,
+  digitalOceanLinkMeta,
+  djangoLinkMeta,
+  firebaseLinkMeta,
+  gatsbyLinkMeta,
+  gitHubLinkMeta,
+  gitLabLinkMeta,
+  gitLinkMeta,
+  html5LinkMeta,
+  ionicLinkMeta,
+  javaScriptLinkMeta,
+  LinkMeta,
+  markdownLinkMeta,
+  netlifyLinkMeta,
+  nodeJsLinkMeta,
+  npmLinkMeta,
+  pythonLinkMeta,
+  reactLinkMeta,
+  typeScriptLinkMeta,
+  ubuntuLinkMeta,
+  vsCodeLinkMeta,
+} from "./links"
+
+interface Stack {
+  title: string
+  tools: LinkMeta[]
+}
+
+const stacks: Stack[] = [
   {
     title: "Lenguajes y sintaxis",
-    icons: ["HTML5", "JavaScript", "TypeScript", "Python", "Markdown"],
+    tools: [
+      html5LinkMeta,
+      javaScriptLinkMeta,
+      typeScriptLinkMeta,
+      pythonLinkMeta,
+      markdownLinkMeta,
+    ],
   },
   {
     title: "Frameworks y librerias",
-    icons: [
-      "Angular",
-      "React",
-      "Ionic",
-      "Capacitor",
-      "Gatsby",
-      "Django",
-      "Bootstrap",
+    tools: [
+      angularLinkMeta,
+      reactLinkMeta,
+      ionicLinkMeta,
+      capacitorLinkMeta,
+      gatsbyLinkMeta,
+      djangoLinkMeta,
+      bootstrapLinkMeta,
     ],
   },
   {
     title: "Herramientas",
-    icons: ["Ubuntu", "VSCode", "NodeJS", "NPM", "Git"],
+    tools: [
+      ubuntuLinkMeta,
+      vsCodeLinkMeta,
+      nodeJsLinkMeta,
+      npmLinkMeta,
+      gitLinkMeta,
+    ],
   },
   {
     title: "Plataformas",
-    icons: ["Netlify", "GitHub", "GitLab", "Firebase", "DigitalOcean"],
+    tools: [
+      netlifyLinkMeta,
+      gitHubLinkMeta,
+      gitLabLinkMeta,
+      firebaseLinkMeta,
+      digitalOceanLinkMeta,
+    ],
   },
 ]
 

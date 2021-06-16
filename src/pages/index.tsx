@@ -1,67 +1,48 @@
 import React from "react"
-import Link from "@material-ui/core/Link"
-import Card from "@material-ui/core/Card"
-import CardContent from "@material-ui/core/CardContent"
-import Container from "@material-ui/core/Container"
-import Grid from "@material-ui/core/Grid"
-import Typography from "@material-ui/core/Typography"
+import { Link } from "gatsby"
+import Badge from "react-bootstrap/Badge"
+import Card from "react-bootstrap/Card"
+import Container from "react-bootstrap/Container"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
-import HugeHeader from "../components/HugeHeader"
+import { HugeHeader } from "../components/Header"
 import DefaultFooter from "../components/Footer"
 import { usePages } from "../hooks/use-pages"
-import { availableIcons, Icon } from "../components/icons"
 import stacks from "../meta/stacks"
 import { ProjectCard } from "./projects"
+import { LinkMeta } from "../meta/links"
+import IconLink from "../components/Link"
+import DefaultNavbar from "../components/Navbar"
+
+const UTZACLink = () => (
+  <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
+    UTZAC
+  </a>
+)
 
 const AboutSection = () => (
   <section id="about">
-    <Typography component="h2" variant="h5">
-      Acerca de mi:
-    </Typography>
-    <Grid container spacing={1}>
-      <Grid item xl={12}>
-        <Card>
-          <CardContent>
-            <Typography component="h3" variant="h5">
+    <h2>Acerca de mi:</h2>
+    <Row>
+      <Col xs="12" className="p-md-1 pb-2">
+        <Card bg="dark" text="light">
+          <Card.Body>
+            <Card.Title as="h3" className="h5">
               Educación
-            </Typography>
-            <ul style={{ listStyleType: "none" }}>
+            </Card.Title>
+            <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
-                <br />@
-                <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
-                  UTZAC
-                </a>{" "}
-                2017-2021
+                <br />@ <UTZACLink /> 2017-2021
               </li>
             </ul>
-          </CardContent>
+          </Card.Body>
         </Card>
-      </Grid>
-      <Grid item xl={12}>
-        <Card>
-          <CardContent>
-            <Typography component="h3" variant="h5">
-              Enlaces
-            </Typography>
-            <ul style={{ listStyleType: "none" }}>
-              <li>
-                <a
-                  href="mailto:sudo@angelxehg.com"
-                  title="Email"
-                  rel="external"
-                >
-                  <Icon name="Email" />
-                  sudo@angelxehg.com
-                </a>
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
-      </Grid>
-    </Grid>
+      </Col>
+    </Row>
   </section>
 )
 
@@ -69,65 +50,66 @@ const ProjectsSection = () => {
   const projects = usePages().slice(0, 2)
   return (
     <section id="projects">
-      <Typography component="h2" variant="h5">
-        Últimos <Link href="/projects">proyectos</Link>:
-      </Typography>
-      <Grid container spacing={1}>
+      <h2>
+        Últimos <Link to="/projects">proyectos</Link>:
+      </h2>
+      <Row>
         {projects.map(item => (
-          <Grid key={item.id} item lg={4} md={6} xs={12}>
-            <ProjectCard item={item} />
-          </Grid>
+          <Col key={item.id} md="6" xl="4" className="p-md-1 pb-2">
+            <ProjectCard item={item} titleAs="h3" />
+          </Col>
         ))}
-      </Grid>
-      <Link href="/projects">Ver todos los proyectos {">"}</Link>
+      </Row>
+      <Link to="/projects">Ver todos los proyectos {">"}</Link>
     </section>
   )
 }
 
-const SkillCard = (props: { title: string; icons: string[] }) => (
-  <Card>
-    <CardContent>
-      <Typography component="h3" variant="h5">
+const SkillCard = (props: { title: string; tools: LinkMeta[] }) => (
+  <Card bg="dark" text="light">
+    <Card.Body>
+      <Card.Title as="h3" className="h5">
         {props.title}
-      </Typography>
-      <Typography>
-        {props.icons.map(icon => {
-          if (availableIcons.find(i => i === icon)) {
-            return (
-              <span key={icon}>
-                <Icon name={icon} /> {icon}
-              </span>
-            )
-          }
-        })}
-      </Typography>
-    </CardContent>
+      </Card.Title>
+      <Card.Text>
+        {props.tools.map(tool => (
+          <Badge
+            key={tool.name}
+            pill
+            bg="dark"
+            text="light"
+            className="mt-1 me-1"
+          >
+            <IconLink noUnderline meta={tool} />
+          </Badge>
+        ))}
+      </Card.Text>
+    </Card.Body>
   </Card>
 )
 
 const SkillsSection = () => (
   <section id="skills">
-    <Typography component="h2" variant="h5">
-      Habilidades
-    </Typography>
-    <Grid container spacing={1}>
-      {stacks.map(({ title, icons }, n) => (
-        <Grid key={n} item lg={4} md={6} xs={12}>
-          <SkillCard title={title} icons={icons} />
-        </Grid>
+    <h2>Habilidades</h2>
+    <Row>
+      {stacks.map(({ title, tools }, n) => (
+        <Col key={n} xs="12" className="p-md-1 pb-2">
+          <SkillCard title={title} tools={tools} />
+        </Col>
       ))}
-    </Grid>
+    </Row>
   </section>
 )
 
 const IndexPage = (): JSX.Element => (
   <Layout>
     <SEO title="Portafolio" lang="es" />
+    <DefaultNavbar />
     <HugeHeader />
-    <Container component="main">
+    <Container as="main" className="pb-3">
       <AboutSection />
-      <ProjectsSection />
       <SkillsSection />
+      <ProjectsSection />
     </Container>
     <DefaultFooter />
   </Layout>

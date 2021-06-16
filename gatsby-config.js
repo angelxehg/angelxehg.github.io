@@ -17,14 +17,6 @@ module.exports = {
     PRESERVE_WEBPACK_CACHE: true,
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-material-ui",
-      options: {
-        // stylesProvider: {
-        //   injectFirst: true,
-        // },
-      },
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-advanced-sitemap`,
     // {
@@ -74,6 +66,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-sass`,
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

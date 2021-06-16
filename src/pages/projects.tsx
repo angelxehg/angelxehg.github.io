@@ -1,45 +1,55 @@
 import React from "react"
+import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import Card from "@material-ui/core/Card"
-import CardContent from "@material-ui/core/CardContent"
-import CardMedia from "@material-ui/core/CardMedia"
-import Container from "@material-ui/core/Container"
-import Link from "@material-ui/core/Link"
-import Grid from "@material-ui/core/Grid"
-import Typography from "@material-ui/core/Typography"
+import Badge from "react-bootstrap/Badge"
+import Card from "react-bootstrap/Card"
+import Container from "react-bootstrap/Container"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
-import { usePages } from "../hooks/use-pages"
-import { Icon } from "../components/icons"
-import { Page } from "../models"
+import { usePages, Page } from "../hooks/use-pages"
+import { getLinkMeta } from "../meta/links"
+import IconLink from "../components/Link"
+import DefaultNavbar from "../components/Navbar"
 
 interface ProjectCardProps {
   item: Page
 }
 
-export const ProjectCard = (props: ProjectCardProps): JSX.Element => {
+export const ProjectCard = (
+  props: ProjectCardProps & { titleAs?: "h2" | "h3" }
+): JSX.Element => {
   const { slug, title, resume, image, caption, stack } = props.item
   const stackIcons = stack.split(",")
   return (
-    <Card component="article">
-      <CardContent>
-        <GatsbyImage as={CardMedia} image={image} alt={caption} />
-        <Typography component="h3" variant="h5">
-          <Link href={`/${slug}`}>{title}</Link>
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          {resume}
-        </Typography>
-        <Typography>
-          {stackIcons.map(icon => (
-            <span key={icon}>
-              <Icon name={icon} /> {icon}
-            </span>
-          ))}
-        </Typography>
-      </CardContent>
+    <Card bg="dark" text="light" as="article">
+      <GatsbyImage image={image} alt={caption} className="card-img-top" />
+      <Card.Body>
+        <Card.Title as={props.titleAs || "h2"} className="h5">
+          <Link to={`/${slug}`}>{title}</Link>
+        </Card.Title>
+        <Card.Text className="m-0">{resume}</Card.Text>
+        <Card.Text className="mt-1">
+          Hecho con{": "}
+          {stackIcons.map(toolName => {
+            const link = getLinkMeta(toolName)
+            return (
+              <Badge
+                key={toolName}
+                pill
+                bg="dark"
+                text="light"
+                className="mt-1 me-1"
+              >
+                <IconLink noUnderline meta={link} />
+              </Badge>
+            )
+          })}
+        </Card.Text>
+      </Card.Body>
     </Card>
   )
 }
@@ -49,18 +59,21 @@ const ProjectsPage = (): JSX.Element => {
   return (
     <Layout>
       <SEO title="Portafolio" lang="es" />
-      <Container component="main">
-        <Typography component="h1" variant="h4">
-          Todos mis proyectos
-        </Typography>
-        <Typography>Estos son todos mis proyectos públicos</Typography>
-        <Grid container spacing={1}>
+      <DefaultNavbar />
+      <div className="bg-inter-background">
+        <Container as="header" className="pt-3 pb-1">
+          <h1>Todos mis proyectos</h1>
+          <p>Estos son todos mis proyectos públicos</p>
+        </Container>
+      </div>
+      <Container as="main" className="pt-3 pb-3">
+        <Row>
           {projects.map(item => (
-            <Grid key={item.id} item lg={4} md={6} xs={12}>
+            <Col key={item.id} md="6" xl="4" className="p-md-1 pb-2">
               <ProjectCard item={item} />
-            </Grid>
+            </Col>
           ))}
-        </Grid>
+        </Row>
       </Container>
       <DefaultFooter />
     </Layout>

@@ -2,13 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
-import Container from "@material-ui/core/Container"
-import Typography from "@material-ui/core/Typography"
+import Badge from "react-bootstrap/Badge"
+import Container from "react-bootstrap/Container"
 
 import Footer from "../components/Footer"
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
-import { Icon } from "../components/icons"
+import { getLinkMeta } from "../meta/links"
+import IconLink from "../components/Link"
+import DefaultNavbar from "../components/Navbar"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -60,31 +62,40 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
         lang="es"
         image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
       />
-      <Container>
-        <Typography component="h1" variant="h4">
-          {title}
-        </Typography>
-        <Typography>
-          <ul>
+      <DefaultNavbar />
+      <div className="bg-inter-background">
+        <Container as="header" className="pt-3 pb-2">
+          <h1>{title}</h1>
+          <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
             <li>Fecha: {date}</li>
             {stackIcons.length > 0 && (
               <li>
-                {stackIcons.map(icon => (
-                  <span key={icon}>
-                    <Icon name={icon} /> {icon}
-                  </span>
-                ))}
+                Hecho con{": "}
+                {stackIcons.map(toolName => {
+                  const link = getLinkMeta(toolName)
+                  return (
+                    <Badge
+                      key={toolName}
+                      pill
+                      bg="dark"
+                      text="light"
+                      className="mt-1 me-1"
+                    >
+                      <IconLink noUnderline meta={link} />
+                    </Badge>
+                  )
+                })}
               </li>
             )}
           </ul>
-        </Typography>
+        </Container>
+      </div>
+      <Container as="main" className="pt-3">
         <GatsbyImage
           image={image.childImageSharp.gatsbyImageData}
           alt={caption}
         />
-        <Typography>
-          <MDXRenderer>{body}</MDXRenderer>
-        </Typography>
+        <MDXRenderer>{body}</MDXRenderer>
       </Container>
       <Footer />
     </Layout>
