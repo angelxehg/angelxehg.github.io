@@ -15,7 +15,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = (
-  props: ProjectCardProps & { titleAs?: "h2" | "h3" }
+  props: ProjectCardProps & { titleAs: "h2" | "h3" }
 ): JSX.Element => {
   const { slug, title, resume, image, caption, stack } = props.item
   const stackIcons = stack.split(",")
@@ -76,7 +76,7 @@ const ProjectsPage = (): JSX.Element => {
   const projects = usePages()
   return (
     <Layout>
-      <SEO title="Portafolio" lang="es" />
+      <SEO title="Proyectos" lang="es" />
       <DefaultNavbar />
       <div className="bg-inter-background">
         <header className="container-xl ps-sm-4 pe-sm-4 pt-3 pb-1">
@@ -88,7 +88,7 @@ const ProjectsPage = (): JSX.Element => {
         <div className="row">
           {projects.map(item => (
             <div key={item.id} className="col-lg-6 p-sm-1 pb-2">
-              <ProjectCard item={item} />
+              <ProjectCard titleAs="h2" item={item} />
             </div>
           ))}
         </div>

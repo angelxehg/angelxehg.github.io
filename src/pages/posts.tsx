@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 
+import Layout from "../layouts/Layout"
+import DefaultFooter from "../components/Footer"
+import SEO from "../components/SEO"
+import { devtoLinkMeta } from "../meta/links"
 import IconLink from "../components/Link"
-import Redirect from "../components/Redirect"
+import DefaultNavbar from "../components/Navbar"
 import { devtoIconMeta } from "../meta/icons/iconify"
 
 interface DevToPost {
@@ -16,7 +20,7 @@ interface DevToPost {
 }
 
 const fetchDevToPosts = async () => {
-  const response = await fetch("https://dev.to/api/articles?username=angelxehg&per_page=5")
+  const response = await fetch("https://dev.to/api/articles?username=angelxehg")
   if (response.status !== 200) {
     throw new Error('Couldn\'t fetch from dev.to');
 
@@ -30,7 +34,7 @@ interface PostCardProps {
 }
 
 const PostCard = (
-  props: PostCardProps & { titleAs?: "h2" | "h3" }
+  props: PostCardProps & { titleAs: "h2" | "h3" }
 ): JSX.Element => {
   const { title, description, canonical_url, social_image } = props.item
   const linkMeta = {
@@ -80,8 +84,33 @@ export const PostsSection = () => {
   )
 }
 
-const PostsPage = (): JSX.Element => (
-  <Redirect title="dev.to" url="https://dev.to/angelxehg" />
-)
+const PostsPage = (): JSX.Element => {
+  const [posts, setPosts] = useState<DevToPost[]>([]);
+  useEffect(() => {
+    fetchDevToPosts().then(posts => setPosts(posts.slice(0, 4)))
+  }, [])
+  return (
+    <Layout>
+      <SEO title="Entradas" lang="es" />
+      <DefaultNavbar />
+      <div className="bg-inter-background">
+        <header className="container-xl ps-sm-4 pe-sm-4 pt-3 pb-1">
+          <h1>Todas mis entradas</h1>
+          <p>Estas son las entradas que he publicado en <IconLink meta={devtoLinkMeta}/></p>
+        </header>
+      </div>
+      <main className="container-xl ps-sm-4 pe-sm-4 pt-3 pb-3">
+        <div className="row">
+          {posts.map(item => (
+            <div key={item.id} className="col-lg-6 p-sm-1 pb-2">
+              <PostCard titleAs="h2" item={item} />
+            </div>
+          ))}
+        </div>
+      </main>
+      <DefaultFooter />
+    </Layout>
+  )
+}
 
 export default PostsPage

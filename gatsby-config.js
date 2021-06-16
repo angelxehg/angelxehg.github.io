@@ -24,7 +24,6 @@ module.exports = {
         exclude: [
           `/404`,
           `/about`,
-          `/posts`,
           `/skills`,
         ],
       }
