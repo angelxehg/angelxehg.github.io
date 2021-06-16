@@ -260,8 +260,8 @@ export const gitHubIssues: LinkMeta = {
 
 export const gitHubRepoVer: LinkMeta = {
   ...gitHubLinkMeta,
-  name: "v2.0.0-rc.1",
-  href: "https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0-rc.1",
+  name: "v2.0.0-rc.2",
+  href: "https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0-rc.2",
 }
 
 const allLinks = [
