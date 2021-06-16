@@ -7,7 +7,11 @@ import Navbar from "react-bootstrap/Navbar"
 const DefaultNavbar = (): JSX.Element => (
   <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
     <Container>
-      <Link to="/" className="navbar-brand">
+      <Link
+        to="/"
+        className="navbar-brand"
+        style={{ textDecoration: "underline" }}
+      >
         Angel Hurtado
       </Link>
       <Navbar.Toggle aria-controls="default-navbar" />
@@ -15,18 +19,30 @@ const DefaultNavbar = (): JSX.Element => (
         <Nav className="me-auto"></Nav>
         <Nav as="ul">
           <li className="nav-item">
-            <Link to="/projects" className="nav-link" activeClassName="active">
-              Proyectos
+            <Link
+              to="/#about"
+              className="nav-link"
+              style={{ textDecoration: "underline" }}
+            >
+              Acerca de
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/#skills" className="nav-link">
+            <Link
+              to="/#skills"
+              className="nav-link"
+              style={{ textDecoration: "underline" }}
+            >
               Habilidades
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/#about" className="nav-link">
-              Acerca de
+            <Link
+              to="/#projects"
+              className="nav-link"
+              style={{ textDecoration: "underline" }}
+            >
+              Proyectos
             </Link>
           </li>
         </Nav>

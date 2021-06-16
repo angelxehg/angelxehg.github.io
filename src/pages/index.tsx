@@ -94,7 +94,7 @@ const SkillsSection = () => (
     <h2>Habilidades</h2>
     <Row>
       {stacks.map(({ title, tools }, n) => (
-        <Col key={n} md="6" lg="4" xl="3" className="p-md-1 pb-2">
+        <Col key={n} xs="12" className="p-md-1 pb-2">
           <SkillCard title={title} tools={tools} />
         </Col>
       ))}
@@ -109,8 +109,8 @@ const IndexPage = (): JSX.Element => (
     <HugeHeader />
     <Container as="main" className="mt-3">
       <AboutSection />
-      <ProjectsSection />
       <SkillsSection />
+      <ProjectsSection />
     </Container>
     <DefaultFooter />
   </Layout>
