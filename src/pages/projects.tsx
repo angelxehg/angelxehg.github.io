@@ -66,7 +66,7 @@ const ProjectsPage = (): JSX.Element => {
           <p>Estos son todos mis proyectos públicos</p>
         </Container>
       </div>
-      <Container as="main" className="mt-3">
+      <Container as="main" className="pt-3 pb-3">
         <Row>
           {projects.map(item => (
             <Col key={item.id} md="6" xl="4" className="p-md-1 pb-2">

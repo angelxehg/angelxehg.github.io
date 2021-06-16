@@ -12,7 +12,7 @@ import {
 } from "../meta/links"
 
 const DefaultFooter = (): JSX.Element => (
-  <Navbar as="footer" variant="dark" bg="dark" className="mt-3">
+  <Navbar as="footer" variant="dark" bg="dark">
     <Container style={{ display: "block" }}>
       <p className="navbar-text m-0">
         © {new Date().getFullYear()}, Angel Hurtado @{" "}
