@@ -55,7 +55,7 @@ const ProjectsSection = () => {
       </h2>
       <Row>
         {projects.map(item => (
-          <Col key={item.id} md="6" xl="4" className="p-md-1 pb-2">
+          <Col key={item.id} lg="6" className="p-md-1 pb-2">
             <ProjectCard item={item} titleAs="h3" />
           </Col>
         ))}

@@ -69,7 +69,7 @@ const ProjectsPage = (): JSX.Element => {
       <Container as="main" className="pt-3 pb-3">
         <Row>
           {projects.map(item => (
-            <Col key={item.id} md="6" xl="4" className="p-md-1 pb-2">
+            <Col key={item.id} lg="6" className="p-md-1 pb-2">
               <ProjectCard item={item} />
             </Col>
           ))}
