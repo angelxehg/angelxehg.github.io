@@ -18,7 +18,17 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-advanced-sitemap`,
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        exclude: [
+          `/404`,
+          `/about`,
+          `/posts`,
+          `/skills`,
+        ],
+      }
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
