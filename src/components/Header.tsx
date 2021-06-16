@@ -7,22 +7,21 @@ import IconLink from "./Link"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import socialLinks from "../meta/links/social"
 
-const Header = (props: { title: string; description: string }): JSX.Element => (
-  <div className="huge-header">
-    <header>
-      <h1>{props.title}</h1>
-      <p>{props.description}</p>
-    </header>
-    <nav>
-      <ul>
-        {socialLinks.map(link => (
-          <li key={link.href}>
-            <IconLink meta={link} />
-          </li>
-        ))}
-      </ul>
-    </nav>
-  </div>
+const SocialLinks = () => (
+  <nav>
+    <p className="d-none d-sm-block">
+      {socialLinks.map(link => (
+        <IconLink key={link.href} meta={link} noTitle iconProps={{ size: '1.5rem' }} />
+      ))}
+    </p>
+    <ul className="p-0 m-0 d-sm-none" style={{ listStyleType: "none" }}>
+      {socialLinks.map(link => (
+        <li key={link.href}>
+          <IconLink meta={link} />
+        </li>
+      ))}
+    </ul>
+  </nav>
 )
 
 export const HugeHeader = (): JSX.Element => {
@@ -39,17 +38,7 @@ export const HugeHeader = (): JSX.Element => {
         <h1>{site.title}</h1>
         <p>{site.description}</p>
       </header>
-      <nav>
-        <ul>
-          {socialLinks.map(link => (
-            <li key={link.href}>
-              <IconLink meta={link} />
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <SocialLinks />
     </Container>
   )
 }
-
-export default Header

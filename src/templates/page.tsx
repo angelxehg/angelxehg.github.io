@@ -65,7 +65,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
       <DefaultNavbar />
       <Container as="header" className="mt-3">
         <h1>{title}</h1>
-        <ul>
+        <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
           <li>Fecha: {date}</li>
           {stackIcons.length > 0 && (
             <li>

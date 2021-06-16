@@ -32,7 +32,7 @@ const AboutSection = () => (
         <div>
           <div>
             <h3>Educación</h3>
-            <ul style={{ listStyleType: "none" }}>
+            <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
                 <br />@ <UTZACLink /> 2017-2021
