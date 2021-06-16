@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container"
 
 import "./Header.scss"
 
-import IconLink from "./Link"
+import IconLink, { ClickableIcon } from "./Link"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import socialLinks from "../meta/links/social"
 
@@ -11,7 +11,7 @@ const SocialLinks = () => (
   <nav>
     <p className="d-none d-sm-block">
       {socialLinks.map(link => (
-        <IconLink key={link.href} meta={link} noTitle iconProps={{ size: '1.5rem' }} />
+        <ClickableIcon key={link.href} meta={link} iconProps={{ size: '1.5rem' }} />
       ))}
     </p>
     <ul className="p-0 m-0 d-sm-none" style={{ listStyleType: "none" }}>
