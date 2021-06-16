@@ -26,10 +26,11 @@ Utilice estos comandos para comprobar la calidad del código
 
 ## Despliegue
 
-Se requiere establecer la variable de entorno `GATSBY_SEGMENT_WRITE_KEY`, y para esto se deben crear los archivos `.env.development` y `.env.production`:
+Se requiere establecer las variables de entorno en los archivos `.env.development` y `.env.production`:
 
 ```env
-GATSBY_SEGMENT_WRITE_KEY=[MY_KEY]
+SEGMENT_WRITE_KEY=[MY_KEY]
+DEFAULT_URL=https://testing.angelxehg.com
 ```
 
 Use este comando para desplegar en producción:

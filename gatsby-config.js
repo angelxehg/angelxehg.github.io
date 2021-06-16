@@ -1,9 +1,14 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = "https://angelxehg.com",
+  DEFAULT_URL,
+  URL: NETLIFY_SITE_URL = DEFAULT_URL || "https://angelxehg.com",
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
-  GATSBY_SEGMENT_WRITE_KEY: SEGMENT_KEY
+  SEGMENT_WRITE_KEY: SEGMENT_KEY
 } = process.env
 
 module.exports = {
@@ -109,11 +114,11 @@ module.exports = {
       },
     },
     {
-    resolve: `gatsby-plugin-segment-js`,
-    options: {
-      prodKey: SEGMENT_KEY,
-      trackPage: true,
+      resolve: `gatsby-plugin-segment-js`,
+      options: {
+        prodKey: SEGMENT_KEY,
+        trackPage: true,
+      }
     }
-  }
   ],
 }
