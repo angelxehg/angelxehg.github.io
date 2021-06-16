@@ -10,6 +10,7 @@ import DefaultNavbar from "../components/Navbar"
 import { AboutSection } from "./about"
 import { SkillsSection } from "./skills"
 import { ProjectsSection } from "./projects"
+import { PostsSection } from "./posts"
 
 const IndexPage = (): JSX.Element => (
   <Layout>
@@ -20,6 +21,7 @@ const IndexPage = (): JSX.Element => (
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
+      <PostsSection />
     </main>
     <DefaultFooter />
   </Layout>
