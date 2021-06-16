@@ -2,7 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Badge from "react-bootstrap/Badge"
+import Card from "react-bootstrap/Card"
 import Container from "react-bootstrap/Container"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
@@ -20,15 +23,15 @@ export const ProjectCard = (props: ProjectCardProps): JSX.Element => {
   const { slug, title, resume, image, caption, stack } = props.item
   const stackIcons = stack.split(",")
   return (
-    <article>
-      <div>
-        <GatsbyImage image={image} alt={caption} />
-        <h3>
+    <Card bg="dark" text="light" as="article">
+      <GatsbyImage image={image} alt={caption} className="card-img-top"/>
+      <Card.Body>
+        <Card.Title>
           <Link to={`/${slug}`}>{title}</Link>
-        </h3>
-        <p>{resume}</p>
-        <p>
-          Hecho con{" "}
+        </Card.Title>
+        <Card.Text className="m-0">{resume}</Card.Text>
+        <Card.Text className="mt-1">
+          Hecho con{": "}
           {stackIcons.map(toolName => {
             const link = getLinkMeta(toolName)
             return (
@@ -43,9 +46,9 @@ export const ProjectCard = (props: ProjectCardProps): JSX.Element => {
               </Badge>
             )
           })}
-        </p>
-      </div>
-    </article>
+        </Card.Text >
+      </Card.Body>
+    </Card>
   )
 }
 
@@ -60,13 +63,13 @@ const ProjectsPage = (): JSX.Element => {
         <p>Estos son todos mis proyectos públicos</p>
       </Container>
       <Container as="main" className="mt-3">
-        <div>
+        <Row>
           {projects.map(item => (
-            <div key={item.id}>
+            <Col key={item.id} md="6" xl="4" className="p-md-1 pb-2">
               <ProjectCard item={item} />
-            </div>
+            </Col>
           ))}
-        </div>
+        </Row>
       </Container>
       <DefaultFooter />
     </Layout>
