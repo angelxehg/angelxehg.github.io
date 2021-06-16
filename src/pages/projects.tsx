@@ -14,7 +14,7 @@ interface ProjectCardProps {
   item: Page
 }
 
-export const ProjectCard = (
+const ProjectCard = (
   props: ProjectCardProps & { titleAs?: "h2" | "h3" }
 ): JSX.Element => {
   const { slug, title, resume, image, caption, stack } = props.item
@@ -50,6 +50,25 @@ export const ProjectCard = (
         </p>
       </div>
     </article>
+  )
+}
+
+export const ProjectsSection = () => {
+  const projects = usePages().slice(0, 2)
+  return (
+    <section id="projects">
+      <h2>
+        Últimos <Link to="/projects">proyectos</Link>:
+      </h2>
+      <div className="row">
+        {projects.map(item => (
+          <div key={item.id} className="col-lg-6 p-sm-1 pb-2">
+            <ProjectCard item={item} titleAs="h3" />
+          </div>
+        ))}
+      </div>
+      <Link to="/projects">Ver todos los proyectos {">"}</Link>
+    </section>
   )
 }
 
