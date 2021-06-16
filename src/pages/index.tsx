@@ -67,7 +67,9 @@ const ProjectsSection = () => {
 const SkillCard = (props: { title: string; tools: LinkMeta[] }) => (
   <Card bg="dark" text="light">
     <Card.Body>
-      <Card.Title as="h3" className="h5">{props.title}</Card.Title>
+      <Card.Title as="h3" className="h5">
+        {props.title}
+      </Card.Title>
       <Card.Text>
         {props.tools.map(tool => (
           <Badge

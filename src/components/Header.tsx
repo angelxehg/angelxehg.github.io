@@ -30,9 +30,10 @@ export const HugeHeader = (): JSX.Element => {
   return (
     <Container className="huge-header mt-3">
       <img
-        alt="Foto de perfil de Angel"
         src="/images/Profile.500.Sqr.jpg"
-        className="huge-header-avatar"
+        className="rounded-circle fluid align-self-center"
+        alt="Foto de perfil de Angel"
+        style={{ height: "120px", width: "120px" }}
       />
       <header>
         <h1>{site.title}</h1>
