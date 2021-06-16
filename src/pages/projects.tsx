@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import Card from "react-bootstrap/Card"
 
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
@@ -21,14 +20,17 @@ export const ProjectCard = (
   const { slug, title, resume, image, caption, stack } = props.item
   const stackIcons = stack.split(",")
   return (
-    <Card bg="dark" text="light" as="article">
+    <article className="card bg-dark text-light">
       <GatsbyImage image={image} alt={caption} className="card-img-top" />
-      <Card.Body>
-        <Card.Title as={props.titleAs || "h2"} className="h5">
+      <div className="card-body">
+        {props.titleAs === "h2" && <h2 className="card-title h5">
           <Link to={`/${slug}`}>{title}</Link>
-        </Card.Title>
-        <Card.Text className="m-0">{resume}</Card.Text>
-        <Card.Text className="mt-1">
+        </h2>}
+        {props.titleAs === "h3" && <h3 className="card-title h5">
+          <Link to={`/${slug}`}>{title}</Link>
+        </h3>}
+        <p className="card-text m-0">{resume}</p>
+        <p className="card-text mt-1">
           Hecho con{": "}
           {stackIcons.map(toolName => {
             const link = getLinkMeta(toolName)
@@ -38,9 +40,9 @@ export const ProjectCard = (
               </span>
             )
           })}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+        </p>
+      </div>
+    </article>
   )
 }
 

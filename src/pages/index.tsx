@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import Card from "react-bootstrap/Card"
 
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
@@ -24,19 +23,19 @@ const AboutSection = () => (
     <h2>Acerca de mi:</h2>
     <div className="row">
       <div className="col-12 p-sm-1 pb-2">
-        <Card bg="dark" text="light">
-          <Card.Body>
-            <Card.Title as="h3" className="h5">
+        <div className="card bg-dark text-light">
+          <div className="card-body">
+            <h3 className="card-title h5">
               Educación
-            </Card.Title>
+            </h3>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
                 <br />@ <UTZACLink /> 2017-2021
               </li>
             </ul>
-          </Card.Body>
-        </Card>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -62,20 +61,20 @@ const ProjectsSection = () => {
 }
 
 const SkillCard = (props: { title: string; tools: LinkMeta[] }) => (
-  <Card bg="dark" text="light">
-    <Card.Body>
-      <Card.Title as="h3" className="h5">
+  <div className="card bg-dark text-light">
+    <div className="card-body">
+      <h3 className="card-title h5">
         {props.title}
-      </Card.Title>
-      <Card.Text>
+      </h3>
+      <p className="card-text">
         {props.tools.map(tool => (
           <span key={tool.name} className="badge rounded-pill bg-dark text-light mt-1 me-1">
             <IconLink noUnderline meta={tool} />
           </span>
         ))}
-      </Card.Text>
-    </Card.Body>
-  </Card>
+      </p>
+    </div>
+  </div>
 )
 
 const SkillsSection = () => (
