@@ -1,5 +1,4 @@
 import React from "react"
-import Navbar from "react-bootstrap/Navbar"
 
 import IconLink from "./Link"
 import {
@@ -11,7 +10,7 @@ import {
 } from "../meta/links"
 
 const DefaultFooter = (): JSX.Element => (
-  <Navbar as="footer" variant="dark" bg="dark">
+  <footer className="navbar navbar-dark bg-dark">
     <div className="container-xl ps-sm-4 pe-sm-4" style={{ display: "block" }}>
       <p className="navbar-text m-0">
         © {new Date().getFullYear()}, Angel Hurtado @{" "}
@@ -25,7 +24,7 @@ const DefaultFooter = (): JSX.Element => (
         respectivos dueños. Iconos de <IconLink meta={fasLinkMeta} reset />
       </p>
     </div>
-  </Navbar>
+  </footer>
 )
 
 export default DefaultFooter
