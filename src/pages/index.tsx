@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import Badge from "react-bootstrap/Badge"
 import Card from "react-bootstrap/Card"
 
 import SEO from "../components/SEO"
@@ -70,15 +69,9 @@ const SkillCard = (props: { title: string; tools: LinkMeta[] }) => (
       </Card.Title>
       <Card.Text>
         {props.tools.map(tool => (
-          <Badge
-            key={tool.name}
-            pill
-            bg="dark"
-            text="light"
-            className="mt-1 me-1"
-          >
+          <span key={tool.name} className="badge rounded-pill bg-dark text-light mt-1 me-1">
             <IconLink noUnderline meta={tool} />
-          </Badge>
+          </span>
         ))}
       </Card.Text>
     </Card.Body>

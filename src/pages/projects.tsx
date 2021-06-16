@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import Badge from "react-bootstrap/Badge"
 import Card from "react-bootstrap/Card"
 
 import Layout from "../layouts/Layout"
@@ -34,15 +33,9 @@ export const ProjectCard = (
           {stackIcons.map(toolName => {
             const link = getLinkMeta(toolName)
             return (
-              <Badge
-                key={toolName}
-                pill
-                bg="dark"
-                text="light"
-                className="mt-1 me-1"
-              >
+              <span key={toolName} className="badge rounded-pill bg-dark text-light mt-1 me-1">
                 <IconLink noUnderline meta={link} />
-              </Badge>
+              </span>
             )
           })}
         </Card.Text>

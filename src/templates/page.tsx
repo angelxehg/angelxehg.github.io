@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
-import Badge from "react-bootstrap/Badge"
 
 import Footer from "../components/Footer"
 import SEO from "../components/SEO"
@@ -73,15 +72,9 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
                 {stackIcons.map(toolName => {
                   const link = getLinkMeta(toolName)
                   return (
-                    <Badge
-                      key={toolName}
-                      pill
-                      bg="dark"
-                      text="light"
-                      className="mt-1 me-1"
-                    >
+                    <span key={toolName} className="badge rounded-pill bg-dark text-light mt-1 me-1">
                       <IconLink noUnderline meta={link} />
-                    </Badge>
+                    </span>
                   )
                 })}
               </li>
