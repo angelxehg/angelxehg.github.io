@@ -42,6 +42,26 @@
 // Utilities
 @import "../node_modules/bootstrap/scss/utilities/api";
 
+html {
+  --scrollbarBG: #0e0f10;
+  --thumbBG: #212529;
+}
+body::-webkit-scrollbar {
+  width: 11px;
+}
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+
 body {
   background-color: #0e0f10;
 }
