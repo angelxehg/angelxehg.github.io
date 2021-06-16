@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import Badge from "react-bootstrap/Badge"
-import Container from "react-bootstrap/Container"
 
 import Footer from "../components/Footer"
 import SEO from "../components/SEO"
@@ -64,7 +63,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
       />
       <DefaultNavbar />
       <div className="bg-inter-background">
-        <Container as="header" className="pt-3 pb-2">
+        <header className="container-xl ps-sm-4 pe-sm-4 pt-3 pb-2">
           <h1>{title}</h1>
           <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
             <li>Fecha: {date}</li>
@@ -88,15 +87,15 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
               </li>
             )}
           </ul>
-        </Container>
+        </header>
       </div>
-      <Container as="main" className="pt-3">
+      <main className="container-xl ps-sm-4 pe-sm-4 pt-3">
         <GatsbyImage
           image={image.childImageSharp.gatsbyImageData}
           alt={caption}
         />
         <MDXRenderer>{body}</MDXRenderer>
-      </Container>
+      </main>
       <Footer />
     </Layout>
   )

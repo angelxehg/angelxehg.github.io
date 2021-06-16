@@ -1,5 +1,4 @@
 import React from "react"
-import Container from "react-bootstrap/Container"
 
 import "./Header.scss"
 
@@ -32,7 +31,7 @@ export const HugeHeader = (): JSX.Element => {
   const site = useSiteMetadata()
   return (
     <div className="bg-inter-background">
-      <Container className="huge-header pt-3 pb-2">
+      <div className="container-xl ps-sm-4 pe-sm-4 huge-header pt-3 pb-2">
         <img
           src="/images/Profile.500.Sqr.jpg"
           className="rounded-circle fluid align-self-center"
@@ -44,7 +43,7 @@ export const HugeHeader = (): JSX.Element => {
           <p>{site.description}</p>
         </header>
         <SocialLinks />
-      </Container>
+      </div>
     </div>
   )
 }

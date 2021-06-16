@@ -10,7 +10,7 @@ interface CenterLayoutProps {
 
 const CenterLayout = (props: CenterLayoutProps): JSX.Element => (
   <Layout>
-    <div className="center-layout">
+    <div className="center-layout p-1">
       <main className="center-layout-content">{props.children}</main>
     </div>
   </Layout>

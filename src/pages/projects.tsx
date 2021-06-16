@@ -3,9 +3,6 @@ import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Badge from "react-bootstrap/Badge"
 import Card from "react-bootstrap/Card"
-import Container from "react-bootstrap/Container"
-import Col from "react-bootstrap/Col"
-import Row from "react-bootstrap/Row"
 
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
@@ -61,20 +58,20 @@ const ProjectsPage = (): JSX.Element => {
       <SEO title="Portafolio" lang="es" />
       <DefaultNavbar />
       <div className="bg-inter-background">
-        <Container as="header" className="pt-3 pb-1">
+        <header className="container-xl ps-sm-4 pe-sm-4 pt-3 pb-1">
           <h1>Todos mis proyectos</h1>
           <p>Estos son todos mis proyectos públicos</p>
-        </Container>
+        </header>
       </div>
-      <Container as="main" className="pt-3 pb-3">
-        <Row>
+      <main className="container-xl ps-sm-4 pe-sm-4 pt-3 pb-3">
+        <div className="row">
           {projects.map(item => (
-            <Col key={item.id} lg="6" className="p-md-1 pb-2">
+            <div key={item.id} className="col-lg-6 p-sm-1 pb-2">
               <ProjectCard item={item} />
-            </Col>
+            </div>
           ))}
-        </Row>
-      </Container>
+        </div>
+      </main>
       <DefaultFooter />
     </Layout>
   )

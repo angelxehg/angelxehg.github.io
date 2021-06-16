@@ -1,12 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import Container from "react-bootstrap/Container"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 
 const DefaultNavbar = (): JSX.Element => (
   <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
-    <Container>
+    <div className="container-xl ps-sm-4 pe-sm-4">
       <Link
         to="/"
         className="navbar-brand"
@@ -47,7 +46,7 @@ const DefaultNavbar = (): JSX.Element => (
           </li>
         </Nav>
       </Navbar.Collapse>
-    </Container>
+    </div>
   </Navbar>
 )
 

@@ -2,9 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import Badge from "react-bootstrap/Badge"
 import Card from "react-bootstrap/Card"
-import Container from "react-bootstrap/Container"
-import Col from "react-bootstrap/Col"
-import Row from "react-bootstrap/Row"
 
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
@@ -26,8 +23,8 @@ const UTZACLink = () => (
 const AboutSection = () => (
   <section id="about">
     <h2>Acerca de mi:</h2>
-    <Row>
-      <Col xs="12" className="p-md-1 pb-2">
+    <div className="row">
+      <div className="col-12 p-sm-1 pb-2">
         <Card bg="dark" text="light">
           <Card.Body>
             <Card.Title as="h3" className="h5">
@@ -41,8 +38,8 @@ const AboutSection = () => (
             </ul>
           </Card.Body>
         </Card>
-      </Col>
-    </Row>
+      </div>
+    </div>
   </section>
 )
 
@@ -53,13 +50,13 @@ const ProjectsSection = () => {
       <h2>
         Últimos <Link to="/projects">proyectos</Link>:
       </h2>
-      <Row>
+      <div className="row">
         {projects.map(item => (
-          <Col key={item.id} lg="6" className="p-md-1 pb-2">
+          <div key={item.id} className="col-lg-6 p-sm-1 pb-2">
             <ProjectCard item={item} titleAs="h3" />
-          </Col>
+          </div>
         ))}
-      </Row>
+      </div>
       <Link to="/projects">Ver todos los proyectos {">"}</Link>
     </section>
   )
@@ -91,13 +88,13 @@ const SkillCard = (props: { title: string; tools: LinkMeta[] }) => (
 const SkillsSection = () => (
   <section id="skills">
     <h2>Habilidades</h2>
-    <Row>
+    <div className="row">
       {stacks.map(({ title, tools }, n) => (
-        <Col key={n} xs="12" className="p-md-1 pb-2">
+        <div key={n} className="col-12 p-sm-1 pb-2">
           <SkillCard title={title} tools={tools} />
-        </Col>
+        </div>
       ))}
-    </Row>
+    </div>
   </section>
 )
 
@@ -106,11 +103,11 @@ const IndexPage = (): JSX.Element => (
     <SEO title="Portafolio" lang="es" />
     <DefaultNavbar />
     <HugeHeader />
-    <Container as="main" className="pb-3">
+    <main className="container-xl ps-sm-4 pe-sm-4 pb-3">
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
-    </Container>
+    </main>
     <DefaultFooter />
   </Layout>
 )
