@@ -23,6 +23,7 @@ import {
 import {
   capacitorIconMeta,
   devtoIconMeta,
+  herokuIconMeta,
   ionicIconMeta,
 } from "../icons/iconify"
 import {
@@ -156,6 +157,12 @@ export const html5LinkMeta: LinkMeta = {
   href: "https://developer.mozilla.org/es/docs/Web/Guide/HTML/HTML5",
 }
 
+export const herokuLinkMeta: LinkMeta = {
+  name: "Heroku",
+  icon: herokuIconMeta,
+  href: "https://dashboard.heroku.com/",
+}
+
 export const instagramLinkMeta: LinkMeta = {
   name: "Instagram",
   icon: instagramIconMeta,
@@ -222,6 +229,12 @@ export const reactLinkMeta: LinkMeta = {
   href: "https://es.reactjs.org/",
 }
 
+export const reactNativeLinkMeta: LinkMeta = {
+  name: "React Native",
+  icon: reactIconMeta,
+  href: "https://reactnative.dev/",
+}
+
 export const twitterLinkMeta: LinkMeta = {
   name: "Twitter",
   icon: twitterIconMeta,
@@ -283,6 +296,7 @@ const allLinks = [
   gitHubPagesLinkMeta,
   gitLabLinkMeta,
   html5LinkMeta,
+  herokuLinkMeta,
   instagramLinkMeta,
   ionicLinkMeta,
   javaScriptLinkMeta,

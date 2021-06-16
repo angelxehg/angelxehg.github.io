@@ -1,5 +1,6 @@
 import {
   angularLinkMeta,
+  awsLinkMeta,
   bootstrapLinkMeta,
   capacitorLinkMeta,
   digitalOceanLinkMeta,
@@ -9,6 +10,7 @@ import {
   gitHubLinkMeta,
   gitLabLinkMeta,
   gitLinkMeta,
+  herokuLinkMeta,
   html5LinkMeta,
   ionicLinkMeta,
   javaScriptLinkMeta,
@@ -19,6 +21,7 @@ import {
   npmLinkMeta,
   pythonLinkMeta,
   reactLinkMeta,
+  reactNativeLinkMeta,
   typeScriptLinkMeta,
   ubuntuLinkMeta,
   vsCodeLinkMeta,
@@ -31,46 +34,44 @@ interface Stack {
 
 const stacks: Stack[] = [
   {
-    title: "Lenguajes y sintaxis",
+    title: "Mis herramientas favoritas",
+    tools: [
+      angularLinkMeta, ionicLinkMeta, ubuntuLinkMeta, vsCodeLinkMeta, netlifyLinkMeta, gitHubLinkMeta
+    ]
+  },
+  {
+    title: "Estoy aprendiendo",
+    tools: [
+      reactLinkMeta,
+      gatsbyLinkMeta,
+      capacitorLinkMeta,
+      firebaseLinkMeta,
+      reactNativeLinkMeta,
+    ]
+  },
+  {
+    title: "He trabajdo con",
     tools: [
       html5LinkMeta,
       javaScriptLinkMeta,
       typeScriptLinkMeta,
       pythonLinkMeta,
       markdownLinkMeta,
-    ],
-  },
-  {
-    title: "Frameworks y librerias",
-    tools: [
-      angularLinkMeta,
-      reactLinkMeta,
-      ionicLinkMeta,
-      capacitorLinkMeta,
-      gatsbyLinkMeta,
-      djangoLinkMeta,
-      bootstrapLinkMeta,
-    ],
-  },
-  {
-    title: "Herramientas",
-    tools: [
-      ubuntuLinkMeta,
-      vsCodeLinkMeta,
-      nodeJsLinkMeta,
       npmLinkMeta,
       gitLinkMeta,
     ],
   },
   {
-    title: "Plataformas",
+    title: "Otras herramientas",
     tools: [
-      netlifyLinkMeta,
-      gitHubLinkMeta,
+      herokuLinkMeta,
+      djangoLinkMeta,
+      bootstrapLinkMeta,
       gitLabLinkMeta,
-      firebaseLinkMeta,
       digitalOceanLinkMeta,
-    ],
+      nodeJsLinkMeta,
+      awsLinkMeta,
+    ]
   },
 ]
 
