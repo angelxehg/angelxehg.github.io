@@ -63,36 +63,38 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
         image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
       />
       <DefaultNavbar />
-      <Container as="header" className="mt-3">
-        <h1>{title}</h1>
-        <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
-          <li>Fecha: {date}</li>
-          {stackIcons.length > 0 && (
-            <li>
-              Hecho con{": "}
-              {stackIcons.map(toolName => {
-                const link = getLinkMeta(toolName)
-                return (
-                  <Badge
-                    key={toolName}
-                    pill
-                    bg="dark"
-                    text="light"
-                    className="mt-1 me-1"
-                  >
-                    <IconLink noUnderline meta={link} />
-                  </Badge>
-                )
-              })}
-            </li>
-          )}
-        </ul>
+      <div className="bg-inter-background">
+        <Container as="header" className="pt-3 pb-2">
+          <h1>{title}</h1>
+          <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
+            <li>Fecha: {date}</li>
+            {stackIcons.length > 0 && (
+              <li>
+                Hecho con{": "}
+                {stackIcons.map(toolName => {
+                  const link = getLinkMeta(toolName)
+                  return (
+                    <Badge
+                      key={toolName}
+                      pill
+                      bg="dark"
+                      text="light"
+                      className="mt-1 me-1"
+                    >
+                      <IconLink noUnderline meta={link} />
+                    </Badge>
+                  )
+                })}
+              </li>
+            )}
+          </ul>
+        </Container>
+      </div>
+      <Container as="main" className="pt-3">
         <GatsbyImage
           image={image.childImageSharp.gatsbyImageData}
           alt={caption}
         />
-      </Container>
-      <Container as="main" className="mt-3">
         <MDXRenderer>{body}</MDXRenderer>
       </Container>
       <Footer />

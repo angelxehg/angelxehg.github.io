@@ -43,7 +43,7 @@
 @import "../node_modules/bootstrap/scss/utilities/api";
 
 body {
-  background-color: #131416;
+  background-color: #0e0f10;
 }
 
 a:link {
@@ -69,4 +69,8 @@ section {
 
 .badge {
   border: 1px solid rgba(255, 255, 255,0.5);
+}
+
+.bg-inter-background {
+  background-color: #14171b;
 }

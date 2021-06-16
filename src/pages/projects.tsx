@@ -60,10 +60,12 @@ const ProjectsPage = (): JSX.Element => {
     <Layout>
       <SEO title="Portafolio" lang="es" />
       <DefaultNavbar />
-      <Container as="header" className="mt-3">
-        <h1>Todos mis proyectos</h1>
-        <p>Estos son todos mis proyectos públicos</p>
-      </Container>
+      <div className="bg-inter-background">
+        <Container as="header" className="pt-3 pb-1">
+          <h1>Todos mis proyectos</h1>
+          <p>Estos son todos mis proyectos públicos</p>
+        </Container>
+      </div>
       <Container as="main" className="mt-3">
         <Row>
           {projects.map(item => (
