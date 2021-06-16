@@ -79,7 +79,7 @@ const SkillCard = (props: { title: string; tools: LinkMeta[] }) => (
             text="light"
             className="mt-1 me-1"
           >
-            <IconLink meta={tool} />
+            <IconLink noUnderline meta={tool} />
           </Badge>
         ))}
       </Card.Text>

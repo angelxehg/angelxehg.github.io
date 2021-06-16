@@ -44,7 +44,7 @@ export const ProjectCard = (
                 text="light"
                 className="mt-1 me-1"
               >
-                <IconLink meta={link} />
+                <IconLink noUnderline meta={link} />
               </Badge>
             )
           })}

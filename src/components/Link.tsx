@@ -17,18 +17,20 @@ const Link = (props: {
   meta: LinkMeta
   noTitle?: boolean
   noIcon?: boolean
+  noUnderline?: boolean
   iconProps?: IconProps
   reset?: boolean
   className?: string
 }) => {
   const classes = props.className ? props.className.split(" ") : []
   const { href, name, icon } = props.meta
-  const { reset, noTitle, noIcon, iconProps } = props
+  const { reset, noTitle, noIcon, noUnderline, iconProps } = props
   if (reset) {
     classes.push("text-reset")
   }
+  const styles = noUnderline ? { textDecoration: "none" } : undefined
   return (
-    <a href={href} title={name} className={classes.join(" ")} rel="external">
+    <a href={href} title={name} className={classes.join(" ")} rel="external" style={styles}>
       {!noTitle && name} {!noIcon && <Icon meta={icon} {...iconProps} />}
     </a>
   )
