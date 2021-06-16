@@ -72,7 +72,10 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
                 {stackIcons.map(toolName => {
                   const link = getLinkMeta(toolName)
                   return (
-                    <span key={toolName} className="badge rounded-pill bg-dark text-light mt-1 me-1">
+                    <span
+                      key={toolName}
+                      className="badge rounded-pill bg-dark text-light mt-1 me-1"
+                    >
                       <IconLink noUnderline meta={link} />
                     </span>
                   )

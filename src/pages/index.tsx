@@ -25,9 +25,7 @@ const AboutSection = () => (
       <div className="col-12 p-sm-1 pb-2">
         <div className="card bg-dark text-light">
           <div className="card-body">
-            <h3 className="card-title h5">
-              Educación
-            </h3>
+            <h3 className="card-title h5">Educación</h3>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
@@ -63,12 +61,13 @@ const ProjectsSection = () => {
 const SkillCard = (props: { title: string; tools: LinkMeta[] }) => (
   <div className="card bg-dark text-light">
     <div className="card-body">
-      <h3 className="card-title h5">
-        {props.title}
-      </h3>
+      <h3 className="card-title h5">{props.title}</h3>
       <p className="card-text">
         {props.tools.map(tool => (
-          <span key={tool.name} className="badge rounded-pill bg-dark text-light mt-1 me-1">
+          <span
+            key={tool.name}
+            className="badge rounded-pill bg-dark text-light mt-1 me-1"
+          >
             <IconLink noUnderline meta={tool} />
           </span>
         ))}

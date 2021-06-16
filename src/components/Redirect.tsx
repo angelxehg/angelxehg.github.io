@@ -24,9 +24,7 @@ const Redirect = (props: RedirectProps): JSX.Element => {
           className="align-self-center mt-2"
         />
         <div className="card-body">
-          <h1 className="card-title h5">
-            301: Moved Permanently
-          </h1>
+          <h1 className="card-title h5">301: Moved Permanently</h1>
           <p className="card-text m-0">
             Este contenido fue movido a <a href={props.url}>{props.title}</a>.
             Redireccionando...

@@ -23,19 +23,26 @@ export const ProjectCard = (
     <article className="card bg-dark text-light">
       <GatsbyImage image={image} alt={caption} className="card-img-top" />
       <div className="card-body">
-        {props.titleAs === "h2" && <h2 className="card-title h5">
-          <Link to={`/${slug}`}>{title}</Link>
-        </h2>}
-        {props.titleAs === "h3" && <h3 className="card-title h5">
-          <Link to={`/${slug}`}>{title}</Link>
-        </h3>}
+        {props.titleAs === "h2" && (
+          <h2 className="card-title h5">
+            <Link to={`/${slug}`}>{title}</Link>
+          </h2>
+        )}
+        {props.titleAs === "h3" && (
+          <h3 className="card-title h5">
+            <Link to={`/${slug}`}>{title}</Link>
+          </h3>
+        )}
         <p className="card-text m-0">{resume}</p>
         <p className="card-text mt-1">
           Hecho con{": "}
           {stackIcons.map(toolName => {
             const link = getLinkMeta(toolName)
             return (
-              <span key={toolName} className="badge rounded-pill bg-dark text-light mt-1 me-1">
+              <span
+                key={toolName}
+                className="badge rounded-pill bg-dark text-light mt-1 me-1"
+              >
                 <IconLink noUnderline meta={link} />
               </span>
             )

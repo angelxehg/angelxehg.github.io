@@ -15,9 +15,7 @@ const NotFoundPage = (): JSX.Element => (
         className="align-self-center mt-2"
       />
       <div className="card-body">
-        <h1 className="card-title h5">
-          404 Not Found
-        </h1>
+        <h1 className="card-title h5">404 Not Found</h1>
         <p className="card-text m-0">
           La página que buscas no existe.{" "}
           <Link to="/">Ir a página principal</Link>
