@@ -37,7 +37,7 @@ export const HugeHeader = (): JSX.Element => {
   }, [])
   return (
     <div className="bg-inter-background">
-      <div className="container-xl ps-sm-4 pe-sm-4 huge-header pt-3 pb-2">
+      <div className="container-sm ps-sm-4 pe-sm-4 huge-header pt-3 pb-2">
         <button onClick={() => setSvgMode(!svgMode)} style={{border: 'none', background: 'none'}}>
           {!svgMode && <img
             src="/images/Profile.500.Sqr.jpg"

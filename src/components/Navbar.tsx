@@ -5,7 +5,7 @@ const DefaultNavbar = (): JSX.Element => {
   const [collapsed, setCollapsed] = useState(true)
   return (
     <nav className="navbar sticky-top navbar-expand-sm navbar-dark bg-dark">
-      <div className="container-xl ps-sm-4 pe-sm-4">
+      <div className="container-sm ps-sm-4 pe-sm-4">
         <Link
           to="/"
           className="navbar-brand"

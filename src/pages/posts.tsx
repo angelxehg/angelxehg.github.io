@@ -94,12 +94,12 @@ const PostsPage = (): JSX.Element => {
       <SEO title="Entradas" lang="es" />
       <DefaultNavbar />
       <div className="bg-inter-background">
-        <header className="container-xl ps-sm-4 pe-sm-4 pt-3 pb-1">
+        <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-1">
           <h1>Todas mis entradas</h1>
           <p>Estas son las entradas que he publicado en <IconLink meta={devtoLinkMeta}/></p>
         </header>
       </div>
-      <main className="container-xl ps-sm-4 pe-sm-4 pt-3 pb-3">
+      <main className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-3">
         <div className="row">
           {posts.map(item => (
             <div key={item.id} className="col-lg-6 p-sm-1 pb-2">

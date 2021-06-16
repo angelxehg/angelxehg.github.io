@@ -11,7 +11,7 @@ import {
 
 const DefaultFooter = (): JSX.Element => (
   <footer className="navbar navbar-dark bg-dark">
-    <div className="container-xl ps-sm-4 pe-sm-4" style={{ display: "block" }}>
+    <div className="container-sm ps-sm-4 pe-sm-4" style={{ display: "block" }}>
       <p className="navbar-text m-0">
         © {new Date().getFullYear()}, Angel Hurtado @{" "}
         <IconLink meta={gitHubRepoVer} reset />. Portafolio profesional creado
