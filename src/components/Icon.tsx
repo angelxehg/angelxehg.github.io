@@ -6,12 +6,14 @@ export interface IconProps {
   className?: string
 }
 
-const useIconStyle = (props: IconProps, defaultColor: string) => {
+const useIconStyle = (props: IconProps & { meta: IconMeta }, defaultColor: string) => {
   const { size } = props
   return {
     width: size || "1rem",
     height: size || "1rem",
     color: defaultColor || "white",
+    backgroundColor: props.meta.extraBc,
+    borderRadius: props.meta.extraBcRad,
   }
 }
 

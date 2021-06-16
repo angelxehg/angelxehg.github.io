@@ -41,11 +41,15 @@ export const nodeJsIconMeta: IconMeta = {
 
 export const npmIconMeta: IconMeta = {
   color: "#C53635",
+  extraBc: "white",
+  extraBcRad: "50%",
   svg: NPMSVG,
 }
 
 export const ubuntuIconMeta: IconMeta = {
   color: "#D74614",
+  extraBc: "white",
+  extraBcRad: "50%",
   svg: UbuntuSVG,
 }
 

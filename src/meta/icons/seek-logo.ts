@@ -35,10 +35,14 @@ export const firebaseIconMeta: IconMeta = {
 
 export const fasIconMeta: IconMeta = {
   svg: FontAwesomeSVG,
+  extraBc: "white",
+  extraBcRad: "15%",
 }
 
 export const gatsbyIconMeta: IconMeta = {
   color: "#E94E31",
+  extraBc: "white",
+  extraBcRad: "50%",
   svg: GatsbySVG,
 }
 

@@ -31,6 +31,8 @@ export const instagramIconMeta: IconMeta = {
 
 export const linkedInIconMeta: IconMeta = {
   color: "#2563AC",
+  extraBc: "white",
+  extraBcRad: "15%",
   svg: LinkedInSVG,
 }
 
