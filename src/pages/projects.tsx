@@ -20,7 +20,7 @@ const ProjectCard = (
   const { slug, title, resume, image, caption, stack } = props.item
   const stackIcons = stack.split(",")
   return (
-    <article className="card bg-dark text-light">
+    <article className="card bg-dark text-light" style={{height: "100%"}}>
       <GatsbyImage image={image} alt={caption} className="card-img-top" />
       <div className="card-body">
         {props.titleAs === "h2" && (

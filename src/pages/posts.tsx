@@ -43,7 +43,7 @@ const PostCard = (
     href: canonical_url
   }
   return (
-    <article className="card bg-dark text-light">
+    <article className="card bg-dark text-light" style={{height: "100%"}}>
       <img src={social_image} alt={description} className="card-img-top" />
       <div className="card-body">
         {props.titleAs === "h2" && (
