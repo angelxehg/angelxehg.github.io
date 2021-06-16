@@ -3,6 +3,7 @@ const {
   URL: NETLIFY_SITE_URL = "https://angelxehg.com",
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
+  GATSBY_SEGMENT_WRITE_KEY: SEGMENT_KEY
 } = process.env
 
 module.exports = {
@@ -107,5 +108,12 @@ module.exports = {
         printRejected: true,
       },
     },
+    {
+    resolve: `gatsby-plugin-segment-js`,
+    options: {
+      prodKey: SEGMENT_KEY,
+      trackPage: true,
+    }
+  }
   ],
 }

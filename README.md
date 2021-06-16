@@ -26,6 +26,12 @@ Utilice estos comandos para comprobar la calidad del código
 
 ## Despliegue
 
+Se requiere establecer la variable de entorno `GATSBY_SEGMENT_WRITE_KEY`, y para esto se deben crear los archivos `.env.development` y `.env.production`:
+
+```env
+GATSBY_SEGMENT_WRITE_KEY=[MY_KEY]
+```
+
 Use este comando para desplegar en producción:
 
 - GitHub Pages: `npm run deploy`
