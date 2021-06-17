@@ -1,21 +1,10 @@
-import { IconMeta, LinkMeta } from "../types"
-
-const GitHubSVG = require("../../../assets/bootstrap-icons/github.svg")
-
-const AndroidSVG = require("../../../assets/fontawesome/android-brands.svg")
-const AWSSVG = require("../../../assets/fontawesome/aws-brands.svg")
-const DigitalOceanSVG = require("../../../assets/fontawesome/digital-ocean-brands.svg")
-const CapacitorSVG = require("../../../assets/iconify/capacitorjs.svg")
-const HerokuSVG = require("../../../assets/iconify/heroku.svg")
-const GitLabSVG = require("../../../assets/seek-logo/gitlab.svg")
-const FirebaseSVG = require("../../../assets/seek-logo/firebase.svg")
-const NetlifySVG = require("../../../assets/seek-logo/netlify.svg")
+import { LinkMeta } from "../types"
 
 export const android: LinkMeta = {
   name: "Android",
   icon: {
     color: "#3DD985",
-    svg: AndroidSVG,
+    svgPath: "fontawesome/android-brands.svg",
   },
   href: "https://www.android.com/intl/es_es/",
 }
@@ -24,7 +13,7 @@ export const aws: LinkMeta = {
   name: "AWS",
   icon: {
     color: "#F79400",
-    svg: AWSSVG,
+    svgPath: "fontawesome/aws-brands.svg",
   },
   href: "https://aws.amazon.com/es/",
 }
@@ -32,7 +21,7 @@ export const aws: LinkMeta = {
 export const capacitor: LinkMeta = {
   name: "Capacitor",
   icon: {
-    svg: CapacitorSVG,
+    svgPath: "iconify/capacitorjs.svg",
   },
   href: "https://capacitorjs.com/",
 }
@@ -41,7 +30,7 @@ export const digitalOcean: LinkMeta = {
   name: "DigitalOcean",
   icon: {
     color: "#007CF7",
-    svg: DigitalOceanSVG,
+    svgPath: "fontawesome/digital-ocean-brands.svg",
   },
   href: "https://www.digitalocean.com/",
 }
@@ -49,7 +38,7 @@ export const digitalOcean: LinkMeta = {
 export const firebase: LinkMeta = {
   name: "Firebase",
   icon: {
-    svg: FirebaseSVG,
+    svgPath: "seek-logo/firebase.svg",
   },
   href: "https://firebase.google.com/",
 }
@@ -57,7 +46,7 @@ export const firebase: LinkMeta = {
 export const gitHub: LinkMeta = {
   name: "GitHub",
   icon: {
-    svg: GitHubSVG,
+    svgPath: "bootstrap-icons/github.svg",
   },
   href: "https://github.com/",
 }
@@ -65,7 +54,7 @@ export const gitHub: LinkMeta = {
 export const gitHubPages: LinkMeta = {
   name: "GitHub Pages",
   icon: {
-    svg: GitHubSVG,
+    svgPath: "bootstrap-icons/github.svg",
   },
   href: "https://pages.github.com/",
 }
@@ -74,7 +63,7 @@ export const gitLab: LinkMeta = {
   name: "GitLab",
   icon: {
     color: "#F46A25",
-    svg: GitLabSVG,
+    svgPath: "seek-logo/gitlab.svg",
   },
   href: "https://gitlab.com/",
 }
@@ -82,7 +71,7 @@ export const gitLab: LinkMeta = {
 export const heroku: LinkMeta = {
   name: "Heroku",
   icon: {
-    svg: HerokuSVG,
+    svgPath: "iconify/heroku.svg",
     extraBc: "white",
     extraBcRad: "15%",
   },
@@ -92,7 +81,7 @@ export const heroku: LinkMeta = {
 export const netlify: LinkMeta = {
   name: "Netlify",
   icon: {
-    svg: NetlifySVG,
+    svgPath: "seek-logo/netlify.svg",
   },
   href: "https://www.netlify.com/",
 }

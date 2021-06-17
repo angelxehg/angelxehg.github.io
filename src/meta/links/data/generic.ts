@@ -1,13 +1,9 @@
-import { IconMeta, LinkMeta } from "../types"
-
-const DocumentSVG = require("../../../assets/bootstrap-icons/file-earmark-text-fill.svg")
-const EmailSVG = require("../../../assets/bootstrap-icons/envelope-fill.svg")
-const WebSVG = require("../../../assets/bootstrap-icons/globe2.svg")
+import { LinkMeta } from "../types"
 
 export const file: LinkMeta = {
   name: "File",
   icon: {
-    svg: DocumentSVG,
+    svgPath: "bootstrap-icons/file-earmark-text-fill.svg",
   },
   href: "https://angelxehg.com/",
 }
@@ -15,7 +11,7 @@ export const file: LinkMeta = {
 export const email: LinkMeta = {
   name: "Email",
   icon: {
-    svg: EmailSVG,
+    svgPath: "bootstrap-icons/envelope-fill.svg",
   },
   href: "https://angelxehg.com/",
 }
@@ -23,7 +19,7 @@ export const email: LinkMeta = {
 export const web: LinkMeta = {
   name: "Web",
   icon: {
-    svg: WebSVG,
+    svgPath: "bootstrap-icons/globe2.svg",
   },
   href: "https://angelxehg.com/",
 }

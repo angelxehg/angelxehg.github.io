@@ -1,16 +1,10 @@
-import { IconMeta, LinkMeta } from "../types"
-
-const LinkedInSVG = require("../../../assets/bootstrap-icons/linkedin.svg")
-const InstagramSVG = require("../../../assets/bootstrap-icons/instagram.svg")
-const TwitterSVG = require("../../../assets/bootstrap-icons/twitter.svg")
-const PayPalSVG = require("../../../assets/seek-logo/paypal.svg")
-const DevToSVG = require("../../../assets/iconify/devto.svg")
+import { LinkMeta } from "../types"
 
 export const instagram: LinkMeta = {
   name: "Instagram",
   icon: {
     color: "#F70038",
-    svg: InstagramSVG,
+    svgPath: "bootstrap-icons/instagram.svg",
   },
   href: "https://instagram.com/",
 }
@@ -21,7 +15,7 @@ export const linkedIn: LinkMeta = {
     color: "#2563AC",
     extraBc: "white",
     extraBcRad: "15%",
-    svg: LinkedInSVG,
+    svgPath: "bootstrap-icons/linkedin.svg",
   },
   href: "https://www.linkedin.com/",
 }
@@ -30,7 +24,7 @@ export const payPal: LinkMeta = {
   name: "PayPal",
   icon: {
     color: "#002E82",
-    svg: PayPalSVG,
+    svgPath: "seek-logo/paypal.svg",
   },
   href: "https://paypal.com/",
 }
@@ -39,7 +33,7 @@ export const twitter: LinkMeta = {
   name: "Twitter",
   icon: {
     color: "#1C9CEA",
-    svg: TwitterSVG,
+    svgPath: "bootstrap-icons/twitter.svg",
   },
   href: "https://www.twitter.com/",
 }
@@ -48,7 +42,7 @@ export const devto: LinkMeta = {
   name: "Dev.to",
   icon: {
     fill: true,
-    svg: DevToSVG,
+    svgPath: "iconify/devto.svg",
   },
   href: "https://dev.to/",
 }

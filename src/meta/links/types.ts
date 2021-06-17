@@ -3,7 +3,7 @@ export interface IconMeta {
   fill?: boolean
   extraBc?: string
   extraBcRad?: string
-  svg: any
+  svgPath: string
 }
 
 export interface LinkMeta {

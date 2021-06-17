@@ -22,7 +22,7 @@ import {
   netlify,
 } from "./data/platforms"
 import { html5, javaScript, markdown, python, typeScript } from "./data/syntax"
-import { fas, git, npm, ubuntu, vsCode } from "./data/tools"
+import { fas, git, nodeJs, npm, ubuntu, vsCode } from "./data/tools"
 import { instagram, linkedIn, payPal, twitter, devto } from "./data/websites"
 
 const allLinks = [
@@ -64,6 +64,7 @@ const allLinks = [
   // tools
   fas,
   git,
+  nodeJs,
   npm,
   ubuntu,
   vsCode,
