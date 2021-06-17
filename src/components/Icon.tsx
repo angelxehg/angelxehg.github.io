@@ -1,5 +1,5 @@
 import React from "react"
-import { IconMeta } from "../meta/links/types"
+import { IconMeta } from "../meta/types"
 
 export interface IconProps {
   size?: string
