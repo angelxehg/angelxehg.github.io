@@ -4,6 +4,7 @@ const LinkedInSVG = require("../../assets/bootstrap-icons/linkedin.svg")
 const InstagramSVG = require("../../assets/bootstrap-icons/instagram.svg")
 const TwitterSVG = require("../../assets/bootstrap-icons/twitter.svg")
 const PayPalSVG = require("../../assets/seek-logo/paypal.svg")
+const DevToSVG = require("../../assets/iconify/devto.svg")
 
 interface LinkMeta {
   name: WebsiteIN
@@ -11,7 +12,12 @@ interface LinkMeta {
   href: string
 }
 
-export type WebsiteIN = "Instagram" | "LinkedIn" | "PayPal" | "Twitter"
+export type WebsiteIN =
+  | "Instagram"
+  | "LinkedIn"
+  | "PayPal"
+  | "Twitter"
+  | "Dev.to"
 
 export const instagram: LinkMeta = {
   name: "Instagram",
@@ -49,4 +55,13 @@ export const twitter: LinkMeta = {
     svg: TwitterSVG,
   },
   href: "https://www.twitter.com/",
+}
+
+export const devto: LinkMeta = {
+  name: "Dev.to",
+  icon: {
+    fill: true,
+    svg: DevToSVG,
+  },
+  href: "https://dev.to/",
 }

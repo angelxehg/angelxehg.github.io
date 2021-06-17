@@ -9,57 +9,33 @@ import {
   reactNative,
 } from "./frameworks"
 import { file, email, web } from "./generic"
+import {
+  android,
+  aws,
+  capacitor,
+  digitalOcean,
+  firebase,
+  gitHub,
+  gitHubPages,
+  gitLab,
+  heroku,
+  netlify,
+} from "./platforms"
 import { html5, javaScript, markdown, python, typeScript } from "./syntax"
 import { IconMeta } from "./types"
-import { instagram, linkedIn, payPal, twitter } from "./websites"
+import { instagram, linkedIn, payPal, twitter, devto } from "./websites"
 
-const GitHubSVG = require("../../assets/bootstrap-icons/github.svg")
-
-const AndroidSVG = require("../../assets/fontawesome/android-brands.svg")
-const AWSSVG = require("../../assets/fontawesome/aws-brands.svg")
-const DigitalOceanSVG = require("../../assets/fontawesome/digital-ocean-brands.svg")
 const NodeJSSVG = require("../../assets/fontawesome/node-js-brands.svg")
 const NPMSVG = require("../../assets/fontawesome/npm-brands.svg")
 const UbuntuSVG = require("../../assets/fontawesome/ubuntu-brands.svg")
-
-const DevToSVG = require("../../assets/iconify/devto.svg")
-const CapacitorSVG = require("../../assets/iconify/capacitorjs.svg")
-const HerokuSVG = require("../../assets/iconify/heroku.svg")
-
 const FontAwesomeSVG = require("../../assets/seek-logo/font-awesome.svg")
-const GitLabSVG = require("../../assets/seek-logo/gitlab.svg")
 const GitSVG = require("../../assets/seek-logo/git.svg")
-const FirebaseSVG = require("../../assets/seek-logo/firebase.svg")
-const NetlifySVG = require("../../assets/seek-logo/netlify.svg")
 const VSCodeSVG = require("../../assets/seek-logo/vscode.svg")
 
 export interface LinkMeta {
   name: string
   icon: IconMeta
   href: string
-}
-
-export const gitHubIconMeta: IconMeta = {
-  svg: GitHubSVG,
-}
-
-export const gitHubPagesIconMeta: IconMeta = {
-  svg: GitHubSVG,
-}
-
-export const androidIconMeta: IconMeta = {
-  color: "#3DD985",
-  svg: AndroidSVG,
-}
-
-export const awsIconMeta: IconMeta = {
-  color: "#F79400",
-  svg: AWSSVG,
-}
-
-export const digitalOceanIconMeta: IconMeta = {
-  color: "#007CF7",
-  svg: DigitalOceanSVG,
 }
 
 export const nodeJsIconMeta: IconMeta = {
@@ -81,25 +57,6 @@ export const ubuntuIconMeta: IconMeta = {
   svg: UbuntuSVG,
 }
 
-export const capacitorIconMeta: IconMeta = {
-  svg: CapacitorSVG,
-}
-
-export const devtoIconMeta: IconMeta = {
-  fill: true,
-  svg: DevToSVG,
-}
-
-export const herokuIconMeta: IconMeta = {
-  svg: HerokuSVG,
-  extraBc: "white",
-  extraBcRad: "15%",
-}
-
-export const firebaseIconMeta: IconMeta = {
-  svg: FirebaseSVG,
-}
-
 export const fasIconMeta: IconMeta = {
   svg: FontAwesomeSVG,
   extraBc: "white",
@@ -111,53 +68,8 @@ export const gitIconMeta: IconMeta = {
   svg: GitSVG,
 }
 
-export const gitLabIconMeta: IconMeta = {
-  color: "#F46A25",
-  svg: GitLabSVG,
-}
-
-export const netlifyIconMeta: IconMeta = {
-  svg: NetlifySVG,
-}
-
 export const vsCodeIconMeta: IconMeta = {
   svg: VSCodeSVG,
-}
-
-const android: LinkMeta = {
-  name: "Android",
-  icon: androidIconMeta,
-  href: "https://www.android.com/intl/es_es/",
-}
-
-const aws: LinkMeta = {
-  name: "AWS",
-  icon: awsIconMeta,
-  href: "https://aws.amazon.com/es/",
-}
-
-const capacitor: LinkMeta = {
-  name: "Capacitor",
-  icon: capacitorIconMeta,
-  href: "https://capacitorjs.com/",
-}
-
-const devto: LinkMeta = {
-  name: "Dev.to",
-  icon: devtoIconMeta,
-  href: "https://dev.to/",
-}
-
-const digitalOcean: LinkMeta = {
-  name: "DigitalOcean",
-  icon: digitalOceanIconMeta,
-  href: "https://www.digitalocean.com/",
-}
-
-const firebase: LinkMeta = {
-  name: "Firebase",
-  icon: firebaseIconMeta,
-  href: "https://firebase.google.com/",
 }
 
 const fas: LinkMeta = {
@@ -170,36 +82,6 @@ const git: LinkMeta = {
   name: "Git",
   icon: gitIconMeta,
   href: "https://git-scm.com/",
-}
-
-const gitHub: LinkMeta = {
-  name: "GitHub",
-  icon: gitHubIconMeta,
-  href: "https://github.com/",
-}
-
-const gitHubPages: LinkMeta = {
-  name: "GitHub Pages",
-  icon: gitHubPagesIconMeta,
-  href: "https://pages.github.com/",
-}
-
-const gitLab: LinkMeta = {
-  name: "GitLab",
-  icon: gitLabIconMeta,
-  href: "https://gitlab.com/",
-}
-
-const heroku: LinkMeta = {
-  name: "Heroku",
-  icon: herokuIconMeta,
-  href: "https://dashboard.heroku.com/",
-}
-
-const netlify: LinkMeta = {
-  name: "Netlify",
-  icon: netlifyIconMeta,
-  href: "https://www.netlify.com/",
 }
 
 const nodeJs: LinkMeta = {
@@ -245,26 +127,26 @@ const allLinks = [
   markdown,
   python,
   typeScript,
-  // websites
-  instagram,
-  linkedIn,
-  payPal,
-  twitter,
-  // rest
+  // platforms
   android,
   aws,
   capacitor,
-  devto,
   digitalOcean,
   firebase,
-  fas,
-  git,
   gitHub,
   gitHubPages,
   gitLab,
   heroku,
   netlify,
-  nodeJs,
+  // websites
+  instagram,
+  linkedIn,
+  payPal,
+  twitter,
+  devto,
+  // rest
+  fas,
+  git,
   npm,
   ubuntu,
   vsCode,
