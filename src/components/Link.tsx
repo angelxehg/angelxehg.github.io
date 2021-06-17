@@ -1,7 +1,7 @@
 import React from "react"
 
 import Icon, { IconProps } from "./Icon"
-import allLinks, { getLinkMeta } from "../meta/links"
+import { getLinkMeta } from "../meta/links"
 import { LinkMeta } from "../meta/links/types"
 
 const ClickableIcon = (props: {

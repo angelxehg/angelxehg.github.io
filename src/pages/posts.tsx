@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
 
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
