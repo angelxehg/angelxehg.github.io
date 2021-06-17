@@ -5,3 +5,9 @@ export interface IconMeta {
   extraBcRad?: string
   svg: any
 }
+
+export interface LinkMeta {
+  name: string
+  icon: IconMeta
+  href: string
+}

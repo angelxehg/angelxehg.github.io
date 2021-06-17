@@ -7,8 +7,8 @@ import {
   ionic,
   reactJs,
   reactNative,
-} from "./frameworks"
-import { file, email, web } from "./generic"
+} from "./data/frameworks"
+import { file, email, web } from "./data/generic"
 import {
   android,
   aws,
@@ -20,93 +20,10 @@ import {
   gitLab,
   heroku,
   netlify,
-} from "./platforms"
-import { html5, javaScript, markdown, python, typeScript } from "./syntax"
-import { IconMeta } from "./types"
-import { instagram, linkedIn, payPal, twitter, devto } from "./websites"
-
-const NodeJSSVG = require("../../assets/fontawesome/node-js-brands.svg")
-const NPMSVG = require("../../assets/fontawesome/npm-brands.svg")
-const UbuntuSVG = require("../../assets/fontawesome/ubuntu-brands.svg")
-const FontAwesomeSVG = require("../../assets/seek-logo/font-awesome.svg")
-const GitSVG = require("../../assets/seek-logo/git.svg")
-const VSCodeSVG = require("../../assets/seek-logo/vscode.svg")
-
-export interface LinkMeta {
-  name: string
-  icon: IconMeta
-  href: string
-}
-
-export const nodeJsIconMeta: IconMeta = {
-  color: "#7FC728",
-  svg: NodeJSSVG,
-}
-
-export const npmIconMeta: IconMeta = {
-  color: "#C53635",
-  extraBc: "white",
-  extraBcRad: "50%",
-  svg: NPMSVG,
-}
-
-export const ubuntuIconMeta: IconMeta = {
-  color: "#D74614",
-  extraBc: "white",
-  extraBcRad: "50%",
-  svg: UbuntuSVG,
-}
-
-export const fasIconMeta: IconMeta = {
-  svg: FontAwesomeSVG,
-  extraBc: "white",
-  extraBcRad: "15%",
-}
-
-export const gitIconMeta: IconMeta = {
-  color: "#E94E31",
-  svg: GitSVG,
-}
-
-export const vsCodeIconMeta: IconMeta = {
-  svg: VSCodeSVG,
-}
-
-const fas: LinkMeta = {
-  name: "Font Awesome",
-  icon: fasIconMeta,
-  href: "https://fontawesome.com/license",
-}
-
-const git: LinkMeta = {
-  name: "Git",
-  icon: gitIconMeta,
-  href: "https://git-scm.com/",
-}
-
-const nodeJs: LinkMeta = {
-  name: "NodeJS",
-  icon: nodeJsIconMeta,
-  href: "https://nodejs.org/",
-}
-
-const npm: LinkMeta = {
-  name: "NPM",
-  icon: npmIconMeta,
-  href: "https://www.npmjs.com/",
-}
-
-const ubuntu: LinkMeta = {
-  name: "Ubuntu",
-  icon: ubuntuIconMeta,
-  href: "https://ubuntu.com/",
-}
-
-const vsCode: LinkMeta = {
-  name: "VSCode",
-  icon: vsCodeIconMeta,
-  href: "https://code.visualstudio.com/",
-}
+} from "./data/platforms"
+import { html5, javaScript, markdown, python, typeScript } from "./data/syntax"
+import { fas, git, npm, ubuntu, vsCode } from "./data/tools"
+import { instagram, linkedIn, payPal, twitter, devto } from "./data/websites"
 
 const allLinks = [
   // generic
@@ -144,7 +61,7 @@ const allLinks = [
   payPal,
   twitter,
   devto,
-  // rest
+  // tools
   fas,
   git,
   npm,

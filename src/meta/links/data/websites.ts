@@ -1,23 +1,10 @@
-import { IconMeta } from "./types"
+import { IconMeta, LinkMeta } from "../types"
 
-const LinkedInSVG = require("../../assets/bootstrap-icons/linkedin.svg")
-const InstagramSVG = require("../../assets/bootstrap-icons/instagram.svg")
-const TwitterSVG = require("../../assets/bootstrap-icons/twitter.svg")
-const PayPalSVG = require("../../assets/seek-logo/paypal.svg")
-const DevToSVG = require("../../assets/iconify/devto.svg")
-
-interface LinkMeta {
-  name: WebsiteIN
-  icon: IconMeta
-  href: string
-}
-
-export type WebsiteIN =
-  | "Instagram"
-  | "LinkedIn"
-  | "PayPal"
-  | "Twitter"
-  | "Dev.to"
+const LinkedInSVG = require("../../../assets/bootstrap-icons/linkedin.svg")
+const InstagramSVG = require("../../../assets/bootstrap-icons/instagram.svg")
+const TwitterSVG = require("../../../assets/bootstrap-icons/twitter.svg")
+const PayPalSVG = require("../../../assets/seek-logo/paypal.svg")
+const DevToSVG = require("../../../assets/iconify/devto.svg")
 
 export const instagram: LinkMeta = {
   name: "Instagram",

@@ -1,42 +1,15 @@
-import { IconMeta } from "./types"
+import { IconMeta, LinkMeta } from "../types"
 
-const GitHubSVG = require("../../assets/bootstrap-icons/github.svg")
+const GitHubSVG = require("../../../assets/bootstrap-icons/github.svg")
 
-const AndroidSVG = require("../../assets/fontawesome/android-brands.svg")
-const AWSSVG = require("../../assets/fontawesome/aws-brands.svg")
-const DigitalOceanSVG = require("../../assets/fontawesome/digital-ocean-brands.svg")
-const NodeJSSVG = require("../../assets/fontawesome/node-js-brands.svg")
-const NPMSVG = require("../../assets/fontawesome/npm-brands.svg")
-const UbuntuSVG = require("../../assets/fontawesome/ubuntu-brands.svg")
-
-const DevToSVG = require("../../assets/iconify/devto.svg")
-const CapacitorSVG = require("../../assets/iconify/capacitorjs.svg")
-const HerokuSVG = require("../../assets/iconify/heroku.svg")
-
-const FontAwesomeSVG = require("../../assets/seek-logo/font-awesome.svg")
-const GitLabSVG = require("../../assets/seek-logo/gitlab.svg")
-const GitSVG = require("../../assets/seek-logo/git.svg")
-const FirebaseSVG = require("../../assets/seek-logo/firebase.svg")
-const NetlifySVG = require("../../assets/seek-logo/netlify.svg")
-const VSCodeSVG = require("../../assets/seek-logo/vscode.svg")
-
-interface LinkMeta {
-  name: PlatformIN
-  icon: IconMeta
-  href: string
-}
-
-export type PlatformIN =
-  | "Android"
-  | "AWS"
-  | "Capacitor"
-  | "DigitalOcean"
-  | "Firebase"
-  | "GitHub"
-  | "GitHub Pages"
-  | "Heroku"
-  | "GitLab"
-  | "Netlify"
+const AndroidSVG = require("../../../assets/fontawesome/android-brands.svg")
+const AWSSVG = require("../../../assets/fontawesome/aws-brands.svg")
+const DigitalOceanSVG = require("../../../assets/fontawesome/digital-ocean-brands.svg")
+const CapacitorSVG = require("../../../assets/iconify/capacitorjs.svg")
+const HerokuSVG = require("../../../assets/iconify/heroku.svg")
+const GitLabSVG = require("../../../assets/seek-logo/gitlab.svg")
+const FirebaseSVG = require("../../../assets/seek-logo/firebase.svg")
+const NetlifySVG = require("../../../assets/seek-logo/netlify.svg")
 
 export const android: LinkMeta = {
   name: "Android",

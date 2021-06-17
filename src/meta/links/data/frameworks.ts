@@ -1,26 +1,11 @@
-import { IconMeta } from "./types"
+import { IconMeta, LinkMeta } from "../types"
 
-const ReactSVG = require("../../assets/fontawesome/react-brands.svg")
-const IonicSVG = require("../../assets/ionicons/ionic.svg")
-const AngularSVG = require("../../assets/seek-logo/angular.svg")
-const BootstrapSVG = require("../../assets/seek-logo/bootstrap.svg")
-const DjangoSVG = require("../../assets/seek-logo/django.svg")
-const GatsbySVG = require("../../assets/seek-logo/gatsby.svg")
-
-interface LinkMeta {
-  name: FrameworkIN
-  icon: IconMeta
-  href: string
-}
-
-export type FrameworkIN =
-  | "Angular"
-  | "Bootstrap"
-  | "Django"
-  | "Gatsby"
-  | "Ionic"
-  | "ReactJS"
-  | "React Native"
+const ReactSVG = require("../../../assets/fontawesome/react-brands.svg")
+const IonicSVG = require("../../../assets/ionicons/ionic.svg")
+const AngularSVG = require("../../../assets/seek-logo/angular.svg")
+const BootstrapSVG = require("../../../assets/seek-logo/bootstrap.svg")
+const DjangoSVG = require("../../../assets/seek-logo/django.svg")
+const GatsbySVG = require("../../../assets/seek-logo/gatsby.svg")
 
 export const angular: LinkMeta = {
   name: "Angular",

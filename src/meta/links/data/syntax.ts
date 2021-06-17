@@ -1,23 +1,10 @@
-import { IconMeta } from "./types"
+import { IconMeta, LinkMeta } from "../types"
 
-const JavaScriptSVG = require("../../assets/fontawesome/js-square-brands.svg")
-const MarkdownSVG = require("../../assets/fontawesome/markdown-brands.svg")
-const HTML5SVG = require("../../assets/seek-logo/html5.svg")
-const PythonSVG = require("../../assets/seek-logo/python.svg")
-const TypeScriptSVG = require("../../assets/seek-logo/typescript.svg")
-
-interface LinkMeta {
-  name: SyntaxIN
-  icon: IconMeta
-  href: string
-}
-
-export type SyntaxIN =
-  | "HTML5"
-  | "JavaScript"
-  | "Markdown"
-  | "Python"
-  | "TypeScript"
+const JavaScriptSVG = require("../../../assets/fontawesome/js-square-brands.svg")
+const MarkdownSVG = require("../../../assets/fontawesome/markdown-brands.svg")
+const HTML5SVG = require("../../../assets/seek-logo/html5.svg")
+const PythonSVG = require("../../../assets/seek-logo/python.svg")
+const TypeScriptSVG = require("../../../assets/seek-logo/typescript.svg")
 
 export const html5: LinkMeta = {
   name: "HTML5",
