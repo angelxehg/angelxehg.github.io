@@ -1,52 +1,227 @@
-import { IconMeta } from "../icons"
-import {
-  genericDocumentIconMeta,
-  genericEmailIconMeta,
-  gitHubIconMeta,
-  gitHubPagesIconMeta,
-  instagramIconMeta,
-  linkedInIconMeta,
-  twitterIconMeta,
-  genericWebIconMeta,
-} from "../icons/bootstrap"
-import {
-  androidIconMeta,
-  awsIconMeta,
-  digitalOceanIconMeta,
-  javaScriptIconMeta,
-  markdownIconMeta,
-  nodeJsIconMeta,
-  npmIconMeta,
-  reactIconMeta,
-  ubuntuIconMeta,
-} from "../icons/fontawesome"
-import {
-  capacitorIconMeta,
-  devtoIconMeta,
-  herokuIconMeta,
-  ionicIconMeta,
-} from "../icons/iconify"
-import {
-  angularIconMeta,
-  bootstrapIconMeta,
-  djangoIconMeta,
-  fasIconMeta,
-  firebaseIconMeta,
-  gatsbyIconMeta,
-  gitIconMeta,
-  gitLabIconMeta,
-  html5IconMeta,
-  netlifyIconMeta,
-  payPalIconMeta,
-  pythonIconMeta,
-  typeScriptIconMeta,
-  vsCodeIconMeta,
-} from "../icons/seek-logo"
+const LinkedInSVG = require("../../assets/bootstrap-icons/linkedin.svg")
+const DocumentSVG = require("../../assets/bootstrap-icons/file-earmark-text-fill.svg")
+const EmailSVG = require("../../assets/bootstrap-icons/envelope-fill.svg")
+const WebSVG = require("../../assets/bootstrap-icons/globe2.svg")
+const GitHubSVG = require("../../assets/bootstrap-icons/github.svg")
+const InstagramSVG = require("../../assets/bootstrap-icons/instagram.svg")
+const TwitterSVG = require("../../assets/bootstrap-icons/twitter.svg")
+
+const AndroidSVG = require("../../assets/fontawesome/android-brands.svg")
+const AWSSVG = require("../../assets/fontawesome/aws-brands.svg")
+const DigitalOceanSVG = require("../../assets/fontawesome/digital-ocean-brands.svg")
+const JavaScriptSVG = require("../../assets/fontawesome/js-square-brands.svg")
+const MarkdownSVG = require("../../assets/fontawesome/markdown-brands.svg")
+const NodeJSSVG = require("../../assets/fontawesome/node-js-brands.svg")
+const NPMSVG = require("../../assets/fontawesome/npm-brands.svg")
+const ReactSVG = require("../../assets/fontawesome/react-brands.svg")
+const UbuntuSVG = require("../../assets/fontawesome/ubuntu-brands.svg")
+
+const DevToSVG = require("../../assets/iconify/devto.svg")
+const CapacitorSVG = require("../../assets/iconify/capacitorjs.svg")
+const IonicSVG = require("../../assets/ionicons/ionic.svg")
+const HerokuSVG = require("../../assets/iconify/heroku.svg")
+
+const FontAwesomeSVG = require("../../assets/seek-logo/font-awesome.svg")
+const GitLabSVG = require("../../assets/seek-logo/gitlab.svg")
+const PayPalSVG = require("../../assets/seek-logo/paypal.svg")
+const AngularSVG = require("../../assets/seek-logo/angular.svg")
+const BootstrapSVG = require("../../assets/seek-logo/bootstrap.svg")
+const DjangoSVG = require("../../assets/seek-logo/django.svg")
+const GitSVG = require("../../assets/seek-logo/git.svg")
+const GatsbySVG = require("../../assets/seek-logo/gatsby.svg")
+const FirebaseSVG = require("../../assets/seek-logo/firebase.svg")
+const HTML5SVG = require("../../assets/seek-logo/html5.svg")
+const NetlifySVG = require("../../assets/seek-logo/netlify.svg")
+const PythonSVG = require("../../assets/seek-logo/python.svg")
+const TypeScriptSVG = require("../../assets/seek-logo/typescript.svg")
+const VSCodeSVG = require("../../assets/seek-logo/vscode.svg")
+
+export interface IconMeta {
+  color?: string
+  fill?: boolean
+  extraBc?: string
+  extraBcRad?: string
+  svg: any
+}
 
 export interface LinkMeta {
   name: string
   icon: IconMeta
   href: string
+}
+
+export const genericDocumentIconMeta: IconMeta = {
+  svg: DocumentSVG,
+}
+
+export const genericEmailIconMeta: IconMeta = {
+  svg: EmailSVG,
+}
+
+export const gitHubIconMeta: IconMeta = {
+  svg: GitHubSVG,
+}
+
+export const gitHubPagesIconMeta: IconMeta = {
+  svg: GitHubSVG,
+}
+
+export const instagramIconMeta: IconMeta = {
+  color: "#F70038",
+  svg: InstagramSVG,
+}
+
+export const linkedInIconMeta: IconMeta = {
+  color: "#2563AC",
+  extraBc: "white",
+  extraBcRad: "15%",
+  svg: LinkedInSVG,
+}
+
+export const twitterIconMeta: IconMeta = {
+  color: "#1C9CEA",
+  svg: TwitterSVG,
+}
+
+export const genericWebIconMeta: IconMeta = {
+  svg: WebSVG,
+}
+
+export const androidIconMeta: IconMeta = {
+  color: "#3DD985",
+  svg: AndroidSVG,
+}
+
+export const awsIconMeta: IconMeta = {
+  color: "#F79400",
+  svg: AWSSVG,
+}
+
+export const digitalOceanIconMeta: IconMeta = {
+  color: "#007CF7",
+  svg: DigitalOceanSVG,
+}
+
+export const javaScriptIconMeta: IconMeta = {
+  color: "#F7DB00",
+  svg: JavaScriptSVG,
+}
+
+export const markdownIconMeta: IconMeta = {
+  svg: MarkdownSVG,
+}
+
+export const nodeJsIconMeta: IconMeta = {
+  color: "#7FC728",
+  svg: NodeJSSVG,
+}
+
+export const npmIconMeta: IconMeta = {
+  color: "#C53635",
+  extraBc: "white",
+  extraBcRad: "50%",
+  svg: NPMSVG,
+}
+
+export const ubuntuIconMeta: IconMeta = {
+  color: "#D74614",
+  extraBc: "white",
+  extraBcRad: "50%",
+  svg: UbuntuSVG,
+}
+
+export const reactIconMeta: IconMeta = {
+  color: "#79D8F7",
+  svg: ReactSVG,
+}
+
+export const capacitorIconMeta: IconMeta = {
+  svg: CapacitorSVG,
+}
+
+export const devtoIconMeta: IconMeta = {
+  fill: true,
+  svg: DevToSVG,
+}
+
+export const ionicIconMeta: IconMeta = {
+  color: "#4886F1",
+  svg: IonicSVG,
+  fill: true,
+}
+
+export const herokuIconMeta: IconMeta = {
+  svg: HerokuSVG,
+  extraBc: "white",
+  extraBcRad: "15%",
+}
+
+export const angularIconMeta: IconMeta = {
+  color: "#D6002F",
+  svg: AngularSVG,
+}
+
+export const bootstrapIconMeta: IconMeta = {
+  color: "#533B78",
+  svg: BootstrapSVG,
+}
+
+export const djangoIconMeta: IconMeta = {
+  svg: DjangoSVG,
+}
+
+export const firebaseIconMeta: IconMeta = {
+  svg: FirebaseSVG,
+}
+
+export const fasIconMeta: IconMeta = {
+  svg: FontAwesomeSVG,
+  extraBc: "white",
+  extraBcRad: "15%",
+}
+
+export const gatsbyIconMeta: IconMeta = {
+  color: "#E94E31",
+  extraBc: "white",
+  extraBcRad: "50%",
+  svg: GatsbySVG,
+}
+
+export const gitIconMeta: IconMeta = {
+  color: "#E94E31",
+  svg: GitSVG,
+}
+
+export const gitLabIconMeta: IconMeta = {
+  color: "#F46A25",
+  svg: GitLabSVG,
+}
+
+export const html5IconMeta: IconMeta = {
+  color: "#F64A1D",
+  svg: HTML5SVG,
+}
+
+export const netlifyIconMeta: IconMeta = {
+  svg: NetlifySVG,
+}
+
+export const payPalIconMeta: IconMeta = {
+  color: "#002E82",
+  svg: PayPalSVG,
+}
+
+export const pythonIconMeta: IconMeta = {
+  svg: PythonSVG,
+}
+
+export const typeScriptIconMeta: IconMeta = {
+  color: "#356A97",
+  svg: TypeScriptSVG,
+}
+
+export const vsCodeIconMeta: IconMeta = {
+  svg: VSCodeSVG,
 }
 
 const android: LinkMeta = {
