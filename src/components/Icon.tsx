@@ -12,8 +12,8 @@ const useIconStyle = (
 ) => {
   const { size } = props
   return {
-    width: size || "1rem",
-    height: size || "1rem",
+    width: size || "0.9rem",
+    height: size || "0.9rem",
     color: defaultColor || "white",
     backgroundColor: props.meta.extraBc,
     borderRadius: props.meta.extraBcRad,

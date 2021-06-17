@@ -41,21 +41,26 @@ const Link = (props: LinkProps & { meta: LinkMeta }) => {
   }
   const styles = noUnderline ? { textDecoration: "none" } : undefined
   return (
-    <a
-      href={href}
-      title={name}
-      className={classes.join(" ")}
-      rel="external"
-      style={styles}
-    >
-      {!noTitle && name} {!noIcon && <Icon meta={icon} {...iconProps} />}
-    </a>
+    <>
+      <a
+        href={href}
+        title={name}
+        className={classes.join(" ")}
+        rel="external"
+        style={styles}
+      >
+        {!noTitle && name}
+      </a>
+      {!noIcon && <span className="ms-1">
+        <Icon meta={icon} {...iconProps} />
+      </span>}
+    </>
   )
 }
 
 const extendMeta = (base: LinkMeta, extend?: { title: string, href: string }) => {
   if (extend) {
-    const {title: name, href} = extend
+    const { title: name, href } = extend
     return { ...base, name, href }
   }
   return base
