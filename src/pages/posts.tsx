@@ -41,12 +41,12 @@ const PostCard = (
       <div className="card-body">
         {props.titleAs === "h2" && (
           <h2 className="card-title h5">
-            <CreateLink from="Dev.to" extend={{title, href}} iconProps={{ size: "1.25rem" }} />
+            <CreateLink from="Dev.to" extend={{title, href}} noIcon />
           </h2>
         )}
         {props.titleAs === "h3" && (
           <h3 className="card-title h5">
-            <CreateLink from="Dev.to" extend={{title, href}} iconProps={{ size: "1.25rem" }} />
+            <CreateLink from="Dev.to" extend={{title, href}} noIcon />
           </h3>
         )}
         <p className="card-text m-0">{description}</p>
@@ -63,7 +63,7 @@ export const PostsSection = () => {
   return (
     <section id="posts">
       <h2>
-        Últimas <Link to="/posts">entradas</Link>:
+        Últimas <CreateLink from="Dev.to" iconProps={{size: '1.325rem'}} extend={{title: 'entradas', href: '/posts'}}/>:
       </h2>
       <div className="row">
         {posts.map(item => (
@@ -72,7 +72,7 @@ export const PostsSection = () => {
           </div>
         ))}
       </div>
-      <Link to="/posts">Ver todas las entradas {">"}</Link>
+      <CreateLink from="Dev.to" extend={{title: 'Ver todas las entradas >', href: '/posts'}}/>
     </section>
   )
 }
