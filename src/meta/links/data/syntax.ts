@@ -1,6 +1,6 @@
 import { LinkMeta } from "../types"
 
-export const html5: LinkMeta = {
+const html5: LinkMeta = {
   name: "HTML5",
   icon: {
     color: "#F64A1D",
@@ -9,7 +9,7 @@ export const html5: LinkMeta = {
   href: "https://developer.mozilla.org/es/docs/Web/Guide/HTML/HTML5",
 }
 
-export const javaScript: LinkMeta = {
+const javaScript: LinkMeta = {
   name: "JavaScript",
   icon: {
     color: "#F7DB00",
@@ -18,7 +18,7 @@ export const javaScript: LinkMeta = {
   href: "https://developer.mozilla.org/es/docs/Web/JavaScript",
 }
 
-export const markdown: LinkMeta = {
+const markdown: LinkMeta = {
   name: "Markdown",
   icon: {
     svgPath: "fontawesome/markdown-brands.svg",
@@ -26,7 +26,7 @@ export const markdown: LinkMeta = {
   href: "https://www.markdownguide.org/",
 }
 
-export const python: LinkMeta = {
+const python: LinkMeta = {
   name: "Python",
   icon: {
     svgPath: "seek-logo/python.svg",
@@ -34,7 +34,7 @@ export const python: LinkMeta = {
   href: "https://www.python.org/",
 }
 
-export const typeScript: LinkMeta = {
+const typeScript: LinkMeta = {
   name: "TypeScript",
   icon: {
     color: "#356A97",
@@ -42,3 +42,13 @@ export const typeScript: LinkMeta = {
   },
   href: "https://www.TypeScriptlang.org/",
 }
+
+const syntaxs = [
+  html5,
+  javaScript,
+  markdown,
+  python,
+  typeScript,
+]
+
+export default syntaxs

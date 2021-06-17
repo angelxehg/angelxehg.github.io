@@ -1,6 +1,6 @@
 import { LinkMeta } from "../types"
 
-export const file: LinkMeta = {
+const file: LinkMeta = {
   name: "File",
   icon: {
     svgPath: "bootstrap-icons/file-earmark-text-fill.svg",
@@ -8,7 +8,7 @@ export const file: LinkMeta = {
   href: "https://angelxehg.com/",
 }
 
-export const email: LinkMeta = {
+const email: LinkMeta = {
   name: "Email",
   icon: {
     svgPath: "bootstrap-icons/envelope-fill.svg",
@@ -16,10 +16,18 @@ export const email: LinkMeta = {
   href: "https://angelxehg.com/",
 }
 
-export const web: LinkMeta = {
+const web: LinkMeta = {
   name: "Web",
   icon: {
     svgPath: "bootstrap-icons/globe2.svg",
   },
   href: "https://angelxehg.com/",
 }
+
+const generics = [
+  file,
+  email,
+  web,
+]
+
+export default generics

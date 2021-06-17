@@ -1,73 +1,18 @@
 import React from "react"
-import {
-  angular,
-  bootstrap,
-  django,
-  gatsby,
-  ionic,
-  reactJs,
-  reactNative,
-} from "./data/frameworks"
-import { file, email, web } from "./data/generic"
-import {
-  android,
-  aws,
-  capacitor,
-  digitalOcean,
-  firebase,
-  gitHub,
-  gitHubPages,
-  gitLab,
-  heroku,
-  netlify,
-} from "./data/platforms"
-import { html5, javaScript, markdown, python, typeScript } from "./data/syntax"
-import { fas, git, nodeJs, npm, ubuntu, vsCode } from "./data/tools"
-import { instagram, linkedIn, payPal, twitter, devto } from "./data/websites"
+import frameworks from "./data/frameworks"
+import generics from "./data/generic"
+import platforms from "./data/platforms"
+import syntaxs from "./data/syntax"
+import tools from "./data/tools"
+import websites from "./data/websites"
 
 const allLinks = [
-  // generic
-  file,
-  email,
-  web,
-  // frameworks
-  angular,
-  bootstrap,
-  django,
-  gatsby,
-  ionic,
-  reactJs,
-  reactNative,
-  // syntax
-  html5,
-  javaScript,
-  markdown,
-  python,
-  typeScript,
-  // platforms
-  android,
-  aws,
-  capacitor,
-  digitalOcean,
-  firebase,
-  gitHub,
-  gitHubPages,
-  gitLab,
-  heroku,
-  netlify,
-  // websites
-  instagram,
-  linkedIn,
-  payPal,
-  twitter,
-  devto,
-  // tools
-  fas,
-  git,
-  nodeJs,
-  npm,
-  ubuntu,
-  vsCode,
+  ...generics,
+  ...frameworks,
+  ...syntaxs,
+  ...platforms,
+  ...websites,
+  ...tools
 ]
 
 export const getLinkMeta = (linkName: string) => {

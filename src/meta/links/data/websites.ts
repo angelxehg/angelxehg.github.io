@@ -1,6 +1,6 @@
 import { LinkMeta } from "../types"
 
-export const instagram: LinkMeta = {
+const instagram: LinkMeta = {
   name: "Instagram",
   icon: {
     color: "#F70038",
@@ -9,7 +9,7 @@ export const instagram: LinkMeta = {
   href: "https://instagram.com/",
 }
 
-export const linkedIn: LinkMeta = {
+const linkedIn: LinkMeta = {
   name: "LinkedIn",
   icon: {
     color: "#2563AC",
@@ -20,7 +20,7 @@ export const linkedIn: LinkMeta = {
   href: "https://www.linkedin.com/",
 }
 
-export const payPal: LinkMeta = {
+const payPal: LinkMeta = {
   name: "PayPal",
   icon: {
     color: "#002E82",
@@ -29,7 +29,7 @@ export const payPal: LinkMeta = {
   href: "https://paypal.com/",
 }
 
-export const twitter: LinkMeta = {
+const twitter: LinkMeta = {
   name: "Twitter",
   icon: {
     color: "#1C9CEA",
@@ -38,7 +38,7 @@ export const twitter: LinkMeta = {
   href: "https://www.twitter.com/",
 }
 
-export const devto: LinkMeta = {
+const devto: LinkMeta = {
   name: "Dev.to",
   icon: {
     fill: true,
@@ -46,3 +46,13 @@ export const devto: LinkMeta = {
   },
   href: "https://dev.to/",
 }
+
+const websites = [
+  instagram,
+  linkedIn,
+  payPal,
+  twitter,
+  devto,
+]
+
+export default websites

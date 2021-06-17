@@ -1,6 +1,6 @@
 import { LinkMeta } from "../types"
 
-export const fas: LinkMeta = {
+const fas: LinkMeta = {
   name: "Font Awesome",
   icon: {
     svgPath: "seek-logo/font-awesome.svg",
@@ -10,7 +10,7 @@ export const fas: LinkMeta = {
   href: "https://fontawesome.com/license",
 }
 
-export const git: LinkMeta = {
+const git: LinkMeta = {
   name: "Git",
   icon: {
     color: "#E94E31",
@@ -19,7 +19,7 @@ export const git: LinkMeta = {
   href: "https://git-scm.com/",
 }
 
-export const nodeJs: LinkMeta = {
+const nodeJs: LinkMeta = {
   name: "NodeJS",
   icon: {
     color: "#7FC728",
@@ -28,7 +28,7 @@ export const nodeJs: LinkMeta = {
   href: "https://nodejs.org/",
 }
 
-export const npm: LinkMeta = {
+const npm: LinkMeta = {
   name: "NPM",
   icon: {
     color: "#C53635",
@@ -39,7 +39,7 @@ export const npm: LinkMeta = {
   href: "https://www.npmjs.com/",
 }
 
-export const ubuntu: LinkMeta = {
+const ubuntu: LinkMeta = {
   name: "Ubuntu",
   icon: {
     color: "#D74614",
@@ -50,10 +50,21 @@ export const ubuntu: LinkMeta = {
   href: "https://ubuntu.com/",
 }
 
-export const vsCode: LinkMeta = {
+const vsCode: LinkMeta = {
   name: "VSCode",
   icon: {
     svgPath: "seek-logo/vscode.svg",
   },
   href: "https://code.visualstudio.com/",
 }
+
+const tools = [
+  fas,
+  git,
+  nodeJs,
+  npm,
+  ubuntu,
+  vsCode,
+]
+
+export default tools

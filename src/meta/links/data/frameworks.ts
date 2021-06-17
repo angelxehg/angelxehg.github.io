@@ -1,6 +1,6 @@
 import { LinkMeta } from "../types"
 
-export const angular: LinkMeta = {
+const angular: LinkMeta = {
   name: "Angular",
   icon: {
     color: "#D6002F",
@@ -9,7 +9,7 @@ export const angular: LinkMeta = {
   href: "https://angular.io/",
 }
 
-export const bootstrap: LinkMeta = {
+const bootstrap: LinkMeta = {
   name: "Bootstrap",
   icon: {
     color: "#533B78",
@@ -18,7 +18,7 @@ export const bootstrap: LinkMeta = {
   href: "https://getbootstrap.com/docs/",
 }
 
-export const django: LinkMeta = {
+const django: LinkMeta = {
   name: "Django",
   icon: {
     svgPath: "seek-logo/django.svg",
@@ -26,7 +26,7 @@ export const django: LinkMeta = {
   href: "https://www.djangoproject.com/",
 }
 
-export const gatsby: LinkMeta = {
+const gatsby: LinkMeta = {
   name: "Gatsby",
   icon: {
     color: "#E94E31",
@@ -37,7 +37,7 @@ export const gatsby: LinkMeta = {
   href: "https://www.gatsbyjs.com/",
 }
 
-export const ionic: LinkMeta = {
+const ionic: LinkMeta = {
   name: "Ionic",
   icon: {
     color: "#4886F1",
@@ -47,7 +47,7 @@ export const ionic: LinkMeta = {
   href: "https://ionicframework.com/",
 }
 
-export const reactJs: LinkMeta = {
+const reactJs: LinkMeta = {
   name: "ReactJS",
   icon: {
     color: "#79D8F7",
@@ -56,7 +56,7 @@ export const reactJs: LinkMeta = {
   href: "https://es.reactjs.org/",
 }
 
-export const reactNative: LinkMeta = {
+const reactNative: LinkMeta = {
   name: "React Native",
   icon: {
     color: "#79D8F7",
@@ -64,3 +64,15 @@ export const reactNative: LinkMeta = {
   },
   href: "https://reactnative.dev/",
 }
+
+const frameworks = [
+  angular,
+  bootstrap,
+  django,
+  gatsby,
+  ionic,
+  reactJs,
+  reactNative,
+]
+
+export default frameworks
