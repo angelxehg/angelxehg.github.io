@@ -26,35 +26,37 @@ module.exports = {
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
-        exclude: [
-          `/404`,
-          `/about`,
-          `/skills`,
-        ],
-      }
+        exclude: [`/404`, `/about`, `/skills`],
+      },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: 'https://angelxehg.com',
+        host: "https://angelxehg.com",
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
-            policy: [{ userAgent: '*', allow: '/', disallow: ['/posts', '/404', '/about'] }],
-            sitemap: 'https://angelxehg.com/sitemap.xml',
+            policy: [
+              {
+                userAgent: "*",
+                allow: "/",
+                disallow: ["/posts", "/404", "/about"],
+              },
+            ],
+            sitemap: "https://angelxehg.com/sitemap.xml",
           },
-          'branch-deploy': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+          "branch-deploy": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
-            host: null
+            host: null,
           },
-          'deploy-preview': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+          "deploy-preview": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
-            host: null
-          }
+            host: null,
+          },
         },
-      }
+      },
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,

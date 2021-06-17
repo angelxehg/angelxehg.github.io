@@ -1,11 +1,11 @@
 import React from "react"
 
 import stacks from "../meta/stacks"
-import {CreateLink} from "../components/Link"
+import { CreateLink } from "../components/Link"
 import Redirect from "../components/Redirect"
 
 const SkillCard = (props: { title: string; tools: string[] }) => (
-  <div className="card bg-dark text-light" style={{height: "100%"}}>
+  <div className="card bg-dark text-light" style={{ height: "100%" }}>
     <div className="card-body">
       <h3 className="card-title h5">{props.title}</h3>
       <p className="card-text">

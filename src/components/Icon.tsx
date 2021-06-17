@@ -1,5 +1,5 @@
 import React from "react"
-import { IconMeta } from "../meta/icons"
+import { IconMeta } from "../meta/types"
 
 export interface IconProps {
   size?: string
@@ -21,7 +21,8 @@ const useIconStyle = (
 }
 
 const Icon = (props: IconProps & { meta: IconMeta }) => {
-  const { svg: IconSVG, color: metaColor, fill: metaFill } = props.meta
+  const { svgPath, color: metaColor, fill: metaFill } = props.meta
+  const IconSVG = require("../assets/" + svgPath)
   const color = metaColor ? metaColor : "white"
   const fill = metaFill ? color : undefined
   return <IconSVG fill={fill} style={useIconStyle(props, color)} />

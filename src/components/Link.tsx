@@ -1,7 +1,8 @@
 import React from "react"
 
 import Icon, { IconProps } from "./Icon"
-import allLinks, { LinkMeta } from "../meta/links"
+import { getLinkMeta } from "../meta/links"
+import { LinkMeta } from "../meta/types"
 
 const ClickableIcon = (props: {
   className?: string
@@ -9,7 +10,7 @@ const ClickableIcon = (props: {
   iconProps: IconProps
 }) => {
   const classes = props.className ? props.className.split(" ") : []
-  const { href, name, icon } = props.meta
+  const { href: href, name: name, icon: icon } = props.meta
   return (
     <a
       href={href}
@@ -34,7 +35,7 @@ interface LinkProps {
 
 const Link = (props: LinkProps & { meta: LinkMeta }) => {
   const classes = props.className ? props.className.split(" ") : []
-  const { href, name, icon } = props.meta
+  const { href: href, name, icon: icon } = props.meta
   const { reset, noTitle, noIcon, noUnderline, iconProps } = props
   if (reset) {
     classes.push("text-reset")
@@ -51,14 +52,19 @@ const Link = (props: LinkProps & { meta: LinkMeta }) => {
       >
         {!noTitle && name}
       </a>
-      {!noIcon && <span className="ms-1">
-        <Icon meta={icon} {...iconProps} />
-      </span>}
+      {!noIcon && (
+        <span className="ms-1">
+          <Icon meta={icon} {...iconProps} />
+        </span>
+      )}
     </>
   )
 }
 
-const extendMeta = (base: LinkMeta, extend?: { title: string, href: string }) => {
+const extendMeta = (
+  base: LinkMeta,
+  extend?: { title: string; href: string }
+) => {
   if (extend) {
     const { title: name, href } = extend
     return { ...base, name, href }
@@ -66,32 +72,23 @@ const extendMeta = (base: LinkMeta, extend?: { title: string, href: string }) =>
   return base
 }
 
-
 export const CreateIcon = (props: {
   className?: string
   iconProps: IconProps
-  from: string,
-  extend?: { title: string, href: string }
+  from: string
+  extend?: { title: string; href: string }
 }) => {
   const { from, extend } = props
-  const baseMeta = allLinks.find(i => i.name === from)
-  if (!baseMeta) {
-    throw new Error(`Base link '${from}' not found`);
-  }
+  const baseMeta = getLinkMeta(from)
   const newMeta = extendMeta(baseMeta, extend)
-  return (
-    <ClickableIcon {...props} meta={newMeta} />
-  )
+  return <ClickableIcon {...props} meta={newMeta} />
 }
 
-export const CreateLink = (props: LinkProps & { from: string, extend?: { title: string, href: string } }) => {
+export const CreateLink = (
+  props: LinkProps & { from: string; extend?: { title: string; href: string } }
+) => {
   const { from, extend } = props
-  const baseMeta = allLinks.find(i => i.name === from)
-  if (!baseMeta) {
-    throw new Error(`Base link '${from}' not found`);
-  }
+  const baseMeta = getLinkMeta(from)
   const newMeta = extendMeta(baseMeta, extend)
-  return (
-    <Link {...props} meta={newMeta} />
-  )
+  return <Link {...props} meta={newMeta} />
 }

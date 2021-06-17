@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
 
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
@@ -20,10 +19,9 @@ interface DevToPost {
 const fetchDevToPosts = async () => {
   const response = await fetch("https://dev.to/api/articles?username=angelxehg")
   if (response.status !== 200) {
-    throw new Error('Couldn\'t fetch from dev.to');
-
+    throw new Error("Couldn't fetch from dev.to")
   }
-  const items: DevToPost[] = await response.json();
+  const items: DevToPost[] = await response.json()
   return items
 }
 
@@ -36,17 +34,17 @@ const PostCard = (
 ): JSX.Element => {
   const { title, description, canonical_url: href, social_image } = props.item
   return (
-    <article className="card bg-dark text-light" style={{height: "100%"}}>
+    <article className="card bg-dark text-light" style={{ height: "100%" }}>
       <img src={social_image} alt={description} className="card-img-top" />
       <div className="card-body">
         {props.titleAs === "h2" && (
           <h2 className="card-title h5">
-            <CreateLink from="Dev.to" extend={{title, href}} noIcon />
+            <CreateLink from="Dev.to" extend={{ title, href }} noIcon />
           </h2>
         )}
         {props.titleAs === "h3" && (
           <h3 className="card-title h5">
-            <CreateLink from="Dev.to" extend={{title, href}} noIcon />
+            <CreateLink from="Dev.to" extend={{ title, href }} noIcon />
           </h3>
         )}
         <p className="card-text m-0">{description}</p>
@@ -56,14 +54,20 @@ const PostCard = (
 }
 
 export const PostsSection = () => {
-  const [posts, setPosts] = useState<DevToPost[]>([]);
+  const [posts, setPosts] = useState<DevToPost[]>([])
   useEffect(() => {
     fetchDevToPosts().then(posts => setPosts(posts.slice(0, 4)))
   }, [])
   return (
     <section id="posts">
       <h2>
-        Últimas <CreateLink from="Dev.to" iconProps={{size: '1.325rem'}} extend={{title: 'entradas', href: '/posts'}}/>:
+        Últimas{" "}
+        <CreateLink
+          from="Dev.to"
+          iconProps={{ size: "1.325rem" }}
+          extend={{ title: "entradas", href: "/posts" }}
+        />
+        :
       </h2>
       <div className="row">
         {posts.map(item => (
@@ -72,13 +76,16 @@ export const PostsSection = () => {
           </div>
         ))}
       </div>
-      <CreateLink from="Dev.to" extend={{title: 'Ver todas las entradas >', href: '/posts'}}/>
+      <CreateLink
+        from="Dev.to"
+        extend={{ title: "Ver todas las entradas >", href: "/posts" }}
+      />
     </section>
   )
 }
 
 const PostsPage = (): JSX.Element => {
-  const [posts, setPosts] = useState<DevToPost[]>([]);
+  const [posts, setPosts] = useState<DevToPost[]>([])
   useEffect(() => {
     fetchDevToPosts().then(posts => setPosts(posts.slice(0, 4)))
   }, [])
@@ -89,7 +96,10 @@ const PostsPage = (): JSX.Element => {
       <div className="bg-inter-background">
         <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-1">
           <h1>Todas mis entradas</h1>
-          <p>Estas son las entradas que he publicado en <CreateLink from="Dev.to"/></p>
+          <p>
+            Estas son las entradas que he publicado en{" "}
+            <CreateLink from="Dev.to" />
+          </p>
         </header>
       </div>
       <main className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-3">
