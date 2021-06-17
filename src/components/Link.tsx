@@ -51,14 +51,19 @@ const Link = (props: LinkProps & { meta: LinkMeta }) => {
       >
         {!noTitle && name}
       </a>
-      {!noIcon && <span className="ms-1">
-        <Icon meta={icon} {...iconProps} />
-      </span>}
+      {!noIcon && (
+        <span className="ms-1">
+          <Icon meta={icon} {...iconProps} />
+        </span>
+      )}
     </>
   )
 }
 
-const extendMeta = (base: LinkMeta, extend?: { title: string, href: string }) => {
+const extendMeta = (
+  base: LinkMeta,
+  extend?: { title: string; href: string }
+) => {
   if (extend) {
     const { title: name, href } = extend
     return { ...base, name, href }
@@ -66,26 +71,23 @@ const extendMeta = (base: LinkMeta, extend?: { title: string, href: string }) =>
   return base
 }
 
-
 export const CreateIcon = (props: {
   className?: string
   iconProps: IconProps
-  from: string,
-  extend?: { title: string, href: string }
+  from: string
+  extend?: { title: string; href: string }
 }) => {
   const { from, extend } = props
-  const baseMeta = getLinkMeta(from);
+  const baseMeta = getLinkMeta(from)
   const newMeta = extendMeta(baseMeta, extend)
-  return (
-    <ClickableIcon {...props} meta={newMeta} />
-  )
+  return <ClickableIcon {...props} meta={newMeta} />
 }
 
-export const CreateLink = (props: LinkProps & { from: string, extend?: { title: string, href: string } }) => {
+export const CreateLink = (
+  props: LinkProps & { from: string; extend?: { title: string; href: string } }
+) => {
   const { from, extend } = props
-  const baseMeta = getLinkMeta(from);
+  const baseMeta = getLinkMeta(from)
   const newMeta = extendMeta(baseMeta, extend)
-  return (
-    <Link {...props} meta={newMeta} />
-  )
+  return <Link {...props} meta={newMeta} />
 }

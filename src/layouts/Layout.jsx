@@ -5,7 +5,7 @@ import { CreateLink } from "../components/Link"
 
 const shortcodes = { CreateLink }
 
-const Layout = (props) => (
+const Layout = props => (
   <MDXProvider components={shortcodes}>{props.children}</MDXProvider>
 )
 

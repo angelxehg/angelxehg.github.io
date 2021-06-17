@@ -34,7 +34,7 @@ const twitter = {
   href: "https://www.twitter.com/angelxehg",
 }
 
-const instagram ={
+const instagram = {
   from: "Instagram",
   title: "Instagram (@angelxehg)",
   href: "https://www.instagram.com/angelxehg",

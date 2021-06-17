@@ -9,19 +9,19 @@ import socialLinks from "../meta/links/social"
 const SocialLinks = () => (
   <nav>
     <p className="d-none d-sm-block">
-      {socialLinks.map(({from, title, href}) => (
+      {socialLinks.map(({ from, title, href }) => (
         <CreateIcon
           key={href}
           from={from}
-          extend={{title, href}}
+          extend={{ title, href }}
           iconProps={{ size: "1.5rem" }}
         />
       ))}
     </p>
     <ul className="p-0 m-0 d-sm-none" style={{ listStyleType: "none" }}>
-      {socialLinks.map(({from, title, href}) => (
+      {socialLinks.map(({ from, title, href }) => (
         <li key={href}>
-          <CreateLink from={from} extend={{title, href}}/>
+          <CreateLink from={from} extend={{ title, href }} />
         </li>
       ))}
     </ul>

@@ -307,7 +307,7 @@ const allLinks = [
 export const getLinkMeta = (linkName: string) => {
   const link = allLinks.find(i => i.name === linkName)
   if (!link) {
-    throw new Error(`Base link '${linkName}' not found`);
+    throw new Error(`Base link '${linkName}' not found`)
   }
   return link
 }

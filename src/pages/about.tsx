@@ -17,13 +17,23 @@ export const AboutSection = () => (
           <div className="card-body">
             <h3 className="card-title h5">Trayectoria</h3>
             <p className="card-text m-0">
-              Mi travesía en el mundo de la tecnología comienza en 2014, cuando comencé a crear aplicaciones para Windows Phone y Windows. Para lograr esto aprendí Visual Basic, y posteriormente C# y XAML. Realicé algunos proyectos que me ayudaron a entender muchas de las bases de la programación.
+              Mi travesía en el mundo de la tecnología comienza en 2014, cuando
+              comencé a crear aplicaciones para Windows Phone y Windows. Para
+              lograr esto aprendí Visual Basic, y posteriormente C# y XAML.
+              Realicé algunos proyectos que me ayudaron a entender muchas de las
+              bases de la programación.
             </p>
             <p className="card-text m-0 mt-2">
-              Fue hasta en la Universidad donde comencé a aprender y trabajar con tecnologías web. Me enseñaron HTML, PHP, Python, JavaScript, así como algunos frameworks como Laravel. Tambien durante este tiempo aprendí por mi cuenta Angular, React y Firebase, y descubrí que lo mio es el desarrollo front-end.
+              Fue hasta en la Universidad donde comencé a aprender y trabajar
+              con tecnologías web. Me enseñaron HTML, PHP, Python, JavaScript,
+              así como algunos frameworks como Laravel. Tambien durante este
+              tiempo aprendí por mi cuenta Angular, React y Firebase, y descubrí
+              que lo mio es el desarrollo front-end.
             </p>
             <p className="card-text m-0 mt-2">
-              Ahora acabo de terminar mi carrera en la <UTZACLink />, pero continuo aprendiendo <a href="#skill">nuevas herramientas</a> y creando <a href="#projects">proyectos</a>.
+              Ahora acabo de terminar mi carrera en la <UTZACLink />, pero
+              continuo aprendiendo <a href="#skill">nuevas herramientas</a> y
+              creando <a href="#projects">proyectos</a>.
             </p>
           </div>
         </div>
@@ -35,7 +45,8 @@ export const AboutSection = () => (
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
-                <br /><UTZACLink /> 2017 - 2021
+                <br />
+                <UTZACLink /> 2017 - 2021
               </li>
             </ul>
           </div>
