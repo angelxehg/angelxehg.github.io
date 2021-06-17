@@ -3,8 +3,8 @@ import React from "react"
 import { CreateLink } from "./Link"
 
 const repoVer = {
-  title: "v2.0.0-rc.2",
-  href: "https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0-rc.2"
+  title: "v2.0.0-rc.3",
+  href: "https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0-rc.3"
 }
 
 const issueLink = {
