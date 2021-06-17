@@ -1,4 +1,5 @@
 import { file, email, web } from "./generic"
+import { html5, javaScript, markdown, python, typeScript } from "./syntax"
 import { IconMeta } from "./types"
 
 const LinkedInSVG = require("../../assets/bootstrap-icons/linkedin.svg")
@@ -9,8 +10,6 @@ const TwitterSVG = require("../../assets/bootstrap-icons/twitter.svg")
 const AndroidSVG = require("../../assets/fontawesome/android-brands.svg")
 const AWSSVG = require("../../assets/fontawesome/aws-brands.svg")
 const DigitalOceanSVG = require("../../assets/fontawesome/digital-ocean-brands.svg")
-const JavaScriptSVG = require("../../assets/fontawesome/js-square-brands.svg")
-const MarkdownSVG = require("../../assets/fontawesome/markdown-brands.svg")
 const NodeJSSVG = require("../../assets/fontawesome/node-js-brands.svg")
 const NPMSVG = require("../../assets/fontawesome/npm-brands.svg")
 const ReactSVG = require("../../assets/fontawesome/react-brands.svg")
@@ -30,10 +29,7 @@ const DjangoSVG = require("../../assets/seek-logo/django.svg")
 const GitSVG = require("../../assets/seek-logo/git.svg")
 const GatsbySVG = require("../../assets/seek-logo/gatsby.svg")
 const FirebaseSVG = require("../../assets/seek-logo/firebase.svg")
-const HTML5SVG = require("../../assets/seek-logo/html5.svg")
 const NetlifySVG = require("../../assets/seek-logo/netlify.svg")
-const PythonSVG = require("../../assets/seek-logo/python.svg")
-const TypeScriptSVG = require("../../assets/seek-logo/typescript.svg")
 const VSCodeSVG = require("../../assets/seek-logo/vscode.svg")
 
 export interface LinkMeta {
@@ -80,15 +76,6 @@ export const awsIconMeta: IconMeta = {
 export const digitalOceanIconMeta: IconMeta = {
   color: "#007CF7",
   svg: DigitalOceanSVG,
-}
-
-export const javaScriptIconMeta: IconMeta = {
-  color: "#F7DB00",
-  svg: JavaScriptSVG,
-}
-
-export const markdownIconMeta: IconMeta = {
-  svg: MarkdownSVG,
 }
 
 export const nodeJsIconMeta: IconMeta = {
@@ -177,11 +164,6 @@ export const gitLabIconMeta: IconMeta = {
   svg: GitLabSVG,
 }
 
-export const html5IconMeta: IconMeta = {
-  color: "#F64A1D",
-  svg: HTML5SVG,
-}
-
 export const netlifyIconMeta: IconMeta = {
   svg: NetlifySVG,
 }
@@ -189,15 +171,6 @@ export const netlifyIconMeta: IconMeta = {
 export const payPalIconMeta: IconMeta = {
   color: "#002E82",
   svg: PayPalSVG,
-}
-
-export const pythonIconMeta: IconMeta = {
-  svg: PythonSVG,
-}
-
-export const typeScriptIconMeta: IconMeta = {
-  color: "#356A97",
-  svg: TypeScriptSVG,
 }
 
 export const vsCodeIconMeta: IconMeta = {
@@ -294,12 +267,6 @@ const gitLab: LinkMeta = {
   href: "https://gitlab.com/",
 }
 
-const html5: LinkMeta = {
-  name: "HTML5",
-  icon: html5IconMeta,
-  href: "https://developer.mozilla.org/es/docs/Web/Guide/HTML/HTML5",
-}
-
 const heroku: LinkMeta = {
   name: "Heroku",
   icon: herokuIconMeta,
@@ -318,22 +285,10 @@ const ionic: LinkMeta = {
   href: "https://ionicframework.com/",
 }
 
-const javaScript: LinkMeta = {
-  name: "JavaScript",
-  icon: javaScriptIconMeta,
-  href: "https://developer.mozilla.org/es/docs/Web/JavaScript",
-}
-
 const linkedIn: LinkMeta = {
   name: "LinkedIn",
   icon: linkedInIconMeta,
   href: "https://www.linkedin.com/",
-}
-
-const markdown: LinkMeta = {
-  name: "Markdown",
-  icon: markdownIconMeta,
-  href: "https://www.markdownguide.org/",
 }
 
 const netlify: LinkMeta = {
@@ -360,12 +315,6 @@ const payPal: LinkMeta = {
   href: "https://paypal.com/",
 }
 
-const python: LinkMeta = {
-  name: "Python",
-  icon: pythonIconMeta,
-  href: "https://www.python.org/",
-}
-
 const react: LinkMeta = {
   name: "React",
   icon: reactIconMeta,
@@ -384,12 +333,6 @@ const twitter: LinkMeta = {
   href: "https://www.twitter.com/",
 }
 
-const typeScript: LinkMeta = {
-  name: "TypeScript",
-  icon: typeScriptIconMeta,
-  href: "https://www.TypeScriptlang.org/",
-}
-
 const ubuntu: LinkMeta = {
   name: "Ubuntu",
   icon: ubuntuIconMeta,
@@ -403,9 +346,17 @@ const vsCode: LinkMeta = {
 }
 
 const allLinks = [
+  // generic
   file,
   email,
   web,
+  // syntax
+  html5,
+  javaScript,
+  markdown,
+  python,
+  typeScript,
+  // rest
   android,
   angular,
   aws,
@@ -421,22 +372,17 @@ const allLinks = [
   gitHub,
   gitHubPages,
   gitLab,
-  html5,
   heroku,
   instagram,
   ionic,
-  javaScript,
   linkedIn,
-  markdown,
   netlify,
   nodeJs,
   npm,
   payPal,
-  python,
   react,
   reactNative,
   twitter,
-  typeScript,
   ubuntu,
   vsCode,
 ]
