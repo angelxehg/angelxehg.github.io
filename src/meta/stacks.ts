@@ -10,7 +10,7 @@ const stacks: Stack[] = [
   },
   {
     title: "Estoy aprendiendo",
-    tools: ["React", "Gatsby", "Capacitor", "Firebase", "React Native"],
+    tools: ["ReactJS", "Gatsby", "Capacitor", "Firebase", "React Native"],
   },
   {
     title: "He trabajdo con",
