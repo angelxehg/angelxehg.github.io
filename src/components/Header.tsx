@@ -2,25 +2,26 @@ import React from "react"
 
 import "./Header.scss"
 
-import IconLink, { ClickableIcon } from "./Link"
+import { CreateIcon, CreateLink } from "./Link"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
 import socialLinks from "../meta/links/social"
 
 const SocialLinks = () => (
   <nav>
     <p className="d-none d-sm-block">
-      {socialLinks.map(link => (
-        <ClickableIcon
-          key={link.href}
-          meta={link}
+      {socialLinks.map(({from, title, href}) => (
+        <CreateIcon
+          key={href}
+          from={from}
+          extend={{title, href}}
           iconProps={{ size: "1.5rem" }}
         />
       ))}
     </p>
     <ul className="p-0 m-0 d-sm-none" style={{ listStyleType: "none" }}>
-      {socialLinks.map(link => (
-        <li key={link.href}>
-          <IconLink meta={link} />
+      {socialLinks.map(({from, title, href}) => (
+        <li key={href}>
+          <CreateLink from={from} extend={{title, href}}/>
         </li>
       ))}
     </ul>

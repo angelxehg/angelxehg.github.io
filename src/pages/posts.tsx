@@ -4,10 +4,8 @@ import { Link } from "gatsby"
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
-import { devtoLinkMeta } from "../meta/links"
-import IconLink from "../components/Link"
+import { CreateLink } from "../components/Link"
 import DefaultNavbar from "../components/Navbar"
-import { devtoIconMeta } from "../meta/icons/iconify"
 
 interface DevToPost {
   id: number
@@ -36,24 +34,19 @@ interface PostCardProps {
 const PostCard = (
   props: PostCardProps & { titleAs: "h2" | "h3" }
 ): JSX.Element => {
-  const { title, description, canonical_url, social_image } = props.item
-  const linkMeta = {
-    name: title,
-    icon: devtoIconMeta,
-    href: canonical_url
-  }
+  const { title, description, canonical_url: href, social_image } = props.item
   return (
     <article className="card bg-dark text-light" style={{height: "100%"}}>
       <img src={social_image} alt={description} className="card-img-top" />
       <div className="card-body">
         {props.titleAs === "h2" && (
           <h2 className="card-title h5">
-            <IconLink meta={linkMeta} iconProps={{ size: "1.25rem" }} />
+            <CreateLink from="Dev.to" extend={{title, href}} iconProps={{ size: "1.25rem" }} />
           </h2>
         )}
         {props.titleAs === "h3" && (
           <h3 className="card-title h5">
-            <IconLink meta={linkMeta} iconProps={{ size: "1.25rem" }} />
+            <CreateLink from="Dev.to" extend={{title, href}} iconProps={{ size: "1.25rem" }} />
           </h3>
         )}
         <p className="card-text m-0">{description}</p>
@@ -96,7 +89,7 @@ const PostsPage = (): JSX.Element => {
       <div className="bg-inter-background">
         <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-1">
           <h1>Todas mis entradas</h1>
-          <p>Estas son las entradas que he publicado en <IconLink meta={devtoLinkMeta}/></p>
+          <p>Estas son las entradas que he publicado en <CreateLink from="Dev.to"/></p>
         </header>
       </div>
       <main className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-3">
