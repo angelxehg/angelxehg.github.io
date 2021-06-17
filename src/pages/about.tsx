@@ -24,11 +24,10 @@ export const AboutSection = () => (
               bases de la programación.
             </p>
             <p className="card-text m-0 mt-2">
-              Fue hasta en la Universidad donde comencé a aprender y trabajar
-              con tecnologías web. Me enseñaron HTML, PHP, Python, JavaScript,
-              así como algunos frameworks como Laravel. Tambien durante este
-              tiempo aprendí por mi cuenta Angular, React y Firebase, y descubrí
-              que lo mio es el desarrollo front-end.
+              Fue en la Universidad donde comencé a aprender y trabajar con
+              tecnologías web, donde aprendí HTML, Python y JavaScript. Tambien
+              durante este tiempo aprendí por mi cuenta Angular, React y
+              Firebase, y descubrí que lo mio es el desarrollo front-end.
             </p>
             <p className="card-text m-0 mt-2">
               Ahora acabo de terminar mi carrera en la <UTZACLink />, pero
