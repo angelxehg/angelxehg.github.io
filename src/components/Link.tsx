@@ -1,7 +1,7 @@
 import React from "react"
 
 import Icon, { IconProps } from "./Icon"
-import allLinks, { LinkMeta } from "../meta/links"
+import allLinks, { getLinkMeta, LinkMeta } from "../meta/links"
 
 const ClickableIcon = (props: {
   className?: string
@@ -74,10 +74,7 @@ export const CreateIcon = (props: {
   extend?: { title: string, href: string }
 }) => {
   const { from, extend } = props
-  const baseMeta = allLinks.find(i => i.name === from)
-  if (!baseMeta) {
-    throw new Error(`Base link '${from}' not found`);
-  }
+  const baseMeta = getLinkMeta(from);
   const newMeta = extendMeta(baseMeta, extend)
   return (
     <ClickableIcon {...props} meta={newMeta} />
@@ -86,10 +83,7 @@ export const CreateIcon = (props: {
 
 export const CreateLink = (props: LinkProps & { from: string, extend?: { title: string, href: string } }) => {
   const { from, extend } = props
-  const baseMeta = allLinks.find(i => i.name === from)
-  if (!baseMeta) {
-    throw new Error(`Base link '${from}' not found`);
-  }
+  const baseMeta = getLinkMeta(from);
   const newMeta = extendMeta(baseMeta, extend)
   return (
     <Link {...props} meta={newMeta} />
