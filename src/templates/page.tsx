@@ -6,8 +6,7 @@ import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import Footer from "../components/Footer"
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
-import { getLinkMeta } from "../meta/links"
-import IconLink from "../components/Link"
+import { CreateLink } from "../components/Link"
 import DefaultNavbar from "../components/Navbar"
 
 export const query = graphql`
@@ -69,17 +68,14 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
             {stackIcons.length > 0 && (
               <li>
                 Hecho con{": "}
-                {stackIcons.map(toolName => {
-                  const link = getLinkMeta(toolName)
-                  return (
-                    <span
-                      key={toolName}
-                      className="badge rounded-pill bg-dark text-light mt-1 me-1"
-                    >
-                      <IconLink noUnderline meta={link} />
-                    </span>
-                  )
-                })}
+                {stackIcons.map(toolName => (
+                  <span
+                    key={toolName}
+                    className="badge rounded-pill bg-dark text-light mt-1 me-1"
+                  >
+                    <CreateLink from={toolName} />
+                  </span>
+                ))}
               </li>
             )}
           </ul>

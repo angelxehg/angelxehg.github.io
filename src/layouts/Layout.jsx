@@ -1,9 +1,9 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 
-import { ExtendedLink } from "../components/Link"
+import { CreateLink } from "../components/Link"
 
-const shortcodes = { ExtendedLink }
+const shortcodes = { CreateLink }
 
 const Layout = (props) => (
   <MDXProvider components={shortcodes}>{props.children}</MDXProvider>

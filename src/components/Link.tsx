@@ -53,15 +53,23 @@ const Link = (props: LinkProps & { meta: LinkMeta }) => {
   )
 }
 
-export const ExtendedLink = (props: LinkProps & { linkMetaName: string, title: string, href: string }) => {
-  const { linkMetaName, title: name, href } = props
-  const baseMeta = allLinks.find(i => i.name === linkMetaName)
-  if (!baseMeta) {
-    throw new Error(`Base link '${linkMetaName}' not found`);
+const extendMeta = (base: LinkMeta, extend?: { title: string, href: string }) => {
+  if (extend) {
+    const {title: name, href} = extend
+    return { ...base, name, href }
   }
-  const newMeta: LinkMeta = {...baseMeta, name, href}
+  return base
+}
+
+export const CreateLink = (props: LinkProps & { from: string, extend?: { title: string, href: string } }) => {
+  const { from, extend } = props
+  const baseMeta = allLinks.find(i => i.name === from)
+  if (!baseMeta) {
+    throw new Error(`Base link '${from}' not found`);
+  }
+  const newMeta = extendMeta(baseMeta, extend)
   return (
-    <Link {...props} meta={newMeta}/>
+    <Link {...props} meta={newMeta} />
   )
 }
 

@@ -265,18 +265,6 @@ export const genericWebLinkMeta: LinkMeta = {
   href: "https://angelxehg.com/",
 }
 
-export const gitHubIssues: LinkMeta = {
-  ...gitHubLinkMeta,
-  name: "Issues",
-  href: "https://github.com/angelxehg/angelxehg.github.io/issues",
-}
-
-export const gitHubRepoVer: LinkMeta = {
-  ...gitHubLinkMeta,
-  name: "v2.0.0-rc.2",
-  href: "https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0-rc.2",
-}
-
 const allLinks = [
   androidLinkMeta,
   angularLinkMeta,
