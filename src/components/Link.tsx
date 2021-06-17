@@ -10,7 +10,7 @@ const ClickableIcon = (props: {
   iconProps: IconProps
 }) => {
   const classes = props.className ? props.className.split(" ") : []
-  const { href, name, icon } = props.meta
+  const { href: href, name: name, icon: icon } = props.meta
   return (
     <a
       href={href}
@@ -35,7 +35,7 @@ interface LinkProps {
 
 const Link = (props: LinkProps & { meta: LinkMeta }) => {
   const classes = props.className ? props.className.split(" ") : []
-  const { href, name, icon } = props.meta
+  const { href: href, name, icon: icon } = props.meta
   const { reset, noTitle, noIcon, noUnderline, iconProps } = props
   if (reset) {
     classes.push("text-reset")

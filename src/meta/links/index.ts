@@ -12,7 +12,7 @@ const allLinks = [
   ...syntaxs,
   ...platforms,
   ...websites,
-  ...tools
+  ...tools,
 ]
 
 export const getLinkMeta = (linkName: string) => {
