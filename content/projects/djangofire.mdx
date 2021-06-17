@@ -4,17 +4,24 @@ resume: PWA de ejemplo de integración de Firebase con Django REST Framework
 date: 2021-05-22
 image: ../images/djangofire.png
 caption: PWA de ejemplo de integración de Firebase con Django REST Framework
-stack: React,TypeScript,Bootstrap,Firebase,Django,Netlify
 type: project
 published: true
 ---
 
 PWA de ejemplo de integración de Firebase con Django REST Framework
 
-- [Guía rápida para autenticar en Django REST Framework usando Firebase Auth](https://dev.to/angelxehg/usando-firebase-para-autenticar-en-django-rest-framework-n1b)
-- [Demostración PWA](https://djangofire.netlify.app)
-- [Código fuente PWA](https://github.com/angelxehg/djangofire-pwa)
-- [Código fuente API](https://github.com/angelxehg/djangofire-api)
+## Hecho con 
+
+<div className="mb-2">
+  {["React","TypeScript","Bootstrap","Firebase","Django","Netlify"].map(toolName => (
+    <span
+      key={toolName}
+      className="badge rounded-pill bg-dark text-light mt-1 me-1"
+    >
+      <CreateLink from={toolName} />
+    </span>
+  ))}
+</div>
 
 ## Funciones
 
@@ -22,10 +29,25 @@ PWA de ejemplo de integración de Firebase con Django REST Framework
 - Inicio de sesión con Google
 - Validación de token JWT de Firebase
 
-## Recursos y referencias
+## Referencias
 
-- [Documentación Firebase](https://firebase.google.com/docs)
-- [Documentación React](https://es.reactjs.org/)
-- [Documentación Django](https://www.djangoproject.com/)
-- [Documentación Django REST Framework](https://www.django-rest-framework.org/)
-- [Documentación drf-firebase-auth](https://pypi.org/project/drf-firebase-auth/)
+- <CreateLink from="Dev.to" extend={{
+  title: "Guía rápida para autenticar en Django REST Framework usando Firebase Auth",
+  href: "https://dev.to/angelxehg/usando-firebase-para-autenticar-en-django-rest-framework-n1b"
+}}/>
+- <CreateLink from="Netlify" extend={{
+  title: "Demostración PWA",
+  href: "https://djangofire.netlify.app"
+}}/>
+- <CreateLink from="GitHub" extend={{
+  title: "Código fuente PWA",
+  href: "https://github.com/angelxehg/djangofire-pwa"
+}}/>
+- <CreateLink from="GitHub" extend={{
+  title: "Código fuente API",
+  href: "https://github.com/angelxehg/djangofire-api"
+}}/>
+- <CreateLink from="Django" extend={{
+  title: "Documentación drf-firebase-auth",
+  href: "https://pypi.org/project/drf-firebase-auth/"
+}}/>

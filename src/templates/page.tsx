@@ -6,7 +6,6 @@ import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import Footer from "../components/Footer"
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
-import { CreateLink } from "../components/Link"
 import DefaultNavbar from "../components/Navbar"
 
 export const query = graphql`
@@ -23,7 +22,6 @@ export const query = graphql`
         }
         caption
         type
-        stack
       }
     }
   }
@@ -42,7 +40,6 @@ interface PageTemplateProps {
           }
         }
         caption: string
-        stack: string
       }
     }
   }
@@ -50,8 +47,7 @@ interface PageTemplateProps {
 
 const PageTemplate = (props: PageTemplateProps): JSX.Element => {
   const { frontmatter, body } = props.data.mdx
-  const { title, date, image, caption, stack } = frontmatter
-  const stackIcons = stack ? stack.split(",") : []
+  const { title, image, caption } = frontmatter
   return (
     <Layout>
       <SEO
@@ -63,22 +59,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
       <div className="bg-inter-background">
         <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-2">
           <h1>{title}</h1>
-          <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
-            <li>Fecha: {date}</li>
-            {stackIcons.length > 0 && (
-              <li>
-                Hecho con{": "}
-                {stackIcons.map(toolName => (
-                  <span
-                    key={toolName}
-                    className="badge rounded-pill bg-dark text-light mt-1 me-1"
-                  >
-                    <CreateLink from={toolName} />
-                  </span>
-                ))}
-              </li>
-            )}
-          </ul>
+          <p>{caption}</p>
         </header>
       </div>
       <div className="container-sm ps-sm-4 pe-sm-4 pt-3">

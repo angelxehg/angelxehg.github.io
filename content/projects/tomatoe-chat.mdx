@@ -4,12 +4,26 @@ resume: Aplicación móvil de mensajería instantanea
 date: 2020-08-01
 image: ../images/tomatoe-chat.png
 caption: Aplicación móvil de mensajería instantanea
-stack: Ionic,Android,Angular,Capacitor,TypeScript,Firebase
 type: project
 published: true
 ---
 
 Aplicación móvil de mensajería instantanea
+
+## Hecho con 
+
+<div className="mb-2">
+  {["Ionic","Android","Angular","Capacitor","TypeScript","Firebase"].map(toolName => (
+    <span
+      key={toolName}
+      className="badge rounded-pill bg-dark text-light mt-1 me-1"
+    >
+      <CreateLink from={toolName} />
+    </span>
+  ))}
+</div>
+
+## Referencias
 
 - <CreateLink from="GitHub" extend={{
   title: "Código fuente",

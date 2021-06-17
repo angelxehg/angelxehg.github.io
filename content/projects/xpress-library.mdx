@@ -4,11 +4,28 @@ resume: Administración de una biblioteca
 date: 2020-12-01
 image: ../images/xpress-library.png
 caption: Administración de una biblioteca
-stack: Angular,Bootstrap,JavaScript,TypeScript,NodeJS
 type: project
 published: true
 ---
 
 Administración de una biblioteca
 
-- [Código fuente](https://github.com/angelxehg/xpress-library/)
+## Hecho con 
+
+<div className="mb-2">
+  {["Angular","Bootstrap","JavaScript","TypeScript","NodeJS"].map(toolName => (
+    <span
+      key={toolName}
+      className="badge rounded-pill bg-dark text-light mt-1 me-1"
+    >
+      <CreateLink from={toolName} />
+    </span>
+  ))}
+</div>
+
+## Referencias
+
+- <CreateLink from="GitHub" extend={{
+  title: "Código fuente",
+  href: "https://github.com/angelxehg/xpress-library/"
+}}/>

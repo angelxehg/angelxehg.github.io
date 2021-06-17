@@ -4,16 +4,24 @@ resume: Demostración de descargas en una Aplicación Capacitor/Cordova
 date: 2021-05-28
 image: ../images/studylater.png
 caption: Demostración de descargas en una Aplicación Capacitor/Cordova
-stack: React,TypeScript,Capacitor,Bootstrap,Firebase,Android
 type: project
 published: true
 ---
 
 Demostración de descargas en una Aplicación Capacitor/Cordova
 
-- [Guía rápida para implementar descarga y apertura de archivos en una aplicación hibrida](https://dev.to/angelxehg/implementando-descargas-de-archivos-con-capacitor-cordova-4844)
-- [Descargar APK](https://github.com/angelxehg/studylater-app/releases)
-- [Código fuente](https://github.com/angelxehg/studylater-app)
+## Hecho con 
+
+<div className="mb-2">
+  {["React","TypeScript","Capacitor","Bootstrap","Firebase","Android"].map(toolName => (
+    <span
+      key={toolName}
+      className="badge rounded-pill bg-dark text-light mt-1 me-1"
+    >
+      <CreateLink from={toolName} />
+    </span>
+  ))}
+</div>
 
 ## Funciones
 
@@ -23,9 +31,31 @@ Demostración de descargas en una Aplicación Capacitor/Cordova
 
 ## Recursos y referencias
 
-- [Documentación Firebase](https://firebase.google.com/docs)
-- [Documentación React](https://es.reactjs.org/)
-- [Documentación Capacitor](https://capacitorjs.com/)
-- [Plugin HTTP Nativo](https://github.com/silkimen/cordova-plugin-advanced-http)
-- [Plugin para abrir archivos](https://github.com/pwlin/cordova-plugin-file-opener2)
-- [Plugin para iniciar sesión con Google](https://github.com/EddyVerbruggen/cordova-plugin-googleplus)
+- <CreateLink from="Dev.to" extend={{
+  title: "Implementando descargas de archivos con Capacitor/Cordova",
+  href: "https://dev.to/angelxehg/implementando-descargas-de-archivos-con-capacitor-cordova-4844"
+}}/>
+- <CreateLink from="GitHub" extend={{
+  title: "Descargar APK",
+  href: "https://github.com/angelxehg/studylater-app/releases"
+}}/>
+- <CreateLink from="GitHub" extend={{
+  title: "Código fuente",
+  href: "https://github.com/angelxehg/studylater-app"
+}}/>
+- <CreateLink from="Firebase" extend={{
+  title: "Documentación Firebase",
+  href: "https://firebase.google.com/docs"
+}}/>
+- <CreateLink from="Ionic" extend={{
+  title: "Plugin HTTP Nativo",
+  href: "https://github.com/silkimen/cordova-plugin-advanced-http"
+}}/>
+- <CreateLink from="Ionic" extend={{
+  title: "Plugin para abrir archivos",
+  href: "https://github.com/pwlin/cordova-plugin-file-opener2"
+}}/>
+- <CreateLink from="Ionic" extend={{
+  title: "Plugin para iniciar sesión con Google",
+  href: "https://github.com/EddyVerbruggen/cordova-plugin-googleplus"
+}}/>

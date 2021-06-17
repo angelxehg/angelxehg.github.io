@@ -11,7 +11,6 @@ export interface RAWPage {
     date: string
     image: { childImageSharp: { gatsbyImageData: IGatsbyImageData } }
     caption: string
-    stack: string
     published: boolean
   }
 }
@@ -26,7 +25,6 @@ export interface Page {
   image: IGatsbyImageData
   caption: string
   published: boolean
-  stack: string
 }
 
 export const toPage = (item: RAWPage): Page => {
@@ -40,7 +38,6 @@ export const toPage = (item: RAWPage): Page => {
     image: item.frontmatter.image.childImageSharp.gatsbyImageData,
     caption: item.frontmatter.caption,
     published: item.frontmatter.published,
-    stack: item.frontmatter.stack,
   }
 }
 
@@ -72,7 +69,6 @@ export const usePages = (): Page[] => {
               }
             }
             caption
-            stack
             published
           }
         }
