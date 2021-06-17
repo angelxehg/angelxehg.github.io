@@ -1,21 +1,20 @@
 import React from "react"
 
 import stacks from "../meta/stacks"
-import { LinkMeta } from "../meta/links"
-import IconLink from "../components/Link"
+import {CreateLink} from "../components/Link"
 import Redirect from "../components/Redirect"
 
-const SkillCard = (props: { title: string; tools: LinkMeta[] }) => (
+const SkillCard = (props: { title: string; tools: string[] }) => (
   <div className="card bg-dark text-light" style={{height: "100%"}}>
     <div className="card-body">
       <h3 className="card-title h5">{props.title}</h3>
       <p className="card-text">
-        {props.tools.map(tool => (
+        {props.tools.map(toolName => (
           <span
-            key={tool.name}
+            key={toolName}
             className="badge rounded-pill bg-dark text-light mt-1 me-1"
           >
-            <IconLink noUnderline meta={tool} />
+            <CreateLink noUnderline from={toolName} />
           </span>
         ))}
       </p>

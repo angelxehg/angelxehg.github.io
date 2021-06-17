@@ -90,5 +90,3 @@ export const CreateLink = (props: LinkProps & { from: string, extend?: { title: 
     <Link {...props} meta={newMeta} />
   )
 }
-
-export default Link

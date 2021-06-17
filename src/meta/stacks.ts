@@ -1,76 +1,37 @@
-import {
-  angularLinkMeta,
-  awsLinkMeta,
-  bootstrapLinkMeta,
-  capacitorLinkMeta,
-  digitalOceanLinkMeta,
-  djangoLinkMeta,
-  firebaseLinkMeta,
-  gatsbyLinkMeta,
-  gitHubLinkMeta,
-  gitLabLinkMeta,
-  gitLinkMeta,
-  herokuLinkMeta,
-  html5LinkMeta,
-  ionicLinkMeta,
-  javaScriptLinkMeta,
-  LinkMeta,
-  markdownLinkMeta,
-  netlifyLinkMeta,
-  nodeJsLinkMeta,
-  npmLinkMeta,
-  pythonLinkMeta,
-  reactLinkMeta,
-  reactNativeLinkMeta,
-  typeScriptLinkMeta,
-  ubuntuLinkMeta,
-  vsCodeLinkMeta,
-} from "./links"
-
 interface Stack {
   title: string
-  tools: LinkMeta[]
+  tools: string[]
 }
 
 const stacks: Stack[] = [
   {
     title: "Mis herramientas favoritas",
     tools: [
-      angularLinkMeta, ionicLinkMeta, ubuntuLinkMeta, vsCodeLinkMeta, netlifyLinkMeta, gitHubLinkMeta
+      "Angular", "Ionic", "Ubuntu", "VSCode", "Netlify", "GitHub"
     ]
   },
   {
     title: "Estoy aprendiendo",
     tools: [
-      reactLinkMeta,
-      gatsbyLinkMeta,
-      capacitorLinkMeta,
-      firebaseLinkMeta,
-      reactNativeLinkMeta,
+      "React", "Gatsby", "Capacitor", "Firebase", "React Native",
     ]
   },
   {
     title: "He trabajdo con",
     tools: [
-      html5LinkMeta,
-      javaScriptLinkMeta,
-      typeScriptLinkMeta,
-      pythonLinkMeta,
-      markdownLinkMeta,
-      npmLinkMeta,
-      gitLinkMeta,
+      "HTML5", "JavaScript", "TypeScript", "Python", "Markdown", "NPM", "Git",
     ],
   },
   {
     title: "Otras herramientas",
     tools: [
-      herokuLinkMeta,
-      djangoLinkMeta,
-      bootstrapLinkMeta,
-      gitLabLinkMeta,
-      digitalOceanLinkMeta,
-      nodeJsLinkMeta,
-      awsLinkMeta,
+      "Heroku",
+      "Django",
+      "Bootstrap",
+      "GitLab",
+      "DigitalOcean",
+      "NodeJS",
+      "AWS",
     ]
   },
 ]

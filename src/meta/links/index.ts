@@ -49,217 +49,217 @@ export interface LinkMeta {
   href: string
 }
 
-export const androidLinkMeta: LinkMeta = {
+const androidLinkMeta: LinkMeta = {
   name: "Android",
   icon: androidIconMeta,
   href: "https://www.android.com/intl/es_es/",
 }
 
-export const angularLinkMeta: LinkMeta = {
+const angularLinkMeta: LinkMeta = {
   name: "Angular",
   icon: angularIconMeta,
   href: "https://angular.io/",
 }
 
-export const awsLinkMeta: LinkMeta = {
+const awsLinkMeta: LinkMeta = {
   name: "AWS",
   icon: awsIconMeta,
   href: "https://aws.amazon.com/es/",
 }
 
-export const bootstrapLinkMeta: LinkMeta = {
+const bootstrapLinkMeta: LinkMeta = {
   name: "Bootstrap",
   icon: bootstrapIconMeta,
   href: "https://getbootstrap.com/docs/",
 }
 
-export const capacitorLinkMeta: LinkMeta = {
+const capacitorLinkMeta: LinkMeta = {
   name: "Capacitor",
   icon: capacitorIconMeta,
   href: "https://capacitorjs.com/",
 }
 
-export const devtoLinkMeta: LinkMeta = {
+const devtoLinkMeta: LinkMeta = {
   name: "Dev.to",
   icon: devtoIconMeta,
   href: "https://dev.to/",
 }
 
-export const digitalOceanLinkMeta: LinkMeta = {
+const digitalOceanLinkMeta: LinkMeta = {
   name: "DigitalOcean",
   icon: digitalOceanIconMeta,
   href: "https://www.digitalocean.com/",
 }
 
-export const djangoLinkMeta: LinkMeta = {
+const djangoLinkMeta: LinkMeta = {
   name: "Django",
   icon: djangoIconMeta,
   href: "https://www.djangoproject.com/",
 }
 
-export const genericDocumentLinkMeta: LinkMeta = {
+const genericDocumentLinkMeta: LinkMeta = {
   name: "Document",
   icon: genericDocumentIconMeta,
   href: "https://angelxehg.com/",
 }
 
-export const genericEmailLinkMeta: LinkMeta = {
+const genericEmailLinkMeta: LinkMeta = {
   name: "Email",
   icon: genericEmailIconMeta,
   href: "https://angelxehg.com/",
 }
 
-export const firebaseLinkMeta: LinkMeta = {
+const firebaseLinkMeta: LinkMeta = {
   name: "Firebase",
   icon: firebaseIconMeta,
   href: "https://firebase.google.com/",
 }
 
-export const fasLinkMeta: LinkMeta = {
+const fasLinkMeta: LinkMeta = {
   name: "Font Awesome",
   icon: fasIconMeta,
   href: "https://fontawesome.com/license",
 }
 
-export const gatsbyLinkMeta: LinkMeta = {
+const gatsbyLinkMeta: LinkMeta = {
   name: "Gatsby",
   icon: gatsbyIconMeta,
   href: "https://www.gatsbyjs.com/",
 }
 
-export const gitLinkMeta: LinkMeta = {
+const gitLinkMeta: LinkMeta = {
   name: "Git",
   icon: gitIconMeta,
   href: "https://git-scm.com/",
 }
 
-export const gitHubLinkMeta: LinkMeta = {
+const gitHubLinkMeta: LinkMeta = {
   name: "GitHub",
   icon: gitHubIconMeta,
   href: "https://github.com/",
 }
 
-export const gitHubPagesLinkMeta: LinkMeta = {
+const gitHubPagesLinkMeta: LinkMeta = {
   name: "GitHub Pages",
   icon: gitHubPagesIconMeta,
   href: "https://pages.github.com/",
 }
 
-export const gitLabLinkMeta: LinkMeta = {
+const gitLabLinkMeta: LinkMeta = {
   name: "GitLab",
   icon: gitLabIconMeta,
   href: "https://gitlab.com/",
 }
 
-export const html5LinkMeta: LinkMeta = {
+const html5LinkMeta: LinkMeta = {
   name: "HTML5",
   icon: html5IconMeta,
   href: "https://developer.mozilla.org/es/docs/Web/Guide/HTML/HTML5",
 }
 
-export const herokuLinkMeta: LinkMeta = {
+const herokuLinkMeta: LinkMeta = {
   name: "Heroku",
   icon: herokuIconMeta,
   href: "https://dashboard.heroku.com/",
 }
 
-export const instagramLinkMeta: LinkMeta = {
+const instagramLinkMeta: LinkMeta = {
   name: "Instagram",
   icon: instagramIconMeta,
   href: "https://instagram.com/",
 }
 
-export const ionicLinkMeta: LinkMeta = {
+const ionicLinkMeta: LinkMeta = {
   name: "Ionic",
   icon: ionicIconMeta,
   href: "https://ionicframework.com/",
 }
 
-export const javaScriptLinkMeta: LinkMeta = {
+const javaScriptLinkMeta: LinkMeta = {
   name: "JavaScript",
   icon: javaScriptIconMeta,
   href: "https://developer.mozilla.org/es/docs/Web/JavaScript",
 }
 
-export const linkedInLinkMeta: LinkMeta = {
+const linkedInLinkMeta: LinkMeta = {
   name: "LinkedIn",
   icon: linkedInIconMeta,
   href: "https://www.linkedin.com/",
 }
 
-export const markdownLinkMeta: LinkMeta = {
+const markdownLinkMeta: LinkMeta = {
   name: "Markdown",
   icon: markdownIconMeta,
   href: "https://www.markdownguide.org/",
 }
 
-export const netlifyLinkMeta: LinkMeta = {
+const netlifyLinkMeta: LinkMeta = {
   name: "Netlify",
   icon: netlifyIconMeta,
   href: "https://www.netlify.com/",
 }
 
-export const nodeJsLinkMeta: LinkMeta = {
+const nodeJsLinkMeta: LinkMeta = {
   name: "NodeJS",
   icon: nodeJsIconMeta,
   href: "https://nodejs.org/",
 }
 
-export const npmLinkMeta: LinkMeta = {
+const npmLinkMeta: LinkMeta = {
   name: "NPM",
   icon: npmIconMeta,
   href: "https://www.npmjs.com/",
 }
 
-export const payPalLinkMeta: LinkMeta = {
+const payPalLinkMeta: LinkMeta = {
   name: "PayPal",
   icon: payPalIconMeta,
   href: "https://paypal.com/",
 }
 
-export const pythonLinkMeta: LinkMeta = {
+const pythonLinkMeta: LinkMeta = {
   name: "Python",
   icon: pythonIconMeta,
   href: "https://www.python.org/",
 }
 
-export const reactLinkMeta: LinkMeta = {
+const reactLinkMeta: LinkMeta = {
   name: "React",
   icon: reactIconMeta,
   href: "https://es.reactjs.org/",
 }
 
-export const reactNativeLinkMeta: LinkMeta = {
+const reactNativeLinkMeta: LinkMeta = {
   name: "React Native",
   icon: reactIconMeta,
   href: "https://reactnative.dev/",
 }
 
-export const twitterLinkMeta: LinkMeta = {
+const twitterLinkMeta: LinkMeta = {
   name: "Twitter",
   icon: twitterIconMeta,
   href: "https://www.twitter.com/",
 }
 
-export const typeScriptLinkMeta: LinkMeta = {
+const typeScriptLinkMeta: LinkMeta = {
   name: "TypeScript",
   icon: typeScriptIconMeta,
   href: "https://www.TypeScriptlang.org/",
 }
 
-export const ubuntuLinkMeta: LinkMeta = {
+const ubuntuLinkMeta: LinkMeta = {
   name: "Ubuntu",
   icon: ubuntuIconMeta,
   href: "https://ubuntu.com/",
 }
 
-export const vsCodeLinkMeta: LinkMeta = {
+const vsCodeLinkMeta: LinkMeta = {
   name: "VSCode",
   icon: vsCodeIconMeta,
   href: "https://code.visualstudio.com/",
 }
 
-export const genericWebLinkMeta: LinkMeta = {
+const genericWebLinkMeta: LinkMeta = {
   name: "Web",
   icon: genericWebIconMeta,
   href: "https://angelxehg.com/",
@@ -296,6 +296,7 @@ const allLinks = [
   payPalLinkMeta,
   pythonLinkMeta,
   reactLinkMeta,
+  reactNativeLinkMeta,
   twitterLinkMeta,
   typeScriptLinkMeta,
   ubuntuLinkMeta,
