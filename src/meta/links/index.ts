@@ -1,7 +1,7 @@
+import { file, email, web } from "./generic"
+import { IconMeta } from "./types"
+
 const LinkedInSVG = require("../../assets/bootstrap-icons/linkedin.svg")
-const DocumentSVG = require("../../assets/bootstrap-icons/file-earmark-text-fill.svg")
-const EmailSVG = require("../../assets/bootstrap-icons/envelope-fill.svg")
-const WebSVG = require("../../assets/bootstrap-icons/globe2.svg")
 const GitHubSVG = require("../../assets/bootstrap-icons/github.svg")
 const InstagramSVG = require("../../assets/bootstrap-icons/instagram.svg")
 const TwitterSVG = require("../../assets/bootstrap-icons/twitter.svg")
@@ -36,26 +36,10 @@ const PythonSVG = require("../../assets/seek-logo/python.svg")
 const TypeScriptSVG = require("../../assets/seek-logo/typescript.svg")
 const VSCodeSVG = require("../../assets/seek-logo/vscode.svg")
 
-export interface IconMeta {
-  color?: string
-  fill?: boolean
-  extraBc?: string
-  extraBcRad?: string
-  svg: any
-}
-
 export interface LinkMeta {
   name: string
   icon: IconMeta
   href: string
-}
-
-export const genericDocumentIconMeta: IconMeta = {
-  svg: DocumentSVG,
-}
-
-export const genericEmailIconMeta: IconMeta = {
-  svg: EmailSVG,
 }
 
 export const gitHubIconMeta: IconMeta = {
@@ -81,10 +65,6 @@ export const linkedInIconMeta: IconMeta = {
 export const twitterIconMeta: IconMeta = {
   color: "#1C9CEA",
   svg: TwitterSVG,
-}
-
-export const genericWebIconMeta: IconMeta = {
-  svg: WebSVG,
 }
 
 export const androidIconMeta: IconMeta = {
@@ -272,18 +252,6 @@ const django: LinkMeta = {
   href: "https://www.djangoproject.com/",
 }
 
-const genericDocument: LinkMeta = {
-  name: "Document",
-  icon: genericDocumentIconMeta,
-  href: "https://angelxehg.com/",
-}
-
-const genericEmail: LinkMeta = {
-  name: "Email",
-  icon: genericEmailIconMeta,
-  href: "https://angelxehg.com/",
-}
-
 const firebase: LinkMeta = {
   name: "Firebase",
   icon: firebaseIconMeta,
@@ -434,13 +402,10 @@ const vsCode: LinkMeta = {
   href: "https://code.visualstudio.com/",
 }
 
-const genericWeb: LinkMeta = {
-  name: "Web",
-  icon: genericWebIconMeta,
-  href: "https://angelxehg.com/",
-}
-
 const allLinks = [
+  file,
+  email,
+  web,
   android,
   angular,
   aws,
@@ -449,8 +414,6 @@ const allLinks = [
   devto,
   digitalOcean,
   django,
-  genericDocument,
-  genericEmail,
   firebase,
   fas,
   gatsby,
@@ -476,7 +439,6 @@ const allLinks = [
   typeScript,
   ubuntu,
   vsCode,
-  genericWeb,
 ]
 
 export const getLinkMeta = (linkName: string) => {

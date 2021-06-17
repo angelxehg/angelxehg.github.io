@@ -5,7 +5,7 @@ const email = {
 }
 
 const resume = {
-  from: "Document",
+  from: "File",
   title: "Descarga mi CV",
   href: "https://drive.google.com/drive/folders/18DEv-IdP2veHzUINHafEk4Gz9i2zakzG?usp=sharing",
 }
