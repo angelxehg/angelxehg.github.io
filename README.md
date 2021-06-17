@@ -29,7 +29,6 @@ Utilice estos comandos para comprobar la calidad del código
 Se requiere establecer las variables de entorno en los archivos `.env.development` y `.env.production`:
 
 ```env
-SEGMENT_WRITE_KEY=[MY_KEY]
 DEFAULT_URL=https://testing.angelxehg.com
 ```
 
