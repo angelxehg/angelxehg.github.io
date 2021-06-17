@@ -1,4 +1,3 @@
-import React from "react"
 import frameworks from "./data/frameworks"
 import generics from "./data/generic"
 import platforms from "./data/platforms"
