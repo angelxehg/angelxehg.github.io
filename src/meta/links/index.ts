@@ -11,11 +11,9 @@ import {
 import { file, email, web } from "./generic"
 import { html5, javaScript, markdown, python, typeScript } from "./syntax"
 import { IconMeta } from "./types"
+import { instagram, linkedIn, payPal, twitter } from "./websites"
 
-const LinkedInSVG = require("../../assets/bootstrap-icons/linkedin.svg")
 const GitHubSVG = require("../../assets/bootstrap-icons/github.svg")
-const InstagramSVG = require("../../assets/bootstrap-icons/instagram.svg")
-const TwitterSVG = require("../../assets/bootstrap-icons/twitter.svg")
 
 const AndroidSVG = require("../../assets/fontawesome/android-brands.svg")
 const AWSSVG = require("../../assets/fontawesome/aws-brands.svg")
@@ -30,7 +28,6 @@ const HerokuSVG = require("../../assets/iconify/heroku.svg")
 
 const FontAwesomeSVG = require("../../assets/seek-logo/font-awesome.svg")
 const GitLabSVG = require("../../assets/seek-logo/gitlab.svg")
-const PayPalSVG = require("../../assets/seek-logo/paypal.svg")
 const GitSVG = require("../../assets/seek-logo/git.svg")
 const FirebaseSVG = require("../../assets/seek-logo/firebase.svg")
 const NetlifySVG = require("../../assets/seek-logo/netlify.svg")
@@ -48,23 +45,6 @@ export const gitHubIconMeta: IconMeta = {
 
 export const gitHubPagesIconMeta: IconMeta = {
   svg: GitHubSVG,
-}
-
-export const instagramIconMeta: IconMeta = {
-  color: "#F70038",
-  svg: InstagramSVG,
-}
-
-export const linkedInIconMeta: IconMeta = {
-  color: "#2563AC",
-  extraBc: "white",
-  extraBcRad: "15%",
-  svg: LinkedInSVG,
-}
-
-export const twitterIconMeta: IconMeta = {
-  color: "#1C9CEA",
-  svg: TwitterSVG,
 }
 
 export const androidIconMeta: IconMeta = {
@@ -138,11 +118,6 @@ export const gitLabIconMeta: IconMeta = {
 
 export const netlifyIconMeta: IconMeta = {
   svg: NetlifySVG,
-}
-
-export const payPalIconMeta: IconMeta = {
-  color: "#002E82",
-  svg: PayPalSVG,
 }
 
 export const vsCodeIconMeta: IconMeta = {
@@ -221,18 +196,6 @@ const heroku: LinkMeta = {
   href: "https://dashboard.heroku.com/",
 }
 
-const instagram: LinkMeta = {
-  name: "Instagram",
-  icon: instagramIconMeta,
-  href: "https://instagram.com/",
-}
-
-const linkedIn: LinkMeta = {
-  name: "LinkedIn",
-  icon: linkedInIconMeta,
-  href: "https://www.linkedin.com/",
-}
-
 const netlify: LinkMeta = {
   name: "Netlify",
   icon: netlifyIconMeta,
@@ -249,18 +212,6 @@ const npm: LinkMeta = {
   name: "NPM",
   icon: npmIconMeta,
   href: "https://www.npmjs.com/",
-}
-
-const payPal: LinkMeta = {
-  name: "PayPal",
-  icon: payPalIconMeta,
-  href: "https://paypal.com/",
-}
-
-const twitter: LinkMeta = {
-  name: "Twitter",
-  icon: twitterIconMeta,
-  href: "https://www.twitter.com/",
 }
 
 const ubuntu: LinkMeta = {
@@ -294,6 +245,11 @@ const allLinks = [
   markdown,
   python,
   typeScript,
+  // websites
+  instagram,
+  linkedIn,
+  payPal,
+  twitter,
   // rest
   android,
   aws,
@@ -307,13 +263,9 @@ const allLinks = [
   gitHubPages,
   gitLab,
   heroku,
-  instagram,
-  linkedIn,
   netlify,
   nodeJs,
   npm,
-  payPal,
-  twitter,
   ubuntu,
   vsCode,
 ]
