@@ -49,7 +49,7 @@ const DefaultNavbar = (): JSX.Element => {
                 Blog
               </Link>
             </li>
-            <button onClick={toggle}>Theme: {theme.name}</button>
+            <button onClick={toggle}>Theme: {theme}</button>
           </ul>
         </div>
       </div>

@@ -109,5 +109,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-purgecss`,
+    `gatsby-plugin-dark-mode`,
   ],
 }

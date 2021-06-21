@@ -23,7 +23,7 @@ const useIconStyle = (
 
 const Icon = (props: IconProps & { meta: IconMeta }) => {
   const { theme } = useTheme()
-  const defaultColor = theme.name === "dark" ? "white" : "black"
+  const defaultColor = theme === "dark" ? "white" : "black"
   const { svgPath, color: metaColor, fill: metaFill } = props.meta
   const IconSVG = require("../assets/" + svgPath)
   const color = metaColor ? metaColor : defaultColor
