@@ -3,24 +3,31 @@ import React from "react"
 import stacks from "../meta/stacks"
 import { CreateLink } from "../components/Link"
 import Redirect from "../components/Redirect"
+import { useTheme } from "../components/Theme"
 
-const SkillCard = (props: { title: string; tools: string[] }) => (
-  <div className="card bg-dark text-light" style={{ height: "100%" }}>
-    <div className="card-body">
-      <h3 className="card-title h5">{props.title}</h3>
-      <p className="card-text">
-        {props.tools.map(toolName => (
-          <span
-            key={toolName}
-            className="badge rounded-pill bg-dark text-light mt-1 me-1"
-          >
-            <CreateLink noUnderline from={toolName} />
-          </span>
-        ))}
-      </p>
+const SkillCard = (props: { title: string; tools: string[] }) => {
+  const { theme } = useTheme()
+  return (
+    <div
+      className={`card ${theme.bgClass} ${theme.textClass}`}
+      style={{ height: "100%" }}
+    >
+      <div className="card-body">
+        <h3 className="card-title h5">{props.title}</h3>
+        <p className="card-text">
+          {props.tools.map(toolName => (
+            <span
+              key={toolName}
+              className={`badge rounded-pill ${theme.bgClass} ${theme.textClass} mt-1 me-1`}
+            >
+              <CreateLink noUnderline from={toolName} />
+            </span>
+          ))}
+        </p>
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 export const SkillsSection = () => (
   <section id="skills">

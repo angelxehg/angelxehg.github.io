@@ -3,6 +3,7 @@ import { navigate } from "gatsby"
 
 import CenterLayout from "../layouts/Center"
 import SEO from "./SEO"
+import { useTheme } from "./Theme"
 
 interface RedirectProps {
   title: string
@@ -12,13 +13,14 @@ interface RedirectProps {
 const ConcernedSVG = require("../assets/concerned.svg")
 
 const Redirect = (props: RedirectProps): JSX.Element => {
+  const { theme } = useTheme()
   useEffect(() => {
     setTimeout(() => navigate(props.url), 2000)
   }, [])
   return (
     <CenterLayout>
       <SEO title="301: Moved Permanently" lang="es" />
-      <main className="card bg-dark text-light">
+      <main className={`card ${theme.bgClass} ${theme.textClass}`}>
         <ConcernedSVG
           style={{ width: "5rem", height: "5rem" }}
           className="align-self-center mt-2"

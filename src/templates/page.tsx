@@ -7,6 +7,7 @@ import Footer from "../components/Footer"
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
 import DefaultNavbar from "../components/Navbar"
+import { useTheme } from "../components/Theme"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -46,6 +47,7 @@ interface PageTemplateProps {
 }
 
 const PageTemplate = (props: PageTemplateProps): JSX.Element => {
+  const { theme } = useTheme()
   const { frontmatter, body } = props.data.mdx
   const { title, image, caption } = frontmatter
   return (
@@ -56,7 +58,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
         image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
       />
       <DefaultNavbar />
-      <div className="bg-inter-background">
+      <div className={`bg-inter ${theme.name}`}>
         <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-2">
           <h1>{title}</h1>
           <p>{caption}</p>

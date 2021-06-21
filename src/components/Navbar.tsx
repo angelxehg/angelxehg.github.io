@@ -1,10 +1,14 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import { useTheme } from "./Theme"
 
 const DefaultNavbar = (): JSX.Element => {
+  const { theme, toggle } = useTheme()
   const [collapsed, setCollapsed] = useState(true)
   return (
-    <nav className="navbar sticky-top navbar-expand-sm navbar-dark bg-dark">
+    <nav
+      className={`navbar sticky-top navbar-expand-sm navbar-${theme.name} ${theme.bgClass}`}
+    >
       <div className="container-sm ps-sm-4 pe-sm-4">
         <Link
           to="/"
@@ -67,6 +71,9 @@ const DefaultNavbar = (): JSX.Element => {
                 Blog
               </Link>
             </li>
+            <button className={`btn btn-outline-${theme.name === 'dark' ? 'light' : 'dark'} ${theme.textClass}`} onClick={toggle}>
+              Theme: {theme.name}
+            </button>
           </ul>
         </div>
       </div>
