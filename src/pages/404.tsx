@@ -12,7 +12,7 @@ const NotFoundPage = (): JSX.Element => {
   return (
     <CenterLayout>
       <SEO title="404: Not found" lang="es" />
-      <main className={`card ${theme.bgClass} ${theme.textClass}`}>
+      <main className="card">
         <ConcernedSVG
           style={{ width: "5rem", height: "5rem" }}
           className="align-self-center mt-2"

@@ -108,12 +108,6 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        develop: true,
-        printRejected: true,
-      },
-    },
+    `gatsby-plugin-purgecss`,
   ],
 }

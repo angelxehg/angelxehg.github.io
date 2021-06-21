@@ -80,7 +80,7 @@ const SEO = (props: SEOProps) => {
         },
       ].concat(meta)}
     >
-      <body className={`bg-background ${theme.name} ${theme.textClass}`}></body>
+      <body className={theme.name}></body>
     </Helmet>
   )
 }

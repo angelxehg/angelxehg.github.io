@@ -4,18 +4,13 @@ import Icon, { IconProps } from "./Icon"
 import { getLinkMeta } from "../meta/links"
 import { LinkMeta } from "../meta/types"
 
-const ClickableIcon = (props: {
-  className?: string
-  meta: LinkMeta
-  iconProps: IconProps
-}) => {
-  const classes = props.className ? props.className.split(" ") : []
+const ClickableIcon = (props: { meta: LinkMeta; iconProps: IconProps }) => {
   const { href: href, name: name, icon: icon } = props.meta
   return (
     <a
       href={href}
       title={name}
-      className={"me-2 " + classes.join(" ")}
+      className="me-2"
       rel="external"
       style={{ textDecoration: "none" }}
     >
@@ -29,27 +24,15 @@ interface LinkProps {
   noIcon?: boolean
   noUnderline?: boolean
   iconProps?: IconProps
-  reset?: boolean
-  className?: string
 }
 
 const Link = (props: LinkProps & { meta: LinkMeta }) => {
-  const classes = props.className ? props.className.split(" ") : []
   const { href: href, name, icon: icon } = props.meta
-  const { reset, noTitle, noIcon, noUnderline, iconProps } = props
-  if (reset) {
-    classes.push("text-reset")
-  }
+  const { noTitle, noIcon, noUnderline, iconProps } = props
   const styles = noUnderline ? { textDecoration: "none" } : undefined
   return (
     <>
-      <a
-        href={href}
-        title={name}
-        className={classes.join(" ")}
-        rel="external"
-        style={styles}
-      >
+      <a href={href} title={name} rel="external" style={styles}>
         {!noTitle && name}
       </a>
       {!noIcon && (

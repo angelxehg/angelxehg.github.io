@@ -5,7 +5,6 @@ import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
 import { CreateLink } from "../components/Link"
 import DefaultNavbar from "../components/Navbar"
-import { useTheme } from "../components/Theme"
 
 interface DevToPost {
   id: number
@@ -33,13 +32,9 @@ interface PostCardProps {
 const PostCard = (
   props: PostCardProps & { titleAs: "h2" | "h3" }
 ): JSX.Element => {
-  const { theme } = useTheme()
   const { title, description, canonical_url: href, social_image } = props.item
   return (
-    <article
-      className={`card ${theme.bgClass} ${theme.textClass}`}
-      style={{ height: "100%" }}
-    >
+    <article className="card" style={{ height: "100%" }}>
       <img src={social_image} alt={description} className="card-img-top" />
       <div className="card-body">
         {props.titleAs === "h2" && (
@@ -90,7 +85,6 @@ export const PostsSection = () => {
 }
 
 const PostsPage = (): JSX.Element => {
-  const { theme } = useTheme()
   const [posts, setPosts] = useState<DevToPost[]>([])
   useEffect(() => {
     fetchDevToPosts().then(posts => setPosts(posts.slice(0, 4)))
@@ -99,7 +93,7 @@ const PostsPage = (): JSX.Element => {
     <Layout>
       <SEO title="Entradas" lang="es" />
       <DefaultNavbar />
-      <div className={`bg-inter ${theme.name}`}>
+      <div className="bg-inter">
         <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-1">
           <h1>Todas mis entradas</h1>
           <p>

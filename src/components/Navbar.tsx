@@ -6,15 +6,9 @@ const DefaultNavbar = (): JSX.Element => {
   const { theme, toggle } = useTheme()
   const [collapsed, setCollapsed] = useState(true)
   return (
-    <nav
-      className={`navbar sticky-top navbar-expand-sm navbar-${theme.name} ${theme.bgClass}`}
-    >
+    <nav className="navbar sticky-top navbar-expand-sm">
       <div className="container-sm ps-sm-4 pe-sm-4">
-        <Link
-          to="/"
-          className="navbar-brand"
-          style={{ textDecoration: "underline" }}
-        >
+        <Link to="/" className="navbar-brand text-reset">
           Angel Hurtado
         </Link>
         <button
@@ -36,44 +30,26 @@ const DefaultNavbar = (): JSX.Element => {
           <ul className="navbar-nav me-auto"></ul>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link
-                to="/#about"
-                className="nav-link"
-                style={{ textDecoration: "underline" }}
-              >
+              <Link to="/#about" className="nav-link text-reset">
                 Acerca de
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                to="/#skills"
-                className="nav-link"
-                style={{ textDecoration: "underline" }}
-              >
+              <Link to="/#skills" className="nav-link text-reset">
                 Habilidades
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                to="/#projects"
-                className="nav-link"
-                style={{ textDecoration: "underline" }}
-              >
+              <Link to="/#projects" className="nav-link text-reset">
                 Proyectos
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                to="/#posts"
-                className="nav-link"
-                style={{ textDecoration: "underline" }}
-              >
+              <Link to="/#posts" className="nav-link text-reset">
                 Blog
               </Link>
             </li>
-            <button className={`btn btn-outline-${theme.name === 'dark' ? 'light' : 'dark'} ${theme.textClass}`} onClick={toggle}>
-              Theme: {theme.name}
-            </button>
+            <button onClick={toggle}>Theme: {theme.name}</button>
           </ul>
         </div>
       </div>

@@ -4,7 +4,6 @@ import "./Header.scss"
 
 import { CreateIcon, CreateLink } from "./Link"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { useTheme } from "./Theme"
 
 const email = {
   from: "Email",
@@ -74,9 +73,8 @@ const SocialLinks = () => (
 
 export const HugeHeader = (): JSX.Element => {
   const site = useSiteMetadata()
-  const { theme } = useTheme()
   return (
-    <div className={`bg-inter ${theme.name}`}>
+    <div className="bg-inter">
       <div className="container-sm ps-sm-4 pe-sm-4 huge-header pt-3 pb-2">
         <img
           src="/images/Profile.500.Sqr.jpg"

@@ -7,7 +7,6 @@ import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
 import { usePages, Page } from "../hooks/use-pages"
 import DefaultNavbar from "../components/Navbar"
-import { useTheme } from "../components/Theme"
 
 interface ProjectCardProps {
   item: Page
@@ -16,13 +15,9 @@ interface ProjectCardProps {
 const ProjectCard = (
   props: ProjectCardProps & { titleAs: "h2" | "h3" }
 ): JSX.Element => {
-  const { theme } = useTheme()
   const { slug, title, resume, image, caption } = props.item
   return (
-    <article
-      className={`card ${theme.bgClass} ${theme.textClass}`}
-      style={{ height: "100%" }}
-    >
+    <article className="card" style={{ height: "100%" }}>
       <GatsbyImage image={image} alt={caption} className="card-img-top" />
       <div className="card-body">
         {props.titleAs === "h2" && (
@@ -61,13 +56,12 @@ export const ProjectsSection = () => {
 }
 
 const ProjectsPage = (): JSX.Element => {
-  const { theme } = useTheme()
   const projects = usePages()
   return (
     <Layout>
       <SEO title="Proyectos" lang="es" />
       <DefaultNavbar />
-      <div className={`bg-inter ${theme.name}`}>
+      <div className="bg-inter">
         <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-1">
           <h1>Todos mis proyectos</h1>
           <p>Estos son todos mis proyectos públicos</p>
