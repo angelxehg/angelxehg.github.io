@@ -4,6 +4,7 @@ import { useTheme } from "./Theme"
 
 const SunSVG = require("../assets/bootstrap-icons/sun.svg")
 const MoonSVG = require("../assets/bootstrap-icons/moon.svg")
+const ListSVG = require("../assets/bootstrap-icons/list.svg")
 
 const DefaultNavbar = (): JSX.Element => {
   const { theme, toggle } = useTheme()
@@ -28,7 +29,10 @@ const DefaultNavbar = (): JSX.Element => {
           aria-label="Toggle navigation"
           onClick={() => setCollapsed(!collapsed)}
         >
-          <span className="navbar-toggler-icon"></span>
+          <ListSVG style={{
+            height: '1.8rem',
+            width: '1.8rem'
+          }} />
         </button>
         <div
           className={collapsed ? "collapse navbar-collapse" : "navbar-collapse"}
