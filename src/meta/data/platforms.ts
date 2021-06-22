@@ -4,7 +4,7 @@ const platforms: LinkMeta[] = [
   {
     name: "Android",
     icon: {
-      color: "#3DD985",
+      style: { color: "#3DD985" },
       svgPath: "fontawesome/android-brands.svg",
     },
     href: "https://www.android.com/intl/es_es/",
@@ -12,7 +12,12 @@ const platforms: LinkMeta[] = [
   {
     name: "AWS",
     icon: {
-      color: "#F79400",
+      style: {
+        color: "#F79400",
+        backgroundColor: "#222e3d",
+        borderRadius: "50%",
+        padding: "0.1rem",
+      },
       svgPath: "fontawesome/aws-brands.svg",
     },
     href: "https://aws.amazon.com/es/",
@@ -27,7 +32,7 @@ const platforms: LinkMeta[] = [
   {
     name: "DigitalOcean",
     icon: {
-      color: "#007CF7",
+      style: { color: "#007CF7" },
       svgPath: "fontawesome/digital-ocean-brands.svg",
     },
     href: "https://www.digitalocean.com/",
@@ -56,7 +61,7 @@ const platforms: LinkMeta[] = [
   {
     name: "GitLab",
     icon: {
-      color: "#F46A25",
+      style: { color: "#F46A25" },
       svgPath: "seek-logo/gitlab.svg",
     },
     href: "https://gitlab.com/",
@@ -65,9 +70,9 @@ const platforms: LinkMeta[] = [
     name: "Heroku",
     icon: {
       svgPath: "iconify/heroku.svg",
-      extraStyles: {
+      style: {
         backgroundColor: "white",
-        borderRadius: "15%"
+        borderRadius: "15%",
       },
     },
     href: "https://dashboard.heroku.com/",
@@ -75,6 +80,11 @@ const platforms: LinkMeta[] = [
   {
     name: "Netlify",
     icon: {
+      style: {
+        backgroundColor: "#0e1e25",
+        borderRadius: "50%",
+        padding: "0.1rem",
+      },
       svgPath: "seek-logo/netlify.svg",
     },
     href: "https://www.netlify.com/",

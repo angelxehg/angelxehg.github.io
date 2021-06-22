@@ -4,14 +4,14 @@ const generics: LinkMeta[] = [
   {
     name: "Day",
     icon: {
-      svgPath: "bootstrap-icons/sun.svg"
+      svgPath: "bootstrap-icons/sun.svg",
     },
     href: "https://angelxehg.com/",
   },
   {
     name: "Night",
     icon: {
-      svgPath: "bootstrap-icons/moon.svg"
+      svgPath: "bootstrap-icons/moon.svg",
     },
     href: "https://angelxehg.com/",
   },

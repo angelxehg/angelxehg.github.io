@@ -14,9 +14,9 @@ const DefaultNavbar = (): JSX.Element => {
         <Link to="/" className="navbar-brand">
           Angel Hurtado
         </Link>
-        <button onClick={toggle} style={{border: 'none', background: 'none'}}>
-          {theme === 'dark' && <MoonSVG className="btn-indigo" />}
-          {theme === 'light' && <SunSVG className="btn-orange" />}
+        <button onClick={toggle} style={{ border: "none", background: "none" }}>
+          {theme === "dark" && <MoonSVG className="btn-indigo" />}
+          {theme === "light" && <SunSVG className="btn-orange" />}
         </button>
         <button
           className="navbar-toggler"

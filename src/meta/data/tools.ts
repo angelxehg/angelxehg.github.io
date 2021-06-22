@@ -2,12 +2,13 @@ import { LinkMeta } from "../types"
 
 const tools: LinkMeta[] = [
   {
-    name: "Font Awesome",
+    name: "FontAwesome",
+    displayName: "Font Awesome",
     icon: {
       svgPath: "seek-logo/font-awesome.svg",
-      extraStyles: {
+      style: {
         backgroundColor: "white",
-        borderRadius: "15%"
+        borderRadius: "15%",
       },
     },
     href: "https://fontawesome.com/license",
@@ -15,15 +16,21 @@ const tools: LinkMeta[] = [
   {
     name: "Git",
     icon: {
-      color: "#E94E31",
+      style: { color: "#E94E31" },
       svgPath: "seek-logo/git.svg",
     },
     href: "https://git-scm.com/",
   },
   {
     name: "NodeJS",
+    displayName: "Node.js",
     icon: {
-      color: "#7FC728",
+      style: {
+        color: "#7FC728",
+        backgroundColor: "#333",
+        borderRadius: "50%",
+        padding: "0.05rem",
+      },
       svgPath: "fontawesome/node-js-brands.svg",
     },
     href: "https://nodejs.org/",
@@ -31,10 +38,11 @@ const tools: LinkMeta[] = [
   {
     name: "NPM",
     icon: {
-      color: "#C53635",
-      extraStyles: {
-        backgroundColor: "white",
-        borderRadius: "50%"
+      style: {
+        color: "white",
+        backgroundColor: "#C53635",
+        borderRadius: "50%",
+        padding: "0.05rem",
       },
       svgPath: "fontawesome/npm-brands.svg",
     },
@@ -43,10 +51,10 @@ const tools: LinkMeta[] = [
   {
     name: "Ubuntu",
     icon: {
-      color: "#D74614",
-      extraStyles: {
+      style: {
+        color: "#D74614",
         backgroundColor: "white",
-        borderRadius: "50%"
+        borderRadius: "50%",
       },
       svgPath: "fontawesome/ubuntu-brands.svg",
     },

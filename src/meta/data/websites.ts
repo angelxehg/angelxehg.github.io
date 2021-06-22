@@ -4,7 +4,7 @@ const websites: LinkMeta[] = [
   {
     name: "Instagram",
     icon: {
-      color: "#F70038",
+      style: { color: "#F70038" },
       svgPath: "bootstrap-icons/instagram.svg",
     },
     href: "https://instagram.com/",
@@ -12,8 +12,8 @@ const websites: LinkMeta[] = [
   {
     name: "LinkedIn",
     icon: {
-      color: "#2563AC",
-      extraStyles: {
+      style: {
+        color: "#2563AC",
         backgroundColor: "white",
         borderRadius: "15%",
       },
@@ -24,7 +24,7 @@ const websites: LinkMeta[] = [
   {
     name: "PayPal",
     icon: {
-      color: "#002E82",
+      style: { color: "#002E82" },
       svgPath: "seek-logo/paypal.svg",
     },
     href: "https://paypal.com/",
@@ -32,7 +32,7 @@ const websites: LinkMeta[] = [
   {
     name: "Twitter",
     icon: {
-      color: "#1C9CEA",
+      style: { color: "#1C9CEA" },
       svgPath: "bootstrap-icons/twitter.svg",
     },
     href: "https://www.twitter.com/",

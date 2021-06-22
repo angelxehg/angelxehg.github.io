@@ -4,7 +4,7 @@ const syntaxs: LinkMeta[] = [
   {
     name: "HTML5",
     icon: {
-      color: "#F64A1D",
+      style: { color: "#F64A1D" },
       svgPath: "seek-logo/html5.svg",
     },
     href: "https://developer.mozilla.org/es/docs/Web/Guide/HTML/HTML5",
@@ -12,10 +12,10 @@ const syntaxs: LinkMeta[] = [
   {
     name: "JavaScript",
     icon: {
-      color: "#F7DB00",
-      extraStyles: {
+      style: {
+        color: "#F7DB00",
         backgroundColor: "black",
-      borderRadius: "15%",
+        borderRadius: "15%",
       },
       svgPath: "fontawesome/js-square-brands.svg",
     },
@@ -38,7 +38,7 @@ const syntaxs: LinkMeta[] = [
   {
     name: "TypeScript",
     icon: {
-      color: "#356A97",
+      style: { color: "#356A97" },
       svgPath: "seek-logo/typescript.svg",
     },
     href: "https://www.TypeScriptlang.org/",

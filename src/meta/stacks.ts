@@ -6,14 +6,22 @@ interface Stack {
 const stacks: Stack[] = [
   {
     title: "Mis herramientas favoritas",
-    tools: ["Angular", "Ionic", "Ubuntu", "VSCode", "Netlify", "GitHub"],
+    tools: [
+      "Angular",
+      "ReactJS",
+      "Ionic",
+      "Ubuntu",
+      "VSCode",
+      "Netlify",
+      "GitHub",
+    ],
   },
   {
     title: "Estoy aprendiendo",
-    tools: ["ReactJS", "Gatsby", "Capacitor", "Firebase", "React Native"],
+    tools: ["GatsbyJS", "Capacitor", "Firebase", "ReactNative"],
   },
   {
-    title: "He trabajdo con",
+    title: "Tambien trabajo con",
     tools: [
       "HTML5",
       "JavaScript",

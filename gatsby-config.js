@@ -114,7 +114,7 @@ module.exports = {
         develop: true,
         printRejected: true,
         purgeCSSOptions: {
-          safelist: ['navbar-dark', 'navbar-light'], // Don't remove this selector
+          safelist: ["navbar-dark", "navbar-light"], // Don't remove this selector
         },
       },
     },

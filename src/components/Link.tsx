@@ -5,11 +5,11 @@ import { getLinkMeta } from "../meta/links"
 import { LinkMeta } from "../meta/types"
 
 const ClickableIcon = (props: { meta: LinkMeta; iconProps: IconProps }) => {
-  const { href: href, name: name, icon: icon } = props.meta
+  const { href, name, displayName, icon } = props.meta
   return (
     <a
       href={href}
-      title={name}
+      title={displayName || name}
       className="me-2"
       rel="external"
       style={{ textDecoration: "none" }}
@@ -27,13 +27,13 @@ interface LinkProps {
 }
 
 const Link = (props: LinkProps & { meta: LinkMeta }) => {
-  const { href: href, name, icon: icon } = props.meta
+  const { href, name, displayName, icon } = props.meta
   const { noTitle, noIcon, noUnderline, iconProps } = props
   const styles = noUnderline ? { textDecoration: "none" } : undefined
   return (
     <>
-      <a href={href} title={name} rel="external" style={styles}>
-        {!noTitle && name}
+      <a href={href} title={displayName || name} rel="external" style={styles}>
+        {(!noTitle && displayName) || name}
       </a>
       {!noIcon && (
         <span className="ms-1">
