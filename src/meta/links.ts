@@ -15,9 +15,11 @@ const allLinks = [
 ]
 
 export const getLinkMeta = (linkName: string) => {
-  const link = allLinks.find(i => i.name.toLowerCase() === linkName.toLowerCase())
+  const link = allLinks.find(
+    i => i.name.toLowerCase() === linkName.toLowerCase()
+  )
   if (!link) {
-    return genericWebLink;
+    return genericWebLink
   }
   return link
 }

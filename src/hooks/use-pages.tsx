@@ -28,10 +28,17 @@ export interface Page {
 }
 
 export const toPage = (item: RAWPage): Page => {
-  const {id, slug, excerpt} = item;
-  const {date, title, caption, stack, published} = item.frontmatter
+  const { id, slug, excerpt } = item
+  const { date, title, caption, stack, published } = item.frontmatter
   return {
-    id, slug, date, title, excerpt, caption, stack, published,
+    id,
+    slug,
+    date,
+    title,
+    excerpt,
+    caption,
+    stack,
+    published,
     image: item.frontmatter.image.childImageSharp.gatsbyImageData,
   }
 }

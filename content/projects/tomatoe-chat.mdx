@@ -11,12 +11,7 @@ published: true
 
 <div className="mb-2">
   {["Ionic","Android","Angular","Capacitor","TypeScript","Firebase"].map(toolName => (
-    <span
-      key={toolName}
-      className="badge rounded-pill mt-1 me-1"
-    >
-      <CreateLink noUnderline from={toolName} />
-    </span>
+    <CreateBadge key={toolName} from={toolName}/>
   ))}
 </div>
 

@@ -1,7 +1,7 @@
 import React from "react"
 
 import stacks from "../meta/stacks"
-import { CreateLink } from "../components/Link"
+import { CreateBadge } from "../components/Link"
 import Redirect from "../components/Redirect"
 
 const SkillCard = (props: { title: string; tools: string[] }) => (
@@ -10,9 +10,7 @@ const SkillCard = (props: { title: string; tools: string[] }) => (
       <h3 className="card-title h5">{props.title}</h3>
       <p className="card-text">
         {props.tools.map(toolName => (
-          <span key={toolName} className="badge rounded-pill mt-1 me-1">
-            <CreateLink noUnderline from={toolName} />
-          </span>
+          <CreateBadge key={toolName} from={toolName} />
         ))}
       </p>
     </div>

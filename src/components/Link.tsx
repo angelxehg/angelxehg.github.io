@@ -88,3 +88,13 @@ export const CreateLink = (
   const newMeta = extendMeta(baseMeta, extend)
   return <Link {...props} meta={newMeta} />
 }
+
+export const CreateBadge = (
+  props: LinkProps & { from: string; extend?: { title: string; href: string } }
+) => {
+  return (
+    <span className="badge rounded-pill mt-1 me-1">
+      <CreateLink noUnderline {...props} />
+    </span>
+  )
+}
