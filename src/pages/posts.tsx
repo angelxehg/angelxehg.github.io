@@ -94,7 +94,7 @@ const PostsPage = (): JSX.Element => {
     <Layout>
       <SEO title="Entradas" lang="es" />
       <DefaultNavbar />
-      <div className="bg-inter">
+      <div className="bg-shadow">
         <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-2">
           <h1>Todas mis entradas</h1>
           <p>

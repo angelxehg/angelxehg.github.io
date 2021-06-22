@@ -101,55 +101,65 @@ svg.btn-orange {
 }
 
 body {
+  $custom-bg: $white; // Full white
+  $custom-bg-100: $gray-200;
+  $custom-bg-200: $light;
+  $custom-text: $black;
+  $custom-border: rgba(0, 0, 0,0.5);
   --scrollbarBG: #f2f3f4;
   --thumbBG: #9eeaf9;
-  background-color: $gray-100;
-  color: $black;
-  .bg-inter {
-    background-color: $blue-100;
+  background-color: $custom-bg;
+  color: $custom-text;
+  .bg-shadow {
+    background-color: $custom-bg-100;
   }
   svg.fill-me-anyway {
-    fill: $black;
+    fill: $custom-text;
   }
   .navbar {
-    background-color: $blue-200;
+    background-color: $custom-bg-200;
     .navbar-text {
-      color: $black;
+      color: $custom-text;
     }
   }
   .card {
-    background-color: $light;
+    background-color: $custom-bg-200;
   }
   .badge {
-    color: $black;
-    background-color: $light;
-    border: 1px solid rgba(0, 0, 0,0.5);
+    color: $custom-text;
+    background-color: $custom-bg-200;
+    border: 1px solid $custom-border;
   }
 }
 
 body.dark {
+  $custom-bg: #000000; // Full black
+  $custom-bg-100: #080808; // Reversed Grey
+  $custom-bg-200: #171717; // Cynical Black
+  $custom-text: $white;
+  $custom-border: rgba(255, 255, 255,0.5);
   --scrollbarBG: #0e0f10;
   --thumbBG: #212529;
-  background-color: #0e0f10;
-  color: $white;
-  .bg-inter {
-    background-color: #14171b;
+  background-color: $custom-bg;
+  color: $custom-text;
+  .bg-shadow {
+    background-color: $custom-bg-100;
   }
   svg.fill-me-anyway {
-    fill: $white;
+    fill: $custom-text;
   }
   .navbar {
-    background-color: $dark;
+    background-color: $custom-bg-200;
     .navbar-text {
-      color: $white;
+      color: $custom-text;
     }
   }
   .card {
-    background-color: $dark;
+    background-color: $custom-bg-200;
   }
   .badge {
-    color: $white;
-    background-color: $dark;
-    border: 1px solid rgba(255, 255, 255,0.5);
+    color: $custom-text;
+    background-color: $custom-bg-200;
+    border: 1px solid $custom-border;
   }
 }
