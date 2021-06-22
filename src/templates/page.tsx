@@ -57,19 +57,19 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
       />
       <DefaultNavbar />
       <div className="bg-shadow">
-        <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-2">
+        <header className="container-lg ps-sm-4 pe-sm-4 pt-3 pb-2">
           <h1>{title}</h1>
           <p>{caption}</p>
           <Link to="/projects">{"< "}Volver a Proyectos</Link>
         </header>
       </div>
-      <div className="container-sm ps-sm-4 pe-sm-4 pt-3">
+      <div className="container-lg ps-sm-4 pe-sm-4 pt-3">
         <GatsbyImage
           image={image.childImageSharp.gatsbyImageData}
           alt={caption}
         />
       </div>
-      <main className="container-sm ps-sm-4 pe-sm-4 pt-3">
+      <main className="container-lg ps-sm-4 pe-sm-4 pt-3">
         <MDXRenderer>{body}</MDXRenderer>
       </main>
       <Footer />

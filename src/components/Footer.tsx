@@ -14,7 +14,7 @@ const issueLink = {
 
 const DefaultFooter = (): JSX.Element => (
   <footer className="navbar">
-    <div className="container-sm ps-sm-4 pe-sm-4" style={{ display: "block" }}>
+    <div className="container-lg ps-sm-4 pe-sm-4" style={{ display: "block" }}>
       <p className="navbar-text m-0">
         © {new Date().getFullYear()}, Angel Hurtado @{" "}
         <CreateLink from="GitHub" extend={repoVer} />. Portafolio profesional
