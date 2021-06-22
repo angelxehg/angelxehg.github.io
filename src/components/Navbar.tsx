@@ -10,7 +10,7 @@ const DefaultNavbar = (): JSX.Element => {
   const { theme, toggle } = useTheme()
   const [collapsed, setCollapsed] = useState(true)
   return (
-    <nav className={`navbar sticky-top navbar-expand-sm navbar-${theme}`}>
+    <nav className={`navbar sticky-top navbar-expand-md navbar-${theme}`}>
       <div className="container-sm ps-sm-4 pe-sm-4">
         <Link to="/" className="navbar-brand">
           Angel Hurtado
@@ -29,10 +29,12 @@ const DefaultNavbar = (): JSX.Element => {
           aria-label="Toggle navigation"
           onClick={() => setCollapsed(!collapsed)}
         >
-          <ListSVG style={{
-            height: '1.8rem',
-            width: '1.8rem'
-          }} />
+          <ListSVG
+            style={{
+              height: "1.8rem",
+              width: "1.8rem",
+            }}
+          />
         </button>
         <div
           className={collapsed ? "collapse navbar-collapse" : "navbar-collapse"}
@@ -53,6 +55,11 @@ const DefaultNavbar = (): JSX.Element => {
             <li className="nav-item">
               <Link to="/#projects" className="nav-link text-reset">
                 Proyectos
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/#posts" className="nav-link text-reset">
+                Blog
               </Link>
             </li>
           </ul>

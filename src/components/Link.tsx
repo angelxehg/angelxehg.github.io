@@ -1,4 +1,5 @@
 import React from "react"
+import { Link as GatsbyLink } from "gatsby"
 
 import Icon, { IconProps } from "./Icon"
 import { getLinkMeta } from "../meta/links"
@@ -30,11 +31,23 @@ const Link = (props: LinkProps & { meta: LinkMeta }) => {
   const { href, name, displayName, icon } = props.meta
   const { noTitle, noIcon, noUnderline, iconProps } = props
   const styles = noUnderline ? { textDecoration: "none" } : undefined
+  const isLocal = href[0] === "/"
   return (
     <>
-      <a href={href} title={displayName || name} rel="external" style={styles}>
-        {(!noTitle && displayName) || name}
-      </a>
+      {isLocal ? (
+        <GatsbyLink to={href} title={displayName || name} style={styles}>
+          {(!noTitle && displayName) || name}
+        </GatsbyLink>
+      ) : (
+        <a
+          href={href}
+          title={displayName || name}
+          rel="external"
+          style={styles}
+        >
+          {(!noTitle && displayName) || name}
+        </a>
+      )}
       {!noIcon && (
         <span className="ms-1">
           <Icon meta={icon} {...iconProps} />

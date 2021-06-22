@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Link } from "gatsby"
 
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
@@ -94,12 +95,13 @@ const PostsPage = (): JSX.Element => {
       <SEO title="Entradas" lang="es" />
       <DefaultNavbar />
       <div className="bg-inter">
-        <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-1">
+        <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-2">
           <h1>Todas mis entradas</h1>
           <p>
             Estas son las entradas que he publicado en{" "}
             <CreateLink from="Dev.to" />
           </p>
+          <Link to="/">{"< "}Volver a Portafolio</Link>
         </header>
       </div>
       <main className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-3">

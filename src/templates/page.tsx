@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 
@@ -60,6 +60,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
         <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-2">
           <h1>{title}</h1>
           <p>{caption}</p>
+          <Link to="/projects">{"< "}Volver a Proyectos</Link>
         </header>
       </div>
       <div className="container-sm ps-sm-4 pe-sm-4 pt-3">
