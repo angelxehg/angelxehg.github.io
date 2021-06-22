@@ -2,6 +2,18 @@ import { LinkMeta } from "../types"
 
 const tools: LinkMeta[] = [
   {
+    name: "Cordova",
+    icon: {
+      svgPath: "seek-logo/cordova.svg",
+      style: {
+        backgroundColor: "white",
+        borderRadius: "15%",
+        padding: "0.05rem"
+      },
+    },
+    href: "https://fontawesome.com/license",
+  },
+  {
     name: "FontAwesome",
     displayName: "Font Awesome",
     icon: {

@@ -60,10 +60,10 @@ const Link = (props: LinkProps & { meta: LinkMeta }) => {
 const extendMeta = (
   base: LinkMeta,
   extend?: { title: string; href: string }
-) => {
+): LinkMeta => {
   if (extend) {
-    const { title: name, href } = extend
-    return { ...base, name, href }
+    const { title, href } = extend
+    return { ...base, displayName: title, href }
   }
   return base
 }

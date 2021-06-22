@@ -35,6 +35,7 @@ const stacks: Stack[] = [
   {
     title: "Otras herramientas",
     tools: [
+      "Cordova",
       "Heroku",
       "Django",
       "Bootstrap",
