@@ -51,7 +51,7 @@ const frameworks: LinkMeta[] = [
     href: "https://ionicframework.com/",
   },
   {
-    name: "ReactJS",
+    name: "React",
     displayName: "React",
     icon: {
       style: {

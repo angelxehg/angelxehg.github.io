@@ -8,7 +8,7 @@ const stacks: Stack[] = [
     title: "Mis herramientas favoritas",
     tools: [
       "Angular",
-      "ReactJS",
+      "React",
       "Ionic",
       "Ubuntu",
       "VSCode",
