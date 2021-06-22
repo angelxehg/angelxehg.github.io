@@ -17,7 +17,6 @@ const ProjectCard = (
   props: ProjectCardProps & { titleAs: "h2" | "h3" }
 ): JSX.Element => {
   const { slug, title, image, caption, stack } = props.item
-  console.log(stack);
   return (
     <article className="card" style={{ height: "100%" }}>
       <GatsbyImage image={image} alt={caption} className="card-img-top" />

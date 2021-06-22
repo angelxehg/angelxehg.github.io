@@ -1,5 +1,13 @@
 import { LinkMeta } from "../types"
 
+export const genericWebLink: LinkMeta = {
+  name: "Web",
+  icon: {
+    svgPath: "bootstrap-icons/globe2.svg",
+  },
+  href: "https://angelxehg.com/",
+}
+
 const generics: LinkMeta[] = [
   {
     name: "Day",
@@ -29,13 +37,7 @@ const generics: LinkMeta[] = [
     },
     href: "https://angelxehg.com/",
   },
-  {
-    name: "Web",
-    icon: {
-      svgPath: "bootstrap-icons/globe2.svg",
-    },
-    href: "https://angelxehg.com/",
-  },
+  genericWebLink,
 ]
 
 export default generics

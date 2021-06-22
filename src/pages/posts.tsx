@@ -14,7 +14,7 @@ interface DevToPost {
   readable_publish_date: string
   canonical_url: string
   social_image: string
-  tags: string[]
+  tags: string
 }
 
 const fetchDevToPosts = async () => {
@@ -33,7 +33,7 @@ interface PostCardProps {
 const PostCard = (
   props: PostCardProps & { titleAs: "h2" | "h3" }
 ): JSX.Element => {
-  const { title, description, canonical_url: href, social_image } = props.item
+  const { title, description, canonical_url: href, social_image, tags } = props.item
   return (
     <article className="card" style={{ height: "100%" }}>
       <img src={social_image} alt={description} className="card-img-top" />
@@ -49,6 +49,16 @@ const PostCard = (
           </h3>
         )}
         <p className="card-text m-0">{description}</p>
+        <p className="card-text m-0">
+          {tags.split(', ').map(tagName => (
+            <span key={tagName} className="badge rounded-pill mt-1 me-1">
+              <CreateLink noUnderline from={tagName} extend={{
+                title: tagName.charAt(0).toUpperCase() + tagName.slice(1),
+                href: `https://dev.to/t/${tagName}`
+              }} />
+            </span>
+          ))}
+        </p>
       </div>
     </article>
   )

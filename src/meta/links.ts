@@ -1,5 +1,5 @@
 import frameworks from "./data/frameworks"
-import generics from "./data/generic"
+import generics, { genericWebLink } from "./data/generic"
 import platforms from "./data/platforms"
 import syntaxs from "./data/syntax"
 import tools from "./data/tools"
@@ -15,9 +15,9 @@ const allLinks = [
 ]
 
 export const getLinkMeta = (linkName: string) => {
-  const link = allLinks.find(i => i.name === linkName)
+  const link = allLinks.find(i => i.name.toLowerCase() === linkName.toLowerCase())
   if (!link) {
-    throw new Error(`Base link '${linkName}' not found`)
+    return genericWebLink;
   }
   return link
 }
