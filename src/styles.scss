@@ -48,17 +48,22 @@ body::-webkit-scrollbar {
 
 body {
   scrollbar-width: thin;
-  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  scrollbar-color: var(--custom-text) var(--custom-bg-100);
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--scrollbarBG);
+  background: var(--custom-bg-100);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--thumbBG) ;
+  background-color: var(--custom-text) ;
   border-radius: 6px;
-  border: 3px solid var(--scrollbarBG);
+  border: 3px solid var(--custom-bg-100);
+}
+
+body {
+  background-color: var(--custom-bg);
+  color: var(--custom-text);
 }
 
 section {
@@ -70,20 +75,34 @@ a {
   color: inherit !important;
 }
 .navbar {
+  background-color: var(--custom-bg-200);
+  .navbar-text {
+    color: var(--custom-text);
+  }
   a {
     color: inherit !important;
   }
 }
 .card {
+  background-color: var(--custom-bg-200);
   a {
     color: inherit !important;
   }
 }
 .badge {
+  color: var(--custom-text);
+  background-color: var(--custom-bg-200);
+  border: 1px solid var(--custom-border);
   a {
     vertical-align: bottom;
     color: inherit !important;
   }
+}
+.bg-shadow {
+  background-color: var(--custom-bg-100);
+}
+svg.fill-me-anyway {
+  fill: var(--custom-text);
 }
 
 // Themes
@@ -101,65 +120,17 @@ svg.btn-orange {
 }
 
 body {
-  $custom-bg: $white; // Full white
-  $custom-bg-100: $gray-200;
-  $custom-bg-200: $light;
-  $custom-text: $black;
-  $custom-border: rgba(0, 0, 0,0.5);
-  --scrollbarBG: #f2f3f4;
-  --thumbBG: #9eeaf9;
-  background-color: $custom-bg;
-  color: $custom-text;
-  .bg-shadow {
-    background-color: $custom-bg-100;
-  }
-  svg.fill-me-anyway {
-    fill: $custom-text;
-  }
-  .navbar {
-    background-color: $custom-bg-200;
-    .navbar-text {
-      color: $custom-text;
-    }
-  }
-  .card {
-    background-color: $custom-bg-200;
-  }
-  .badge {
-    color: $custom-text;
-    background-color: $custom-bg-200;
-    border: 1px solid $custom-border;
-  }
+  --custom-bg: #ffffff; // Full white
+  --custom-bg-100: #e9ecef;
+  --custom-bg-200: #f8f9fa;
+  --custom-text: #000000;
+  --custom-border: rgba(0, 0, 0,0.5);
 }
 
 body.dark {
-  $custom-bg: #000000; // Full black
-  $custom-bg-100: #080808; // Reversed Grey
-  $custom-bg-200: #171717; // Cynical Black
-  $custom-text: $white;
-  $custom-border: rgba(255, 255, 255,0.5);
-  --scrollbarBG: #0e0f10;
-  --thumbBG: #212529;
-  background-color: $custom-bg;
-  color: $custom-text;
-  .bg-shadow {
-    background-color: $custom-bg-100;
-  }
-  svg.fill-me-anyway {
-    fill: $custom-text;
-  }
-  .navbar {
-    background-color: $custom-bg-200;
-    .navbar-text {
-      color: $custom-text;
-    }
-  }
-  .card {
-    background-color: $custom-bg-200;
-  }
-  .badge {
-    color: $custom-text;
-    background-color: $custom-bg-200;
-    border: 1px solid $custom-border;
-  }
+  --custom-bg: #000000; // Full black
+  --custom-bg-100: #080808; // Reversed Grey
+  --custom-bg-200: #171717; // Cynical Black
+  --custom-text: #ffffff;
+  --custom-border: rgba(255, 255, 255,0.5);
 }
