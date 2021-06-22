@@ -11,12 +11,12 @@ const DefaultNavbar = (): JSX.Element => {
   return (
     <nav className={`navbar sticky-top navbar-expand-sm navbar-${theme}`}>
       <div className="container-sm ps-sm-4 pe-sm-4">
-        <Link to="/" className="navbar-brand text-reset">
+        <Link to="/" className="navbar-brand">
           Angel Hurtado
         </Link>
         <button onClick={toggle} style={{border: 'none', background: 'none'}}>
           {theme === 'dark' && <MoonSVG className="btn-indigo" />}
-          {theme === 'light' && <SunSVG className="btn-yellow" />}
+          {theme === 'light' && <SunSVG className="btn-orange" />}
         </button>
         <button
           className="navbar-toggler"

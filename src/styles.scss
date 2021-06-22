@@ -94,8 +94,8 @@ svg.btn-indigo {
   width: 1.3rem;
 }
 
-svg.btn-yellow {
-  color: $yellow;
+svg.btn-orange {
+  color: $orange;
   height: 1.3rem;
   width: 1.3rem;
 }
@@ -103,13 +103,13 @@ svg.btn-yellow {
 body {
   --scrollbarBG: #f2f3f4;
   --thumbBG: #cdd1d4;
-  background-color: #f2f3f4;
+  background-color: $blue-100;
   color: $black;
   .bg-inter {
-    background-color: #eceff4;
+    background-color: $blue-200;
   }
   .navbar {
-    background-color: $light;
+    background-color: $blue-300;
     .navbar-text {
       color: $black;
     }
