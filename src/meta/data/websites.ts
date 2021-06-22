@@ -13,8 +13,10 @@ const websites: LinkMeta[] = [
     name: "LinkedIn",
     icon: {
       color: "#2563AC",
-      extraBc: "white",
-      extraBcRad: "15%",
+      extraStyles: {
+        backgroundColor: "white",
+        borderRadius: "15%",
+      },
       svgPath: "bootstrap-icons/linkedin.svg",
     },
     href: "https://www.linkedin.com/",

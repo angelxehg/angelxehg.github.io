@@ -5,8 +5,10 @@ const tools: LinkMeta[] = [
     name: "Font Awesome",
     icon: {
       svgPath: "seek-logo/font-awesome.svg",
-      extraBc: "white",
-      extraBcRad: "15%",
+      extraStyles: {
+        backgroundColor: "white",
+        borderRadius: "15%"
+      },
     },
     href: "https://fontawesome.com/license",
   },
@@ -30,8 +32,10 @@ const tools: LinkMeta[] = [
     name: "NPM",
     icon: {
       color: "#C53635",
-      extraBc: "white",
-      extraBcRad: "50%",
+      extraStyles: {
+        backgroundColor: "white",
+        borderRadius: "50%"
+      },
       svgPath: "fontawesome/npm-brands.svg",
     },
     href: "https://www.npmjs.com/",
@@ -40,8 +44,10 @@ const tools: LinkMeta[] = [
     name: "Ubuntu",
     icon: {
       color: "#D74614",
-      extraBc: "white",
-      extraBcRad: "50%",
+      extraStyles: {
+        backgroundColor: "white",
+        borderRadius: "50%"
+      },
       svgPath: "fontawesome/ubuntu-brands.svg",
     },
     href: "https://ubuntu.com/",

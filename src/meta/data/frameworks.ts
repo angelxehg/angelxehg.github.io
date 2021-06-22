@@ -28,8 +28,10 @@ const frameworks: LinkMeta[] = [
     name: "Gatsby",
     icon: {
       color: "#E94E31",
-      extraBc: "white",
-      extraBcRad: "50%",
+      extraStyles: {
+        backgroundColor: "white",
+        borderRadius: "50%"
+      },
       svgPath: "seek-logo/gatsby.svg",
     },
     href: "https://www.gatsbyjs.com/",
@@ -47,6 +49,11 @@ const frameworks: LinkMeta[] = [
     name: "ReactJS",
     icon: {
       color: "#79D8F7",
+      extraStyles: {
+        backgroundColor: "#20232a",
+        borderRadius: "50%",
+        padding: "0.05rem"
+      },
       svgPath: "fontawesome/react-brands.svg",
     },
     href: "https://es.reactjs.org/",
@@ -55,6 +62,11 @@ const frameworks: LinkMeta[] = [
     name: "React Native",
     icon: {
       color: "#79D8F7",
+      extraStyles: {
+        backgroundColor: "#20232a",
+        borderRadius: "50%",
+        padding: "0.05rem"
+      },
       svgPath: "fontawesome/react-brands.svg",
     },
     href: "https://reactnative.dev/",

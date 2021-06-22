@@ -1,8 +1,9 @@
+import React from "react";
+
 export interface IconMeta {
   color?: string
   fill?: boolean
-  extraBc?: string
-  extraBcRad?: string
+  extraStyles?: React.CSSProperties
   svgPath: string
 }
 

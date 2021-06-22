@@ -65,8 +65,10 @@ const platforms: LinkMeta[] = [
     name: "Heroku",
     icon: {
       svgPath: "iconify/heroku.svg",
-      extraBc: "white",
-      extraBcRad: "15%",
+      extraStyles: {
+        backgroundColor: "white",
+        borderRadius: "15%"
+      },
     },
     href: "https://dashboard.heroku.com/",
   },

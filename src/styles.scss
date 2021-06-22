@@ -108,6 +108,9 @@ body {
   .bg-inter {
     background-color: $cyan-100;
   }
+  svg.fill-me-anyway {
+    fill: $black;
+  }
   .navbar {
     background-color: $cyan-200;
     .navbar-text {
@@ -131,6 +134,9 @@ body.dark {
   color: $white;
   .bg-inter {
     background-color: #14171b;
+  }
+  svg.fill-me-anyway {
+    fill: $white;
   }
   .navbar {
     background-color: $dark;
