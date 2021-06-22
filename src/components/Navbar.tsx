@@ -53,12 +53,12 @@ const DefaultNavbar = (): JSX.Element => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/#projects" className="nav-link text-reset">
+              <Link to="/projects" className="nav-link text-reset">
                 Proyectos
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/#posts" className="nav-link text-reset">
+              <Link to="/posts" className="nav-link text-reset">
                 Blog
               </Link>
             </li>

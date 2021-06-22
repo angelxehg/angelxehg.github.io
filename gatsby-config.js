@@ -40,7 +40,7 @@ module.exports = {
               {
                 userAgent: "*",
                 allow: "/",
-                disallow: ["/posts", "/404", "/about"],
+                disallow: ["/404", "/about", "/skills"],
               },
             ],
             sitemap: "https://angelxehg.com/sitemap.xml",
