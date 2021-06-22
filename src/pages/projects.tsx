@@ -7,6 +7,7 @@ import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
 import { usePages, Page } from "../hooks/use-pages"
 import DefaultNavbar from "../components/Navbar"
+import { CreateLink } from "../components/Link"
 
 interface ProjectCardProps {
   item: Page
@@ -15,7 +16,8 @@ interface ProjectCardProps {
 const ProjectCard = (
   props: ProjectCardProps & { titleAs: "h2" | "h3" }
 ): JSX.Element => {
-  const { slug, title, image, caption } = props.item
+  const { slug, title, image, caption, stack } = props.item
+  console.log(stack);
   return (
     <article className="card" style={{ height: "100%" }}>
       <GatsbyImage image={image} alt={caption} className="card-img-top" />
@@ -31,6 +33,13 @@ const ProjectCard = (
           </h3>
         )}
         <p className="card-text m-0">{caption}</p>
+        <p className="card-text m-0">
+          {stack.map(toolName => (
+            <span key={toolName} className="badge rounded-pill mt-1 me-1">
+              <CreateLink noUnderline from={toolName} />
+            </span>
+          ))}
+        </p>
       </div>
     </article>
   )
