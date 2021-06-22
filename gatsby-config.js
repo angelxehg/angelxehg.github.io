@@ -13,7 +13,7 @@ const {
 module.exports = {
   siteMetadata: {
     title: `Angel Hurtado`,
-    description: `Hola mundo! Soy un front-end web developer, trabajo principalmente con Angular, y TypeScript. Ingeriero en TIC`,
+    description: `Hola mundo! Soy un front-end web developer, trabajo principalmente con Angular, React y TypeScript. Ingeniero en TIC`,
     author: `@angelxehg`,
     siteUrl: NETLIFY_DEPLOY_URL,
   },
@@ -68,8 +68,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#3d8bfd`,
-        theme_color: `#3d8bfd`,
+        background_color: `#cff4fc`,
+        theme_color: `#cff4fc`,
         display: `minimal-ui`,
         icon: `static/images/Avataaars.Opt.Sqr.png`, // This path is relative to the root of the site.
       },
