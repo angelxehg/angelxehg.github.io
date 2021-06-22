@@ -15,7 +15,7 @@ interface ProjectCardProps {
 const ProjectCard = (
   props: ProjectCardProps & { titleAs: "h2" | "h3" }
 ): JSX.Element => {
-  const { slug, title, resume, image, caption } = props.item
+  const { slug, title, image, caption } = props.item
   return (
     <article className="card" style={{ height: "100%" }}>
       <GatsbyImage image={image} alt={caption} className="card-img-top" />
@@ -30,7 +30,7 @@ const ProjectCard = (
             <Link to={`/${slug}`}>{title}</Link>
           </h3>
         )}
-        <p className="card-text m-0">{resume}</p>
+        <p className="card-text m-0">{caption}</p>
       </div>
     </article>
   )

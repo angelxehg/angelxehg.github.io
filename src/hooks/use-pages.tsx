@@ -7,7 +7,6 @@ export interface RAWPage {
   excerpt: string
   frontmatter: {
     title: string
-    resume: string
     date: string
     image: { childImageSharp: { gatsbyImageData: IGatsbyImageData } }
     caption: string
@@ -20,7 +19,6 @@ export interface Page {
   slug: string
   date: string
   title: string
-  resume: string
   excerpt: string
   image: IGatsbyImageData
   caption: string
@@ -33,7 +31,6 @@ export const toPage = (item: RAWPage): Page => {
     slug: item.slug,
     date: item.frontmatter.date,
     title: item.frontmatter.title,
-    resume: item.frontmatter.resume,
     excerpt: item.excerpt,
     image: item.frontmatter.image.childImageSharp.gatsbyImageData,
     caption: item.frontmatter.caption,
@@ -54,14 +51,13 @@ export const sortByDate = (a: Page, b: Page) => {
 export const usePages = (): Page[] => {
   const { allMdx } = useStaticQuery(graphql`
     query AllProjects {
-      allMdx(filter: { frontmatter: { type: { eq: "project" } } }) {
+      allMdx {
         nodes {
           id
           slug
           excerpt(pruneLength: 35)
           frontmatter {
             title
-            resume
             date(formatString: "YYYY-MM-DD")
             image {
               childImageSharp {
