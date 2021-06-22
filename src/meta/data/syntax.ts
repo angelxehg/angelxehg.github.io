@@ -13,6 +13,8 @@ const syntaxs: LinkMeta[] = [
     name: "JavaScript",
     icon: {
       color: "#F7DB00",
+      extraBc: "black",
+      extraBcRad: "15%",
       svgPath: "fontawesome/js-square-brands.svg",
     },
     href: "https://developer.mozilla.org/es/docs/Web/JavaScript",

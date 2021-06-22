@@ -9,13 +9,13 @@ export interface IconProps {
 
 const useIconStyle = (
   props: IconProps & { meta: IconMeta },
-  defaultColor: string
+  defaultColor?: string
 ) => {
   const { size } = props
   return {
     width: size || "0.9rem",
     height: size || "0.9rem",
-    color: defaultColor || "white",
+    color: defaultColor,
     backgroundColor: props.meta.extraBc,
     borderRadius: props.meta.extraBcRad,
   }
@@ -23,11 +23,10 @@ const useIconStyle = (
 
 const Icon = (props: IconProps & { meta: IconMeta }) => {
   const { theme } = useTheme()
-  const defaultColor = theme === "dark" ? "white" : "black"
-  const { svgPath, color: metaColor, fill: metaFill } = props.meta
+  const { svgPath, color, fill: metaFill } = props.meta
   const IconSVG = require("../assets/" + svgPath)
-  const color = metaColor ? metaColor : defaultColor
-  const fill = metaFill ? color : undefined
+  const defaultFill = theme === "dark" ? "white" : "black"
+  const fill = metaFill ? (color ? color : defaultFill) : undefined
   return <IconSVG fill={fill} style={useIconStyle(props, color)} />
 }
 
