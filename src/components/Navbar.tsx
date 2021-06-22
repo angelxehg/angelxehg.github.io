@@ -10,7 +10,7 @@ const DefaultNavbar = (): JSX.Element => {
   const { theme, toggle } = useTheme()
   const [collapsed, setCollapsed] = useState(true)
   return (
-    <nav className={`navbar sticky-top navbar-expand-md navbar-${theme}`}>
+    <nav className={`navbar sticky-top navbar-expand-md navbar-dark`}>
       <div className="container-lg ps-sm-4 pe-sm-4">
         <Link to="/" className="navbar-brand">
           Angel Hurtado

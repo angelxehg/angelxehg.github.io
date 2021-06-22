@@ -58,7 +58,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
         image={image.childImageSharp.gatsbyImageData.images.fallback?.src || ""}
       />
       <DefaultNavbar />
-      <div className="bg-shadow">
+      <div className="hero">
         <header className="container-lg ps-sm-4 pe-sm-4 pt-3 pb-2">
           <h1>{title}</h1>
           <p className="m-0">{caption}</p>

@@ -67,7 +67,7 @@ const ProjectsPage = (): JSX.Element => {
     <Layout>
       <SEO title="Proyectos" lang="es" />
       <DefaultNavbar />
-      <div className="bg-shadow">
+      <div className="hero">
         <header className="container-lg ps-sm-4 pe-sm-4 pt-3 pb-2">
           <h1>Todos mis proyectos</h1>
           <p>Estos son todos mis proyectos públicos</p>

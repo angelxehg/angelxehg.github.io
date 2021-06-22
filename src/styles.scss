@@ -48,22 +48,22 @@ body::-webkit-scrollbar {
 
 body {
   scrollbar-width: thin;
-  scrollbar-color: var(--custom-text) var(--custom-bg-100);
+  scrollbar-color: var(--bg-navbar) var(--bg);
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--custom-bg-100);
+  background: var(--bg);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--custom-text) ;
+  background-color: var(--bg-navbar) ;
   border-radius: 6px;
-  border: 3px solid var(--custom-bg-100);
+  border: 3px solid var(--bg);
 }
 
 body {
-  background-color: var(--custom-bg);
-  color: var(--custom-text);
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 section {
@@ -75,34 +75,36 @@ a {
   color: inherit !important;
 }
 .navbar {
-  background-color: var(--custom-bg-200);
+  background-color: var(--bg-hero);
   .navbar-text {
-    color: var(--custom-text);
+    color: var(--text);
   }
   a {
     color: inherit !important;
   }
 }
+.navbar-dark {
+  background-color: var(--bg-navbar);
+}
 .card {
-  background-color: var(--custom-bg-200);
+  background-color: var(--bg-card);
   a {
     color: inherit !important;
   }
 }
 .badge {
-  color: var(--custom-text);
-  background-color: var(--custom-bg-200);
-  border: 1px solid var(--custom-border);
+  color: var(--text);
+  border: 1px solid var(--border);
   a {
     vertical-align: bottom;
     color: inherit !important;
   }
 }
-.bg-shadow {
-  background-color: var(--custom-bg-100);
+.hero {
+  background-color: var(--bg-hero);
 }
 svg.fill-me-anyway {
-  fill: var(--custom-text);
+  fill: var(--text);
 }
 
 // Themes
@@ -120,17 +122,19 @@ svg.btn-orange {
 }
 
 body {
-  --custom-bg: #ffffff; // Full white
-  --custom-bg-100: #e9ecef;
-  --custom-bg-200: #f8f9fa;
-  --custom-text: #000000;
-  --custom-border: rgba(0, 0, 0,0.5);
+  --bg: #ffffff;
+  --bg-hero: #a8c2fb;
+  --bg-card: #d0dfff;
+  --bg-navbar: #86abf9;
+  --text: #000000;
+  --border: rgba(0, 0, 0,0.5);
 }
 
 body.dark {
-  --custom-bg: #000000; // Full black
-  --custom-bg-100: #080808; // Reversed Grey
-  --custom-bg-200: #171717; // Cynical Black
-  --custom-text: #ffffff;
-  --custom-border: rgba(255, 255, 255,0.5);
+  --bg: #000000;
+  --bg-hero: #181818;
+  --bg-card: #101010;
+  --bg-navbar: #2a2a2a;
+  --text: #ffffff;
+  --border: rgba(255, 255, 255,0.5);
 }

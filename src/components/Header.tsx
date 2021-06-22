@@ -71,7 +71,7 @@ const SocialLinks = () => (
 )
 
 export const HugeHeader = (): JSX.Element => (
-  <div className="bg-shadow">
+  <div className="hero">
     <div className="container-lg ps-sm-4 pe-sm-4 huge-header pt-3 pb-2">
       <img
         src="/images/Profile.500.Sqr.jpg"
