@@ -108,7 +108,16 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    `gatsby-plugin-purgecss`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        develop: true,
+        printRejected: true,
+        purgeCSSOptions: {
+          safelist: ['navbar-dark', 'navbar-light'], // Don't remove this selector
+        },
+      },
+    },
     `gatsby-plugin-dark-mode`,
   ],
 }

@@ -2,6 +2,20 @@ import { LinkMeta } from "../types"
 
 const generics: LinkMeta[] = [
   {
+    name: "Day",
+    icon: {
+      svgPath: "bootstrap-icons/sun.svg"
+    },
+    href: "https://angelxehg.com/",
+  },
+  {
+    name: "Night",
+    icon: {
+      svgPath: "bootstrap-icons/moon.svg"
+    },
+    href: "https://angelxehg.com/",
+  },
+  {
     name: "File",
     icon: {
       svgPath: "bootstrap-icons/file-earmark-text-fill.svg",

@@ -88,6 +88,18 @@ a {
 
 // Themes
 
+svg.btn-indigo {
+  color: $indigo;
+  height: 1.3rem;
+  width: 1.3rem;
+}
+
+svg.btn-yellow {
+  color: $yellow;
+  height: 1.3rem;
+  width: 1.3rem;
+}
+
 body {
   --scrollbarBG: #f2f3f4;
   --thumbBG: #cdd1d4;
