@@ -24,7 +24,7 @@ El propósito principal de este proyecto fue aplicar este concepto con una PWA, 
 
 ## Validando JWT de terceros
 
-En muchos proyectos de la Universidad habia utilizado autenticación con JWT, sim embargo nunca me detuve a pensar que era exactamente JWT. Y me sorprendí al descubrir que un Token JWT funciona de manera similar a una clave SSH: Un JWT puede ser leido por cualquier aplicación, y así leer la información o *payload* que este contiene (regularmente algunos datos básicos del usuario, y un tiempo de expiración). Pero lo interesante es que contiene una firma pública, mediante la cual se puede validar la autenticidad del Token. Esto solo se puede hacer conociendo la clave con la que se firmó.
+En muchos proyectos de la Universidad había utilizado autenticación con JWT, sim embargo nunca me detuve a pensar que era exactamente JWT. Y me sorprendí al descubrir que un Token JWT funciona de manera similar a una clave SSH: Un JWT puede ser leído por cualquier aplicación, y así leer la información o *payload* que este contiene (regularmente algunos datos básicos del usuario, y un tiempo de expiración). Pero lo interesante es que contiene una firma pública, mediante la cual se puede validar la autenticidad del Token. Esto solo se puede hacer conociendo la clave con la que se firmó.
 
 Sim embargo para validar un token de Firebase se requieren algunos pasos adicionales, como generar una clave privada, instalar algunas librerías en el proyecto de Django, y utilizar la clave privada de manera segura. En este <CreateLink from="Dev.to" extend={{
   title: "artículo de dev.to",

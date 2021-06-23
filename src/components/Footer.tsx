@@ -19,7 +19,7 @@ const DefaultFooter = (): JSX.Element => (
         © {new Date().getFullYear()}, Angel Hurtado @{" "}
         <CreateLink from="GitHub" extend={repoVer} />. Portafolio profesional
         creado con <CreateLink from="GatsbyJS" /> y{" "}
-        <CreateLink from="Bootstrap" />. Reporta problemas o envia tus
+        <CreateLink from="Bootstrap" />. Reporta problemas o envía tus
         sugerencias a la página <CreateLink from="GitHub" extend={issueLink} />
       </p>
       <p className="navbar-text m-0">

@@ -13,7 +13,7 @@ const {
 module.exports = {
   siteMetadata: {
     title: `Angel Hurtado`,
-    description: `Hola mundo! Soy un front-end web developer, trabajo principalmente con Angular, React y TypeScript. Ingeniero en TIC`,
+    description: `¡Hola mundo! Soy un Web Developer, y trabajo principalmente con Angular, React y TypeScript. Ingeniero en TIC`,
     author: `@angelxehg`,
     siteUrl: NETLIFY_DEPLOY_URL,
   },

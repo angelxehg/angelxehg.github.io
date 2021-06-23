@@ -26,7 +26,7 @@ export const AboutSection = () => (
             </p>
             <p className="card-text m-0 mt-2">
               Fue en la Universidad donde comencé a aprender y trabajar con
-              tecnologías web, donde aprendí HTML, Python y JavaScript. Tambien
+              tecnologías web, donde aprendí HTML, Python y JavaScript. También
               durante este tiempo aprendí por mi cuenta Angular, React y
               Firebase, y descubrí que lo mio es el desarrollo front-end.
             </p>
@@ -41,7 +41,7 @@ export const AboutSection = () => (
                 }}
               />{" "}
               . Ahora acabo de terminar mi carrera en la <UTZACLink />, pero
-              continuo aprendiendo <a href="#skills">nuevas herramientas</a> y
+              continúo aprendiendo <a href="#skills">nuevas herramientas</a> y
               creando <a href="#projects">proyectos</a>.
             </p>
           </div>

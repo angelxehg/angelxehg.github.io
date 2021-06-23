@@ -82,6 +82,9 @@ a {
   a {
     color: inherit !important;
   }
+  .navbar-toggler {
+    color: var(--text);
+  }
 }
 footer.navbar {
   background-color: var(--bg-hero);
