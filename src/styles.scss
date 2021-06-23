@@ -83,6 +83,9 @@ a {
     color: inherit !important;
   }
 }
+.navbar-light {
+  background-color: var(--bg-navbar);
+}
 .navbar-dark {
   background-color: var(--bg-navbar);
 }
@@ -122,10 +125,10 @@ svg.btn-orange {
 }
 
 body {
-  --bg: #ffffff;
-  --bg-hero: #a8c2fb;
-  --bg-card: #d0dfff;
-  --bg-navbar: #86abf9;
+  --bg: #f6f6f6;
+  --bg-hero: #e0e0e0;
+  --bg-card: #ffffff;
+  --bg-navbar: #ffffff;
   --text: #000000;
   --border: rgba(0, 0, 0,0.5);
 }
