@@ -78,7 +78,7 @@ export const PostsSection = () => {
     fetchDevToPosts().then(posts => setPosts(posts.slice(0, 4)))
   }, [])
   return (
-    <section id="posts">
+    <section id="posts" className="mt-3">
       <h2>
         Últimas{" "}
         <CreateLink

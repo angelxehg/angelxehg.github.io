@@ -6,7 +6,7 @@ import { CreateIcon, CreateLink } from "./Link"
 
 const email = {
   from: "Email",
-  title: "Enviame un Email",
+  title: "sudo@angelxehg.com",
   href: "mailto:sudo@angelxehg.com",
 }
 
