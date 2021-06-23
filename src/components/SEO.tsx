@@ -80,7 +80,7 @@ const SEO = (props: SEOProps) => {
         },
       ].concat(meta)}
     >
-      <body className={theme}></body>
+      <body className={`${theme}`}></body>
     </Helmet>
   )
 }
