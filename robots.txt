@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /posts
 Disallow: /404
 Disallow: /about
+Disallow: /skills
 Sitemap: https://angelxehg.com/sitemap.xml
 Host: https://angelxehg.com
