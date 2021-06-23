@@ -10,7 +10,7 @@ const UTZACLink = () => (
 )
 
 export const AboutSection = () => (
-  <section id="about" className="mt-3">
+  <section id="about">
     <h2>Acerca de mi:</h2>
     <div className="row">
       <div className="col-12 p-sm-1 pb-3">

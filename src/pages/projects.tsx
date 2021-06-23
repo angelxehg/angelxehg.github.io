@@ -45,7 +45,7 @@ const ProjectCard = (
 export const ProjectsSection = () => {
   const projects = usePages().slice(0, 2)
   return (
-    <section id="projects" className="mt-3">
+    <section id="projects">
       <h2>
         Últimos <Link to="/projects">proyectos</Link>:
       </h2>

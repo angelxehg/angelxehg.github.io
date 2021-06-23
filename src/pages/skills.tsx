@@ -18,7 +18,7 @@ const SkillCard = (props: { title: string; tools: string[] }) => (
 )
 
 export const SkillsSection = () => (
-  <section id="skills" className="mt-3">
+  <section id="skills">
     <h2>Habilidades</h2>
     <div className="row">
       {stacks.map(({ title, tools }, n) => (
