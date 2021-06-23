@@ -31,10 +31,16 @@ export const AboutSection = () => (
               Firebase, y descubrí que lo mio es el desarrollo front-end.
             </p>
             <p className="card-text m-0 mt-2">
-              Durante el último año he estado realizando trabajos como <CreateLink from="Web" noIcon extend={{
-                title: 'freelancer en Fiverr',
-                href: 'https://www.fiverr.com/angelxehg'
-              }}/> . Ahora acabo de terminar mi carrera en la <UTZACLink />, pero
+              Durante el último año he estado realizando trabajos como{" "}
+              <CreateLink
+                from="Web"
+                noIcon
+                extend={{
+                  title: "freelancer en Fiverr",
+                  href: "https://www.fiverr.com/angelxehg",
+                }}
+              />{" "}
+              . Ahora acabo de terminar mi carrera en la <UTZACLink />, pero
               continuo aprendiendo <a href="#skills">nuevas herramientas</a> y
               creando <a href="#projects">proyectos</a>.
             </p>

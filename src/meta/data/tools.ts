@@ -8,7 +8,7 @@ const tools: LinkMeta[] = [
       style: {
         backgroundColor: "white",
         borderRadius: "15%",
-        padding: "0.05rem"
+        padding: "0.05rem",
       },
     },
     href: "https://fontawesome.com/license",

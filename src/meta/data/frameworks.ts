@@ -47,7 +47,7 @@ const frameworks: LinkMeta[] = [
         fill: "#4886F1",
         backgroundColor: "#e6f0ff",
         borderRadius: "50%",
-        padding: "0.05rem"
+        padding: "0.05rem",
       },
       svgPath: "ionicons/ionic.svg",
     },
