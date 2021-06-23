@@ -113,14 +113,16 @@ const PostsPage = (): JSX.Element => {
       <SEO title="Entradas" lang="es" />
       <DefaultNavbar />
       <div className="hero">
-        <header className="container-lg ps-sm-4 pe-sm-4 pt-3 pb-2">
-          <h1>Todas mis entradas</h1>
-          <p>
-            Estas son las entradas que he publicado en{" "}
-            <CreateLink from="Dev.to" />
-          </p>
+        <div className="container-lg ps-sm-4 pe-sm-4 pt-3 pb-2">
           <Link to="/">{"< "}Volver a Portafolio</Link>
-        </header>
+          <header className="mt-1">
+            <h1>Todas mis entradas</h1>
+            <p className="m-0">
+              Estas son las entradas que he publicado en{" "}
+              <CreateLink from="Dev.to" />
+            </p>
+          </header>
+        </div>
       </div>
       <main className="container-lg ps-sm-4 pe-sm-4 pt-3 pb-3">
         <div className="row">
