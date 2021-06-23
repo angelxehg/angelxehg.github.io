@@ -7,25 +7,25 @@ export interface IconProps {
 }
 
 const useIconStyle = (
-  props: IconProps & { meta: IconMeta },
-  defaultColor: string
-) => {
+  props: IconProps & { meta: IconMeta }
+): React.CSSProperties => {
   const { size } = props
   return {
+    ...props.meta.style,
     width: size || "0.9rem",
     height: size || "0.9rem",
-    color: defaultColor || "white",
-    backgroundColor: props.meta.extraBc,
-    borderRadius: props.meta.extraBcRad,
   }
 }
 
 const Icon = (props: IconProps & { meta: IconMeta }) => {
-  const { svgPath, color: metaColor, fill: metaFill } = props.meta
+  const { svgPath, fill: metaFill } = props.meta
   const IconSVG = require("../assets/" + svgPath)
-  const color = metaColor ? metaColor : "white"
-  const fill = metaFill ? color : undefined
-  return <IconSVG fill={fill} style={useIconStyle(props, color)} />
+  return (
+    <IconSVG
+      className={`${metaFill ? "fill-me-anyway" : ""}`}
+      style={useIconStyle(props)}
+    />
+  )
 }
 
 export default Icon

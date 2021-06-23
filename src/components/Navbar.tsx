@@ -1,18 +1,28 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import { useTheme } from "./Theme"
+
+const SunSVG = require("../assets/bootstrap-icons/sun.svg")
+const MoonSVG = require("../assets/bootstrap-icons/moon.svg")
+const ListSVG = require("../assets/bootstrap-icons/list.svg")
 
 const DefaultNavbar = (): JSX.Element => {
+  const { theme, toggle } = useTheme()
   const [collapsed, setCollapsed] = useState(true)
   return (
-    <nav className="navbar sticky-top navbar-expand-sm navbar-dark bg-dark">
-      <div className="container-sm ps-sm-4 pe-sm-4">
-        <Link
-          to="/"
-          className="navbar-brand"
-          style={{ textDecoration: "underline" }}
-        >
+    <nav className={`navbar sticky-top navbar-expand-md`}>
+      <div className="container-lg ps-sm-4 pe-sm-4">
+        <Link to="/" className="navbar-brand">
           Angel Hurtado
         </Link>
+        <button
+          aria-label="Toggle Theme"
+          onClick={toggle}
+          style={{ border: "none", background: "none" }}
+        >
+          {theme === "dark" && <MoonSVG className="btn-indigo" />}
+          {theme === "light" && <SunSVG className="btn-orange" />}
+        </button>
         <button
           className="navbar-toggler"
           type="button"
@@ -23,7 +33,12 @@ const DefaultNavbar = (): JSX.Element => {
           aria-label="Toggle navigation"
           onClick={() => setCollapsed(!collapsed)}
         >
-          {collapsed ? "Ir a" : "Cerrar"}
+          <ListSVG
+            style={{
+              height: "1.8rem",
+              width: "1.8rem",
+            }}
+          />
         </button>
         <div
           className={collapsed ? "collapse navbar-collapse" : "navbar-collapse"}
@@ -32,38 +47,22 @@ const DefaultNavbar = (): JSX.Element => {
           <ul className="navbar-nav me-auto"></ul>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link
-                to="/#about"
-                className="nav-link"
-                style={{ textDecoration: "underline" }}
-              >
+              <Link to="/#about" className="nav-link text-reset">
                 Acerca de
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                to="/#skills"
-                className="nav-link"
-                style={{ textDecoration: "underline" }}
-              >
+              <Link to="/#skills" className="nav-link text-reset">
                 Habilidades
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                to="/#projects"
-                className="nav-link"
-                style={{ textDecoration: "underline" }}
-              >
+              <Link to="/projects" className="nav-link text-reset">
                 Proyectos
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                to="/#posts"
-                className="nav-link"
-                style={{ textDecoration: "underline" }}
-              >
+              <Link to="/posts" className="nav-link text-reset">
                 Blog
               </Link>
             </li>

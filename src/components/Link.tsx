@@ -1,21 +1,17 @@
 import React from "react"
+import { Link as GatsbyLink } from "gatsby"
 
 import Icon, { IconProps } from "./Icon"
 import { getLinkMeta } from "../meta/links"
 import { LinkMeta } from "../meta/types"
 
-const ClickableIcon = (props: {
-  className?: string
-  meta: LinkMeta
-  iconProps: IconProps
-}) => {
-  const classes = props.className ? props.className.split(" ") : []
-  const { href: href, name: name, icon: icon } = props.meta
+const ClickableIcon = (props: { meta: LinkMeta; iconProps: IconProps }) => {
+  const { href, name, displayName, icon } = props.meta
   return (
     <a
       href={href}
-      title={name}
-      className={"me-2 " + classes.join(" ")}
+      title={displayName || name}
+      className="me-2"
       rel="external"
       style={{ textDecoration: "none" }}
     >
@@ -29,29 +25,29 @@ interface LinkProps {
   noIcon?: boolean
   noUnderline?: boolean
   iconProps?: IconProps
-  reset?: boolean
-  className?: string
 }
 
 const Link = (props: LinkProps & { meta: LinkMeta }) => {
-  const classes = props.className ? props.className.split(" ") : []
-  const { href: href, name, icon: icon } = props.meta
-  const { reset, noTitle, noIcon, noUnderline, iconProps } = props
-  if (reset) {
-    classes.push("text-reset")
-  }
+  const { href, name, displayName, icon } = props.meta
+  const { noTitle, noIcon, noUnderline, iconProps } = props
   const styles = noUnderline ? { textDecoration: "none" } : undefined
+  const isLocal = href[0] === "/"
   return (
     <>
-      <a
-        href={href}
-        title={name}
-        className={classes.join(" ")}
-        rel="external"
-        style={styles}
-      >
-        {!noTitle && name}
-      </a>
+      {isLocal ? (
+        <GatsbyLink to={href} title={displayName || name} style={styles}>
+          {(!noTitle && displayName) || name}
+        </GatsbyLink>
+      ) : (
+        <a
+          href={href}
+          title={displayName || name}
+          rel="external"
+          style={styles}
+        >
+          {(!noTitle && displayName) || name}
+        </a>
+      )}
       {!noIcon && (
         <span className="ms-1">
           <Icon meta={icon} {...iconProps} />
@@ -64,10 +60,10 @@ const Link = (props: LinkProps & { meta: LinkMeta }) => {
 const extendMeta = (
   base: LinkMeta,
   extend?: { title: string; href: string }
-) => {
+): LinkMeta => {
   if (extend) {
-    const { title: name, href } = extend
-    return { ...base, name, href }
+    const { title, href } = extend
+    return { ...base, displayName: title, href }
   }
   return base
 }
@@ -91,4 +87,14 @@ export const CreateLink = (
   const baseMeta = getLinkMeta(from)
   const newMeta = extendMeta(baseMeta, extend)
   return <Link {...props} meta={newMeta} />
+}
+
+export const CreateBadge = (
+  props: LinkProps & { from: string; extend?: { title: string; href: string } }
+) => {
+  return (
+    <span className="badge rounded-pill mt-1 me-1">
+      <CreateLink noUnderline {...props} />
+    </span>
+  )
 }

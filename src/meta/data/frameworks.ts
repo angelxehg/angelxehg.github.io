@@ -4,7 +4,7 @@ const frameworks: LinkMeta[] = [
   {
     name: "Angular",
     icon: {
-      color: "#D6002F",
+      style: { color: "#D6002F" },
       svgPath: "seek-logo/angular.svg",
     },
     href: "https://angular.io/",
@@ -12,8 +12,10 @@ const frameworks: LinkMeta[] = [
   {
     name: "Bootstrap",
     icon: {
-      color: "#533B78",
       svgPath: "seek-logo/bootstrap.svg",
+      style: {
+        color: "#533B78",
+      },
     },
     href: "https://getbootstrap.com/docs/",
   },
@@ -25,36 +27,56 @@ const frameworks: LinkMeta[] = [
     href: "https://www.djangoproject.com/",
   },
   {
-    name: "Gatsby",
+    name: "GatsbyJS",
+    displayName: "Gatsby",
     icon: {
-      color: "#E94E31",
-      extraBc: "white",
-      extraBcRad: "50%",
+      style: {
+        color: "#E94E31",
+        backgroundColor: "white",
+        borderRadius: "50%",
+      },
       svgPath: "seek-logo/gatsby.svg",
     },
     href: "https://www.gatsbyjs.com/",
   },
   {
     name: "Ionic",
+    displayName: "Ionic Framework",
     icon: {
-      color: "#4886F1",
+      style: {
+        fill: "#4886F1",
+        backgroundColor: "#e6f0ff",
+        borderRadius: "50%",
+        padding: "0.05rem",
+      },
       svgPath: "ionicons/ionic.svg",
-      fill: true,
     },
     href: "https://ionicframework.com/",
   },
   {
-    name: "ReactJS",
+    name: "React",
+    displayName: "React",
     icon: {
-      color: "#79D8F7",
+      style: {
+        color: "#79D8F7",
+        backgroundColor: "#20232a",
+        borderRadius: "50%",
+        padding: "0.05rem",
+      },
       svgPath: "fontawesome/react-brands.svg",
     },
     href: "https://es.reactjs.org/",
   },
   {
-    name: "React Native",
+    name: "ReactNative",
+    displayName: "React Native",
     icon: {
-      color: "#79D8F7",
+      style: {
+        color: "#79D8F7",
+        backgroundColor: "#20232a",
+        borderRadius: "50%",
+        padding: "0.05rem",
+      },
       svgPath: "fontawesome/react-brands.svg",
     },
     href: "https://reactnative.dev/",

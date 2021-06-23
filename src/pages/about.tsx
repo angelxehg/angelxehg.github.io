@@ -1,4 +1,5 @@
 import React from "react"
+import { CreateLink } from "../components/Link"
 
 import Redirect from "../components/Redirect"
 
@@ -12,8 +13,8 @@ export const AboutSection = () => (
   <section id="about">
     <h2>Acerca de mi:</h2>
     <div className="row">
-      <div className="col-12 p-sm-1 pb-2">
-        <div className="card bg-dark text-light">
+      <div className="col-12 p-sm-1 pb-3">
+        <div className="card">
           <div className="card-body">
             <h3 className="card-title h5">Trayectoria</h3>
             <p className="card-text m-0">
@@ -25,20 +26,29 @@ export const AboutSection = () => (
             </p>
             <p className="card-text m-0 mt-2">
               Fue en la Universidad donde comencé a aprender y trabajar con
-              tecnologías web, donde aprendí HTML, Python y JavaScript. Tambien
+              tecnologías web, donde aprendí HTML, Python y JavaScript. También
               durante este tiempo aprendí por mi cuenta Angular, React y
               Firebase, y descubrí que lo mio es el desarrollo front-end.
             </p>
             <p className="card-text m-0 mt-2">
-              Ahora acabo de terminar mi carrera en la <UTZACLink />, pero
-              continuo aprendiendo <a href="#skill">nuevas herramientas</a> y
+              Durante el último año he estado realizando trabajos como{" "}
+              <CreateLink
+                from="Web"
+                noIcon
+                extend={{
+                  title: "freelancer en Fiverr",
+                  href: "https://www.fiverr.com/angelxehg",
+                }}
+              />{" "}
+              . Ahora acabo de terminar mi carrera en la <UTZACLink />, pero
+              continúo aprendiendo <a href="#skills">nuevas herramientas</a> y
               creando <a href="#projects">proyectos</a>.
             </p>
           </div>
         </div>
       </div>
-      <div className="col-12 p-sm-1 pb-2">
-        <div className="card bg-dark text-light">
+      <div className="col-12 p-sm-1 pb-3">
+        <div className="card">
           <div className="card-body">
             <h3 className="card-title h5">Educación</h3>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
@@ -51,8 +61,8 @@ export const AboutSection = () => (
           </div>
         </div>
       </div>
-      <div className="col-12 p-sm-1 pb-2">
-        <div className="card bg-dark text-light">
+      <div className="col-12 p-sm-1 pb-3">
+        <div className="card">
           <div className="card-body">
             <h3 className="card-title h5">Ubicación</h3>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>

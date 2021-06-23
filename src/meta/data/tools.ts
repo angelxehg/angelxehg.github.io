@@ -2,26 +2,47 @@ import { LinkMeta } from "../types"
 
 const tools: LinkMeta[] = [
   {
-    name: "Font Awesome",
+    name: "Cordova",
+    icon: {
+      svgPath: "seek-logo/cordova.svg",
+      style: {
+        backgroundColor: "white",
+        borderRadius: "15%",
+        padding: "0.05rem",
+      },
+    },
+    href: "https://fontawesome.com/license",
+  },
+  {
+    name: "FontAwesome",
+    displayName: "Font Awesome",
     icon: {
       svgPath: "seek-logo/font-awesome.svg",
-      extraBc: "white",
-      extraBcRad: "15%",
+      style: {
+        backgroundColor: "white",
+        borderRadius: "15%",
+      },
     },
     href: "https://fontawesome.com/license",
   },
   {
     name: "Git",
     icon: {
-      color: "#E94E31",
+      style: { color: "#E94E31" },
       svgPath: "seek-logo/git.svg",
     },
     href: "https://git-scm.com/",
   },
   {
     name: "NodeJS",
+    displayName: "Node.js",
     icon: {
-      color: "#7FC728",
+      style: {
+        color: "#7FC728",
+        backgroundColor: "#333",
+        borderRadius: "50%",
+        padding: "0.05rem",
+      },
       svgPath: "fontawesome/node-js-brands.svg",
     },
     href: "https://nodejs.org/",
@@ -29,9 +50,12 @@ const tools: LinkMeta[] = [
   {
     name: "NPM",
     icon: {
-      color: "#C53635",
-      extraBc: "white",
-      extraBcRad: "50%",
+      style: {
+        color: "white",
+        backgroundColor: "#C53635",
+        borderRadius: "50%",
+        padding: "0.05rem",
+      },
       svgPath: "fontawesome/npm-brands.svg",
     },
     href: "https://www.npmjs.com/",
@@ -39,9 +63,11 @@ const tools: LinkMeta[] = [
   {
     name: "Ubuntu",
     icon: {
-      color: "#D74614",
-      extraBc: "white",
-      extraBcRad: "50%",
+      style: {
+        color: "#D74614",
+        backgroundColor: "white",
+        borderRadius: "50%",
+      },
       svgPath: "fontawesome/ubuntu-brands.svg",
     },
     href: "https://ubuntu.com/",

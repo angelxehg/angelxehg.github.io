@@ -3,8 +3,8 @@ import React from "react"
 import { CreateLink } from "./Link"
 
 const repoVer = {
-  title: "v2.0.0",
-  href: "https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.0",
+  title: "v2.0.1",
+  href: "https://github.com/angelxehg/angelxehg.github.io/tree/v2.0.1",
 }
 
 const issueLink = {
@@ -13,19 +13,18 @@ const issueLink = {
 }
 
 const DefaultFooter = (): JSX.Element => (
-  <footer className="navbar navbar-dark bg-dark">
-    <div className="container-sm ps-sm-4 pe-sm-4" style={{ display: "block" }}>
+  <footer className="navbar">
+    <div className="container-lg ps-sm-4 pe-sm-4" style={{ display: "block" }}>
       <p className="navbar-text m-0">
         © {new Date().getFullYear()}, Angel Hurtado @{" "}
-        <CreateLink from="GitHub" extend={repoVer} reset />. Portafolio
-        profesional creado con <CreateLink from="Gatsby" reset /> y{" "}
-        <CreateLink from="Bootstrap" reset />. Reporta problemas o envia tus
-        sugerencias a la página{" "}
-        <CreateLink from="GitHub" extend={issueLink} reset />
+        <CreateLink from="GitHub" extend={repoVer} />. Portafolio profesional
+        creado con <CreateLink from="GatsbyJS" /> y{" "}
+        <CreateLink from="Bootstrap" />. Reporta problemas o envía tus
+        sugerencias a la página <CreateLink from="GitHub" extend={issueLink} />
       </p>
       <p className="navbar-text m-0">
         Las marcas y logotipos presentados en este sitio web pertenecen a sus
-        respectivos dueños. Iconos de <CreateLink from="Font Awesome" reset />
+        respectivos dueños. Iconos de <CreateLink from="FontAwesome" />
       </p>
     </div>
   </footer>

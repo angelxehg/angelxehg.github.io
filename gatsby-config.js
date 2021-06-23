@@ -13,7 +13,7 @@ const {
 module.exports = {
   siteMetadata: {
     title: `Angel Hurtado`,
-    description: `Hola mundo! Soy un front-end web developer, trabajo con Angular, React y JavaScript. Ingeriero en TIC`,
+    description: `¡Hola mundo! Soy un Web Developer, y trabajo principalmente con Angular, React y TypeScript. Ingeniero en TIC`,
     author: `@angelxehg`,
     siteUrl: NETLIFY_DEPLOY_URL,
   },
@@ -40,7 +40,7 @@ module.exports = {
               {
                 userAgent: "*",
                 allow: "/",
-                disallow: ["/posts", "/404", "/about"],
+                disallow: ["/404", "/about", "/skills"],
               },
             ],
             sitemap: "https://angelxehg.com/sitemap.xml",
@@ -68,8 +68,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#335599`,
-        theme_color: `#335599`,
+        background_color: `#f6f6f6`,
+        theme_color: `#f6f6f6`,
         display: `minimal-ui`,
         icon: `static/images/Avataaars.Opt.Sqr.png`, // This path is relative to the root of the site.
       },
@@ -112,7 +112,9 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: true,
+        purgeCSSOptions: {},
       },
     },
+    `gatsby-plugin-dark-mode`,
   ],
 }

@@ -1,7 +1,7 @@
 {
   "name": "angelxehg.com",
   "description": "Mi sitio web y blog personal",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "homepage": "https://angelxehg.github.io/",
   "author": {
     "name": "Angel Hurtado",
@@ -26,7 +26,7 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "lint": "eslint src/**/*.tsx src/**/*.ts"
+    "lint": "eslint src/**/*.tsx src/**/*.jsx src/**/*.ts"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -34,6 +34,7 @@
     "bootstrap": "^5.0.1",
     "gatsby": "^3.7.1",
     "gatsby-plugin-advanced-sitemap": "^2.0.0",
+    "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-gatsby-cloud": "^2.7.1",
     "gatsby-plugin-image": "^1.7.1",
     "gatsby-plugin-manifest": "^3.7.1",

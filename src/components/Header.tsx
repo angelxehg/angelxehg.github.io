@@ -3,7 +3,6 @@ import React from "react"
 import "./Header.scss"
 
 import { CreateIcon, CreateLink } from "./Link"
-import { useSiteMetadata } from "../hooks/use-site-metadata"
 
 const email = {
   from: "Email",
@@ -71,23 +70,24 @@ const SocialLinks = () => (
   </nav>
 )
 
-export const HugeHeader = (): JSX.Element => {
-  const site = useSiteMetadata()
-  return (
-    <div className="bg-inter-background">
-      <div className="container-sm ps-sm-4 pe-sm-4 huge-header pt-3 pb-2">
-        <img
-          src="/images/Profile.500.Sqr.jpg"
-          className="rounded-circle fluid align-self-center"
-          alt="Foto de perfil de Angel"
-          style={{ height: "120px", width: "120px" }}
-        />
-        <header className="mt-2">
-          <h1>{site.title}</h1>
-          <p>{site.description}</p>
-        </header>
-        <SocialLinks />
-      </div>
+export const HugeHeader = (): JSX.Element => (
+  <div className="hero">
+    <div className="container-lg ps-sm-4 pe-sm-4 huge-header pt-3 pb-3">
+      <img
+        src="/images/Profile.500.Sqr.jpg"
+        className="rounded-circle fluid align-self-center"
+        alt="Foto de perfil de Angel"
+        style={{ height: "120px", width: "120px" }}
+      />
+      <header className="mt-2">
+        <h1>Angel Hurtado</h1>
+        <p>
+          ¡Hola mundo! Soy un Web Developer, y trabajo principalmente con{" "}
+          <CreateLink from="Angular" />, <CreateLink from="React" /> y{" "}
+          <CreateLink from="TypeScript" />. Ingeniero en TIC
+        </p>
+      </header>
+      <SocialLinks />
     </div>
-  )
-}
+  </div>
+)

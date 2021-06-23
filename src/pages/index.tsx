@@ -16,7 +16,7 @@ const IndexPage = (): JSX.Element => (
     <SEO title="Portafolio" lang="es" />
     <DefaultNavbar />
     <HugeHeader />
-    <main className="container-sm ps-sm-4 pe-sm-4 pb-3">
+    <main className="container-lg ps-sm-4 pe-sm-4 pb-3">
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />

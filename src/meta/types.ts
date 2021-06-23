@@ -1,13 +1,15 @@
+import React from "react"
+
 export interface IconMeta {
-  color?: string
+  // color?: string
   fill?: boolean
-  extraBc?: string
-  extraBcRad?: string
+  style?: React.CSSProperties
   svgPath: string
 }
 
 export interface LinkMeta {
   name: string
+  displayName?: string
   icon: IconMeta
   href: string
 }

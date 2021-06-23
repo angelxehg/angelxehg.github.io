@@ -1,21 +1,16 @@
 import React from "react"
 
 import stacks from "../meta/stacks"
-import { CreateLink } from "../components/Link"
+import { CreateBadge } from "../components/Link"
 import Redirect from "../components/Redirect"
 
 const SkillCard = (props: { title: string; tools: string[] }) => (
-  <div className="card bg-dark text-light" style={{ height: "100%" }}>
+  <div className="card" style={{ height: "100%" }}>
     <div className="card-body">
       <h3 className="card-title h5">{props.title}</h3>
       <p className="card-text">
         {props.tools.map(toolName => (
-          <span
-            key={toolName}
-            className="badge rounded-pill bg-dark text-light mt-1 me-1"
-          >
-            <CreateLink noUnderline from={toolName} />
-          </span>
+          <CreateBadge key={toolName} from={toolName} />
         ))}
       </p>
     </div>
@@ -27,7 +22,7 @@ export const SkillsSection = () => (
     <h2>Habilidades</h2>
     <div className="row">
       {stacks.map(({ title, tools }, n) => (
-        <div key={n} className="col-lg-6 p-sm-1 pb-2">
+        <div key={n} className="col-lg-6 p-sm-1 pb-3">
           <SkillCard title={title} tools={tools} />
         </div>
       ))}

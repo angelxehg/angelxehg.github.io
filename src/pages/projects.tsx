@@ -7,6 +7,7 @@ import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
 import { usePages, Page } from "../hooks/use-pages"
 import DefaultNavbar from "../components/Navbar"
+import { CreateBadge } from "../components/Link"
 
 interface ProjectCardProps {
   item: Page
@@ -15,9 +16,9 @@ interface ProjectCardProps {
 const ProjectCard = (
   props: ProjectCardProps & { titleAs: "h2" | "h3" }
 ): JSX.Element => {
-  const { slug, title, resume, image, caption } = props.item
+  const { slug, title, image, caption, stack } = props.item
   return (
-    <article className="card bg-dark text-light" style={{ height: "100%" }}>
+    <article className="card" style={{ height: "100%" }}>
       <GatsbyImage image={image} alt={caption} className="card-img-top" />
       <div className="card-body">
         {props.titleAs === "h2" && (
@@ -30,7 +31,12 @@ const ProjectCard = (
             <Link to={`/${slug}`}>{title}</Link>
           </h3>
         )}
-        <p className="card-text m-0">{resume}</p>
+        <p className="card-text m-0">{caption}</p>
+        <p className="card-text m-0">
+          {stack.map(toolName => (
+            <CreateBadge key={toolName} from={toolName} />
+          ))}
+        </p>
       </div>
     </article>
   )
@@ -45,7 +51,7 @@ export const ProjectsSection = () => {
       </h2>
       <div className="row">
         {projects.map(item => (
-          <div key={item.id} className="col-lg-6 p-sm-1 pb-2">
+          <div key={item.id} className="col-lg-6 p-sm-1 pb-3">
             <ProjectCard item={item} titleAs="h3" />
           </div>
         ))}
@@ -61,16 +67,19 @@ const ProjectsPage = (): JSX.Element => {
     <Layout>
       <SEO title="Proyectos" lang="es" />
       <DefaultNavbar />
-      <div className="bg-inter-background">
-        <header className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-1">
-          <h1>Todos mis proyectos</h1>
-          <p>Estos son todos mis proyectos públicos</p>
-        </header>
+      <div className="hero">
+        <div className="container-lg ps-sm-4 pe-sm-4 pt-3 pb-3">
+          <Link to="/">{"< "}Volver a Portafolio</Link>
+          <header className="mt-1">
+            <h1>Todos mis proyectos</h1>
+            <p className="m-0">Estos son todos mis proyectos públicos</p>
+          </header>
+        </div>
       </div>
-      <main className="container-sm ps-sm-4 pe-sm-4 pt-3 pb-3">
+      <main className="container-lg ps-sm-4 pe-sm-4 pt-3 pb-3">
         <div className="row">
           {projects.map(item => (
-            <div key={item.id} className="col-lg-6 p-sm-1 pb-2">
+            <div key={item.id} className="col-lg-6 p-sm-1 pb-3">
               <ProjectCard titleAs="h2" item={item} />
             </div>
           ))}
