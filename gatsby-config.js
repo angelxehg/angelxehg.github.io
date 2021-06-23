@@ -112,9 +112,7 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: true,
-        purgeCSSOptions: {
-          safelist: ["navbar-dark", "navbar-light"], // Don't remove this selector
-        },
+        purgeCSSOptions: {},
       },
     },
     `gatsby-plugin-dark-mode`,
