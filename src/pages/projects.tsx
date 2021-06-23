@@ -51,7 +51,7 @@ export const ProjectsSection = () => {
       </h2>
       <div className="row">
         {projects.map(item => (
-          <div key={item.id} className="col-lg-6 p-sm-1 pb-2">
+          <div key={item.id} className="col-lg-6 p-sm-1 pb-3">
             <ProjectCard item={item} titleAs="h3" />
           </div>
         ))}
@@ -79,7 +79,7 @@ const ProjectsPage = (): JSX.Element => {
       <main className="container-lg ps-sm-4 pe-sm-4 pt-3 pb-3">
         <div className="row">
           {projects.map(item => (
-            <div key={item.id} className="col-lg-6 p-sm-1 pb-2">
+            <div key={item.id} className="col-lg-6 p-sm-1 pb-3">
               <ProjectCard titleAs="h2" item={item} />
             </div>
           ))}

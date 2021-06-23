@@ -22,7 +22,7 @@ export const SkillsSection = () => (
     <h2>Habilidades</h2>
     <div className="row">
       {stacks.map(({ title, tools }, n) => (
-        <div key={n} className="col-lg-6 p-sm-1 pb-2">
+        <div key={n} className="col-lg-6 p-sm-1 pb-3">
           <SkillCard title={title} tools={tools} />
         </div>
       ))}

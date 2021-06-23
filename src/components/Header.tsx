@@ -72,7 +72,7 @@ const SocialLinks = () => (
 
 export const HugeHeader = (): JSX.Element => (
   <div className="hero">
-    <div className="container-lg ps-sm-4 pe-sm-4 huge-header pt-3 pb-2">
+    <div className="container-lg ps-sm-4 pe-sm-4 huge-header pt-3 pb-3">
       <img
         src="/images/Profile.500.Sqr.jpg"
         className="rounded-circle fluid align-self-center"

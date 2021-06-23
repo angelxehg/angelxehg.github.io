@@ -90,7 +90,7 @@ export const PostsSection = () => {
       </h2>
       <div className="row">
         {posts.map(item => (
-          <div key={item.id} className="col-lg-6 p-sm-1 pb-2">
+          <div key={item.id} className="col-lg-6 p-sm-1 pb-3">
             <PostCard item={item} titleAs="h3" />
           </div>
         ))}
@@ -113,7 +113,7 @@ const PostsPage = (): JSX.Element => {
       <SEO title="Entradas" lang="es" />
       <DefaultNavbar />
       <div className="hero">
-        <div className="container-lg ps-sm-4 pe-sm-4 pt-3 pb-2">
+        <div className="container-lg ps-sm-4 pe-sm-4 pt-3 pb-3">
           <Link to="/">{"< "}Volver a Portafolio</Link>
           <header className="mt-1">
             <h1>Todas mis entradas</h1>
@@ -127,7 +127,7 @@ const PostsPage = (): JSX.Element => {
       <main className="container-lg ps-sm-4 pe-sm-4 pt-3 pb-3">
         <div className="row">
           {posts.map(item => (
-            <div key={item.id} className="col-lg-6 p-sm-1 pb-2">
+            <div key={item.id} className="col-lg-6 p-sm-1 pb-3">
               <PostCard titleAs="h2" item={item} />
             </div>
           ))}
