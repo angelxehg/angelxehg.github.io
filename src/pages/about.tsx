@@ -18,9 +18,7 @@ export const AboutSection = () => (
           <div className="card-body">
             <h3 className="card-title h5">Trayectoria</h3>
             <p className="card-text m-0">
-              Mi travesía en el mundo de la tecnología comienza en 2014, cuando
-              comencé a crear aplicaciones para Windows Phone y Windows. Para
-              lograr esto aprendí Visual Basic, y posteriormente C# y XAML.
+              Mi historia en el mundo de la tecnología comienza en 2014, cuando programé mis primeras aplicaciones, para Windows Phone y Windows. Para lograr esto aprendí Visual Basic, y posteriormente C# y XAML.
               Realicé algunos proyectos que me ayudaron a entender muchas de las
               bases de la programación.
             </p>
@@ -31,7 +29,7 @@ export const AboutSection = () => (
               Firebase, y descubrí que lo mio es el desarrollo front-end.
             </p>
             <p className="card-text m-0 mt-2">
-              Durante el último año he estado realizando trabajos como{" "}
+              Desde 2020 he completado proyectos como{" "}
               <CreateLink
                 from="Web"
                 noIcon
@@ -47,27 +45,29 @@ export const AboutSection = () => (
           </div>
         </div>
       </div>
-      <div className="col-12 p-sm-1 pb-3">
-        <div className="card">
+      <div className="col-md-6 p-sm-1 pb-3">
+        <div className="card" style={{height: '100%'}}>
           <div className="card-body">
             <h3 className="card-title h5">Educación</h3>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
                 <br />
-                <UTZACLink /> 2017 - 2021
+                <UTZACLink />
+                <br />
+                2017 - 2021 (En proceso de titulación)
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="col-12 p-sm-1 pb-3">
-        <div className="card">
+      <div className="col-md-6 p-sm-1 pb-3">
+        <div className="card" style={{height: '100%'}}>
           <div className="card-body">
             <h3 className="card-title h5">Ubicación</h3>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
-                <b>Origen</b>: Fresnillo Zacatecas, México
+                <b>Origen</b>: Zacatecas, México
               </li>
               <li>
                 <b>Idiomas</b>: Español (nativo), Inglés (intermedio)
