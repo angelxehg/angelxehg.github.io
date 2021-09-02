@@ -18,7 +18,7 @@ const stacks: Stack[] = [
   },
   {
     title: "Estoy aprendiendo:",
-    tools: ["Dart", "Flutter", "GraphQL", "Angular", "Ionic", "Capacitor",],
+    tools: ["Dart", "Flutter", "GraphQL", "Angular", "Ionic", "Capacitor"],
   },
   {
     title: "También trabajo con:",

@@ -18,7 +18,9 @@ export const AboutSection = () => (
           <div className="card-body">
             <h3 className="card-title h5">Trayectoria</h3>
             <p className="card-text m-0">
-              Mi historia en el mundo de la tecnología comienza en 2014, cuando programé mis primeras aplicaciones, para Windows Phone y Windows. Para lograr esto aprendí Visual Basic, y posteriormente C# y XAML.
+              Mi historia en el mundo de la tecnología comienza en 2014, cuando
+              programé mis primeras aplicaciones, para Windows Phone y Windows.
+              Para lograr esto aprendí Visual Basic, y posteriormente C# y XAML.
               Realicé algunos proyectos que me ayudaron a entender muchas de las
               bases de la programación.
             </p>
@@ -46,7 +48,7 @@ export const AboutSection = () => (
         </div>
       </div>
       <div className="col-md-6 p-sm-1 pb-3">
-        <div className="card" style={{height: '100%'}}>
+        <div className="card" style={{ height: "100%" }}>
           <div className="card-body">
             <h3 className="card-title h5">Educación</h3>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
@@ -62,7 +64,7 @@ export const AboutSection = () => (
         </div>
       </div>
       <div className="col-md-6 p-sm-1 pb-3">
-        <div className="card" style={{height: '100%'}}>
+        <div className="card" style={{ height: "100%" }}>
           <div className="card-body">
             <h3 className="card-title h5">Ubicación</h3>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>

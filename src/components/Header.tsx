@@ -71,12 +71,13 @@ export const HugeHeader = (): JSX.Element => (
         src="/images/Avataaars.Smile.Sqr.Opt.png"
         className="rounded-circle fluid align-self-center"
         alt="Avatar de Angel"
-        style={{ height: "120px", width: "120px", background: 'blueviolet' }}
+        style={{ height: "120px", width: "120px", background: "blueviolet" }}
       />
       <header className="mt-2">
         <h1>Angel Hurtado</h1>
         <p>
-          ¡Hola mundo! Hago web development con <CreateLink from="JavaScript" />, <CreateLink from="React" /> y <CreateLink from="Angular" />
+          ¡Hola mundo! Hago web development con <CreateLink from="JavaScript" />
+          , <CreateLink from="React" /> y <CreateLink from="Angular" />
         </p>
       </header>
       <SocialLinks />
