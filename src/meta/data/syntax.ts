@@ -2,6 +2,20 @@ import { LinkMeta } from "../types"
 
 const syntaxs: LinkMeta[] = [
   {
+    name: "Dart",
+    icon: {
+      svgPath: "seek-logo/dart.svg",
+    },
+    href: "https://dart.dev/",
+  },
+  {
+    name: "GraphQL",
+    icon: {
+      svgPath: "seek-logo/graphql.svg",
+    },
+    href: "https://graphql.org/",
+  },
+  {
     name: "HTML5",
     icon: {
       style: { color: "#F64A1D" },

@@ -7,9 +7,9 @@ const stacks: Stack[] = [
   {
     title: "Mis herramientas favoritas:",
     tools: [
-      "Angular",
       "React",
-      "Ionic",
+      "Firebase",
+      "GatsbyJS",
       "Ubuntu",
       "VSCode",
       "Netlify",
@@ -18,7 +18,7 @@ const stacks: Stack[] = [
   },
   {
     title: "Estoy aprendiendo:",
-    tools: ["GatsbyJS", "Capacitor", "Firebase", "ReactNative"],
+    tools: ["Dart", "Flutter", "GraphQL", "Angular", "Ionic", "Capacitor",],
   },
   {
     title: "También trabajo con:",
@@ -27,6 +27,7 @@ const stacks: Stack[] = [
       "JavaScript",
       "TypeScript",
       "Python",
+      "Django",
       "Markdown",
       "NPM",
       "Git",
@@ -37,7 +38,6 @@ const stacks: Stack[] = [
     tools: [
       "Cordova",
       "Heroku",
-      "Django",
       "Bootstrap",
       "GitLab",
       "DigitalOcean",

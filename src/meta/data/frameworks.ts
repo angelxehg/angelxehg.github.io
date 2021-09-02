@@ -27,6 +27,13 @@ const frameworks: LinkMeta[] = [
     href: "https://www.djangoproject.com/",
   },
   {
+    name: "Flutter",
+    icon: {
+      svgPath: "seek-logo/flutter.svg",
+    },
+    href: "https://flutter.dev/",
+  },
+  {
     name: "GatsbyJS",
     displayName: "Gatsby",
     icon: {
