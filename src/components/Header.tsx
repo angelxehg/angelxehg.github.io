@@ -76,9 +76,7 @@ export const HugeHeader = (): JSX.Element => (
       <header className="mt-2">
         <h1>Angel Hurtado</h1>
         <p>
-          ¡Hola mundo! Soy un Web Developer, y trabajo principalmente con{" "}
-          <CreateLink from="Angular" />, <CreateLink from="React" /> y{" "}
-          <CreateLink from="TypeScript" />. Ingeniero en TIC
+          ¡Hola mundo! Hago web development con <CreateLink from="JavaScript" />, <CreateLink from="React" /> y <CreateLink from="Angular" />
         </p>
       </header>
       <SocialLinks />
