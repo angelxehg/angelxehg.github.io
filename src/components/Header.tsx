@@ -40,13 +40,7 @@ const twitter = {
   href: "https://www.twitter.com/angelxehg",
 }
 
-const instagram = {
-  from: "Instagram",
-  title: "Instagram (@angelxehg)",
-  href: "https://www.instagram.com/angelxehg",
-}
-
-const socialLinks = [email, resume, devTo, linkedIn, gitHub, twitter, instagram]
+const socialLinks = [email, resume, devTo, linkedIn, gitHub, twitter]
 
 const SocialLinks = () => (
   <nav>
