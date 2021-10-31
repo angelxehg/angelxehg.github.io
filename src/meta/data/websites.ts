@@ -37,6 +37,14 @@ const websites: LinkMeta[] = [
     },
     href: "https://dev.to/",
   },
+  {
+    name: "Diplomas",
+    icon: {
+      fill: true,
+      svgPath: "fontawesome/certificate-solid.svg",
+    },
+    href: "https://platzi.com/",
+  },
 ]
 
 export default websites

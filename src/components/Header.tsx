@@ -40,7 +40,13 @@ const twitter = {
   href: "https://www.twitter.com/angelxehg",
 }
 
-const socialLinks = [email, resume, devTo, linkedIn, gitHub, twitter]
+const platzi = {
+  from: "Diplomas",
+  title: 'Mis diplomas',
+  href: 'https://platzi.com/p/angelxehg'
+}
+
+const socialLinks = [email, resume, platzi, devTo, linkedIn, gitHub, twitter,]
 
 const SocialLinks = () => (
   <nav>
