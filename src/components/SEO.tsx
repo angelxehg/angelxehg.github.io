@@ -78,6 +78,10 @@ const SEO = (props: SEOProps) => {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `google-site-verification`,
+          content: '0hO20fg4BEvRMjuTmUHifKltClQKkc4KKlwGD9tg6-M',
+        },
       ].concat(meta)}
     >
       <body className={`${theme}`}></body>
