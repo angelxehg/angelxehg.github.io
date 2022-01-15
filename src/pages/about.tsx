@@ -28,7 +28,7 @@ export const AboutSection = () => (
               Fue en la Universidad donde comencé a aprender y trabajar con
               tecnologías web, donde aprendí HTML, Python y JavaScript. También
               durante este tiempo aprendí por mi cuenta Angular, React y
-              Firebase, y descubrí que lo mio es el desarrollo front-end.
+              Firebase, y descubrí que lo mio es el desarrollo web.
             </p>
             <p className="card-text m-0 mt-2">
               Desde 2020 he completado proyectos como{" "}

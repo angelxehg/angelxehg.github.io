@@ -13,7 +13,7 @@ const email = {
 const resume = {
   from: "File",
   title: "Descarga mi CV",
-  href: "/CV-AngelHurtado-Nov-2021.pdf",
+  href: "/cv-es.pdf",
 }
 
 const devTo = {
