@@ -5,7 +5,7 @@ export const genericWebLink: LinkMeta = {
   icon: {
     svgPath: "bootstrap-icons/globe2.svg",
   },
-  href: "https://angelxehg.github.io/",
+  href: "https://xehg.me/",
 }
 
 const generics: LinkMeta[] = [
@@ -14,28 +14,28 @@ const generics: LinkMeta[] = [
     icon: {
       svgPath: "bootstrap-icons/sun.svg",
     },
-    href: "https://angelxehg.github.io/",
+    href: "https://xehg.me/",
   },
   {
     name: "Night",
     icon: {
       svgPath: "bootstrap-icons/moon.svg",
     },
-    href: "https://angelxehg.github.io/",
+    href: "https://xehg.me/",
   },
   {
     name: "File",
     icon: {
       svgPath: "bootstrap-icons/file-earmark-text-fill.svg",
     },
-    href: "https://angelxehg.github.io/",
+    href: "https://xehg.me/",
   },
   {
     name: "Email",
     icon: {
       svgPath: "bootstrap-icons/envelope-fill.svg",
     },
-    href: "https://angelxehg.github.io/",
+    href: "https://xehg.me/",
   },
   genericWebLink,
 ]

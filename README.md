@@ -29,7 +29,7 @@ Utilice estos comandos para comprobar la calidad del código
 Se requiere establecer las variables de entorno en los archivos `.env.development` y `.env.production`:
 
 ```env
-DEFAULT_URL=https://angelxehg.github.io
+DEFAULT_URL=https://staging.xehg.me
 ```
 
 Use este comando para desplegar en producción:

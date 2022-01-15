@@ -5,7 +5,7 @@ require("dotenv").config({
 const {
   NODE_ENV,
   DEFAULT_URL,
-  URL: NETLIFY_SITE_URL = DEFAULT_URL || "https://angelxehg.github.io",
+  URL: NETLIFY_SITE_URL = DEFAULT_URL || "https://xehg.me",
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env
@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://angelxehg.github.io",
+        host: "https://xehg.me",
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
@@ -42,7 +42,7 @@ module.exports = {
                 disallow: ["/404", "/about", "/skills"],
               },
             ],
-            sitemap: "https://angelxehg.github.io/sitemap.xml",
+            sitemap: "https://xehg.me/sitemap.xml",
           },
           "branch-deploy": {
             policy: [{ userAgent: "*", disallow: ["/"] }],
