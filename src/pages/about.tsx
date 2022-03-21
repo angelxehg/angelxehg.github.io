@@ -1,13 +1,6 @@
 import React from "react"
-import { CreateLink } from "../components/Link"
 
 import Redirect from "../components/Redirect"
-
-const UTZACLink = () => (
-  <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
-    Universidad Tecnológica del Estado de Zacatecas
-  </a>
-)
 
 export const AboutSection = () => (
   <section id="about">
@@ -31,16 +24,9 @@ export const AboutSection = () => (
               Firebase, y descubrí que lo mio es el desarrollo web.
             </p>
             <p className="card-text m-0 mt-2">
-              Desde 2020 he completado proyectos como{" "}
-              <CreateLink
-                from="Web"
-                noIcon
-                extend={{
-                  title: "freelancer en Fiverr",
-                  href: "https://www.fiverr.com/angelxehg",
-                }}
-              />{" "}
-              . Ahora acabo de terminar mi carrera en la <UTZACLink />, pero
+              Desde 2020 he completado proyectos como <a href="https://www.fiverr.com/angelxehg" rel="external" title="Fiverr profile">freelancer en Fiverr</a> . Ahora acabo de terminar mi carrera en la <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
+                Universidad Tecnológica del Estado de Zacatecas
+              </a>, pero
               continúo aprendiendo <a href="#skills">nuevas herramientas</a> y
               creando <a href="#projects">proyectos</a>.
             </p>
@@ -55,7 +41,9 @@ export const AboutSection = () => (
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
                 <br />
-                <UTZACLink />
+                <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
+                  Universidad Tecnológica del Estado de Zacatecas
+                </a>
                 <br />
                 2017 - 2021 (En proceso de titulación)
               </li>

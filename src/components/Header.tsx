@@ -2,68 +2,43 @@ import React from "react"
 
 import "./Header.scss"
 
-import { CreateIcon, CreateLink } from "./Link"
-
-const email = {
-  from: "Email",
-  title: "Enviame un Email",
-  href: "mailto:angelxehg@pm.me",
-}
-
-const resume = {
-  from: "File",
-  title: "Descarga mi CV",
-  href: "/cv-es.pdf",
-}
-
-const devTo = {
-  from: "Dev.to",
-  title: "Visita mi blog en dev.to",
-  href: "https://dev.to/angelxehg",
-}
-
-const linkedIn = {
-  from: "LinkedIn",
-  title: "LinkedIn (/in/angelxehg)",
-  href: "https://www.linkedin.com/in/angelxehg",
-}
-
-const gitHub = {
-  from: "GitHub",
-  title: "GitHub (@angelxehg)",
-  href: "https://github.com/angelxehg",
-}
-
-const twitter = {
-  from: "Twitter",
-  title: "Twitter (@angelxehg)",
-  href: "https://www.twitter.com/angelxehg",
-}
-
-const platzi = {
-  from: "Diplomas",
-  title: 'Mis diplomas',
-  href: 'https://platzi.com/p/angelxehg'
-}
-
-const socialLinks = [email, resume, platzi, devTo, linkedIn, gitHub, twitter,]
+const socialLinks = [
+  {
+    title: "Enviame un Email",
+    href: "mailto:angelxehg@pm.me",
+  },
+  {
+    title: "Descarga mi CV",
+    href: "/cv-es.pdf",
+  },
+  {
+    title: 'Mis diplomas',
+    href: 'https://platzi.com/p/angelxehg'
+  },
+  {
+    title: "Visita mi blog en dev.to",
+    href: "https://dev.to/angelxehg",
+  },
+  {
+    title: "LinkedIn (/in/angelxehg)",
+    href: "https://www.linkedin.com/in/angelxehg",
+  },
+  {
+    title: "GitHub (@angelxehg)",
+    href: "https://github.com/angelxehg",
+  },
+  {
+    title: "Twitter (@angelxehg)",
+    href: "https://www.twitter.com/angelxehg",
+  },
+]
 
 const SocialLinks = () => (
   <nav>
-    <p className="d-none d-sm-block">
-      {socialLinks.map(({ from, title, href }) => (
-        <CreateIcon
-          key={href}
-          from={from}
-          extend={{ title, href }}
-          iconProps={{ size: "1.5rem" }}
-        />
-      ))}
-    </p>
-    <ul className="p-0 m-0 d-sm-none" style={{ listStyleType: "none" }}>
-      {socialLinks.map(({ from, title, href }) => (
+    <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
+      {socialLinks.map(({ title, href }) => (
         <li key={href}>
-          <CreateLink from={from} extend={{ title, href }} />
+          <a href={href} rel="external" title={title}>{title}</a>
         </li>
       ))}
     </ul>
@@ -82,8 +57,7 @@ export const HugeHeader = (): JSX.Element => (
       <header className="mt-2">
         <h1>Angel Hurtado</h1>
         <p>
-          ¡Hola mundo! Hago web development con <CreateLink from="JavaScript" />
-          , <CreateLink from="React" /> y <CreateLink from="Angular" />
+          ¡Hola mundo! Hago web development con Angular, TypeScript y React
         </p>
       </header>
       <SocialLinks />

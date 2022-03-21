@@ -80,7 +80,7 @@ export const CreateIcon = (props: {
   return <ClickableIcon {...props} meta={newMeta} />
 }
 
-export const CreateLink = (
+const CreateLink = (
   props: LinkProps & { from: string; extend?: { title: string; href: string } }
 ) => {
   const { from, extend } = props

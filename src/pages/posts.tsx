@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
-import { CreateBadge, CreateLink } from "../components/Link"
+import { CreateBadge } from "../components/Link"
 import DefaultNavbar from "../components/Navbar"
 
 interface DevToPost {
@@ -46,12 +46,12 @@ const PostCard = (
       <div className="card-body">
         {props.titleAs === "h2" && (
           <h2 className="card-title h5">
-            <CreateLink from="Dev.to" extend={{ title, href }} noIcon />
+            <a href={href} title={title} rel="external">{title}</a>
           </h2>
         )}
         {props.titleAs === "h3" && (
           <h3 className="card-title h5">
-            <CreateLink from="Dev.to" extend={{ title, href }} noIcon />
+            <a href={href} title={title} rel="external">{title}</a>
           </h3>
         )}
         <p className="card-text m-0">{description}</p>
@@ -80,13 +80,7 @@ export const PostsSection = () => {
   return (
     <section id="posts">
       <h2>
-        Últimas{" "}
-        <CreateLink
-          from="Dev.to"
-          iconProps={{ size: "1.325rem" }}
-          extend={{ title: "entradas", href: "/posts" }}
-        />
-        :
+        Últimas <Link to="/posts">entradas</Link>:
       </h2>
       <div className="row">
         {posts.map(item => (
@@ -95,10 +89,7 @@ export const PostsSection = () => {
           </div>
         ))}
       </div>
-      <CreateLink
-        from="Dev.to"
-        extend={{ title: "Ver todas las entradas >", href: "/posts" }}
-      />
+      <Link to="/posts">Ver todas las entradas</Link>
     </section>
   )
 }
@@ -118,8 +109,7 @@ const PostsPage = (): JSX.Element => {
           <header className="mt-1">
             <h1>Todas mis entradas</h1>
             <p className="m-0">
-              Estas son las entradas que he publicado en{" "}
-              <CreateLink from="Dev.to" />
+              Estas son las entradas que he publicado en <a href="https://dev.to/angelxehg">dev.to</a>
             </p>
           </header>
         </div>
