@@ -7,7 +7,6 @@ import Footer from "../components/Footer"
 import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
 import DefaultNavbar from "../components/Navbar"
-import { CreateBadge } from "../components/Link"
 
 export const query = graphql`
   query PostsByID($id: String!) {
@@ -69,7 +68,9 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
               </header>
               <p>
                 {stack.map(toolName => (
-                  <CreateBadge key={toolName} from={toolName} />
+                  <span key={toolName} className="badge rounded-pill mt-1 me-1">
+                    {toolName}
+                  </span>
                 ))}
               </p>
             </div>

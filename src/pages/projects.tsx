@@ -7,7 +7,6 @@ import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
 import { usePages, Page } from "../hooks/use-pages"
 import DefaultNavbar from "../components/Navbar"
-import { CreateBadge } from "../components/Link"
 
 interface ProjectCardProps {
   item: Page
@@ -34,7 +33,9 @@ const ProjectCard = (
         <p className="card-text m-0">{caption}</p>
         <p className="card-text m-0">
           {stack.map(toolName => (
-            <CreateBadge key={toolName} from={toolName} />
+            <span key={toolName} className="badge rounded-pill mt-1 me-1">
+              {toolName}
+            </span>
           ))}
         </p>
       </div>

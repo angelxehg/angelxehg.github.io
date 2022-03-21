@@ -80,7 +80,7 @@ const SEO = (props: SEOProps) => {
         },
         {
           name: `google-site-verification`,
-          content: '0hO20fg4BEvRMjuTmUHifKltClQKkc4KKlwGD9tg6-M',
+          content: "0hO20fg4BEvRMjuTmUHifKltClQKkc4KKlwGD9tg6-M",
         },
       ].concat(meta)}
     >

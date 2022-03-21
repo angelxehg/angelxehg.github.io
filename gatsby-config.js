@@ -13,7 +13,7 @@ const {
 module.exports = {
   siteMetadata: {
     title: `Angel Hurtado`,
-    description: `¡Hola mundo! Hago web development con JavaScript, React y Angular`,
+    description: `¡Hola mundo! Hago web development con Angular, TypeScript y React`,
     author: `@angelxehg`,
     siteUrl: NETLIFY_DEPLOY_URL,
   },
@@ -21,6 +21,7 @@ module.exports = {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
