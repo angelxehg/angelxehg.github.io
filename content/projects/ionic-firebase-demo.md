@@ -3,7 +3,7 @@ title: Ionic Firebase Examples
 date: 2021-11-17
 image: ../images/ionic-firebase-examples.png
 caption: Demostración de Firebase Auth en una aplicación Ionic
-stack: ["Ionic", "Firebase", "TypeScript" ]
+stack: ["Ionic", "Firebase", "TypeScript"]
 published: true
 ---
 

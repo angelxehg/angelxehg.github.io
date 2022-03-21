@@ -46,12 +46,16 @@ const PostCard = (
       <div className="card-body">
         {props.titleAs === "h2" && (
           <h2 className="card-title h5">
-            <a href={href} title={title} rel="external">{title}</a>
+            <a href={href} title={title} rel="external">
+              {title}
+            </a>
           </h2>
         )}
         {props.titleAs === "h3" && (
           <h3 className="card-title h5">
-            <a href={href} title={title} rel="external">{title}</a>
+            <a href={href} title={title} rel="external">
+              {title}
+            </a>
           </h3>
         )}
         <p className="card-text m-0">{description}</p>
@@ -109,7 +113,8 @@ const PostsPage = (): JSX.Element => {
           <header className="mt-1">
             <h1>Todas mis entradas</h1>
             <p className="m-0">
-              Estas son las entradas que he publicado en <a href="https://dev.to/angelxehg">dev.to</a>
+              Estas son las entradas que he publicado en{" "}
+              <a href="https://dev.to/angelxehg">dev.to</a>
             </p>
           </header>
         </div>

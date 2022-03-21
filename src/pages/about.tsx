@@ -24,11 +24,21 @@ export const AboutSection = () => (
               Firebase, y descubrí que lo mio es el desarrollo web.
             </p>
             <p className="card-text m-0 mt-2">
-              Desde 2020 he completado proyectos como <a href="https://www.fiverr.com/angelxehg" rel="external" title="Fiverr profile">freelancer en Fiverr</a> . Ahora acabo de terminar mi carrera en la <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
+              Desde 2020 he completado proyectos como{" "}
+              <a
+                href="https://www.fiverr.com/angelxehg"
+                rel="external"
+                title="Fiverr profile"
+              >
+                freelancer en Fiverr
+              </a>{" "}
+              . Ahora acabo de terminar mi carrera en la{" "}
+              <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
                 Universidad Tecnológica del Estado de Zacatecas
-              </a>, pero
-              continúo aprendiendo <a href="#skills">nuevas herramientas</a> y
-              creando <a href="#projects">proyectos</a>.
+              </a>
+              , pero continúo aprendiendo{" "}
+              <a href="#skills">nuevas herramientas</a> y creando{" "}
+              <a href="#projects">proyectos</a>.
             </p>
           </div>
         </div>
