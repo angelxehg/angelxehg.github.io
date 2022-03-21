@@ -4,7 +4,7 @@ const DefaultFooter = (): JSX.Element => (
   <footer className="navbar">
     <div className="container-lg ps-sm-4 pe-sm-4" style={{ display: "block" }}>
       <p className="navbar-text m-0">
-        Angel Hurtado © {new Date().getFullYear()}, Portafolio v2.0.6 | Creado
+        Angel Hurtado © {new Date().getFullYear()}, Portafolio v2.0.7 | Creado
         con{" "}
         <a href="https://www.gatsbyjs.com/" rel="external" title="Gatsby">
           Gatsby
