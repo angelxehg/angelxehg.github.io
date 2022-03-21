@@ -89,7 +89,7 @@ const CreateLink = (
   return <Link {...props} meta={newMeta} />
 }
 
-export const CreateBadge = (
+const CreateBadge = (
   props: LinkProps & { from: string; extend?: { title: string; href: string } }
 ) => {
   return (

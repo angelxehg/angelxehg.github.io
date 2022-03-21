@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import Layout from "../layouts/Layout"
 import DefaultFooter from "../components/Footer"
 import SEO from "../components/SEO"
-import { CreateBadge } from "../components/Link"
 import DefaultNavbar from "../components/Navbar"
 
 interface DevToPost {
@@ -61,14 +60,11 @@ const PostCard = (
         <p className="card-text m-0">{description}</p>
         <p className="card-text m-0">
           {tags.split(", ").map(tagName => (
-            <CreateBadge
-              key={tagName}
-              from={tagName}
-              extend={{
-                title: tagName.charAt(0).toUpperCase() + tagName.slice(1),
-                href: `https://dev.to/t/${tagName}`,
-              }}
-            />
+            <span key={tagName} className="badge rounded-pill mt-1 me-1">
+              <a href={`https://dev.to/t/${tagName}`}>
+                {tagName.charAt(0).toUpperCase() + tagName.slice(1)}
+              </a>
+            </span>
           ))}
         </p>
       </div>
