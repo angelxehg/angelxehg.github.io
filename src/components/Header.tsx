@@ -1,6 +1,7 @@
 import React from "react"
 
 import "./Header.scss"
+const SmileSVG = require("../assets/smile.svg")
 
 const socialLinks = [
   {
@@ -50,8 +51,7 @@ const SocialLinks = () => (
 export const HugeHeader = (): JSX.Element => (
   <div className="hero">
     <div className="container-lg ps-sm-4 pe-sm-4 huge-header pt-3 pb-3">
-      <img
-        src="/images/Avataaars.Smile.Sqr.Opt.png"
+      <SmileSVG
         className="rounded-circle fluid align-self-center"
         alt="Avatar de Angel"
         style={{ height: "120px", width: "120px", background: "blueviolet" }}
