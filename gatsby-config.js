@@ -21,6 +21,7 @@ module.exports = {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
