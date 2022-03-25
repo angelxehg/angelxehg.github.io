@@ -8,7 +8,7 @@ interface HeroProps {
 
 export const Hero = (props: HeroProps): JSX.Element => (
   <div className="hero">
-    <div className="container-lg ps-sm-4 pe-sm-4 huge-header pt-3 pb-3">
+    <div className="hero-content container-lg ps-sm-4 pe-sm-4 pt-4 pb-4">
       {props.children}
     </div>
   </div>

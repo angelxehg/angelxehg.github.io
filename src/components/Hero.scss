@@ -2,12 +2,21 @@
   background-color: var(--bg-hero);
 }
 
-.huge-header {
+.hero-content {
   text-align: center;
 }
 
+.hero-content h1 {
+  font-weight: 300;
+  font-size: xxx-large;
+}
+
+.hero-content p {
+  font-size: x-large;
+}
+
 @media (min-width: 400px) {
-  header.huge-header {
+  header.hero-content {
     margin-left: auto;
     margin-right: auto;
     max-width: 400px;

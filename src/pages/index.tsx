@@ -76,7 +76,7 @@ const IndexPage = (): JSX.Element => (
       />
       <header className="mt-2">
         <h1>Angel Hurtado</h1>
-        <p>¡Hola mundo! Hago web development con Angular, TypeScript y React</p>
+        <p>Frontend Developer</p>
       </header>
       <SocialLinks />
     </Hero>
