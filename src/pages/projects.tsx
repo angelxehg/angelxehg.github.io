@@ -17,39 +17,35 @@ const ProjectCard = (
 ): JSX.Element => {
   const { slug, title, image, caption, stack } = props.item
   return (
-    <article className="card" style={{ height: "100%" }}>
-      <GatsbyImage image={image} alt={caption} className="card-img-top" />
-      <div className="card-body">
-        {props.titleAs === "h2" && (
-          <h2 className="card-title h5">
-            <Link to={`/${slug}`}>{title}</Link>
-          </h2>
-        )}
-        {props.titleAs === "h3" && (
-          <h3 className="card-title h5">
-            <Link to={`/${slug}`}>{title}</Link>
-          </h3>
-        )}
-        <p className="card-text m-0">{caption}</p>
-        <p className="card-text m-0">
-          {stack.map(toolName => (
-            <span key={toolName} className="badge rounded-pill mt-1 me-1">
-              {toolName}
-            </span>
-          ))}
-        </p>
-      </div>
-    </article>
+    <Link to={`/${slug}`} style={{ textDecoration: 'none' }}>
+      <article className="card" style={{ height: "100%" }}>
+        <GatsbyImage image={image} alt={caption} className="card-img-top" />
+        <div className="card-body">
+          {props.titleAs === "h2" && (
+            <h2 className="card-title h5">{title}</h2>
+          )}
+          {props.titleAs === "h3" && (
+            <h3 className="card-title h5">{title}</h3>
+          )}
+          <p className="card-text m-0">{caption}</p>
+          <p className="card-text m-0">
+            {stack.map(toolName => (
+              <span key={toolName} className="badge rounded-pill mt-1 me-1">
+                {toolName}
+              </span>
+            ))}
+          </p>
+        </div>
+      </article>
+    </Link>
   )
 }
 
 export const ProjectsSection = () => {
-  const projects = usePages().slice(0, 2)
+  const projects = usePages().slice(0, 4)
   return (
     <section id="projects">
-      <h2>
-        Últimos <Link to="/projects">proyectos</Link>:
-      </h2>
+      <h2>Mis Proyectos</h2>
       <div className="row">
         {projects.map(item => (
           <div key={item.id} className="col-lg-6 p-sm-1 pb-3">
@@ -57,7 +53,7 @@ export const ProjectsSection = () => {
           </div>
         ))}
       </div>
-      <Link to="/projects">Ver todos los proyectos {">"}</Link>
+      <Link to="/projects">Ver todos los proyectos</Link>
     </section>
   )
 }

@@ -1,13 +1,9 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import { useTheme } from "./Theme"
 
-const SunSVG = require("../assets/bootstrap-icons/sun.svg")
-const MoonSVG = require("../assets/bootstrap-icons/moon.svg")
 const ListSVG = require("../assets/bootstrap-icons/list.svg")
 
 const DefaultNavbar = (): JSX.Element => {
-  const { theme, toggle } = useTheme()
   const [collapsed, setCollapsed] = useState(true)
   return (
     <nav className={`navbar sticky-top navbar-expand-md`}>
@@ -15,14 +11,6 @@ const DefaultNavbar = (): JSX.Element => {
         <Link to="/" className="navbar-brand">
           Angel Hurtado
         </Link>
-        <button
-          aria-label="Toggle Theme"
-          onClick={toggle}
-          style={{ border: "none", background: "none" }}
-        >
-          {theme === "dark" && <MoonSVG className="btn-indigo" />}
-          {theme === "light" && <SunSVG className="btn-orange" />}
-        </button>
         <button
           className="navbar-toggler"
           type="button"

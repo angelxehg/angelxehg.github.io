@@ -40,35 +40,31 @@ const PostCard = (
     tags,
   } = props.item
   return (
-    <article className="card" style={{ height: "100%" }}>
-      <img src={social_image} alt={description} className="card-img-top" />
-      <div className="card-body">
-        {props.titleAs === "h2" && (
-          <h2 className="card-title h5">
-            <a href={href} title={title} rel="external">
+    <a href={href} title={title} rel="external" style={{ textDecoration: 'none' }}>
+      <article className="card" style={{ height: "100%" }}>
+        <img src={social_image} alt={description} className="card-img-top" />
+        <div className="card-body">
+          {props.titleAs === "h2" && (
+            <h2 className="card-title h5">
               {title}
-            </a>
-          </h2>
-        )}
-        {props.titleAs === "h3" && (
-          <h3 className="card-title h5">
-            <a href={href} title={title} rel="external">
+            </h2>
+          )}
+          {props.titleAs === "h3" && (
+            <h3 className="card-title h5">
               {title}
-            </a>
-          </h3>
-        )}
-        <p className="card-text m-0">{description}</p>
-        <p className="card-text m-0">
-          {tags.split(", ").map(tagName => (
-            <span key={tagName} className="badge rounded-pill mt-1 me-1">
-              <a href={`https://dev.to/t/${tagName}`}>
+            </h3>
+          )}
+          <p className="card-text m-0">{description}</p>
+          <p className="card-text m-0">
+            {tags.split(", ").map(tagName => (
+              <span key={tagName} className="badge rounded-pill mt-1 me-1">
                 {tagName.charAt(0).toUpperCase() + tagName.slice(1)}
-              </a>
-            </span>
-          ))}
-        </p>
-      </div>
-    </article>
+              </span>
+            ))}
+          </p>
+        </div>
+      </article>
+    </a>
   )
 }
 
@@ -79,9 +75,7 @@ export const PostsSection = () => {
   }, [])
   return (
     <section id="posts">
-      <h2>
-        Últimas <Link to="/posts">entradas</Link>:
-      </h2>
+      <h2>Mis Posts</h2>
       <div className="row">
         {posts.map(item => (
           <div key={item.id} className="col-lg-6 p-sm-1 pb-3">
