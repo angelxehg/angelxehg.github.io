@@ -18,28 +18,28 @@ import { ProjectsSection } from "./projects"
 import { PostsSection } from "./posts"
 
 const EmailIconLink = (): JSX.Element => (
-  <a href="mailto:angelxehg@pm.me" rel="external" title="Send email to Angel" style={{textDecoration: 'none'}}>
+  <a href="mailto:angelxehg@pm.me" rel="external" title="Send email to Angel" style={{ textDecoration: 'none' }}>
     <EnvelopeFillSVG style={{ marginRight: '4px' }} />
     angelxehg@pm.me
   </a>
 )
 
 const LinkedInIconLink = (): JSX.Element => (
-  <a href="https://www.linkedin.com/in/angelxehg" rel="external" title="LinkedIn (/in/angelxehg)" style={{textDecoration: 'none'}}>
+  <a href="https://www.linkedin.com/in/angelxehg" rel="external" title="LinkedIn (/in/angelxehg)" style={{ textDecoration: 'none' }}>
     <LinkedInSVG style={{ marginRight: '4px' }} />
     LinkedIn (/in/angelxehg)
   </a>
 )
 
 const GitHubIconLink = (): JSX.Element => (
-  <a href="https://github.com/angelxehg" rel="external" title="GitHub (@angelxehg)" style={{textDecoration: 'none'}}>
+  <a href="https://github.com/angelxehg" rel="external" title="GitHub (@angelxehg)" style={{ textDecoration: 'none' }}>
     <GitHubSVG style={{ marginRight: '4px' }} />
     GitHub (@angelxehg)
   </a>
 )
 
 const TwitterIconLink = (): JSX.Element => (
-  <a href="https://www.twitter.com/angelxehg" rel="external" title="Twitter (@angelxehg)" style={{textDecoration: 'none'}}>
+  <a href="https://www.twitter.com/angelxehg" rel="external" title="Twitter (@angelxehg)" style={{ textDecoration: 'none' }}>
     <TwitterSVG style={{ marginRight: '4px' }} />
     Twitter (@angelxehg)
   </a>
@@ -48,17 +48,17 @@ const TwitterIconLink = (): JSX.Element => (
 const SocialLinks = () => (
   <nav>
     <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
-      <li>
+      <li style={{ marginBottom: '4px' }}>
         <EmailIconLink />
       </li>
-      <li>
-        <LinkedInIconLink/>
+      <li style={{ marginBottom: '4px' }}>
+        <LinkedInIconLink />
       </li>
-      <li>
-        <GitHubIconLink/>
+      <li style={{ marginBottom: '4px' }}>
+        <GitHubIconLink />
       </li>
-      <li>
-        <TwitterIconLink/>
+      <li style={{ marginBottom: '4px' }}>
+        <TwitterIconLink />
       </li>
     </ul>
   </nav>
