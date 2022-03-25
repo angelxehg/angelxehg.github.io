@@ -7,54 +7,59 @@ import DefaultFooter from "../components/Footer"
 import DefaultNavbar from "../components/Navbar"
 
 const SmileSVG = require("../assets/smile.svg")
+const EnvelopeFillSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
+const GitHubSVG = require("../assets/bootstrap-icons/github.svg")
+const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
+const TwitterSVG = require("../assets/bootstrap-icons/twitter.svg")
 
 import { AboutSection } from "./about"
 import { SkillsSection } from "./skills"
 import { ProjectsSection } from "./projects"
 import { PostsSection } from "./posts"
 
+const EmailIconLink = (): JSX.Element => (
+  <a href="mailto:angelxehg@pm.me" rel="external" title="Send email to Angel">
+    <EnvelopeFillSVG style={{ marginRight: '4px' }} />
+    angelxehg@pm.me
+  </a>
+)
 
-const socialLinks = [
-  {
-    title: "Enviame un Email",
-    href: "mailto:angelxehg@pm.me",
-  },
-  {
-    title: "Descarga mi CV",
-    href: "/cv-es.pdf",
-  },
-  {
-    title: "Mis diplomas",
-    href: "https://platzi.com/p/angelxehg",
-  },
-  {
-    title: "Visita mi blog en dev.to",
-    href: "https://dev.to/angelxehg",
-  },
-  {
-    title: "LinkedIn (/in/angelxehg)",
-    href: "https://www.linkedin.com/in/angelxehg",
-  },
-  {
-    title: "GitHub (@angelxehg)",
-    href: "https://github.com/angelxehg",
-  },
-  {
-    title: "Twitter (@angelxehg)",
-    href: "https://www.twitter.com/angelxehg",
-  },
-]
+const LinkedInIconLink = (): JSX.Element => (
+  <a href="https://www.linkedin.com/in/angelxehg" rel="external" title="LinkedIn (/in/angelxehg)">
+    <LinkedInSVG style={{ marginRight: '4px' }} />
+    LinkedIn (/in/angelxehg)
+  </a>
+)
+
+const GitHubIconLink = (): JSX.Element => (
+  <a href="https://github.com/angelxehg" rel="external" title="Send email to Angel">
+    <GitHubSVG style={{ marginRight: '4px' }} />
+    GitHub (@angelxehg)
+  </a>
+)
+
+const TwitterIconLink = (): JSX.Element => (
+  <a href="https://www.twitter.com/angelxehg" rel="external" title="Send email to Angel">
+    <TwitterSVG style={{ marginRight: '4px' }} />
+    Twitter (@angelxehg)
+  </a>
+)
 
 const SocialLinks = () => (
   <nav>
     <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
-      {socialLinks.map(({ title, href }) => (
-        <li key={href}>
-          <a href={href} rel="external" title={title}>
-            {title}
-          </a>
-        </li>
-      ))}
+      <li>
+        <EmailIconLink />
+      </li>
+      <li>
+        <LinkedInIconLink/>
+      </li>
+      <li>
+        <GitHubIconLink/>
+      </li>
+      <li>
+        <TwitterIconLink/>
+      </li>
     </ul>
   </nav>
 )
