@@ -4,7 +4,7 @@ import Redirect from "../components/Redirect"
 
 export const AboutSection = () => (
   <section id="about">
-    <h2>Acerca de mi:</h2>
+    <h2>Acerca de mi</h2>
     <div className="row">
       <div className="col-12 p-sm-1 pb-3">
         <div className="card">

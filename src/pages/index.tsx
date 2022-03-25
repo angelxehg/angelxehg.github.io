@@ -18,28 +18,28 @@ import { ProjectsSection } from "./projects"
 import { PostsSection } from "./posts"
 
 const EmailIconLink = (): JSX.Element => (
-  <a href="mailto:angelxehg@pm.me" rel="external" title="Send email to Angel">
+  <a href="mailto:angelxehg@pm.me" rel="external" title="Send email to Angel" style={{textDecoration: 'none'}}>
     <EnvelopeFillSVG style={{ marginRight: '4px' }} />
     angelxehg@pm.me
   </a>
 )
 
 const LinkedInIconLink = (): JSX.Element => (
-  <a href="https://www.linkedin.com/in/angelxehg" rel="external" title="LinkedIn (/in/angelxehg)">
+  <a href="https://www.linkedin.com/in/angelxehg" rel="external" title="LinkedIn (/in/angelxehg)" style={{textDecoration: 'none'}}>
     <LinkedInSVG style={{ marginRight: '4px' }} />
     LinkedIn (/in/angelxehg)
   </a>
 )
 
 const GitHubIconLink = (): JSX.Element => (
-  <a href="https://github.com/angelxehg" rel="external" title="Send email to Angel">
+  <a href="https://github.com/angelxehg" rel="external" title="GitHub (@angelxehg)" style={{textDecoration: 'none'}}>
     <GitHubSVG style={{ marginRight: '4px' }} />
     GitHub (@angelxehg)
   </a>
 )
 
 const TwitterIconLink = (): JSX.Element => (
-  <a href="https://www.twitter.com/angelxehg" rel="external" title="Send email to Angel">
+  <a href="https://www.twitter.com/angelxehg" rel="external" title="Twitter (@angelxehg)" style={{textDecoration: 'none'}}>
     <TwitterSVG style={{ marginRight: '4px' }} />
     Twitter (@angelxehg)
   </a>
