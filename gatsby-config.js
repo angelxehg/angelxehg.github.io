@@ -116,5 +116,18 @@ module.exports = {
       },
     },
     `gatsby-plugin-dark-mode`,
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Open Sans",
+              variants: ["300", "400", "500"],
+            },
+          ],
+        },
+      },
+    },
   ],
 }
