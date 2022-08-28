@@ -17,7 +17,7 @@ const ProjectCard = (
 ): JSX.Element => {
   const { slug, title, image, caption, stack } = props.item
   return (
-    <Link to={`/${slug}`} style={{ textDecoration: 'none' }}>
+    <Link to={slug} style={{ textDecoration: 'none' }}>
       <article className="card" style={{ height: "100%" }}>
         <GatsbyImage image={image} alt={caption} className="card-img-top" />
         <div className="card-body">

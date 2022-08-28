@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 
 import Footer from "../components/Footer"
@@ -9,7 +8,7 @@ import Layout from "../layouts/Layout"
 import DefaultNavbar from "../components/Navbar"
 
 export const query = graphql`
-  query PostsByID($id: String!) {
+  query ($id: String!) {
     mdx(id: { eq: $id }) {
       body
       frontmatter {
@@ -43,7 +42,8 @@ interface PageTemplateProps {
         caption: string
       }
     }
-  }
+  },
+  children: any,
 }
 
 const PageTemplate = (props: PageTemplateProps): JSX.Element => {
@@ -85,7 +85,7 @@ const PageTemplate = (props: PageTemplateProps): JSX.Element => {
         </div>
       </div>
       <main className="container-lg ps-sm-4 pe-sm-4 pt-3">
-        <MDXRenderer>{body}</MDXRenderer>
+        {props.children}
       </main>
       <Footer />
     </Layout>

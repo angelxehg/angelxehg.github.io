@@ -28,12 +28,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(`
     query {
       allMdx {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
+        nodes {
+          id
+          fields {
+            slug
+          }
+          internal {
+            contentFilePath
           }
         }
       }
@@ -45,12 +46,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   // Create blog post pages.
-  const nodes = result.data.allMdx.edges
-
-  nodes.forEach(({ node }) => {
+  const postTemplate = path.resolve(`./src/templates/page.tsx`)
+  result.data.allMdx.nodes.forEach(node => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/page.tsx`),
+      component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: { id: node.id },
     })
   })

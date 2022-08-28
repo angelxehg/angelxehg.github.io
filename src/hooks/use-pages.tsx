@@ -3,7 +3,9 @@ import { IGatsbyImageData } from "gatsby-plugin-image"
 
 export interface RAWPage {
   id: string
-  slug: string
+  fields: {
+    slug: string
+  }
   excerpt: string
   frontmatter: {
     title: string
@@ -28,11 +30,11 @@ export interface Page {
 }
 
 export const toPage = (item: RAWPage): Page => {
-  const { id, slug, excerpt } = item
+  const { id, fields, excerpt } = item
   const { date, title, caption, stack, published } = item.frontmatter
   return {
     id,
-    slug,
+    slug: fields.slug,
     date,
     title,
     excerpt,
@@ -59,7 +61,9 @@ export const usePages = (): Page[] => {
       allMdx {
         nodes {
           id
-          slug
+          fields {
+            slug
+          }
           excerpt(pruneLength: 35)
           frontmatter {
             title
