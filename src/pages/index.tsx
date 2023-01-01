@@ -18,9 +18,9 @@ import { ProjectsSection } from "./projects"
 import { PostsSection } from "./posts"
 
 const EmailIconLink = (): JSX.Element => (
-  <a href="mailto:angelxehg@pm.me" rel="external" title="Send email to Angel" style={{ textDecoration: 'none' }}>
+  <a href="mailto:angelxehg@proton.me" rel="external" title="Send email to Angel" style={{ textDecoration: 'none' }}>
     <EnvelopeFillSVG style={{ marginRight: '4px' }} />
-    angelxehg@pm.me
+    angelxehg@proton.me
   </a>
 )
 
