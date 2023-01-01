@@ -42,12 +42,12 @@ interface PageTemplateProps {
         caption: string
       }
     }
-  },
-  children: any,
+  }
+  children: any
 }
 
 const PageTemplate = (props: PageTemplateProps): JSX.Element => {
-  const { frontmatter, body } = props.data.mdx
+  const { frontmatter } = props.data.mdx
   const { title, image, caption, stack } = frontmatter
   return (
     <Layout>

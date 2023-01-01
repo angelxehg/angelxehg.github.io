@@ -17,16 +17,12 @@ const ProjectCard = (
 ): JSX.Element => {
   const { slug, title, image, caption, stack } = props.item
   return (
-    <Link to={slug} style={{ textDecoration: 'none' }}>
+    <Link to={slug} style={{ textDecoration: "none" }}>
       <article className="card" style={{ height: "100%" }}>
         <GatsbyImage image={image} alt={caption} className="card-img-top" />
         <div className="card-body">
-          {props.titleAs === "h2" && (
-            <h2 className="card-title h5">{title}</h2>
-          )}
-          {props.titleAs === "h3" && (
-            <h3 className="card-title h5">{title}</h3>
-          )}
+          {props.titleAs === "h2" && <h2 className="card-title h5">{title}</h2>}
+          {props.titleAs === "h3" && <h3 className="card-title h5">{title}</h3>}
           <p className="card-text m-0">{caption}</p>
           <p className="card-text m-0">
             {stack.map(toolName => (

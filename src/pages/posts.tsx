@@ -40,20 +40,17 @@ const PostCard = (
     tags,
   } = props.item
   return (
-    <a href={href} title={title} rel="external" style={{ textDecoration: 'none' }}>
+    <a
+      href={href}
+      title={title}
+      rel="external"
+      style={{ textDecoration: "none" }}
+    >
       <article className="card" style={{ height: "100%" }}>
         <img src={social_image} alt={description} className="card-img-top" />
         <div className="card-body">
-          {props.titleAs === "h2" && (
-            <h2 className="card-title h5">
-              {title}
-            </h2>
-          )}
-          {props.titleAs === "h3" && (
-            <h3 className="card-title h5">
-              {title}
-            </h3>
-          )}
+          {props.titleAs === "h2" && <h2 className="card-title h5">{title}</h2>}
+          {props.titleAs === "h3" && <h3 className="card-title h5">{title}</h3>}
           <p className="card-text m-0">{description}</p>
           <p className="card-text m-0">
             {tags.split(", ").map(tagName => (
