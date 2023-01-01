@@ -3,7 +3,13 @@ import React from "react"
 import "./Hero.scss"
 
 interface HeroProps {
-  children: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined
+  children:
+    | boolean
+    | React.ReactChild
+    | React.ReactFragment
+    | React.ReactPortal
+    | null
+    | undefined
 }
 
 export const Hero = (props: HeroProps): JSX.Element => (
@@ -14,4 +20,4 @@ export const Hero = (props: HeroProps): JSX.Element => (
   </div>
 )
 
-export default Hero;
+export default Hero
