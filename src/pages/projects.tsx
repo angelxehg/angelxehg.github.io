@@ -41,7 +41,7 @@ export const ProjectsSection = () => {
   const projects = usePages().slice(0, 4)
   return (
     <section id="projects">
-      <h2>Mis Proyectos</h2>
+      <h2>Proyectos personales</h2>
       <div className="row">
         {projects.map(item => (
           <div key={item.id} className="col-lg-6 p-sm-1 pb-3">

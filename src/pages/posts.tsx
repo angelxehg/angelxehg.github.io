@@ -72,7 +72,7 @@ export const PostsSection = () => {
   }, [])
   return (
     <section id="posts">
-      <h2>Mis Posts</h2>
+      <h2>Mis publicaciones</h2>
       <div className="row">
         {posts.map(item => (
           <div key={item.id} className="col-lg-6 p-sm-1 pb-3">
