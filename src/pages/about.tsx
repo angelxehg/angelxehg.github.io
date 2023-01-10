@@ -11,41 +11,24 @@ export const AboutSection = () => (
           <div className="card-body">
             <h3 className="card-title h5">Experiencia</h3>
             <p>
-              <b>Backend en Columbus.mx</b> (+1 año, desde enero 2022):
+              <b>Software Engineer en Columbus.mx</b> (1 año, desde enero 2022):
               <ul>
-                <li>
-                  Diseño, desarrollo, documentación y mantenimiento de API REST
-                  en Python, con Flask, SQLAlchemy, Docker
-                </li>
-                <li>
-                  Implementación de flujos con Event Driven Design, subscribers
-                  con RabbitMQ. Versionado de eventos, para mantener varias
-                  versiones de un flujo
-                </li>
-                <li>
-                  Desarrollo siguiendo patrones de diseño y prácticas como
-                  Domain Driven Design, arquitectura Hexagonal, Test Driven
-                  Development (pruebas unitarias con Pytest)
-                </li>
-                <li>
-                  Consumo de servicios externos como envío de correos, SMS,
-                  carga y descarga de archivos en memoria
-                </li>
-                <li>Consumo y desarrollo de WebHooks</li>
+                <li>Diseño y desarrollo siguiendo metodologías como DDD, Event Driven Design, Arquitectura Hexagonal y TDD</li>
+                <li>Diseño y normalización de bases de datos.</li>
+                <li>Aplicación de patrones de diseño Repository, Adapter, Strategy, Decorator, Factory Method.</li>
+                <li>Conocimiento de Python, SQL, TypeScript. Uso de herramientas como SQLAlchemy, RabbitMQ, Docker, Postgres, Oracle, Pytest, Swagger</li>
+                <li>Implementación de flujos asincronos, mediante API REST, WebHooks, Domain Events y Subscribers. Versionado de Domain Events y de APIs</li>
+                <li>Consumo de servicios externos como envío de correos, SMS, carga, descarga de archivos</li>
               </ul>
             </p>
             <p>
-              <b>Freelancer en Fiverr</b> (2 años, entre 2020-2021):
+              <b>Freelancer en Fiverr</b> (2 años, 2020-2021):
               <ul>
                 <li>
-                  Realicé proyectos de desarrollo web y aplicaciones móviles
-                  híbridas con Ionic y Angular, para clientes en México y en el
-                  extranjero.
+                  Desarrollo de aplicaciones para clientes en México y en el extranjero, en varios formatos (PWA, App Hibrida) y plataformas (Web, Android). Desarrollo backend con Django.
                 </li>
                 <li>
-                  Estos proyectos varían desde el mantenimiento de apps
-                  existentes, a la creación de nuevas apps a partir de diseño
-                  proporcionado por los clientes, iOS y Android
+                  Desarrollo con React, Angular, Ionic. Integración con Contentful, Firebase, servicios de pagos y Ads.
                 </li>
               </ul>
             </p>

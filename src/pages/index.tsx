@@ -96,7 +96,7 @@ const IndexPage = (): JSX.Element => (
       />
       <header className="mt-2">
         <h1>Angel Hurtado</h1>
-        <p>Backend Web Developer</p>
+        <p>Software Engineer</p>
       </header>
       <SocialLinks />
     </Hero>
