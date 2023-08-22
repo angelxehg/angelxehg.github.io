@@ -30,7 +30,7 @@ interface PostCardProps {
 }
 
 const PostCard = (
-  props: PostCardProps & { titleAs: "h2" | "h3" }
+  props: PostCardProps & { titleAs: "h2" | "h3" },
 ): JSX.Element => {
   const {
     title,
