@@ -13,7 +13,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = (
-  props: ProjectCardProps & { titleAs: "h2" | "h3" }
+  props: ProjectCardProps & { titleAs: "h2" | "h3" },
 ): JSX.Element => {
   const { slug, title, image, caption, stack } = props.item
   return (

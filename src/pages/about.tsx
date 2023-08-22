@@ -1,7 +1,7 @@
 import React from "react"
 
 import Redirect from "../components/Redirect"
-
+// TODO: ul not a descendant of p
 export const AboutSection = () => (
   <section id="about">
     <h2>Acerca de mi</h2>
