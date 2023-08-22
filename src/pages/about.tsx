@@ -13,22 +13,42 @@ export const AboutSection = () => (
             <p>
               <b>Software Engineer en Columbus.mx</b> (1 año, desde enero 2022):
               <ul>
-                <li>Diseño y desarrollo siguiendo metodologías como DDD, Event Driven Design, Arquitectura Hexagonal y TDD</li>
+                <li>
+                  Diseño y desarrollo siguiendo metodologías como DDD, Event
+                  Driven Design, Arquitectura Hexagonal y TDD
+                </li>
                 <li>Diseño y normalización de bases de datos.</li>
-                <li>Aplicación de patrones de diseño Repository, Adapter, Strategy, Decorator, Factory Method.</li>
-                <li>Conocimiento de Python, SQL, TypeScript. Uso de herramientas como SQLAlchemy, RabbitMQ, Docker, Postgres, Oracle, Pytest, Swagger</li>
-                <li>Implementación de flujos asincronos, mediante API REST, WebHooks, Domain Events y Subscribers. Versionado de Domain Events y de APIs</li>
-                <li>Consumo de servicios externos como envío de correos, SMS, carga, descarga de archivos</li>
+                <li>
+                  Aplicación de patrones de diseño Repository, Adapter,
+                  Strategy, Decorator, Factory Method.
+                </li>
+                <li>
+                  Conocimiento de Python, SQL, TypeScript. Uso de herramientas
+                  como SQLAlchemy, RabbitMQ, Docker, Postgres, Oracle, Pytest,
+                  Swagger
+                </li>
+                <li>
+                  Implementación de flujos asincronos, mediante API REST,
+                  WebHooks, Domain Events y Subscribers. Versionado de Domain
+                  Events y de APIs
+                </li>
+                <li>
+                  Consumo de servicios externos como envío de correos, SMS,
+                  carga, descarga de archivos
+                </li>
               </ul>
             </p>
             <p>
               <b>Freelancer en Fiverr</b> (2 años, 2020-2021):
               <ul>
                 <li>
-                  Desarrollo de aplicaciones para clientes en México y en el extranjero, en varios formatos (PWA, App Hibrida) y plataformas (Web, Android). Desarrollo backend con Django.
+                  Desarrollo de aplicaciones para clientes en México y en el
+                  extranjero, en varios formatos (PWA, App Hibrida) y
+                  plataformas (Web, Android). Desarrollo backend con Django.
                 </li>
                 <li>
-                  Desarrollo con React, Angular, Ionic. Integración con Contentful, Firebase, servicios de pagos y Ads.
+                  Desarrollo con React, Angular, Ionic. Integración con
+                  Contentful, Firebase, servicios de pagos y Ads.
                 </li>
               </ul>
             </p>
