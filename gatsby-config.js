@@ -2,20 +2,19 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-const {
-  NODE_ENV,
-  DEFAULT_URL,
-  URL: NETLIFY_SITE_URL = DEFAULT_URL || "https://angelxehg.com",
-  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV,
-} = process.env
+const siteUrl =
+  process.env.NETLIFY_SITE_URL ||
+  process.env.DEFAULT_URL ||
+  `https://angelxehg.com`
+
+const { NODE_ENV, CONTEXT: NETLIFY_ENV = NODE_ENV } = process.env
 
 module.exports = {
   siteMetadata: {
     title: `Angel Hurtado`,
     description: `¡Hola mundo! Hago web development con Angular, TypeScript y React`,
     author: `@angelxehg`,
-    siteUrl: NETLIFY_DEPLOY_URL,
+    siteUrl: siteUrl,
   },
   flags: {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
@@ -23,6 +22,57 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+          allMdx {
+            nodes {
+              id
+              fields {
+                slug
+              }
+              frontmatter {
+                date
+              }
+            }
+          }
+        }
+      `,
+        excludes: [`/404`, `/about`, `/skills`],
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allMdx: { nodes: allMdx },
+        }) => {
+          const mdxNodeMap = allMdx.reduce((acc, node) => {
+            const uri = node.fields.slug
+            acc[uri] = node
+            return acc
+          }, {})
+
+          return allPages.map(page => {
+            return { ...page, ...mdxNodeMap[page.path] }
+          })
+        },
+        serialize: ({ path, frontmatter }) => {
+          var returned = { url: path }
+          if (frontmatter != null && frontmatter.date != null) {
+            returned = {
+              url: path,
+              lastmod: frontmatter.date,
+            }
+          }
+          return returned
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
