@@ -81,7 +81,7 @@ const SEO = (props: SEOProps) => {
         },
       ].concat(meta)}
     >
-      <body></body>
+      <body data-bs-theme="dark"></body>
     </Helmet>
   )
 }
