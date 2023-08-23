@@ -87,7 +87,7 @@ module.exports = {
                 disallow: ["/404", "/about", "/skills"],
               },
             ],
-            sitemap: "https://angelxehg.com/sitemap.xml",
+            sitemap: "https://angelxehg.com/sitemap-index.xml",
           },
           "branch-deploy": {
             policy: [{ userAgent: "*", disallow: ["/"] }],
