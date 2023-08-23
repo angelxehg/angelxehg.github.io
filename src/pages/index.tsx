@@ -9,7 +9,6 @@ import DefaultNavbar from "../components/Navbar"
 const EnvelopeFillSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
 const GitHubSVG = require("../assets/bootstrap-icons/github.svg")
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
-const TwitterSVG = require("../assets/bootstrap-icons/twitter.svg")
 
 import { AboutSection } from "./about"
 import { SkillsSection } from "./skills"
@@ -52,18 +51,6 @@ const GitHubIconLink = (): JSX.Element => (
   </a>
 )
 
-const TwitterIconLink = (): JSX.Element => (
-  <a
-    href="https://www.twitter.com/angelxehg"
-    rel="external"
-    title="Twitter (@angelxehg)"
-    style={{ textDecoration: "none" }}
-  >
-    <TwitterSVG style={{ marginRight: "4px" }} />
-    Twitter (@angelxehg)
-  </a>
-)
-
 const SocialLinks = () => (
   <nav>
     <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
@@ -75,9 +62,6 @@ const SocialLinks = () => (
       </li>
       <li style={{ marginBottom: "4px" }}>
         <GitHubIconLink />
-      </li>
-      <li style={{ marginBottom: "4px" }}>
-        <TwitterIconLink />
       </li>
     </ul>
   </nav>
