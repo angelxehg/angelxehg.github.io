@@ -9,7 +9,7 @@ on:
 jobs:
   install:
     name: Install
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -24,9 +24,10 @@ jobs:
       - name: Install dependencies
         if: steps.node-cache.outputs.cache-hit != 'true'
         run: npm install --legacy-peer-deps
+
   lint:
     name: Linting
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22
     needs: install
     steps:
       - uses: actions/checkout@v2
@@ -44,9 +45,10 @@ jobs:
         run: npm install
       - name: Run Lint command
         run: npm run lint
+
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22
     needs: install
     steps:
       - uses: actions/checkout@v2
