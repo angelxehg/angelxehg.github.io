@@ -24,12 +24,6 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-advanced-sitemap`,
-      options: {
-        exclude: [`/404`, `/about`, `/skills`],
-      },
-    },
-    {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://angelxehg.com",
