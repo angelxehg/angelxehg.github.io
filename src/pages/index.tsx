@@ -149,7 +149,8 @@ export const AboutSection = () => (
           <h2 className="card-header h5">Experiencia</h2>
           <div className="card-body">
             <p>
-              <b>Software Engineer en Columbus.mx</b> (1 año, desde enero 2022):
+              <b>Software Engineer en Columbus.mx</b> (~2 años, desde enero
+              2022):
             </p>
             <ul>
               <li>
