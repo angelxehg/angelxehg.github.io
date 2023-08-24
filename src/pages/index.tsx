@@ -65,16 +65,16 @@ const DevToInconLink = (): JSX.Element => (
 const SocialLinks = () => (
   <nav>
     <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
-      <li style={{ marginBottom: "4px" }}>
+      <li style={{ marginBottom: "10px" }}>
         <EmailIconLink />
       </li>
-      <li style={{ marginBottom: "4px" }}>
+      <li style={{ marginBottom: "10px" }}>
         <LinkedInIconLink />
       </li>
-      <li style={{ marginBottom: "4px" }}>
+      <li style={{ marginBottom: "10px" }}>
         <GitHubIconLink />
       </li>
-      <li style={{ marginBottom: "4px" }}>
+      <li style={{ marginBottom: "10px" }}>
         <DevToInconLink />
       </li>
     </ul>
