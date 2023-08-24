@@ -10,9 +10,11 @@ const ThemeContext = createContext(defaultThemeContext)
 export const useTheme = () => useContext(ThemeContext)
 
 export const ThemeContextProvider = props => {
-  var theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light"
+  // TODO: use a plugin
+  // var theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+  //   ? "dark"
+  //   : "light"
+  var theme = "dark"
   return (
     <ThemeContext.Provider value={{ theme }}>
       {props.children}
