@@ -49,11 +49,6 @@ const DefaultNavbar = (): JSX.Element => {
                 Proyectos
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/posts" className="nav-link text-reset">
-                Blog
-              </Link>
-            </li>
           </ul>
         </div>
       </div>

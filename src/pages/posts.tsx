@@ -65,26 +65,6 @@ const PostCard = (
   )
 }
 
-export const PostsSection = () => {
-  const [posts, setPosts] = useState<DevToPost[]>([])
-  useEffect(() => {
-    fetchDevToPosts().then(posts => setPosts(posts.slice(0, 4)))
-  }, [])
-  return (
-    <section id="posts">
-      <h2>Mis publicaciones</h2>
-      <div className="row">
-        {posts.map(item => (
-          <div key={item.id} className="col-lg-6 p-sm-1 pb-3">
-            <PostCard item={item} titleAs="h3" />
-          </div>
-        ))}
-      </div>
-      <Link to="/posts">Ver todas las entradas</Link>
-    </section>
-  )
-}
-
 const PostsPage = (): JSX.Element => {
   const [posts, setPosts] = useState<DevToPost[]>([])
   useEffect(() => {
