@@ -32,44 +32,17 @@ module.exports = {
               path
             }
           }
-          allMdx {
-            nodes {
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                date
-              }
-            }
-          }
         }
       `,
-        excludes: [`/404`, `/about`, `/skills`],
+        excludes: [`/404`, `/about`, `/skills`, '/projects', '/posts'],
         resolveSiteUrl: () => siteUrl,
         resolvePages: ({
-          allSitePage: { nodes: allPages },
-          allMdx: { nodes: allMdx },
+          allSitePage: { nodes: allPages }
         }) => {
-          const mdxNodeMap = allMdx.reduce((acc, node) => {
-            const uri = node.fields.slug
-            acc[uri] = node
-            return acc
-          }, {})
-
-          return allPages.map(page => {
-            return { ...page, ...mdxNodeMap[page.path] }
-          })
+          return allPages
         },
-        serialize: ({ path, frontmatter }) => {
-          var returned = { url: path }
-          if (frontmatter != null && frontmatter.date != null) {
-            returned = {
-              url: path,
-              lastmod: frontmatter.date,
-            }
-          }
-          return returned
+        serialize: ({ path }) => {
+          return { url: path }
         },
       },
     },
@@ -84,7 +57,7 @@ module.exports = {
               {
                 userAgent: "*",
                 allow: "/",
-                disallow: ["/404", "/about", "/skills"],
+                disallow: ["/404", "/about", "/skills", '/projects', '/posts'],
               },
             ],
             sitemap: "https://angelxehg.com/sitemap-index.xml",
@@ -115,7 +88,7 @@ module.exports = {
         background_color: `#f6f6f6`,
         theme_color: `#f6f6f6`,
         display: `minimal-ui`,
-        icon: `static/images/Avataaars.Opt.Sqr.png`, // This path is relative to the root of the site.
+        icon: `static/images/Avataaars.Opt.Sqr.png`, // This path is relative to the root of the site. // TODO: remove
       },
     },
     {
@@ -131,27 +104,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [`.mdx`, `.md`],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1200,
-            },
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `content`,
-        path: `${__dirname}/content`,
-      },
-    },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
