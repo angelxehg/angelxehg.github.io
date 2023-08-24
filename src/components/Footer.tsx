@@ -1,7 +1,7 @@
 import React from "react"
 
 const DefaultFooter = (): JSX.Element => (
-  <footer className="navbar bg-body-tertiary">
+  <footer className="navbar bg-body-secondary">
     <div className="container-lg ps-sm-4 pe-sm-4" style={{ display: "block" }}>
       <p className="navbar-text m-0">
         Angel Hurtado © {new Date().getFullYear()}. Reporta problemas o envía
