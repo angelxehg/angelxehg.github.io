@@ -34,11 +34,9 @@ module.exports = {
           }
         }
       `,
-        excludes: [`/404`, `/about`, `/skills`, '/projects', '/posts'],
+        excludes: [`/404`, `/about`, `/skills`, "/projects", "/posts"],
         resolveSiteUrl: () => siteUrl,
-        resolvePages: ({
-          allSitePage: { nodes: allPages }
-        }) => {
+        resolvePages: ({ allSitePage: { nodes: allPages } }) => {
           return allPages
         },
         serialize: ({ path }) => {
@@ -57,7 +55,7 @@ module.exports = {
               {
                 userAgent: "*",
                 allow: "/",
-                disallow: ["/404", "/about", "/skills", '/projects', '/posts'],
+                disallow: ["/404", "/about", "/skills", "/projects", "/posts"],
               },
             ],
             sitemap: "https://angelxehg.com/sitemap-index.xml",
@@ -78,19 +76,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-remark-images`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#f6f6f6`,
-        theme_color: `#f6f6f6`,
-        display: `minimal-ui`,
-        icon: `static/images/Avataaars.Opt.Sqr.png`, // This path is relative to the root of the site. // TODO: remove
-      },
-    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
