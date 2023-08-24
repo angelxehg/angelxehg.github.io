@@ -6,7 +6,7 @@ export const AboutSection = () => (
   <section id="about">
     <h2>Acerca de mi</h2>
     <div className="row">
-      <div className="col-md-6 p-sm-1 pb-3 pt-3">
+      <div className="col-md-6 p-sm-1 pb-3">
         <div className="card" style={{ height: "100%" }}>
           <div className="card-body">
             <h3 className="card-title h5">Experiencia</h3>
