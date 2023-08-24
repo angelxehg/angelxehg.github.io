@@ -2,6 +2,13 @@
 @import "../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
+$body-bg: #f6f6f6;
+$body-secondary-bg: #ffffff;
+$body-tertiary-bg: #e0e0e0;
+
+$body-bg-dark: #000000;
+$body-secondary-bg-dark: #2a2a2a;
+$body-tertiary-bg-dark: #181818;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../node_modules/bootstrap/scss/variables";
@@ -96,23 +103,3 @@ a {
 svg.fill-me-anyway {
   fill: var(--bs-emphasis-color);
 }
-
-// // Themes
-// body {
-//   --bg: #f6f6f6;
-//   --bg-hero: #e0e0e0;
-//   --bg-card: #ffffff;
-//   --bg-navbar: #ffffff;
-//   --text: #000000;
-//   --border: rgba(0, 0, 0,0.5);
-//   font-family: "Open Sans";
-// }
-
-// body.dark {
-//   --bg: #000000;
-//   --bg-hero: #181818;
-//   --bg-card: #101010;
-//   --bg-navbar: #2a2a2a;
-//   --text: #ffffff;
-//   --border: rgba(255, 255, 255,0.5);
-// }
