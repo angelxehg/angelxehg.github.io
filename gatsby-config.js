@@ -84,6 +84,18 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Angel Hurtado's Portfolio`,
+        short_name: `Angel Hurtado`,
+        start_url: `/`,
+        background_color: `#f6f6f6`,
+        theme_color: `#f6f6f6`,
+        display: `minimal-ui`,
+        icon: `static/images/Avataaars.Opt.Sqr.png`, // This path is relative to the root of the site.
+      },
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
