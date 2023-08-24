@@ -3,9 +3,6 @@ import PropTypes from "prop-types"
 
 const defaultThemeContext = {
   theme: "light",
-  toggle: () => {
-    throw new Error("Toggle theme not implemented")
-  },
 }
 
 const ThemeContext = createContext(defaultThemeContext)
@@ -13,10 +10,11 @@ const ThemeContext = createContext(defaultThemeContext)
 export const useTheme = () => useContext(ThemeContext)
 
 export const ThemeContextProvider = props => {
-  var theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  const toggle = () => toggleTheme(theme === "light" ? "dark" : "light")
+  var theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light"
   return (
-    <ThemeContext.Provider value={{ theme, toggle }}>
+    <ThemeContext.Provider value={{ theme }}>
       {props.children}
     </ThemeContext.Provider>
   )

@@ -99,9 +99,9 @@ export const AboutSection = () => (
     <div className="row">
       <div className="col-lg-4 p-sm-1 pb-3">
         <div className="card">
+          <h2 className="card-header h5">Acerca de mi</h2>
           <div className="card-body">
-            <h3 className="card-title h5">Acerca de mi</h3>
-            <p className="card-text m-0 mt-2">
+            <p className="card-text m-0">
               Comencé con desarrollo móvil con Windows Phone, mis primeros
               lenguajes fueron C# y Visual Basic. Con estos desarrollos llegué a
               participar en concursos escolares. A partir de la universidad me
@@ -115,8 +115,8 @@ export const AboutSection = () => (
           </div>
         </div>
         <div className="card mt-2">
+          <h2 className="card-header h5">Ubicación</h2>
           <div className="card-body">
-            <h3 className="card-title h5">Ubicación</h3>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 <b>Origen</b>: Fresnillo Zacatecas, MX
@@ -128,8 +128,8 @@ export const AboutSection = () => (
           </div>
         </div>
         <div className="card mt-2">
+          <h2 className="card-header h5">Educación</h2>
           <div className="card-body">
-            <h3 className="card-title h5">Educación</h3>
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
               <li>
                 Ingeniería en Tecnologías de la Información y Comunicación{" "}
@@ -146,8 +146,8 @@ export const AboutSection = () => (
       </div>
       <div className="col-lg-8 p-sm-1 pb-3">
         <div className="card">
+          <h2 className="card-header h5">Experiencia</h2>
           <div className="card-body">
-            <h3 className="card-title h5">Experiencia</h3>
             <p>
               <b>Software Engineer en Columbus.mx</b> (1 año, desde enero 2022):
             </p>
@@ -194,8 +194,8 @@ export const AboutSection = () => (
         </div>
         {stacks.map(({ title, tools }, n) => (
           <div key={n} className="card mt-2">
+            <h2 className="card-header h5">{title}</h2>
             <div className="card-body">
-              <h3 className="card-title h5">{title}</h3>
               <p className="card-text">
                 {tools.map(toolName => (
                   <span key={toolName} className="badge rounded-pill mt-1 me-1">
