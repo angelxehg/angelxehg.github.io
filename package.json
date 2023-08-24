@@ -29,9 +29,8 @@
     "lint": "eslint src/**/*.tsx src/**/*.jsx src/**/*.ts"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3",
+    "bootstrap": "^5.3.1",
     "gatsby": "^5.11.0",
-    "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-gatsby-cloud": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",

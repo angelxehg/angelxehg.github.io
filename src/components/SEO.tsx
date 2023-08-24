@@ -15,7 +15,6 @@ interface SEOProps {
 
 const SEO = (props: SEOProps) => {
   const { theme } = useTheme()
-
   const { description, lang, meta, title, image } = props
   const site = useSiteMetadata()
 
@@ -84,7 +83,7 @@ const SEO = (props: SEOProps) => {
         },
       ].concat(meta)}
     >
-      <body className={`${theme}`}></body>
+      <body data-bs-theme={`${theme}`}></body>
     </Helmet>
   )
 }
