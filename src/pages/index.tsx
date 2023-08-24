@@ -9,6 +9,7 @@ import DefaultNavbar from "../components/Navbar"
 const EnvelopeFillSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
 const GitHubSVG = require("../assets/bootstrap-icons/github.svg")
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
+const VectorPenSvg = require("../assets/bootstrap-icons/vector-pen.svg")
 
 import { AboutSection } from "./about"
 import { SkillsSection } from "./skills"
@@ -51,6 +52,18 @@ const GitHubIconLink = (): JSX.Element => (
   </a>
 )
 
+const DevToInconLink = (): JSX.Element => (
+  <a
+    href="https://dev.to/angelxehg"
+    rel="external"
+    title="dev.to/angelxehg"
+    style={{ textDecoration: "none" }}
+  >
+    <VectorPenSvg style={{ marginRight: "4px" }} />
+    dev.to/angelxehg
+  </a>
+)
+
 const SocialLinks = () => (
   <nav>
     <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
@@ -62,6 +75,9 @@ const SocialLinks = () => (
       </li>
       <li style={{ marginBottom: "4px" }}>
         <GitHubIconLink />
+      </li>
+      <li style={{ marginBottom: "4px" }}>
+        <DevToInconLink />
       </li>
     </ul>
   </nav>
