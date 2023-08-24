@@ -1,9 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { MDXProvider } from "@mdx-js/react"
 
 const Layout = props => (
-  <MDXProvider>{props.children}</MDXProvider>
+  <>{props.children}</>
 )
 
 Layout.propTypes = {
