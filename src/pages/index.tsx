@@ -13,7 +13,6 @@ const VectorPenSvg = require("../assets/bootstrap-icons/vector-pen.svg")
 
 import { AboutSection } from "./about"
 import { SkillsSection } from "./skills"
-import { ProjectsSection } from "./projects"
 
 const EmailIconLink = (): JSX.Element => (
   <a
@@ -102,7 +101,6 @@ const IndexPage = (): JSX.Element => (
     <main className="container-lg ps-sm-4 pe-sm-4 pb-3">
       <AboutSection />
       <SkillsSection />
-      <ProjectsSection />
     </main>
     <DefaultFooter />
   </Layout>

@@ -37,23 +37,6 @@ const ProjectCard = (
   )
 }
 
-export const ProjectsSection = () => {
-  const projects = usePages().slice(0, 4)
-  return (
-    <section id="projects">
-      <h2>Proyectos personales</h2>
-      <div className="row">
-        {projects.map(item => (
-          <div key={item.id} className="col-lg-6 p-sm-1 pb-3">
-            <ProjectCard item={item} titleAs="h3" />
-          </div>
-        ))}
-      </div>
-      <Link to="/projects">Ver todos los proyectos</Link>
-    </section>
-  )
-}
-
 const ProjectsPage = (): JSX.Element => {
   const projects = usePages()
   return (

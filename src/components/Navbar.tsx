@@ -44,11 +44,6 @@ const DefaultNavbar = (): JSX.Element => {
                 Habilidades
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/projects" className="nav-link text-reset">
-                Proyectos
-              </Link>
-            </li>
           </ul>
         </div>
       </div>
