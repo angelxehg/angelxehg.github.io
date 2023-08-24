@@ -234,7 +234,7 @@ const IndexPage = (): JSX.Element => (
     <DefaultNavbar />
     <Hero>
       <img
-        src="images/2023-05-09-Square.jpg"
+        src="images/2023-05-09-Square.webp"
         className="rounded-circle fluid align-self-center"
         alt="Avatar de Angel"
         style={{ height: "150px", width: "150px" }}
