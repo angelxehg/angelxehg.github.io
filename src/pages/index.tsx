@@ -5,14 +5,12 @@ import Layout from "../layouts/Layout"
 import Hero from "../components/Hero"
 import DefaultFooter from "../components/Footer"
 import DefaultNavbar from "../components/Navbar"
+import stacks from "../meta/stacks"
 
 const EnvelopeFillSVG = require("../assets/bootstrap-icons/envelope-fill.svg")
 const GitHubSVG = require("../assets/bootstrap-icons/github.svg")
 const LinkedInSVG = require("../assets/bootstrap-icons/linkedin.svg")
 const VectorPenSvg = require("../assets/bootstrap-icons/vector-pen.svg")
-
-import { AboutSection } from "./about"
-import { SkillsSection } from "./skills"
 
 const EmailIconLink = (): JSX.Element => (
   <a
@@ -81,6 +79,138 @@ const SocialLinks = () => (
   </nav>
 )
 
+export const SkillCard = (props: { title: string; tools: string[] }) => (
+  <div className="card">
+    <div className="card-body">
+      <h3 className="card-title h5">{props.title}</h3>
+      <p className="card-text">
+        {props.tools.map(toolName => (
+          <span key={toolName} className="badge rounded-pill mt-1 me-1">
+            {toolName}
+          </span>
+        ))}
+      </p>
+    </div>
+  </div>
+)
+
+export const AboutSection = () => (
+  <section id="about">
+    <div className="row">
+      <div className="col-lg-4 p-sm-1 pb-3">
+        <div className="card">
+          <div className="card-body">
+            <h3 className="card-title h5">Acerca de mi</h3>
+            <p className="card-text m-0 mt-2">
+              Comencé con desarrollo móvil con Windows Phone, mis primeros
+              lenguajes fueron C# y Visual Basic. Con estos desarrollos llegué a
+              participar en concursos escolares. A partir de la universidad me
+              acerqué al desarrollo web, tanto frontend como backend. Durante el
+              último año me he dedicado principalmente a Backend.
+            </p>
+            <p className="card-text m-0 mt-2">
+              Mis pasatiempos son escuchar música, jugar videojuegos de
+              estrategia y construcción.
+            </p>
+          </div>
+        </div>
+        <div className="card mt-2">
+          <div className="card-body">
+            <h3 className="card-title h5">Ubicación</h3>
+            <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
+              <li>
+                <b>Origen</b>: Fresnillo Zacatecas, MX
+              </li>
+              <li>
+                <b>Idiomas</b>: Español (nativo), Inglés (intermedio)
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="card mt-2">
+          <div className="card-body">
+            <h3 className="card-title h5">Educación</h3>
+            <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
+              <li>
+                Ingeniería en Tecnologías de la Información y Comunicación{" "}
+                <br />
+                <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
+                  Universidad Tecnológica del Estado de Zacatecas
+                </a>
+                <br />
+                2017 - 2021 (En proceso de titulación)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="col-lg-8 p-sm-1 pb-3">
+        <div className="card">
+          <div className="card-body">
+            <h3 className="card-title h5">Experiencia</h3>
+            <p>
+              <b>Software Engineer en Columbus.mx</b> (1 año, desde enero 2022):
+            </p>
+            <ul>
+              <li>
+                Diseño y desarrollo siguiendo metodologías como DDD, Event
+                Driven Design, Arquitectura Hexagonal y TDD
+              </li>
+              <li>Diseño y normalización de bases de datos.</li>
+              <li>
+                Aplicación de patrones de diseño Repository, Adapter, Strategy,
+                Decorator, Factory Method.
+              </li>
+              <li>
+                Conocimiento de Python, SQL, TypeScript. Uso de herramientas
+                como SQLAlchemy, RabbitMQ, Docker, Postgres, Oracle, Pytest,
+                Swagger
+              </li>
+              <li>
+                Implementación de flujos asincronos, mediante API REST,
+                WebHooks, Domain Events y Subscribers. Versionado de Domain
+                Events y de APIs
+              </li>
+              <li>
+                Consumo de servicios externos como envío de correos, SMS, carga,
+                descarga de archivos
+              </li>
+            </ul>
+            <p>
+              <b>Freelancer en Fiverr</b> (2 años, 2020-2021):
+            </p>
+            <ul>
+              <li>
+                Desarrollo de aplicaciones para clientes en México y en el
+                extranjero, en varios formatos (PWA, App Hibrida) y plataformas
+                (Web, Android). Desarrollo backend con Django.
+              </li>
+              <li>
+                Desarrollo con React, Angular, Ionic. Integración con
+                Contentful, Firebase, servicios de pagos y Ads.
+              </li>
+            </ul>
+          </div>
+        </div>
+        {stacks.map(({ title, tools }, n) => (
+          <div key={n} className="card mt-2">
+            <div className="card-body">
+              <h3 className="card-title h5">{title}</h3>
+              <p className="card-text">
+                {tools.map(toolName => (
+                  <span key={toolName} className="badge rounded-pill mt-1 me-1">
+                    {toolName}
+                  </span>
+                ))}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)
+
 const IndexPage = (): JSX.Element => (
   <Layout>
     <SEO title="Portafolio" lang="es" />
@@ -100,7 +230,6 @@ const IndexPage = (): JSX.Element => (
     </Hero>
     <main className="container-lg ps-sm-4 pe-sm-4 pb-3">
       <AboutSection />
-      <SkillsSection />
     </main>
     <DefaultFooter />
   </Layout>
