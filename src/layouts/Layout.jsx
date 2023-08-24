@@ -1,8 +1,9 @@
 import React from "react"
+import { ThemeContextProvider } from "../components/Theme"
 import PropTypes from "prop-types"
 
 const Layout = props => (
-  <>{props.children}</>
+  <ThemeContextProvider>{props.children}</ThemeContextProvider>
 )
 
 Layout.propTypes = {

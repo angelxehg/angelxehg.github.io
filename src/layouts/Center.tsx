@@ -1,4 +1,5 @@
 import React from "react"
+import { ThemeContextProvider } from "../components/Theme"
 
 import "./Center.scss"
 
@@ -7,9 +8,11 @@ interface CenterLayoutProps {
 }
 
 const CenterLayout = (props: CenterLayoutProps): JSX.Element => (
-  <div className="center-layout p-1">
-    <main className="center-layout-content">{props.children}</main>
-  </div>
+  <ThemeContextProvider>
+    <div className="center-layout p-1">
+      <main className="center-layout-content">{props.children}</main>
+    </div>
+  </ThemeContextProvider>
 )
 
 export default CenterLayout
