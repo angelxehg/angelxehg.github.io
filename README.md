@@ -42,5 +42,6 @@ Use este comando para desplegar en producción:
 
 Variables requeridas:
 
-- `NETLIFY_SITE_URL` (se configura automaticamente al desplegar desde GitHub)
+- `URL` (se configura automaticamente al desplegar desde GitHub, para prod)
+- `DEPLOY_URL` (se configura automaticamente al desplegar desde GitHub, para Develop previews)
 - `NPM_FLAGS=--legacy-peer-deps`
