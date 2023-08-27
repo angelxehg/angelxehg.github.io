@@ -20,6 +20,7 @@ module.exports = {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
   plugins: [
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
@@ -90,8 +91,6 @@ module.exports = {
         name: `Angel Hurtado's Portfolio`,
         short_name: `Angel Hurtado`,
         start_url: `/`,
-        background_color: `#f6f6f6`,
-        theme_color: `#f6f6f6`,
         display: `minimal-ui`,
         icon: `static/images/Avataaars.Opt.Sqr.png`, // This path is relative to the root of the site.
       },
@@ -108,18 +107,6 @@ module.exports = {
         purgeCSSOptions: {},
       },
     },
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: "Open Sans",
-              variants: ["300", "400", "500"],
-            },
-          ],
-        },
-      },
-    },
+    `gatsby-plugin-dark-mode`,
   ],
 }

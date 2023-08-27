@@ -1,7 +1,7 @@
 {
   "name": "angelxehg.github.io",
   "description": "Mi sitio web y portafolio",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "homepage": "https://angelxehg.github.io/",
   "author": {
     "name": "Angel Hurtado",
@@ -31,6 +31,7 @@
   "dependencies": {
     "bootstrap": "^5.3.1",
     "gatsby": "^5.11.0",
+    "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-gatsby-cloud": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
@@ -42,7 +43,6 @@
     "gatsby-plugin-sass": "^6.11.0",
     "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-plugin-sitemap": "^6.11.0",
-    "gatsby-plugin-webfonts": "^2.3.2",
     "gatsby-transformer-sharp": "^5.11.0",
     "postcss": "^8.4.20",
     "prop-types": "^15.8.1",
@@ -62,6 +62,7 @@
     "eslint": "^8.47.0",
     "eslint-plugin-react": "^7.31.11",
     "gatsby-plugin-netlify": "^5.1.0",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.31",
     "gh-pages": "^6.0.0",
     "prettier": "^3.0.2"
   }
