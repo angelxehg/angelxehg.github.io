@@ -42,7 +42,6 @@
     "gatsby-plugin-sass": "^6.11.0",
     "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-plugin-sitemap": "^6.11.0",
-    "gatsby-plugin-webfonts": "^2.3.2",
     "gatsby-transformer-sharp": "^5.11.0",
     "postcss": "^8.4.20",
     "prop-types": "^15.8.1",
