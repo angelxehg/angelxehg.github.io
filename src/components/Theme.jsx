@@ -13,16 +13,18 @@ const ThemeContext = createContext(defaultThemeContext)
 
 export const useTheme = () => useContext(ThemeContext)
 
-export const ThemeContextProvider = props => <ThemeToggler>
-  {({ theme, toggleTheme }) => {
-    const toggle = () => toggleTheme(theme === "light" ? "dark" : "light")
-    return (
-      <ThemeContext.Provider value={{ theme, toggle }}>
-        {props.children}
-      </ThemeContext.Provider>
-    )
-  }}
-</ThemeToggler>
+export const ThemeContextProvider = props => (
+  <ThemeToggler>
+    {({ theme, toggleTheme }) => {
+      const toggle = () => toggleTheme(theme === "light" ? "dark" : "light")
+      return (
+        <ThemeContext.Provider value={{ theme, toggle }}>
+          {props.children}
+        </ThemeContext.Provider>
+      )
+    }}
+  </ThemeToggler>
+)
 
 ThemeContextProvider.propTypes = {
   children: PropTypes.oneOfType([
