@@ -3,9 +3,7 @@ require("dotenv").config({
 })
 
 const siteUrl =
-  process.env.NETLIFY_SITE_URL ||
-  process.env.DEFAULT_URL ||
-  `https://angelxehg.com`
+  process.env.NETLIFY_SITE_URL || `https://angelxehg.com`
 
 const { NODE_ENV, CONTEXT: NETLIFY_ENV = NODE_ENV } = process.env
 
