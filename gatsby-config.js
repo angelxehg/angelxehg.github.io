@@ -20,6 +20,7 @@ module.exports = {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
   plugins: [
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     {
