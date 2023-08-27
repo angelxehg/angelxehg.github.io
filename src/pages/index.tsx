@@ -4,7 +4,6 @@ import SEO from "../components/SEO"
 import Layout from "../layouts/Layout"
 import Hero from "../components/Hero"
 import DefaultFooter from "../components/Footer"
-import DefaultNavbar from "../components/Navbar"
 import stacks from "../meta/stacks"
 
 const EnvelopeFillSvg = require("../assets/bootstrap-icons/envelope-fill.svg")
@@ -231,7 +230,6 @@ export const AboutSection = () => (
 const IndexPage = (): JSX.Element => (
   <Layout>
     <SEO title="Portafolio" lang="es" />
-    <DefaultNavbar />
     <Hero>
       <img
         src="images/2023-05-09-Square.webp"
