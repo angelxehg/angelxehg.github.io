@@ -109,5 +109,6 @@ module.exports = {
         purgeCSSOptions: {},
       },
     },
+    `gatsby-plugin-dark-mode`,
   ],
 }

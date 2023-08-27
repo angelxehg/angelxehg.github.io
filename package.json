@@ -31,6 +31,7 @@
   "dependencies": {
     "bootstrap": "^5.3.1",
     "gatsby": "^5.11.0",
+    "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-gatsby-cloud": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
