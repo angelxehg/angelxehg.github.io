@@ -32,6 +32,16 @@ Se requiere establecer las variables de entorno en los archivos `.env.developmen
 DEFAULT_URL=https://staging.angelxehg.com
 ```
 
+### GitHub Pages
+
 Use este comando para desplegar en producción:
 
 - GitHub Pages: `npm run deploy`
+
+### Netlify
+
+Variables requeridas:
+
+- `URL` (se configura automaticamente al desplegar desde GitHub, para prod)
+- `DEPLOY_URL` (se configura automaticamente al desplegar desde GitHub, para Develop previews)
+- `NPM_FLAGS=--legacy-peer-deps`
