@@ -24,6 +24,7 @@ const SEO = (props: SEOProps) => {
     image !== "" ? image.slice(1) : "images/OpenGraph.Opt.png"
   }`
   const seoTitle = `${title} | ${defaultTitle}`
+  const themeColor = theme === "light" ? "#f6f6f6" : "#000000";
 
   return (
     <Helmet
@@ -33,6 +34,14 @@ const SEO = (props: SEOProps) => {
       title={title}
       titleTemplate={defaultTitle ? `%s | Angel Hurtado` : ""}
       meta={[
+        {
+          name: `color-scheme`,
+          content: "dark light"
+        },
+        {
+          name: `theme-color`,
+          content: themeColor
+        },
         {
           name: `description`,
           content: metaDescription,
