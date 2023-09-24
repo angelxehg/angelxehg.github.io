@@ -232,7 +232,7 @@ const IndexPage = (): JSX.Element => (
     <SEO title="Portafolio" lang="es" />
     <Hero>
       <img
-        src="images/2023-05-09-Square.webp"
+        src="images/2023-09-23.Square.Tiny.webp"
         className="rounded-circle fluid align-self-center"
         alt="Avatar de Angel"
         style={{ height: "150px", width: "150px" }}
