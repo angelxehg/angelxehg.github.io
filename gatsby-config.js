@@ -54,7 +54,7 @@ module.exports = {
               {
                 userAgent: "*",
                 allow: "/",
-                disallow: ["/404", "/about", "/skills", "/projects", "/posts"],
+                disallow: ["/404"],
               },
             ],
             sitemap: "https://angelxehg.com/sitemap-index.xml",
