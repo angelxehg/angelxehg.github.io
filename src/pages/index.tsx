@@ -164,7 +164,7 @@ export const AboutSection = () => (
           <h2 className="card-header h5">Experiencia</h2>
           <div className="card-body">
             <p>
-              <b>Software Engineer en Columbus.mx</b> (~2 años, desde enero
+              <b>Software Engineer en Columbus.mx</b> (+2 años, desde enero
               2022):
             </p>
             <ul>
@@ -193,7 +193,7 @@ export const AboutSection = () => (
               </li>
             </ul>
             <p>
-              <b>Freelancer en Fiverr</b> (2 años, 2020-2021):
+              <b>Freelancer en Fiverr</b> (~2 años, 2020-2021):
             </p>
             <ul>
               <li>
@@ -232,7 +232,7 @@ const IndexPage = (): JSX.Element => (
     <SEO title="Portafolio" lang="es" />
     <Hero>
       <img
-        src="images/2023-09-23.Square.Tiny.webp"
+        src="images/2023-12-13.Public.webp"
         className="rounded-circle fluid align-self-center"
         alt="Avatar de Angel"
         style={{ height: "150px", width: "150px" }}
