@@ -10,7 +10,6 @@ const EnvelopeFillSvg = require("../assets/bootstrap-icons/envelope-fill.svg")
 const GitHubSvg = require("../assets/bootstrap-icons/github.svg")
 const LinkedInSvg = require("../assets/bootstrap-icons/linkedin.svg")
 const VectorPenSvg = require("../assets/bootstrap-icons/vector-pen.svg")
-const InstagramSvg = require("../assets/bootstrap-icons/instagram.svg")
 
 const EmailIconLink = (): JSX.Element => (
   <a
@@ -60,18 +59,6 @@ const DevToInconLink = (): JSX.Element => (
   </a>
 )
 
-const InstagramIconLink = (): JSX.Element => (
-  <a
-    href="https://www.instagram.com/angelxehg"
-    rel="external"
-    title="Instagram and Threads (@angelxehg)"
-    style={{ textDecoration: "none" }}
-  >
-    <InstagramSvg style={{ marginRight: "4px" }} />
-    Instagram (@angelxehg)
-  </a>
-)
-
 const SocialLinks = () => (
   <nav>
     <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
@@ -83,9 +70,6 @@ const SocialLinks = () => (
       </li>
       <li style={{ marginBottom: "10px" }}>
         <GitHubIconLink />
-      </li>
-      <li style={{ marginBottom: "10px" }}>
-        <InstagramIconLink />
       </li>
       <li style={{ marginBottom: "10px" }}>
         <DevToInconLink />
