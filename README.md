@@ -6,7 +6,7 @@ Mi portafolio profesional
 
 Utilice estos comandos para clonar e instalar el sitio:
 
-- Instalar NodeJS 18: `nvm install 18.18.2`
+- Instalar NodeJS 20: `nvm install 20.11.1`
 
 - Instalar Gatsby CLI: `npm install -g gatsby-cli`
 
