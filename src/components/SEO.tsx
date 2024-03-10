@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
-import { useTheme } from "./Theme"
 
 interface SEOProps {
   description: any
@@ -14,7 +13,7 @@ interface SEOProps {
 }
 
 const SEO = (props: SEOProps) => {
-  const { theme } = useTheme()
+  const theme = "dark";
   const { description, lang, meta, title, image } = props
   const site = useSiteMetadata()
 
@@ -24,6 +23,7 @@ const SEO = (props: SEOProps) => {
     image !== "" ? image.slice(1) : "images/OpenGraph.Opt.png"
   }`
   const seoTitle = `${title} | ${defaultTitle}`
+  // @ts-ignore
   const themeColor = theme === "light" ? "#f6f6f6" : "#000000"
 
   return (
