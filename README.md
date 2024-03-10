@@ -26,6 +26,14 @@ Utilice estos comandos para comprobar la calidad del código
 
 - Code formating: `npm run format`
 
+## Try built version
+
+Use this commands to test the final, built version
+
+- Build: `gatsby build`
+
+- Serve: `npx serve public`
+
 ## Despliegue
 
 Se requiere establecer las variables de entorno en los archivos `.env.development` y `.env.production`:
