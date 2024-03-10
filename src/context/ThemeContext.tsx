@@ -3,12 +3,12 @@ import React, { useContext, useEffect, useState } from "react"
 export type ThemeContextType = {
   theme: string,
   // eslint-disable-next-line no-unused-vars
-  setTheme: (theme: string) => void
+  toggleTheme: () => void
 }
 
 const defaultContextType: ThemeContextType = {
   theme: "dark",
-  setTheme: () => {}
+  toggleTheme: () => {}
 };
 
 export const useTheme = () => useContext(ThemeContext)
@@ -17,7 +17,7 @@ export const ThemeContext = React.createContext<ThemeContextType>(defaultContext
 
 const ThemeProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
   const [theme, setTheme] = useState('light');
-
+  const toggleTheme = () => theme == "light" ? setTheme("dark") : setTheme("light");
   useEffect(() => {
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     setTheme(prefersDarkMode ? 'dark' : 'light');
@@ -29,7 +29,7 @@ const ThemeProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
     return () => mediaQuery.removeListener(changeHandler);
   }, []);
 
-  return <ThemeContext.Provider value={{ theme, setTheme }}>
+  return <ThemeContext.Provider value={{ theme, toggleTheme }}>
     {children}
   </ThemeContext.Provider>;
 };
