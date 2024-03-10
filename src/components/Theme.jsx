@@ -1,5 +1,4 @@
 import React, { useContext, createContext } from "react"
-import { ThemeToggler } from "gatsby-plugin-dark-mode"
 import PropTypes from "prop-types"
 
 const defaultThemeContext = {
@@ -14,7 +13,7 @@ const ThemeContext = createContext(defaultThemeContext)
 export const useTheme = () => useContext(ThemeContext)
 
 export const ThemeContextProvider = props => (
-  <ThemeToggler>
+  <ThemeContext.Consumer>
     {({ theme, toggleTheme }) => {
       const toggle = () => toggleTheme(theme === "light" ? "dark" : "light")
       return (
@@ -23,7 +22,7 @@ export const ThemeContextProvider = props => (
         </ThemeContext.Provider>
       )
     }}
-  </ThemeToggler>
+  </ThemeContext.Consumer>
 )
 
 ThemeContextProvider.propTypes = {

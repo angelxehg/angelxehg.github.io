@@ -12,7 +12,7 @@ Utilice estos comandos para clonar e instalar el sitio:
 
 - Clonar el repositorio: `git clone https://github.com/angelxehg/angelxehg.github.io`
 
-- Instalar dependencias: `cd website` & `npm install --legacy-peer-deps`
+- Instalar dependencias: `cd website` & `npm install`
 
 - Iniciar servidor de desarrollo: `gatsby develop`
 
