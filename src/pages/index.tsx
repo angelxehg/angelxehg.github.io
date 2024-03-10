@@ -10,6 +10,7 @@ const EnvelopeFillSvg = require("../assets/bootstrap-icons/envelope-fill.svg")
 const GitHubSvg = require("../assets/bootstrap-icons/github.svg")
 const LinkedInSvg = require("../assets/bootstrap-icons/linkedin.svg")
 const VectorPenSvg = require("../assets/bootstrap-icons/vector-pen.svg")
+const ThreadsSvg = require("../assets/bootstrap-icons/threads.svg")
 
 const EmailIconLink = (): JSX.Element => (
   <a
@@ -47,7 +48,7 @@ const GitHubIconLink = (): JSX.Element => (
   </a>
 )
 
-const DevToInconLink = (): JSX.Element => (
+const DevToIconLink = (): JSX.Element => (
   <a
     href="https://dev.to/angelxehg"
     rel="external"
@@ -59,11 +60,26 @@ const DevToInconLink = (): JSX.Element => (
   </a>
 )
 
+const ThreadsIconLink = (): JSX.Element => (
+  <a
+    href="https://threads.net/angelxehg"
+    rel="external"
+    title="dev.to/angelxehg"
+    style={{ textDecoration: "none" }}
+  >
+    <ThreadsSvg style={{ marginRight: "4px" }} />
+    Threads @angelxehg
+  </a>
+)
+
 const SocialLinks = () => (
   <nav>
     <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
       <li style={{ marginBottom: "10px" }}>
         <EmailIconLink />
+      </li>
+      <li style={{ marginBottom: "10px" }}>
+        <ThreadsIconLink />
       </li>
       <li style={{ marginBottom: "10px" }}>
         <LinkedInIconLink />
@@ -72,7 +88,7 @@ const SocialLinks = () => (
         <GitHubIconLink />
       </li>
       <li style={{ marginBottom: "10px" }}>
-        <DevToInconLink />
+        <DevToIconLink />
       </li>
     </ul>
   </nav>
@@ -223,7 +239,6 @@ const IndexPage = (): JSX.Element => (
       />
       <header className="mt-2">
         <h1>Angel Hurtado</h1>
-        <p>Software Engineer</p>
       </header>
       <SocialLinks />
     </Hero>
