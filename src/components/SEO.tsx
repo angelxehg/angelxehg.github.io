@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
 import { useSiteMetadata } from "../hooks/use-site-metadata"
+import { useTheme } from "../context/ThemeContext"
 
 interface SEOProps {
   description: any
@@ -13,7 +14,7 @@ interface SEOProps {
 }
 
 const SEO = (props: SEOProps) => {
-  const theme = "dark";
+  const { theme } = useTheme();
   const { description, lang, meta, title, image } = props
   const site = useSiteMetadata()
 
