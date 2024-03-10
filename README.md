@@ -12,7 +12,7 @@ Utilice estos comandos para clonar e instalar el sitio:
 
 - Clonar el repositorio: `git clone https://github.com/angelxehg/angelxehg.github.io`
 
-- Instalar dependencias: `cd website` & `npm install --legacy-peer-deps`
+- Instalar dependencias: `cd website` & `npm install`
 
 - Iniciar servidor de desarrollo: `gatsby develop`
 
@@ -25,6 +25,14 @@ Utilice estos comandos para comprobar la calidad del código
 - Code linting: `npm run lint`
 
 - Code formating: `npm run format`
+
+## Try built version
+
+Use this commands to test the final, built version
+
+- Build: `gatsby build`
+
+- Serve: `npx serve public`
 
 ## Despliegue
 

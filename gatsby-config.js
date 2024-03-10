@@ -104,7 +104,6 @@ module.exports = {
         printRejected: true,
         purgeCSSOptions: {},
       },
-    },
-    `gatsby-plugin-dark-mode`,
+    }
   ],
 }
