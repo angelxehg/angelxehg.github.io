@@ -1,6 +1,6 @@
 # angelxehg.github.io
 
-Mi portafolio profesional
+My personal portfolio
 
 ## Instalación
 
