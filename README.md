@@ -8,11 +8,11 @@ Utilice estos comandos para clonar e instalar el sitio:
 
 - Instalar NodeJS 20: `nvm install 20.11.1`
 
-- Instalar Gatsby CLI: `npm install -g gatsby-cli`
-
 - Clonar el repositorio: `git clone https://github.com/angelxehg/angelxehg.github.io`
 
-- Instalar dependencias: `cd website` & `npm install`
+- Instalar dependencias: `cd website && nvm use && npm install`
+
+- Instalar Gatsby CLI: `npm install -g gatsby-cli`
 
 - Iniciar servidor de desarrollo: `gatsby develop`
 
