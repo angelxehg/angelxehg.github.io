@@ -14,7 +14,7 @@ interface SEOProps {
 }
 
 const SEO = (props: SEOProps) => {
-  const { theme } = useTheme();
+  const { theme } = useTheme()
   const { description, lang, meta, title, image } = props
   const site = useSiteMetadata()
 

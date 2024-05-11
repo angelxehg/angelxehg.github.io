@@ -104,6 +104,6 @@ module.exports = {
         printRejected: true,
         purgeCSSOptions: {},
       },
-    }
+    },
   ],
 }
