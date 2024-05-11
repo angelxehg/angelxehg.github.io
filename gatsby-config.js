@@ -5,7 +5,7 @@ require("dotenv").config({
 const siteUrl =
   process.env.DEPLOY_PRIME_URL || process.env.URL || `https://angelxehg.com`
 
-const { NODE_ENV, CONTEXT: NETLIFY_ENV = NODE_ENV } = process.env
+const { NODE_ENV, CONTEXT, NETLIFY } = process.env
 
 module.exports = {
   siteMetadata: {
@@ -47,7 +47,12 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://angelxehg.com",
-        resolveEnv: () => NETLIFY_ENV,
+        resolveEnv: () => {
+          if (NETLIFY) {
+            return `${CONTEXT}@netlify`
+          }
+          return "production"
+        },
         env: {
           production: {
             policy: [
@@ -59,12 +64,17 @@ module.exports = {
             ],
             sitemap: "https://angelxehg.com/sitemap-index.xml",
           },
-          "branch-deploy": {
+          "production@netlify": {
             policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
             host: null,
           },
-          "deploy-preview": {
+          "branch-deploy@netlify": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+            sitemap: null,
+            host: null,
+          },
+          "deploy-preview@netlify": {
             policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
             host: null,
