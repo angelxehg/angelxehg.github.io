@@ -5,7 +5,7 @@ require("dotenv").config({
 const siteUrl =
   process.env.DEPLOY_PRIME_URL || process.env.URL || `https://angelxehg.com`
 
-const { NODE_ENV, CONTEXT: NETLIFY_ENV = NODE_ENV } = process.env
+const { NODE_ENV, CONTEXT, NETLIFY } = process.env
 
 module.exports = {
   siteMetadata: {
@@ -47,7 +47,12 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://angelxehg.com",
-        resolveEnv: () => NETLIFY_ENV,
+        resolveEnv: () => {
+          if (NETLIFY) {
+            return `${CONTEXT}@netlify`
+          }
+          return "production"
+        },
         env: {
           production: {
             policy: [
@@ -59,12 +64,17 @@ module.exports = {
             ],
             sitemap: "https://angelxehg.com/sitemap-index.xml",
           },
-          "branch-deploy": {
+          "production@netlify": {
             policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
             host: null,
           },
-          "deploy-preview": {
+          "branch-deploy@netlify": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+            sitemap: null,
+            host: null,
+          },
+          "deploy-preview@netlify": {
             policy: [{ userAgent: "*", disallow: ["/"] }],
             sitemap: null,
             host: null,
@@ -81,16 +91,6 @@ module.exports = {
         rule: {
           include: /assets/, // See below to configure properly
         },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Angel Hurtado's Portfolio`,
-        short_name: `Angel Hurtado`,
-        start_url: `/`,
-        display: `minimal-ui`,
-        icon: `static/images/Avataaars.Opt.Sqr.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`,
