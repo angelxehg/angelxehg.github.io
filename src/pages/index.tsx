@@ -114,22 +114,6 @@ export const AboutSection = () => (
     <div className="row">
       <div className="col-lg-4 p-sm-1 pb-3">
         <div className="card">
-          <h2 className="card-header h5">Acerca de mi</h2>
-          <div className="card-body">
-            <p className="card-text m-0">
-              Comencé con desarrollo móvil con Windows Phone, mis primeros
-              lenguajes fueron C# y Visual Basic. Con estos desarrollos llegué a
-              participar en concursos escolares. A partir de la universidad me
-              acerqué al desarrollo web, tanto frontend como backend. Durante el
-              último año me he dedicado principalmente a Backend.
-            </p>
-            <p className="card-text m-0 mt-2">
-              Mis pasatiempos son escuchar música, jugar videojuegos de
-              estrategia y construcción.
-            </p>
-          </div>
-        </div>
-        <div className="card mt-2">
           <h2 className="card-header h5">Ubicación</h2>
           <div className="card-body">
             <ul className="p-0 m-0" style={{ listStyleType: "none" }}>
@@ -137,7 +121,7 @@ export const AboutSection = () => (
                 <b>Origen</b>: Fresnillo Zacatecas, MX
               </li>
               <li>
-                <b>Idiomas</b>: Español (nativo), Inglés (intermedio)
+                <b>Idiomas</b>: Español, Inglés
               </li>
             </ul>
           </div>
@@ -153,7 +137,17 @@ export const AboutSection = () => (
                   Universidad Tecnológica del Estado de Zacatecas
                 </a>
                 <br />
-                2017 - 2021 (En proceso de titulación)
+                Sep 2019 - Abr 2021
+              </li>
+              <li>
+                Técnico Superior en Tecnologías de la Información y
+                Comunicación, área Sistemas
+                <br />
+                <a href="http://www.utzac.edu.mx" rel="external" title="UTZAC">
+                  Universidad Tecnológica del Estado de Zacatecas
+                </a>
+                <br />
+                Sep 2017 - Ago 2019
               </li>
             </ul>
           </div>
@@ -164,46 +158,67 @@ export const AboutSection = () => (
           <h2 className="card-header h5">Experiencia</h2>
           <div className="card-body">
             <p>
-              <b>Software Engineer en Columbus.mx</b> (+2 años, desde enero
-              2022):
+              <b>Software Engineer en Columbus.mx</b> (Ene 2022 - Abr 2024):
             </p>
             <ul>
               <li>
-                Diseño y desarrollo siguiendo metodologías como DDD, Event
-                Driven Design, Arquitectura Hexagonal y TDD
+                Desarrollo, mantenimiento de aplicaciones de Backend con Python,
+                Flask, Java, Spring Framework, Hibernate.
               </li>
-              <li>Diseño y normalización de bases de datos.</li>
               <li>
-                Aplicación de patrones de diseño Repository, Adapter, Strategy,
+                Diseño de tablas, normalización, manejo de bases de datos con
+                PostgreSQL, Oracle DB, SQLAlchemy, Flyway. Consultas SQL,
+                configuración de Change Data Capture con Debezium, llamadas a de
+                Stored Procedures, uso de Multi-tenancy a nivel esquema y base
+                de datos como estrategia de Data Governance.
+              </li>
+              <li>
+                Diseño, implementación de flujos de comunicación entre sistemas,
+                mediante colas RabbitMQ, Redpanda (Kafka), Server Send Events,
+                Redis, WebHooks, HTTP y gRPC requests, con sistemas nuevos y
+                legacy.
+              </li>
+              <li>
+                Integración, uso de servicios de infraestructura cloud con AWS
+                S3, AWS Cognito, Textract, API REST, envío de correos, envío de
+                SMS, carga y descarga de archivos.
+              </li>
+              <li>
+                Herramientas y librerías como Jooq, Hibernate, Docker, Ubuntu,
+                Reflections, Apache POI, GitHub Actions.
+              </li>
+              <li>
+                Uso de patrones y metodologías como Domain Driven Design,
+                Hexagonal Architecture, Event Driven Design, Test Driven
+                Development, Transitional Architecture, Stateless Applications.
+                Uso de Jira y partes de SCRUM.
+              </li>
+              <li>
+                Aplicación de patrones de diseño Repository, Strategy,
                 Decorator, Factory Method.
-              </li>
-              <li>
-                Conocimiento de Python, SQL, TypeScript. Uso de herramientas
-                como SQLAlchemy, RabbitMQ, Docker, Postgres, Oracle, Pytest,
-                Swagger
-              </li>
-              <li>
-                Implementación de flujos asincronos, mediante API REST,
-                WebHooks, Domain Events y Subscribers. Versionado de Domain
-                Events y de APIs
-              </li>
-              <li>
-                Consumo de servicios externos como envío de correos, SMS, carga,
-                descarga de archivos
               </li>
             </ul>
             <p>
-              <b>Freelancer en Fiverr</b> (~2 años, 2020-2021):
+              <b>Freelancer en Fiverr</b> (Jul 2020 - Dic 2021):
             </p>
             <ul>
               <li>
-                Desarrollo de aplicaciones para clientes en México y en el
-                extranjero, en varios formatos (PWA, App Hibrida) y plataformas
-                (Web, Android). Desarrollo backend con Django.
+                Trabajé en la plataforma fiverr.com/angelxehg para clientes en
+                distintos países, obtuve calificaciones positivas.
               </li>
               <li>
-                Desarrollo con React, Angular, Ionic. Integración con
-                Contentful, Firebase, servicios de pagos y Ads.
+                Diseño, implementación, mantenimiento de aplicaciones Web,
+                Mobile y PWA, con la plataforma Ionic, 5 y 6, con Angular y
+                React. y Targets PWA, Android y iOS. Casi siempre con
+                Typescript, CSS y SCSS.
+              </li>
+              <li>
+                Integración de servicios BaaS como Contentful, Firebase, AWS
+                Amplify, y usando mecanismos Oauth2 y REST.
+              </li>
+              <li>
+                Integración de plugins de funcionalidades nativas, de pagos,
+                subscripciones y anuncios, Cordova y Capacitor.
               </li>
             </ul>
           </div>
