@@ -247,10 +247,10 @@ const IndexPage = (): JSX.Element => (
     <SEO title="Portafolio" lang="es" />
     <Hero>
       <img
-        src="images/2023-12-13.Public.webp"
+        src="images/2024-10-21.Work.Square.webp"
         className="rounded-circle fluid align-self-center"
         alt="Avatar de Angel"
-        style={{ height: "150px", width: "150px" }}
+        style={{ height: "160px", width: "160px" }}
       />
       <header className="mt-2">
         <h1>Angel Hurtado</h1>
