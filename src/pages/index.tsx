@@ -32,7 +32,7 @@ const LinkedInIconLink = (): JSX.Element => (
     style={{ textDecoration: "none" }}
   >
     <LinkedInSvg style={{ marginRight: "4px" }} />
-    LinkedIn (/in/angelxehg)
+    /in/angelxehg
   </a>
 )
 
@@ -44,7 +44,7 @@ const GitHubIconLink = (): JSX.Element => (
     style={{ textDecoration: "none" }}
   >
     <GitHubSvg style={{ marginRight: "4px" }} />
-    GitHub (@angelxehg)
+    angelxehg
   </a>
 )
 
@@ -64,11 +64,11 @@ const ThreadsIconLink = (): JSX.Element => (
   <a
     href="https://threads.net/angelxehg"
     rel="external"
-    title="dev.to/angelxehg"
+    title="Threads (@angelxehg)"
     style={{ textDecoration: "none" }}
   >
     <ThreadsSvg style={{ marginRight: "4px" }} />
-    Threads @angelxehg
+    angelxehg
   </a>
 )
 
@@ -79,9 +79,6 @@ const SocialLinks = () => (
         <EmailIconLink />
       </li>
       <li style={{ marginBottom: "10px" }}>
-        <ThreadsIconLink />
-      </li>
-      <li style={{ marginBottom: "10px" }}>
         <LinkedInIconLink />
       </li>
       <li style={{ marginBottom: "10px" }}>
@@ -89,6 +86,9 @@ const SocialLinks = () => (
       </li>
       <li style={{ marginBottom: "10px" }}>
         <DevToIconLink />
+      </li>
+      <li style={{ marginBottom: "10px" }}>
+        <ThreadsIconLink />
       </li>
     </ul>
   </nav>
