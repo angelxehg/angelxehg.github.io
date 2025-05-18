@@ -1,6 +1,6 @@
 <template>
   <h1>Angel Hurtado</h1>
-  <p>Site is under construction! check my links:</p>
+  <p>Site is under construction!</p>
   <ul>
     <li>
       <a href="mailto:angelxehg@proton.me" rel="external" title="Email (angelxehg@proton.me)">
@@ -58,7 +58,42 @@ useHead({
 </script>
 
 <style>
-:root {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+a {
+  color: #1a0dab;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 0;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li + li {
+  margin-top: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  a {
+    color: #8ab4f8;
+  }
 }
 </style>
