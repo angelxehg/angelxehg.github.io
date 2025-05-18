@@ -2,10 +2,14 @@
 
 My personal portfolio
 
-## Set up
+## Setup
 
-Pre-requisites:
-- [NVM](https://github.com/nvm-sh/nvm)
+### Pre-requisites
+
+Required:
+- NodeJS or [NVM](https://github.com/nvm-sh/nvm)
+
+### Local development
 
 Clone repository:
 
@@ -17,53 +21,32 @@ cd angelxehg.github.io
 Install Node 20 with NVM:
 
 ```shell
-nvm install 20.11.1
-nvm use 20.11.1
+nvm install 22.15.1
+nvm use 22.15.1
 ```
 
 Install dependencies:
 
 ```shell
-npm install -g gatsby-cli
 npm install
 ```
 
-Start application:
+Start development server:
 
-```shell
-gatsby develop
+```bash
+npm run dev
 ```
 
-## Testing and QA
+### Production deployment
 
-Run linter:
+To run a production, static:
 
 ```shell
-npm run lint
+npm run generate
 ```
 
-Run formatter:
+Locally preview production build:
 
 ```shell
-npm run format
-```
-
-## Deployment
-
-Build site:
-
-```shell
-gatsby build
-```
-
-(Optional) Serve it in local machine:
-
-```shell
-npx serve public
-```
-
-Deploy in GitHub pages:
-
-```shell
-npm run deploy
+npm run preview
 ```
