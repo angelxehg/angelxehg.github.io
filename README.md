@@ -42,7 +42,7 @@ npm run dev
 To run a production, static:
 
 ```shell
-npm run generate
+npm run build
 ```
 
 Locally preview production build:
