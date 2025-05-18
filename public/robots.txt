@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /404
-Sitemap: https://angelxehg.com/sitemap-index.xml
-Host: https://angelxehg.com

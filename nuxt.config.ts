@@ -5,5 +5,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static'
   },
-  devtools: { enabled: true }
-})
+  devtools: {enabled: true},
+  modules: ['@nuxtjs/robots'],
+  site: {indexable: !process.env.NETLIFY} // Disable indexing on Netlify
+});
