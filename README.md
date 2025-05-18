@@ -39,10 +39,10 @@ npm run dev
 
 ### Production deployment
 
-To run a production build:
+To run a production, static:
 
 ```shell
-npm run build
+npm run generate
 ```
 
 Locally preview production build:
