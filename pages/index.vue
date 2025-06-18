@@ -1,5 +1,7 @@
 <template>
-  <h1>Angel Hurtado</h1>
+  <h1 class="text-3xl font-bold underline">
+    Angel Hurtado
+  </h1>
   <p>Site is under construction!</p>
   <ul>
     <li>
