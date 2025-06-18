@@ -50,3 +50,9 @@ Locally preview production build:
 ```shell
 npm run preview
 ```
+
+Analyze build size:
+
+```shell
+npx nuxt analyze
+```
