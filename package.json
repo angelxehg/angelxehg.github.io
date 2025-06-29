@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "postgenerate": "mv dist/404/index.html dist/404.html && rm -rf dist/404",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
