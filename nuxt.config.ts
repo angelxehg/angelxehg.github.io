@@ -16,5 +16,8 @@ export default defineNuxtConfig({
   features: {
     inlineStyles: false,
   },
+  routeRules: {
+    '/': { prerender: true, noScripts: true },
+  },
   site: {indexable: !process.env.NETLIFY} // Disable indexing on Netlify
 });
