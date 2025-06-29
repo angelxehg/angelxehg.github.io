@@ -6,7 +6,7 @@
           Oops! 😕
         </h1>
         <p class="text-black dark:text-white text-center mb-6">
-          {{ error.statusCode === 404 ? 'Unknown error' : error.message }}
+          Page not found
         </p>
         <NuxtLink to="/" class="text-blue-600 dark:text-blue-400 hover:underline">Go home</NuxtLink>
       </div>
@@ -19,10 +19,6 @@
 
 <script setup>
 useHead({
-  title: "Unknown error | Angel Hurtado's portfolio"
-})
-
-defineProps({
-  error: Object
+  title: "Page Not Found | Angel Hurtado's portfolio"
 })
 </script>

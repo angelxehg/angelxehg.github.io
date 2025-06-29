@@ -49,8 +49,6 @@ jobs:
         run: npm install
       - name: Static HTML export with Nuxt
         run: npm run generate
-      - name: List dist contents
-        run: ls -la dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

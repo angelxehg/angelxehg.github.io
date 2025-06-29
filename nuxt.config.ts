@@ -13,5 +13,12 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  features: {
+    inlineStyles: false,
+  },
+  routeRules: {
+    '/': { prerender: true, noScripts: true },
+    '/404': { prerender: true, noScripts: true },
+  },
   site: {indexable: !process.env.NETLIFY} // Disable indexing on Netlify
 });
