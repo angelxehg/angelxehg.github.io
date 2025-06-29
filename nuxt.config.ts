@@ -13,5 +13,8 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  features: {
+    inlineStyles: false,
+  },
   site: {indexable: !process.env.NETLIFY} // Disable indexing on Netlify
 });
