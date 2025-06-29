@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     preset: 'static'
   },
   devtools: {enabled: true},
-  modules: ['@nuxtjs/robots', '@nuxtjs/critters'],
+  modules: ['@nuxtjs/robots'],
   vite: {
     plugins: [tailwindcss()],
   },
