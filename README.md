@@ -56,3 +56,9 @@ Analyze build size:
 ```shell
 npx nuxt analyze
 ```
+
+To generate a full static build:
+
+```shell
+npm run generate
+```
