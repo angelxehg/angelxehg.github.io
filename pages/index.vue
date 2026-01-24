@@ -8,9 +8,9 @@
         <p class="text-black dark:text-white text-center mb-6">Site is under construction!</p>
         <ul class="space-y-2">
           <li>
-            <a href="mailto:angelxehg@proton.me" rel="external" title="Email (angelxehg@proton.me)"
+            <a href="mailto:stdin@angelxehg.com" rel="external" title="Email (stdin@angelxehg.com)"
                class="text-blue-600 dark:text-blue-400 hover:underline">
-              Email (angelxehg@proton.me)
+              Email (stdin@angelxehg.com)
             </a>
           </li>
           <li>
