@@ -18,11 +18,11 @@ git clone git@github.com:angelxehg/angelxehg.github.io.git
 cd angelxehg.github.io
 ```
 
-Install Node 20 with NVM:
+Install Node 24 with NVM:
 
 ```shell
-nvm install 22.15.1
-nvm use 22.15.1
+nvm install 24.12.0
+nvm use 24.12.0
 ```
 
 Install dependencies:
