@@ -1,8 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import ProfileCard from '../components/ProfileCard.vue';
+import { getBuildInfo } from '../lib/buildInfo';
+
+const buildInfo = getBuildInfo();
 ---
 
 <Base title="Angel Hurtado's portfolio">
-  <ProfileCard />
+  <ProfileCard buildInfo={buildInfo} />
 </Base>
