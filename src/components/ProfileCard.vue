@@ -88,7 +88,7 @@
                 </span>
                 <a
                   :href="e.href"
-                  rel="external"
+                  :rel="e.internal ? null : 'external'"
                   :title="e.title"
                   class="break-all text-gray-700 hover:text-emerald-600 hover:underline dark:text-gray-300 dark:hover:text-emerald-400"
                 >{{ e.label }}</a>
@@ -122,6 +122,7 @@ const resources = [
 ];
 
 const endpoints = [
+  { proto: 'https', title: 'Blog', href: '/blog/', label: 'angelxehg.com/blog', internal: true },
   { proto: 'smtp', title: 'Email', href: 'mailto:stdin@angelxehg.com', label: 'stdin@angelxehg.com' },
   { proto: 'https', title: 'LinkedIn', href: 'https://www.linkedin.com/in/angelxehg', label: 'linkedin.com/in/angelxehg' },
   { proto: 'https', title: 'GitHub', href: 'https://github.com/angelxehg', label: 'github.com/angelxehg' },
