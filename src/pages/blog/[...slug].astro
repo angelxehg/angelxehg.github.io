@@ -1,0 +1,47 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import TerminalShell from '../../components/blog/TerminalShell.vue';
+import PostMeta from '../../components/blog/PostMeta.vue';
+import { getBuildInfo } from '../../lib/buildInfo';
+import { getPosts, isoDate } from '../../lib/posts';
+import { postUrl } from '../../lib/site.mjs';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const buildInfo = getBuildInfo();
+---
+
+<Base
+  title={`${post.data.title} | Angel Hurtado`}
+  description={post.data.description}
+  canonical={postUrl(post.id)}
+  image={post.data.image}
+  type="article"
+  publishedTime={post.data.date}
+>
+  <TerminalShell path={`/blog/${post.id}`} buildInfo={buildInfo}>
+    <PostMeta
+      slug={post.id}
+      title={post.data.title}
+      date={isoDate(post.data.date)}
+      updated={post.data.updated ? isoDate(post.data.updated) : null}
+      tags={post.data.tags}
+      mirror={null}
+    />
+    <article class="post-body"><Content /></article>
+    <p class="mt-12 border-t border-gray-200 pt-6 text-sm dark:border-gray-800">
+      <span class="text-emerald-600 dark:text-emerald-400">$</span>
+      <a
+        href="/blog/"
+        class="text-gray-500 hover:text-emerald-600 hover:underline dark:text-gray-400 dark:hover:text-emerald-400"
+        >cd ..</a
+      >
+    </p>
+  </TerminalShell>
+</Base>

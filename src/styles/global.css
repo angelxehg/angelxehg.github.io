@@ -1,1 +1,86 @@
 @import "tailwindcss";
+
+/*
+ * Post body typography. Hand-rolled rather than @tailwindcss/typography: the
+ * whole site is mono, and overriding that plugin's serif-prose defaults costs
+ * more than these rules do. :where() keeps specificity at zero so utility
+ * classes inside Markdown still win.
+ */
+@layer components {
+  .post-body {
+    @apply mt-8 text-sm leading-relaxed text-gray-700 dark:text-gray-300;
+  }
+
+  .post-body :where(h2) {
+    @apply mt-10 mb-3 text-lg font-bold tracking-tight text-gray-900 dark:text-white;
+  }
+
+  .post-body :where(h3) {
+    @apply mt-8 mb-2 text-base font-semibold text-gray-900 dark:text-white;
+  }
+
+  .post-body :where(p, ul, ol, blockquote, pre, table) {
+    @apply my-4;
+  }
+
+  .post-body :where(ul) {
+    @apply list-disc space-y-1 pl-5;
+  }
+
+  .post-body :where(ol) {
+    @apply list-decimal space-y-1 pl-5;
+  }
+
+  .post-body :where(a) {
+    @apply text-emerald-600 underline underline-offset-2 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300;
+  }
+
+  .post-body :where(strong) {
+    @apply font-semibold text-gray-900 dark:text-white;
+  }
+
+  .post-body :where(blockquote) {
+    @apply border-l-2 border-gray-300 pl-4 text-gray-600 dark:border-gray-700 dark:text-gray-400;
+  }
+
+  /* Inline code only — `pre code` is left to Shiki. */
+  .post-body :where(:not(pre) > code) {
+    @apply rounded border border-gray-200 bg-gray-100 px-1 py-0.5 text-[0.85em] text-gray-800 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-200;
+  }
+
+  .post-body :where(pre) {
+    @apply overflow-x-auto rounded-lg border border-gray-200 p-4 text-xs sm:text-sm dark:border-gray-800;
+  }
+
+  .post-body :where(table) {
+    @apply block w-full overflow-x-auto text-left;
+  }
+
+  .post-body :where(th, td) {
+    @apply border-b border-gray-200 px-3 py-2 dark:border-gray-800;
+  }
+
+  .post-body :where(hr) {
+    @apply my-8 border-gray-200 dark:border-gray-800;
+  }
+
+  .post-body :where(img) {
+    @apply my-6 max-w-full rounded-lg border border-gray-200 dark:border-gray-800;
+  }
+}
+
+/*
+ * Shiki emits both themes inline and defaults to the light one, exposing the
+ * dark palette as --shiki-dark-* custom properties. The site has no theme
+ * toggle, so swap them on the same media query everything else uses.
+ */
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+}
