@@ -1,8 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import NotFoundCard from '../components/NotFoundCard.vue';
+import { getBuildInfo } from '../lib/buildInfo';
+
+const buildInfo = getBuildInfo();
 ---
 
 <Base title="Page Not Found | Angel Hurtado's portfolio">
-  <NotFoundCard />
+  <NotFoundCard buildInfo={buildInfo} />
 </Base>
