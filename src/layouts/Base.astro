@@ -24,7 +24,7 @@ const ogImage = new URL('/images/og.image.png', Astro.site);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{title}</title>
     <meta name="robots" content={robotsContent} />
     <meta name="description" content={description} />
@@ -39,7 +39,7 @@ const ogImage = new URL('/images/og.image.png', Astro.site);
     />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
-  <body>
+  <body class="bg-gray-50 dark:bg-black font-mono text-gray-900 dark:text-gray-100">
     <slot />
   </body>
 </html>
