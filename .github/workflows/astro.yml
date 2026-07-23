@@ -56,3 +56,25 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Mirror posts marked `syndicate: true` to dev.to. Runs after the deploy so
+  # the canonical URL and cover image are live before dev.to fetches them.
+  # No-ops when DEVTO_API_KEY is unset.
+  syndicate:
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install
+      - name: Syndicate to dev.to
+        run: npm run syndicate
+        env:
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
