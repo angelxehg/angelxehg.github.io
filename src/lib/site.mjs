@@ -38,6 +38,8 @@ export function slugFromCanonical(url) {
   if (!pathname.startsWith(prefix)) return null;
 
   // Tolerate a hand-edited canonical that lost or gained its trailing slash.
+  // Nested slugs are kept: the collection globs **/*.md, so a post in a
+  // subdirectory has an id containing a slash and postUrl() round-trips it.
   const slug = pathname.slice(prefix.length).replace(/\/+$/, '');
-  return slug && !slug.includes('/') ? slug : null;
+  return slug || null;
 }

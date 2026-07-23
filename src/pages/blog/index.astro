@@ -3,9 +3,11 @@ import Base from '../../layouts/Base.astro';
 import TerminalShell from '../../components/blog/TerminalShell.vue';
 import PostList from '../../components/blog/PostList.vue';
 import { getBuildInfo } from '../../lib/buildInfo';
+import { getMirrors } from '../../lib/devto';
 import { getPosts, byteSize, humanSize, isoDate } from '../../lib/posts';
 
 const buildInfo = getBuildInfo();
+const mirrors = await getMirrors();
 
 const posts = (await getPosts()).map((post) => ({
   slug: post.id,
@@ -14,7 +16,7 @@ const posts = (await getPosts()).map((post) => ({
   date: isoDate(post.data.date),
   size: humanSize(byteSize(post)),
   tags: post.data.tags,
-  mirror: null,
+  mirror: mirrors.get(post.id)?.url ?? null,
 }));
 ---
 
