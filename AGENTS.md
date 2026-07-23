@@ -9,7 +9,6 @@ A single-page personal portfolio (angelxehg.com) built with Nuxt 4 + Vue 3 + Tai
 ## Commands
 
 ```shell
-nvm use            # Node 24.12.0, pinned in .nvmrc
 npm install        # postinstall runs `nuxt prepare` to regenerate .nuxt/ types
 npm run dev        # dev server on http://localhost:3000
 npm run generate   # static export (this is what CI/Netlify run)
@@ -18,6 +17,15 @@ npx nuxt analyze   # bundle size analysis
 ```
 
 `npm run build` produces a Nitro server build and is *not* what gets deployed — always use `generate` when verifying deploy behavior.
+
+## Node version
+
+Node 24.18.0 (current LTS) is pinned in **two** places that must be bumped together:
+
+- `package.json` → `volta.node` — what Volta installs and activates locally
+- `.node-version` — what Netlify and the GitHub Actions workflow (`node-version-file`) read
+
+Volta does not read `.node-version`, and Netlify does not read the `volta` field, which is why both exist.
 
 ## Static export details
 
@@ -29,7 +37,7 @@ Routes are prerendered with `noScripts: true` (see `routeRules` in `nuxt.config.
 
 Two targets build from the same source:
 
-- **GitHub Pages** (primary) — `.github/workflows/nuxtjs.yml` on push to `main`, uploads `./dist`. `public/CNAME` binds the custom domain angelxehg.com. Note the workflow pins Node 22 while `.nvmrc` says 24.12.0.
+- **GitHub Pages** (primary) — `.github/workflows/nuxtjs.yml` on push to `main`, uploads `./dist`. `public/CNAME` binds the custom domain angelxehg.com.
 - **Netlify** (preview/mirror) — `netlify.toml`, publishes `.output/public`. `nuxt.config.ts` sets `site.indexable: !process.env.NETLIFY` so the Netlify copy is marked non-indexable and only the Pages deploy is crawled.
 
 ## Structure and conventions

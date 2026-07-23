@@ -7,7 +7,7 @@ My personal portfolio
 ### Pre-requisites
 
 Required:
-- NodeJS or [NVM](https://github.com/nvm-sh/nvm)
+- [Volta](https://volta.sh) (recommended) or NodeJS 24
 
 ### Local development
 
@@ -18,11 +18,18 @@ git clone git@github.com:angelxehg/angelxehg.github.io.git
 cd angelxehg.github.io
 ```
 
-Install Node 24 with NVM:
+Install Volta (once, if not installed):
 
 ```shell
-nvm install 24.12.0
-nvm use 24.12.0
+curl https://get.volta.sh | bash
+```
+
+Volta reads the pin in `package.json` and switches to the right Node version
+automatically when you `cd` into the repo, so there is nothing else to run.
+Verify with:
+
+```shell
+node --version # v24.18.0
 ```
 
 Install dependencies:
