@@ -294,12 +294,8 @@ node_modules
 
 # End of https://www.toptal.com/developers/gitignore/api/node,nuxtjs,visualstudiocode,intellij+all,macos
 
-# Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
+# Astro dev/build outputs
+.astro
 dist
 
 # Node dependencies

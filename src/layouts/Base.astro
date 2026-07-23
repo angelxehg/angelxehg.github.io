@@ -1,0 +1,45 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Angel Hurtado's portfolio description",
+} = Astro.props;
+
+// Only the GitHub Pages deploy should be indexed; the Netlify mirror is not.
+const indexable = !process.env.NETLIFY;
+const robotsContent = indexable
+  ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+  : 'noindex, nofollow';
+
+const ogImage = new URL('/images/og.image.png', Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="robots" content={robotsContent} />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:site_name" content="Angel Hurtado's portfolio" />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta
+      name="google-site-verification"
+      content="0hO20fg4BEvRMjuTmUHifKltClQKkc4KKlwGD9tg6"
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

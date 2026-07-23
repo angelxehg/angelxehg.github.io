@@ -8,17 +8,13 @@
         <p class="text-black dark:text-white text-center mb-6">
           Page not found
         </p>
-        <NuxtLink to="/" class="text-blue-600 dark:text-blue-400 hover:underline">Go home</NuxtLink>
+        <a href="/" class="text-blue-600 dark:text-blue-400 hover:underline">Go home</a>
       </div>
     </div>
-    <footer class="py-4 text-center text-gray-600 dark:text-gray-400">
-      <p>&copy; {{ new Date().getFullYear() }} Angel Hurtado. All rights reserved.</p>
-    </footer>
+    <SiteFooter />
   </div>
 </template>
 
 <script setup>
-useHead({
-  title: "Page Not Found | Angel Hurtado's portfolio"
-})
+import SiteFooter from './SiteFooter.vue';
 </script>
