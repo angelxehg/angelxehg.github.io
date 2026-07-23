@@ -47,30 +47,10 @@
         </ul>
       </div>
     </div>
-    <footer class="py-4 text-center text-gray-600 dark:text-gray-400">
-      <p>&copy; {{ new Date().getFullYear() }} Angel Hurtado. All rights reserved.</p>
-    </footer>
+    <SiteFooter />
   </div>
 </template>
 
 <script setup>
-useHead({
-  title: "Angel Hurtado's portfolio",
-  meta: [
-    {name: 'description', content: "Angel Hurtado's portfolio description"},
-    {name: 'og:title', content: "Angel Hurtado's portfolio"},
-    {name: 'og:site_name', content: "Angel Hurtado's portfolio"},
-    {name: 'og:description', content: "Angel Hurtado's portfolio description"},
-    {name: 'og:type', content: 'website'},
-    {name: 'og:image', content: 'images/og.image.png'},
-    {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-    {name: 'google-site-verification', content: '0hO20fg4BEvRMjuTmUHifKltClQKkc4KKlwGD9tg6'}
-  ],
-  link: [
-    {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
-  ],
-  htmlAttrs: {
-    lang: 'en',
-  }
-})
+import SiteFooter from './SiteFooter.vue';
 </script>

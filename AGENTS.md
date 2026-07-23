@@ -4,19 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A single-page personal portfolio (angelxehg.com) built with Nuxt 4 + Vue 3 + Tailwind CSS 4, exported as a fully static site. There is no backend, no test suite, and no linter configured.
+A single-page personal portfolio (angelxehg.com) built with Astro 7 + Vue 3 + Tailwind CSS 4, exported as a fully static site. There is no backend, no test suite, and no linter configured.
 
 ## Commands
 
 ```shell
-npm install        # postinstall runs `nuxt prepare` to regenerate .nuxt/ types
-npm run dev        # dev server on http://localhost:3000
-npm run generate   # static export (this is what CI/Netlify run)
+npm install        # install dependencies
+npm run dev        # dev server on http://localhost:4321
+npm run build      # static export to dist/ (this is what CI/Netlify run and deploy)
 npm run preview    # serve the production build locally
-npx nuxt analyze   # bundle size analysis
 ```
 
-`npm run build` produces a Nitro server build and is *not* what gets deployed — always use `generate` when verifying deploy behavior.
+`npm run build` is the deployed command — it writes the static site to `dist/`.
 
 ## Node version
 
@@ -25,29 +24,30 @@ Node 24.18.0 (current LTS) is pinned in **two** places that must be bumped toget
 - `package.json` → `volta.node` — what Volta installs and activates locally
 - `.node-version` — what Netlify and the GitHub Actions workflow (`node-version-file`) read
 
-Volta does not read `.node-version`, and Netlify does not read the `volta` field, which is why both exist.
+Volta does not read `.node-version`, and Netlify does not read the `volta` field, which is why both exist. (Astro 7 itself only requires Node >= 22.12.)
 
 ## Static export details
 
-`nuxt generate` writes to `.output/public` and creates a `dist` symlink pointing at it (both are gitignored). The `postgenerate` script then rewrites `dist/404/index.html` into `dist/404.html`, because GitHub Pages serves `404.html` for unmatched routes but Nuxt prerenders the `/404` route into a directory. Any change to routing, the 404 page, or the output directory must keep that rename valid.
+`astro build` writes the static site to `dist/` (gitignored). `src/pages/404.astro` builds straight to `dist/404.html`, which GitHub Pages serves for unmatched routes — no post-build rename is needed.
 
-Routes are prerendered with `noScripts: true` (see `routeRules` in `nuxt.config.ts`), so the shipped pages have **no client-side JS**. Anything requiring runtime interactivity (event handlers, reactive state, client-only composables) will silently not work unless `noScripts` is removed for that route.
+Vue components are used **without a `client:*` directive** (e.g. `<ProfileCard />`, not `<ProfileCard client:load />`), so they render to static HTML and the pages ship **no client-side JS**. Anything requiring runtime interactivity (event handlers, reactive state, client-only composables) will not work unless a client directive is added to that component. `@astrojs/vue` emits an unused client runtime chunk into `dist/_astro/`, but no HTML page references it, so browsers never fetch it.
 
 ## Deployment
 
 Two targets build from the same source:
 
-- **GitHub Pages** (primary) — `.github/workflows/nuxtjs.yml` on push to `main`, uploads `./dist`. `public/CNAME` binds the custom domain angelxehg.com.
-- **Netlify** (preview/mirror) — `netlify.toml`, publishes `.output/public`. `nuxt.config.ts` sets `site.indexable: !process.env.NETLIFY` so the Netlify copy is marked non-indexable and only the Pages deploy is crawled.
+- **GitHub Pages** (primary) — `.github/workflows/astro.yml` on push to `main`, uploads `./dist`. `public/CNAME` binds the custom domain angelxehg.com.
+- **Netlify** (preview/mirror) — `netlify.toml`, publishes `dist`. When the `NETLIFY` env var is set (only on Netlify), `astro.config.mjs` flips the `robots.txt` policy to `Disallow: /` and the layout's `robots` meta to `noindex, nofollow`, so only the Pages deploy is crawled.
 
 ## Structure and conventions
 
-- `app/` is the Nuxt 4 srcDir. `app/pages/index.vue` is essentially the whole site; `app/pages/404.vue` and `app/error.vue` are near-duplicate error screens (keep them in sync when styling changes).
-- Per-page `<head>` is set with `useHead()` inside each page — there is no global head config, so new pages need their own title/meta.
-- Tailwind 4 is wired through the Vite plugin, with `app/assets/css/main.css` containing only `@import "tailwindcss"`. **`tailwind.config.ts` is vestigial** — it is CJS, uses pre-`app/` content globs, and is not referenced by the v4 setup. Theme customization belongs in `main.css` via `@theme`, not in that file.
+- Astro is the shell/routing language; Vue holds the markup. `src/layouts/Base.astro` is the `<html>`/`<head>`/`<body>` shell (imports `src/styles/global.css`). `src/pages/index.astro` and `src/pages/404.astro` are thin wrappers around Vue components.
+- `src/components/ProfileCard.vue` is essentially the whole site; `src/components/NotFoundCard.vue` is the 404 card; both include `SiteFooter.vue`. There is no separate error page — a static host only reaches the 404.
+- Per-page `<head>` is set by passing `title` (and optional `description`) props to `Base.astro`; the layout centralizes the shared meta (OG tags, `google-site-verification`, favicon, `robots`).
+- Tailwind 4 is wired through the Vite plugin in `astro.config.mjs`, with `src/styles/global.css` containing only `@import "tailwindcss"`. Theme customization belongs there via `@theme`.
 - Dark mode is `dark:` variants driven by `prefers-color-scheme`; there is no theme toggle.
 
 ## SEO files
 
-- `public/_robots.txt` is a source file merged by `@nuxtjs/robots` into the generated `robots.txt` — don't create a plain `public/robots.txt`.
-- `public/sitemap-index.xml` and `public/sitemap-0.xml` are **hand-written** (no sitemap module is installed). Adding a route means editing them manually.
+- `robots.txt` is generated at build time by the `astro-robots` integration, configured in `astro.config.mjs`. Do not add a plain `public/robots.txt`.
+- The sitemap (`sitemap-index.xml` + `sitemap-0.xml`) is generated by `@astrojs/sitemap` from the route list, with `/404` filtered out. `site: 'https://angelxehg.com'` in `astro.config.mjs` supplies the absolute URLs. Adding a route updates the sitemap automatically — no manual XML editing.

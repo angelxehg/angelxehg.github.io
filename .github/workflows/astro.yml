@@ -1,8 +1,8 @@
-# Sample workflow for building and deploying a Nuxt site to GitHub Pages
+# Sample workflow for building and deploying an Astro site to GitHub Pages
 #
-# To get started with Nuxt see: https://nuxtjs.org/docs/get-started/installation
+# To get started with Astro see: https://docs.astro.build/en/getting-started/
 #
-name: Deploy Nuxt site to Pages
+name: Deploy Astro site to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -36,19 +36,10 @@ jobs:
         with:
           node-version-file: '.node-version'
           cache: 'npm'
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            dist
-            .nuxt
-          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('dist') }}
-          restore-keys: |
-            ${{ runner.os }}-nuxt-build-
       - name: Install dependencies
         run: npm install
-      - name: Static HTML export with Nuxt
-        run: npm run generate
+      - name: Build with Astro
+        run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

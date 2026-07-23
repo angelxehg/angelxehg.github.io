@@ -60,26 +60,14 @@ npm run dev
 
 ### Production deployment
 
-To run a production, static:
+Generate the static site into `dist/` (this is what CI and Netlify run):
 
 ```shell
 npm run build
 ```
 
-Locally preview production build:
+Locally preview the production build:
 
 ```shell
 npm run preview
-```
-
-Analyze build size:
-
-```shell
-npx nuxt analyze
-```
-
-To generate a full static build:
-
-```shell
-npm run generate
 ```
