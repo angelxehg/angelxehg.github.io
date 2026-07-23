@@ -19,7 +19,7 @@ export default defineConfig({
         ? [{
             userAgent: ['*'],
             allow: ['/'],
-            disallow: ['/404', '/about', '/skills', '/projects', '/posts'],
+            disallow: ['/404'],
           }]
         : [{ userAgent: ['*'], disallow: ['/'] }],
     }),
