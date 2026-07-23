@@ -17,7 +17,7 @@
           <span class="text-gray-500 dark:text-gray-400">angelxehg.com</span>
           <span class="ml-auto inline-flex items-center gap-1.5">
             <span class="text-emerald-600 dark:text-emerald-400 font-semibold">operational</span>
-            <span class="text-gray-300 dark:text-gray-600">·</span>
+            <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
             <span class="text-gray-500 dark:text-gray-400">{{ buildInfo.region }}</span>
           </span>
         </div>
@@ -36,25 +36,25 @@
 
           <!-- Manifest: the bio as a readable, honest Dockerfile. -->
           <section>
-            <p class="mb-2 text-[11px] uppercase tracking-widest text-gray-400 dark:text-gray-500">
+            <p class="mb-2 text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400">
               manifest
             </p>
             <pre
               class="overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-black/40 p-4 text-xs sm:text-sm leading-relaxed"
-            ><code><span class="text-gray-400 dark:text-gray-500"># ~/angel-hurtado.dockerfile</span>
+            ><code><span class="text-gray-500 dark:text-gray-400"># ~/angel-hurtado.dockerfile</span>
 <span class="text-emerald-600 dark:text-emerald-400">FROM</span> mexico:latest
 <span class="text-emerald-600 dark:text-emerald-400">LABEL</span> role=<span class="text-sky-600 dark:text-sky-400">"Backend Developer"</span>
 <span class="text-emerald-600 dark:text-emerald-400">LABEL</span> langs=<span class="text-sky-600 dark:text-sky-400">"es-MX (native) · en (professional)"</span>
 <span class="text-emerald-600 dark:text-emerald-400">RUN</span> pip install django fastapi celery taskiq
 <span class="text-emerald-600 dark:text-emerald-400">ENV</span> FOCUS=<span class="text-sky-600 dark:text-sky-400">"apis · iac · aws · performance"</span>
-<span class="text-emerald-600 dark:text-emerald-400">COPY</span> ./frontend ./  <span class="text-gray-400 dark:text-gray-500"># astro · tailwind · vue</span>
+<span class="text-emerald-600 dark:text-emerald-400">COPY</span> ./frontend ./  <span class="text-gray-500 dark:text-gray-400"># astro · tailwind · vue</span>
 <span class="text-emerald-600 dark:text-emerald-400">EXPOSE</span> 443
 <span class="text-emerald-600 dark:text-emerald-400">CMD</span> [<span class="text-sky-600 dark:text-sky-400">"ship"</span>, <span class="text-sky-600 dark:text-sky-400">"--zero-javascript"</span>]</code></pre>
           </section>
 
           <!-- Resources: skills as provisioned services, with honest statuses. -->
           <section>
-            <p class="mb-3 text-[11px] uppercase tracking-widest text-gray-400 dark:text-gray-500">
+            <p class="mb-3 text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400">
               resources
             </p>
             <div class="grid gap-3 sm:grid-cols-2">
@@ -65,7 +65,7 @@
               >
                 <div class="flex items-center gap-1.5 text-[11px]">
                   <span class="h-2 w-2 rounded-full" :class="statusDot(r.status)"></span>
-                  <span class="text-gray-400 dark:text-gray-500">{{ r.id }}</span>
+                  <span class="text-gray-500 dark:text-gray-400">{{ r.id }}</span>
                 </div>
                 <p class="mt-2 text-sm font-semibold text-gray-900 dark:text-white">{{ r.title }}</p>
                 <ul class="mt-1 space-y-0.5 text-xs text-gray-600 dark:text-gray-400">
@@ -78,12 +78,12 @@
 
           <!-- Endpoints: contact links as exposed routes. -->
           <section>
-            <p class="mb-3 text-[11px] uppercase tracking-widest text-gray-400 dark:text-gray-500">
+            <p class="mb-3 text-[11px] uppercase tracking-widest text-gray-500 dark:text-gray-400">
               endpoints
             </p>
             <ul class="space-y-1.5 text-sm">
               <li v-for="e in endpoints" :key="e.href" class="flex items-baseline gap-3">
-                <span class="w-12 shrink-0 text-right text-[11px] text-gray-400 dark:text-gray-500">
+                <span class="w-12 shrink-0 text-right text-[11px] text-gray-500 dark:text-gray-400">
                   {{ e.proto }}
                 </span>
                 <a

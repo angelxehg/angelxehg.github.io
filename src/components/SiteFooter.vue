@@ -1,10 +1,10 @@
 <template>
-  <footer class="py-6 text-center text-xs font-mono text-gray-500 dark:text-gray-500">
+  <footer class="py-6 text-center text-xs font-mono text-gray-500 dark:text-gray-400">
     <p class="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
       <span>{{ buildInfo.region }}</span>
-      <span class="text-gray-300 dark:text-gray-700">·</span>
+      <span class="text-gray-300 dark:text-gray-700" aria-hidden="true">·</span>
       <span>deployed {{ buildInfo.builtAt }}</span>
-      <span class="text-gray-300 dark:text-gray-700">·</span>
+      <span class="text-gray-300 dark:text-gray-700" aria-hidden="true">·</span>
       <a
         v-if="commitUrl"
         :href="commitUrl"
@@ -13,10 +13,10 @@
         class="hover:text-emerald-600 hover:underline dark:hover:text-emerald-400"
       >{{ buildInfo.commit }}</a>
       <span v-else>{{ buildInfo.commit }}</span>
-      <span v-if="buildInfo.astroVersion" class="text-gray-300 dark:text-gray-700">·</span>
+      <span v-if="buildInfo.astroVersion" class="text-gray-300 dark:text-gray-700" aria-hidden="true">·</span>
       <span v-if="buildInfo.astroVersion">astro {{ buildInfo.astroVersion }}</span>
     </p>
-    <p class="mt-2 text-gray-400 dark:text-gray-600">
+    <p class="mt-2 text-gray-500 dark:text-gray-400">
       &copy; {{ new Date().getFullYear() }} Angel Hurtado
     </p>
   </footer>
