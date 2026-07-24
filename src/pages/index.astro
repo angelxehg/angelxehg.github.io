@@ -2,10 +2,17 @@
 import Base from '../layouts/Base.astro';
 import ProfileCard from '../components/ProfileCard.vue';
 import { getBuildInfo } from '../lib/buildInfo';
+import { getManifest } from '../lib/manifest';
 
 const buildInfo = getBuildInfo();
+const { layers, resources } = getManifest();
 ---
 
 <Base title="Angel Hurtado's portfolio">
-  <ProfileCard buildInfo={buildInfo} />
+  <!--
+    The site's only island. Everything it adds is an enhancement over markup
+    that already renders complete and correct without it; /blog and /404 stay
+    at zero client JS.
+  -->
+  <ProfileCard client:load buildInfo={buildInfo} layers={layers} resources={resources} />
 </Base>
