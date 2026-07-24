@@ -68,8 +68,13 @@
             ><span class="text-emerald-600 dark:text-emerald-400">{{ layer.instruction }}</span><template
               v-for="(token, j) in tokenize(layer.args)"
               :key="j"
-            ><span
-              v-if="token.quoted"
+            ><a
+              v-if="token.quoted && layer.href"
+              :href="layer.href"
+              title="Read the blog"
+              class="text-sky-600 underline decoration-dotted underline-offset-2 hover:text-emerald-600 dark:text-sky-400 dark:hover:text-emerald-400"
+            >{{ token.text }}</a><span
+              v-else-if="token.quoted"
               class="text-sky-600 dark:text-sky-400"
             >{{ token.text }}</span><template v-else>{{ token.text }}</template></template><span
               v-if="layer.comment"

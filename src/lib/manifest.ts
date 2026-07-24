@@ -25,6 +25,8 @@ export interface Layer {
   args: string;
   /** Trailing `# comment`, rendered gray. */
   comment?: string;
+  /** Makes this layer's quoted token a link — the manifest's one reachable path. */
+  href?: string;
   /** Resource ids this layer provisions. Layers that provide get a `--->` line. */
   provides?: string[];
   /** Authored duration; paces the client-side build sequence. */
@@ -69,6 +71,16 @@ const layers: LayerSource[] = [
     comment: '# astro · tailwind · vue',
     provides: ['edge/frontend'],
     ms: 380,
+  },
+  // Everything above is a frozen layer; the blog is the one part that is still
+  // being written, so it mounts as the image's only writable volume. The path
+  // is a real link.
+  {
+    instruction: 'VOLUME',
+    args: '["/blog"]',
+    comment: '# the only mutable layer',
+    href: '/blog/',
+    ms: 40,
   },
   { instruction: 'EXPOSE', args: '443', ms: 40 },
   // Describes what the island actually does: a real same-origin probe on this
