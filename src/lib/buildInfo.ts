@@ -6,33 +6,48 @@ const require = createRequire(import.meta.url);
 export interface BuildInfo {
   /** Short git commit the site was built from. */
   commit: string;
+  /** 12-char commit, used as the image/container id in the manifest. */
+  containerId: string;
   /** UTC date the build ran, formatted YYYY-MM-DD. */
   builtAt: string;
+  /** Full ISO timestamp of the build; the client derives uptime from this. */
+  builtAtISO: string;
   /** Astro version that produced the build. */
   astroVersion: string;
   /** Fake-but-fitting deploy region (real AWS region id for Mexico). */
   region: string;
 }
 
-function shortSha(): string {
+function fullSha(): string | null {
   // Prefer CI-provided refs (Netlify: COMMIT_REF, GitHub Actions: GITHUB_SHA)
   // so we don't shell out when the platform already told us the commit.
   const fromEnv = process.env.COMMIT_REF ?? process.env.GITHUB_SHA;
-  if (fromEnv) return fromEnv.slice(0, 7);
+  if (fromEnv) return fromEnv;
   try {
-    return execSync('git rev-parse --short HEAD', { stdio: ['ignore', 'pipe', 'ignore'] })
+    return execSync('git rev-parse HEAD', { stdio: ['ignore', 'pipe', 'ignore'] })
       .toString()
       .trim();
   } catch {
-    return 'unknown';
+    return null;
   }
 }
+
+let cached: BuildInfo | undefined;
 
 /**
  * Honest, build-time deploy metadata for the status-page footer.
  * Every field is derived from the real build — nothing is invented at runtime.
+ *
+ * Computed once per process and reused. Every page calls this, and without the
+ * cache each one would spawn its own `git rev-parse` and stamp its own
+ * `new Date()` — so pages built seconds apart would advertise different deploy
+ * times for a single deploy.
  */
 export function getBuildInfo(): BuildInfo {
+  return (cached ??= collectBuildInfo());
+}
+
+function collectBuildInfo(): BuildInfo {
   let astroVersion = '';
   try {
     astroVersion = require('astro/package.json').version;
@@ -40,9 +55,15 @@ export function getBuildInfo(): BuildInfo {
     /* version is decorative; a missing one just renders blank */
   }
 
+  const sha = fullSha();
+  const builtAtISO = new Date().toISOString();
+
   return {
-    commit: shortSha(),
-    builtAt: new Date().toISOString().slice(0, 10),
+    commit: sha?.slice(0, 7) ?? 'unknown',
+    // Docker prints 12 hex chars for image and container ids.
+    containerId: sha?.slice(0, 12) ?? 'unknown',
+    builtAt: builtAtISO.slice(0, 10),
+    builtAtISO,
     astroVersion,
     region: 'mx-central-1',
   };

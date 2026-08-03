@@ -5,11 +5,18 @@ import { assetUrl } from '../lib/siteUrl';
 interface Props {
   title: string;
   description?: string;
+  /** Site-absolute path to the social card, e.g. /images/posts/foo.png */
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: Date;
 }
 
 const {
   title,
   description = "Angel Hurtado's portfolio description",
+  image = '/images/og.image.png',
+  type = 'website',
+  publishedTime,
 } = Astro.props;
 
 // Only the GitHub Pages deploy should be indexed; the Netlify mirror is not.
@@ -19,7 +26,11 @@ const robotsContent = indexable
   : 'noindex, nofollow';
 
 // Absolute, and pointing at THIS deploy's origin — see src/lib/siteUrl.ts.
-const ogImage = assetUrl('/images/og.image.png', Astro.site);
+const ogImage = assetUrl(image, Astro.site);
+
+// Every page is its own canonical. Astro's directory build format means
+// Astro.url.pathname already carries the trailing slash the page is served at.
+const canonicalUrl = assetUrl(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -30,11 +41,19 @@ const ogImage = assetUrl('/images/og.image.png', Astro.site);
     <title>{title}</title>
     <meta name="robots" content={robotsContent} />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:site_name" content="Angel Hurtado's portfolio" />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImage} />
+    {
+      publishedTime && (
+        <meta property="article:published_time" content={publishedTime.toISOString()} />
+      )
+    }
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="google-site-verification"
       content="0hO20fg4BEvRMjuTmUHifKltClQKkc4KKlwGD9tg6"

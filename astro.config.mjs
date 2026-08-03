@@ -40,6 +40,13 @@ const indexable = !process.env.NETLIFY;
 
 export default defineConfig({
   site,
+  markdown: {
+    // Dual themes: Shiki inlines both and global.css swaps to the dark palette
+    // on prefers-color-scheme, matching the rest of the site.
+    shikiConfig: {
+      themes: { light: 'github-light', dark: 'github-dark' },
+    },
+  },
   integrations: [
     vue(),
     sitemap({ filter: (page) => !page.includes('/404') }),
@@ -49,7 +56,7 @@ export default defineConfig({
         ? [{
             userAgent: ['*'],
             allow: ['/'],
-            disallow: ['/404', '/about', '/skills', '/projects', '/posts'],
+            disallow: ['/404'],
           }]
         : [{ userAgent: ['*'], disallow: ['/'] }],
     }),
