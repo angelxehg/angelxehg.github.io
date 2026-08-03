@@ -24,14 +24,26 @@
 
         <div class="p-6 sm:p-8 space-y-8">
           <!-- Header -->
-          <header class="space-y-1">
-            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Angel Hurtado
-            </h1>
-            <p class="text-sm text-gray-500 dark:text-gray-400">
-              <span class="text-emerald-600 dark:text-emerald-400">$</span>
-              Backend Developer — Python · APIs · Cloud
-            </p>
+          <header class="flex items-center gap-4">
+            <!-- Decorative: the name sits right beside it, so alt is empty on purpose. -->
+            <img
+              src="/images/avatar.svg"
+              alt=""
+              width="56"
+              height="56"
+              class="h-14 w-14 shrink-0 rounded-full border border-gray-200 dark:border-gray-800"
+            />
+            <div class="space-y-1">
+              <h1
+                class="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Angel Hurtado
+              </h1>
+              <p class="text-sm text-gray-500 dark:text-gray-400">
+                <span class="text-emerald-600 dark:text-emerald-400">$</span>
+                Backend Developer — Python · APIs · Cloud
+              </p>
+            </div>
           </header>
 
           <!-- Manifest: the bio as a readable, honest Dockerfile. -->

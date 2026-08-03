@@ -6,7 +6,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "avatar:svg": "node scripts/generate-avatar-svg.mjs",
+    "avatar:png": "node scripts/generate-avatar-images.mjs",
+    "og": "node scripts/generate-og-image.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -19,5 +22,11 @@
   },
   "volta": {
     "node": "24.18.0"
+  },
+  "devDependencies": {
+    "@dicebear/core": "^9.4.3",
+    "@dicebear/micah": "^9.4.3",
+    "png-to-ico": "^3.0.2",
+    "sharp": "^0.35.3"
   }
 }
