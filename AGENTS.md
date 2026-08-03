@@ -41,11 +41,19 @@ Two targets build from the same source:
 - **GitHub Pages** (primary) — `.github/workflows/astro.yml` on push to `main`, uploads `./dist`. `public/CNAME` binds the custom domain angelxehg.com.
 - **Netlify** (preview/mirror) — `netlify.toml`, publishes `dist`. When the `NETLIFY` env var is set (only on Netlify), `astro.config.mjs` flips the `robots.txt` policy to `Disallow: /` and the layout's `robots` meta to `noindex, nofollow`, so only the Pages deploy is crawled.
 
+### Absolute URLs must follow the deploy, not the domain
+
+`site` in `astro.config.mjs` is resolved per environment, not hardcoded: `angelxehg.com` on GitHub Pages, and Netlify's own `DEPLOY_PRIME_URL` (falling back to `DEPLOY_URL`, then `URL`) on Netlify. `DEPLOY_PRIME_URL` is preferred because it is stable per PR — `DEPLOY_URL` carries a per-build deploy id and changes on every rebuild, which would invalidate any share card a scraper already cached.
+
+This matters because `site` feeds every absolute URL Astro emits. When it was hardcoded, Deploy Previews advertised production's `og:image`, so a preview's share card showed the live site's picture.
+
+**Build absolute asset URLs with `assetUrl(path, Astro.site)` from `src/lib/siteUrl.ts`** — never by writing the domain out. If a Netlify build somehow has none of the three URL variables, the config throws rather than falling back to the production domain, since a silent fallback is exactly the bug being prevented.
+
 ## Structure and conventions
 
 - Astro is the shell/routing language; Vue holds the markup. `src/layouts/Base.astro` is the `<html>`/`<head>`/`<body>` shell (imports `src/styles/global.css`). `src/pages/index.astro` and `src/pages/404.astro` are thin wrappers around Vue components.
 - `src/components/ProfileCard.vue` is the homepage; `src/components/NotFoundCard.vue` is the 404 card; `src/components/blog/` holds the blog. All include `SiteFooter.vue`. There is no separate error page — a static host only reaches the 404.
-- Per-page `<head>` is set by passing props to `Base.astro` (`title`, `description`, `canonical`, `image`, `type`, `publishedTime`); the layout centralizes the shared meta (OG tags, `google-site-verification`, favicon, `robots`). `canonical` always resolves against `site`, so the Netlify preview points at the production URL rather than at itself.
+- Per-page `<head>` is set by passing props to `Base.astro` (`title`, `description`, `image`, `type`, `publishedTime`); the layout centralizes the shared meta (canonical, OG tags, `google-site-verification`, favicon, `robots`). The canonical link is derived from `Astro.url.pathname` against `Astro.site`, so every page is its own canonical on whichever origin built it — see *Absolute URLs must follow the deploy, not the domain*.
 - Tailwind 4 is wired through the Vite plugin in `astro.config.mjs`. `src/styles/global.css` holds `@import "tailwindcss"`, the `.post-body` Markdown typography rules, and the Shiki dark-mode variable swap. Theme customization belongs there via `@theme`.
 - Dark mode is `dark:` variants driven by `prefers-color-scheme`; there is no theme toggle.
 
@@ -88,38 +96,56 @@ Details worth not re-deriving:
 
 Posts are Markdown in `src/content/blog/*.md`, declared by the `blog` collection in
 `src/content.config.ts`. Frontmatter: `title`, `description`, `date` (required); `updated`, `tags`,
-`image`, `draft`, `syndicate` (optional). `image` is a site-absolute path and doubles as the OG card
-and the dev.to cover. Drafts render in `astro dev` and are dropped from every real build
-(`src/lib/posts.ts`).
+`image`, `draft` (optional). `image` is a site-absolute path and overrides the default OG card for
+that post. Drafts render in `astro dev` and are dropped from every real build (`src/lib/posts.ts`).
+
+**Posts are named `YYYY-MM-DD-<slug>.md`, and the date prefix is part of the URL** — the glob
+loader derives the collection id from the filename, so `2026-08-03-no-javascript-blog.md` is served
+at `/blog/2026-08-03-no-javascript-blog/`. That makes the filename permanent once a post is public:
+renaming it changes the URL. It also means the filename's date and the `date` frontmatter are two
+independent copies of the same fact, so `assertDatedFilename` in `src/lib/posts.ts` **fails the
+build** when they disagree or when the prefix is missing. Fix the mismatch; do not relax the check.
 
 The blog is styled as a full-bleed terminal — `src/components/blog/TerminalShell.vue` (status bar +
 `<slot />`), `PostList.vue` (an `ls -lh` listing where the size column is the real byte count of the
 Markdown), `PostMeta.vue` (`$ cat <slug>.md`). It deliberately does **not** extend the homepage's
 Dockerfile conceit. Routes are `src/pages/blog/index.astro` and `src/pages/blog/[...slug].astro`.
 
-**Authoring rule:** images and assets inside post Markdown must be absolute URLs. Relative paths
-resolve here and break on the dev.to copy.
+**The blog is built entirely at build time and has no network dependency.** Everything a post page
+needs comes from the repo: the Markdown, the collection schema, `getBuildInfo()`. Nothing is fetched
+from a third-party API while building, so a build cannot fail — or hang — because someone else's
+service is down. A previous version of this branch called dev.to's API on every build to decorate
+posts with mirror links; that is gone, along with the syndication script and its workflow job. If a
+future feature wants remote data at build time, treat adding it as a real decision, not a detail.
 
-## dev.to syndication
+**Authoring rule:** images and assets inside post Markdown must be absolute URLs (or site-absolute
+paths under `public/`), so a post reads the same wherever its HTML is served from.
 
-This site is canonical; dev.to is a mirror. Both directions are stateless — no article ids or sync
-files are stored in the repo, and `canonical_url` is the only join key. `src/lib/site.mjs` owns that
-URL shape (`postUrl` / `slugFromCanonical`) and is plain `.mjs` because both the Vite build and the
-standalone script import it.
+## Avatar, favicon, and OG image
 
-- **Read (every build):** `src/lib/devto.ts` fetches the public article list and keeps entries whose
-  `canonical_url` points at a post here, so the "↗ dev.to" link appears only for real mirrors. Posts
-  published without a canonical report their own dev.to URL, which is why the pre-blog articles are
-  excluded automatically. Every failure path returns an empty map — set `SKIP_DEVTO=1` to skip the
-  fetch entirely. **A dev.to outage must never fail a build; keep it that way.**
-- **Write (merge to main):** the `syndicate` job in `.github/workflows/astro.yml` runs
-  `npm run syndicate` after the Pages deploy. `scripts/syndicate.mjs` pushes only posts with
-  `syndicate: true`, looks up `/articles/me/all`, and `PUT`s when some article already claims the
-  post's canonical URL or `POST`s when none does. Unchanged content is skipped so unrelated pushes
-  don't bump `edited_at`. Needs the `DEVTO_API_KEY` repository secret; without it the script warns
-  and exits 0. Use `node scripts/syndicate.mjs --dry-run` to preview.
+All three derive from `public/images/avatar.svg`, generated by `npm run avatar:svg` from
+the Dicebear config in `scripts/generate-avatar-svg.mjs`, then rasterized by
+`npm run avatar:png` (PNG sizes + `favicon.ico`) and `npm run og` (`og.image.png`).
+
+The SVG is committed and may be hand-edited — `npm run avatar:svg` overwrites it, which is
+why there is no combined `npm run avatar`. **Read `skills/avatar/SKILL.md` before changing
+any of these**; it covers the run order, the hand-edit path, and several failure modes that
+are silent rather than loud.
+
+## Skills
+
+Repo-specific agent instructions live in `skills/`. Each tool looks in its own directory,
+so all three are symlinks back to that one canonical folder — the same
+canonical-file-plus-symlink pattern as `CLAUDE.md` → `AGENTS.md`:
+
+- `.claude/skills` → `../skills` (Claude Code)
+- `.junie/skills` → `../skills` (Junie)
+- `.agents/skills` → `../skills` (Codex)
+
+Add new skills under `skills/<name>/SKILL.md` only; every tool picks them up through its
+symlink, so there is nothing to duplicate.
 
 ## SEO files
 
 - `robots.txt` is generated at build time by the `astro-robots` integration, configured in `astro.config.mjs`. Do not add a plain `public/robots.txt`.
-- The sitemap (`sitemap-index.xml` + `sitemap-0.xml`) is generated by `@astrojs/sitemap` from the route list, with `/404` filtered out. `site: 'https://angelxehg.com'` in `astro.config.mjs` supplies the absolute URLs. Adding a route updates the sitemap automatically — no manual XML editing.
+- The sitemap (`sitemap-index.xml` + `sitemap-0.xml`) is generated by `@astrojs/sitemap` from the route list, with `/404` filtered out. The per-deploy `site` in `astro.config.mjs` supplies the absolute URLs. Adding a route updates the sitemap automatically — no manual XML editing.

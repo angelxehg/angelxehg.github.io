@@ -32,11 +32,22 @@ function fullSha(): string | null {
   }
 }
 
+let cached: BuildInfo | undefined;
+
 /**
  * Honest, build-time deploy metadata for the status-page footer.
  * Every field is derived from the real build — nothing is invented at runtime.
+ *
+ * Computed once per process and reused. Every page calls this, and without the
+ * cache each one would spawn its own `git rev-parse` and stamp its own
+ * `new Date()` — so pages built seconds apart would advertise different deploy
+ * times for a single deploy.
  */
 export function getBuildInfo(): BuildInfo {
+  return (cached ??= collectBuildInfo());
+}
+
+function collectBuildInfo(): BuildInfo {
   let astroVersion = '';
   try {
     astroVersion = require('astro/package.json').version;

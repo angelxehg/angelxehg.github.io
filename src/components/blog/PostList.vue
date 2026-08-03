@@ -22,17 +22,10 @@
           <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">{{ post.description }}</p>
         </a>
 
-        <div class="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs">
+        <div v-if="post.tags.length" class="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs">
           <span v-for="tag in post.tags" :key="tag" class="text-gray-500 dark:text-gray-400">
             #{{ tag }}
           </span>
-          <a
-            v-if="post.mirror"
-            :href="post.mirror"
-            rel="external"
-            title="Read the mirrored copy on dev.to"
-            class="ml-auto text-gray-500 hover:text-emerald-600 hover:underline dark:text-gray-400 dark:hover:text-emerald-400"
-          >&#8599; dev.to</a>
         </div>
       </li>
     </ul>
