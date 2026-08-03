@@ -99,6 +99,13 @@ Posts are Markdown in `src/content/blog/*.md`, declared by the `blog` collection
 `image`, `draft` (optional). `image` is a site-absolute path and overrides the default OG card for
 that post. Drafts render in `astro dev` and are dropped from every real build (`src/lib/posts.ts`).
 
+**Posts are named `YYYY-MM-DD-<slug>.md`, and the date prefix is part of the URL** — the glob
+loader derives the collection id from the filename, so `2026-08-03-no-javascript-blog.md` is served
+at `/blog/2026-08-03-no-javascript-blog/`. That makes the filename permanent once a post is public:
+renaming it changes the URL. It also means the filename's date and the `date` frontmatter are two
+independent copies of the same fact, so `assertDatedFilename` in `src/lib/posts.ts` **fails the
+build** when they disagree or when the prefix is missing. Fix the mismatch; do not relax the check.
+
 The blog is styled as a full-bleed terminal — `src/components/blog/TerminalShell.vue` (status bar +
 `<slot />`), `PostList.vue` (an `ls -lh` listing where the size column is the real byte count of the
 Markdown), `PostMeta.vue` (`$ cat <slug>.md`). It deliberately does **not** extend the homepage's

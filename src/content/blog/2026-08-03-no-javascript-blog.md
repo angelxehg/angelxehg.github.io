@@ -1,7 +1,7 @@
 ---
 title: A blog that ships no JavaScript
 description: Markdown in a git repo, rendered to static HTML at build time. No client bundle, no database, no runtime — and a file listing whose numbers are real.
-date: 2026-07-23
+date: 2026-08-03
 tags: [astro, performance, static]
 ---
 
