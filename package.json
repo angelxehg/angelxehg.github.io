@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "avatar:svg": "node scripts/generate-avatar-svg.mjs",
-    "avatar:png": "node scripts/generate-avatar-images.mjs"
+    "avatar:png": "node scripts/generate-avatar-images.mjs",
+    "og": "node scripts/generate-og-image.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
