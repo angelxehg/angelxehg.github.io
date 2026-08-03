@@ -35,6 +35,31 @@ The one rule: **`npm run avatar:svg` overwrites `avatar.svg` and destroys hand e
 There is deliberately no combined `npm run avatar` script for this reason. After a manual
 edit, only run `avatar:png` and `og`.
 
+### Find the existing hand edits before you touch anything
+
+`avatar.svg` currently carries hand edits, and they are the reason the avatar looks like
+Angel rather than like a stock micah face. **Start every task here:**
+
+```bash
+grep -c 'HAND EDIT' public/images/avatar.svg
+```
+
+Every deviation from generator output is wrapped in an XML comment starting with
+`HAND EDIT`, plus an index of them all at the top of the file. Each one records what was
+replaced, why, and the original path data verbatim, so a deleted edit can be restored and a
+kept edit can be re-applied to freshly generated output. A count of zero means the file is
+pure generator output and nothing needs preserving.
+
+Keep that convention. **Any new hand edit gets its own `HAND EDIT` comment and a line in
+the index**, containing:
+
+- what stock Dicebear draws and why it's wrong for this likeness,
+- the replacement, in enough detail to redo it,
+- the original path data or attribute value it displaced.
+
+Without that, the next agent regenerates the SVG, sees a silently different face, and has
+no way to tell which differences were intentional.
+
 If you must regenerate a hand-edited SVG (say, to change a config option *and* keep the
 edits), diff first so you know what you're about to lose:
 
@@ -44,8 +69,9 @@ npm run avatar:svg
 diff /tmp/avatar-before.svg public/images/avatar.svg
 ```
 
-Then re-apply the manual edits on top, or fold them into the config if they can be
-expressed there.
+Then re-apply each `HAND EDIT` from the copy on top of the new file, or fold it into the
+config if it can be expressed there — and delete its comment if you do, so the index never
+describes an edit that is no longer present.
 
 ## The three commands, and why the order matters
 
@@ -158,5 +184,18 @@ console.log(n+' icons: '+Array.from({length:n},(_,i)=>(b[6+i*16]||256)+'x'+(b[6+
 ## Reference photos
 
 The likeness was matched by hand from photos that are deliberately **not** in the repo and
-must never be committed. If they reappear locally, leave them untracked. `avatarOptions` is
-the durable record of the likeness — treat the config as the source of truth, not the photos.
+must never be committed. If they reappear locally, leave them untracked. The durable record
+of the likeness is `avatarOptions` plus the `HAND EDIT` comments in `avatar.svg` — treat
+those two together as the source of truth, not the photos.
+
+If you are handed new reference photos, do not eyedrop them straight into a colour:
+
+- **The photos are shot under dim warm indoor light.** Raw skin pixels sample around
+  `#c2998a`, far darker and more orange than the real tone. White-balance against a known
+  neutral in the frame before trusting any number — the committed `baseColor` is the
+  white-balanced value, and re-sampling naively will drag it back towards orange.
+- **A camera filter crushes the hair to near-black** (`#15110e` raw). It is really dark
+  brown, which is what `hairColor` holds.
+
+Photos are also rotated 90° in EXIF terms and arrive sideways; rotate them upright before
+judging a hairline, or you will read the sweep backwards.
