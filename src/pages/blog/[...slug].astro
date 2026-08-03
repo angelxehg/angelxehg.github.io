@@ -6,7 +6,6 @@ import PostMeta from '../../components/blog/PostMeta.vue';
 import { getBuildInfo } from '../../lib/buildInfo';
 import { getMirrors } from '../../lib/devto';
 import { getPosts, isoDate } from '../../lib/posts';
-import { postUrl } from '../../lib/site.mjs';
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -22,7 +21,6 @@ const mirror = (await getMirrors()).get(post.id)?.url ?? null;
 <Base
   title={`${post.data.title} | Angel Hurtado`}
   description={post.data.description}
-  canonical={postUrl(post.id)}
   image={post.data.image}
   type="article"
   publishedTime={post.data.date}

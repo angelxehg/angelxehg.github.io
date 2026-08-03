@@ -1,11 +1,10 @@
 ---
 import '../styles/global.css';
+import { assetUrl } from '../lib/siteUrl';
 
 interface Props {
   title: string;
   description?: string;
-  /** Absolute canonical URL. Defaults to this page's own URL on the production site. */
-  canonical?: string | URL;
   /** Site-absolute path to the social card, e.g. /images/posts/foo.png */
   image?: string;
   type?: 'website' | 'article';
@@ -15,7 +14,6 @@ interface Props {
 const {
   title,
   description = "Angel Hurtado's portfolio description",
-  canonical,
   image = '/images/og.image.png',
   type = 'website',
   publishedTime,
@@ -27,13 +25,12 @@ const robotsContent = indexable
   ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
   : 'noindex, nofollow';
 
-const ogImage = new URL(image, Astro.site);
+// Absolute, and pointing at THIS deploy's origin — see src/lib/siteUrl.ts.
+const ogImage = assetUrl(image, Astro.site);
 
-// Always point at the production site, never at the Netlify preview host: this
-// site is the canonical source for posts that are mirrored to dev.to.
-const canonicalUrl = canonical
-  ? new URL(canonical, Astro.site)
-  : new URL(Astro.url.pathname, Astro.site);
+// Every page is its own canonical. Astro's directory build format means
+// Astro.url.pathname already carries the trailing slash the page is served at.
+const canonicalUrl = assetUrl(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
