@@ -314,6 +314,3 @@ logs
 .env
 .env.*
 !.env.example
-
-# Reference photos for the Dicebear avatar config — kept local, never committed
-Photos-1-001/
