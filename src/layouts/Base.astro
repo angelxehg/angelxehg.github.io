@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { assetUrl } from '../lib/siteUrl';
 
 interface Props {
   title: string;
@@ -17,7 +18,8 @@ const robotsContent = indexable
   ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
   : 'noindex, nofollow';
 
-const ogImage = new URL('/images/og.image.png', Astro.site);
+// Absolute, and pointing at THIS deploy's origin — see src/lib/siteUrl.ts.
+const ogImage = assetUrl('/images/og.image.png', Astro.site);
 ---
 
 <!doctype html>

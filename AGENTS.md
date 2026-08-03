@@ -39,6 +39,14 @@ Two targets build from the same source:
 - **GitHub Pages** (primary) — `.github/workflows/astro.yml` on push to `main`, uploads `./dist`. `public/CNAME` binds the custom domain angelxehg.com.
 - **Netlify** (preview/mirror) — `netlify.toml`, publishes `dist`. When the `NETLIFY` env var is set (only on Netlify), `astro.config.mjs` flips the `robots.txt` policy to `Disallow: /` and the layout's `robots` meta to `noindex, nofollow`, so only the Pages deploy is crawled.
 
+### Absolute URLs must follow the deploy, not the domain
+
+`site` in `astro.config.mjs` is resolved per environment, not hardcoded: `angelxehg.com` on GitHub Pages, and Netlify's own `DEPLOY_PRIME_URL` (falling back to `DEPLOY_URL`, then `URL`) on Netlify. `DEPLOY_PRIME_URL` is preferred because it is stable per PR — `DEPLOY_URL` carries a per-build deploy id and changes on every rebuild, which would invalidate any share card a scraper already cached.
+
+This matters because `site` feeds every absolute URL Astro emits. When it was hardcoded, Deploy Previews advertised production's `og:image`, so a preview's share card showed the live site's picture.
+
+**Build absolute asset URLs with `assetUrl(path, Astro.site)` from `src/lib/siteUrl.ts`** — never by writing the domain out. If a Netlify build somehow has none of the three URL variables, the config throws rather than falling back to the production domain, since a silent fallback is exactly the bug being prevented.
+
 ## Structure and conventions
 
 - Astro is the shell/routing language; Vue holds the markup. `src/layouts/Base.astro` is the `<html>`/`<head>`/`<body>` shell (imports `src/styles/global.css`). `src/pages/index.astro` and `src/pages/404.astro` are thin wrappers around Vue components.
