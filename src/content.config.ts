@@ -9,11 +9,9 @@ const blog = defineCollection({
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
     tags: z.array(z.string()).default([]),
-    /** Site-absolute path to the social card; also the dev.to cover image. */
+    /** Site-absolute path to the post's social card, e.g. /images/posts/foo.png */
     image: z.string().startsWith('/').optional(),
     draft: z.boolean().default(false),
-    /** Opt in per post: only these get created/updated on dev.to. */
-    syndicate: z.boolean().default(false),
   }),
 });
 

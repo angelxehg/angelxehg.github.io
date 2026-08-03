@@ -96,36 +96,23 @@ Details worth not re-deriving:
 
 Posts are Markdown in `src/content/blog/*.md`, declared by the `blog` collection in
 `src/content.config.ts`. Frontmatter: `title`, `description`, `date` (required); `updated`, `tags`,
-`image`, `draft`, `syndicate` (optional). `image` is a site-absolute path and doubles as the OG card
-and the dev.to cover. Drafts render in `astro dev` and are dropped from every real build
-(`src/lib/posts.ts`).
+`image`, `draft` (optional). `image` is a site-absolute path and overrides the default OG card for
+that post. Drafts render in `astro dev` and are dropped from every real build (`src/lib/posts.ts`).
 
 The blog is styled as a full-bleed terminal — `src/components/blog/TerminalShell.vue` (status bar +
 `<slot />`), `PostList.vue` (an `ls -lh` listing where the size column is the real byte count of the
 Markdown), `PostMeta.vue` (`$ cat <slug>.md`). It deliberately does **not** extend the homepage's
 Dockerfile conceit. Routes are `src/pages/blog/index.astro` and `src/pages/blog/[...slug].astro`.
 
-**Authoring rule:** images and assets inside post Markdown must be absolute URLs. Relative paths
-resolve here and break on the dev.to copy.
+**The blog is built entirely at build time and has no network dependency.** Everything a post page
+needs comes from the repo: the Markdown, the collection schema, `getBuildInfo()`. Nothing is fetched
+from a third-party API while building, so a build cannot fail — or hang — because someone else's
+service is down. A previous version of this branch called dev.to's API on every build to decorate
+posts with mirror links; that is gone, along with the syndication script and its workflow job. If a
+future feature wants remote data at build time, treat adding it as a real decision, not a detail.
 
-## dev.to syndication
-
-This site is canonical; dev.to is a mirror. Both directions are stateless — no article ids or sync
-files are stored in the repo, and `canonical_url` is the only join key. `src/lib/site.mjs` owns that
-URL shape (`postUrl` / `slugFromCanonical`) and is plain `.mjs` because both the Vite build and the
-standalone script import it.
-
-- **Read (every build):** `src/lib/devto.ts` fetches the public article list and keeps entries whose
-  `canonical_url` points at a post here, so the "↗ dev.to" link appears only for real mirrors. Posts
-  published without a canonical report their own dev.to URL, which is why the pre-blog articles are
-  excluded automatically. Every failure path returns an empty map — set `SKIP_DEVTO=1` to skip the
-  fetch entirely. **A dev.to outage must never fail a build; keep it that way.**
-- **Write (merge to main):** the `syndicate` job in `.github/workflows/astro.yml` runs
-  `npm run syndicate` after the Pages deploy. `scripts/syndicate.mjs` pushes only posts with
-  `syndicate: true`, looks up `/articles/me/all`, and `PUT`s when some article already claims the
-  post's canonical URL or `POST`s when none does. Unchanged content is skipped so unrelated pushes
-  don't bump `edited_at`. Needs the `DEVTO_API_KEY` repository secret; without it the script warns
-  and exits 0. Use `node scripts/syndicate.mjs --dry-run` to preview.
+**Authoring rule:** images and assets inside post Markdown must be absolute URLs (or site-absolute
+paths under `public/`), so a post reads the same wherever its HTML is served from.
 
 ## Avatar, favicon, and OG image
 
