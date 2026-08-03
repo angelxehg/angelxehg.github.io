@@ -60,9 +60,16 @@ are silent rather than loud.
 
 ## Skills
 
-Repo-specific agent instructions live in `skills/`, with `.claude/skills` symlinked to it
-so Claude Code discovers them — the same canonical-file-plus-symlink pattern as
-`CLAUDE.md` → `AGENTS.md`.
+Repo-specific agent instructions live in `skills/`. Each tool looks in its own directory,
+so all three are symlinks back to that one canonical folder — the same
+canonical-file-plus-symlink pattern as `CLAUDE.md` → `AGENTS.md`:
+
+- `.claude/skills` → `../skills` (Claude Code)
+- `.junie/skills` → `../skills` (Junie)
+- `.agents/skills` → `../skills` (Codex)
+
+Add new skills under `skills/<name>/SKILL.md` only; every tool picks them up through its
+symlink, so there is nothing to duplicate.
 
 ## SEO files
 
