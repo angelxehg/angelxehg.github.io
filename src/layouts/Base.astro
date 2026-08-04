@@ -9,6 +9,8 @@ interface Props {
   image?: string;
   type?: 'website' | 'article';
   publishedTime?: Date;
+  /** BCP 47 tag for the page's content. The site is English; posts may not be. */
+  lang?: string;
 }
 
 const {
@@ -17,6 +19,7 @@ const {
   image = '/images/og.image.png',
   type = 'website',
   publishedTime,
+  lang = 'en',
 } = Astro.props;
 
 // Only the GitHub Pages deploy should be indexed; the Netlify mirror is not.
@@ -34,7 +37,7 @@ const canonicalUrl = assetUrl(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
