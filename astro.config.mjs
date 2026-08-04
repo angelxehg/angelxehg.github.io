@@ -49,7 +49,10 @@ export default defineConfig({
   },
   integrations: [
     vue(),
-    sitemap({ filter: (page) => !page.includes('/404') }),
+    // Tag listings are navigation, not destinations: they duplicate copy that
+    // already exists on the posts themselves, so they stay crawlable but out
+    // of the sitemap. Paginated blog pages do carry unique listings and stay in.
+    sitemap({ filter: (page) => !page.includes('/404') && !page.includes('/blog/tags/') }),
     robots({
       sitemap: indexable ? [new URL('/sitemap-index.xml', site).href] : false,
       policy: indexable

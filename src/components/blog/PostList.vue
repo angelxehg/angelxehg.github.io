@@ -1,10 +1,5 @@
 <template>
   <div>
-    <h1 class="text-sm text-gray-900 dark:text-gray-100">
-      <span class="text-emerald-600 dark:text-emerald-400">$</span>
-      ls -lh ~/blog
-    </h1>
-
     <ul v-if="posts.length" class="mt-6 space-y-8">
       <li v-for="post in posts" :key="post.slug">
         <a :href="`/blog/${post.slug}/`" class="group block">
@@ -22,27 +17,27 @@
           <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">{{ post.description }}</p>
         </a>
 
+        <!-- Outside the post link on purpose: these are their own destinations. -->
         <div v-if="post.tags.length" class="mt-2 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs">
-          <span v-for="tag in post.tags" :key="tag" class="text-gray-500 dark:text-gray-400">
-            #{{ tag }}
-          </span>
+          <a
+            v-for="tag in post.tags"
+            :key="tag.href"
+            :href="tag.href"
+            class="text-gray-500 hover:text-emerald-600 hover:underline dark:text-gray-400 dark:hover:text-emerald-400"
+          >#{{ tag.label }}</a>
         </div>
       </li>
     </ul>
 
-    <p v-else class="mt-6 text-sm text-gray-500 dark:text-gray-400">
-      total 0 &mdash; nothing published yet.
-    </p>
-
-    <p v-if="posts.length" class="mt-10 text-xs text-gray-500 dark:text-gray-400">
-      {{ posts.length }} {{ posts.length === 1 ? 'file' : 'files' }}
-    </p>
+    <p v-else class="mt-6 text-sm text-gray-500 dark:text-gray-400">{{ empty }}</p>
   </div>
 </template>
 
 <script setup>
 defineProps({
-  /** Plain, pre-serialized rows — see src/pages/blog/index.astro. */
+  /** Plain, pre-serialized rows — see `toRow` in src/lib/posts.ts. */
   posts: { type: Array, default: () => [] },
+  /** Shown instead of the list when there is nothing to show. */
+  empty: { type: String, default: 'total 0 — nothing published yet.' },
 });
 </script>

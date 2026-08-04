@@ -1,0 +1,34 @@
+---
+import Base from '../../../layouts/Base.astro';
+import TerminalShell from '../../../components/blog/TerminalShell.vue';
+import TagCloud from '../../../components/blog/TagCloud.vue';
+import { getBuildInfo } from '../../../lib/buildInfo';
+import { getPosts, getTags } from '../../../lib/posts';
+
+const buildInfo = getBuildInfo();
+
+// `posts` is dropped on purpose: only the counts cross into the component, so
+// no collection entry is ever serialized into the page.
+const tags = getTags(await getPosts()).map(({ label, href, slug, count }) => ({
+  label,
+  href,
+  slug,
+  count,
+}));
+---
+
+<Base
+  title="Tags | Blog | Angel Hurtado"
+  description="Every tag in use across Angel Hurtado's blog, with the number of posts filed under each."
+>
+  <TerminalShell path="/blog/tags" buildInfo={buildInfo}>
+    <TagCloud tags={tags} />
+    <p class="mt-10 border-t border-gray-200 pt-6 text-sm dark:border-gray-800">
+      <span class="text-emerald-600 dark:text-emerald-400">$</span>{' '}<a
+        href="/blog/"
+        class="text-gray-500 hover:text-emerald-600 hover:underline dark:text-gray-400 dark:hover:text-emerald-400"
+        >cd ..</a
+      >
+    </p>
+  </TerminalShell>
+</Base>

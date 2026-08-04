@@ -1,0 +1,47 @@
+---
+import Base from '../../../../../layouts/Base.astro';
+import TerminalShell from '../../../../../components/blog/TerminalShell.vue';
+import PostSearch from '../../../../../components/blog/PostSearch.vue';
+import { getBuildInfo } from '../../../../../lib/buildInfo';
+import { extraPages, getPosts, getTags, paginate, toRow } from '../../../../../lib/posts';
+
+// Same shape as /blog/page/[page]: pages 2..n only, page 1 stays at the tag root.
+export async function getStaticPaths() {
+  const tags = getTags(await getPosts());
+
+  return tags.flatMap((tag) => {
+    const rows = tag.posts.map(toRow);
+    return extraPages(rows.length).map((page) => ({
+      params: { tag: tag.slug, page: String(page) },
+      props: { label: tag.label, slug: tag.slug, rows, page },
+    }));
+  });
+}
+
+const { label, slug, rows, page: current } = Astro.props;
+const buildInfo = getBuildInfo();
+const base = `/blog/tags/${slug}/`;
+const { items, ...page } = paginate(rows, current, base);
+---
+
+<Base
+  title={`#${label} (page ${page.current} of ${page.last}) | Blog | Angel Hurtado`}
+  description={`Page ${page.current} of the posts tagged #${label} on Angel Hurtado's blog.`}
+>
+  <TerminalShell path={`/blog/tags/${slug}/page/${page.current}`} buildInfo={buildInfo}>
+    <PostSearch
+      client:load
+      posts={items}
+      total={page.total}
+      page={page}
+      dir={`~/blog/tags/${slug}`}
+    />
+    <p class="mt-10 border-t border-gray-200 pt-6 text-sm dark:border-gray-800">
+      <span class="text-emerald-600 dark:text-emerald-400">$</span>{' '}<a
+        href="/blog/tags/"
+        class="text-gray-500 hover:text-emerald-600 hover:underline dark:text-gray-400 dark:hover:text-emerald-400"
+        >cd ..</a
+      >
+    </p>
+  </TerminalShell>
+</Base>

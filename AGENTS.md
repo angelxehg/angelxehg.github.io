@@ -30,9 +30,19 @@ Volta does not read `.node-version`, and Netlify does not read the `volta` field
 
 `astro build` writes the static site to `dist/` (gitignored). `src/pages/404.astro` builds straight to `dist/404.html`, which GitHub Pages serves for unmatched routes — no post-build rename is needed.
 
-**`ProfileCard` on the homepage is the site's only island** (`client:load` in `src/pages/index.astro`). Every other Vue component is used **without a `client:*` directive**, so it renders to static HTML and `/blog`, `/blog/*` and `/404` ship **no client-side JS** — keep it that way. Anything needing runtime interactivity on those pages (event handlers, reactive state, client-only composables) will not work unless a client directive is added, which is a decision rather than a detail.
+**The site has exactly two islands**, both `client:load`: `ProfileCard` on the homepage
+(`src/pages/index.astro`) and `PostSearch` on the blog's listing pages. Every other Vue component is
+used **without a `client:*` directive**, so it renders to static HTML — **individual post pages
+(`/blog/<slug>/`) and `/404` ship no client-side JS, and must stay that way.** A post page is the
+thing people are sent a link to; it has nothing to be interactive about.
 
-The homepage island is strictly an enhancement over markup that is already complete: see *Homepage build sequence*.
+Both islands follow the same rule: **they are enhancements over markup that is already complete.**
+The server renders the finished state — the full profile card, the unfiltered post listing — and the
+island only ever adds capability on top. A crawler, a reader with JS off, or a page whose island
+never boots gets a correct page. See *Homepage build sequence* and *Blog*.
+
+Adding a third island is a decision, not a detail: it also means editing
+`CMD ["ship", "--islands=N"]` in `src/lib/manifest.ts`, which exists to be checkable.
 
 ## Deployment
 
@@ -97,8 +107,9 @@ Details worth not re-deriving:
   not apply in `pre`). Every line is therefore a `display: block` span with **no whitespace between
   sibling tags** — keep `>` and `<` adjacent when editing that template or you will render blank
   lines.
-- `CMD ["ship", "--islands=1"]` is a checkable claim: it is true only while the homepage is the sole
-  island. Add another and that line becomes a lie.
+- `CMD ["ship", "--islands=2"]` is a checkable claim, and the count is maintained by hand: the
+  homepage card and the blog's `PostSearch`. Add or remove an island and this line must move with it
+  or it becomes a lie.
 
 ## Blog
 
@@ -117,8 +128,50 @@ build** when they disagree or when the prefix is missing. Fix the mismatch; do n
 The blog is styled as a full-bleed terminal — `src/components/blog/TerminalShell.vue` (status bar +
 `<slot />`), `PostList.vue` (an `ls -lh` listing where the size column is the real byte count of the
 Markdown), `PostMeta.vue` (`$ cat <slug>.md | glow -` — piped, because the page below it is
-*rendered* Markdown and a bare `cat` would promise raw source). It deliberately does **not** extend the homepage's
-Dockerfile conceit. Routes are `src/pages/blog/index.astro` and `src/pages/blog/[...slug].astro`.
+*rendered* Markdown and a bare `cat` would promise raw source), `Pager.vue` (`$ sed -n '11,20p'`),
+`TagCloud.vue` (`$ ls ~/blog/tags`) and `PostSearch.vue` (`$ grep -i "…"`). Every one of those
+prompts is a real description of what the page below it does. The blog deliberately does **not**
+extend the homepage's Dockerfile conceit.
+
+### Routes and the paged URL shape
+
+`src/lib/posts.ts` owns the whole shape; `pageHref()` is the only place it is written down.
+
+| Route file | URL |
+|---|---|
+| `blog/index.astro` | `/blog/` — page 1 |
+| `blog/page/[page].astro` | `/blog/page/2/` … |
+| `blog/tags/index.astro` | `/blog/tags/` |
+| `blog/tags/[tag]/index.astro` | `/blog/tags/react/` — page 1 |
+| `blog/tags/[tag]/page/[page].astro` | `/blog/tags/react/2/` … |
+| `blog/[...slug].astro` | `/blog/<YYYY-MM-DD-slug>/` |
+
+Two rules keep this coherent, and both are easy to break by accident:
+
+- **Page 1 is never `page/1/`.** `getStaticPaths` in the two `[page]` routes emits `2..n` only
+  (`extraPages()`), so every listing has exactly one URL and nothing is duplicate content.
+- **The literal `page/` segment is load-bearing.** `blog/[...slug].astro` is a rest route, so a
+  sibling `blog/[...page].astro` would be ambiguous: Astro would resolve `/blog/2/` to one of them
+  in `astro dev` while `astro build` still emitted the other, and the mismatch only shows up in
+  production. Post ids always start `YYYY-MM-DD-`, so `/blog/page/…` can never collide with a post.
+
+Tags are free-form strings in frontmatter. `tagSlug()` maps them to URLs, and `getTags()` **fails
+the build** when two different spellings (`React`/`react`) collapse onto one tag page — same
+reasoning as `assertDatedFilename`: by the time anyone notices, the URL is public.
+
+`PAGE_SIZE` is 10. Below that the `Pager` renders nothing at all, so with the current three posts
+there is no pager and no `dist/blog/page/` directory — that is correct, not a broken build.
+
+### Search
+
+`PostSearch.vue` is the blog's one island (`client:load`, see *Static export details*). It filters
+the rows **already on the current page**; it is not a site-wide index. At `PAGE_SIZE` 10 and three
+posts that is the whole archive, and past ten posts it becomes page-scoped. Making it global means
+inlining a compact index into the page — a real decision to take deliberately, not a bug to patch.
+
+It renders the complete, unfiltered listing on the server, so the page is finished before any JS
+runs. The input is `disabled` until `onMounted` flips it, and says so in its placeholder: with JS
+off the box is visibly inert rather than silently swallowing keystrokes.
 
 **The blog is built entirely at build time and has no network dependency.** Everything a post page
 needs comes from the repo: the Markdown, the collection schema, `getBuildInfo()`. Nothing is fetched
@@ -157,4 +210,4 @@ symlink, so there is nothing to duplicate.
 ## SEO files
 
 - `robots.txt` is generated at build time by the `astro-robots` integration, configured in `astro.config.mjs`. Do not add a plain `public/robots.txt`.
-- The sitemap (`sitemap-index.xml` + `sitemap-0.xml`) is generated by `@astrojs/sitemap` from the route list, with `/404` filtered out. The per-deploy `site` in `astro.config.mjs` supplies the absolute URLs. Adding a route updates the sitemap automatically — no manual XML editing.
+- The sitemap (`sitemap-index.xml` + `sitemap-0.xml`) is generated by `@astrojs/sitemap` from the route list, with `/404` and `/blog/tags/*` filtered out — tag pages are navigation between posts, not destinations, and only repeat copy the posts already carry. Paginated `/blog/page/N/` listings stay in. The per-deploy `site` in `astro.config.mjs` supplies the absolute URLs. Adding a route updates the sitemap automatically — no manual XML editing.

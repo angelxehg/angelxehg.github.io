@@ -91,8 +91,9 @@ const layers: LayerSource[] = [
   // Describes what the island actually does: a real same-origin probe on this
   // interval. `localhost:443` is the port EXPOSE just declared.
   { instruction: 'HEALTHCHECK', args: '--interval=30s CMD curl -f localhost:443', ms: 54 },
-  // Not "--zero-javascript" any more: this page is the site's only island.
-  { instruction: 'CMD', args: '["ship", "--islands=1"]', ms: 36 },
+  // Two islands ship: this card, and the blog's listing filter. Post pages
+  // themselves stay at zero. Keep this number honest — see AGENTS.md.
+  { instruction: 'CMD', args: '["ship", "--islands=2"]', ms: 36 },
 ];
 
 /** Chain each layer's digest off its parent, the way a real image does. */
