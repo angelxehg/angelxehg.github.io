@@ -56,6 +56,20 @@
                 <span class="text-emerald-600 dark:text-emerald-400">$</span>
                 Backend Developer — Python · APIs · Cloud
               </p>
+              <!--
+                A real navbar, so /blog is reachable without reading the
+                manifest. `~` is the page you are already on.
+              -->
+              <nav aria-label="Primary" class="flex flex-wrap items-center gap-2 pt-1 text-xs">
+                <span
+                  aria-current="page"
+                  class="rounded-md border border-gray-200 px-2 py-0.5 text-gray-500 dark:border-gray-800 dark:text-gray-400"
+                >~</span>
+                <a
+                  href="/blog/"
+                  class="rounded-md border border-emerald-500/40 px-2 py-0.5 font-semibold text-emerald-600 hover:border-emerald-500 hover:bg-emerald-500/10 dark:text-emerald-400"
+                >/blog</a>
+              </nav>
             </div>
           </header>
 
@@ -75,31 +89,44 @@
               v-for="(layer, i) in layers"
               :key="i"
             ><span
-              class="block transition-opacity duration-200"
+              class="block transition-opacity duration-150"
               :class="layerDone(i) ? 'opacity-100' : 'opacity-25'"
             ><span class="text-emerald-600 dark:text-emerald-400">{{ layer.instruction }}</span><template
-              v-for="(token, j) in tokenize(layer.args)"
+              v-for="(token, j) in tokenize(' ' + layer.args)"
               :key="j"
             ><a
-              v-if="token.quoted && layer.href"
+              v-if="token.quoted && !token.flag && layer.href"
               :href="layer.href"
               title="Read the blog"
-              class="text-sky-600 underline decoration-dotted underline-offset-2 hover:text-emerald-600 dark:text-sky-400 dark:hover:text-emerald-400"
-            >{{ token.text }}</a><span
+              class="group font-semibold text-emerald-600 hover:text-emerald-500 dark:text-emerald-400"
+            ><span class="relative mr-1.5 inline-flex h-2 w-2 align-baseline" aria-hidden="true"><span
+              class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping motion-reduce:hidden"
+            ></span><span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span></span><span
+              class="underline decoration-emerald-500/50 underline-offset-4 group-hover:decoration-emerald-500"
+            >{{ token.text }}</span></a><span
+              v-else-if="token.flag"
+              class="text-amber-600 dark:text-amber-400"
+            >{{ token.text }}</span><span
               v-else-if="token.quoted"
               class="text-sky-600 dark:text-sky-400"
             >{{ token.text }}</span><template v-else>{{ token.text }}</template></template><span
               v-if="layer.comment"
               class="text-gray-500 dark:text-gray-400"
-            >{{ '  ' + layer.comment }}</span></span><span
+            ><template
+              v-for="(token, k) in tokenize('  ' + layer.comment)"
+              :key="k"
+            ><span
+              v-if="token.flag"
+              class="text-amber-600 dark:text-amber-400"
+            >{{ token.text }}</span><template v-else>{{ token.text }}</template></template></span></span><span
               v-if="layer.provides"
-              class="block text-gray-500 dark:text-gray-400 transition-opacity duration-200"
+              class="block text-gray-500 dark:text-gray-400 transition-opacity duration-150"
               :class="layerDone(i) ? 'opacity-100' : 'opacity-0'"
             >{{ ' ---> ' + layer.digest }}</span></template><span
-              class="block text-gray-500 dark:text-gray-400 transition-opacity duration-200"
+              class="block text-gray-500 dark:text-gray-400 transition-opacity duration-150"
               :class="built ? 'opacity-100' : 'opacity-0'"
             >{{ 'Successfully built ' + buildInfo.containerId }}</span><span
-              class="block text-gray-500 dark:text-gray-400 transition-opacity duration-200"
+              class="block text-gray-500 dark:text-gray-400 transition-opacity duration-150"
               :class="built ? 'opacity-100' : 'opacity-0'"
             >Successfully tagged angelxehg.com:latest</span></code></pre>
           </section>
@@ -118,7 +145,7 @@
               <div
                 v-for="r in resources"
                 :key="r.id"
-                class="rounded-lg border border-gray-200 dark:border-gray-800 p-3 transition-all duration-300"
+                class="rounded-lg border border-gray-200 dark:border-gray-800 p-3 transition-all duration-200"
                 :class="tileReady(r) ? 'opacity-100' : 'opacity-40 grayscale'"
               >
                 <div class="flex items-center gap-1.5 text-[11px]">
@@ -200,12 +227,28 @@ const statusText = (status) =>
     ? 'text-emerald-600 dark:text-emerald-400'
     : 'text-amber-600 dark:text-amber-400';
 
-/** Split args so double-quoted runs can be highlighted, e.g. LABEL role="…". */
-const tokenize = (args) =>
-  ` ${args}`
+const FLAG = /(--[A-Za-z0-9][\w.-]*(?:=[^\s"]+)?)/;
+
+/**
+ * Split a manifest line so double-quoted runs (LABEL role="…") and `--flag`
+ * tokens can be highlighted separately. Quotes are split first, then each run
+ * is split again, so flags are found *inside* strings too — which is where
+ * most of them live, e.g. FOCUS="--apis --iac".
+ *
+ * Takes the text verbatim: callers pass their own leading whitespace, since a
+ * comment is indented off the args and the args are spaced off the instruction.
+ */
+const tokenize = (text) =>
+  text
     .split(/("[^"]*")/)
     .filter(Boolean)
-    .map((text) => ({ text, quoted: text.startsWith('"') }));
+    .flatMap((run) => {
+      const quoted = run.startsWith('"');
+      return run
+        .split(FLAG)
+        .filter(Boolean)
+        .map((part) => ({ text: part, quoted, flag: part.startsWith('--') }));
+    });
 
 // The card renders finished on the server and stays finished if the island
 // never boots, so `built` starts true and the sequence *rewinds* it. Pending
@@ -319,7 +362,7 @@ function runBuild() {
            is a nicety, not a correctness requirement */
       }
       startHealthcheck();
-    }, at + 180),
+    }, at + 120),
   );
 }
 

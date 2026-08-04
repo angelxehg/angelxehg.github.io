@@ -78,6 +78,14 @@ Details worth not re-deriving:
 - The sequence auto-plays **once per session** (`sessionStorage['ax:build']`), and not at all under
   `prefers-reduced-motion: reduce`. Pacing comes from each layer's authored `ms`, so tuning the feel
   is a data edit.
+- Skills and languages are written as **flags** (`--apis`, `--lang=en:professional`), not prose
+  lists — the card claims to be a terminal, so they should read like arguments. `tokenize()` in
+  `ProfileCard.vue` splits quoted runs first, then splits each run again on `--flag`, so flags are
+  highlighted *inside* strings and comments too. Adding a subject means adding a flag in
+  `manifest.ts`; no markup changes.
+- `VOLUME ["/blog"]` is the manifest's one link, and it carries the same live dot as the status bar
+  so it reads as reachable rather than as more code. The nav under the name is the redundant path
+  to the same place, for anyone who does not read the Dockerfile.
 - `HEALTHCHECK` is **real**. The island probes `/favicon.ico` same-origin on the 30s interval the
   manifest line advertises, only while the tab is visible, and reports the page's own actual
   reachability (`res.ok`, matching `curl -f`). Nothing about it is simulated — do not replace it
@@ -108,7 +116,8 @@ build** when they disagree or when the prefix is missing. Fix the mismatch; do n
 
 The blog is styled as a full-bleed terminal — `src/components/blog/TerminalShell.vue` (status bar +
 `<slot />`), `PostList.vue` (an `ls -lh` listing where the size column is the real byte count of the
-Markdown), `PostMeta.vue` (`$ cat <slug>.md`). It deliberately does **not** extend the homepage's
+Markdown), `PostMeta.vue` (`$ cat <slug>.md | glow -` — piped, because the page below it is
+*rendered* Markdown and a bare `cat` would promise raw source). It deliberately does **not** extend the homepage's
 Dockerfile conceit. Routes are `src/pages/blog/index.astro` and `src/pages/blog/[...slug].astro`.
 
 **The blog is built entirely at build time and has no network dependency.** Everything a post page

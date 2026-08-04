@@ -15,7 +15,16 @@
           href="/"
           class="text-gray-500 hover:text-emerald-600 hover:underline dark:text-gray-400 dark:hover:text-emerald-400"
         >angelxehg.com</a>
-        <span class="truncate text-gray-500 dark:text-gray-400">{{ path }}</span>
+        <!--
+          The path stays gray — it is a breadcrumb, not a call to action — but
+          its `/blog` segment is a real link back to the index whenever we are
+          deeper than the index itself.
+        -->
+        <span class="truncate text-gray-500 dark:text-gray-400"><a
+          v-if="tail"
+          href="/blog/"
+          class="hover:text-emerald-600 hover:underline dark:hover:text-emerald-400"
+        >{{ head }}</a><template v-else>{{ head }}</template>{{ tail }}</span>
         <span class="ml-auto inline-flex shrink-0 items-center gap-1.5">
           <span class="text-emerald-600 dark:text-emerald-400 font-semibold">operational</span>
           <span class="hidden text-gray-300 dark:text-gray-600 sm:inline" aria-hidden="true">·</span>
@@ -33,9 +42,10 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
 import SiteFooter from '../SiteFooter.vue';
 
-defineProps({
+const props = defineProps({
   /** Path segment shown after the host in the status bar, e.g. "/blog". */
   path: { type: String, default: '' },
   buildInfo: {
@@ -43,4 +53,12 @@ defineProps({
     default: () => ({ commit: 'dev', builtAt: 'local', astroVersion: '', region: 'mx-central-1' }),
   },
 });
+
+const BLOG = '/blog';
+
+// Split the breadcrumb into the linkable `/blog` root and whatever follows.
+// On the index itself `tail` is empty, so nothing links to the page you are
+// already on.
+const head = computed(() => (props.path.startsWith(BLOG) ? BLOG : props.path));
+const tail = computed(() => (props.path.startsWith(BLOG) ? props.path.slice(BLOG.length) : ''));
 </script>
