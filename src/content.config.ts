@@ -11,6 +11,8 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     /** Site-absolute path to the post's social card, e.g. /images/posts/foo.png */
     image: z.string().startsWith('/').optional(),
+    /** BCP 47 tag for the post's own language; becomes the page's <html lang>. */
+    lang: z.string().default('en'),
     draft: z.boolean().default(false),
   }),
 });

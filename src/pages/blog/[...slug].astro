@@ -22,6 +22,7 @@ const buildInfo = getBuildInfo();
   image={post.data.image}
   type="article"
   publishedTime={post.data.date}
+  lang={post.data.lang}
 >
   <TerminalShell path={`/blog/${post.id}`} buildInfo={buildInfo}>
     <PostMeta
