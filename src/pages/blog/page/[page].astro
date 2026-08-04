@@ -1,0 +1,37 @@
+---
+import Base from '../../../layouts/Base.astro';
+import TerminalShell from '../../../components/blog/TerminalShell.vue';
+import PostSearch from '../../../components/blog/PostSearch.vue';
+import { getBuildInfo } from '../../../lib/buildInfo';
+import { extraPages, getPosts, paginate, toRow } from '../../../lib/posts';
+
+// Only pages 2..n: page 1 is /blog/ itself. The literal `page` segment is what
+// keeps this from being ambiguous with the sibling [...slug] post route.
+export async function getStaticPaths() {
+  const rows = (await getPosts()).map(toRow);
+  return extraPages(rows.length).map((page) => ({
+    params: { page: String(page) },
+    props: { rows, page },
+  }));
+}
+
+const { rows, page: current } = Astro.props;
+const buildInfo = getBuildInfo();
+const { items, ...page } = paginate(rows, current, '/blog/');
+---
+
+<Base
+  title={`Blog (page ${page.current} of ${page.last}) | Angel Hurtado`}
+  description={`Page ${page.current} of Angel Hurtado's notes on backend development, cloud infrastructure and performance.`}
+>
+  <TerminalShell path={`/blog/page/${page.current}`} buildInfo={buildInfo}>
+    <PostSearch client:load posts={items} total={page.total} page={page} />
+    <p class="mt-10 border-t border-gray-200 pt-6 text-sm dark:border-gray-800">
+      <span class="text-emerald-600 dark:text-emerald-400">$</span>{' '}<a
+        href="/blog/tags/"
+        class="text-gray-500 hover:text-emerald-600 hover:underline dark:text-gray-400 dark:hover:text-emerald-400"
+        >ls ~/blog/tags</a
+      >
+    </p>
+  </TerminalShell>
+</Base>

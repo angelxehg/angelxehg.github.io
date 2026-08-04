@@ -16,7 +16,12 @@
     <div class="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs text-gray-500 dark:text-gray-400">
       <span>{{ date }}</span>
       <span v-if="updated">updated {{ updated }}</span>
-      <span v-for="tag in tags" :key="tag">#{{ tag }}</span>
+      <a
+        v-for="tag in tags"
+        :key="tag.href"
+        :href="tag.href"
+        class="hover:text-emerald-600 hover:underline dark:hover:text-emerald-400"
+      >#{{ tag.label }}</a>
     </div>
   </header>
 </template>
@@ -27,6 +32,7 @@ defineProps({
   title: { type: String, required: true },
   date: { type: String, required: true },
   updated: { type: String, default: null },
+  /** `{ label, href }` rows — see `toTagLinks` in src/lib/posts.ts. */
   tags: { type: Array, default: () => [] },
 });
 </script>

@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 import TerminalShell from '../../components/blog/TerminalShell.vue';
 import PostMeta from '../../components/blog/PostMeta.vue';
 import { getBuildInfo } from '../../lib/buildInfo';
-import { getPosts, isoDate } from '../../lib/posts';
+import { getPosts, isoDate, toTagLinks } from '../../lib/posts';
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -30,7 +30,7 @@ const buildInfo = getBuildInfo();
       title={post.data.title}
       date={isoDate(post.data.date)}
       updated={post.data.updated ? isoDate(post.data.updated) : null}
-      tags={post.data.tags}
+      tags={toTagLinks(post.data.tags)}
     />
     <article class="post-body"><Content /></article>
     <p class="mt-12 border-t border-gray-200 pt-6 text-sm dark:border-gray-800">

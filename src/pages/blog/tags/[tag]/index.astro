@@ -1,0 +1,41 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import TerminalShell from '../../../../components/blog/TerminalShell.vue';
+import PostSearch from '../../../../components/blog/PostSearch.vue';
+import { getBuildInfo } from '../../../../lib/buildInfo';
+import { getPosts, getTags, paginate, toRow } from '../../../../lib/posts';
+
+export async function getStaticPaths() {
+  return getTags(await getPosts()).map((tag) => ({
+    params: { tag: tag.slug },
+    props: { label: tag.label, slug: tag.slug, rows: tag.posts.map(toRow) },
+  }));
+}
+
+const { label, slug, rows } = Astro.props;
+const buildInfo = getBuildInfo();
+const base = `/blog/tags/${slug}/`;
+const { items, ...page } = paginate(rows, 1, base);
+---
+
+<Base
+  title={`#${label} | Blog | Angel Hurtado`}
+  description={`Posts tagged #${label} on Angel Hurtado's blog.`}
+>
+  <TerminalShell path={`/blog/tags/${slug}`} buildInfo={buildInfo}>
+    <PostSearch
+      client:load
+      posts={items}
+      total={page.total}
+      page={page}
+      dir={`~/blog/tags/${slug}`}
+    />
+    <p class="mt-10 border-t border-gray-200 pt-6 text-sm dark:border-gray-800">
+      <span class="text-emerald-600 dark:text-emerald-400">$</span>{' '}<a
+        href="/blog/tags/"
+        class="text-gray-500 hover:text-emerald-600 hover:underline dark:text-gray-400 dark:hover:text-emerald-400"
+        >cd ..</a
+      >
+    </p>
+  </TerminalShell>
+</Base>
