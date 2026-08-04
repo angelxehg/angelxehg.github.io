@@ -20,7 +20,7 @@
         v-model="query"
         type="search"
         :disabled="!ready"
-        :placeholder="ready ? 'title, tag, filename' : 'search needs javascript'"
+        :placeholder="ready ? 'Search by title, tag' : 'search needs javascript'"
         aria-label="Filter posts on this page"
         autocomplete="off"
         spellcheck="false"
