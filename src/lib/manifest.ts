@@ -47,30 +47,35 @@ const resources: Resource[] = [
 ];
 
 // Durations are authored, not measured — they pace the sequence so it reads
-// staccato (~1.7s total) rather than metronomic. A pip install should visibly
+// staccato (~1.0s total) rather than metronomic. A pip install should visibly
 // cost more than a LABEL.
+//
+// Subjects and languages are written as flags (`--apis`, `--lang=en:…`) rather
+// than prose lists: the card claims to be a terminal, so the skills should read
+// like arguments someone could actually pass. `ProfileCard` highlights any
+// `--flag` token, including inside quotes and comments.
 const layers: LayerSource[] = [
-  { instruction: 'FROM', args: 'mexico:latest', ms: 320 },
-  { instruction: 'LABEL', args: 'role="Backend Developer"', ms: 40 },
-  { instruction: 'LABEL', args: 'langs="es-MX (native) · en (professional)"', ms: 40 },
+  { instruction: 'FROM', args: 'mexico:latest', ms: 200 },
+  { instruction: 'LABEL', args: 'role="Backend Developer"', ms: 24 },
+  { instruction: 'LABEL', args: 'langs="--lang=es-MX:native --lang=en:professional"', ms: 24 },
   {
     instruction: 'RUN',
-    args: 'pip install django fastapi celery taskiq',
+    args: 'uv pip install --python=3.13 django fastapi celery taskiq',
     provides: ['compute/backend', 'queue/workers'],
-    ms: 620,
+    ms: 380,
   },
   {
     instruction: 'ENV',
-    args: 'FOCUS="apis · iac · aws · performance"',
+    args: 'FOCUS="--apis --iac --aws --performance"',
     provides: ['iac/infrastructure'],
-    ms: 60,
+    ms: 36,
   },
   {
     instruction: 'COPY',
     args: './frontend ./',
-    comment: '# astro · tailwind · vue',
+    comment: '# --astro --tailwind --vue',
     provides: ['edge/frontend'],
-    ms: 380,
+    ms: 230,
   },
   // Everything above is a frozen layer; the blog is the one part that is still
   // being written, so it mounts as the image's only writable volume. The path
@@ -80,14 +85,14 @@ const layers: LayerSource[] = [
     args: '["/blog"]',
     comment: '# the only mutable layer',
     href: '/blog/',
-    ms: 40,
+    ms: 24,
   },
-  { instruction: 'EXPOSE', args: '443', ms: 40 },
+  { instruction: 'EXPOSE', args: '443', ms: 24 },
   // Describes what the island actually does: a real same-origin probe on this
   // interval. `localhost:443` is the port EXPOSE just declared.
-  { instruction: 'HEALTHCHECK', args: '--interval=30s CMD curl -f localhost:443', ms: 90 },
+  { instruction: 'HEALTHCHECK', args: '--interval=30s CMD curl -f localhost:443', ms: 54 },
   // Not "--zero-javascript" any more: this page is the site's only island.
-  { instruction: 'CMD', args: '["ship", "--islands=1"]', ms: 60 },
+  { instruction: 'CMD', args: '["ship", "--islands=1"]', ms: 36 },
 ];
 
 /** Chain each layer's digest off its parent, the way a real image does. */
