@@ -27,6 +27,7 @@ const { items, ...page } = paginate(rows, current, base);
 <Base
   title={`#${label} (page ${page.current} of ${page.last}) | Blog | Angel Hurtado`}
   description={`Page ${page.current} of the posts tagged #${label} on Angel Hurtado's blog.`}
+  noindex
 >
   <TerminalShell path={`/blog/tags/${slug}/page/${page.current}`} buildInfo={buildInfo}>
     <PostSearch
