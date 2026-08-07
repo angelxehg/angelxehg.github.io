@@ -20,6 +20,7 @@ const tags = getTags(await getPosts()).map(({ label, href, slug, count }) => ({
 <Base
   title="Tags | Blog | Angel Hurtado"
   description="Every tag in use across Angel Hurtado's blog, with the number of posts filed under each."
+  noindex
 >
   <TerminalShell path="/blog/tags" buildInfo={buildInfo}>
     <TagCloud tags={tags} />

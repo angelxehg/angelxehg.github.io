@@ -11,6 +11,10 @@ interface Props {
   publishedTime?: Date;
   /** BCP 47 tag for the page's content. The site is English; posts may not be. */
   lang?: string;
+  /** Crawlable but not indexable, e.g. tag pages: thin/duplicate listings that exist for
+   * navigation, not as a search destination. Links are still followed so crawl reaches
+   * the posts they list. */
+  noindex?: boolean;
 }
 
 const {
@@ -20,13 +24,16 @@ const {
   type = 'website',
   publishedTime,
   lang = 'en',
+  noindex = false,
 } = Astro.props;
 
 // Only the GitHub Pages deploy should be indexed; the Netlify mirror is not.
-const indexable = !process.env.NETLIFY;
+const indexable = !process.env.NETLIFY && !noindex;
 const robotsContent = indexable
   ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
-  : 'noindex, nofollow';
+  : noindex && !process.env.NETLIFY
+    ? 'noindex, follow'
+    : 'noindex, nofollow';
 
 // Absolute, and pointing at THIS deploy's origin — see src/lib/siteUrl.ts.
 const ogImage = assetUrl(image, Astro.site);
